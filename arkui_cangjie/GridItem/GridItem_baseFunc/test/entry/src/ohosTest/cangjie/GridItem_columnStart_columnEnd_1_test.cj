@@ -1,0 +1,769 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package ohos_app_cangjie_entry_test
+import std.unittest.*
+import std.unittest.common.*
+import std.unittest.testmacro.*
+import std.collection.*
+import ohos.base.*
+import kit.TestKit.*
+import kit.AbilityKit.*
+import kit.PerformanceAnalysisKit.Hilog
+import kit.ArkData.*
+@Test
+class GridItem_columnStart_columnEnd_1_test {
+    @BeforeAll
+    func beforeAll() {
+        Hilog.info(0u32, "CangjieTest", "start entry ability")
+        AbilityDelegatorRegistry
+            .getAbilityDelegator()
+            .startAbility(Want(bundleName: "com.huawei.GridItem_baseFunc", abilityName: "EntryAbility"))
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
+            enterPage(scrollerId:"scroller",buttonId:"index_GItem_columnStart_columnEnd")
+}
+    @AfterEach
+    func afterEach() {
+        Hilog.info(0u32, "CangjieTest", "press back")
+        pressBack()
+    }
+    @AfterAll
+    func afterAll() {
+        Hilog.info(0u32, "CangjieTest", "press back")
+        pressBack()
+            pressBack()
+}
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_0100
+     * @tc.name      : TestCase_1
+     * @tc.desc      : test the columnStart(-1)&columnEnd(-1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_1(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_1 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd1\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd1")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"-1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"-1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_1 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_0200
+     * @tc.name      : TestCase_2
+     * @tc.desc      : test the columnStart(-1)&columnEnd(0) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_2(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_2 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd2\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd2")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"-1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"0\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_2 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_0300
+     * @tc.name      : TestCase_3
+     * @tc.desc      : test the columnStart(-1)&columnEnd(1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_3(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_3 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd3\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd3")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"-1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_3 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_0400
+     * @tc.name      : TestCase_4
+     * @tc.desc      : test the columnStart(-1)&columnEnd(4) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_4(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_4 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd4\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd4")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"-1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"4\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_4 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_0500
+     * @tc.name      : TestCase_5
+     * @tc.desc      : test the columnStart(-1)&columnEnd(5) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_5(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_5 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd5\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd5")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"-1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"5\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_5 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_0600
+     * @tc.name      : TestCase_6
+     * @tc.desc      : test the columnStart(-1)&columnEnd(6) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_6(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_6 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd6\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd6")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"-1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"6\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_6 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_0700
+     * @tc.name      : TestCase_7
+     * @tc.desc      : test the columnStart(0)&columnEnd(-1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_7(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd7\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd7")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"0\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"-1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_0800
+     * @tc.name      : TestCase_8
+     * @tc.desc      : test the columnStart(0)&columnEnd(0) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_8(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_8 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd8\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd8")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"0\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"0\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_8 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_0900
+     * @tc.name      : TestCase_9
+     * @tc.desc      : test the columnStart(0)&columnEnd(1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_9(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_9 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd9\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd9")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"0\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_9 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1000
+     * @tc.name      : TestCase_10
+     * @tc.desc      : test the columnStart(0)&columnEnd(4) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_10(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_10 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd10\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd10")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"0\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"4\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_10 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1100
+     * @tc.name      : TestCase_11
+     * @tc.desc      : test the columnStart(0)&columnEnd(5) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_11(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_11 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd11\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd11")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"0\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"5\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_11 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1200
+     * @tc.name      : TestCase_12
+     * @tc.desc      : test the columnStart(0)&columnEnd(6) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_12(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_12 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd12\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd12")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"0\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"6\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_12 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1300
+     * @tc.name      : TestCase_13
+     * @tc.desc      : test the columnStart(1)&columnEnd(-1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_13(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_13 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd13\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd13")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"-1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_13 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1400
+     * @tc.name      : TestCase_14
+     * @tc.desc      : test the columnStart(1)&columnEnd(0) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_14(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_14 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd14\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd14")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"0\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_14 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1500
+     * @tc.name      : TestCase_15
+     * @tc.desc      : test the columnStart(1)&columnEnd(1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_15(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_15 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd15\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd15")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_15 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1600
+     * @tc.name      : TestCase_16
+     * @tc.desc      : test the columnStart(1)&columnEnd(4) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_16(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_16 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd16\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd16")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"4\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_16 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1700
+     * @tc.name      : TestCase_17
+     * @tc.desc      : test the columnStart(1)&columnEnd(5) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_17(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd17\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd17")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"5\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1800
+     * @tc.name      : TestCase_18
+     * @tc.desc      : test the columnStart(1)&columnEnd(6) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_18(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_18 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd18\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd18")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"1\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"6\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_18 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_1900
+     * @tc.name      : TestCase_19
+     * @tc.desc      : test the columnStart(4)&columnEnd(-1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_19(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd19\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd19")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"4\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"-1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2000
+     * @tc.name      : TestCase_20
+     * @tc.desc      : test the columnStart(4)&columnEnd(0) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_20(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_20 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd20\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd20")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"4\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"0\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_20 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2100
+     * @tc.name      : TestCase_21
+     * @tc.desc      : test the columnStart(4)&columnEnd(1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_21(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd21\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd21")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"4\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2200
+     * @tc.name      : TestCase_22
+     * @tc.desc      : test the columnStart(4)&columnEnd(4) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_22(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_22 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd22\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd22")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"4\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"4\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_22 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2300
+     * @tc.name      : TestCase_23
+     * @tc.desc      : test the columnStart(4)&columnEnd(5) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_23(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd23\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd23")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"4\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"5\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2400
+     * @tc.name      : TestCase_24
+     * @tc.desc      : test the columnStart(4)&columnEnd(6) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_24(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd24\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd24")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"4\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"6\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2500
+     * @tc.name      : TestCase_25
+     * @tc.desc      : test the columnStart(5)&columnEnd(-1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_25(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_25 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd25\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd25")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"5\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"-1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_25 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2600
+     * @tc.name      : TestCase_26
+     * @tc.desc      : test the columnStart(5)&columnEnd(0) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_26(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_26 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd26\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd26")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"5\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"0\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_26 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2700
+     * @tc.name      : TestCase_27
+     * @tc.desc      : test the columnStart(5)&columnEnd(1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_27(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_27 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd27\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd27")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"5\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_27 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2800
+     * @tc.name      : TestCase_28
+     * @tc.desc      : test the columnStart(5)&columnEnd(4) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_28(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_28 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd28\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd28")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"5\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"4\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_28 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_2900
+     * @tc.name      : TestCase_29
+     * @tc.desc      : test the columnStart(5)&columnEnd(5) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_29(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_29 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd29\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd29")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"5\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"5\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_29 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_3000
+     * @tc.name      : TestCase_30
+     * @tc.desc      : test the columnStart(5)&columnEnd(6) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_30(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_30 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd30\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd30")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"5\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"6\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_30 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_3100
+     * @tc.name      : TestCase_31
+     * @tc.desc      : test the columnStart(6)&columnEnd(-1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_31(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_31 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd31\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd31")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"6\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"-1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_31 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_3200
+     * @tc.name      : TestCase_32
+     * @tc.desc      : test the columnStart(6)&columnEnd(0) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_32(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_32 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd32\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd32")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"6\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"0\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_32 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_3300
+     * @tc.name      : TestCase_33
+     * @tc.desc      : test the columnStart(6)&columnEnd(1) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_33(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_33 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd33\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd33")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"6\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"1\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_33 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_3400
+     * @tc.name      : TestCase_34
+     * @tc.desc      : test the columnStart(6)&columnEnd(4) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_34(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_34 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd34\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd34")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"6\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"4\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_34 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_3500
+     * @tc.name      : TestCase_35
+     * @tc.desc      : test the columnStart(6)&columnEnd(5) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_35(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_35 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd35\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd35")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"6\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"5\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_35 ends.")
+    }
+    /*
+     * @tc.number    : TestList_ColumnsGap_rowsGap_3600
+     * @tc.name      : TestCase_36
+     * @tc.desc      : test the columnStart(6)&columnEnd(6) of the Grid
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_36(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_36 begins.")
+        Hilog.info(0u32, "CangjieTest", "enter page \"View_GridItem_columnStart_columnEnd36\" by scroller \"scroller\"")
+        enterPage(scrollerId: "scroller", buttonId: "View_GridItem_columnStart_columnEnd36")
+        Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
+        TestDriver.driver.waitForComponent(On().id("GridItem_id"), 3000i32)
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnStart"], "\"6\"")
+        @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("gridItem1")["columnEnd"], "\"6\"")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_36 ends.")
+    }
+}

@@ -1,7 +1,7 @@
 {
   "description": "Configuration for abilityconstant demo Tests",
   "driver": {
-    "bundle-name": "com.huawei.battery_info",
+    "bundle-name": "com.cangjie.battery_info",
     "module-name": "entry",
     "shell-timeout": "600000",
     "test-timeout": "180000",
