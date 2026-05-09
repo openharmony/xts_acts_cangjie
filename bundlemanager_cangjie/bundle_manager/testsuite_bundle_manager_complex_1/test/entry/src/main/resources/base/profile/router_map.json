@@ -1,0 +1,22 @@
+{
+  "routerMap": [
+    {
+      "name": "DynamicPage1",
+      "pageSourceFile": "src/main/cangjie/src/index.cj",
+      "buildFunction": "",
+      "customData": {
+        "stringKey": "data1",
+        "numberKey": 123,
+        "booleanKey": true,
+        "objectKey": {
+          "name": "test"
+        },
+        "arrayKey": [
+          {
+            "id": 123
+          }
+        ]
+      }
+    }
+  ]
+}
