@@ -1,0 +1,27 @@
+{
+  "description": "Configuration for abilityconstant demo Tests",
+  "driver": {
+    "bundle-name": "com.huawei.battery_info",
+    "module-name": "entry",
+    "shell-timeout": "600000",
+    "test-timeout": "180000",
+    "testcase-timeout": "180000",
+    "type": "OHCJUnitTest"
+  },
+  "kits": [
+    {
+      "clean-apps": false,
+      "test-file-name": [
+        "cjTestbattery_info"
+      ],
+      "type": "AppInstallKit"
+    },
+    {
+      "clean-apps": false,
+      "test-file-name": [
+        "cjTestbattery_info"
+      ],
+      "type": "AppInstallKit"
+    }
+  ]
+}
