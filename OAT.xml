@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <oatconfig>
+        <licensefile></licensefile>
+        <policylist>
+        </policylist>
+        <filefilterlist>
+            <filefilter name="defaultFilter" desc="Files not to check">
+                <filteritem type="filename" name="*.png | *.jpg | *.gif | *.jpeg | *.bmp " desc="代码架构图片文件"/>
+				<filteritem type="filename" name="*.mp4 | *.mp3" desc="代码架构图片文件"/>
+                <filteritem type="filename" name=".*/test/.*" desc="测试用例目录"/>
+				<filteritem type="filename" name="profile.json" desc="测试用例权限文件"/>
+			</filefilter>	
+        </filefilterlist>
+		<licensematcherlist>
+        </licensematcherlist>
+    </oatconfig>
+</configuration>
+
