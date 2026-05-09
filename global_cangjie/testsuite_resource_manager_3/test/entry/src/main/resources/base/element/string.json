@@ -1,0 +1,56 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "test_three_args",
+      "value": "I'm a %s, format int: %d, format float: %f."
+    },
+    {
+      "name": "test_three_indexed",
+      "value": "I'm a %1$s, format int: %2$d, format float: %3$f."
+    },
+    {
+      "name": "test_plain",
+      "value": "Hello World"
+    },
+    {
+      "name": "test_empty",
+      "value": ""
+    },
+    {
+      "name": "test_one_d",
+      "value": "Count: %d"
+    },
+    {
+      "name": "test_one_s",
+      "value": "Hello, %s"
+    },
+    {
+      "name": "test_one_f",
+      "value": "Price: %f"
+    },
+    {
+      "name": "test_two_args",
+      "value": "%s has %d apples"
+    },
+    {
+      "name": "test_percent",
+      "value": "Discount: %d%%"
+    },
+    {
+      "name": "test_indexed",
+      "value": "%1$s ate %2$d oranges, %2$d is a number, %1$s is name"
+    }
+  ]
+}

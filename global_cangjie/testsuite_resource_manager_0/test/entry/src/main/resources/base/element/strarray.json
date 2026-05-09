@@ -1,0 +1,21 @@
+{
+  "strarray": [
+    {
+      "name": "sizelist",
+      "value": [
+        {
+          "value": "small"
+        },
+        {
+          "value": "middle"
+        },
+        {
+          "value": "large"
+        },
+        {
+          "value": "extra large"
+        }
+      ]
+    }
+  ]
+}
