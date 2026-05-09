@@ -1,7 +1,7 @@
 {
   "description": "Configuration for abilityconstant demo Tests",
   "driver": {
-    "bundle-name": "com.huawei.testsuite_request_1",
+    "bundle-name": "com.cangjie.testsuite_request_1",
     "module-name": "entry",
     "shell-timeout": "600000",
     "test-timeout": "180000",
