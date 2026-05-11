@@ -1,0 +1,27 @@
+{
+  "description": "Configuration for abilityconstant demo Tests",
+  "driver": {
+    "bundle-name": "com.cangjie.testsuite_request_1",
+    "module-name": "entry",
+    "shell-timeout": "600000",
+    "test-timeout": "180000",
+    "testcase-timeout": "180000",
+    "type": "OHCJUnitTest"
+  },
+  "kits": [
+    {
+      "clean-apps": false,
+      "test-file-name": [
+        "cjTesttestsuite_request_1"
+      ],
+      "type": "AppInstallKit"
+    },
+    {
+      "clean-apps": false,
+      "test-file-name": [
+        "cjTesttestsuite_request_1"
+      ],
+      "type": "AppInstallKit"
+    }
+  ]
+}
