@@ -13,11 +13,6 @@
 
 XTS子系统是OpenHarmony生态测试套件的集合，当前包括ACTS（application compatibility test suite）应用兼容性测试组件，后续将拓展DCTS（distributed compatibility test suite）分布式兼容性测试组件、HATS（hardware abstract test suite) 硬件抽象层兼容性测试组件。
 
-XTS子系统当前包括ACTS 与Tools 软件包：
-
--   ACTS，存放ACTS 相关测试案例源码与配置文件，其目的是帮助终端设备制造商尽早发现软件与OpenHarmony的不兼容问题，确保软件在整个开发周期内符合OpenHarmony的兼容性标准。
--   Tools，存放ACTS 相关测试案例开发框架。
-
 ## 系统类型<a name="section125090457443"></a>
 
 OpenHarmony支持如下几种系统类型：
@@ -39,18 +34,11 @@ OpenHarmony支持如下几种系统类型：
 
 ```
 /test/xts
-├── acts                # 测试代码存放目录
-│   └── subsystem       # 标准系统子系统测试用例源码存放目录
-│   └── subsystem_lite  # 轻量系统、小型系统子系统测试用例源码存放目录
-│   └── BUILD.gn        # 标准系统测试用例编译配置
-│   └── build_lite      # 轻量系统、小型系统测试用例编译配置存放目录
-│       └── BUILD.gn    # 轻量系统、小型系统测试用例编译配置
-└── tools               # 测试工具代码存放目录
+├── acts_cangjie           # 测试代码存放目录
+│ └── subsystem       # 标准系统子系统测试用例源码存放目录
+│ └── tools               # 测试工具代码存放目录
+│ │ └── build.py            # 标准系统测试用例构建
 ```
-
-## 约束<a name="section119744591305"></a>
-
-轻量系统用例开发语言是C，小型系统用例开发语言是C++。
 
 ## 使用说明<a name="section137768191623"></a>
 
@@ -286,7 +274,6 @@ OpenHarmony支持如下几种系统类型：
 1. 规范用例目录：测试用例存储到 src/ohosTest/cangjie目录。
 
    ```
-   ├── BUILD.gn                     # 配置文件
    ├── signature
    │ └──openharmony_sx.p7b          # 签名工具
    ├── AppScope
@@ -396,10 +383,10 @@ OpenHarmony支持如下几种系统类型：
     ```
 
 ### 全量编译指导（适用于标准系统）<a name="section159801435165220"></a>
-环境配置(windows/linux)：配置hvigorw、CangjiePath环境变量
+环境配置(windows/linux)：配置hvigorw、cangjieSDK环境变量
 
 1.  全量编译
-    test/xts/acts目录下执行编译命令：
+    test/xts/acts_cangjie/tools目录下执行编译命令：
 
     ```
     python ./build.py build --all
@@ -407,7 +394,7 @@ OpenHarmony支持如下几种系统类型：
 
 2.  单个子系统编译
 
-    test/xts/acts目录下执行编译命令：
+    test/xts/acts_cangjie/tools目录下执行编译命令：
 
     ```
     python ./build.py build --dir=xxx/xxx/xxx
@@ -415,7 +402,7 @@ OpenHarmony支持如下几种系统类型：
 
 3.  单模块编译
 
-    test/xts/acts目录下执行编译命令：
+    test/xts/acts_cangjie/tools目录下执行编译命令：
 
     ```
     python ./build.py build --dir=xxx/xxx/xxx
@@ -444,19 +431,19 @@ pip install setuptools==50.0.0
     │ └──xxx.hap                       # 测试套可执行hap文件
     │ └──xxx.json                      # 测试套对应执行配置文件
     ├── tools                          # 测试框架工具目录
-    ├── run.bat                        # window平台测试套启动执行文件
+    │ └── run.py                        # window平台测试套启动执行文件
     ├── reports                        # 测试报告生成目录
 
 用例执行
-1.  在Windows工作台上，找到从Linux服务器上拷贝下来的测试套件用例目录，在Windows命令窗口进入对应目录，直接执行acts\run.bat。
+1.  在Windows工作台上，找到从Linux服务器上拷贝下来的测试套件用例目录，在Windows命令窗口进入对应目录，直接执行acts_cangjie\tools\run.py。
 
 2.  界面启动后，输入用例执行指令。
 
     全量执行：```run acts ```
 
-    模块执行(具体模块可以查看\acts\testcases\)：```run –l ActsSamgrTest ```
+    模块执行(具体模块可以查看\acts_cangjie\testcases\)：```run –l ActsSamgrTest ```
 
-    单包执行(具体模块可以查看\acts\testcases\)：（适用于OH驱动）
+    单包执行(具体模块可以查看\acts_cangjie\testcases\)：（适用于OH驱动）
 
     ```
     run -l uitestActs -ta class:UiTestCase#testChecked  
