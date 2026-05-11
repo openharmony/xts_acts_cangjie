@@ -1,0 +1,44 @@
+{
+  "boolean": [
+    {
+      "name": "test_boolean1",
+      "value": true
+    },
+    {
+      "name": "test_boolean0",
+      "value": false
+    },
+    {
+      "name": "boolean_3",
+      "value": "$boolean:boolean_4"
+    },
+    {
+      "name": "boolean_4",
+      "value": "$boolean:boolean_3"
+    },
+    {
+      "name": "boolean_long_chain_of_references_00",
+      "value": "$boolean:boolean_long_chain_of_references_01"
+    },
+    {
+      "name": "boolean_long_chain_of_references_01",
+      "value": "$boolean:boolean_long_chain_of_references_02"
+    },
+    {
+      "name": "boolean_long_chain_of_references_02",
+      "value": false
+    },
+    {
+      "name": "boolean_circular_dependency_00",
+      "value": "$boolean:boolean_circular_dependency_01"
+    },
+    {
+      "name": "boolean_circular_dependency_01",
+      "value": "$boolean:boolean_circular_dependency_02"
+    },
+    {
+      "name": "boolean_circular_dependency_02",
+      "value": "$boolean:boolean_circular_dependency_00"
+    }
+  ]
+}

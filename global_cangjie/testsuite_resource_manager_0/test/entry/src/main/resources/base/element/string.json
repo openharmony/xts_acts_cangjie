@@ -1,0 +1,28 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "Test_Format1",
+      "value": "int is %d"
+    },
+    {
+      "name": "Test_Format2",
+      "value": "float is %f"
+    },
+    {
+      "name": "Test_Format3",
+      "value": "string is %s"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    }
+  ]
+}

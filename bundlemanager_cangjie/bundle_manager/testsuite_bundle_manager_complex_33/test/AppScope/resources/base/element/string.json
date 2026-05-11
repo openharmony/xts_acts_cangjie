@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "MyApplication00"
+    },
+    {
+      "name": "application_description",
+      "value": "description for this application"
+    }
+  ]
+}

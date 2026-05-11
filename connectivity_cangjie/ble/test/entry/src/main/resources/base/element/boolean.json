@@ -1,0 +1,20 @@
+{
+  "boolean": [
+    {
+      "name": "test_boolean1",
+      "value": true
+    },
+    {
+      "name": "test_boolean0",
+      "value": false
+    },
+    {
+      "name": "boolean_3",
+      "value": "$boolean:boolean_4"
+    },
+    {
+      "name": "boolean_4",
+      "value": "$boolean:boolean_3"
+    }
+  ]
+}
