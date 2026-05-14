@@ -43,7 +43,7 @@ class testRandomGenerateRandom_1 {
         Hilog.info(0u32, "CangjieTest", "generateRandom fail")
         try {
             rand.generateRandom(-1i32)
-            @Expect("assertion#6: not throw", "generateRandom fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error.")
         }
@@ -67,7 +67,7 @@ class testRandomGenerateRandom_1 {
         Hilog.info(0u32, "CangjieTest", "generateRandom fail")
         try {
             rand.generateRandom(0i32)
-            @Expect("assertion#7: not throw", "generateRandom fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error.")
         }

@@ -54,14 +54,12 @@ class GridItem_init_test {
     @Tag[APILevel22, TestLevel0]
     func TestCase_1(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_1 begins.")
-        //验证 init(() -> Unit)
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("text_0")["content"], "\"N0\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("GridItem1_0")["id"], "\"GridItem1_0\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("text_1")["content"], "\"N1\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("GridItem1_1")["id"], "\"GridItem1_1\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("text_2")["content"], "\"N2\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("GridItem1_2")["id"], "\"GridItem1_2\"")
-        //验证 init()
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("GridItem2_0")["id"], "\"GridItem2_0\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("GridItem2_1")["id"], "\"GridItem2_1\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("GridItem2_2")["id"], "\"GridItem2_2\"")

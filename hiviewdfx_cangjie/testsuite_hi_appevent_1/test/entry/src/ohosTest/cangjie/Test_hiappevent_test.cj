@@ -82,6 +82,7 @@ class Test_hiappevent {
             Hilog.info(0, "test_hiAppEvent_addWatcher_01", "Test_hiappevent_write_pass")
             sleepFor(1.second)
             HiAppEvent.removeWatcher(watcher)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -138,6 +139,7 @@ class Test_hiappevent {
             var appInfo_01: AppEventInfo = AppEventInfo("cangjie_2", "test_event_02", EventType.Fault, params_01)
             HiAppEvent.write(appInfo_01)
             HiAppEvent.removeWatcher(watcher)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -159,6 +161,7 @@ class Test_hiappevent {
                 [("int_data", IntValue(100)), ("str_data", EventValueType.StringValue("strValue"))])
             var appInfo: AppEventInfo = AppEventInfo("test_domain", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -188,6 +191,7 @@ class Test_hiappevent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("test_domain", "test_event", EventType.Statistic, params)
             HiAppEvent.write(appInfo)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -209,6 +213,7 @@ class Test_hiappevent {
                 [("int_data", IntValue(100)), ("str_data", EventValueType.StringValue("strValue"))])
             var appInfo: AppEventInfo = AppEventInfo("test_domain", "test_event", EventType.Security, params)
             HiAppEvent.write(appInfo)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -230,6 +235,7 @@ class Test_hiappevent {
                 [("int_data", IntValue(100)), ("str_data", EventValueType.StringValue("strValue"))])
             var appInfo: AppEventInfo = AppEventInfo("test_domain", "test_event", EventType.Behavior, params)
             HiAppEvent.write(appInfo)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -272,6 +278,7 @@ class Test_hiappevent {
         try {
             var config: ConfigOption = ConfigOption(maxStorage: "100M", disable: false)
             HiAppEvent.configure(config)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -291,6 +298,7 @@ class Test_hiappevent {
         try {
             var config: ConfigOption = ConfigOption(maxStorage: "100M", disable: true)
             HiAppEvent.configure(config)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -330,6 +338,7 @@ class Test_hiappevent {
     func test_hiAppEvent_clearData() {
         try {
             HiAppEvent.clearData()
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -348,6 +357,7 @@ class Test_hiappevent {
     func test_hiAppEvent_setUserId() {
         try {
             HiAppEvent.setUserId("test_userID_name", "test_userID_value")
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -387,6 +397,7 @@ class Test_hiappevent {
             HiAppEvent.setUserId("test_getUserId_name", "test_getUserId_value")
             let userIdName = HiAppEvent.getUserId("test_getUserId_name")
             Hilog.info(0, "HiAppEvent", "HiAppEvent::test_getUserId is ${userIdName}")
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -488,6 +499,7 @@ class Test_hiappevent {
     func test_hiAppEvent_AppEventReportConfig() {
         try {
             let appEventReportConfig: AppEventReportConfig = AppEventReportConfig()
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -508,6 +520,7 @@ class Test_hiappevent {
             var params: HashMap<String, EventValueType> = HashMap<String, EventValueType>(
                 [("int_data", IntValue(100)), ("str_data", EventValueType.StringValue("strValue"))])
             var appInfo: AppEventInfo = AppEventInfo("test_domain", "test_event", EventType.Statistic, params)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -574,6 +587,7 @@ class Test_hiappevent {
                 holder.setSize(2)
                 holder.takeNext()
             }
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }

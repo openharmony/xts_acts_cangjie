@@ -43,7 +43,6 @@ class testFileIo_truncate_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             FileIo.truncate(fpath)
             let size = FileIo.stat(fpath).size
@@ -72,7 +71,6 @@ class testFileIo_truncate_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
             let res = file.fd is Int32
@@ -100,7 +98,6 @@ class testFileIo_truncate_1 {
     @Tag[APILevel22, TestLevel0]
     func test_truncate_03() {
         let fpath = "/data/storage/el2/base/files/test_truncate_03"
-
         try {
             FileIo.truncate(fpath)
             @Expect(false)
@@ -149,7 +146,6 @@ class testFileIo_truncate_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             FileIo.truncate(fpath, len: -1)
             @Expect(false)
@@ -179,7 +175,6 @@ class testFileIo_truncate_1 {
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         var truncateFile: ?File = None
-
         try {
             truncateFile = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
             if (let Some(file) <- truncateFile) {
@@ -214,7 +209,6 @@ class testFileIo_truncate_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
             let res = file.fd is Int32

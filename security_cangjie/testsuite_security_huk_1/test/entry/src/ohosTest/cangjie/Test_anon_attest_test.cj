@@ -50,13 +50,9 @@ class Test_SecurityHuks_AnonAttest {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_rsa_anno() {
-        //ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-key-anon-attestation-arkts.md
-        //ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-key-anon-attestation-ndk.md
         let keyAlias = "test_rsa_anno"
         clean(keyAlias)
-
         try {
-            // generate key
             generateKeyItem(
                 keyAlias,
                 HuksOptions(
@@ -70,7 +66,6 @@ class Test_SecurityHuks_AnonAttest {
                     ]
                 )
             )
-
             let challenge = "hi_challenge_data"
             let chains = anonAttestKeyItem(
                 keyAlias,
@@ -80,7 +75,6 @@ class Test_SecurityHuks_AnonAttest {
                         HuksParam(HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, HuksParamValue.BytesValue(keyAlias.toArray()))]
                 )
             )
-
             @Expect(!chains.isEmpty())
             for (i in 0..chains.size) {
                 @Expect(!chains[i].isEmpty())
@@ -107,6 +101,7 @@ class Test_SecurityHuks_AnonAttest {
         try {
             let challenge = "hi_challenge_data"
             let chains = anonAttestKeyItem(keyAlias, HuksOptionsTest)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -129,6 +124,7 @@ class Test_SecurityHuks_AnonAttest {
         var flag = false
         try {
             let chains = anonAttestKeyItem(keyAlias, HuksOptionsTest)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {

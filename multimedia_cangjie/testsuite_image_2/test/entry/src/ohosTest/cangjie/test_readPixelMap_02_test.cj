@@ -39,7 +39,6 @@ class Test_readPixelMap_02 {
         var color: Array<UInt8> = Array<UInt8>(96) {index: Int64 => UInt8(index + 1)}
         var read_color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Bgra8888)
-
         globalPixelMap = createPixelMap(color, opts)
         globalPixelMap.readPixelsToBuffer(read_color)
         @Expect(read_color.toString(), Read_Buf.toString())
@@ -60,7 +59,6 @@ class Test_readPixelMap_02 {
         var color: Array<UInt8> = Array<UInt8>(96) {index: Int64 => UInt8(index + 1)}
         var read_color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Bgra8888)
-
         globalPixelMap = createPixelMap(color, opts)
         globalPixelMap.readPixelsToBuffer(read_color)
         @Expect(read_color.toString(), Read_Buf2.toString())
@@ -103,7 +101,6 @@ class Test_readPixelMap_02 {
         var read_color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         let area = PositionArea(Array<UInt8>(8, repeat: 0), 0, 8, Region(Size(1, 2), -1, -1))
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.readPixels(area)
@@ -129,7 +126,6 @@ class Test_readPixelMap_02 {
         var read_color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         let area = PositionArea(Array<UInt8>(0, repeat: 0), 0, 8, Region(Size(1, 2), 0, 0))
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.readPixels(area)
@@ -155,7 +151,6 @@ class Test_readPixelMap_02 {
         var read_color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         let area = PositionArea(Array<UInt8>(20, repeat: 0), 21, 8, Region(Size(1, 2), 0, 0))
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.readPixels(area)
@@ -181,7 +176,6 @@ class Test_readPixelMap_02 {
         var read_color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         let area = PositionArea(Array<UInt8>(20, repeat: 0), 0, 8, Region(Size(-1, -2), 0, 0))
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.readPixels(area)
@@ -208,7 +202,6 @@ class Test_readPixelMap_02 {
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         let area = PositionArea(Array<UInt8>(8) {index: Int64 => UInt8(index + 1)}, 0, 8, Region(Size(1, 2), 0, 0))
         let read_area = PositionArea(read_arr, 0, 8, Region(Size(1, 2), 0, 0))
-
         globalPixelMap = createPixelMap(color, opts)
         globalPixelMap.writePixels(area)
         globalPixelMap.readPixels(read_area)
@@ -231,7 +224,6 @@ class Test_readPixelMap_02 {
         var read_arr: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         let write_color = Array<UInt8>(96) {index: Int64 => UInt8(index + 1)}
-
         globalPixelMap = createPixelMap(color, opts)
         globalPixelMap.writeBufferToPixels(write_color)
         globalPixelMap.readPixelsToBuffer(read_arr)
@@ -254,7 +246,6 @@ class Test_readPixelMap_02 {
         var read_arr: Array<UInt8> = Array<UInt8>(96, repeat: 1)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         let write_color = Array<UInt8>(96, repeat: 0)
-
         globalPixelMap = createPixelMap(color, opts)
         globalPixelMap.writeBufferToPixels(write_color)
         globalPixelMap.readPixelsToBuffer(read_arr)

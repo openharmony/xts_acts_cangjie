@@ -42,6 +42,7 @@ class TestDeletePreferencesByNameFailDueToInvalidName_1 {
         Hilog.info(0, "cangjietest","fail to delete preferences.")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences deletePreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -64,6 +65,7 @@ class TestDeletePreferencesByNameFailDueToInvalidName_1 {
         Hilog.info(0, "cangjietest","fail to delete preferences.")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "\0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences deletePreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -86,6 +88,7 @@ class TestDeletePreferencesByNameFailDueToInvalidName_1 {
         Hilog.info(0, "cangjietest","delete preferences successfully.")
         try{
             Preferences.deletePreferences(Global.getAbilityContext(), "x" * 10000)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences deletePreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)

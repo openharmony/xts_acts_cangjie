@@ -53,6 +53,7 @@ class TestJSValue {
             let isMismatch = try {
                 await(jsContext) {value.toString()}
                 false
+                @Expect(false)
             } catch (exe: BusinessException) {
                 true
             }
@@ -242,9 +243,7 @@ class TestJSValue {
             let value = await(jsContext) {source.toJSValue()}
             @Expect(await(jsContext){value.isObject()})
             @Expect(await(jsContext){value.typeof()} == JSType.OBJECT)
-
             await(jsContext) {value.asObject()}
-
             await(jsContext) {
                 value.setProperty("a", jsContext.number(1.0).toJSValue())
             }
@@ -257,7 +256,6 @@ class TestJSValue {
             let receivedValue1 = await(jsContext) {value.getProperty("b")}
             @Expect(await(jsContext){receivedValue1.isNumber()})
             @Expect(await(jsContext){receivedValue1.toNumber()}, 2.0)
-
             let myData = MyObject()
             await(jsContext) {value.bindObject(myData)}
             await(jsContext) {

@@ -43,6 +43,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(-1i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -66,6 +67,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(-10i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -89,6 +91,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(-100i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -184,6 +187,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(0i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -207,6 +211,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(1i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_8 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -230,6 +235,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(-1i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_14 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -253,6 +259,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(-10i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_15 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -276,6 +283,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(-100i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_16 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -299,6 +307,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(-1000i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_17 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -322,6 +331,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(-10000i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_18 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -345,6 +355,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(-100000i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_19 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -368,6 +379,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(0i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_20 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }
@@ -391,6 +403,7 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(1i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_21 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid size value.")
         }

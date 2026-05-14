@@ -72,7 +72,6 @@ class Test_image {
         } else {
             @Expect(supportedFormats.toString(), "[image/gif, image/jpeg, image/png, image/webp]")
         }
-
         unsafe {
             let format = "image/jpeg"
             let packingOption = PackingOption(format, 98)
@@ -140,7 +139,6 @@ class Test_image {
         let id = imageReceiver.getReceivingSurfaceId()
         @Expect(Int64.tryParse(id).isSome(), true)
         imageReceiver.release()
-
         try {
             imageReceiver = createImageReceiver(Size(8192, 8), ImageFormat.Ycbcr422Sp, 8)
             @Expect(imageReceiver.format, ImageFormat.Ycbcr422Sp)
@@ -166,22 +164,18 @@ class Test_image {
         let imageInfo = pixelMap.getImageInfo()
         @Expect(imageInfo.size.width, 6)
         @Expect(imageInfo.size.height, 4)
-        //        @Expect(imageInfo.density, 0)
         @Expect(pixelMap.getDensity(), 0)
         @Expect(pixelMap.getBytesNumberPerRow(),24)
         @Expect(pixelMap.getPixelBytesNumber(),96)
         var buffer = Array<UInt8>(96, repeat: 0)
         pixelMap.readPixelsToBuffer(buffer)
         @Expect(buffer, colors)
-
-        //from artks
         let buf1 = Array<UInt8>(8, {i => UInt8(i + 1)})
         var area = PositionArea(buf1, 0, 8, Region(Size(1, 2), 0, 0))
         pixelMap.writePixels(area)
         let buf2 = Array<UInt8>(8, repeat: 0)
         area = PositionArea(buf2, 0, 8, Region(Size(1, 2), 0, 0))
         pixelMap.readPixels(area)
-
         buffer = Array<UInt8>(96, {i => UInt8(i)})
         pixelMap.writeBufferToPixels(buffer)
         pixelMap.release()
@@ -246,8 +240,6 @@ class Test_image {
         Hilog.error(0, "cangjietest", "ohos density is ${imageInfo.density}")
         @Expect(imageInfo.size.width, 200)
         @Expect(imageInfo.size.height, 200)
-        //        @Expect(imageInfo.density, 0)
-
         pMap.opacity(0.5f32)
         pMap.scale(2.0f32, 1.0f32)
         pMap.scale(2.0f32, 1.0f32)
@@ -275,6 +267,7 @@ class Test_image {
     func test_ImageSource_04(): Unit {
         try {
             let imgSource = createImageSource("data/storage/el1/base/EXIF.jpg", sourceOption)
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "cangjietest", "imagetest", "${e}")
         }
@@ -293,6 +286,7 @@ class Test_image {
     func test_Exception_04(): Unit {
         try {
             createImageSource("", sourceOption)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
         }
@@ -324,7 +318,6 @@ class Test_image {
         @Expect(GpsLatitude.toString(), "GPSLatitude")
         @Expect(GpsLongitudeRef.toString(), "GPSLongitudeRef")
         @Expect(GpsLongitude.toString(), "GPSLongitude")
-
         @Expect(GpsTimestamp.toString(), "GPSTimeStamp")
         @Expect(GpsDateStamp.toString(), "GPSDateStamp")
         @Expect(IsoSpeedRatings.toString(), "ISOSpeedRatings")
@@ -410,6 +403,7 @@ class Test_image {
             pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize)
         try {
             let srcPixelmap = createPixelMap(color, opts)
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "cangjietest", "imagetest", "test_createPremultipliedPixelMap_error is ${e}")
         }

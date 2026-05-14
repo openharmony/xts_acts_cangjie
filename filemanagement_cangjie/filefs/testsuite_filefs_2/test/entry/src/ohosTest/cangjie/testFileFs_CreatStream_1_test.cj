@@ -43,7 +43,6 @@ class testFileFs_CreatStream_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let stream = FileIo.createStream(fpath, "r+")
         let buf = Array<Byte>(4096, repeat: 0)
         let num = stream.read(buf)
@@ -68,7 +67,6 @@ class testFileFs_CreatStream_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let stream = FileIo.createStream(fpath, "r")
         let buf = Array<Byte>(4096, repeat: 0)
         let num = stream.read(buf)
@@ -93,7 +91,6 @@ class testFileFs_CreatStream_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let stream = FileIo.createStream(fpath, "w+")
         let buf = Array<Byte>(4096, repeat: 0)
         let num = stream.read(buf)
@@ -145,7 +142,6 @@ class testFileFs_CreatStream_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         try {
         let stream = FileIo.createStream(fpath, "a")
         let buf = Array<Byte>(4096, repeat: 0)
@@ -173,7 +169,6 @@ class testFileFs_CreatStream_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let stream = FileIo.createStream(fpath, "a+")
         let buf = Array<Byte>(4096, repeat: 0)
         let num = stream.read(buf)
@@ -198,7 +193,6 @@ class testFileFs_CreatStream_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let stream = FileIo.createStream(fpath, "a+")
         let buf = Array<Byte>(4096, repeat: 0)
         let num = stream.write(buf)
@@ -226,7 +220,6 @@ class testFileFs_CreatStream_1 {
         }catch(e: BusinessException){
             @Expect(e.code, 13900012)
         }
-
     }
 
     /**
@@ -249,7 +242,6 @@ class testFileFs_CreatStream_1 {
         }catch(e: BusinessException){
             @Expect(e.code, 13900002)
         }
-
     }
 
     /**
@@ -271,7 +263,6 @@ class testFileFs_CreatStream_1 {
         }catch(e: BusinessException){
             @Expect(e.code, 13900002)
         }
-
     }
 
     /**
@@ -293,7 +284,6 @@ class testFileFs_CreatStream_1 {
         }catch(e: BusinessException){
             @Expect(e.code, 13900002)
         }
-
     }
 
     /**
@@ -315,7 +305,6 @@ class testFileFs_CreatStream_1 {
         }catch(e: BusinessException){
             @Expect(e.code, 13900002)
         }
-
     }
 
     /**
@@ -337,7 +326,6 @@ class testFileFs_CreatStream_1 {
         }catch(e: BusinessException){
             @Expect(e.code, 13900002)
         }
-
     }
 
 }

@@ -46,6 +46,7 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 1i32), 0i32, 0i32
             ))
             pixelMap.readPixels(areaVar)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -73,8 +74,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(32i64, repeat: 0u8), 5u32, 10u32, Region(Size(2i32, 1i32), 5i32,
                 0i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#1: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -103,8 +104,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 10u32, 12u32,
                 Region(Size(3i32, 1i32), 10i32, 0i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#2: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -133,8 +134,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(2i32, 1i32), 0i32, 2i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#3: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -163,8 +164,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 1i32), 5i32, 2i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#4: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -193,8 +194,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 2i32), 10i32,
                 2i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#5: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -223,8 +224,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(3i32, 1i32), 0i32, 4i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#6: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -253,8 +254,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 2i32), 5i32, 4i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#7: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -283,8 +284,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 1i32), 10i32,
                 4i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#8: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -313,8 +314,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 2i32), 0i32, 0i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#9: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -343,8 +344,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(2i32, 2i32), 0i32, 0i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#10: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -373,8 +374,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(3i32, 2i32), 0i32, 0i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#11: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -403,8 +404,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 3i32), 0i32, 0i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#12: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -433,8 +434,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(2i32, 3i32), 0i32, 0i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#13: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -463,8 +464,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(3i32, 3i32), 0i32, 0i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#14: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -493,8 +494,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(3i32, 1i32), 5i32, 2i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#15: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -523,8 +524,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(2i32, 2i32), 5i32, 2i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#16: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -553,8 +554,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(3i32, 2i32), 5i32, 2i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#17: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -583,8 +584,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 3i32), 5i32, 2i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#18: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -613,8 +614,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(2i32, 3i32), 5i32, 2i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#19: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -643,8 +644,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(3i32, 3i32), 5i32, 2i32
             ))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#20: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -673,8 +674,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(2i32, 1i32), 10i32,
                 4i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#21: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -703,8 +704,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(2i32, 2i32), 10i32,
                 4i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#22: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -733,8 +734,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(3i32, 2i32), 10i32,
                 4i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#23: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -763,8 +764,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 3i32), 10i32,
                 4i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#24: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -793,8 +794,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(2i32, 3i32), 10i32,
                 4i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#25: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -823,8 +824,8 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(3i32, 3i32), 10i32,
                 4i32))
             pixelMap.readPixels(areaVar)
-            @Assert(true)
-            @Expect("assertion#26: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)

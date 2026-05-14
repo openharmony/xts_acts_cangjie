@@ -64,6 +64,7 @@ class TestJSContext {
         var err0 = false
         try {
             await(jsContext) {jsContext.arrayBuffer(0)}
+            @Expect(false)
         } catch (e: Exception) {
             err0 = true
         }

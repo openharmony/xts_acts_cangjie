@@ -48,7 +48,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(1u32)
-            @Expect("assertion#1756: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -71,7 +71,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(0u32)
-            @Expect("assertion#1757: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -95,7 +95,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(UInt32.Min)
-            @Expect("assertion#1759: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -118,7 +118,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(UInt32.Max)
-            @Expect("assertion#1760: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -141,7 +141,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.string.module_desc).id)
-            @Expect("assertion#1761: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -161,7 +161,7 @@ class TestGetStringArrayValueByResId_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_7(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 begins.")
-        @Assert(getResourceManager().getStringArrayValue(@r(app.strarray.sizelist).id).toString(), "[small, middle, large, extra large]")
+        @Expect(getResourceManager().getStringArrayValue(@r(app.strarray.sizelist).id).toString(), "[small, middle, large, extra large]")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 ends.")
     }
 
@@ -180,7 +180,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.plural.plural_name).id)
-            @Expect("assertion#1762: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -203,7 +203,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.string.Test_Format1).id)
-            @Expect("assertion#1763: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -226,7 +226,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.string.Test_Format2).id)
-            @Expect("assertion#1764: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -249,7 +249,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.string.Test_Format3).id)
-            @Expect("assertion#1765: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -272,7 +272,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.string.EntryAbility_desc).id)
-            @Expect("assertion#1766: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -295,7 +295,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.media.layered_image).id)
-            @Expect("assertion#1767: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -318,7 +318,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.string.EntryAbility_label).id)
-            @Expect("assertion#1768: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -341,7 +341,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.media.startIcon).id)
-            @Expect("assertion#1769: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -364,7 +364,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.profile.main_pages).id)
-            @Expect("assertion#1770: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -387,7 +387,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.color.start_window_background).id)
-            @Expect("assertion#1771: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -410,7 +410,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.float.float_1).id)
-            @Expect("assertion#1772: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -433,7 +433,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.float.float_2).id)
-            @Expect("assertion#1773: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -456,7 +456,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.integer.int_1).id)
-            @Expect("assertion#1774: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -479,7 +479,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.integer.int_2).id)
-            @Expect("assertion#1775: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -502,7 +502,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.boolean.test_boolean1).id)
-            @Expect("assertion#1776: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -525,7 +525,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.boolean.test_boolean0).id)
-            @Expect("assertion#1777: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -548,7 +548,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.boolean.boolean_3).id)
-            @Expect("assertion#1778: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -571,7 +571,7 @@ class TestGetStringArrayValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get strArrayValue.")
         try {
             getResourceManager().getStringArrayValue(@r(app.boolean.boolean_4).id)
-            @Expect("assertion#1779: not throw", "fail to get strArrayValue.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)

@@ -41,7 +41,7 @@ Hilog.info(0, "cangjietest", "testcase TestCase_0 begins.")
 Hilog.info(0, "cangjietest", "requestSuspendDelay reason failed")
 try{
 let colorSpaceManagerInstance = create(ColorSpace.Unknown)
-@Expect("assertion#0: not throw", "requestSuspendDelay reason failed")
+@Expect(false)
 }catch(e: BusinessException){
 @Expect(true)
 }
@@ -148,7 +148,7 @@ Hilog.info(0, "cangjietest", "testcase TestCase_5 begins.")
 Hilog.info(0, "cangjietest", "requestSuspendDelay reason failed")
 try{
 let colorSpaceManagerInstance = create(ColorSpace.Custom)
-@Expect("assertion#1: not throw", "requestSuspendDelay reason failed")
+@Expect(false)
 }catch(e: BusinessException){
 @Expect(true)
 }

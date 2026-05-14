@@ -51,7 +51,7 @@ class TestSensorGetSensorList {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_GetSensorList_BasicFunction_Success(): Unit {
-        sleepFor(1.second) // wait for sensor init
+        sleepFor(1.second)
         let sensors = getSensorList()
         @Expect(sensors.size > 0)
     }
@@ -69,6 +69,7 @@ class TestSensorGetSensorList {
     func test_GetSingleSensor_NotSupportSensor_ThrowException(): Unit {
         try {
             getSingleSensor(SensorId.Gravity)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14500102)
         }

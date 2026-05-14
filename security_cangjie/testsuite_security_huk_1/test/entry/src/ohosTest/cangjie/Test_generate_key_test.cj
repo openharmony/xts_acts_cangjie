@@ -55,6 +55,7 @@ class Test_SecurityHuks_GenerateKey {
         try {
             let options = genKeyOptionsTest1
             generateKeyItem(keyAlias, options)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -78,6 +79,7 @@ class Test_SecurityHuks_GenerateKey {
         try {
             let options = genKeyOptionsTest1
             generateKeyItem(keyAlias, options)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {

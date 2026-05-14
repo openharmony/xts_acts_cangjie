@@ -41,6 +41,7 @@ class Test_creatCipher_05 {
     func test_creatcipher_01(): Unit {
         try {
             createCipher("PKCS11")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported.")
@@ -60,6 +61,7 @@ class Test_creatCipher_05 {
     func test_creatcipher_02(): Unit {
         try {
             createCipher("")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported.")
@@ -79,6 +81,7 @@ class Test_creatCipher_05 {
     func test_creatcipher_03(): Unit {
         try {
             createCipher("\0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported.")
@@ -98,6 +101,7 @@ class Test_creatCipher_05 {
     func test_creatcipher_04(): Unit {
         try {
             createCipher("#$%abc345")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported.")

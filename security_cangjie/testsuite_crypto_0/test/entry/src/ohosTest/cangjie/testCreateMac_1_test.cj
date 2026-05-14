@@ -41,7 +41,7 @@ class testCreateMac_1 {
         Hilog.info(0u32, "CangjieTest", "createMac fail")
         try {
             createMac("errorString")
-            @Expect("assertion#2: not throw", "createMac fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error.")
         }
@@ -80,7 +80,7 @@ class testCreateMac_1 {
         Hilog.info(0u32, "CangjieTest", "createMac fail")
         try {
             createMac("")
-            @Expect("assertion#3: not throw", "createMac fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error.")
         }

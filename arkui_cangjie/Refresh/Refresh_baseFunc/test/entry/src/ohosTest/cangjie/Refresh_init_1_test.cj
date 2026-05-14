@@ -64,7 +64,6 @@ class Refresh_init_1_test {
         TestDriver.driver.waitForComponent(On().id("refresh"), 3000i32)
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("StatusText")["content"], "\"Inactive\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("OnRefreshText")["content"], "\"noRefresh\"")
-        //下滑操作
         let button:Component=TestDriver.driver.findComponent(On().id("Text_0")).getOrThrow()
         let drag:Component=TestDriver.driver.findComponent(On().id("Text_4")).getOrThrow()
         button.dragTo(drag)

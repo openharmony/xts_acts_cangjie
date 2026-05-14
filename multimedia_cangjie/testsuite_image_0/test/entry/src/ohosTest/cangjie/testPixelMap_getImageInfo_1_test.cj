@@ -44,8 +44,8 @@ class testPixelMap_getImageInfo_1 {
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
         Hilog.info(0, "cangjietest", "define local variable imageInfo")
         let imageInfo = pixelMap.getImageInfo()
-        @Assert(initOption.size.height, imageInfo.size.height)
-        @Assert(initOption.size.width, imageInfo.size.width)
+        @Expect(initOption.size.height, imageInfo.size.height)
+        @Expect(initOption.size.width, imageInfo.size.width)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -68,8 +68,8 @@ class testPixelMap_getImageInfo_1 {
         let pixelMap = createPixelMap(Array<UInt8>(32i64, repeat: 0u8), initOption)
         Hilog.info(0, "cangjietest", "define local variable imageInfo")
         let imageInfo = pixelMap.getImageInfo()
-        @Assert(initOption.size.height, imageInfo.size.height)
-        @Assert(initOption.size.width, imageInfo.size.width)
+        @Expect(initOption.size.height, imageInfo.size.height)
+        @Expect(initOption.size.width, imageInfo.size.width)
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
 
@@ -93,8 +93,8 @@ class testPixelMap_getImageInfo_1 {
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
         Hilog.info(0, "cangjietest", "define local variable imageInfo")
         let imageInfo = pixelMap.getImageInfo()
-        @Assert(initOption.size.height, imageInfo.size.height)
-        @Assert(initOption.size.width, imageInfo.size.width)
+        @Expect(initOption.size.height, imageInfo.size.height)
+        @Expect(initOption.size.width, imageInfo.size.width)
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -117,8 +117,8 @@ class testPixelMap_getImageInfo_1 {
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
         Hilog.info(0, "cangjietest", "define local variable imageInfo")
         let imageInfo = pixelMap.getImageInfo()
-        @Assert(initOption.size.height, imageInfo.size.height)
-        @Assert(initOption.size.width, imageInfo.size.width)
+        @Expect(initOption.size.height, imageInfo.size.height)
+        @Expect(initOption.size.width, imageInfo.size.width)
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -141,8 +141,8 @@ class testPixelMap_getImageInfo_1 {
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
         Hilog.info(0, "cangjietest", "define local variable imageInfo")
         let imageInfo = pixelMap.getImageInfo()
-        @Assert(initOption.size.height, imageInfo.size.height)
-        @Assert(initOption.size.width, imageInfo.size.width)
+        @Expect(initOption.size.height, imageInfo.size.height)
+        @Expect(initOption.size.width, imageInfo.size.width)
         Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
     }
 
@@ -165,8 +165,8 @@ class testPixelMap_getImageInfo_1 {
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
         Hilog.info(0, "cangjietest", "define local variable imageInfo")
         let imageInfo = pixelMap.getImageInfo()
-        @Assert(initOption.size.height, imageInfo.size.height)
-        @Assert(initOption.size.width, imageInfo.size.width)
+        @Expect(initOption.size.height, imageInfo.size.height)
+        @Expect(initOption.size.width, imageInfo.size.width)
         Hilog.info(0, "cangjietest", "testcase TestCase_6 ends.")
     }
 
@@ -189,8 +189,8 @@ class testPixelMap_getImageInfo_1 {
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
         Hilog.info(0, "cangjietest", "define local variable imageInfo")
         let imageInfo = pixelMap.getImageInfo()
-        @Assert(initOption.size.height, imageInfo.size.height)
-        @Assert(initOption.size.width, imageInfo.size.width)
+        @Expect(initOption.size.height, imageInfo.size.height)
+        @Expect(initOption.size.width, imageInfo.size.width)
         Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
     }
 
@@ -213,8 +213,8 @@ class testPixelMap_getImageInfo_1 {
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
         Hilog.info(0, "cangjietest", "define local variable imageInfo")
         let imageInfo = pixelMap.getImageInfo()
-        @Assert(initOption.size.height, imageInfo.size.height)
-        @Assert(initOption.size.width, imageInfo.size.width)
+        @Expect(initOption.size.height, imageInfo.size.height)
+        @Expect(initOption.size.width, imageInfo.size.width)
         Hilog.info(0, "cangjietest", "testcase TestCase_8 ends.")
     }
 
@@ -237,8 +237,8 @@ class testPixelMap_getImageInfo_1 {
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
         Hilog.info(0, "cangjietest", "define local variable imageInfo")
         let imageInfo = pixelMap.getImageInfo()
-        @Assert(initOption.size.height, imageInfo.size.height)
-        @Assert(initOption.size.width, imageInfo.size.width)
+        @Expect(initOption.size.height, imageInfo.size.height)
+        @Expect(initOption.size.width, imageInfo.size.width)
         Hilog.info(0, "cangjietest", "testcase TestCase_9 ends.")
     }
 }

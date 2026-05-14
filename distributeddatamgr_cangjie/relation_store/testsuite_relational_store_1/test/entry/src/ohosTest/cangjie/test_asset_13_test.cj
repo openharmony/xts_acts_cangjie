@@ -93,7 +93,6 @@ class Test_asset_13 {
         values.add("ASS", RelationalStoreValueType.AssetEnum(asset1))
         values.add("ASSS", RelationalStoreValueType.AssetsEnum([asset1, asset2]))
         rdbStore.insert("EMPLOYEE", values)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(2))
         values1.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
@@ -101,7 +100,6 @@ class Test_asset_13 {
         values1.add("ASS", RelationalStoreValueType.AssetEnum(asset2))
         values1.add("ASSS", RelationalStoreValueType.AssetsEnum([asset2, asset3, asset4]))
         rdbStore.insert("EMPLOYEE", values1)
-
         var values2 = HashMap<String, RelationalStoreValueType>()
         values2.add("ID", RelationalStoreValueType.Integer(3))
         values2.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
@@ -109,7 +107,6 @@ class Test_asset_13 {
         values2.add("ASS", RelationalStoreValueType.AssetEnum(asset3))
         values2.add("ASSS", RelationalStoreValueType.AssetsEnum([asset3, asset4, asset5, asset6, asset7]))
         rdbStore.insert("EMPLOYEE", values2)
-
         let predicates = RdbPredicates("EMPLOYEE")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "ARR", "ASS", "ASSS"])
         @Expect(resultSet.rowCount, 3)
@@ -155,7 +152,6 @@ class Test_asset_13 {
         values.add("ASS", RelationalStoreValueType.AssetEnum(asset1))
         values.add("ASSS", RelationalStoreValueType.AssetsEnum([asset1, asset2]))
         rdbStore.insert("EMPLOYEE", values)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(2))
         values1.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
@@ -163,7 +159,6 @@ class Test_asset_13 {
         values1.add("ASS", RelationalStoreValueType.AssetEnum(asset2))
         values1.add("ASSS", RelationalStoreValueType.AssetsEnum([asset2, asset3, asset4]))
         rdbStore.insert("EMPLOYEE", values1)
-
         var values2 = HashMap<String, RelationalStoreValueType>()
         values2.add("ID", RelationalStoreValueType.Integer(3))
         values2.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
@@ -171,7 +166,6 @@ class Test_asset_13 {
         values2.add("ASS", RelationalStoreValueType.AssetEnum(asset3))
         values2.add("ASSS", RelationalStoreValueType.AssetsEnum([asset3, asset4, asset5, asset6]))
         rdbStore.insert("EMPLOYEE", values2)
-
         let predicates = RdbPredicates("EMPLOYEE")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "ARR", "ASS", "ASSS"])
         @Expect(resultSet.rowCount, 3)
@@ -223,7 +217,6 @@ class Test_asset_13 {
         values.add("ASS", RelationalStoreValueType.AssetEnum(asset1))
         values.add("ASSS", RelationalStoreValueType.AssetsEnum([asset1, asset2]))
         rdbStore.insert("EMPLOYEE", values)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(2))
         values1.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
@@ -231,7 +224,6 @@ class Test_asset_13 {
         values1.add("ASS", RelationalStoreValueType.AssetEnum(asset2))
         values1.add("ASSS", RelationalStoreValueType.AssetsEnum([asset2, asset3, asset4]))
         rdbStore.insert("EMPLOYEE", values1)
-
         var values2 = HashMap<String, RelationalStoreValueType>()
         values2.add("ID", RelationalStoreValueType.Integer(3))
         values2.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
@@ -239,7 +231,6 @@ class Test_asset_13 {
         values2.add("ASS", RelationalStoreValueType.AssetEnum(asset3))
         values2.add("ASSS", RelationalStoreValueType.AssetsEnum([asset3, asset4, asset5, asset6, asset7]))
         rdbStore.insert("EMPLOYEE", values2)
-
         let predicates = RdbPredicates("EMPLOYEE")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "ARR", "ASS", "ASSS"])
         @Expect(resultSet.rowCount, 3)

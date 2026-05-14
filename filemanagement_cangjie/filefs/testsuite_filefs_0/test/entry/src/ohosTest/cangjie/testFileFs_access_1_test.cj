@@ -41,7 +41,7 @@ class testFileIo_access_1 {
         let fpath = "/data/storage/el2/base/files/test_access_02"
         FileIo.open(fpath, mode: OpenMode.CREATE)
         FileIo.access(fpath)
-        @Assert(FileIo.access(fpath), true)
+        @Expect(FileIo.access(fpath), true)
         Hilog.info(0, "cangjietest","testcase TestCase_2 ends.")
     }
 
@@ -61,7 +61,7 @@ class testFileIo_access_1 {
         let fpath = "/data/storage/el2/base/files/test_access_03"
         FileIo.open(fpath, mode: OpenMode.CREATE)
         FileIo.access(fpath)
-        @Assert(FileIo.access(fpath), true)
+        @Expect(FileIo.access(fpath), true)
         Hilog.info(0, "cangjietest","testcase TestCase_3 ends.")
     }
 }

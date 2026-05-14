@@ -69,7 +69,6 @@ class Test_device_info {
         let distributionOSVersion = DeviceInfo.distributionOSVersion
         let distributionOSApiVersion = DeviceInfo.distributionOSApiVersion
         let distributionOSReleaseType = DeviceInfo.distributionOSReleaseType
-
         Hilog.info(0, "device_test", "osFullName: ${osFullName}")
         Hilog.info(0, "device_test", "productModel: ${productModel}")
         Hilog.info(0, "device_test", "brand: ${brand}")
@@ -83,7 +82,6 @@ class Test_device_info {
         Hilog.info(0, "device_test", "versionId: ${versionId}")
         Hilog.info(0, "device_test", "firstApiVersion: ${firstApiVersion}")
         Hilog.info(0, "device_test", "sdkApiVersion: ${sdkApiVersion}")
-
         Hilog.info(0, "device_test", "majorVersion: ${majorVersion}")
         Hilog.info(0, "device_test", "displayVersion: ${displayVersion}")
         Hilog.info(0, "device_test", "serial: ${serial}")

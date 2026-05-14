@@ -42,7 +42,7 @@ class httpRequest_destroy_1 {
         let httpRequst = createHttp()
         Hilog.info(0, "cangjietest", "destroy")
         httpRequst.destroy()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 }

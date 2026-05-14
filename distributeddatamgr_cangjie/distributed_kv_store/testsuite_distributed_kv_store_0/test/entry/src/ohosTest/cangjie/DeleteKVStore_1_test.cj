@@ -60,7 +60,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("", "")
-            @Expect("assertion#2112: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -86,7 +86,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("\0", "")
-            @Expect("assertion#2113: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -112,7 +112,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("#$%^&", "")
-            @Expect("assertion#2114: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -138,7 +138,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("zpsABC", "")
-            @Expect("assertion#2115: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -164,7 +164,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("a" * 100000, "")
-            @Expect("assertion#2116: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -190,7 +190,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("", "\0")
-            @Expect("assertion#2117: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -216,7 +216,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("\0", "\0")
-            @Expect("assertion#2118: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -242,7 +242,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("#$%^&", "\0")
-            @Expect("assertion#2119: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -268,7 +268,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("zpsABC", "\0")
-            @Expect("assertion#2120: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -294,7 +294,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("a" * 100000, "\0")
-            @Expect("assertion#2121: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -320,7 +320,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("", "#$%^&")
-            @Expect("assertion#2122: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -346,7 +346,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("\0", "#$%^&")
-            @Expect("assertion#2123: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -372,7 +372,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("#$%^&", "#$%^&")
-            @Expect("assertion#2124: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -398,7 +398,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("zpsABC", "#$%^&")
-            @Expect("assertion#2125: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -424,7 +424,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("a" * 100000, "#$%^&")
-            @Expect("assertion#2126: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -450,7 +450,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("", "zpsABC")
-            @Expect("assertion#2127: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -476,7 +476,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("\0", "zpsABC")
-            @Expect("assertion#2128: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -502,7 +502,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("#$%^&", "zpsABC")
-            @Expect("assertion#2129: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Not found.")
             @Expect(e.code, 15100004i32)
@@ -529,7 +529,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("a" * 100000, "zpsABC")
-            @Expect("assertion#2130: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -555,7 +555,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("", "a" * 100000)
-            @Expect("assertion#2131: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -581,7 +581,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("\0", "a" * 100000)
-            @Expect("assertion#2132: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -607,7 +607,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("#$%^&", "a" * 100000)
-            @Expect("assertion#2133: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -633,7 +633,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("zpsABC", "a" * 100000)
-            @Expect("assertion#2134: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -659,7 +659,7 @@ class DeleteKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to delete kv store.")
         try {
             kvManager.deleteKVStore("a" * 100000, "a" * 100000)
-            @Expect("assertion#2135: not throw", "fail to delete kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager deleteKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)

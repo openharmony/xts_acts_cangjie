@@ -42,7 +42,7 @@ class TestOffCallback_1 {
         Hilog.info(0, "cangjietest","testcase TestCase_19 begins.")
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
-        @Assert(true, true)
+        @Expect(true, true)
         Hilog.info(0, "cangjietest","testcase TestCase_19 ends.")
     }
 }

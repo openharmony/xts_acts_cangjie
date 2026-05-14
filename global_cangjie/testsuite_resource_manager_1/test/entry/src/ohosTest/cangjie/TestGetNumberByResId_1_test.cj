@@ -47,7 +47,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(1u32)
-            @Expect("assertion#415: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -70,7 +70,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(0u32)
-            @Expect("assertion#416: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -93,7 +93,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(2u32)
-            @Expect("assertion#417: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -116,7 +116,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(UInt32.Min)
-            @Expect("assertion#418: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -139,7 +139,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(UInt32.Max)
-            @Expect("assertion#419: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -162,7 +162,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.string.module_desc).id)
-            @Expect("assertion#420: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -185,7 +185,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.strarray.sizelist).id)
-            @Expect("assertion#421: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -208,7 +208,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.plural.plural_name).id)
-            @Expect("assertion#422: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -231,7 +231,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.string.Test_Format1).id)
-            @Expect("assertion#423: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -254,7 +254,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.string.Test_Format2).id)
-            @Expect("assertion#424: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -277,7 +277,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.string.Test_Format3).id)
-            @Expect("assertion#425: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -300,7 +300,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.string.EntryAbility_desc).id)
-            @Expect("assertion#426: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -323,7 +323,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.media.layered_image).id)
-            @Expect("assertion#427: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -346,7 +346,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.string.EntryAbility_label).id)
-            @Expect("assertion#428: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -369,7 +369,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.media.startIcon).id)
-            @Expect("assertion#429: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -392,7 +392,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.profile.main_pages).id)
-            @Expect("assertion#430: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -415,7 +415,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.color.start_window_background).id)
-            @Expect("assertion#431: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -439,7 +439,7 @@ class TestGetNumberByResId_1 {
         if (let NumberValueType.Float32Value(value) <- getResourceManager().getNumber(@r(app.float.float_1).id)) {
             @Expect(value, 48.000000f32)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_18 ends.")
     }
@@ -460,7 +460,7 @@ class TestGetNumberByResId_1 {
         if (let NumberValueType.Float32Value(value) <- getResourceManager().getNumber(@r(app.float.float_2).id)) {
             @Expect(value, 24.000000f32)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 ends.")
     }
@@ -481,7 +481,7 @@ class TestGetNumberByResId_1 {
         if (let NumberValueType.Int32Value(value) <- getResourceManager().getNumber(@r(app.integer.int_1).id)) {
             @Expect(value, 1i32)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_20 ends.")
     }
@@ -502,7 +502,7 @@ class TestGetNumberByResId_1 {
         if (let NumberValueType.Int32Value(value) <- getResourceManager().getNumber(@r(app.integer.int_2).id)) {
             @Expect(value, 100i32)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 ends.")
     }
@@ -522,7 +522,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.boolean.test_boolean1).id)
-            @Expect("assertion#432: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -545,7 +545,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.boolean.test_boolean0).id)
-            @Expect("assertion#433: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -568,7 +568,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.boolean.boolean_3).id)
-            @Expect("assertion#434: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -591,7 +591,7 @@ class TestGetNumberByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number.")
         try {
             getResourceManager().getNumber(@r(app.boolean.boolean_4).id)
-            @Expect("assertion#435: not throw", "fail to get Number.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)

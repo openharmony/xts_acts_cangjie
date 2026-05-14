@@ -56,26 +56,12 @@ class Test_fileUri {
         @Expect(name, "test_fileUri.txt")
         let path = fUri.path
         @Expect(path, fPath)
-
-        // exception branch
         try {
             let fUri_exception = FileUri("")
             @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 13900020)
         }
-
-//        let uri = FileUri.getUriFromPath(fPath)
-//        @Expect(uri.startsWith("file://"))
-//        @Expect(uri.endsWith(fPath))
-
-        // exception branch
-//        try {
-//            let uri_exception = FileUri.getUriFromPath("")
-//            @Expect(false)
-//        } catch (e: BusinessException) {
-//            @Expect(e.code, 401)
-//        }
         Hilog.info(0, "cangjietest", "${fUri.toString()}")
     }
 }

@@ -45,7 +45,7 @@ class testWrite_1 {
                     HashMap(
                         [("key1", EventValueType.IntValue(-1i32)), ("key2", EventValueType.IntValue(-1i32)),
                             ("key3", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#0: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -72,6 +72,7 @@ class testWrite_1 {
                     HashMap(
                         [("key4", EventValueType.IntValue(-1i32)), ("key5", EventValueType.IntValue(-1i32)),
                             ("key6", EventValueType.IntValue(0i32))])))
+                            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -97,6 +98,7 @@ class testWrite_1 {
                     HashMap(
                         [("key7", EventValueType.IntValue(-1i32)), ("key8", EventValueType.IntValue(-1i32)),
                             ("key9", EventValueType.IntValue(1i32))])))
+                            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -122,7 +124,7 @@ class testWrite_1 {
                     HashMap(
                         [("key10", EventValueType.IntValue(-1i32)), ("key11", EventValueType.IntValue(-1i32)),
                             ("key12", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#1: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -149,7 +151,7 @@ class testWrite_1 {
                     HashMap(
                         [("key13", EventValueType.IntValue(-1i32)), ("key14", EventValueType.IntValue(-1i32)),
                             ("key15", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#2: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -176,7 +178,7 @@ class testWrite_1 {
                     HashMap(
                         [("key16", EventValueType.IntValue(-1i32)), ("key17", EventValueType.IntValue(-1i32)),
                             ("key18", EventValueType.BoolValue(true))])))
-            @Expect("assertion#3: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -203,7 +205,7 @@ class testWrite_1 {
                     HashMap(
                         [("key19", EventValueType.IntValue(-1i32)), ("key20", EventValueType.IntValue(-1i32)),
                             ("key21", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#4: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -230,7 +232,7 @@ class testWrite_1 {
                     HashMap(
                         [("key22", EventValueType.IntValue(-1i32)), ("key23", EventValueType.IntValue(0i32)),
                             ("key24", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#5: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -257,7 +259,7 @@ class testWrite_1 {
                     HashMap(
                         [("key25", EventValueType.IntValue(-1i32)), ("key26", EventValueType.IntValue(0i32)),
                             ("key27", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#6: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -284,7 +286,7 @@ class testWrite_1 {
                     HashMap(
                         [("key28", EventValueType.IntValue(-1i32)), ("key29", EventValueType.IntValue(0i32)),
                             ("key30", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#7: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -311,7 +313,7 @@ class testWrite_1 {
                     HashMap(
                         [("key31", EventValueType.IntValue(-1i32)), ("key32", EventValueType.IntValue(0i32)),
                             ("key33", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#8: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -338,7 +340,7 @@ class testWrite_1 {
                     HashMap(
                         [("key34", EventValueType.IntValue(-1i32)), ("key35", EventValueType.IntValue(0i32)),
                             ("key36", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#9: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -365,7 +367,7 @@ class testWrite_1 {
                     HashMap(
                         [("key37", EventValueType.IntValue(-1i32)), ("key38", EventValueType.IntValue(0i32)),
                             ("key39", EventValueType.BoolValue(true))])))
-            @Expect("assertion#10: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -392,7 +394,7 @@ class testWrite_1 {
                     HashMap(
                         [("key40", EventValueType.IntValue(-1i32)), ("key41", EventValueType.IntValue(0i32)),
                             ("key42", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#11: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -419,7 +421,7 @@ class testWrite_1 {
                     HashMap(
                         [("key43", EventValueType.IntValue(-1i32)), ("key44", EventValueType.IntValue(1i32)),
                             ("key45", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#12: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -446,7 +448,7 @@ class testWrite_1 {
                     HashMap(
                         [("key46", EventValueType.IntValue(-1i32)), ("key47", EventValueType.IntValue(1i32)),
                             ("key48", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#13: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -473,7 +475,7 @@ class testWrite_1 {
                     HashMap(
                         [("key49", EventValueType.IntValue(-1i32)), ("key50", EventValueType.IntValue(1i32)),
                             ("key51", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#14: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -500,7 +502,7 @@ class testWrite_1 {
                     HashMap(
                         [("key52", EventValueType.IntValue(-1i32)), ("key53", EventValueType.IntValue(1i32)),
                             ("key54", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#15: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -527,7 +529,7 @@ class testWrite_1 {
                     HashMap(
                         [("key55", EventValueType.IntValue(-1i32)), ("key56", EventValueType.IntValue(1i32)),
                             ("key57", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#16: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -554,7 +556,7 @@ class testWrite_1 {
                     HashMap(
                         [("key58", EventValueType.IntValue(-1i32)), ("key59", EventValueType.IntValue(1i32)),
                             ("key60", EventValueType.BoolValue(true))])))
-            @Expect("assertion#17: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -581,7 +583,7 @@ class testWrite_1 {
                     HashMap(
                         [("key61", EventValueType.IntValue(-1i32)), ("key62", EventValueType.IntValue(1i32)),
                             ("key63", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#18: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -608,7 +610,7 @@ class testWrite_1 {
                     HashMap(
                         [("key64", EventValueType.IntValue(-1i32)), ("key65", EventValueType.FloatValue(-1.000000f64)),
                             ("key66", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#19: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -635,7 +637,7 @@ class testWrite_1 {
                     HashMap(
                         [("key67", EventValueType.IntValue(-1i32)), ("key68", EventValueType.FloatValue(-1.000000f64)),
                             ("key69", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#20: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -662,7 +664,7 @@ class testWrite_1 {
                     HashMap(
                         [("key70", EventValueType.IntValue(-1i32)), ("key71", EventValueType.FloatValue(-1.000000f64)),
                             ("key72", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#21: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -689,7 +691,7 @@ class testWrite_1 {
                     HashMap(
                         [("key73", EventValueType.IntValue(-1i32)), ("key74", EventValueType.FloatValue(-1.000000f64)),
                             ("key75", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#22: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -716,7 +718,7 @@ class testWrite_1 {
                     HashMap(
                         [("key76", EventValueType.IntValue(-1i32)), ("key77", EventValueType.FloatValue(-1.000000f64)),
                             ("key78", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#23: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -743,7 +745,7 @@ class testWrite_1 {
                     HashMap(
                         [("key79", EventValueType.IntValue(-1i32)), ("key80", EventValueType.FloatValue(-1.000000f64)),
                             ("key81", EventValueType.BoolValue(true))])))
-            @Expect("assertion#24: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -770,7 +772,7 @@ class testWrite_1 {
                     HashMap(
                         [("key82", EventValueType.IntValue(-1i32)), ("key83", EventValueType.FloatValue(-1.000000f64)),
                             ("key84", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#25: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -797,7 +799,7 @@ class testWrite_1 {
                     HashMap(
                         [("key85", EventValueType.IntValue(-1i32)), ("key86", EventValueType.StringValue("hello world")),
                             ("key87", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#26: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -824,7 +826,7 @@ class testWrite_1 {
                     HashMap(
                         [("key88", EventValueType.IntValue(-1i32)), ("key89", EventValueType.StringValue("hello world")),
                             ("key90", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#27: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -851,7 +853,7 @@ class testWrite_1 {
                     HashMap(
                         [("key91", EventValueType.IntValue(-1i32)), ("key92", EventValueType.StringValue("hello world")),
                             ("key93", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#28: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -878,7 +880,7 @@ class testWrite_1 {
                     HashMap(
                         [("key94", EventValueType.IntValue(-1i32)), ("key95", EventValueType.StringValue("hello world")),
                             ("key96", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#29: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -905,7 +907,7 @@ class testWrite_1 {
                     HashMap(
                         [("key97", EventValueType.IntValue(-1i32)), ("key98", EventValueType.StringValue("hello world")),
                             ("key99", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#30: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -933,7 +935,7 @@ class testWrite_1 {
                         [("key100", EventValueType.IntValue(-1i32)),
                             ("key101", EventValueType.StringValue("hello world")),
                             ("key102", EventValueType.BoolValue(true))])))
-            @Expect("assertion#31: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -961,7 +963,7 @@ class testWrite_1 {
                         [("key103", EventValueType.IntValue(-1i32)),
                             ("key104", EventValueType.StringValue("hello world")),
                             ("key105", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#32: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -988,7 +990,7 @@ class testWrite_1 {
                     HashMap(
                         [("key106", EventValueType.IntValue(-1i32)), ("key107", EventValueType.BoolValue(true)),
                             ("key108", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#33: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1015,7 +1017,7 @@ class testWrite_1 {
                     HashMap(
                         [("key109", EventValueType.IntValue(-1i32)), ("key110", EventValueType.BoolValue(true)),
                             ("key111", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#34: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1042,7 +1044,7 @@ class testWrite_1 {
                     HashMap(
                         [("key112", EventValueType.IntValue(-1i32)), ("key113", EventValueType.BoolValue(true)),
                             ("key114", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#35: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1069,7 +1071,7 @@ class testWrite_1 {
                     HashMap(
                         [("key115", EventValueType.IntValue(-1i32)), ("key116", EventValueType.BoolValue(true)),
                             ("key117", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#36: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1096,7 +1098,7 @@ class testWrite_1 {
                     HashMap(
                         [("key118", EventValueType.IntValue(-1i32)), ("key119", EventValueType.BoolValue(true)),
                             ("key120", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#37: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1123,7 +1125,7 @@ class testWrite_1 {
                     HashMap(
                         [("key121", EventValueType.IntValue(-1i32)), ("key122", EventValueType.BoolValue(true)),
                             ("key123", EventValueType.BoolValue(true))])))
-            @Expect("assertion#38: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1150,7 +1152,7 @@ class testWrite_1 {
                     HashMap(
                         [("key124", EventValueType.IntValue(-1i32)), ("key125", EventValueType.BoolValue(true)),
                             ("key126", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#39: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1178,7 +1180,7 @@ class testWrite_1 {
                         [("key127", EventValueType.IntValue(-1i32)),
                             ("key128", EventValueType.ArrString(["", "aaaa", " "])),
                             ("key129", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#40: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1206,7 +1208,7 @@ class testWrite_1 {
                         [("key130", EventValueType.IntValue(-1i32)),
                             ("key131", EventValueType.ArrString(["", "aaaa", " "])),
                             ("key132", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#41: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1234,7 +1236,7 @@ class testWrite_1 {
                         [("key133", EventValueType.IntValue(-1i32)),
                             ("key134", EventValueType.ArrString(["", "aaaa", " "])),
                             ("key135", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#42: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1262,7 +1264,7 @@ class testWrite_1 {
                         [("key136", EventValueType.IntValue(-1i32)),
                             ("key137", EventValueType.ArrString(["", "aaaa", " "])),
                             ("key138", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#43: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1290,7 +1292,7 @@ class testWrite_1 {
                         [("key139", EventValueType.IntValue(-1i32)),
                             ("key140", EventValueType.ArrString(["", "aaaa", " "])),
                             ("key141", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#44: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1318,7 +1320,7 @@ class testWrite_1 {
                         [("key142", EventValueType.IntValue(-1i32)),
                             ("key143", EventValueType.ArrString(["", "aaaa", " "])),
                             ("key144", EventValueType.BoolValue(true))])))
-            @Expect("assertion#45: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1346,7 +1348,7 @@ class testWrite_1 {
                         [("key145", EventValueType.IntValue(-1i32)),
                             ("key146", EventValueType.ArrString(["", "aaaa", " "])),
                             ("key147", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#46: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1373,7 +1375,7 @@ class testWrite_1 {
                     HashMap(
                         [("key148", EventValueType.IntValue(0i32)), ("key149", EventValueType.IntValue(-1i32)),
                             ("key150", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#47: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1400,7 +1402,7 @@ class testWrite_1 {
                     HashMap(
                         [("key151", EventValueType.IntValue(0i32)), ("key152", EventValueType.IntValue(-1i32)),
                             ("key153", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#48: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1427,7 +1429,7 @@ class testWrite_1 {
                     HashMap(
                         [("key154", EventValueType.IntValue(0i32)), ("key155", EventValueType.IntValue(-1i32)),
                             ("key156", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#49: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1454,7 +1456,7 @@ class testWrite_1 {
                     HashMap(
                         [("key157", EventValueType.IntValue(0i32)), ("key158", EventValueType.IntValue(-1i32)),
                             ("key159", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#50: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1481,7 +1483,7 @@ class testWrite_1 {
                     HashMap(
                         [("key160", EventValueType.IntValue(0i32)), ("key161", EventValueType.IntValue(-1i32)),
                             ("key162", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#51: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1508,7 +1510,7 @@ class testWrite_1 {
                     HashMap(
                         [("key163", EventValueType.IntValue(0i32)), ("key164", EventValueType.IntValue(-1i32)),
                             ("key165", EventValueType.BoolValue(true))])))
-            @Expect("assertion#52: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1535,7 +1537,7 @@ class testWrite_1 {
                     HashMap(
                         [("key166", EventValueType.IntValue(0i32)), ("key167", EventValueType.IntValue(-1i32)),
                             ("key168", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#53: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1562,7 +1564,7 @@ class testWrite_1 {
                     HashMap(
                         [("key169", EventValueType.IntValue(0i32)), ("key170", EventValueType.IntValue(0i32)),
                             ("key171", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#54: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1589,7 +1591,7 @@ class testWrite_1 {
                     HashMap(
                         [("key172", EventValueType.IntValue(0i32)), ("key173", EventValueType.IntValue(0i32)),
                             ("key174", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#55: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1616,7 +1618,7 @@ class testWrite_1 {
                     HashMap(
                         [("key175", EventValueType.IntValue(0i32)), ("key176", EventValueType.IntValue(0i32)),
                             ("key177", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#56: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1643,7 +1645,7 @@ class testWrite_1 {
                     HashMap(
                         [("key178", EventValueType.IntValue(0i32)), ("key179", EventValueType.IntValue(0i32)),
                             ("key180", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#57: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1670,7 +1672,7 @@ class testWrite_1 {
                     HashMap(
                         [("key181", EventValueType.IntValue(0i32)), ("key182", EventValueType.IntValue(0i32)),
                             ("key183", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#58: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1697,7 +1699,7 @@ class testWrite_1 {
                     HashMap(
                         [("key184", EventValueType.IntValue(0i32)), ("key185", EventValueType.IntValue(0i32)),
                             ("key186", EventValueType.BoolValue(true))])))
-            @Expect("assertion#59: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1724,7 +1726,7 @@ class testWrite_1 {
                     HashMap(
                         [("key187", EventValueType.IntValue(0i32)), ("key188", EventValueType.IntValue(0i32)),
                             ("key189", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#60: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1751,7 +1753,7 @@ class testWrite_1 {
                     HashMap(
                         [("key190", EventValueType.IntValue(0i32)), ("key191", EventValueType.IntValue(1i32)),
                             ("key192", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#61: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1778,7 +1780,7 @@ class testWrite_1 {
                     HashMap(
                         [("key193", EventValueType.IntValue(0i32)), ("key194", EventValueType.IntValue(1i32)),
                             ("key195", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#62: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1805,7 +1807,7 @@ class testWrite_1 {
                     HashMap(
                         [("key196", EventValueType.IntValue(0i32)), ("key197", EventValueType.IntValue(1i32)),
                             ("key198", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#63: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1832,7 +1834,7 @@ class testWrite_1 {
                     HashMap(
                         [("key199", EventValueType.IntValue(0i32)), ("key200", EventValueType.IntValue(1i32)),
                             ("key201", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#64: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1859,7 +1861,7 @@ class testWrite_1 {
                     HashMap(
                         [("key202", EventValueType.IntValue(0i32)), ("key203", EventValueType.IntValue(1i32)),
                             ("key204", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#65: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1886,7 +1888,7 @@ class testWrite_1 {
                     HashMap(
                         [("key205", EventValueType.IntValue(0i32)), ("key206", EventValueType.IntValue(1i32)),
                             ("key207", EventValueType.BoolValue(true))])))
-            @Expect("assertion#66: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1913,7 +1915,7 @@ class testWrite_1 {
                     HashMap(
                         [("key208", EventValueType.IntValue(0i32)), ("key209", EventValueType.IntValue(1i32)),
                             ("key210", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#67: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1940,7 +1942,7 @@ class testWrite_1 {
                     HashMap(
                         [("key211", EventValueType.IntValue(0i32)), ("key212", EventValueType.FloatValue(-1.000000f64)),
                             ("key213", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#68: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1967,7 +1969,7 @@ class testWrite_1 {
                     HashMap(
                         [("key214", EventValueType.IntValue(0i32)), ("key215", EventValueType.FloatValue(-1.000000f64)),
                             ("key216", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#69: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -1994,7 +1996,7 @@ class testWrite_1 {
                     HashMap(
                         [("key217", EventValueType.IntValue(0i32)), ("key218", EventValueType.FloatValue(-1.000000f64)),
                             ("key219", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#70: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2021,7 +2023,7 @@ class testWrite_1 {
                     HashMap(
                         [("key220", EventValueType.IntValue(0i32)), ("key221", EventValueType.FloatValue(-1.000000f64)),
                             ("key222", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#71: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2048,7 +2050,7 @@ class testWrite_1 {
                     HashMap(
                         [("key223", EventValueType.IntValue(0i32)), ("key224", EventValueType.FloatValue(-1.000000f64)),
                             ("key225", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#72: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2075,7 +2077,7 @@ class testWrite_1 {
                     HashMap(
                         [("key226", EventValueType.IntValue(0i32)), ("key227", EventValueType.FloatValue(-1.000000f64)),
                             ("key228", EventValueType.BoolValue(true))])))
-            @Expect("assertion#73: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2102,7 +2104,7 @@ class testWrite_1 {
                     HashMap(
                         [("key229", EventValueType.IntValue(0i32)), ("key230", EventValueType.FloatValue(-1.000000f64)),
                             ("key231", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#74: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2129,7 +2131,7 @@ class testWrite_1 {
                     HashMap(
                         [("key232", EventValueType.IntValue(0i32)), ("key233", EventValueType.StringValue("hello world")),
                             ("key234", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#75: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2156,7 +2158,7 @@ class testWrite_1 {
                     HashMap(
                         [("key235", EventValueType.IntValue(0i32)), ("key236", EventValueType.StringValue("hello world")),
                             ("key237", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#76: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2183,7 +2185,7 @@ class testWrite_1 {
                     HashMap(
                         [("key238", EventValueType.IntValue(0i32)), ("key239", EventValueType.StringValue("hello world")),
                             ("key240", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#77: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2210,7 +2212,7 @@ class testWrite_1 {
                     HashMap(
                         [("key241", EventValueType.IntValue(0i32)), ("key242", EventValueType.StringValue("hello world")),
                             ("key243", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#78: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2237,7 +2239,7 @@ class testWrite_1 {
                     HashMap(
                         [("key244", EventValueType.IntValue(0i32)), ("key245", EventValueType.StringValue("hello world")),
                             ("key246", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#79: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2264,7 +2266,7 @@ class testWrite_1 {
                     HashMap(
                         [("key247", EventValueType.IntValue(0i32)), ("key248", EventValueType.StringValue("hello world")),
                             ("key249", EventValueType.BoolValue(true))])))
-            @Expect("assertion#80: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2291,7 +2293,7 @@ class testWrite_1 {
                     HashMap(
                         [("key250", EventValueType.IntValue(0i32)), ("key251", EventValueType.StringValue("hello world")),
                             ("key252", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#81: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2318,7 +2320,7 @@ class testWrite_1 {
                     HashMap(
                         [("key253", EventValueType.IntValue(0i32)), ("key254", EventValueType.BoolValue(true)),
                             ("key255", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#82: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2345,7 +2347,7 @@ class testWrite_1 {
                     HashMap(
                         [("key256", EventValueType.IntValue(0i32)), ("key257", EventValueType.BoolValue(true)),
                             ("key258", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#83: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2372,7 +2374,7 @@ class testWrite_1 {
                     HashMap(
                         [("key259", EventValueType.IntValue(0i32)), ("key260", EventValueType.BoolValue(true)),
                             ("key261", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#84: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2399,7 +2401,7 @@ class testWrite_1 {
                     HashMap(
                         [("key262", EventValueType.IntValue(0i32)), ("key263", EventValueType.BoolValue(true)),
                             ("key264", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#85: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2426,7 +2428,7 @@ class testWrite_1 {
                     HashMap(
                         [("key265", EventValueType.IntValue(0i32)), ("key266", EventValueType.BoolValue(true)),
                             ("key267", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#86: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2453,7 +2455,7 @@ class testWrite_1 {
                     HashMap(
                         [("key268", EventValueType.IntValue(0i32)), ("key269", EventValueType.BoolValue(true)),
                             ("key270", EventValueType.BoolValue(true))])))
-            @Expect("assertion#87: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2480,7 +2482,7 @@ class testWrite_1 {
                     HashMap(
                         [("key271", EventValueType.IntValue(0i32)), ("key272", EventValueType.BoolValue(true)),
                             ("key273", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#88: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2507,7 +2509,7 @@ class testWrite_1 {
                     HashMap(
                         [("key274", EventValueType.IntValue(0i32)), ("key275", EventValueType.ArrString(["", "aaaa", " "]
                             )), ("key276", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#89: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2534,7 +2536,7 @@ class testWrite_1 {
                     HashMap(
                         [("key277", EventValueType.IntValue(0i32)), ("key278", EventValueType.ArrString(["", "aaaa", " "]
                             )), ("key279", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#90: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2561,7 +2563,7 @@ class testWrite_1 {
                     HashMap(
                         [("key280", EventValueType.IntValue(0i32)), ("key281", EventValueType.ArrString(["", "aaaa", " "]
                             )), ("key282", EventValueType.IntValue(1i32))])))
-            @Expect("assertion#91: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2588,7 +2590,7 @@ class testWrite_1 {
                     HashMap(
                         [("key283", EventValueType.IntValue(0i32)), ("key284", EventValueType.ArrString(["", "aaaa", " "]
                             )), ("key285", EventValueType.FloatValue(-1.000000f64))])))
-            @Expect("assertion#92: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2615,7 +2617,7 @@ class testWrite_1 {
                     HashMap(
                         [("key286", EventValueType.IntValue(0i32)), ("key287", EventValueType.ArrString(["", "aaaa", " "]
                             )), ("key288", EventValueType.StringValue("hello world"))])))
-            @Expect("assertion#93: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2642,7 +2644,7 @@ class testWrite_1 {
                     HashMap(
                         [("key289", EventValueType.IntValue(0i32)), ("key290", EventValueType.ArrString(["", "aaaa", " "]
                             )), ("key291", EventValueType.BoolValue(true))])))
-            @Expect("assertion#94: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2669,7 +2671,7 @@ class testWrite_1 {
                     HashMap(
                         [("key292", EventValueType.IntValue(0i32)), ("key293", EventValueType.ArrString(["", "aaaa", " "]
                             )), ("key294", EventValueType.ArrString(["", "aaaa", " "]))])))
-            @Expect("assertion#95: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2696,7 +2698,7 @@ class testWrite_1 {
                     HashMap(
                         [("key295", EventValueType.IntValue(1i32)), ("key296", EventValueType.IntValue(-1i32)),
                             ("key297", EventValueType.IntValue(-1i32))])))
-            @Expect("assertion#96: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)
@@ -2723,7 +2725,7 @@ class testWrite_1 {
                     HashMap(
                         [("key298", EventValueType.IntValue(1i32)), ("key299", EventValueType.IntValue(-1i32)),
                             ("key300", EventValueType.IntValue(0i32))])))
-            @Expect("assertion#97: not throw", "Check write")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid event name.")
             @Expect(e.code, 11101002i32)

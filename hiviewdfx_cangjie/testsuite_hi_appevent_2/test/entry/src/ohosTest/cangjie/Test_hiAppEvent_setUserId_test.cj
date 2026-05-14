@@ -189,6 +189,7 @@ class Test_hiAppEvent_setUserId {
         try {
             let test_userID_name = "test_setUserId_11"
             HiAppEvent.setUserId(test_userID_name, "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401)
             @Expect(e.message, "Parameter error. Parameter verification failed.")

@@ -46,7 +46,7 @@ class TestGetRawFileList_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_1 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFileList")
         let rawFileList = getResourceManager().getRawFileList("")
-        @Assert(4i64, rawFileList.size)
+        @Expect(4i64, rawFileList.size)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_1 ends.")
     }
 
@@ -64,7 +64,7 @@ class TestGetRawFileList_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_2 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFileList")
         let rawFileList = getResourceManager().getRawFileList("\0")
-        @Assert(4i64, rawFileList.size)
+        @Expect(4i64, rawFileList.size)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_2 ends.")
     }
 
@@ -83,7 +83,7 @@ class TestGetRawFileList_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileList")
         try {
             getResourceManager().getRawFileList("non_existing_rawfile_path_0")
-            @Expect("assertion#1789: not throw", "fail to get RawFileList")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -106,7 +106,7 @@ class TestGetRawFileList_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileList")
         try {
             getResourceManager().getRawFileList("aaaaa/bbbbb")
-            @Expect("assertion#1790: not throw", "fail to get RawFileList")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -129,7 +129,7 @@ class TestGetRawFileList_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileList")
         try {
             getResourceManager().getRawFileList("//////")
-            @Expect("assertion#1791: not throw", "fail to get RawFileList")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -152,7 +152,7 @@ class TestGetRawFileList_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileList")
         try {
             getResourceManager().getRawFileList("\\\\")
-            @Expect("assertion#1792: not throw", "fail to get RawFileList")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -173,11 +173,9 @@ class TestGetRawFileList_1 {
     func TestCase_7(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFileList")
-        // let rawFileList = getResourceManager().getRawFileList("dir0")
-        // @Assert(-1i64, rawFileList.size)
         try {
             getResourceManager().getRawFileList("dir0")
-            @Expect("assertion#1792: not throw", "fail to get RawFileList")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -198,11 +196,9 @@ class TestGetRawFileList_1 {
     func TestCase_8(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_8 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFileList")
-        // let rawFileList = getResourceManager().getRawFileList("dir0/dir0")
-        // @Assert(1i64, rawFileList.size)
         try {
             getResourceManager().getRawFileList("dir0/dir0")
-            @Expect("assertion#1792: not throw", "fail to get RawFileList")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)

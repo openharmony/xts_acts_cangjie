@@ -41,8 +41,8 @@ class testImageSource_getFrameCount_1 {
         try {
             let imageSource = createImageSource("")
             let frameCount = imageSource.getFrameCount()
-            @Assert(1u32, frameCount)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(1u32, frameCount)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115)
@@ -66,8 +66,8 @@ class testImageSource_getFrameCount_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.jpg")
             let frameCount = imageSource.getFrameCount()
-            @Assert(1u32, frameCount)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(1u32, frameCount)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -91,8 +91,8 @@ class testImageSource_getFrameCount_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.bmp")
             let frameCount = imageSource.getFrameCount()
-            @Assert(1u32, frameCount)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(1u32, frameCount)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -116,8 +116,8 @@ class testImageSource_getFrameCount_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.gif")
             let frameCount = imageSource.getFrameCount()
-            @Assert(1u32, frameCount)
-            @Expect("assertion#3: not throw", "createImageSource fail")
+            @Expect(1u32, frameCount)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -141,8 +141,8 @@ class testImageSource_getFrameCount_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.123")
             let frameCount = imageSource.getFrameCount()
-            @Assert(1u32, frameCount)
-            @Expect("assertion#4: not throw", "createImageSource fail")
+            @Expect(1u32, frameCount)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)

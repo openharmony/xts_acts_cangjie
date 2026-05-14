@@ -65,18 +65,17 @@ class TestRequest {
             overwrite: true
         )
         let task = create(getAbilityContext(), config)
-
         task.on(EventCallbackType.Progress, MyCallBack(show(task.tid).progress))
         task.on(EventCallbackType.Pause, MyCallBack(show(task.tid).progress))
         task.on(EventCallbackType.Resume, MyCallBack(show(task.tid).progress))
         task.on(EventCallbackType.Completed, MyCallBack(show(task.tid).progress))
         task.on(EventCallbackType.Remove, MyCallBack(show(task.tid).progress))
-
         @Expect(show(task.tid).progress.state.toString(),"State.Initialized")
         task.start()
         @Expect(show(task.tid).progress.state.toString(),"State.Running")
         try {
             task.pause()
+            @Expect(false)
         } catch (e: BusinessException) {
             if (e.code == 21900007) {
                 throw IllegalStateException("Current state is ${show(task.tid).progress.state.toString()}")
@@ -84,15 +83,12 @@ class TestRequest {
         }
         @Expect(show(task.tid).progress.state.toString(),"State.Paused")
         sleepFor(1.second)
-
         task.resume()
         @Expect(show(task.tid).progress.state.toString(),"State.Running")
         sleepFor(1.second)
-
         if (show(task.tid).progress.state.toString() == "State.Running") {
             task.stop()
             @Expect(show(task.tid).progress.state.toString(),"State.Stopped")
-
             task.resume()
             sleepFor(5.second)
             @Expect(show(task.tid).progress.state.toString(),"State.Completed")
@@ -122,12 +118,10 @@ class TestRequest {
             saveas: fileName,
             overwrite: true
         )
-
         let task = create(getAbilityContext(), config)
         task.start()
         sleepFor(5.second)
         @Expect(FileIo.access(filePath),true)
-
         remove(task.tid)
         FileIo.unlink(filePath)
         @Expect(FileIo.access(filePath),false)
@@ -185,7 +179,6 @@ class TestRequest {
             saveas: fileName,
             overwrite: true
         )
-
         let task = create(getAbilityContext(), config)
         task.start()
         task.pause()
@@ -196,7 +189,6 @@ class TestRequest {
         let stat2 = FileIo.stat(filePath)
         let size2 = stat2.size
         @Expect(size1,size2)
-
         @Expect(FileIo.access(filePath),true)
         remove(task.tid)
         FileIo.unlink(filePath)
@@ -223,7 +215,6 @@ class TestRequest {
             overwrite: true
         )
         let task = create(getAbilityContext(), config)
-
         try {
             task.resume()
             @Expect(false)
@@ -255,9 +246,7 @@ class TestRequest {
             saveas: fileName,
             overwrite: true
         )
-
         let task = create(getAbilityContext(), config)
-
         try {
             task.start()
             sleepFor(5.second)
@@ -295,7 +284,6 @@ class TestRequest {
             saveas: fileName,
             overwrite: true
         )
-
         let task = create(getAbilityContext(), config)
         try {
             task.stop()
@@ -328,7 +316,6 @@ class TestRequest {
             saveas: fileName,
             overwrite: true
         )
-
         let task = create(getAbilityContext(), config)
         task.on(EventCallbackType.Progress, MyCallBack(show(task.tid).progress))
         task.on(EventCallbackType.Pause, MyCallBack(show(task.tid).progress))
@@ -346,7 +333,6 @@ class TestRequest {
             let size2 = stat2.size
             @Expect(size1,size2)
         }
-
         remove(task.tid)
         FileIo.unlink(filePath)
         @Expect(FileIo.access(filePath),false)
@@ -372,19 +358,18 @@ class TestRequest {
             saveas: fileName,
             overwrite: true
         )
-
         let task = create(getAbilityContext(), config)
         task.on(EventCallbackType.Progress, MyCallBack(show(task.tid).progress))
         task.on(EventCallbackType.Pause, MyCallBack(show(task.tid).progress))
         task.on(EventCallbackType.Resume, MyCallBack(show(task.tid).progress))
         task.on(EventCallbackType.Completed, MyCallBack(show(task.tid).progress))
         task.on(EventCallbackType.Remove, MyCallBack(show(task.tid).progress))
-
         task.start()
         sleepFor(1.second)
         if (show(task.tid).progress.state.toString() == "State.Running") {
             try {
                 task.pause()
+                @Expect(false)
             } catch (e: BusinessException) {
                 if (e.code == 21900007) {
                     throw IllegalStateException("Current state is ${show(task.tid).progress.state.toString()}")
@@ -394,7 +379,6 @@ class TestRequest {
             task.resume()
             sleepFor(5.second)
         }
-
         if (show(task.tid).progress.state.toString() == "State.Paused") {
             try {
                 task.stop()
@@ -430,11 +414,9 @@ class TestRequest {
             saveas: fileName,
             overwrite: true
         )
-
         let task = create(getAbilityContext(), config)
         task.start()
         sleepFor(2.second)
-
         try {
             task.start()
             @Expect(false)
@@ -468,7 +450,6 @@ class TestRequest {
             saveas: fileName,
             overwrite: true
         )
-
         let task = create(getAbilityContext(), config)
         task.start()
         task.pause()
@@ -500,7 +481,6 @@ class TestRequest {
             overwrite: true,
             begins: 9655322160
         )
-
         let task = create(getAbilityContext(), config)
         let callback = MyCallBack(show(task.tid).progress)
         task.on(EventCallbackType.Progress, callback)
@@ -532,14 +512,12 @@ class TestRequest {
             overwrite: true,
             begins: 0
         )
-
         let task = create(getAbilityContext(), config)
         let callback = MyCallBack(show(task.tid).progress)
         task.on(EventCallbackType.Progress, callback)
         task.start()
         sleepFor(1.5.second)
         @Expect(show(task.tid).progress.processed<=965533335)
-
         remove(task.tid)
         FileIo.unlink(filePath)
         @Expect(FileIo.access(filePath),false)
@@ -569,7 +547,6 @@ class TestRequest {
         let task = create(getAbilityContext(), config)
         let callback = MyCallBack(show(task.tid).progress)
         task.on(EventCallbackType.Progress, callback)
-
         task.start()
         sleepFor(1.5.second)
         @Expect(show(task.tid).progress.processed<=965533335)
@@ -602,7 +579,6 @@ class TestRequest {
         let task = create(getAbilityContext(), config)
         let callback = MyCallBack(show(task.tid).progress)
         task.on(EventCallbackType.Progress, callback)
-
         task.start()
         sleepFor(1.5.second)
         @Expect(show(task.tid).progress.processed<=965533335)
@@ -635,7 +611,6 @@ class TestRequest {
         let task = create(getAbilityContext(), config)
         let callback = MyCallBack(show(task.tid).progress)
         task.on(EventCallbackType.Progress, callback)
-
         task.start()
         sleepFor(3.second)
         remove(task.tid)
@@ -667,7 +642,6 @@ class TestRequest {
         let task = create(getAbilityContext(), config)
         let callback = MyCallBack(show(task.tid).progress)
         task.on(EventCallbackType.Progress, callback)
-
         task.start()
         sleepFor(1.5.second)
         FileIo.unlink(filePath)
@@ -784,7 +758,6 @@ class TestRequest {
         let task = create(getAbilityContext(), config)
         let callback = MyCallBack(show(task.tid).progress)
         task.on(EventCallbackType.Progress, callback)
-
         task.start()
         sleepFor(4.second)
         remove(task.tid)
@@ -830,7 +803,6 @@ class TestRequest {
         task1.on(EventCallbackType.Completed, callback1)
         task2.start()
         task1.start()
-
         sleepFor(4.second)
         remove(task1.tid)
         remove(task2.tid)
@@ -862,7 +834,6 @@ class TestRequest {
         )
         let task = create(getAbilityContext(), config)
         let callback = MyCallBack(show(task.tid).progress)
-
         task.on(EventCallbackType.Completed, callback)
         task.start()
         sleepFor(5.second)
@@ -897,7 +868,6 @@ class TestRequest {
         let pauseCallback = MyCallBack(show(task.tid).progress)
         let resumeCallback = MyCallBack(show(task.tid).progress)
         let removeCallback = MyCallBack(show(task.tid).progress)
-
         task.on(EventCallbackType.Pause, pauseCallback)
         task.on(EventCallbackType.Resume, resumeCallback)
         task.on(EventCallbackType.Remove, removeCallback)
@@ -906,7 +876,6 @@ class TestRequest {
             if (show(task.tid).progress.state.toString() == "State.Running") {
                 task.pause()
             }
-
             if (show(task.tid).progress.state.toString() == "State.Paused") {
                 task.resume()
             }
@@ -940,7 +909,6 @@ class TestRequest {
         let callback = MyCallBack(show(task.tid).progress)
         task.on(EventCallbackType.Failed, callback)
         task.start()
-
         sleepFor(3.second)
         remove(task.tid)
         FileIo.unlink(filePath)
@@ -971,7 +939,6 @@ class TestRequest {
         let myCallBack = MyCallBack(show(task.tid).progress)
         task.on(EventCallbackType.Progress, myCallBack)
         task.off(EventCallbackType.Progress, callback: myCallBack)
-
         task.start()
         sleepFor(3.second)
         remove(task.tid)
@@ -1030,7 +997,6 @@ class TestRequest {
             saveas: fileName
         )
         let task = create(getAbilityContext(), config)
-
         task.start()
         sleepFor(5.second)
         remove(task.tid)
@@ -1061,7 +1027,6 @@ class TestRequest {
             token: token,
             saveas: fileName
         )
-
         let task = create(getAbilityContext(), config)
         task.start()
         sleepFor(5.second)
@@ -1126,7 +1091,6 @@ class TestRequest {
             saveas: fileName
         )
         let task = create(getAbilityContext(), config)
-
         task.start()
         sleepFor(5.second)
         remove(task.tid)
@@ -1188,7 +1152,6 @@ class TestRequest {
         )
         let task = create(getAbilityContext(), config)
         task.start()
-
         sleepFor(5.second)
         let stat1 = FileIo.stat(filePath)
         let size1 = stat1.size

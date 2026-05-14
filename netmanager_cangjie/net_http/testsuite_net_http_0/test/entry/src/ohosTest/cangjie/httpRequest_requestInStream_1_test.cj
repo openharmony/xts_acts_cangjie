@@ -74,21 +74,19 @@ class httpRequest_requestInStream_1 {
             {
                 BusinessException: Option<BusinessException>, response: Option<UInt32> =>
                 if (let Option.Some(err) <- BusinessException) {
-
                     Hilog.info(0, "cangjietest", "Erro Msg:${err.message}")
                 }
                 if (let Option.Some(resp) <- response) {
-                    @Assert(BusinessException.isNone(), true)
+                    @Expect(BusinessException.isNone(), true)
                     Hilog.info(0, "cangjietest", "Response Code: ${resp}")
                 } else {
-                    @Assert(response.isNone(), true)
+                    @Expect(response.isNone(), true)
                     Hilog.error(0, "cangjietest", "None Response!")
                 }
                 Hilog.info(0, "cangjietest", "response callback")
             },
-
         )
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 }

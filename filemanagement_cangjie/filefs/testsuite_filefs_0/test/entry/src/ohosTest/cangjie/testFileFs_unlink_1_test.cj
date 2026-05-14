@@ -38,7 +38,6 @@ class testFileIo_unlink_1 {
     @Tag[APILevel22, TestLevel0]
     func test_unlink_01() {
         let fpath = "/data/storage/el2/base/files/test_unlink_01";
-
         try {
             FileIo.unlink(fpath)
             @Expect(false)
@@ -63,7 +62,6 @@ class testFileIo_unlink_1 {
         let fpath = "/data/storage/el2/base/files/test_unlink_02";
         let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         FileIo.close(file)
-
         try {
             let res1 = FileIo.access(fpath)
             @Expect(res1, true)
@@ -89,7 +87,6 @@ class testFileIo_unlink_1 {
     func test_unlink_03() {
         let dpath = "/data/storage/el2/base/files/test_unlink_03";
         FileIo.mkdir(dpath)
-
         try {
             let res = FileIo.access(dpath)
             @Expect(res, true)

@@ -37,6 +37,7 @@ class Test_color_space {
     func test_UNKNOWN() {
         try {
             create(ColorSpace.Unknown)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(true)
         }
@@ -55,6 +56,7 @@ class Test_color_space {
     func test_CUSTOM() {
         try {
             create(ColorSpace.Custom)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(true)
         }

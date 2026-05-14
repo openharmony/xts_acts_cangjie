@@ -47,8 +47,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("", PreferencesValueType.StringData(""))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_1 ends.")
@@ -73,9 +73,9 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("", PreferencesValueType.StringData("\0"))
+            @Expect(false)
         } catch (e: BusinessException) {
              Hilog.info(0, "cangjietest","TestPutFailDueToInvalidKV_1 e.message is ${e.message}")
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_2 ends.")
@@ -100,8 +100,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("", PreferencesValueType.StringData("validvalue"))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_3 ends.")
@@ -126,8 +126,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("", PreferencesValueType.StringData("x" * 16777217))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_4 ends.")
@@ -152,8 +152,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("\0", PreferencesValueType.StringData(""))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_5 ends.")
@@ -178,8 +178,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("\0", PreferencesValueType.StringData("\0"))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_6 ends.")
@@ -204,8 +204,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("\0", PreferencesValueType.StringData("validvalue"))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_7 ends.")
@@ -230,8 +230,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("\0", PreferencesValueType.StringData("x" * 16777217))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_8 ends.")
@@ -256,8 +256,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("validkey", PreferencesValueType.StringData(""))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 15500000i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_9 ends.")
@@ -282,8 +282,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("validkey", PreferencesValueType.StringData("\0"))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 15500000i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_10 ends.")
@@ -307,12 +307,12 @@ class TestPutFailDueToInvalidKV_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","put")
         preferences.put("validkey", PreferencesValueType.StringData("validvalue"))
-        @Assert(true, preferences.has("validkey"))
+        @Expect(true, preferences.has("validkey"))
         Hilog.info(0, "cangjietest","check get result")
         if (let PreferencesValueType.StringData(value) <- preferences.getAll().get("validkey").getOrThrow()) {
             @Expect(value, "validvalue")
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_11 ends.")
     }
@@ -336,8 +336,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("validkey", PreferencesValueType.StringData("x" * 16777217))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_12 ends.")
@@ -362,8 +362,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("x" * 10000, PreferencesValueType.StringData(""))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_13 ends.")
@@ -388,8 +388,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("x" * 10000, PreferencesValueType.StringData("\0"))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_14 ends.")
@@ -414,8 +414,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("x" * 10000, PreferencesValueType.StringData("validvalue"))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_15 ends.")
@@ -440,8 +440,8 @@ class TestPutFailDueToInvalidKV_1 {
         Hilog.info(0, "cangjietest","fail to put kv.")
         try {
             preferences.put("x" * 10000, PreferencesValueType.StringData("x" * 16777217))
+            @Expect(false)
         } catch (e: BusinessException) {
-
             @Expect(e.code, 401i32)
         }
         Hilog.info(0, "cangjietest","testcase TestCase_16 ends.")

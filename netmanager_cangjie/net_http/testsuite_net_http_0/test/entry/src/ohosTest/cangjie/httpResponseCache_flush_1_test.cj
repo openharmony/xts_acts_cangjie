@@ -44,7 +44,7 @@ class httpResponseCache_flush_1 {
         let httpResponseCache = createHttpResponseCache(cacheSize: 0u32)
         Hilog.info(0, "cangjietest", "flush")
         httpResponseCache.flush()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -64,7 +64,7 @@ class httpResponseCache_flush_1 {
         let httpResponseCache = createHttpResponseCache(cacheSize: 1u32)
         Hilog.info(0, "cangjietest", "flush")
         httpResponseCache.flush()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
 
@@ -84,7 +84,7 @@ class httpResponseCache_flush_1 {
         let httpResponseCache = createHttpResponseCache(cacheSize: 2147483647u32)
         Hilog.info(0, "cangjietest", "flush")
         httpResponseCache.flush()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -104,7 +104,7 @@ class httpResponseCache_flush_1 {
         let httpResponseCache = createHttpResponseCache(cacheSize: 4294967295u32)
         Hilog.info(0, "cangjietest", "flush")
         httpResponseCache.flush()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 }

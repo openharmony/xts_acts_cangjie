@@ -41,8 +41,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.BitsPerSample)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -66,8 +66,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.jpg")
             let imageProperty = imageSource.getImageProperty((PropertyKey.Orientation))
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -91,8 +91,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.bmp")
             let imageProperty = imageSource.getImageProperty(PropertyKey.ImageLength)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -116,8 +116,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.gif")
             let imageProperty = imageSource.getImageProperty(PropertyKey.ImageWidth)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#3: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -141,8 +141,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.123")
             let imageProperty = imageSource.getImageProperty(PropertyKey.GpsLatitude)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#4: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -166,8 +166,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.GpsLongitude)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#5: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -191,8 +191,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.GpsLatitudeRef)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#6: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -216,8 +216,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.GpsLongitudeRef)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#7: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -241,8 +241,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.DateTimeOriginal)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#8: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -266,8 +266,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.ExposureTime)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#9: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -291,8 +291,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneType)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#10: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -316,8 +316,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.IsoSpeedRatings)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#11: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -341,8 +341,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.FNumber)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#12: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -366,8 +366,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.DateTime)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#13: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -391,8 +391,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.GpsDateStamp)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#14: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -416,8 +416,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.GpsDateStamp)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#15: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -441,8 +441,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.ImageDescription)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#16: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -466,8 +466,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.Make)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#17: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -491,8 +491,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.Model)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#18: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -516,8 +516,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.PhotoMode)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#19: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -541,8 +541,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SensitivityType)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#20: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -566,8 +566,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.StandardOutputSensitivity)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#21: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -591,8 +591,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.RecommendedExposureIndex)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#22: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -616,8 +616,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.IsoSpeed)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#23: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -641,8 +641,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.ApertureValue)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#24: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -666,8 +666,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.ExposureBiasValue)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#25: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -691,8 +691,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.MeteringMode)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#26: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -716,8 +716,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.LightSource)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#27: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -741,8 +741,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.Flash)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#28: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -766,8 +766,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.FocalLength)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#29: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -791,8 +791,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.UserComment)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#30: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -816,8 +816,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.PixelXDimension)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#31: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -841,8 +841,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.PixelYDimension)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#32: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -866,8 +866,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.WhiteBalance)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#33: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -891,8 +891,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.FocalLengthIn35mmFilm)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#34: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -916,8 +916,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.CaptureMode)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#35: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -941,8 +941,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.PhysicalAperture)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#36: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -966,8 +966,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.RollAngle)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#37: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -991,8 +991,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.PitchAngle)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#38: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1016,8 +1016,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneFoodConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#39: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1041,8 +1041,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneStageConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#40: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1066,8 +1066,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneBlueSkyConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#41: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1091,8 +1091,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneGreenPlantConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#42: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1116,8 +1116,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneBeachConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#43: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1141,8 +1141,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneSnowConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#44: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1166,8 +1166,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneSunsetConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#45: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1191,8 +1191,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneFlowersConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#46: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1216,8 +1216,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneNightConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#47: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1241,8 +1241,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.SceneTextConf)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#48: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1266,8 +1266,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.FaceCount)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#49: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1291,8 +1291,8 @@ class testImageSource_getImageProperty_1 {
         try {
             let imageSource = createImageSource("")
             let imageProperty = imageSource.getImageProperty(PropertyKey.FocusMode)
-            @Assert(true, imageProperty.size > 0i64)
-            @Expect("assertion#50: not throw", "createImageSource fail")
+            @Expect(true, imageProperty.size > 0i64)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)

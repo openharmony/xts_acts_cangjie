@@ -40,7 +40,6 @@ class testFileFs_dup_1 {
     func test_dup_01() {
         let fpath = "/data/storage/el2/base/files/test_fdatasync_01"
         let f = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
         let dup_fd = FileIo.dup(f.fd)
         let buf =Array<Byte>(4096,repeat: 0)
         let dup_path = dup_fd.path

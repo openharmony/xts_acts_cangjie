@@ -42,13 +42,11 @@ class testFileIo_copyfile_1 {
         let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         let res = FileIo.access(fpath)
         @Expect(res, true)
-
         try {
             FileIo.copyFile(fpath, fpathTarget)
             let size1 = FileIo.stat(fpath).size
             let size2 = FileIo.stat(fpathTarget).size
             @Expect(size1, size2)
-
             FileIo.close(file)
             FileIo.unlink(fpath)
             FileIo.unlink(fpathTarget)
@@ -74,13 +72,11 @@ class testFileIo_copyfile_1 {
         let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         let res = FileIo.access(fpath)
         @Expect(res, true)
-
         try {
             FileIo.copyFile(file.fd, fpathTarget)
             let size1 = FileIo.stat(fpath).size
             let size2 = FileIo.stat(fpathTarget).size
             @Expect(size1, size2)
-
             FileIo.close(file)
             FileIo.unlink(fpath)
             FileIo.unlink(fpathTarget)
@@ -103,7 +99,6 @@ class testFileIo_copyfile_1 {
     func test_copyFile_03() {
         let fpath = "/data/storage/el2/base/files/test_copyFile_03"
         let fpathTarget = fpath + "tgt"
-
         try {
             FileIo.copyFile(fpath, fpathTarget)
             @Expect(false)
@@ -130,13 +125,11 @@ class testFileIo_copyfile_1 {
         let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         let res = FileIo.access(fpath)
         @Expect(res, true)
-
         try {
             FileIo.copyFile(fpath, fpathTarget, mode: 0)
             let size1 = FileIo.stat(fpath).size
             let size2 = FileIo.stat(fpathTarget).size
             @Expect(size1, size2)
-
             FileIo.close(file)
             FileIo.unlink(fpath)
             FileIo.unlink(fpathTarget)
@@ -166,7 +159,6 @@ class testFileIo_copyfile_1 {
         let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         let res = FileIo.access(fpath)
         @Expect(res, true)
-
         try {
             FileIo.copyFile(fpath, fpathTarget)
             @Expect(false)

@@ -42,7 +42,7 @@ class testImageSource_createPixelMap_1 {
             let imageSource = createImageSource("")
             let createPixelMap = imageSource.createPixelMap()
             @Expect(true)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -67,7 +67,7 @@ class testImageSource_createPixelMap_1 {
             let imageSource = createImageSource("/data/storage/el1/base/test.jpg")
             let createPixelMap = imageSource.createPixelMap()
             @Expect(true)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -92,7 +92,7 @@ class testImageSource_createPixelMap_1 {
             let imageSource = createImageSource("/data/storage/el1/base/test.bmp")
             let createPixelMap = imageSource.createPixelMap()
             @Expect(true)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -117,7 +117,7 @@ class testImageSource_createPixelMap_1 {
             let imageSource = createImageSource("/data/storage/el1/base/test.gif")
             let createPixelMap = imageSource.createPixelMap()
             @Expect(true)
-            @Expect("assertion#3: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -142,7 +142,7 @@ class testImageSource_createPixelMap_1 {
             let imageSource = createImageSource("/data/storage/el1/base/test.123")
             let createPixelMap = imageSource.createPixelMap()
             @Expect(true)
-            @Expect("assertion#4: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)

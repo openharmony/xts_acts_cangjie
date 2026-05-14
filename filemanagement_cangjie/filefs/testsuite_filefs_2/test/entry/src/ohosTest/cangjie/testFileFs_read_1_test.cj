@@ -47,8 +47,6 @@ class testFileFs_read_1 {
         let writelen = FileIo.write(f.fd, str.toArray())
         let bytesWritten2 = FileIo.read(f.fd, Array<Byte>(2, repeat: 65), options: ReadOptions(offset:0))
         @Expect(bytesWritten2, 2)
-        
-        
         FileIo.unlink(fpath)
     }
 
@@ -71,6 +69,7 @@ class testFileFs_read_1 {
              | OpenMode.READ_WRITE))
         try {
         let bytesWritten2 = FileIo.read(f.fd, Array<Byte>(12, repeat: 65), options: ReadOptions(offset:-1))
+        @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 13900020)
         }               
@@ -94,10 +93,8 @@ class testFileFs_read_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten2 = FileIo.read(f.fd, Array<Byte>(12, repeat: 65), options: ReadOptions(offset:1))
         @Expect(bytesWritten2, 0)
-        
         FileIo.unlink(fpath)
     }
 
@@ -120,6 +117,7 @@ class testFileFs_read_1 {
              | OpenMode.READ_WRITE))
         try {
             let bytesWritten2 = FileIo.read(f.fd, Array<Byte>(12, repeat: 65), options: ReadOptions(offset:Int64.Min))
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 13900020)
         }               
@@ -145,6 +143,7 @@ class testFileFs_read_1 {
              | OpenMode.READ_WRITE))
         try {
             let bytesWritten2 = FileIo.read(f.fd, Array<Byte>(12, repeat: 65), options: ReadOptions(offset:Int64.Max))
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 13900020)
         }           
@@ -172,7 +171,6 @@ class testFileFs_read_1 {
         let writelen = FileIo.write(f.fd, str.toArray())
         let bytesWritten2 = FileIo.read(f.fd, Array<Byte>(3, repeat: 65), options: ReadOptions(length:1))
         @Expect(bytesWritten2, 0)
-        
         FileIo.unlink(fpath)
     }
     /**
@@ -294,7 +292,6 @@ class testFileFs_read_1 {
         let bytesWritten2 = FileIo.read(f.fd, Array<Byte>(12, repeat: 6))
         @Expect(bytesWritten2, 0)
         FileIo.unlink(fpath)
-
     }
 
     /**
@@ -313,7 +310,6 @@ class testFileFs_read_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let randomAccessFile  = FileIo.createRandomAccessFile(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         let ArrayBuffer =  Array<Byte>(4096, repeat: 0)
         let bytesWritten2 = randomAccessFile.read(ArrayBuffer)
@@ -337,7 +333,6 @@ class testFileFs_read_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let randomAccessFile  = FileIo.createRandomAccessFile(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         let ArrayBuffer =  Array<Byte>(4096, repeat: 0)
         try {
@@ -365,7 +360,6 @@ class testFileFs_read_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let randomAccessFile  = FileIo.createRandomAccessFile(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         let ArrayBuffer =  Array<Byte>(4096, repeat: 0)
         try{

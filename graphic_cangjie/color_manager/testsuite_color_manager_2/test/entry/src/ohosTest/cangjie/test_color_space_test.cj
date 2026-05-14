@@ -44,7 +44,6 @@ class Test_ColorSpace_01 {
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888,  alphaType: AlphaType.Premul, srcPixelFormat: PixelMapFormat.Bgra8888, scaleMode: ScaleMode.FitTargetSize)
         var globalPixelMap: PixelMap = createPixelMap(color, opts)
         var color_manager: ColorSpaceManager
-
         try {
             color_manager = globalPixelMap.getColorSpace()
             @Expect(false)
@@ -73,7 +72,6 @@ class Test_ColorSpace_01 {
         var colorSpaceName = AdobeRgb1998
         color_manager = create(colorSpaceName)
         var getColorManager: ColorSpaceManager
-
         try {
             globalPixelMap.setColorSpace(color_manager)
             getColorManager = globalPixelMap.getColorSpace()
@@ -107,7 +105,6 @@ class Test_ColorSpace_01 {
         var colorSpaceName = DciP3
         color_manager = create(colorSpaceName)
         var getColorManager: ColorSpaceManager
-
         try {
             globalPixelMap.setColorSpace(color_manager)
             getColorManager = globalPixelMap.getColorSpace()
@@ -141,7 +138,6 @@ class Test_ColorSpace_01 {
         var colorSpaceName = DisplayP3
         color_manager = create(colorSpaceName)
         var getColorManager: ColorSpaceManager
-
         try {
             globalPixelMap.setColorSpace(color_manager)
             getColorManager = globalPixelMap.getColorSpace()
@@ -176,7 +172,6 @@ class Test_ColorSpace_01 {
         var colorSpaceName = Srgb
         color_manager = create(colorSpaceName)
         var getColorManager: ColorSpaceManager
-
         try {
             globalPixelMap.setColorSpace(color_manager)
             getColorManager = globalPixelMap.getColorSpace()
@@ -212,7 +207,6 @@ class Test_ColorSpace_01 {
         var gamma: Float32 = 1.0
         color_manager = create(primaries, gamma)
         var getColorManager: ColorSpaceManager
-
         try {
             globalPixelMap.setColorSpace(color_manager)
             getColorManager = globalPixelMap.getColorSpace()
@@ -248,7 +242,6 @@ class Test_ColorSpace_01 {
         var gamma: Float32 = 1.0
         color_manager = create(primaries, gamma)
         var getColorManager: ColorSpaceManager
-
         try {
             globalPixelMap.setColorSpace(color_manager)
             getColorManager = globalPixelMap.getColorSpace()
@@ -286,7 +279,6 @@ class Test_ColorSpace_01 {
         color_manager = create(primaries, gamma)
         var getColorManager: ColorSpaceManager
         var targetColorSpace = create(AdobeRgb1998)
-
         try {
             globalPixelMap.setColorSpace(color_manager)
             globalPixelMap.applyColorSpace(targetColorSpace)
@@ -323,7 +315,6 @@ class Test_ColorSpace_01 {
         var gamma: Float32 = 1.0
         color_manager = create(primaries, gamma)
         var getColorManager: ColorSpaceManager
-
         try {
             globalPixelMap.applyColorSpace(color_manager)
             getColorManager = globalPixelMap.getColorSpace()
@@ -357,7 +348,6 @@ class Test_ColorSpace_01 {
         var colorSpaceName = Srgb
         color_manager = create(colorSpaceName)
         var getColorManager: ColorSpaceManager
-
         try {
             globalPixelMap.release()
             globalPixelMap.setColorSpace(color_manager)

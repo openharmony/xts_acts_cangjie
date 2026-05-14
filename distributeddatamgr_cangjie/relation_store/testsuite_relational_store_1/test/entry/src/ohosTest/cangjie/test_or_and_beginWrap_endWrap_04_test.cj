@@ -348,6 +348,7 @@ class Test_or_and_beginWrap_endWrap_04 {
         @Expect(resultSet.rowCount, 0)
         try {
             resultSet.goToFirstRow()
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14800012)
         }

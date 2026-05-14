@@ -41,6 +41,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(0u32, "", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -62,6 +63,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(0u32, "", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -83,6 +85,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(0u32, "", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -104,6 +107,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(0u32, "xxx", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -125,6 +129,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(0u32, "xxx", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -146,6 +151,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(0u32, "xxx", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -167,6 +173,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(0u32, "0", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -188,6 +195,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(0u32, "0", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -209,6 +217,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(0u32, "0", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -230,6 +239,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(1u32, "", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -251,6 +261,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(1u32, "", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -272,6 +283,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(1u32, "", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -293,6 +305,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(1u32, "xxx", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -314,6 +327,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(1u32, "xxx", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -335,6 +349,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(1u32, "xxx", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -356,6 +371,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(1u32, "0", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -377,6 +393,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(1u32, "0", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -398,6 +415,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(1u32, "0", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -419,6 +437,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65535u32, "", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -440,6 +459,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65535u32, "", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -461,6 +481,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65535u32, "", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -482,6 +503,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65535u32, "xxx", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -503,6 +525,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65535u32, "xxx", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -524,6 +547,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65535u32, "xxx", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -545,6 +569,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65535u32, "0", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -566,6 +591,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65535u32, "0", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -587,6 +613,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65535u32, "0", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -608,6 +635,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65536u32, "", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -629,6 +657,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65536u32, "", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -650,6 +679,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65536u32, "", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -671,6 +701,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65536u32, "xxx", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -692,6 +723,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65536u32, "xxx", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -713,6 +745,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65536u32, "xxx", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -734,6 +767,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65536u32, "0", "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -755,6 +789,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65536u32, "0", "xxx")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -776,6 +811,7 @@ class testDebug_1 {
         Hilog.info(0, "cangjietest", "hilog fail")
         try {
             Hilog.debug(65536u32, "0", "0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

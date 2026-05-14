@@ -59,10 +59,10 @@ class Test_runner {
         Hilog.info(0, "cangjietest","test runner registerCreator beigins")
         try {
             let _ = TestRunner.registerCreator("MyTestRunner") {MyTestRunner()}
-            @Assert(true)
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.info(0, "cangjietest","test runner registerCreator failed")
-            @Assert(false)
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest","test runner registerCreator ends")
     }
@@ -82,10 +82,10 @@ class Test_runner {
         try {
             let myTestRunner = MyTestRunner()
             myTestRunner.onRun()
-            @Assert(true)
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.info(0, "cangjietest","test runner onrun failed")
-            @Assert(false)
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest","test runner onrun ends")
     }
@@ -105,10 +105,10 @@ class Test_runner {
         try {
             let myTestRunner = MyTestRunner()
             myTestRunner.onPrepare()
-            @Assert(true)
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.info(0, "cangjietest","test runner onPrepare failed")
-            @Assert(false)
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest","test runner onPrepare ends")
     }

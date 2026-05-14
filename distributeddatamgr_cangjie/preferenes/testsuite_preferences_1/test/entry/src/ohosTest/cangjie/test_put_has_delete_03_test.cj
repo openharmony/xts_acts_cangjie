@@ -81,9 +81,9 @@ class Test_put_has_delete_03 {
     func test_put_01(): Unit {
         try {
             preferences.put("", PreferencesValueType.StringData("仓颉语言"))
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401)
-
         }
     }
 
@@ -101,9 +101,9 @@ class Test_put_has_delete_03 {
     func test_put_02(): Unit {
         try {
             preferences.put("", PreferencesValueType.BoolArray([true, false, true]))
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401)
-
         }
     }
 
@@ -124,7 +124,6 @@ class Test_put_has_delete_03 {
             @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401)
-
         }
     }
 

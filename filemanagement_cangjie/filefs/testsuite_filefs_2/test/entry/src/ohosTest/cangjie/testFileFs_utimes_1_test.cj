@@ -43,14 +43,12 @@ class testFileFs_utimes_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")   
         FileIo.close(f.fd)     
         let a = FileIo.stat(fpath)
         let res = FileIo.utimes(fpath, Float64(DateTime.UnixEpoch.second))
         let b = FileIo.stat(fpath)
         @Expect(b.ctime > a.ctime, false)
-
     }
 
     /**
@@ -69,7 +67,6 @@ class testFileFs_utimes_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")   
         FileIo.close(f.fd) 
         let a = FileIo.stat(fpath)    
@@ -94,7 +91,6 @@ class testFileFs_utimes_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-     
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")   
         FileIo.close(f.fd)   
         try{
@@ -103,8 +99,6 @@ class testFileFs_utimes_1 {
         } catch(e: BusinessException){
         @Expect(e.code, 13900002) 
         }
-
-
     }
     /**
      * @tc.number: test_fs.write_04
@@ -122,11 +116,9 @@ class testFileFs_utimes_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")   
         FileIo.close(f.fd)     
         try{
-
         let res = FileIo.utimes("", Float64(DateTime.UnixEpoch.second))
         @Expect(false)
         } catch(e: BusinessException){
@@ -147,7 +139,6 @@ class testFileFs_utimes_1 {
     func test_utimes_05() {
         let fpath = "/data/storage/el2/base/files/test_write_01"
         try{
-
         let res = FileIo.utimes("", Float64(DateTime.UnixEpoch.second))
         @Expect(false)
         } catch(e: BusinessException){
@@ -170,11 +161,9 @@ class testFileFs_utimes_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")   
         FileIo.close(f.fd)     
         try{
-
         let res = FileIo.utimes("/0", Float64(DateTime.UnixEpoch.second))
         @Expect(false)
         } catch(e: BusinessException){
@@ -198,11 +187,9 @@ class testFileFs_utimes_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")   
         FileIo.close(f.fd)     
         try{
-
         let res = FileIo.utimes("/n", Float64(DateTime.UnixEpoch.second))
         @Expect(false)
         } catch(e: BusinessException){

@@ -42,7 +42,6 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")        
         let options: ReadTextOptions = ReadTextOptions(offset: 1, length: 2, encoding: "utf-8")
         let res = FileIo.readText(fpath, options: options)
@@ -65,7 +64,6 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")  
         try {
         let options: ReadTextOptions = ReadTextOptions(offset: -1, length: 2, encoding: "utf-8")
@@ -74,7 +72,6 @@ class testFileFs_readtext_1 {
         }  catch(e: BusinessException){
             @Expect(e.code, 13900020)
         }    
-
     }
 
     /**
@@ -93,7 +90,6 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")        
         let options: ReadTextOptions = ReadTextOptions(offset: 0, length: 2, encoding: "utf-8")
         let res = FileIo.readText(fpath, options: options)
@@ -115,7 +111,6 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world")        
         let options: ReadTextOptions = ReadTextOptions(offset: 0, length: 0, encoding: "utf-8")
         let res = FileIo.readText(fpath, options: options)
@@ -137,7 +132,6 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world") 
         try {
         let options: ReadTextOptions = ReadTextOptions(offset: Int64.Max, length: 99, encoding: "utf-8")
@@ -146,7 +140,6 @@ class testFileFs_readtext_1 {
         }  catch(e: BusinessException){
             @Expect(e.code == 13900020)
         }     
-
     }
     /**
      * @tc.number: test_fs.write_06
@@ -164,7 +157,6 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world") 
         try {
         let options: ReadTextOptions = ReadTextOptions(offset: Int64.Max, length: 99, encoding: "utf-8")
@@ -173,7 +165,6 @@ class testFileFs_readtext_1 {
         }  catch(e: BusinessException){
             @Expect(e.code, 13900020)
         }     
-
     }
 
     /**
@@ -192,12 +183,10 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world") 
         let options: ReadTextOptions = ReadTextOptions(length: 0, encoding: "utf-8")
         let res = FileIo.readText(fpath, options: options)
         @Expect(res == "")  
-
     }
 
     /**
@@ -238,7 +227,6 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world") 
         try {
         let options: ReadTextOptions = ReadTextOptions(encoding: "")
@@ -247,7 +235,6 @@ class testFileFs_readtext_1 {
         }  catch(e: BusinessException){
             @Expect(e.code , 13900020)
         }     
-
     }
 
     /**
@@ -266,7 +253,6 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world") 
         try {
         let options: ReadTextOptions = ReadTextOptions(encoding: "utf-8")
@@ -275,7 +261,6 @@ class testFileFs_readtext_1 {
         }  catch(e: BusinessException){
             @Expect(e.code, 13900002)
         }     
-
     }
 
      /**
@@ -294,7 +279,6 @@ class testFileFs_readtext_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let bytesWritten1 = FileIo.write(f.fd, "hello, world") 
         try {
         let options: ReadTextOptions = ReadTextOptions(encoding: "utf-8")
@@ -303,7 +287,6 @@ class testFileFs_readtext_1 {
         }  catch(e: BusinessException){
             @Expect(e.code,13900002)
         }     
-
     }  
 }
      

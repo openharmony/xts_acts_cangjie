@@ -47,7 +47,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFd")
         try {
             getResourceManager().getRawFd("")
-            @Expect("assertion#1771: not throw", "fail to get RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -55,7 +55,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to close RawFd")
         try {
             getResourceManager().closeRawFd("")
-            @Expect("assertion#1772: not throw", "fail to close RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -78,7 +78,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFd")
         try {
             getResourceManager().getRawFd("\0")
-            @Expect("assertion#1773: not throw", "fail to get RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -86,7 +86,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to close RawFd")
         try {
             getResourceManager().closeRawFd("\0")
-            @Expect("assertion#1774: not throw", "fail to close RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -109,7 +109,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFd")
         try {
             getResourceManager().getRawFd("non_existing_rawfile_path_0")
-            @Expect("assertion#1775: not throw", "fail to get RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -117,7 +117,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to close RawFd")
         try {
             getResourceManager().closeRawFd("non_existing_rawfile_path_0")
-            @Expect("assertion#1776: not throw", "fail to close RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -140,7 +140,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFd")
         try {
             getResourceManager().getRawFd("aaaaa/bbbbb")
-            @Expect("assertion#1777: not throw", "fail to get RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -148,7 +148,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to close RawFd")
         try {
             getResourceManager().closeRawFd("aaaaa/bbbbb")
-            @Expect("assertion#1778: not throw", "fail to close RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -171,7 +171,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFd")
         try {
             getResourceManager().getRawFd("//////")
-            @Expect("assertion#1779: not throw", "fail to get RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -179,7 +179,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to close RawFd")
         try {
             getResourceManager().closeRawFd("//////")
-            @Expect("assertion#1780: not throw", "fail to close RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -202,7 +202,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFd")
         try {
             getResourceManager().getRawFd("\\\\")
-            @Expect("assertion#1781: not throw", "fail to get RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -210,7 +210,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to close RawFd")
         try {
             getResourceManager().closeRawFd("\\\\")
-            @Expect("assertion#1782: not throw", "fail to close RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -232,7 +232,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFd")
         let rawFd = getResourceManager().getRawFd("test.txt")
-        @Assert(rawFd.length, 19i64)
+        @Expect(rawFd.length, 19i64)
         Hilog.info(0u32, "CangjieTest", "close")
         getResourceManager().closeRawFd("test.txt")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 ends.")
@@ -251,10 +251,9 @@ class TestGetRawFd_1 {
     func TestCase_8(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_8 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFd")
-        // let rawFd = getResourceManager().getRawFd("test1.txt")
         try {
             getResourceManager().getRawFd("test1.txt")
-            @Expect("assertion#1781: not throw", "fail to get RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -262,14 +261,11 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to close RawFd")
         try {
             getResourceManager().closeRawFd("test1.txt")
-            @Expect("assertion#1782: not throw", "fail to close RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
         }  
-        // @Assert(rawFd.length, 16i64)
-        // Hilog.info(0u32, "CangjieTest", "close")
-        // getResourceManager().closeRawFd("t1.txt")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_8 ends.")
     }
 
@@ -286,13 +282,9 @@ class TestGetRawFd_1 {
     func TestCase_9(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_9 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFd")
-        // let rawFd = getResourceManager().getRawFd("dir0/test1.txt")
-        // @Assert(rawFd.length, 16i64)
-        // Hilog.info(0u32, "CangjieTest", "close")
-        // getResourceManager().closeRawFd("dir0/test1.txt")
         try {
             getResourceManager().getRawFd("dir0/test1.txt")
-            @Expect("assertion#1781: not throw", "fail to get RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -300,7 +292,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to close RawFd")
         try {
             getResourceManager().closeRawFd("dir0/test1.txt")
-            @Expect("assertion#1782: not throw", "fail to close RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -321,13 +313,9 @@ class TestGetRawFd_1 {
     func TestCase_10(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_10 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFd")
-        // let rawFd = getResourceManager().getRawFd("dir0/dir0/test1.txt")
-        // @Assert(rawFd.length, 16i64)
-        // Hilog.info(0u32, "CangjieTest", "close")
-        // getResourceManager().closeRawFd("dir0/dir0/test1.txt")
         try {
             getResourceManager().getRawFd("dir0/dir0/test1.txt")
-            @Expect("assertion#1781: not throw", "fail to get RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -335,7 +323,7 @@ class TestGetRawFd_1 {
         Hilog.info(0u32, "CangjieTest", "fail to close RawFd")
         try {
             getResourceManager().closeRawFd("dir0/dir0/test1.txt")
-            @Expect("assertion#1782: not throw", "fail to close RawFd")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)

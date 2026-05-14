@@ -106,6 +106,7 @@ class Test_ability_access_ctrl {
                     }
                 }
             }
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "cangjie", "abilityaccess", "test_AtManager_error: ${e}")
         }

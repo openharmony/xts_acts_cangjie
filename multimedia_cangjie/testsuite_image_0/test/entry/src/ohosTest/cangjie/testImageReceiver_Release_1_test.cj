@@ -122,7 +122,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(1i32, 2i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_11 ends.")
     }
 
@@ -142,7 +142,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(1i32, 2i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_12 ends.")
     }
 
@@ -162,7 +162,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(1i32, 3i32), ImageFormat.Jpeg, 1i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_16 ends.")
     }
 
@@ -182,7 +182,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(1i32, 3i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_17 ends.")
     }
 
@@ -202,7 +202,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(1i32, 3i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_18 ends.")
     }
 
@@ -222,7 +222,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(2i32, 1i32), ImageFormat.Jpeg, 1i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_22 ends.")
     }
 
@@ -242,7 +242,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(2i32, 1i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_23 ends.")
     }
 
@@ -262,7 +262,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(2i32, 1i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_24 ends.")
     }
 
@@ -282,7 +282,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(2i32, 2i32), ImageFormat.Jpeg, 1i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_28 ends.")
     }
 
@@ -302,7 +302,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(2i32, 2i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_29 ends.")
     }
 
@@ -322,7 +322,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(2i32, 2i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_30 ends.")
     }
 
@@ -342,7 +342,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(2i32, 2i32), ImageFormat.Jpeg, 1i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_34 ends.")
     }
 
@@ -362,7 +362,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(2i32, 2i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_35 ends.")
     }
 
@@ -382,7 +382,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(2i32, 2i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_36 ends.")
     }
 
@@ -402,7 +402,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 1i32), ImageFormat.Jpeg, 1i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_40 ends.")
     }
 
@@ -422,7 +422,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 1i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_41 ends.")
     }
 
@@ -442,7 +442,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 1i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_42 ends.")
     }
 
@@ -462,7 +462,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 2i32), ImageFormat.Jpeg, 1i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_46 ends.")
     }
 
@@ -482,7 +482,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 2i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_47 ends.")
     }
 
@@ -502,7 +502,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 2i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_48 ends.")
     }
 
@@ -522,7 +522,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 3i32), ImageFormat.Jpeg, 1i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_52 ends.")
     }
 
@@ -542,7 +542,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 3i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_53 ends.")
     }
 
@@ -562,7 +562,7 @@ class testImageReceiver_Release_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 3i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "Release")
         imageReceiver.release()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_54 ends.")
     }
 }

@@ -46,7 +46,7 @@ class testGetTime_1 {
         let r = Regex("\\d+")
         Hilog.info(0, "cangjietest", "define local variable res")
         let res = r.matches(timeString)
-        @Assert(res, true)
+        @Expect(res, true)
         Hilog.info(0, "cangjietest", "testcase TestCase_9 ends.")
     }
 
@@ -70,7 +70,7 @@ class testGetTime_1 {
         let r = Regex("\\d+")
         Hilog.info(0, "cangjietest", "define local variable res")
         let res = r.matches(timeString)
-        @Assert(res, true)
+        @Expect(res, true)
         Hilog.info(0, "cangjietest", "testcase TestCase_10 ends.")
     }
 
@@ -94,7 +94,7 @@ class testGetTime_1 {
         let r = Regex("\\d+")
         Hilog.info(0, "cangjietest", "define local variable res")
         let res = r.matches(timeString)
-        @Assert(res, true)
+        @Expect(res, true)
         Hilog.info(0, "cangjietest", "testcase TestCase_11 ends.")
     }
 }

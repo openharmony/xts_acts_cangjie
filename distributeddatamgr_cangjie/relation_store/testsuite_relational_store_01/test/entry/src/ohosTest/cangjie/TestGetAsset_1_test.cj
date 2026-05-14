@@ -40,7 +40,6 @@ class TestGetAsset_1 {
     func TestCase_1(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S1, name: "valid name", encrypt: true, dataGroupId: "valid createTime",
@@ -51,7 +50,7 @@ class TestGetAsset_1 {
             let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'PETER")
             Hilog.info(0u32, "cangjietest", "", "Get the value of the specified column in the current row failed")
             resultSet.getAsset(-1i32)
-            @Expect("assertion#5: not throw", "Get the value of the specified column in the current row failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -71,7 +70,6 @@ class TestGetAsset_1 {
     func TestCase_2(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_2 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S2, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -82,7 +80,7 @@ class TestGetAsset_1 {
             let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'PETER")
             Hilog.info(0u32, "cangjietest", "", "Get the value of the specified column in the current row failed")
             resultSet.getAsset(0i32)
-            @Expect("assertion#6: not throw", "Get the value of the specified column in the current row failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -102,7 +100,6 @@ class TestGetAsset_1 {
     func TestCase_3(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_3 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S3, name: "valid name", encrypt: true, dataGroupId: "valid createTime",
@@ -113,7 +110,7 @@ class TestGetAsset_1 {
             let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'PETER")
             Hilog.info(0u32, "cangjietest", "", "Get the value of the specified column in the current row failed")
             resultSet.getAsset(1i32)
-            @Expect("assertion#7: not throw", "Get the value of the specified column in the current row failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -133,7 +130,6 @@ class TestGetAsset_1 {
     func TestCase_4(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_4 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: true, dataGroupId: "valid createTime",
@@ -144,7 +140,7 @@ class TestGetAsset_1 {
             let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'PETER")
             Hilog.info(0u32, "cangjietest", "", "Get the value of the specified column in the current row failed")
             resultSet.getAsset(2i32)
-            @Expect("assertion#8: not throw", "Get the value of the specified column in the current row failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -164,7 +160,6 @@ class TestGetAsset_1 {
     func TestCase_5(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_5 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S1, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -175,7 +170,7 @@ class TestGetAsset_1 {
             let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'PETER")
             Hilog.info(0u32, "cangjietest", "", "Get the value of the specified column in the current row failed")
             resultSet.getAsset(3i32)
-            @Expect("assertion#9: not throw", "Get the value of the specified column in the current row failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -195,7 +190,6 @@ class TestGetAsset_1 {
     func TestCase_6(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_6 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S1, name: "valid name", encrypt: true, dataGroupId: "valid createTime",
@@ -206,7 +200,7 @@ class TestGetAsset_1 {
             let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'PETER")
             Hilog.info(0u32, "cangjietest", "", "Get the value of the specified column in the current row failed")
             resultSet.getAsset(4i32)
-            @Expect("assertion#10: not throw", "Get the value of the specified column in the current row failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -226,7 +220,6 @@ class TestGetAsset_1 {
     func TestCase_7(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_7 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S1, name: "valid name", encrypt: true, dataGroupId: "valid createTime",
@@ -237,7 +230,7 @@ class TestGetAsset_1 {
             let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'PETER")
             Hilog.info(0u32, "cangjietest", "", "Get the value of the specified column in the current row failed")
             resultSet.getAsset(7i32)
-            @Expect("assertion#11: not throw", "Get the value of the specified column in the current row failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -257,7 +250,6 @@ class TestGetAsset_1 {
     func TestCase_8(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_8 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S1, name: "valid name", encrypt: true, dataGroupId: "valid createTime",
@@ -268,7 +260,7 @@ class TestGetAsset_1 {
             let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'PETER")
             Hilog.info(0u32, "cangjietest", "", "Get the value of the specified column in the current row failed")
             resultSet.getAsset(8i32)
-            @Expect("assertion#12: not throw", "Get the value of the specified column in the current row failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -288,7 +280,6 @@ class TestGetAsset_1 {
     func TestCase_9(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_9 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S1, name: "valid name", encrypt: true, dataGroupId: "valid createTime",
@@ -299,7 +290,7 @@ class TestGetAsset_1 {
             let resultSet = rdbStore.querySql("SELECT * FROM EMPLOYEE WHERE NAME = 'PETER")
             Hilog.info(0u32, "cangjietest", "", "Get the value of the specified column in the current row failed")
             resultSet.getAsset(9i32)
-            @Expect("assertion#13: not throw", "Get the value of the specified column in the current row failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }

@@ -41,8 +41,8 @@ class testImageSource_Release_1 {
         try {
             let imageSource = createImageSource("")
             imageSource.release()
-            @Assert(true)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -66,8 +66,8 @@ class testImageSource_Release_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.jpg")
             imageSource.release()
-            @Assert(true)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -91,8 +91,8 @@ class testImageSource_Release_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.bmp")
             imageSource.release()
-            @Assert(true)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -116,8 +116,8 @@ class testImageSource_Release_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.gif")
             imageSource.release()
-            @Assert(true)
-            @Expect("assertion#3: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -141,8 +141,8 @@ class testImageSource_Release_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.123")
             imageSource.release()
-            @Assert(true)
-            @Expect("assertion#4: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)

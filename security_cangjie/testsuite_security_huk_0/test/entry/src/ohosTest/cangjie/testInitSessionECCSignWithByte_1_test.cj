@@ -44,7 +44,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem(" #5%23",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Int32Value(-1i32))],
                     inData: Bytes()))
-            @Assert(hasKeyItem(" #5%23", HuksOptions()), true)
+            @Expect(hasKeyItem(" #5%23", HuksOptions()), true)
             let signHandle = initSession(" #5%23",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Int32Value(-1i32))],
                     inData: Bytes())).handle
@@ -71,9 +71,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Int32Value(-1i32))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem(" #5%23", HuksOptions())
-            @Expect("assertion#736: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -97,7 +97,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("1234567890",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("1234567890", HuksOptions()), true)
+            @Expect(hasKeyItem("1234567890", HuksOptions()), true)
             let signHandle = initSession("1234567890",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32))],
                     inData: Bytes())).handle
@@ -124,9 +124,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("1234567890", HuksOptions())
-            @Expect("assertion#737: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -150,7 +150,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("KBCWEUYFI",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Int32Value(1i32))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("KBCWEUYFI", HuksOptions()), true)
+            @Expect(hasKeyItem("KBCWEUYFI", HuksOptions()), true)
             Hilog.info(0u32, "cangjietest", "", "define local variable signHandle")
             let signHandle = initSession("KBCWEUYFI",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Int32Value(1i32))],
@@ -185,7 +185,7 @@ class testInitSessionECCSignWithByte_1 {
                     inData: sign)).getOrThrow()
             Hilog.info(0u32, "cangjietest", "", "abortSession")
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             Hilog.info(0u32, "cangjietest", "", "deleteKeyItem")
             deleteKeyItem("KBCWEUYFI", HuksOptions())
         } catch (e: BusinessException) {
@@ -211,7 +211,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("8927(@*$#&)",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(0u32))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("8927(@*$#&)", HuksOptions()), true)
+            @Expect(hasKeyItem("8927(@*$#&)", HuksOptions()), true)
             Hilog.info(0u32, "cangjietest", "", "define local variable signHandle")
             let signHandle = initSession("8927(@*$#&)",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(0u32))],
@@ -246,7 +246,7 @@ class testInitSessionECCSignWithByte_1 {
                     inData: sign)).getOrThrow()
             Hilog.info(0u32, "cangjietest", "", "abortSession")
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             Hilog.info(0u32, "cangjietest", "", "deleteKeyItem")
             deleteKeyItem("8927(@*$#&)", HuksOptions())
         } catch (e: BusinessException) {
@@ -272,7 +272,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("NS9jhi)#&($758)",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(1u32))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("NS9jhi)#&($758)", HuksOptions()), true)
+            @Expect(hasKeyItem("NS9jhi)#&($758)", HuksOptions()), true)
             Hilog.info(0u32, "cangjietest", "", "define local variable signHandle")
             let signHandle = initSession("NS9jhi)#&($758)",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(1u32))],
@@ -304,7 +304,7 @@ class testInitSessionECCSignWithByte_1 {
                     inData: sign)).getOrThrow()
             Hilog.info(0u32, "cangjietest", "", "abortSession")
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             Hilog.info(0u32, "cangjietest", "", "deleteKeyItem")
             deleteKeyItem("NS9jhi)#&($758)", HuksOptions())
         } catch (e: BusinessException) {
@@ -330,7 +330,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("q3",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(2u32))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("q3", HuksOptions()), true)
+            @Expect(hasKeyItem("q3", HuksOptions()), true)
             let signHandle = initSession("q3",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(2u32))],
                     inData: Bytes())).handle
@@ -357,9 +357,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(2u32))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("q3", HuksOptions())
-            @Expect("assertion#738: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -383,7 +383,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("123",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_TYPE, HuksParamValue.Uint64Value(1u64))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("123", HuksOptions()), true)
+            @Expect(hasKeyItem("123", HuksOptions()), true)
             let signHandle = initSession("123",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_TYPE, HuksParamValue.Uint64Value(1u64))],
                     inData: Bytes())).handle
@@ -410,9 +410,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_TYPE, HuksParamValue.Uint64Value(1u64))],
                     inData: sign), token: Bytes()).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("123", HuksOptions())
-            @Expect("assertion#739: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -436,7 +436,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("456",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ASSOCIATED_DATA, HuksParamValue.Uint64Value(2u64))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("456", HuksOptions()), true)
+            @Expect(hasKeyItem("456", HuksOptions()), true)
             let signHandle = initSession("456",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ASSOCIATED_DATA, HuksParamValue.Uint64Value(2u64))],
                     inData: Bytes())).handle
@@ -460,9 +460,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ASSOCIATED_DATA, HuksParamValue.Uint64Value(2u64))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("456", HuksOptions())
-            @Expect("assertion#740: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -486,7 +486,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("789",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_NONCE, HuksParamValue.Uint64Value(3u64))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("789", HuksOptions()), true)
+            @Expect(hasKeyItem("789", HuksOptions()), true)
             let signHandle = initSession("789",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_NONCE, HuksParamValue.Uint64Value(3u64))],
                     inData: Bytes())).handle
@@ -513,9 +513,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_NONCE, HuksParamValue.Uint64Value(3u64))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("789", HuksOptions())
-            @Expect("assertion#741: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -539,7 +539,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("!@#$",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("!@#$", HuksOptions()), true)
+            @Expect(hasKeyItem("!@#$", HuksOptions()), true)
             let signHandle = initSession("!@#$",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))],
                     inData: Bytes())).handle
@@ -566,9 +566,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))], inData: sign
                 )).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("!@#$", HuksOptions())
-            @Expect("assertion#742: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -592,7 +592,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("%^&*",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_INFO, HuksParamValue.BytesValue([3u8]))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("%^&*", HuksOptions()), true)
+            @Expect(hasKeyItem("%^&*", HuksOptions()), true)
             let signHandle = initSession("%^&*",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_INFO, HuksParamValue.BytesValue([3u8]))],
                     inData: Bytes())).handle
@@ -619,9 +619,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_INFO, HuksParamValue.BytesValue([3u8]))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("%^&*", HuksOptions())
-            @Expect("assertion#743: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -645,7 +645,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("01294hrew",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_SALT, HuksParamValue.BytesValue([5u8]))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("01294hrew", HuksOptions()), true)
+            @Expect(hasKeyItem("01294hrew", HuksOptions()), true)
             let signHandle = initSession("01294hrew",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_SALT, HuksParamValue.BytesValue([5u8]))],
                     inData: Bytes())).handle
@@ -672,9 +672,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_SALT, HuksParamValue.BytesValue([5u8]))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("01294hrew", HuksOptions())
-            @Expect("assertion#744: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -698,7 +698,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ITERATION, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ITERATION, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -728,9 +728,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ITERATION, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#746: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -755,7 +755,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(true))],
@@ -791,9 +791,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#747: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -818,7 +818,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
                         HuksParamValue.BooleanValue(true))], inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
@@ -854,9 +854,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
                         HuksParamValue.BooleanValue(true))], inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#749: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -881,7 +881,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
                         HuksParamValue.BooleanValue(true))], inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
@@ -917,9 +917,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
                         HuksParamValue.BooleanValue(true))], inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#750: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -943,7 +943,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ALG_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ALG_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -970,9 +970,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ALG_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#751: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -997,7 +997,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS,
                         HuksParamValue.BooleanValue(true))], inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS,
@@ -1033,9 +1033,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS,
                         HuksParamValue.BooleanValue(true))], inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#752: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -1060,7 +1060,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
@@ -1096,9 +1096,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#753: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1123,7 +1123,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
@@ -1159,9 +1159,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#754: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1185,7 +1185,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_ALIAS, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_ALIAS, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -1212,9 +1212,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_ALIAS, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#755: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1238,7 +1238,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_DERIVE_KEY_SIZE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_DERIVE_KEY_SIZE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -1268,9 +1268,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_DERIVE_KEY_SIZE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#756: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1294,7 +1294,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IMPORT_KEY_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IMPORT_KEY_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -1324,9 +1324,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IMPORT_KEY_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#757: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1351,7 +1351,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, HuksParamValue.BooleanValue(true))],
@@ -1387,9 +1387,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#758: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1414,7 +1414,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
                         HuksParamValue.BooleanValue(true))], inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
@@ -1450,9 +1450,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
                         HuksParamValue.BooleanValue(true))], inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#759: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1477,7 +1477,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_RSA_PSS_SALT_LEN_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_RSA_PSS_SALT_LEN_TYPE, HuksParamValue.BooleanValue(true))],
@@ -1513,9 +1513,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_RSA_PSS_SALT_LEN_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#760: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1539,7 +1539,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_USER_ID, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_USER_ID, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -1566,9 +1566,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_USER_ID, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#766: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1593,7 +1593,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_NO_AUTH_REQUIRED, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_NO_AUTH_REQUIRED, HuksParamValue.BooleanValue(true))],
@@ -1629,9 +1629,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_NO_AUTH_REQUIRED, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#767: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -1655,7 +1655,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_USER_AUTH_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_USER_AUTH_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -1685,9 +1685,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_USER_AUTH_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#768: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1711,7 +1711,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AUTH_TIMEOUT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AUTH_TIMEOUT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -1741,9 +1741,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AUTH_TIMEOUT, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#769: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1767,7 +1767,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AUTH_TOKEN, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AUTH_TOKEN, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -1797,9 +1797,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AUTH_TOKEN, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#770: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1824,7 +1824,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_ACCESS_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_ACCESS_TYPE, HuksParamValue.BooleanValue(true))],
@@ -1860,9 +1860,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_ACCESS_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#771: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1887,7 +1887,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_SECURE_SIGN_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_SECURE_SIGN_TYPE, HuksParamValue.BooleanValue(true))],
@@ -1923,9 +1923,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_SECURE_SIGN_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#772: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -1949,7 +1949,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_CHALLENGE_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_CHALLENGE_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -1979,9 +1979,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_CHALLENGE_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#773: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -2005,7 +2005,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_CHALLENGE_POS, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_CHALLENGE_POS, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -2035,9 +2035,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_CHALLENGE_POS, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#774: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -2062,7 +2062,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_PURPOSE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_PURPOSE, HuksParamValue.BooleanValue(true))],
@@ -2098,9 +2098,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_PURPOSE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#775: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -2125,7 +2125,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, HuksParamValue.BooleanValue(true))],
@@ -2161,9 +2161,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#776: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -2187,7 +2187,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IS_KEY_ALIAS, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IS_KEY_ALIAS, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -2217,9 +2217,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IS_KEY_ALIAS, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#794: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -2244,7 +2244,7 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_STORAGE_FLAG, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_STORAGE_FLAG, HuksParamValue.BooleanValue(true))],
@@ -2280,9 +2280,9 @@ class testInitSessionECCSignWithByte_1 {
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_STORAGE_FLAG, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#795: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -2306,7 +2306,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IS_ALLOWED_WRAP, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IS_ALLOWED_WRAP, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -2336,9 +2336,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IS_ALLOWED_WRAP, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#796: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000014i32)
         }
@@ -2362,7 +2362,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_WRAP_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_WRAP_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -2392,9 +2392,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_WRAP_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#797: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -2418,7 +2418,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_ID, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_ID, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -2448,9 +2448,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_ID, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#798: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -2474,7 +2474,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_FLAG, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_FLAG, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -2501,9 +2501,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_FLAG, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#800: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -2527,7 +2527,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -2554,9 +2554,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#810: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -2580,7 +2580,7 @@ class testInitSessionECCSignWithByte_1 {
             generateKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AE_TAG, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(hasKeyItem("keyAlias1", HuksOptions()), true)
+            @Expect(hasKeyItem("keyAlias1", HuksOptions()), true)
             let signHandle = initSession("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AE_TAG, HuksParamValue.BooleanValue(true))],
                     inData: Bytes())).handle
@@ -2607,9 +2607,9 @@ class testInitSessionECCSignWithByte_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AE_TAG, HuksParamValue.BooleanValue(true))],
                     inData: sign)).getOrThrow()
             abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
-            @Assert(verify.isEmpty(), false)
+            @Expect(verify.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#813: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }

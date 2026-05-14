@@ -48,7 +48,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("")
-            @Expect("assertion#1335: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -71,7 +71,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("\0")
-            @Expect("assertion#1336: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -94,7 +94,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("nonExistingResourceName")
-            @Expect("assertion#1337: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -117,7 +117,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("module_desc")
-            @Expect("assertion#1338: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -137,7 +137,7 @@ class TestGetStringArrayByName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_5(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_5 begins.")
-        @Assert("[small, middle, large, extra large]", getResourceManager().getStringArrayByName("sizelist").toString())
+        @Expect("[small, middle, large, extra large]", getResourceManager().getStringArrayByName("sizelist").toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_5 ends.")
     }
 
@@ -156,7 +156,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("plural_name")
-            @Expect("assertion#1339: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -179,7 +179,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("Test_Format1")
-            @Expect("assertion#1340: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -202,7 +202,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("Test_Format2")
-            @Expect("assertion#1341: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -225,7 +225,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("Test_Format3")
-            @Expect("assertion#1342: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -248,7 +248,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("EntryAbility_desc")
-            @Expect("assertion#1343: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -271,7 +271,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("layered_image")
-            @Expect("assertion#1344: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -294,7 +294,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("EntryAbility_label")
-            @Expect("assertion#1345: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -317,7 +317,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("startIcon")
-            @Expect("assertion#1346: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -340,7 +340,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("main_pages")
-            @Expect("assertion#1347: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -363,7 +363,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("start_window_background")
-            @Expect("assertion#1348: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -386,7 +386,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("float_1")
-            @Expect("assertion#1349: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -409,7 +409,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("float_2")
-            @Expect("assertion#1350: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -432,7 +432,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("int_1")
-            @Expect("assertion#1351: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -455,7 +455,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("int_2")
-            @Expect("assertion#1352: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -478,7 +478,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("test_boolean1")
-            @Expect("assertion#1353: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -501,7 +501,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("test_boolean0")
-            @Expect("assertion#1354: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -524,7 +524,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("boolean_3")
-            @Expect("assertion#1355: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -547,7 +547,7 @@ class TestGetStringArrayByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
         try {
             getResourceManager().getStringArrayByName("boolean_4")
-            @Expect("assertion#1356: not throw", "fail to get stringArray by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
