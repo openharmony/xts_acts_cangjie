@@ -11,33 +11,21 @@
 
 ## 简介<a name="section465982318513"></a>
 
-XTS子系统是OpenHarmony生态测试套件的集合，当前包括ACTS（application compatibility test suite）应用兼容性测试组件，后续将拓展DCTS（distributed compatibility test suite）分布式兼容性测试组件、HATS（hardware abstract test suite) 硬件抽象层兼容性测试组件。
+XTS_acts_cangjie是仓颉语言acts(application compatibility test suite)应用兼容性测试套件。
+
 
 ## 系统类型<a name="section125090457443"></a>
-
-OpenHarmony支持如下几种系统类型：
-
--   轻量系统（mini system）
-
-    面向MCU类处理器例如Arm Cortex-M、RISC-V 32位的设备，硬件资源极其有限，支持的设备最小内存为128KiB，可以提供多种轻量级网络协议，轻量级的图形框架，以及丰富的IOT总线读写部件等。可支撑的产品如智能家居领域的连接类模组、传感器设备、穿戴类设备等。
-
--   小型系统（small system）
-
-    面向应用处理器例如Arm Cortex-A的设备，支持的设备最小内存为1MiB，可以提供更高的安全能力、标准的图形框架、视频编解码的多媒体能力。可支撑的产品如智能家居领域的IP Camera、电子猫眼、路由器以及智慧出行领域的行车记录仪等。
-
--   标准系统（standard system）
-
-    面向应用处理器例如Arm Cortex-A的设备，支持的设备最小内存为128MiB，可以提供增强的交互能力、3D GPU以及硬件合成能力、更多控件以及动画效果更丰富的图形能力、完整的应用框架。可支撑的产品如高端的冰箱显示屏。
 
 
 ## 目录<a name="section161941989596"></a>
 
 ```
 /test/xts
-├── acts_cangjie           # 测试代码存放目录
-│ └── subsystem       # 标准系统子系统测试用例源码存放目录
-│ └── tools               # 测试工具代码存放目录
-│ │ └── build.py            # 标准系统测试用例构建
+├─  acts_cangjie           # 测试代码存放目录
+│   └─ subsystem           # 子系统测试用例源码存放目录
+│   └─ tools               # 测试工具、脚本存放目录
+│      └─ build.py         # 测试hap构建脚本
+│      └─ run.py           # 测试用例执行脚本
 ```
 
 ## 使用说明<a name="section137768191623"></a>
@@ -193,7 +181,7 @@ OpenHarmony支持如下几种系统类型：
 </tbody>
 </table>
 
-## 用例开发指导<a name="section3695134065513"></a>
+## 用例开发指导 <a name="section3695134065513"></a>
 
 根据测试系统选择测试框架和对应测试用例语言。
 
@@ -218,7 +206,7 @@ OpenHarmony支持如下几种系统类型：
 </tbody>
 </table>
 
-### cangjie语言用例开发指导（适用于标准系统）<a name="section159801435165220"></a>
+### cangjie语言用例开发指导<a name="section159801435165220"></a>
 
 当前使用的测试框架是CJUnit，用于支撑OpenHarmony application测试（特指基于cangjie应用框架使用 cangjie 语言开发的 APP）进行自动化测试。
 
@@ -275,30 +263,32 @@ OpenHarmony支持如下几种系统类型：
 
    ```
    ├── signature
-   │ └──openharmony_sx.p7b          # 签名工具
+   │ └──openharmony_sx.p7b                # 签名工具
    ├── AppScope
-   │ └──resource  
-   │ └──app.json
+   │ └──app.json                          # 应用全局配置信息
    ├── entry
    │ └──src
    │ │ └──main
-   │ │ │ └──cangjie         
+   │ │ │ └──cangjie         			   # cangjie源码存放目录
    │ │ │ │ └──ability_stage.cj         
-   │ │ │ │ └──index.cj  
+   │ │ │ │ └──index.cj   # 默认页
    │ │ │ │ └──main_ability.cj
-   │ │ │ └──resources                     # hap资源存放目录
-   │ │ │ └──module.json                   # hap配置文件
-   │ │ └──ohosTest
-   │ │ │ └──cangjie                       # 测试代码存放目录
+   │ │ │ └──resources                     # 应用资源文件存放目录
+   │ │ │ └──module.json                   # Stage模型模块配置文件
+   │ │ └──ohosTest                        # Instrument Test测试目录
+   │ │ │ └──cangjie                       # 仓颉测试代码存放目录
    │ │ │ │ │ └──unittest_support
-   │ │ │ │ │ │ └──unittest_engine.cj
-   │ │ │ │ │ └──xxxx_test.cj           # 测试套    
-   │ │ │ │ │ └──cjpm.toml
-   │ │ │ │ │ └──list_test.cj           # 测试套注册
-   │ │ │ │ │ └──utility.cj              
+   │ │ │ │ │ │ └──unittest_engine.cj  	   # cangjie测试框架
+   │ │ │ │ │ └──example_test.cj           # cangjie测试文件(测试套、测试用例)    
+   │ │ │ │ │ └──list_test.cj              # 测试套注册
+     
    ```
-
-2. unittest_engine.cj 示例
+   
+   注意：
+   1. cangjie测试文件需要以_test.cj命名
+   2. 测试类需要添加至list_test.cj中
+   
+2. unittest_engine.cj
 
    【注】在unittest_support目录下的 unittest_engine 文件中的 public override func onRun() 方法下存在拉起测试套入口xxxAbility的命令：
 
@@ -367,11 +357,12 @@ OpenHarmony支持如下几种系统类型：
     }
     ```
 
-4. test.cj测试套示例
+4. cangjie测试文件(example_test.cj)示例
 
     ```
     @Test
     class TestExample {
+    
         @TestCase
         func test00(): Unit {
                 let a = "abc"
@@ -382,17 +373,42 @@ OpenHarmony支持如下几种系统类型：
     }
     ```
 
-### 全量编译指导（适用于标准系统）<a name="section159801435165220"></a>
+5. 测试类注册(list_test.cj)示例
+
+    ```
+    private let register = testsuite()
+    
+    func testsuite() {
+        registerTestSuite {TestExample()}
+    }
+    ```
+
+
+### 全量编译指导<a name="section159801435165220"></a>
 环境配置(windows/linux)：配置hvigorw、cangjieSDK环境变量
 
-1.  全量编译
+1.  全量编译子系统测试工程
+
     test/xts/acts_cangjie/tools目录下执行编译命令：
 
     ```
     python ./build.py build --all
     ```
 
-2.  单个子系统编译
+2.  测试工程按子系统编译
+
+    test/xts/acts_cangjie/tools目录下执行编译命令：
+
+    ```
+    python ./build.py build --dir=xxx/xxx/xxx
+    ```
+    
+    例：编译子系统ability
+    ```
+    python ./build.py build --dir=xxx/xxx/xxx
+    ```
+
+3.  单个测试工程编译
 
     test/xts/acts_cangjie/tools目录下执行编译命令：
 
@@ -400,60 +416,74 @@ OpenHarmony支持如下几种系统类型：
     python ./build.py build --dir=xxx/xxx/xxx
     ```
 
-3.  单模块编译
-
-    test/xts/acts_cangjie/tools目录下执行编译命令：
-
+    例：编译子系统ability
     ```
     python ./build.py build --dir=xxx/xxx/xxx
     ```
-
-    测试用例输出目录：编译时添加参数--output-dir (默认输出目录 ./testcases)
+    
+    
+4.  测试用例输出目录：编译时添加参数--output-dir (默认输出目录 ./testcases)
     
     ```
     python ./build.py build --dir=xxx/xxx/xxx --output-dir=xxx/xxx/xxx
     ```
 
 
-### 全量用例执行指导（标准系统）<a name="section159801435165220"></a>
+### 全量用例执行指导 <a name="section159801435165220"></a>
 
-搭建测试环境Windows工作台下安装python3.7及以上版本，确保工作台和测试设备正常连接。
+测试执行目录结构如下，执行build.py编译脚本后默认生成testcases目录，并在该目录下生成对应的测试hap、执行配置文件。
 
-**注：高版本python不带 easy_install，可以安装低于 52.0.0 的 setuptools，解决该问题。**
+ ```
+ /test/xts
+├─  acts_cangjie           # 测试代码存放目录
+│   └─ subsystem           # 子系统测试用例源码存放目录
+│   └─ tools               # 测试工具、脚本存放目录
+│      └─ build.py         # 测试hap构建脚本
+│      └─ run.py           # 测试用例执行脚本
+│   └─ testcases           # 测试文件存放目录
+│      └─xxx.hap           # 测试hap文件
+│      └─xxx.json          # 测试执行配置文件
+│   └─  reports            # 测试报告生成目录
+ ```
 
-```
-pip install setuptools==50.0.0
-```
+用例执行方法
+1.  执行acts_cangjie\tools\run.py, 拉起xdevice界面。
 
-测试执行目录
+2.  界面启动后，输入命令行执行用例。
+     
+     按不同粒度执行测试用例：
+     1. 全量测试hap用例执行: 
+          ``` 
+          run acts
+     
+         执行testcases下全量测试hap的全量用例：
+        ``` 
+     
+     2. 单测试hap执行: 
+         ```
+         run –l cjTestability
+          
+         cjTestability： 测试hap名
+         ``````
+     
+     3. 单测试套执行：
+         ```
+         run -l cjTestability -ta class:TestSuiteExample
+     
+         cjTestability： 测试hap名
+         TestSuiteExample: 测试套名
+         ```
+     4. 单测试用例执行：
+          ```
+          run -l cjTestability -ta class:TestSuiteExample#TestCase
 
-    ├── testcases                      # 测试套文件存放目录 
-    │ └──xxx.hap                       # 测试套可执行hap文件
-    │ └──xxx.json                      # 测试套对应执行配置文件
-    ├── tools                          # 测试框架工具目录
-    │ └── run.py                        # window平台测试套启动执行文件
-    ├── reports                        # 测试报告生成目录
-
-用例执行
-1.  在Windows工作台上，找到从Linux服务器上拷贝下来的测试套件用例目录，在Windows命令窗口进入对应目录，直接执行acts_cangjie\tools\run.py。
-
-2.  界面启动后，输入用例执行指令。
-
-    全量执行：```run acts ```
-
-    模块执行(具体模块可以查看\acts_cangjie\testcases\)：```run –l ActsSamgrTest ```
-
-    单包执行(具体模块可以查看\acts_cangjie\testcases\)：（适用于OH驱动）
-
-    ```
-    run -l uitestActs -ta class:UiTestCase#testChecked  
-
-    uitestActs： 测试hap
-    UiTestCase: testsuite
-    testChecked: testcase
-    ```
-    测试执行：[xdevice常用命令行](http://gitcode.com/openharmony/testfwk_xdevice)
+          cjTestability： 测试hap名
+          TestSuiteExample: 测试套名
+          TestCase: 测试用例名 
+           ```
+           
+     其它命令行参考：[xdevice常用命令行](http://gitcode.com/openharmony/testfwk_xdevice)
 
 3.  查看测试报告。
-    进入acts\reports\，获取当前的执行记录，打开“summary_report.html”可以获取到测试报告。
+    进入acts_cangjie\reports\，获取当前的执行记录，打开“summary_report.html”可以获取到测试报告。
 
