@@ -1,21 +1,14 @@
-# XTS子系统<a name="ZH-CN_TOPIC_0000001117409671"></a>
+# XTS子系统-仓颉<a name="ZH-CN_TOPIC_0000001117409671"></a>
 
 -   [简介](#section465982318513)
--   [系统类型](#section125090457443)
 -   [目录](#section161941989596)
--   [约束](#section119744591305)
 -   [使用说明](#section137768191623)
 -   [用例开发指导](#section3695134065513)
-    -   [cangjie语言用例开发指导（适用于标准系统）](#section159801435165220)
-    -   [cangjie语言用例编译打包指导（适用于标准系统）](#section445519106559)
+    -   [仓颉语言用例开发指导](#section159801435165220)
 
 ## 简介<a name="section465982318513"></a>
 
-XTS_acts_cangjie是仓颉语言acts(application compatibility test suite)应用兼容性测试套件。
-
-
-## 系统类型<a name="section125090457443"></a>
-
+xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用兼容性测试套件。
 
 ## 目录<a name="section161941989596"></a>
 
@@ -185,34 +178,32 @@ XTS_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 
 根据测试系统选择测试框架和对应测试用例语言。
 
-**表 4**  系统和测试框架、开发语言对应关系
+**表 4**  测试框架和开发语言
 
 <a name="table4418343171415"></a>
-<table><thead align="left"><tr id="row34183435145"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p941874311148"><a name="p941874311148"></a><a name="p941874311148"></a>系统</p>
+<table><thead align="left"><tr id="row34183435145">
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.4.1.2"><p id="p1841804341413"><a name="p1841804341413"></a><a name="p1841804341413"></a>测试框架</p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p1841804341413"><a name="p1841804341413"></a><a name="p1841804341413"></a>测试框架</p>
-</th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p2418104311148"><a name="p2418104311148"></a><a name="p2418104311148"></a>语言</p>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.4.1.3"><p id="p2418104311148"><a name="p2418104311148"></a><a name="p2418104311148"></a>语言</p>
 </th>
 </tr>
 </thead>
-<tr id="row4419134341417"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p341964313143"><a name="p341964313143"></a><a name="p341964313143"></a>标准系统</p>
+<tr id="row4419134341417">
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.4.1.2 "><p id="p10419443171416"><a name="p10419443171416"></a><a name="p10419443171416"></a>CJUnit</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p10419443171416"><a name="p10419443171416"></a><a name="p10419443171416"></a>CJUnit</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p9419143181414"><a name="p9419143181414"></a><a name="p9419143181414"></a>cangjie</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.4.1.3 "><p id="p9419143181414"><a name="p9419143181414"></a><a name="p9419143181414"></a>仓颉</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-### cangjie语言用例开发指导<a name="section159801435165220"></a>
+### 仓颉语言用例开发指导<a name="section159801435165220"></a>
 
-当前使用的测试框架是CJUnit，用于支撑OpenHarmony application测试（特指基于cangjie应用框架使用 cangjie 语言开发的 APP）进行自动化测试。
+当前使用的测试框架是CJUnit，用于支撑OpenHarmony application测试（特指基于仓颉应用框架使用仓颉语言开发的 APP）进行自动化测试。
 
 **用例编写基础语法**
 
-测试用例为 cangjie 语言，必须满足 cangjie 语言编程规范:
+测试用例为仓颉语言，必须满足仓颉语言编程规范:
 
 **表 5** 
 
@@ -269,7 +260,7 @@ XTS_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
    ├── entry
    │ └──src
    │ │ └──main
-   │ │ │ └──cangjie         			   # cangjie源码存放目录
+   │ │ │ └──cangjie         			   # 源码存放目录
    │ │ │ │ └──ability_stage.cj         
    │ │ │ │ └──index.cj   # 默认页
    │ │ │ │ └──main_ability.cj
@@ -278,14 +269,14 @@ XTS_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
    │ │ └──ohosTest                        # Instrument Test测试目录
    │ │ │ └──cangjie                       # 仓颉测试代码存放目录
    │ │ │ │ │ └──unittest_support
-   │ │ │ │ │ │ └──unittest_engine.cj  	   # cangjie测试框架
-   │ │ │ │ │ └──example_test.cj           # cangjie测试文件(测试套、测试用例)    
+   │ │ │ │ │ │ └──unittest_engine.cj  	   # 测试框架
+   │ │ │ │ │ └──example_test.cj           # 测试文件(测试套、测试用例)    
    │ │ │ │ │ └──list_test.cj              # 测试套注册
      
    ```
    
    注意：
-   1. cangjie测试文件需要以_test.cj命名
+   1. 测试文件需要以_test.cj命名
    2. 测试类需要添加至list_test.cj中
    
 2. unittest_engine.cj
@@ -357,7 +348,7 @@ XTS_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
     }
     ```
 
-4. cangjie测试文件(example_test.cj)示例
+4. 测试文件(example_test.cj)示例
 
     ```
     @Test
@@ -384,52 +375,42 @@ XTS_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
     ```
 
 
-### 全量编译指导<a name="section159801435165220"></a>
-环境配置(windows/linux)：配置hvigorw、cangjieSDK环境变量
+### 用例编译指导<a name="section159801435165220"></a>
 
-1.  全量编译子系统测试工程
+测试工程编译依赖OpenHarmony命令行工具与仓颉SDK，需配置对应环境变量配置。
 
-    test/xts/acts_cangjie/tools目录下执行编译命令：
+#### 编译命令
 
-    ```
-    python ./build.py build --all
-    ```
+1.  全量编译
 
-2.  测试工程按子系统编译
-
-    test/xts/acts_cangjie/tools目录下执行编译命令：
+    test/xts/acts_cangjie/目录下执行编译命令：
 
     ```
-    python ./build.py build --dir=xxx/xxx/xxx
+    python ./tools/build.py build --all
     ```
+
+2.  子系统编译
+
+    test/xts/acts_cangjie目录下执行编译命令：
+
+    ```
+    python ./tools/build.py build --dir ability_cangjie_api/
     
-    例：编译子系统ability
-    ```
-    python ./build.py build --dir=xxx/xxx/xxx
+    ability_cangjie_api/: 子系统测试用例工程存放目录
     ```
 
-3.  单个测试工程编译
+3.  单模块编译
 
-    test/xts/acts_cangjie/tools目录下执行编译命令：
+    test/xts/acts_cangjie目录下执行编译命令：
 
     ```
-    python ./build.py build --dir=xxx/xxx/xxx
-    ```
-
-    例：编译子系统ability
-    ```
-    python ./build.py build --dir=xxx/xxx/xxx
-    ```
+    python ./tools/build.py build --dir ability_cangjie_api/ability
     
-    
-4.  测试用例输出目录：编译时添加参数--output-dir (默认输出目录 ./testcases)
-    
-    ```
-    python ./build.py build --dir=xxx/xxx/xxx --output-dir=xxx/xxx/xxx
+    ability_cangjie_api/ability: 单模块测试用例工程存放目录
     ```
 
 
-### 全量用例执行指导 <a name="section159801435165220"></a>
+### 用例执行指导 <a name="section159801435165220"></a>
 
 测试执行目录结构如下，执行build.py编译脚本后默认生成testcases目录，并在该目录下生成对应的测试hap、执行配置文件。
 
@@ -446,43 +427,43 @@ XTS_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 │   └─  reports            # 测试报告生成目录
  ```
 
-用例执行方法
+#### 执行方法
 1.  执行acts_cangjie\tools\run.py, 拉起xdevice界面。
 
-2.  界面启动后，输入命令行执行用例。
+2.  界面启动后，输入相应命令执行用例。
      
      按不同粒度执行测试用例：
      1. 全量测试hap用例执行: 
           ``` 
           run acts
      
-         执行testcases下全量测试hap的全量用例：
+         acts: 执行testcases下全量测试hap的全量用例
         ``` 
      
      2. 单测试hap执行: 
          ```
          run –l cjTestability
           
-         cjTestability： 测试hap名
+         cjTestability: 测试hap名
          ``````
      
      3. 单测试套执行：
          ```
          run -l cjTestability -ta class:TestSuiteExample
      
-         cjTestability： 测试hap名
+         cjTestability: 测试hap名
          TestSuiteExample: 测试套名
          ```
      4. 单测试用例执行：
           ```
           run -l cjTestability -ta class:TestSuiteExample#TestCase
 
-          cjTestability： 测试hap名
+          cjTestability: 测试hap名
           TestSuiteExample: 测试套名
           TestCase: 测试用例名 
            ```
            
-     其它命令行参考：[xdevice常用命令行](http://gitcode.com/openharmony/testfwk_xdevice)
+     其余命令行参考：[xdevice常用命令行](http://gitcode.com/openharmony/testfwk_xdevice)
 
 3.  查看测试报告。
     进入acts_cangjie\reports\，获取当前的执行记录，打开“summary_report.html”可以获取到测试报告。
