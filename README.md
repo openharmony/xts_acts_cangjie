@@ -3,8 +3,10 @@
 -   [简介](#section465982318513)
 -   [目录](#section161941989596)
 -   [使用说明](#section137768191623)
--   [用例开发指导](#section3695134065513)
-    -   [仓颉语言用例开发指导](#section159801435165220)
+-   [仓颉语言用例开发指导](#section3695134065513)
+    -   [用例编写指导](#section159801435165220)
+    -   [用例编译指导](#section159801435165221)
+    -   [用例执行指导](#section159801435165222)
 
 ## 简介<a name="section465982318513"></a>
 
@@ -174,9 +176,9 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 </tbody>
 </table>
 
-## 用例开发指导 <a name="section3695134065513"></a>
+## 仓颉语言用例开发指导 <a name="section3695134065513"></a>
 
-根据测试系统选择测试框架和对应测试用例语言。
+当前使用的测试框架是CJUnit，用于支撑OpenHarmony application测试（特指基于仓颉应用框架使用仓颉语言开发的 APP）进行自动化测试。
 
 **表 4**  测试框架和开发语言
 
@@ -197,56 +199,9 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 </tbody>
 </table>
 
-### 仓颉语言用例开发指导<a name="section159801435165220"></a>
+### 用例编写指导<a name="section159801435165220"></a>
 
-当前使用的测试框架是CJUnit，用于支撑OpenHarmony application测试（特指基于仓颉应用框架使用仓颉语言开发的 APP）进行自动化测试。
-
-**用例编写基础语法**
-
-测试用例为仓颉语言，必须满足仓颉语言编程规范:
-
-**表 5** 
-
-<a name="table13980103565212"></a>
-<table><thead align="left"><tr id="row1098093545218"><th class="cellrowborder" valign="top" width="17.92179217921792%" id="mcps1.2.4.1.1"><p id="p49811235135214"><a name="p49811235135214"></a><a name="p49811235135214"></a>用例语法</p>
-</th>
-<th class="cellrowborder" valign="top" width="68.88688868886888%" id="mcps1.2.4.1.2"><p id="p898183565220"><a name="p898183565220"></a><a name="p898183565220"></a>描述</p>
-</th>
-<th class="cellrowborder" valign="top" width="13.19131913191319%" id="mcps1.2.4.1.3"><p id="p17981143512526"><a name="p17981143512526"></a><a name="p17981143512526"></a>要求</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row1598183515528"><td class="cellrowborder" valign="top" width="17.92179217921792%" headers="mcps1.2.4.1.1 "><p id="p139810358527"><a name="p139810358527"></a><a name="p139810358527"></a>@BeforeAll</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.88688868886888%" headers="mcps1.2.4.1.2 "><p id="p198111352526"><a name="p198111352526"></a><a name="p198111352526"></a>测试套级别的预置条件，在所有测试用例开始前执行且仅执行一次，支持一个参数：预置动作函数</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.19131913191319%" headers="mcps1.2.4.1.3 "><p id="p298114355529"><a name="p298114355529"></a><a name="p298114355529"></a>可选</p>
-</td>
-</tr>
-<tr id="row11981103512529"><td class="cellrowborder" valign="top" width="17.92179217921792%" headers="mcps1.2.4.1.1 "><p id="p20981135135215"><a name="p20981135135215"></a><a name="p20981135135215"></a>@AfterAll</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.88688868886888%" headers="mcps1.2.4.1.2 "><p id="p39811935115217"><a name="p39811935115217"></a><a name="p39811935115217"></a>测试套级别的清理条件，在所有测试用例结束后执行且仅执行一次，支持一个参数：清理动作函数</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.19131913191319%" headers="mcps1.2.4.1.3 "><p id="p998110354527"><a name="p998110354527"></a><a name="p998110354527"></a>可选</p>
-</td>
-</tr>
-<tr id="row1298116359526"><td class="cellrowborder" valign="top" width="17.92179217921792%" headers="mcps1.2.4.1.1 "><p id="p898112359526"><a name="p898112359526"></a><a name="p898112359526"></a>@BeforeEach</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.88688868886888%" headers="mcps1.2.4.1.2 "><p id="p149811335175215"><a name="p149811335175215"></a><a name="p149811335175215"></a>测试用例级别的预置条件，在每条测试用例开始前执行</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.19131913191319%" headers="mcps1.2.4.1.3 "><p id="p13981133585212"><a name="p13981133585212"></a><a name="p13981133585212"></a>可选</p>
-</td>
-</tr>
-<tr id="row6982435115219"><td class="cellrowborder" valign="top" width="17.92179217921792%" headers="mcps1.2.4.1.1 "><p id="p19982133517525"><a name="p19982133517525"></a><a name="p19982133517525"></a>@AfterEach</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.88688868886888%" headers="mcps1.2.4.1.2 "><p id="p1398213575219"><a name="p1398213575219"></a><a name="p1398213575219"></a>测试用例级别的清理条件，在每条测试用例结束后执行</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.19131913191319%" headers="mcps1.2.4.1.3 "><p id="p159821535195219"><a name="p159821535195219"></a><a name="p159821535195219"></a>可选</p>
-</td>
-</tr>
-</tbody>
-</table>
-
+测试用例为仓颉语言，必须满足仓颉语言编程规范。
 
 **以Stage 模式为例：**
 
@@ -373,13 +328,53 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
         registerTestSuite {TestExample()}
     }
     ```
+**表 5**  其余用法参考
 
+<a name="table13980103565212"></a>
+<table><thead align="left"><tr id="row1098093545218"><th class="cellrowborder" valign="top" width="17.92179217921792%" id="mcps1.2.4.1.1"><p id="p49811235135214"><a name="p49811235135214"></a><a name="p49811235135214"></a>用例语法</p>
+</th>
+<th class="cellrowborder" valign="top" width="68.88688868886888%" id="mcps1.2.4.1.2"><p id="p898183565220"><a name="p898183565220"></a><a name="p898183565220"></a>描述</p>
+</th>
+<th class="cellrowborder" valign="top" width="13.19131913191319%" id="mcps1.2.4.1.3"><p id="p17981143512526"><a name="p17981143512526"></a><a name="p17981143512526"></a>要求</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1598183515528"><td class="cellrowborder" valign="top" width="17.92179217921792%" headers="mcps1.2.4.1.1 "><p id="p139810358527"><a name="p139810358527"></a><a name="p139810358527"></a>@BeforeAll</p>
+</td>
+<td class="cellrowborder" valign="top" width="68.88688868886888%" headers="mcps1.2.4.1.2 "><p id="p198111352526"><a name="p198111352526"></a><a name="p198111352526"></a>测试套级别的预置条件，在所有测试用例开始前执行且仅执行一次，支持一个参数：预置动作函数</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.19131913191319%" headers="mcps1.2.4.1.3 "><p id="p298114355529"><a name="p298114355529"></a><a name="p298114355529"></a>可选</p>
+</td>
+</tr>
+<tr id="row11981103512529"><td class="cellrowborder" valign="top" width="17.92179217921792%" headers="mcps1.2.4.1.1 "><p id="p20981135135215"><a name="p20981135135215"></a><a name="p20981135135215"></a>@AfterAll</p>
+</td>
+<td class="cellrowborder" valign="top" width="68.88688868886888%" headers="mcps1.2.4.1.2 "><p id="p39811935115217"><a name="p39811935115217"></a><a name="p39811935115217"></a>测试套级别的清理条件，在所有测试用例结束后执行且仅执行一次，支持一个参数：清理动作函数</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.19131913191319%" headers="mcps1.2.4.1.3 "><p id="p998110354527"><a name="p998110354527"></a><a name="p998110354527"></a>可选</p>
+</td>
+</tr>
+<tr id="row1298116359526"><td class="cellrowborder" valign="top" width="17.92179217921792%" headers="mcps1.2.4.1.1 "><p id="p898112359526"><a name="p898112359526"></a><a name="p898112359526"></a>@BeforeEach</p>
+</td>
+<td class="cellrowborder" valign="top" width="68.88688868886888%" headers="mcps1.2.4.1.2 "><p id="p149811335175215"><a name="p149811335175215"></a><a name="p149811335175215"></a>测试用例级别的预置条件，在每条测试用例开始前执行</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.19131913191319%" headers="mcps1.2.4.1.3 "><p id="p13981133585212"><a name="p13981133585212"></a><a name="p13981133585212"></a>可选</p>
+</td>
+</tr>
+<tr id="row6982435115219"><td class="cellrowborder" valign="top" width="17.92179217921792%" headers="mcps1.2.4.1.1 "><p id="p19982133517525"><a name="p19982133517525"></a><a name="p19982133517525"></a>@AfterEach</p>
+</td>
+<td class="cellrowborder" valign="top" width="68.88688868886888%" headers="mcps1.2.4.1.2 "><p id="p1398213575219"><a name="p1398213575219"></a><a name="p1398213575219"></a>测试用例级别的清理条件，在每条测试用例结束后执行</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.19131913191319%" headers="mcps1.2.4.1.3 "><p id="p159821535195219"><a name="p159821535195219"></a><a name="p159821535195219"></a>可选</p>
+</td>
+</tr>
+</tbody>
+</table>
 
-### 用例编译指导<a name="section159801435165220"></a>
+### 用例编译指导<a name="section159801435165221"></a>
 
 测试工程编译依赖OpenHarmony命令行工具与仓颉SDK，需配置对应环境变量配置。
 
-#### 编译命令
+**编译命令**
 
 1.  全量编译
 
@@ -410,7 +405,7 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
     ```
 
 
-### 用例执行指导 <a name="section159801435165220"></a>
+### 用例执行指导 <a name="section159801435165222"></a>
 
 测试执行目录结构如下，执行build.py编译脚本后默认生成testcases目录，并在该目录下生成对应的测试hap、执行配置文件。
 
@@ -427,7 +422,8 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 │   └─  reports            # 测试报告生成目录
  ```
 
-#### 执行方法
+**执行方法**
+
 1.  执行acts_cangjie\tools\run.py, 拉起xdevice界面。
 
 2.  界面启动后，输入相应命令执行用例。
