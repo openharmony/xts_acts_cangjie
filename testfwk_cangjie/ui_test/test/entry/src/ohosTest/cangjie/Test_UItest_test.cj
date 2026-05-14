@@ -63,7 +63,6 @@ class Test_UItest {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_get_value() {
-
         let on1 = On().text("111", pattern: MatchPattern.Contains)
         let on2 = On().text("111", pattern: MatchPattern.StartsWith)
         let on3 = On().text("111", pattern: MatchPattern.EndsWith)
@@ -131,11 +130,9 @@ class Test_UItest {
                 @Expect(true)
             }
         )
-
         driver.delayMs(3000)
         let button = driver.findComponent(On().id("id")).getOrThrow()
         button.click()
-
         driver.delayMs(3000)
         @Expect(callbackTrigger.load())
     }
@@ -168,7 +165,6 @@ class Test_UItest {
     func testUIComponent() {
         let button = driver.findComponent(On().id("id")).getOrThrow()
         driver.assertComponentExist(On().onType("Button"))
-
         let scrollBar = driver.findComponent(On().onType("Scroll")).getOrThrow()
         let button2 = scrollBar.scrollSearch(On().text("1"))
         scrollBar.scrollToBottom()
@@ -179,7 +175,6 @@ class Test_UItest {
         button.click()
         button.doubleClick()
         button.longClick()
-
         let id = button.getId()
         let text = button.getText()
         let btype = button.getType()
@@ -194,21 +189,16 @@ class Test_UItest {
         let f = button.isFocused()
         let s1 = button.isSelected()
         let des = button.getDescription()
-
         let txt = driver.findComponent(On().text("cangjie")).getOrThrow()
         txt.clearText()
         txt.inputText("111")
-
         let drag = driver.findComponent(On().text("ohos")).getOrThrow()
-
         button.dragTo(drag)
         let buttons = driver.findComponents(On().onType("Button")).getOrThrow()
         let button1 = driver.waitForComponent(On().onType("Button"), 100).getOrThrow()
-
         let image = driver.findComponent(On().id("icon")).getOrThrow()
         image.pinchIn(0.5)
         image.pinchOut(2.5)
-
     }
 
     /*
@@ -223,10 +213,8 @@ class Test_UItest {
     @Tag[APILevel22, TestLevel0]
     func testDriver() {
         driver.wakeUpDisplay()
-
         driver.getDisplaySize()
         driver.getDisplayDensity()
-
         driver.setDisplayRotationEnabled(true)
         driver.setDisplayRotation(DisplayRotation.Rotation0)
         let rotation0 = driver.getDisplayRotation()
@@ -241,10 +229,8 @@ class Test_UItest {
         driver.screenCap("/data/storage/el2/base/cache/1.png")
         driver.longClick(100, 100)
         driver.waitForIdle(100, 100)
-
         driver.injectMultiPointerAction(getPointerMatrix())
         driver.screenCapture("/data/storage/el2/base/cache/1.png", rect: Rct(0, 0, 100, 100))
-
         driver.fling(ui_test.Point(500, 480), ui_test.Point(450, 480), 5, 600)
         driver.fling(UiDirection.Down, 10000)
         driver.fling(UiDirection.Up, 10000)
@@ -255,11 +241,11 @@ class Test_UItest {
         driver.drag(100, 100, 200, 200, speed: 600)
         driver.pressHome()
         driver.pressBack()
-
         driver.mouseClick(ui_test.Point(248, 194), MouseBtn.MouseButtonLeft, key1: 2072)
         try {
             driver.mouseClick(ui_test.Point(248, 194), MouseBtn.MouseButtonLeft, key1: 2072, key2: 2035)
             Hilog.info(0u32, "", "cangjie", "mouseClick with key2 success")
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0u32, "", "cangjie", "mouseClick error : ${e}")
         }
@@ -268,6 +254,7 @@ class Test_UItest {
         try {
             driver.mouseScroll(ui_test.Point(360, 640), true, 30, key1: 2072, key2: 2035)
             Hilog.info(0u32,"", "cangjie", "mouseScroll with key2 success")
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0u32, "", "cangjie", "mouseClick error : ${e}")
         }
@@ -330,7 +317,6 @@ class Test_UItest {
         let rect = window.getBounds()
         let title: String = window.getTitle()
         @Expect(title.isEmpty())
-
     }  
     /*
     * @tc.number    : Sub_Cangjie_ui_test_Test_UItest_0010

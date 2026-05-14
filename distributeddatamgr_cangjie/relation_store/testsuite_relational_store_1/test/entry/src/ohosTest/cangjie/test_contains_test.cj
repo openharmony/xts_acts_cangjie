@@ -350,9 +350,9 @@ class Test_contains {
         predicates.beginsWith("NAME", "123")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         @Expect(resultSet.rowCount, 0)
-        // @Expect(resultSet.goToRow(0), false)
         try {
             resultSet.goToRow(0)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14800012)
         }
@@ -375,6 +375,7 @@ class Test_contains {
         @Expect(resultSet.rowCount, 0)
         try {
             resultSet.goToRow(0)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14800012)
         }

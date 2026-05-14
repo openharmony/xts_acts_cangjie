@@ -50,7 +50,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1600: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -76,7 +76,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1601: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -102,7 +102,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1602: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -122,7 +122,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1604(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1604 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -138,7 +137,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1603: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -164,7 +163,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1604: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -190,7 +189,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1605: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -216,7 +215,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1606: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -236,7 +235,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1608(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1608 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -252,7 +250,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1607: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -278,7 +276,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1608: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -304,7 +302,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1609: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -330,7 +328,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1610: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -350,7 +348,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1612(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1612 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -366,7 +363,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1611: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -392,7 +389,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1612: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -418,7 +415,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1613: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -444,7 +441,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1614: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -464,7 +461,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1616(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1616 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -480,7 +476,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1615: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -506,7 +502,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1616: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -532,7 +528,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1617: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -558,7 +554,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1618: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -578,7 +574,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1620(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1620 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -594,7 +589,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1619: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -620,7 +615,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1620: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -646,7 +641,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1621: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -672,7 +667,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1622: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -692,7 +687,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1624(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1624 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -708,7 +702,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1623: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -734,7 +728,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1624: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -760,7 +754,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1625: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -786,7 +780,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1626: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -806,7 +800,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1628(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1628 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -822,7 +815,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1627: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -848,7 +841,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1628: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -874,7 +867,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1629: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -900,7 +893,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1630: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -920,7 +913,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1632(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1632 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -936,7 +928,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1631: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -962,7 +954,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1632: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -988,7 +980,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1633: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1014,7 +1006,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1634: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1034,7 +1026,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1636(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1636 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -1050,7 +1041,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1635: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1076,7 +1067,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1636: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1102,7 +1093,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1637: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1128,7 +1119,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1638: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1148,7 +1139,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1640(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1640 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -1164,7 +1154,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1639: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1190,7 +1180,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1640: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1216,7 +1206,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1641: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1242,7 +1232,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1642: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1262,7 +1252,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1644(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1644 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -1278,7 +1267,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1643: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1304,7 +1293,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1644: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1330,7 +1319,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1645: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1356,7 +1345,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1646: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1376,7 +1365,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1648(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1648 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -1392,7 +1380,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1647: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1418,7 +1406,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1648: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1444,7 +1432,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1649: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1470,7 +1458,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1650: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1490,7 +1478,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1652(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1652 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -1506,7 +1493,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1651: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1532,7 +1519,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1652: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1558,7 +1545,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1653: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1584,7 +1571,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1654: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1604,7 +1591,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1656(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1656 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -1620,7 +1606,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1655: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1646,7 +1632,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1656: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1672,7 +1658,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1657: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1698,7 +1684,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1658: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1718,7 +1704,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1660(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1660 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -1734,7 +1719,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1659: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1760,7 +1745,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1660: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1786,7 +1771,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1661: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1812,7 +1797,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1662: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1832,7 +1817,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1664(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1664 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -1848,7 +1832,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1663: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1874,7 +1858,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1664: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1900,7 +1884,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1665: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1926,7 +1910,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1666: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1946,7 +1930,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1668(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1668 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -1962,7 +1945,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1667: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -1988,7 +1971,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1668: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2014,7 +1997,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1669: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2040,7 +2023,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1670: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2060,7 +2043,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1672(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1672 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -2076,7 +2058,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1671: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2102,7 +2084,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1672: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2128,7 +2110,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1673: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2154,7 +2136,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1674: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2174,7 +2156,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1676(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1676 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -2190,7 +2171,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1675: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2216,7 +2197,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1676: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2242,7 +2223,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1677: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2268,7 +2249,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1678: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2288,7 +2269,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1680(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1680 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -2304,7 +2284,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1679: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2330,7 +2310,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1680: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2356,7 +2336,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1681: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2382,7 +2362,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1682: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2402,7 +2382,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1684(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1684 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -2418,7 +2397,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1683: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2444,7 +2423,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1684: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2470,7 +2449,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1685: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2496,7 +2475,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-            @Expect("assertion#1686: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2516,7 +2495,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1688(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1688 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -2532,7 +2510,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1687: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2558,7 +2536,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1688: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2584,7 +2562,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1689: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2610,7 +2588,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: true))
-            @Expect("assertion#1690: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2630,7 +2608,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1692(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1692 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -2646,7 +2623,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1691: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2672,7 +2649,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1692: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2698,7 +2675,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1693: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2724,7 +2701,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1694: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2744,7 +2721,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1696(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1696 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -2760,7 +2736,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1695: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2786,7 +2762,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1696: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2812,7 +2788,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1697: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2838,7 +2814,7 @@ class TestRdbStore_beginTransaction_17 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
                     isReadOnly: true, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#1698: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -2858,7 +2834,6 @@ class TestRdbStore_beginTransaction_17 {
     func TestCase_1700(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1700 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -2874,7 +2849,7 @@ class TestRdbStore_beginTransaction_17 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#1699: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }

@@ -52,7 +52,6 @@ class Test_SecurityHuks_IsKeyItemExist {
         let keyAlias = "test_is_key_item_exist"
         clean(keyAlias)
         try {
-            // false
             @Expect(!hasKeyItem(keyAlias, genKeyOptionsTest1))
             generateSimpleKey(keyAlias)
             @Expect(hasKeyItem(keyAlias, genKeyOptionsTest1))
@@ -77,6 +76,7 @@ class Test_SecurityHuks_IsKeyItemExist {
         let keyAlias = ""
         try {
             hasKeyItem(keyAlias, genKeyOptionsTest1)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401)
         }

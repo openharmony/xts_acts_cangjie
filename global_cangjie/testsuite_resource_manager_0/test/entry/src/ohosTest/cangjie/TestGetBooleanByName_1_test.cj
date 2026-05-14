@@ -47,7 +47,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("")
-            @Expect("assertion#400: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -70,7 +70,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("\0")
-            @Expect("assertion#401: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -93,7 +93,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("nonExistingResourceName")
-            @Expect("assertion#402: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -116,7 +116,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("module_desc")
-            @Expect("assertion#403: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -139,7 +139,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("sizelist")
-            @Expect("assertion#404: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -162,7 +162,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("plural_name")
-            @Expect("assertion#405: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -185,7 +185,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("Test_Format1")
-            @Expect("assertion#406: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -208,7 +208,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("Test_Format2")
-            @Expect("assertion#407: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -231,7 +231,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("Test_Format3")
-            @Expect("assertion#408: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -254,7 +254,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("EntryAbility_desc")
-            @Expect("assertion#409: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -277,7 +277,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("layered_image")
-            @Expect("assertion#410: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -300,7 +300,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("EntryAbility_label")
-            @Expect("assertion#411: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -323,7 +323,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("startIcon")
-            @Expect("assertion#412: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -346,7 +346,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("main_pages")
-            @Expect("assertion#413: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -369,7 +369,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("start_window_background")
-            @Expect("assertion#414: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -392,7 +392,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("float_1")
-            @Expect("assertion#415: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -415,7 +415,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("float_2")
-            @Expect("assertion#416: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -438,7 +438,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("int_1")
-            @Expect("assertion#417: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -461,7 +461,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean by name.")
         try {
             getResourceManager().getBooleanByName("int_2")
-            @Expect("assertion#418: not throw", "fail to get Boolean by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -481,7 +481,7 @@ class TestGetBooleanByName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_20(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_20 begins.")
-        @Assert(true, getResourceManager().getBooleanByName("test_boolean1"))
+        @Expect(true, getResourceManager().getBooleanByName("test_boolean1"))
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_20 ends.")
     }
 
@@ -497,7 +497,7 @@ class TestGetBooleanByName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_21(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 begins.")
-        @Assert(false, getResourceManager().getBooleanByName("test_boolean0"))
+        @Expect(false, getResourceManager().getBooleanByName("test_boolean0"))
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 ends.")
     }
 
@@ -516,7 +516,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "cycle")
         try {
             getResourceManager().getBooleanByName("boolean_3")
-            @Expect("assertion#419: not throw", "cycle")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The resource is referenced cyclically.")
             @Expect(e.code, 9001006i32)
@@ -539,7 +539,7 @@ class TestGetBooleanByName_1 {
         Hilog.info(0u32, "CangjieTest", "cycle")
         try {
             getResourceManager().getBooleanByName("boolean_4")
-            @Expect("assertion#420: not throw", "cycle")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The resource is referenced cyclically.")
             @Expect(e.code, 9001006i32)

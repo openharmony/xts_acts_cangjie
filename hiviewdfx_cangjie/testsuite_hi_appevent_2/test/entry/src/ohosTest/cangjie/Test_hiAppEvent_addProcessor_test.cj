@@ -342,7 +342,7 @@ class Test_hiAppEvent_addProcessor {
             let res = processorId > 0
             @Expect(res==false)
             Hilog.info(0, "Test_hiappevent_addProcessor_11", "Test_hiappevent_addProcessor_11_pass0_${processorId}")
-            let processor1 = Processor("test_processor", periodReport: -5) //问题1:直接抛异常，和输入0的行为不一致
+            let processor1 = Processor("test_processor", periodReport: -5)
             let processorId1 = HiAppEvent.addProcessor(processor1)
             let res1 = processorId1 > 0
             @Expect(res1==false)
@@ -374,7 +374,7 @@ class Test_hiAppEvent_addProcessor {
     func Test_hiappevent_addProcessor_12() {
         Hilog.info(0, "Test_hiappevent_addProcessor_12", "Test_hiappevent_addProcessor_12_start")
         try {
-            let processor = Processor("test_processor", batchReport: -10) //问题1:直接抛异常，和输入0的行为不一致
+            let processor = Processor("test_processor", batchReport: -10)
             let processorId = HiAppEvent.addProcessor(processor)
             let res = processorId > 0
             @Expect(res==false)
@@ -386,7 +386,7 @@ class Test_hiAppEvent_addProcessor {
             let processorId2 = HiAppEvent.addProcessor(processor2)
             let res2 = processorId2 > 0
             @Expect(res2==false)
-            let processor3 = Processor("test_processor", batchReport: 1001) //问题1:直接抛异常，和输入0的行为不一致
+            let processor3 = Processor("test_processor", batchReport: 1001)
             let processorId3 = HiAppEvent.addProcessor(processor3)
             let res3 = processorId3 > 0
             @Expect(res3==false)
@@ -413,7 +413,7 @@ class Test_hiAppEvent_addProcessor {
         Hilog.info(0, "Test_hiappevent_addProcessor_13", "Test_hiappevent_addProcessor_13_start")
         try {
             let setuserid = HiAppEvent.setUserId("asd", "qwe")
-            let processor = Processor("test_processor", userIds: ["123"]) //需要写c侧代码实现userid和userProperties的校验,验证不存在的userid
+            let processor = Processor("test_processor", userIds: ["123"])
             let processorId = HiAppEvent.addProcessor(processor)
             let res = processorId > 0
             @Expect(res==false)
@@ -471,7 +471,7 @@ class Test_hiAppEvent_addProcessor {
             let setuserid = HiAppEvent.setUserId("asd", "qwe")
             let setuserid1 = HiAppEvent.setUserId("cangjie", "zhangsan")
             let processor2 = Processor("test_processor", userIds: ["asd", "cangjie"])
-            let processorId2 = HiAppEvent.addProcessor(processor2) //判断多个userid
+            let processorId2 = HiAppEvent.addProcessor(processor2)
             let res2 = processorId2 > 0
             @Expect(res2==false)
             Hilog.info(0, "Test_hiappevent_addProcessor_15", "Test_hiappevent_addProcessor_15_pass_${processorId2}")
@@ -868,7 +868,7 @@ class Test_hiAppEvent_addProcessor {
             @Expect(res==false)
             Hilog.info(0, "Test_hiappevent_addProcessor_29", "Test_hiappevent_addProcessor_29_pass_${processorId}")
         } catch (e: Exception) {
-            @Expect(false) //错误码不匹配
+            @Expect(false)
             Hilog.info(0, "Test_hiappevent_addProcessor_29", "Test_hiappevent_addProcessor_29_fail_${e.toString()}")
         } finally {
             Hilog.info(0, "Test_hiappevent_addProcessor_29", "Test_hiappevent_addProcessor_29_end")

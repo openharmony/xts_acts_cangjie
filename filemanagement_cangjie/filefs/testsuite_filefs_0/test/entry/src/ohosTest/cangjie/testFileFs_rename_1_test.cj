@@ -42,7 +42,6 @@ class testFileIo_rename_1 {
         FileIo.close(file)
         let res = FileIo.access(fpath)
         @Expect(res, true)
-
         try {
             let newf = fpath + "test"
             FileIo.rename(fpath, newf)
@@ -67,7 +66,6 @@ class testFileIo_rename_1 {
     @Tag[APILevel22, TestLevel0]
     func test_rename_02() {
         let fpath = "/data/storage/el2/base/files/file_rename_02"
-
         try {
             let newf = fpath + "test"
             FileIo.rename(fpath, newf)
@@ -98,7 +96,6 @@ class testFileIo_rename_1 {
         FileIo.close(file)
         let res = FileIo.access(fpath)
         @Expect(res, true)
-
         try {
             let newf = dpath + "/dir_000/newFileName";
             FileIo.rename(fpath, newf)
@@ -131,7 +128,6 @@ class testFileIo_rename_1 {
         for (i in 0..250) {
             fpathTarget = fpathTarget + i.toString()
         }
-
         try {
             FileIo.rename(fpath, fpathTarget)
             @Expect(false)
@@ -180,16 +176,15 @@ class testFileIo_rename_1 {
         FileIo.close(file)
         let res = FileIo.access(fpath)
         @Expect(res, true)
-
         let dstpath = "/data/storage/el2/base/files/file_rename_06_dst"
         let f = FileIo.open(dstpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         FileIo.close(f)
         let res1 = FileIo.access(dstpath)
         @Expect(res1, true)
-
         try {
             FileIo.rename(fpath, dstpath)
             FileIo.unlink(dstpath)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -212,12 +207,10 @@ class testFileIo_rename_1 {
         FileIo.close(file)
         let res = FileIo.access(fpath)
         @Expect(res, true)
-
         let dstpath = "/data/storage/el2/base/files/file_rename_06_dst"
         FileIo.mkdir(dstpath)
         let res1 = FileIo.access(dstpath)
         @Expect(res1, true)
-
         try {
             FileIo.rename(fpath, dstpath)
             @Expect(false)

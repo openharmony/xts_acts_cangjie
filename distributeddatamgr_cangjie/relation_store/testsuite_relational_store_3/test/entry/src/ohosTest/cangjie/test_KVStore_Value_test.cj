@@ -153,7 +153,6 @@ class test_KVStore_Value {
             RelationalStoreValueType.Integer(19),
             RelationalStoreValueType.Integer(20)
         ])
-        
         let resultSet = rdbStore.query(predicates)
         let count = resultSet.rowCount
         @Expect(count,  3)
@@ -171,7 +170,6 @@ class test_KVStore_Value {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_in_2() {
-        // 查询NAME在["Lisa", "Rose"]中且IS_ACTIVE为true的记录
         let rdbStore = store.getOrThrow()
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.inValues("NAME", [
@@ -180,11 +178,9 @@ class test_KVStore_Value {
         ])
         .and()
         .equalTo("CODES", RelationalStoreValueType.Boolean(true))
-        
         let resultSet = rdbStore.query(predicates)
         let count = resultSet.rowCount
         @Expect(count,  2)
-        
         resultSet.close()    
     }
     /*
@@ -245,7 +241,7 @@ class test_KVStore_Value {
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.inValues("AGE", [
             RelationalStoreValueType.Integer(2),
-            RelationalStoreValueType.StringValue("30"),  // 字符串类型，但AGE是整型字段
+            RelationalStoreValueType.StringValue("30"),
             RelationalStoreValueType.Integer(3)
         ])        
         let resultSet = rdbStore.query(predicates) 
@@ -273,7 +269,6 @@ class test_KVStore_Value {
         values.add("NAME", RelationalStoreValueType.StringValue("P"))
         values.add("AGE", RelationalStoreValueType.Integer(88))
         values.add("SALARY", RelationalStoreValueType.Double(9999.513))
-
         rdbStore.update(values, predicates)
         let resultSet = rdbStore.query(
             RdbPredicates("EMPLOYEE").inValues("NAME", [RelationalStoreValueType.StringValue("P")]),
@@ -387,7 +382,6 @@ class test_KVStore_Value {
         let count = resultSet.rowCount
         @Expect(count, 3) 
         resultSet.close()   
- 
 }
 
     /*
@@ -410,7 +404,6 @@ class test_KVStore_Value {
         let count = resultSet.rowCount
         @Expect(count, 3) 
         resultSet.close()  
- 
 }  
     /*
      * @tc.number    : Sub_Cangjie_relational_store_Test_relational_store_3800
@@ -425,8 +418,6 @@ class test_KVStore_Value {
     func testNotInValuesNonExistentField() {
         Hilog.info(0, "RdbTest", "测试用例:测试不存在的字段")
         let rdbStore = store.getOrThrow() 
-        
-        // 尝试查询不存在的字段
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.notInValues("NON_EXISTENT_FIELD", [
             RelationalStoreValueType.StringValue("test")

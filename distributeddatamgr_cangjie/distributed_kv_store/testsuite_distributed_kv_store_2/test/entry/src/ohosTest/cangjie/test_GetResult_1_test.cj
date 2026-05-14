@@ -119,11 +119,8 @@ class test_GetResult_1 {
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
-        // 准备测试数据
         prepareTestData(store)
-        // 使用keyPrefix方法获取结果集
         let prefixResultSet = store.getResultSet("emp_")
-        // 使用Query方法获取结果集（目前是空Query，应该返回所有数据）
         let query = Query()
         let queryResultSet = store.getResultSet(query)
         let prefixCount = prefixResultSet.getCount()
@@ -150,12 +147,10 @@ class test_GetResult_1 {
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
-        // 准备测试数据
         prepareTestData(store)
         let query = Query()
         let resultSet1 = store.getResultSet(query)
         let count1 = resultSet1.getCount()
-        // 获取结果集数量
         let expectedCount = 28i32
         @Expect(count1, expectedCount)
         kvManager.closeKVStore("com.example.myapplication", "test_query_store")

@@ -506,7 +506,6 @@ class Test_ResultSet_all_15 {
         } catch (e: BusinessException) {
             @Expect(e.code, 14800012)
         }
-
         @Expect(resultSet.goToFirstRow(), true)
         @Expect(resultSet.getString(0),"300")
         try {
@@ -515,7 +514,6 @@ class Test_ResultSet_all_15 {
         } catch (e: BusinessException) {
             @Expect(e.code, 14800012)
         }
-
         @Expect(resultSet.goToNextRow(), true)
         @Expect(resultSet.getString(0),"301")
         @Expect(resultSet.goToNextRow(), true)

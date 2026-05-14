@@ -38,7 +38,7 @@ class testFileIo_mkdir01_1 {
         let srcPath = "/data/storage/el2/base/haps/testmkdir011/01"
         if(!FileIo.access(srcPath)) {
             FileIo.mkdir(srcPath, true)
-            @Assert(FileIo.stat(srcPath).isDirectory(), true)
+            @Expect(FileIo.stat(srcPath).isDirectory(), true)
             FileIo.rmdir(srcPath)
         }
     }

@@ -44,39 +44,31 @@ public class Test_connection {
     @Tag[APILevel22, TestLevel0]
     func testConenction() {
         let netConn = createNetConnection()
-
         netConn.register()
-
         let netAvailableCallBack = NetAvailableCb({handle => Hilog.info(0, "CangjieTest", "onNetAvailable handle is ${handle.netId}")})
         netConn.on(NetConnectionEvent.NetAvailable, netAvailableCallBack)
-
         let netUnAvailableCallBack = NetUnavailableCb({=> Hilog.info(0, "CangjieTest", "onNetUnavailable")})
         netConn.on(NetConnectionEvent.NetUnavailable, netUnAvailableCallBack)
-
         let netLostCallBack = NetLostCb({handle => Hilog.info(0, "CangjieTest", "onNetLost handle is ${handle.netId}")})
         netConn.on(NetConnectionEvent.NetLost, netLostCallBack)
-
         let netConnectionPropertiesChangeCallBack = NetConnectionPropertiesChangeCb(
             {
                 info => Hilog.info(0, "CangjieTest",
                     "onNetConnectionPropertiesChange handle is ${info.netHandle.netId}, props is ")
             })
         netConn.on(NetConnectionEvent.NetConnectionPropertiesChange, netConnectionPropertiesChangeCallBack)
-
         let netCapabilitiesChangeCallBack = NetCapabilitiesChangeCb(
             {
                 info => Hilog.info(0, "CangjieTest",
                     "onNetCapabilitiesChange handle is ${info.netHandle.netId}, props is ")
             })
         netConn.on(NetConnectionEvent.NetCapabilitiesChange, netCapabilitiesChangeCallBack)
-
         let netBlockStatusChangeCallBack = NetBlockStatusChangeCb(
             {
                 info => Hilog.info(0, "CangjieTest",
                     "onNetBlockStatusChange handle is ${info.netHandle.netId}, block is ${info.blocked}")
             })
         netConn.on(NetConnectionEvent.NetBlockStatusChange, netBlockStatusChangeCallBack)
-
         netConn.unregister()
     }
 
@@ -110,34 +102,27 @@ public class Test_connection {
         Hilog.info(0, "CangjieTest", "getDefaultNet")
         let handle = getDefaultNet()
         Hilog.info(0, "CangjieTest", "getDefaultNet ${handle.netId}")
-
         Hilog.info(0, "CangjieTest", "getAppNet")
         let handleapp = getAppNet()
         Hilog.info(0, "CangjieTest", "getAppNet ${handleapp.netId}")
-
         Hilog.info(0, "CangjieTest", "setAppNet")
         setAppNet(handle)
         Hilog.info(0, "CangjieTest", "setAppNet ok")
-
         Hilog.info(0, "CangjieTest", "getAppNet")
         let handleapp1 = getAppNet()
         Hilog.info(0, "CangjieTest", "getAppNet ${handleapp1.netId}")
-
         Hilog.info(0, "CangjieTest", "hasDefaultNet")
         let hasDef = hasDefaultNet()
         Hilog.info(0, "CangjieTest", "hasDefaultNet ${hasDef}")
-
         Hilog.info(0, "CangjieTest", "getAddressesByName def")
         let addressesdef = getAddressesByName("localhost")
         Hilog.info(0, "CangjieTest",
             "getAddressesByName def ${addressesdef.size} ${addressesdef[0].address} ${addressesdef[0].family} ${addressesdef[0].port}"
         )
-
         Hilog.info(0, "CangjieTest", "getAddressesByName")
         let addresses = handle.getAddressesByName("localhost")
         Hilog.info(0, "CangjieTest",
             "getAddressesByName ${addresses.size} ${addresses[0].address} ${addresses[0].family} ${addresses[0].port}")
-
         Hilog.info(0, "CangjieTest", "getAddressByName")
         let address = handle.getAddressByName("localhost")
         Hilog.info(0, "CangjieTest",
@@ -159,6 +144,7 @@ public class Test_connection {
         Hilog.info(0, "CangjieTest", "getNetCapabilities")
         let capabilities = try {
             getNetCapabilities(handle)
+            @Expect(false)
         } catch (e: Exception) {
             Hilog.info(0, "CangjieTest", "getNetCapabilities failed: ${e.message}")
             NetCapabilities(Array<NetBearType>(), linkDownBandwidthKbps: 0, linkUpBandwidthKbps: 0,
@@ -167,13 +153,13 @@ public class Test_connection {
         Hilog.info(0, "CangjieTest",
             "getNetCapabilities : ${capabilities.linkDownBandwidthKbps} ${capabilities.linkUpBandwidthKbps} ${capabilities.bearerTypes.size} ${capabilities.networkCap.size}"
         )
-
         Hilog.info(0, "CangjieTest", "getConnectionProperties")
         try {
             let props = getConnectionProperties(handle)
             Hilog.info(0, "CangjieTest",
                 "getConnectionProperties : ${props.interfaceName} ${props.domains} ${props.mtu} ${props.linkAddresses.size} ${props.dnses.size} ${props.routes.size}"
             )
+            @Expect(false)
         } catch (e: Exception) {
             Hilog.info(0, "CangjieTest", "getNetCapabilities failed: ${e.message}")
         }
@@ -194,14 +180,15 @@ public class Test_connection {
         Hilog.info(0, "CangjieTest", "reportNetConnected")
         try {
             reportNetConnected(handle)
+            @Expect(false)
         } catch (e: Exception) {
             Hilog.info(0, "CangjieTest", "reportNetConnected failed: ${e.message}")
         }
         Hilog.info(0, "CangjieTest", "reportNetConnected ok")
-
         Hilog.info(0, "CangjieTest", "reportNetDisconnected")
         try {
             reportNetDisconnected(handle)
+            @Expect(false)
         } catch (e: Exception) {
             Hilog.info(0, "CangjieTest", "reportNetDisconnected failed: ${e.message}")
         }
@@ -294,6 +281,7 @@ public class Test_connection {
         let ns = NetSpecifier(nc)
         try {
             createNetConnection(netSpecifier: ns)
+            @Expect(false)
         } catch (_: Exception) {}
     }
 
@@ -317,6 +305,7 @@ public class Test_connection {
         let ns = NetSpecifier(nc)
         try {
             createNetConnection(netSpecifier: ns)
+            @Expect(false)
         } catch (_: Exception) {}
     }
 
@@ -333,7 +322,6 @@ public class Test_connection {
     func getAddressByName(): Unit {
         let handle = getAppNet()
         handle.getAddressByName("localhost")
-
         try {
             handle.getAddressByName("test")
             @Expect(false)

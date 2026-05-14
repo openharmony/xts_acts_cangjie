@@ -38,9 +38,7 @@ class Test_SecurityHuks_BasicAsymmetric {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_rsa() {
-        //ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-signing-signature-verification-ndk.md
         let keyAlias = "test_rsa"
-
         let inData = "Hks_RSA_Sign_Verify_Test_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000_string"
         clean(keyAlias)
         try {
@@ -59,7 +57,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                     ]
                 )
             )
-
             let signHandle = initSession(
                 keyAlias,
                 HuksOptions(
@@ -72,7 +69,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                     ]
                 )
             ).handle
-
             updateSession(
                 signHandle,
                 HuksOptions(
@@ -87,7 +83,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                 ),
                 token: []
             )
-
             let sign = finishSession(
                 signHandle,
                 HuksOptions(
@@ -101,9 +96,7 @@ class Test_SecurityHuks_BasicAsymmetric {
                 ),
                 token: []
             ).getOrThrow()
-
             abortSession(signHandle, HuksOptions(properties: []))
-
             let verifyHandle = initSession(
                 keyAlias,
                 HuksOptions(
@@ -119,7 +112,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                     ]
                 )
             ).handle
-
             updateSession(
                 verifyHandle,
                 HuksOptions(
@@ -134,7 +126,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                 ),
                 token: []
             )
-
             let verify = finishSession(
                 verifyHandle,
                 HuksOptions(
@@ -149,7 +140,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                 ),
                 token: []
             ).getOrThrow()
-
             @Expect(!verify.isEmpty())
             abortSession(verifyHandle, HuksOptions(properties: []))
         } catch (e: BusinessException) {
@@ -170,9 +160,7 @@ class Test_SecurityHuks_BasicAsymmetric {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_ecc() {
-        //ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-signing-signature-verification-arkts.md
         let keyAlias = "test_ecc"
-
         let inData = "123456"
         clean(keyAlias)
         try {
@@ -190,7 +178,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                     ]
                 )
             )
-
             let signHandle = initSession(
                 keyAlias,
                 HuksOptions(
@@ -202,7 +189,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                     ]
                 )
             ).handle
-
             updateSession(
                 signHandle,
                 HuksOptions(
@@ -216,7 +202,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                 ),
                 token: []
             )
-
             let sign = finishSession(
                 signHandle,
                 HuksOptions(
@@ -229,9 +214,7 @@ class Test_SecurityHuks_BasicAsymmetric {
                 ),
                 token: []
             ).getOrThrow()
-
             abortSession(signHandle, HuksOptions(properties: []))
-
             let verifyHandle = initSession(
                 keyAlias,
                 HuksOptions(
@@ -243,7 +226,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                     ]
                 )
             ).handle
-
             updateSession(
                 verifyHandle,
                 HuksOptions(
@@ -257,7 +239,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                 ),
                 token: []
             )
-
             let verify = finishSession(
                 verifyHandle,
                 HuksOptions(
@@ -271,7 +252,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                 ),
                 token: []
             ).getOrThrow()
-
             abortSession(verifyHandle, HuksOptions(properties: []))
             @Expect(!verify.isEmpty())
         } catch (e: BusinessException) {
@@ -309,7 +289,6 @@ class Test_SecurityHuks_BasicAsymmetric {
                     ]
                 )
             )
-
             let data = exportKeyItem(keyAlias, genKeyOptionsTest1)
             @Expect(!data.isEmpty())
         } catch (e: BusinessException) {

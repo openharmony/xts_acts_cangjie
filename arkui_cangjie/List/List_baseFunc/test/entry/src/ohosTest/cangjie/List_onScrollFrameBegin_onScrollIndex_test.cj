@@ -64,7 +64,6 @@ class List_onScrollFrameBegin_onScrollIndex_test {
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("firstIndex")["content"],"\"0\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("lastIndex")["content"],"\"5\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("middleIndex")["content"],"\"2\"")
-        //下滑操作
         let button:Component=TestDriver.driver.findComponent(On().id("ListItem_4")).getOrThrow()
         let drag:Component=TestDriver.driver.findComponent(On().id("ListItem_2")).getOrThrow()
         button.dragTo(drag)

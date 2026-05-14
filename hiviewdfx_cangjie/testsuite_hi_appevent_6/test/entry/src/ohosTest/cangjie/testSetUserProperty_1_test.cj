@@ -39,6 +39,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name1", "value1")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -60,6 +61,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name1", "2")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -81,7 +83,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","Check setUserProperty")
         try {
             HiAppEvent.setUserProperty("name1", "")
-            @Expect("assertion#0: not throw", "Check setUserProperty")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -104,6 +106,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name1", "VALUE")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -125,6 +128,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name1", "value")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -146,6 +150,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name_2", "value1")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -167,6 +172,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name_2", "2")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -188,7 +194,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","Check setUserProperty")
         try {
             HiAppEvent.setUserProperty("name_2", "")
-            @Expect("assertion#1: not throw", "Check setUserProperty")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -211,6 +217,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name_2", "VALUE")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -232,6 +239,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name_2", "value")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -253,6 +261,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name", "value1")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -274,6 +283,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name", "2")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -295,7 +305,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","Check setUserProperty")
         try {
             HiAppEvent.setUserProperty("name", "")
-            @Expect("assertion#2: not throw", "Check setUserProperty")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -318,6 +328,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name", "VALUE")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -339,6 +350,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name", "value")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -360,6 +372,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name4", "value1")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -381,6 +394,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name4", "2")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -402,7 +416,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","Check setUserProperty")
         try {
             HiAppEvent.setUserProperty("_name4", "")
-            @Expect("assertion#3: not throw", "Check setUserProperty")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -425,6 +439,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name4", "VALUE")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -446,6 +461,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name4", "value")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -467,6 +483,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name", "value1")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -488,6 +505,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name", "2")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -509,7 +527,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","Check setUserProperty")
         try {
             HiAppEvent.setUserProperty("_name", "")
-            @Expect("assertion#4: not throw", "Check setUserProperty")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -532,6 +550,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name", "VALUE")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -553,6 +572,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name", "value")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -574,6 +594,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name6$", "value1")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -595,6 +616,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name6$", "2")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -616,7 +638,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","Check setUserProperty")
         try {
             HiAppEvent.setUserProperty("name6$", "")
-            @Expect("assertion#5: not throw", "Check setUserProperty")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -639,6 +661,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name6$", "VALUE")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -660,6 +683,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name6$", "value")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -681,6 +705,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("Name7", "value1")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -702,6 +727,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("Name7", "2")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -723,7 +749,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","Check setUserProperty")
         try {
             HiAppEvent.setUserProperty("Name7", "")
-            @Expect("assertion#6: not throw", "Check setUserProperty")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -746,6 +772,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("Name7", "VALUE")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -767,6 +794,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("Name7", "value")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -832,7 +860,7 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","Check setUserProperty")
         try {
             HiAppEvent.setUserProperty("", "")
-            @Expect("assertion#7: not throw", "Check setUserProperty")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)

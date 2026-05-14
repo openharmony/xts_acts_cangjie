@@ -44,7 +44,7 @@ class testImagePacker_packToFile_ImageSource_1 {
             let packToFile = imagePacker.packToFile(imageSource, Int32(1i32),
                 PackingOption("image/jpeg", 1u8, bufferSize: 10485760u64))
             @Expect(true)
-            @Expect("assertion#5: not throw", "createPixelMap fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -71,7 +71,7 @@ class testImagePacker_packToFile_ImageSource_1 {
             let packToFile = imagePacker.packToFile(imageSource, Int32(2i32),
                 PackingOption("image/png", 50u8, bufferSize: 20971520u64))
             @Expect(true)
-            @Expect("assertion#6: not throw", "createPixelMap fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -98,7 +98,7 @@ class testImagePacker_packToFile_ImageSource_1 {
             let packToFile = imagePacker.packToFile(imageSource, Int32(1i32),
                 PackingOption("image/jpeg", 100u8, bufferSize: 10485760u64))
             @Expect(true)
-            @Expect("assertion#7: not throw", "createPixelMap fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)

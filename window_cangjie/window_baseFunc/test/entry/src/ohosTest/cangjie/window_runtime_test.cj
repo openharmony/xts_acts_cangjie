@@ -329,7 +329,6 @@ class Test_window_runtime {
                 Hilog.error(0,"","","case_CreateWindow " + e.toString())
             }
         }
-
         let mainWindow = getMainWindow()
         let id = mainWindow.getWindowProperties().id
         createWindow("TYPE_APP", WindowType.TypeApp, id)
@@ -420,7 +419,6 @@ class Test_window_runtime {
     @Tag[APILevel22, TestLevel0]
     func test_windowMinimize() {
         let mainWindow = getMainWindow()
-
         mainWindow.minimize()
     }
 

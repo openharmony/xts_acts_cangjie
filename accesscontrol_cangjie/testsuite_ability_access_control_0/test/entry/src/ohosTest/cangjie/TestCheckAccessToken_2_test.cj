@@ -47,7 +47,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.ACCESS_FIDO2_ONLINEAUTH")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_101 ends.")
     }
 
@@ -71,7 +71,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.DLP_GET_HIDE_STATUS")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_102 ends.")
     }
 
@@ -95,7 +95,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.SYSTEM_FLOAT_WINDOW")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_103 ends.")
     }
 
@@ -119,7 +119,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.READ_CONTACTS")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_104 ends.")
     }
 
@@ -143,7 +143,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.WRITE_CONTACTS")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_105 ends.")
     }
 
@@ -167,7 +167,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.READ_AUDIO")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_106 ends.")
     }
 
@@ -191,7 +191,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.WRITE_AUDIO")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_107 ends.")
     }
 
@@ -215,7 +215,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.READ_IMAGEVIDEO")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_108 ends.")
     }
 
@@ -239,7 +239,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.WRITE_IMAGEVIDEO")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_109 ends.")
     }
 
@@ -264,7 +264,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.READ_WRITE_DESKTOP_DIRECTORY")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_110 ends.")
     }
 
@@ -288,7 +288,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.ACCESS_DDK_USB")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_111 ends.")
     }
 
@@ -312,7 +312,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.ACCESS_DDK_HID")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_112 ends.")
     }
 
@@ -336,7 +336,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.READ_PASTEBOARD")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_113 ends.")
     }
 
@@ -360,7 +360,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.FILE_ACCESS_PERSIST")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_114 ends.")
     }
 
@@ -384,7 +384,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.INTERCEPT_INPUT_EVENT")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_115 ends.")
     }
 
@@ -408,7 +408,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.INPUT_MONITORING")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_116 ends.")
     }
 
@@ -433,7 +433,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.SHORT_TERM_WRITE_IMAGEVIDEO")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_117 ends.")
     }
 
@@ -457,7 +457,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.READ_WRITE_USER_FILE")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_118 ends.")
     }
 
@@ -481,7 +481,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.READ_WRITE_USB_DEV")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_119 ends.")
     }
 
@@ -505,7 +505,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.GET_WIFI_PEERS_MAC")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_120 ends.")
     }
 
@@ -530,7 +530,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.kernel.DISABLE_CODE_MEMORY_PROTECTION")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_121 ends.")
     }
 
@@ -555,7 +555,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.kernel.ALLOW_WRITABLE_CODE_MEMORY")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_122 ends.")
     }
 
@@ -580,7 +580,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.kernel.ALLOW_EXECUTABLE_FORT_MEMORY")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_123 ends.")
     }
 
@@ -605,7 +605,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.MANAGE_PASTEBOARD_APP_SHARE_OPTION")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_124 ends.")
     }
 
@@ -630,7 +630,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.MANAGE_UDMF_APP_SHARE_OPTION")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_125 ends.")
     }
 
@@ -654,7 +654,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.ACCESS_DISK_PHY_INFO")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_126 ends.")
     }
 
@@ -678,7 +678,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.PRELOAD_FILE")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_127 ends.")
     }
 
@@ -702,7 +702,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.SET_PAC_URL")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_128 ends.")
     }
 
@@ -727,7 +727,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.PERSONAL_MANAGE_RESTRICTIONS")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_129 ends.")
     }
 
@@ -752,7 +752,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.START_PROVISIONING_MESSAGE")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_130 ends.")
     }
 
@@ -777,7 +777,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.USE_FRAUD_CALL_LOG_PICKER"
         )
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_131 ends.")
     }
 
@@ -802,7 +802,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.USE_FRAUD_MESSAGES_PICKER"
         )
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_132 ends.")
     }
 
@@ -827,7 +827,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.PERSISTENT_BLUETOOTH_PEERS_MAC")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_133 ends.")
     }
 
@@ -851,7 +851,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.ACCESS_VIRTUAL_SCREEN")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_134 ends.")
     }
 
@@ -875,7 +875,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.MANAGE_APN_SETTING")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_135 ends.")
     }
 
@@ -899,7 +899,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.GET_WIFI_LOCAL_MAC")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_136 ends.")
     }
 
@@ -924,7 +924,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.kernel.ALLOW_USE_JITFORT_INTERFACE")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_137 ends.")
     }
 
@@ -949,7 +949,7 @@ class TestCheckAccessToken_2 {
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId,
             "ohos.permission.kernel.DISABLE_GOTPLT_RO_PROTECTION")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_138 ends.")
     }
 
@@ -973,7 +973,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.USE_FRAUD_APP_PICKER")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_139 ends.")
     }
 
@@ -997,7 +997,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.ACCESS_DDK_DRIVERS")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_140 ends.")
     }
 
@@ -1021,7 +1021,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.kernel.SUPPORT_PLUGIN")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_141 ends.")
     }
 
@@ -1045,7 +1045,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.CUSTOM_SANDBOX")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_142 ends.")
     }
 
@@ -1069,7 +1069,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.MANAGE_SCREEN_TIME_GUARD")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_143 ends.")
     }
 
@@ -1093,7 +1093,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.CUSTOMIZE_SAVE_BUTTON")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_144 ends.")
     }
 
@@ -1117,7 +1117,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.GET_ABILITY_INFO")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_145 ends.")
     }
 
@@ -1141,7 +1141,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.ACCESS_FIDO2_ONLINEAUTH")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_146 ends.")
     }
 
@@ -1165,7 +1165,7 @@ class TestCheckAccessToken_2 {
         let accessTokenManager = AbilityAccessCtrl.createAtManager()
         Hilog.info(0u32, "CangjieTest", "define local variable grantStatus")
         let grantStatus = accessTokenManager.checkAccessToken(accessTokenId, "ohos.permission.DLP_GET_HIDE_STATUS")
-        @Assert(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
+        @Expect(GrantStatus.PermissionDenied.toString(), grantStatus.toString())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_147 ends.")
     }
 }

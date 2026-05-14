@@ -229,8 +229,8 @@ class test_GetString {
         Hilog.info(0, "cangjietest", "testcase TestCase_10 begins.")
         let resourceManager = Global.abilityContext.resourceManager
         let resource = @r(app.string.test_one_d)
-        let result = resourceManager.getString(resource.id) // 无参数匹配%d
-        @Expect(result,"Count: %d") // 预期返回原字符串
+        let result = resourceManager.getString(resource.id)
+        @Expect(result,"Count: %d")
         Hilog.info(0, "cangjietest", "testcase TestCase_10 ends.")
     }
 
@@ -249,8 +249,8 @@ class test_GetString {
         try {
             let resourceManager = Global.abilityContext.resourceManager
             let resource = @r(app.string.test_one_d)
-            let result = resourceManager.getString(resource.id, StringValue("not a number")) // 字符串匹配%d
-            @Expect(false) // 预期返回原字符串
+            let result = resourceManager.getString(resource.id, StringValue("not a number"))
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.code, 9001007)
@@ -272,12 +272,12 @@ class test_GetString {
         Hilog.info(0, "cangjietest", "testcase TestCase_12 begins.")
         try {
             let resourceManager = Global.abilityContext.resourceManager
-            let invalidResId: UInt32 = 1111u32 // 无效资源ID
+            let invalidResId: UInt32 = 1111u32
             let result = resourceManager.getString(invalidResId)
             @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
-            @Expect(e.code, 9001001) // 验证抛出异常
+            @Expect(e.code, 9001001)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_12 ends.")
     }
@@ -297,7 +297,7 @@ class test_GetString {
         try {
             let resourceManager = Global.abilityContext.resourceManager
             let resource = @r(app.string.test_one_d)
-            let result = resourceManager.getString(resource.id, Int32Value(Int32.Max)) // Int32最大值
+            let result = resourceManager.getString(resource.id, Int32Value(Int32.Max))
             @Expect(result,"Count: 2147483647")
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
@@ -321,7 +321,7 @@ class test_GetString {
         try {
             let resourceManager = Global.abilityContext.resourceManager
             let resource = @r(app.string.test_two_args)
-            let result = resourceManager.getString(resource.id, StringValue("Bob")) // 缺int参数
+            let result = resourceManager.getString(resource.id, StringValue("Bob"))
             @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
@@ -345,7 +345,7 @@ class test_GetString {
         try {
             let resourceManager = Global.abilityContext.resourceManager
             let resource = @r(app.string.test_one_s)
-            let result = resourceManager.getString(resource.id, StringValue("Alice"), Int32Value(10)) // 多int参数
+            let result = resourceManager.getString(resource.id, StringValue("Alice"), Int32Value(10))
             @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
@@ -368,7 +368,7 @@ class test_GetString {
         Hilog.info(0, "cangjietest", "testcase TestCase_16 begins.")
         try {
             let resourceManager = Global.abilityContext.resourceManager
-            let resource = @r(app.string.test_two_args) // 模板：%s has %d apples
+            let resource = @r(app.string.test_two_args)
             let result = resourceManager.getString(resource.id, Int32Value(5), StringValue("Bob"))
             @Expect(false) 
         } catch (e: BusinessException) {

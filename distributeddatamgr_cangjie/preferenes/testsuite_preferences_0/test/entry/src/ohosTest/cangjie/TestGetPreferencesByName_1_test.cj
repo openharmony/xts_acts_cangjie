@@ -42,7 +42,7 @@ class TestGetPreferencesByName_1 {
         Hilog.info(0, "cangjietest", "fail to get preferences.")
         try {
             Preferences.getPreferences(Global.getAbilityContext(), "")
-            @Expect("assertion#0: not throw", "fail to get preferences.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -65,7 +65,7 @@ class TestGetPreferencesByName_1 {
         Hilog.info(0, "cangjietest", "fail to get preferences.")
         try {
             Preferences.getPreferences(Global.getAbilityContext(), "\0")
-            @Expect("assertion#1: not throw", "fail to get preferences.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -91,6 +91,7 @@ class TestGetPreferencesByName_1 {
             Hilog.info(0, "cangjietest", "delete it.")
             Preferences.deletePreferences(Global.getAbilityContext(), "x" * 10000)
             Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)

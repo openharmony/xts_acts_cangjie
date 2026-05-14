@@ -53,7 +53,6 @@ class TestSymbol {
             @Expect(await(jsContext){value.isObject()}, false)
             @Expect(await(jsContext){value.isPromise()}, false)
             @Expect(await(jsContext){value.isFunction()}, false)
-            // no-exception when convert to JSSymbol
             let other = await(jsContext) {value.asSymbol()}
             @Expect(await(jsContext){other.description}, "")
             await(jsContext) {symbol.toString()}
@@ -103,7 +102,6 @@ class TestSymbol {
     func testSymbolKeyIsUnique() {
         let jsContext = getJSContext()
         await(jsContext) {
-            // 2 symbol with same description is different key
             let key1 = await(jsContext) {
                 jsContext.symbol(description: "a").toJSValue().asSymbol()
             }

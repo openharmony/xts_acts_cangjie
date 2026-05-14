@@ -56,7 +56,6 @@ class TestRdbStore_emit_1 {
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
-
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_1 ends.")
     }
 
@@ -89,7 +88,6 @@ class TestRdbStore_emit_1 {
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
-
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_2 ends.")
     }
 
@@ -122,7 +120,6 @@ class TestRdbStore_emit_1 {
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
-
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_3 ends.")
     }
 
@@ -155,7 +152,6 @@ class TestRdbStore_emit_1 {
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
-
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_4 ends.")
     }
 
@@ -188,7 +184,6 @@ class TestRdbStore_emit_1 {
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
-
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_5 ends.")
     }
 }

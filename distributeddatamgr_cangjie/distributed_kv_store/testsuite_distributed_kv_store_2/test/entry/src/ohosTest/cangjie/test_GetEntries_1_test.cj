@@ -48,7 +48,6 @@ class test_GetEntries_1 {
         store.put("test_user_002", StringValue("Bob"))
         store.put("test_user_003", StringValue("Charlie"))
         store.put("test_product_001", StringValue("Laptop"))        
-        // 执行查询 - 查询以"test_user_"为前缀的条目
         let entries = store.getEntries("test_user_")
         @Expect(entries.size, 3)
         kvManager.closeKVStore(bundleName, "test_devicekvstore_put_get_07_id")
@@ -102,7 +101,6 @@ class test_GetEntries_1 {
         store.put("normal_key", StringValue("normal_value"))
         store.put("special^key", StringValue("special_value"))
         store.put("another_key", Double(3.14))     
-        // 执行查询 - 查询以"test_user_"为前缀的条目
         let entries = store.getEntries("special^")
         @Expect(entries.size, 3)
         kvManager.closeKVStore(bundleName, "test_devicekvstore_put_get_07_id")
@@ -156,10 +154,8 @@ class test_GetEntries_1 {
         let store = kvManager.getKVStore<DeviceKVStore>("test_devicekvstore_put_get_07_id", opt)        
         store.put("key1", StringValue("value1"))
         store.put("key2", StringValue("value2"))
-        // 执行查询 - 空字符串前缀
         let entries = store.getEntries("")
         @Expect(entries.size, 2)
-
         kvManager.closeKVStore(bundleName, "test_devicekvstore_put_get_07_id")
         kvManager.deleteKVStore(bundleName, "test_devicekvstore_put_get_07_id")        
         Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
@@ -185,11 +181,9 @@ class test_GetEntries_1 {
         store.put("test_user_002", StringValue("Bob"))
         store.put("test_user_003", StringValue("Charlie"))
         store.put("test_product_001", StringValue("Laptop"))        
-        // 执行查询 - 查询以"test_user_"为前缀的条目
         let entries = store.getEntries("test_user_")
         @Expect(entries.size, 3)
         kvManager.closeKVStore("com.example.myapplication", "test_store")
-     
     }
 
     /*
@@ -210,7 +204,7 @@ class test_GetEntries_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("\0", "\0")
-            @Expect("assertion#2886: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401)

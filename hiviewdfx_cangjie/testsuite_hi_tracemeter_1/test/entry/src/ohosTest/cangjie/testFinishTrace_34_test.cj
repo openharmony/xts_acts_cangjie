@@ -39,7 +39,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3301 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 100i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3301 ends.")
     }
 
@@ -57,7 +57,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3302 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 101i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3302 ends.")
     }
 
@@ -75,7 +75,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3303 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 102i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3303 ends.")
     }
 
@@ -93,7 +93,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3304 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 103i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3304 ends.")
     }
 
@@ -111,7 +111,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3305 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 104i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3305 ends.")
     }
 
@@ -129,7 +129,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3306 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 105i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3306 ends.")
     }
 
@@ -147,7 +147,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3307 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 106i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3307 ends.")
     }
 
@@ -165,7 +165,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3308 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 107i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3308 ends.")
     }
 
@@ -183,7 +183,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3309 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 108i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3309 ends.")
     }
 
@@ -201,7 +201,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3310 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 109i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3310 ends.")
     }
 
@@ -219,7 +219,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3311 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 110i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3311 ends.")
     }
 
@@ -237,7 +237,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3312 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 111i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3312 ends.")
     }
 
@@ -255,7 +255,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3313 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 112i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3313 ends.")
     }
 
@@ -273,7 +273,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3314 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 113i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3314 ends.")
     }
 
@@ -291,7 +291,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3315 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 114i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3315 ends.")
     }
 
@@ -309,7 +309,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3316 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 115i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3316 ends.")
     }
 
@@ -327,7 +327,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3317 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 116i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3317 ends.")
     }
 
@@ -345,7 +345,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3318 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 117i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3318 ends.")
     }
 
@@ -363,7 +363,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3319 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 118i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3319 ends.")
     }
 
@@ -381,7 +381,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3320 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 119i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3320 ends.")
     }
 
@@ -399,7 +399,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3321 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 120i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3321 ends.")
     }
 
@@ -417,7 +417,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3322 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 121i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3322 ends.")
     }
 
@@ -435,7 +435,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3323 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 122i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3323 ends.")
     }
 
@@ -453,7 +453,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3324 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 123i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3324 ends.")
     }
 
@@ -471,7 +471,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3325 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 124i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3325 ends.")
     }
 
@@ -489,7 +489,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3326 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 125i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3326 ends.")
     }
 
@@ -507,7 +507,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3327 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 126i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3327 ends.")
     }
 
@@ -525,7 +525,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3328 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 127i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3328 ends.")
     }
 
@@ -543,7 +543,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3329 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 128i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3329 ends.")
     }
 
@@ -561,7 +561,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3330 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 129i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3330 ends.")
     }
 
@@ -579,7 +579,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3331 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 114514i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3331 ends.")
     }
 
@@ -597,7 +597,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3332 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("5", 2147483647i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3332 ends.")
     }
 
@@ -615,7 +615,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3333 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -2147483648i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3333 ends.")
     }
 
@@ -633,7 +633,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3334 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -114514i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3334 ends.")
     }
 
@@ -651,7 +651,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3335 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -30i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3335 ends.")
     }
 
@@ -669,7 +669,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3336 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -29i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3336 ends.")
     }
 
@@ -687,7 +687,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3337 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -28i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3337 ends.")
     }
 
@@ -705,7 +705,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3338 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -27i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3338 ends.")
     }
 
@@ -723,7 +723,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3339 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -26i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3339 ends.")
     }
 
@@ -741,7 +741,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3340 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -25i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3340 ends.")
     }
 
@@ -759,7 +759,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3341 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -24i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3341 ends.")
     }
 
@@ -777,7 +777,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3342 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -23i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3342 ends.")
     }
 
@@ -795,7 +795,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3343 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -22i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3343 ends.")
     }
 
@@ -813,7 +813,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3344 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -21i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3344 ends.")
     }
 
@@ -831,7 +831,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3345 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -20i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3345 ends.")
     }
 
@@ -849,7 +849,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3346 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -19i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3346 ends.")
     }
 
@@ -867,7 +867,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3347 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -18i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3347 ends.")
     }
 
@@ -885,7 +885,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3348 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -17i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3348 ends.")
     }
 
@@ -903,7 +903,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3349 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -16i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3349 ends.")
     }
 
@@ -921,7 +921,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3350 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -15i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3350 ends.")
     }
 
@@ -939,7 +939,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3351 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -14i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3351 ends.")
     }
 
@@ -957,7 +957,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3352 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -13i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3352 ends.")
     }
 
@@ -975,7 +975,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3353 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -12i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3353 ends.")
     }
 
@@ -993,7 +993,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3354 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -11i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3354 ends.")
     }
 
@@ -1011,7 +1011,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3355 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -10i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3355 ends.")
     }
 
@@ -1029,7 +1029,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3356 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -9i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3356 ends.")
     }
 
@@ -1047,7 +1047,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3357 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -8i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3357 ends.")
     }
 
@@ -1065,7 +1065,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3358 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -7i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3358 ends.")
     }
 
@@ -1083,7 +1083,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3359 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -6i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3359 ends.")
     }
 
@@ -1101,7 +1101,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3360 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -5i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3360 ends.")
     }
 
@@ -1119,7 +1119,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3361 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -4i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3361 ends.")
     }
 
@@ -1137,7 +1137,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3362 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -3i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3362 ends.")
     }
 
@@ -1155,7 +1155,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3363 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -2i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3363 ends.")
     }
 
@@ -1173,7 +1173,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3364 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", -1i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3364 ends.")
     }
 
@@ -1191,7 +1191,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3365 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 0i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3365 ends.")
     }
 
@@ -1209,7 +1209,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3366 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 1i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3366 ends.")
     }
 
@@ -1227,7 +1227,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3367 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 2i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3367 ends.")
     }
 
@@ -1245,7 +1245,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3368 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 3i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3368 ends.")
     }
 
@@ -1263,7 +1263,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3369 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 4i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3369 ends.")
     }
 
@@ -1281,7 +1281,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3370 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 5i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3370 ends.")
     }
 
@@ -1299,7 +1299,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3371 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 6i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3371 ends.")
     }
 
@@ -1317,7 +1317,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3372 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 7i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3372 ends.")
     }
 
@@ -1335,7 +1335,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3373 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 8i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3373 ends.")
     }
 
@@ -1353,7 +1353,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3374 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 9i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3374 ends.")
     }
 
@@ -1371,7 +1371,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3375 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 10i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3375 ends.")
     }
 
@@ -1389,7 +1389,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3376 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 11i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3376 ends.")
     }
 
@@ -1407,7 +1407,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3377 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 12i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3377 ends.")
     }
 
@@ -1425,7 +1425,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3378 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 13i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3378 ends.")
     }
 
@@ -1443,7 +1443,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3379 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 14i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3379 ends.")
     }
 
@@ -1461,7 +1461,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3380 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 15i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3380 ends.")
     }
 
@@ -1479,7 +1479,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3381 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 16i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3381 ends.")
     }
 
@@ -1497,7 +1497,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3382 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 17i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3382 ends.")
     }
 
@@ -1515,7 +1515,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3383 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 18i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3383 ends.")
     }
 
@@ -1533,7 +1533,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3384 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 19i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3384 ends.")
     }
 
@@ -1551,7 +1551,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3385 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 20i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3385 ends.")
     }
 
@@ -1569,7 +1569,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3386 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 21i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3386 ends.")
     }
 
@@ -1587,7 +1587,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3387 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 22i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3387 ends.")
     }
 
@@ -1605,7 +1605,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3388 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 23i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3388 ends.")
     }
 
@@ -1623,7 +1623,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3389 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 24i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3389 ends.")
     }
 
@@ -1641,7 +1641,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3390 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 25i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3390 ends.")
     }
 
@@ -1659,7 +1659,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3391 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 26i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3391 ends.")
     }
 
@@ -1677,7 +1677,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3392 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 27i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3392 ends.")
     }
 
@@ -1695,7 +1695,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3393 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 28i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3393 ends.")
     }
 
@@ -1713,7 +1713,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3394 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 29i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3394 ends.")
     }
 
@@ -1731,7 +1731,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3395 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 30i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3395 ends.")
     }
 
@@ -1749,7 +1749,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3396 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 31i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3396 ends.")
     }
 
@@ -1767,7 +1767,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3397 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 32i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3397 ends.")
     }
 
@@ -1785,7 +1785,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3398 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 33i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3398 ends.")
     }
 
@@ -1803,7 +1803,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3399 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 100i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3399 ends.")
     }
 
@@ -1821,7 +1821,7 @@ class testFinishTrace_34 {
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3400 begins.")
         Hilog.info(0u32, "cangjietest", "finishTrace")
         HiTraceMeter.finishTrace("6", 101i32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "testcase TestCase_3400 ends.")
     }
 }

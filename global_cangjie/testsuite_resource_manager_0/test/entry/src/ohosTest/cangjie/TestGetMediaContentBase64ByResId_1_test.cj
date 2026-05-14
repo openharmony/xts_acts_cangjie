@@ -47,7 +47,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(1u32, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3089: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -70,7 +70,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(1u32, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3090: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -93,7 +93,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(1u32, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3091: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -116,7 +116,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(1u32, density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3092: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -139,7 +139,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(1u32, density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3093: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -162,7 +162,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(0u32, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3094: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -185,7 +185,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(0u32, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3095: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -208,7 +208,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(0u32, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3096: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -231,7 +231,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(0u32, density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3097: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -254,7 +254,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(0u32, density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3098: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -277,7 +277,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(2u32, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3099: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -300,7 +300,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(2u32, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3100: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -323,7 +323,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(2u32, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3101: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -346,7 +346,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(2u32, density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3102: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -369,7 +369,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(2u32, density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3103: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -392,7 +392,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Min, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3104: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -415,7 +415,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Min, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3105: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -438,7 +438,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Min, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3106: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -461,7 +461,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Min, density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3107: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -484,7 +484,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Min, density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3108: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -507,7 +507,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Max, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3109: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -530,7 +530,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Max, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3110: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -553,7 +553,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Max, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3111: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -576,7 +576,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Max, density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3112: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -599,7 +599,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(UInt32.Max, density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3113: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -622,7 +622,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.module_desc).id, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3114: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -645,7 +645,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.module_desc).id, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3115: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -668,7 +668,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.module_desc).id, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3116: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -692,7 +692,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.module_desc).id, density: ScreenDensity.ScreenXldpi
             )
-            @Expect("assertion#3117: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -716,7 +716,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.module_desc).id,
                 density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3118: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -739,7 +739,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.strarray.sizelist).id, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3119: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -762,7 +762,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.strarray.sizelist).id, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3120: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -785,7 +785,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.strarray.sizelist).id, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3121: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -808,7 +808,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.strarray.sizelist).id, density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3122: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -832,7 +832,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.strarray.sizelist).id, density: ScreenDensity.ScreenXxldpi
             )
-            @Expect("assertion#3123: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -855,7 +855,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.plural.plural_name).id, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3124: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -878,7 +878,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.plural.plural_name).id, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3125: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -901,7 +901,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.plural.plural_name).id, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3126: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -925,7 +925,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.plural.plural_name).id, density: ScreenDensity.ScreenXldpi
             )
-            @Expect("assertion#3127: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -949,7 +949,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.plural.plural_name).id,
                 density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3128: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -973,7 +973,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format1).id, density: ScreenDensity.ScreenSdpi
             )
-            @Expect("assertion#3129: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -997,7 +997,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format1).id, density: ScreenDensity.ScreenMdpi
             )
-            @Expect("assertion#3130: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1021,7 +1021,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format1).id, density: ScreenDensity.ScreenLdpi
             )
-            @Expect("assertion#3131: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1045,7 +1045,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format1).id,
                 density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3132: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1069,7 +1069,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format1).id,
                 density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3133: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1093,7 +1093,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format2).id, density: ScreenDensity.ScreenSdpi
             )
-            @Expect("assertion#3134: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1117,7 +1117,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format2).id, density: ScreenDensity.ScreenMdpi
             )
-            @Expect("assertion#3135: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1141,7 +1141,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format2).id, density: ScreenDensity.ScreenLdpi
             )
-            @Expect("assertion#3136: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1165,7 +1165,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format2).id,
                 density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3137: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1189,7 +1189,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format2).id,
                 density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3138: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1213,7 +1213,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format3).id, density: ScreenDensity.ScreenSdpi
             )
-            @Expect("assertion#3139: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1237,7 +1237,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format3).id, density: ScreenDensity.ScreenMdpi
             )
-            @Expect("assertion#3140: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1261,7 +1261,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format3).id, density: ScreenDensity.ScreenLdpi
             )
-            @Expect("assertion#3141: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1285,7 +1285,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format3).id,
                 density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3142: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1309,7 +1309,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.Test_Format3).id,
                 density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3143: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1333,7 +1333,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_desc).id,
                 density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3144: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1357,7 +1357,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_desc).id,
                 density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3145: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1381,7 +1381,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_desc).id,
                 density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3146: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1405,7 +1405,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_desc).id,
                 density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3147: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1429,7 +1429,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_desc).id,
                 density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3148: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1452,7 +1452,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.layered_image).id,
             density: ScreenDensity.ScreenSdpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_61 ends.")
     }
 
@@ -1471,7 +1471,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.layered_image).id,
             density: ScreenDensity.ScreenMdpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_62 ends.")
     }
 
@@ -1490,7 +1490,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.layered_image).id,
             density: ScreenDensity.ScreenLdpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_63 ends.")
     }
 
@@ -1509,7 +1509,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.layered_image).id,
             density: ScreenDensity.ScreenXldpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_64 ends.")
     }
 
@@ -1528,7 +1528,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.layered_image).id,
             density: ScreenDensity.ScreenXxldpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_65 ends.")
     }
 
@@ -1548,7 +1548,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_label).id,
                 density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3149: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1572,7 +1572,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_label).id,
                 density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3150: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1596,7 +1596,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_label).id,
                 density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3151: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1620,7 +1620,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_label).id,
                 density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3152: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1644,7 +1644,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.string.EntryAbility_label).id,
                 density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3153: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1667,7 +1667,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.startIcon).id,
             density: ScreenDensity.ScreenSdpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_71 ends.")
     }
 
@@ -1686,7 +1686,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.startIcon).id,
             density: ScreenDensity.ScreenMdpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_72 ends.")
     }
 
@@ -1705,7 +1705,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.startIcon).id,
             density: ScreenDensity.ScreenLdpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_73 ends.")
     }
 
@@ -1724,7 +1724,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.startIcon).id,
             density: ScreenDensity.ScreenXldpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_74 ends.")
     }
 
@@ -1743,7 +1743,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "define local variable mediaContentBase64")
         let mediaContentBase64 = getResourceManager().getMediaContentBase64(@r(app.media.startIcon).id,
             density: ScreenDensity.ScreenXxldpi)
-        @Assert(mediaContentBase64.size > 0i64, true)
+        @Expect(mediaContentBase64.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_75 ends.")
     }
 
@@ -1762,7 +1762,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.profile.main_pages).id, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3154: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1785,7 +1785,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.profile.main_pages).id, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3155: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1808,7 +1808,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.profile.main_pages).id, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3156: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1832,7 +1832,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.profile.main_pages).id, density: ScreenDensity.ScreenXldpi
             )
-            @Expect("assertion#3157: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1856,7 +1856,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.profile.main_pages).id,
                 density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3158: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1880,7 +1880,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.color.start_window_background).id,
                 density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3159: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1904,7 +1904,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.color.start_window_background).id,
                 density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3160: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1928,7 +1928,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.color.start_window_background).id,
                 density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3161: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1952,7 +1952,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.color.start_window_background).id,
                 density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3162: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1976,7 +1976,7 @@ class TestGetMediaContentBase64ByResId_1 {
         try {
             getResourceManager().getMediaContentBase64(@r(app.color.start_window_background).id,
                 density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3163: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1999,7 +1999,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_1).id, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3164: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2022,7 +2022,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_1).id, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3165: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2045,7 +2045,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_1).id, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3166: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2068,7 +2068,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_1).id, density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3167: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2091,7 +2091,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_1).id, density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3168: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2114,7 +2114,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_2).id, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3169: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2137,7 +2137,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_2).id, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3170: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2160,7 +2160,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_2).id, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3171: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2183,7 +2183,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_2).id, density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3172: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2206,7 +2206,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.float.float_2).id, density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3173: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2229,7 +2229,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.integer.int_1).id, density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#3174: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2252,7 +2252,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.integer.int_1).id, density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#3175: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2275,7 +2275,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.integer.int_1).id, density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#3176: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2298,7 +2298,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.integer.int_1).id, density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#3177: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -2321,7 +2321,7 @@ class TestGetMediaContentBase64ByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get MediaContentBase64.")
         try {
             getResourceManager().getMediaContentBase64(@r(app.integer.int_1).id, density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#3178: not throw", "fail to get MediaContentBase64.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)

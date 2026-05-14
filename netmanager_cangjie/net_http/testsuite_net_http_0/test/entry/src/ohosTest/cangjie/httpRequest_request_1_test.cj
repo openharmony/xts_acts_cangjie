@@ -78,24 +78,21 @@ class httpRequest_request_1 {
                 }
                 if (let Option.Some(resp) <- response) {
                     match (resp.resultType) {
-                        case STRING => Hilog.info(0, "cangjietest", "Data Type: STRING, Value:") // ${resp.result.toString()}
-
-                        case ARRAY_BUFFER => Hilog.info(0, "cangjietest", "Data Type: ARRAY_BUFFER, Value:") // ${resp.result.toString()}
-
+                        case STRING => Hilog.info(0, "cangjietest", "Data Type: STRING, Value:")
+                        case ARRAY_BUFFER => Hilog.info(0, "cangjietest", "Data Type: ARRAY_BUFFER, Value:")
                         case _ => Hilog.error(0, "cangjietest", "Illegal resultType!")
                     }
                     Hilog.info(0, "cangjietest", "Response Header:\n  ${resp.header}")
                     Hilog.info(0, "cangjietest", "Response Cookies:\n  ${resp.cookies}")
-                    @Assert(BusinessException.isNone(), true)
+                    @Expect(BusinessException.isNone(), true)
                 } else {
-                    @Assert(response.isNone(), true)
+                    @Expect(response.isNone(), true)
                     Hilog.error(0, "cangjietest", "None Response!")
                 }
                 Hilog.info(0, "cangjietest", "response callback")
             },
-
         )
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 }

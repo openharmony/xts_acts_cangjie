@@ -102,6 +102,7 @@ class TestPhotoAccessHelper {
         let fileUriEmpty = ""
         try {
             let assetChangeRequest1 = MediaAssetChangeRequest.createImageAssetRequest(getAbilityContext(), fileUriEmpty)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(e.toString(),"BusinessException: errorcode: 401, message: Parameter error. Parameter verification failed.")
         }

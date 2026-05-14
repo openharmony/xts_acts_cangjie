@@ -53,6 +53,7 @@ class Test_SecurityHuks_ExportKeyItem {
         var flag = false
         try {
             exportKeyItem(keyAlias, genKeyOptionsTest1)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {

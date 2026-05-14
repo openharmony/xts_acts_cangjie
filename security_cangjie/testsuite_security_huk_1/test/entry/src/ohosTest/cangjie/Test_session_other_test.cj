@@ -60,8 +60,8 @@ class Test_SecurityHuks_SessionOther {
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(2u32))
                 ]
             )
-
             initSession(keyAlias, encOptions)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -87,6 +87,7 @@ class Test_SecurityHuks_SessionOther {
         try {
             let encOptions = genKeyOptionsTest1
             initSession(keyAlias, encOptions)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -125,10 +126,8 @@ class Test_SecurityHuks_SessionOther {
             )
             try {
                 generateKeyItem(keyAlias, options)
-
                 let handle = initSession(keyAlias, encOptions).handle
                 let bytes: Array<UInt8> = []
-
                 updateSession(handle, genKeyOptionsTest1, token: bytes)
             } catch (e: BusinessException) {
                 @Expect(e.code, 401i32)
@@ -168,10 +167,8 @@ class Test_SecurityHuks_SessionOther {
             )
             try {
                 generateKeyItem(keyAlias, options)
-
                 let handle = initSession(keyAlias, encOptions).handle
                 let bytes: Array<UInt8> = []
-
                 finishSession(handle, genKeyOptionsTest1, token: bytes)
             } catch (e: BusinessException) {
                 @Expect(e.code, 401i32)
@@ -211,14 +208,11 @@ class Test_SecurityHuks_SessionOther {
                 ],
                 inData: plainText.toArray()
             )
-
             let emptyOptions = genKeyOptionsTest1
-
             generateKeyItem(keyAlias, options)
-
             let handle = initSession(keyAlias, encOptions).handle
-
             abortSession(handle, emptyOptions)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {

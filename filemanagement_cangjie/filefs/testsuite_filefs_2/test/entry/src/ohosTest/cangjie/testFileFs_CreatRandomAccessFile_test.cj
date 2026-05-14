@@ -43,7 +43,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f)
@@ -70,7 +69,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f)
@@ -97,7 +95,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.WRITE_ONLY))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f)
@@ -214,7 +211,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f,mode: (OpenMode
@@ -243,7 +239,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f,mode: (OpenMode
@@ -272,7 +267,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f,mode: (OpenMode
@@ -301,7 +295,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f,mode: (OpenMode
@@ -330,7 +323,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f,mode: (OpenMode
@@ -360,7 +352,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f,mode: (OpenMode
@@ -389,7 +380,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f,mode: (OpenMode
@@ -418,7 +408,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let randomAccessFile = FileIo.createRandomAccessFile(f,mode: (OpenMode
@@ -446,7 +435,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         let random_option = RandomAccessFileOptions(start:1, end:3)
@@ -477,7 +465,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         try{
@@ -509,7 +496,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         try {
@@ -523,7 +509,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         }catch(e: BusinessException){
             @Expect(e.code, 13900020)
         }
-
         FileIo.unlink(fpath)
     }
   /**
@@ -542,7 +527,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello world")
         FileIo.fdatasync(f.fd)
         try {
@@ -556,7 +540,6 @@ class testFileFs_CreatRandomAccessFile_1 {
         }catch(e: BusinessException){
             @Expect(e.code, 13900020)
         }
-
         FileIo.unlink(fpath)
     }
 

@@ -43,7 +43,7 @@ class TestGetPreferencesByOptionsNameAndGroupId_1 {
         Hilog.info(0, "cangjietest","fail to get preferences.")
         try {
             Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("", dataGroupId:""))
-            @Expect("assertion#4: not throw", "fail to get preferences.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -66,7 +66,7 @@ class TestGetPreferencesByOptionsNameAndGroupId_1 {
         Hilog.info(0, "cangjietest","fail to get preferences.")
         try {
             Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("", dataGroupId:"\0"))
-            @Expect("assertion#5: not throw", "fail to get preferences.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -89,7 +89,7 @@ class TestGetPreferencesByOptionsNameAndGroupId_1 {
         Hilog.info(0, "cangjietest","fail to get preferences.")
         try {
             Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("", dataGroupId:"" * 10000))
-            @Expect("assertion#6: not throw", "fail to get preferences.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -112,7 +112,7 @@ class TestGetPreferencesByOptionsNameAndGroupId_1 {
         Hilog.info(0, "cangjietest","fail to get preferences.")
         try {
             Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("\0", dataGroupId:""))
-            @Expect("assertion#7: not throw", "fail to get preferences.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -135,7 +135,7 @@ class TestGetPreferencesByOptionsNameAndGroupId_1 {
         Hilog.info(0, "cangjietest","fail to get preferences.")
         try {
             Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("\0", dataGroupId:"\0"))
-            @Expect("assertion#8: not throw", "fail to get preferences.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -158,7 +158,7 @@ class TestGetPreferencesByOptionsNameAndGroupId_1 {
         Hilog.info(0, "cangjietest","fail to get preferences.")
         try {
             Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("\0", dataGroupId:"" * 10000))
-            @Expect("assertion#9: not throw", "fail to get preferences.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -183,6 +183,7 @@ class TestGetPreferencesByOptionsNameAndGroupId_1 {
             Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("x" * 10000, dataGroupId:""))
             Hilog.info(0, "cangjietest","delete it.")
             Preferences.deletePreferences(Global.getAbilityContext(), "x" * 10000)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -207,6 +208,7 @@ class TestGetPreferencesByOptionsNameAndGroupId_1 {
             Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("x" * 10000, dataGroupId:"\0"))
             Hilog.info(0, "cangjietest","delete it.")
             Preferences.deletePreferences(Global.getAbilityContext(), "x" * 10000)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)
@@ -231,6 +233,7 @@ class TestGetPreferencesByOptionsNameAndGroupId_1 {
             Preferences.getPreferences(Global.getAbilityContext(), PreferencesOptions("x" * 10000, dataGroupId:"" * 10000))
             Hilog.info(0, "cangjietest","delete it.")
             Preferences.deletePreferences(Global.getAbilityContext(), "x" * 10000)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 15500000i32)

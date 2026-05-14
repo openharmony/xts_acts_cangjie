@@ -54,7 +54,6 @@ class Test_SecurityHuks_DeleteKey {
         try {
             generateSimpleKey(keyAlias)
             @Expect(hasKeyItem(keyAlias, genKeyOptionsTest2))
-
             deleteKeyItem(keyAlias, genKeyOptionsTest2)
             @Expect(!hasKeyItem(keyAlias, genKeyOptionsTest2))
         } catch (e: BusinessException) {
@@ -104,6 +103,7 @@ class Test_SecurityHuks_DeleteKey {
         var flag = false
         try {
             deleteKeyItem(keyAlias, genKeyOptionsTest2)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {

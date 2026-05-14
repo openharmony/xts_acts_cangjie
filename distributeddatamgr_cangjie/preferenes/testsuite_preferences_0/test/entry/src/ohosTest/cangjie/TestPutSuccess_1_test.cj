@@ -42,13 +42,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.BoolData(true))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.BoolData(value) <- preferences
             .getAll()
@@ -56,7 +57,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, true)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
@@ -76,13 +77,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.BoolArray([false, true]))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.BoolArray(value) <- preferences
             .getAll()
@@ -90,7 +92,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, [false, true])
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
@@ -110,13 +112,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.Double(Float64.Min))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.Double(value) <- preferences
             .getAll()
@@ -124,7 +127,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, Float64.Min)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
@@ -144,13 +147,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.Double(Float64.Max))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.Double(value) <- preferences
             .getAll()
@@ -158,7 +162,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, Float64.Max)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
@@ -178,13 +182,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.Double(Float64.Inf))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.Double(value) <- preferences
             .getAll()
@@ -192,7 +197,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, Float64.Inf)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
     }
@@ -212,13 +217,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.Double(0.000000f64))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.Double(value) <- preferences
             .getAll()
@@ -226,7 +232,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, 0.000000f64)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_6 ends.")
     }
@@ -246,13 +252,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.DoubleArray([Float64.Min, Float64.Max, Float64.Inf, 0.000000f64]))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.DoubleArray(value) <- preferences
             .getAll()
@@ -260,7 +267,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, [Float64.Min, Float64.Max, Float64.Inf, 0.000000f64])
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
     }
@@ -280,13 +287,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.Integer(Int64.Min))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.Integer(value) <- preferences
             .getAll()
@@ -294,7 +302,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, Int64.Min)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_8 ends.")
     }
@@ -314,13 +322,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.Integer(-1i64))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.Integer(value) <- preferences
             .getAll()
@@ -328,7 +337,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, -1i64)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_9 ends.")
     }
@@ -348,13 +357,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.Integer(0i64))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.Integer(value) <- preferences
             .getAll()
@@ -362,7 +372,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, 0i64)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_10 ends.")
     }
@@ -382,13 +392,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.Integer(1i64))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.Integer(value) <- preferences
             .getAll()
@@ -396,7 +407,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, 1i64)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_11 ends.")
     }
@@ -416,13 +427,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.Integer(Int64.Max))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.Integer(value) <- preferences
             .getAll()
@@ -430,7 +442,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, Int64.Max)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_12 ends.")
     }
@@ -450,13 +462,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.StringData(""))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.StringData(value) <- preferences
             .getAll()
@@ -464,7 +477,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, "")
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_13 ends.")
     }
@@ -484,13 +497,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.StringData("\0"))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.StringData(value) <- preferences
             .getAll()
@@ -498,7 +512,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, "")
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_14 ends.")
     }
@@ -518,13 +532,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.StringData("hello world"))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.StringData(value) <- preferences
             .getAll()
@@ -532,7 +547,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, "hello world")
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_15 ends.")
     }
@@ -552,13 +567,14 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         Hilog.info(0, "cangjietest", "define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest", "put")
         preferences.put("validKey", PreferencesValueType.StringArray(["a", "b", "c"]))
-        @Assert(true, preferences.has("validKey"))
+        @Expect(true, preferences.has("validKey"))
         Hilog.info(0, "cangjietest", "check get result")
         if (let PreferencesValueType.StringArray(value) <- preferences
             .getAll()
@@ -566,7 +582,7 @@ class TestPutSuccess_1 {
             .getOrThrow()) {
             @Expect(value, ["a", "b", "c"])
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_16 ends.")
     }
@@ -586,6 +602,7 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         try {
@@ -593,7 +610,7 @@ class TestPutSuccess_1 {
             let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
             Hilog.info(0, "cangjietest", "put")
             preferences.put("validKey", PreferencesValueType.StringArray(["", "", ""]))
-            @Assert(true, preferences.has("validKey"))
+            @Expect(true, preferences.has("validKey"))
             Hilog.info(0, "cangjietest", "check get result")
             if (let PreferencesValueType.StringArray(value) <- preferences
                 .getAll()
@@ -601,12 +618,11 @@ class TestPutSuccess_1 {
                 .getOrThrow()) {
                 @Expect(value, ["", "", ""])
             } else {
-                @Expect("assertion failed", "xxxx")
+                @Expect(false)
             }
         } catch (e: Exception) {
             @Expect(e.toString(), "NoneValueException")
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_17 ends.")
     }
 
@@ -625,6 +641,7 @@ class TestPutSuccess_1 {
         Hilog.info(0, "cangjietest", "xxx")
         try {
             Preferences.deletePreferences(Global.getAbilityContext(), "myPreferences")
+            @Expect(false)
         } catch (_: Exception) {
         }
         try {
@@ -632,7 +649,7 @@ class TestPutSuccess_1 {
             let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
             Hilog.info(0, "cangjietest", "put")
             preferences.put("validKey", PreferencesValueType.StringArray(["", "\0", "hello world"]))
-            @Assert(true, preferences.has("validKey"))
+            @Expect(true, preferences.has("validKey"))
             Hilog.info(0, "cangjietest", "check get result")
             if (let PreferencesValueType.StringArray(value) <- preferences
                 .getAll()
@@ -640,12 +657,11 @@ class TestPutSuccess_1 {
                 .getOrThrow()) {
                 @Expect(value, ["", "\0", "hello world"])
             } else {
-                @Expect("assertion failed", "xxxx")
+                @Expect(false)
             }
         } catch (e: Exception) {
             @Expect(e.toString(), "NoneValueException")
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_18 ends.")
     }
 }

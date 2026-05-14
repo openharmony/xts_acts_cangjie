@@ -53,7 +53,7 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
@@ -86,12 +86,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
 
@@ -120,12 +119,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -154,12 +152,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -188,12 +185,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
     }
 
@@ -222,12 +218,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_6 ends.")
     }
 
@@ -256,12 +251,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
     }
 
@@ -290,12 +284,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_8 ends.")
     }
 
@@ -324,12 +317,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_9 ends.")
     }
 
@@ -358,12 +350,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_10 ends.")
     }
 
@@ -392,12 +383,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_11 ends.")
     }
 
@@ -426,12 +416,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_12 ends.")
     }
 
@@ -460,12 +449,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_13 ends.")
     }
 
@@ -494,12 +482,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_14 ends.")
     }
 
@@ -528,12 +515,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_15 ends.")
     }
 
@@ -562,12 +548,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_16 ends.")
     }
 
@@ -596,12 +581,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_17 ends.")
     }
 
@@ -630,12 +614,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences1", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_18 ends.")
     }
 
@@ -664,12 +647,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_37 ends.")
     }
 
@@ -698,12 +680,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_38 ends.")
     }
 
@@ -732,12 +713,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_39 ends.")
     }
 
@@ -766,12 +746,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_40 ends.")
     }
 
@@ -800,12 +779,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_41 ends.")
     }
 
@@ -834,12 +812,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_42 ends.")
     }
 
@@ -868,12 +845,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_43 ends.")
     }
 
@@ -902,12 +878,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_44 ends.")
     }
 
@@ -936,12 +911,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_45 ends.")
     }
 
@@ -970,12 +944,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_46 ends.")
     }
 
@@ -1004,12 +977,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_47 ends.")
     }
 
@@ -1038,12 +1010,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_48 ends.")
     }
 
@@ -1072,12 +1043,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_49 ends.")
     }
 
@@ -1106,12 +1076,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_50 ends.")
     }
 
@@ -1140,12 +1109,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_51 ends.")
     }
 
@@ -1174,12 +1142,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_52 ends.")
     }
 
@@ -1208,12 +1175,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_53 ends.")
     }
 
@@ -1242,12 +1208,11 @@ class TestDeletePreferencesByOptions_1 {
             Hilog.info(0, "cangjietest", "define local variable preferences_1")
             let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(),
                 PreferencesOptions("preferences2", dataGroupId: ""))
-            @Assert(false, preferences_1.has("key"))
+            @Expect(false, preferences_1.has("key"))
         } catch (e: BusinessException) {
             @Expect(e.message, "Preferences getPreferences failed: Inner error.")
             @Expect(e.code, 22i32)
         }
-
         Hilog.info(0, "cangjietest", "testcase TestCase_54 ends.")
     }
 }

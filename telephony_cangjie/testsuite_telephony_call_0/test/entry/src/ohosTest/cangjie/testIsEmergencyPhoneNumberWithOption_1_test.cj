@@ -39,8 +39,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_10 begins.")
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("", options:EmergencyNumberOptions(slotId:1)), false)
-            @Expect("assertion#10: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("", options:EmergencyNumberOptions(slotId:1)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -62,8 +62,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_11 begins.")
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("", options:EmergencyNumberOptions(slotId:2)), false)
-            @Expect("assertion#11: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("", options:EmergencyNumberOptions(slotId:2)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -84,7 +84,7 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_12(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_12 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("123456789", options:EmergencyNumberOptions(slotId:1)), false)
+            @Expect(Call.isEmergencyPhoneNumber("123456789", options:EmergencyNumberOptions(slotId:1)), false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -105,8 +105,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_13(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_13 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("123456789", options:EmergencyNumberOptions(slotId:2)), false)
-            @Expect("assertion#11: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("123456789", options:EmergencyNumberOptions(slotId:2)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -127,8 +127,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_14(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_14 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("abcdrf", options:EmergencyNumberOptions(slotId:1)), false)
-            @Expect("assertion#11: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("abcdrf", options:EmergencyNumberOptions(slotId:1)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -149,8 +149,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_15(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_15 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("abcdrf", options:EmergencyNumberOptions(slotId:2)), false)
-            @Expect("assertion#11: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("abcdrf", options:EmergencyNumberOptions(slotId:2)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -171,7 +171,7 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_16(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_16 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("010-222222", options:EmergencyNumberOptions(slotId:1)), false)
+            @Expect(Call.isEmergencyPhoneNumber("010-222222", options:EmergencyNumberOptions(slotId:1)), false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -192,8 +192,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_17(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_17 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("010-222222", options:EmergencyNumberOptions(slotId:2)), false)
-            @Expect("assertion#11: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("010-222222", options:EmergencyNumberOptions(slotId:2)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -214,7 +214,7 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_18(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_18 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("11111111111", options:EmergencyNumberOptions(slotId:1)), false)
+            @Expect(Call.isEmergencyPhoneNumber("11111111111", options:EmergencyNumberOptions(slotId:1)), false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -235,8 +235,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_19(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_19 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("11111111111", options:EmergencyNumberOptions(slotId:2)), false)
-            @Expect("assertion#11: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("11111111111", options:EmergencyNumberOptions(slotId:2)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -257,7 +257,7 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_20(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_20 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("-1111", options:EmergencyNumberOptions(slotId:1)), false)
+            @Expect(Call.isEmergencyPhoneNumber("-1111", options:EmergencyNumberOptions(slotId:1)), false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -278,8 +278,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_21(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_21 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("-1111", options:EmergencyNumberOptions(slotId:2)), false)
-            @Expect("assertion#11: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("-1111", options:EmergencyNumberOptions(slotId:2)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -300,7 +300,7 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_22(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_22 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("00000", options:EmergencyNumberOptions(slotId:1)), false)
+            @Expect(Call.isEmergencyPhoneNumber("00000", options:EmergencyNumberOptions(slotId:1)), false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -321,8 +321,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_23(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_23 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("00000", options:EmergencyNumberOptions(slotId:2)), false)
-            @Expect("assertion#11: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("00000", options:EmergencyNumberOptions(slotId:2)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -343,7 +343,7 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_24(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_24 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("9223372036854775807", options:EmergencyNumberOptions(slotId:1)), false)
+            @Expect(Call.isEmergencyPhoneNumber("9223372036854775807", options:EmergencyNumberOptions(slotId:1)), false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -364,8 +364,8 @@ class testIsEmergencyPhoneNumberWithOption_1 {
     func TestCase_25(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_25 begins.")
         try {
-            @Assert(Call.isEmergencyPhoneNumber("9223372036854775807", options:EmergencyNumberOptions(slotId:2)), false)
-            @Expect("assertion#11: not throw", "would throw exception")
+            @Expect(Call.isEmergencyPhoneNumber("9223372036854775807", options:EmergencyNumberOptions(slotId:2)), false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)

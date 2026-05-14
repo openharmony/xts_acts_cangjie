@@ -47,9 +47,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("789",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(1u32))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("789", HuksOptions())
-            @Expect("assertion#473: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -76,9 +76,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("!@#$",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(2u32))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("!@#$", HuksOptions())
-            @Expect("assertion#474: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -105,9 +105,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("%^&*",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_TYPE, HuksParamValue.Uint64Value(1u64))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("%^&*", HuksOptions())
-            @Expect("assertion#475: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -134,9 +134,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("01294hrew",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ASSOCIATED_DATA, HuksParamValue.Uint64Value(2u64))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("01294hrew", HuksOptions())
-            @Expect("assertion#476: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -163,9 +163,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("ihe3938(@$^*)",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_NONCE, HuksParamValue.Uint64Value(3u64))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("ihe3938(@$^*)", HuksOptions())
-            @Expect("assertion#477: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -190,9 +190,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))]))
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))]))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#478: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -219,9 +219,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_INFO, HuksParamValue.BytesValue([3u8]))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#479: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -248,9 +248,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_SALT, HuksParamValue.BytesValue([5u8]))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#480: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -279,9 +279,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
                         HuksParamValue.BooleanValue(true))], inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#486: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -308,9 +308,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_ALG_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#487: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -339,9 +339,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS,
                         HuksParamValue.BooleanValue(true))], inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#488: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -370,9 +370,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#489: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -401,9 +401,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#490: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -430,9 +430,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY_ALIAS, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#491: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -459,9 +459,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_DERIVE_KEY_SIZE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#492: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -488,9 +488,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_IMPORT_KEY_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#493: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -519,9 +519,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#494: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -550,9 +550,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
                         HuksParamValue.BooleanValue(true))], inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#495: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -581,9 +581,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_RSA_PSS_SALT_LEN_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#496: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -610,9 +610,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_USER_ID, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#502: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -641,9 +641,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_NO_AUTH_REQUIRED, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#503: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 12000002i32)
         }
@@ -670,9 +670,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_USER_AUTH_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#504: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -699,9 +699,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AUTH_TIMEOUT, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#505: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -728,9 +728,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AUTH_TOKEN, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#506: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -759,9 +759,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_ACCESS_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#507: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -790,9 +790,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_SECURE_SIGN_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#508: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -819,9 +819,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_CHALLENGE_TYPE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#509: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -848,9 +848,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_CHALLENGE_POS, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#510: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -879,9 +879,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_KEY_AUTH_PURPOSE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#511: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -910,9 +910,9 @@ class testAnonAttestKeyItem_1 {
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#512: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -939,9 +939,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_KEY, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#546: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -968,9 +968,9 @@ class testAnonAttestKeyItem_1 {
             let chains = anonAttestKeyItem("keyAlias1",
                 HuksOptions(properties: [HuksParam(HuksTag.HUKS_TAG_AE_TAG, HuksParamValue.BooleanValue(true))],
                     inData: Bytes()))
-            @Assert(chains.isEmpty(), false)
+            @Expect(chains.isEmpty(), false)
             deleteKeyItem("keyAlias1", HuksOptions())
-            @Expect("assertion#549: not throw", "would throw exception")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }

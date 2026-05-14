@@ -40,7 +40,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name1", "value1")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name1")
-        @Assert(getUserProperty, "value1")
+        @Expect(getUserProperty, "value1")
         Hilog.info(0, "cangjietest","testcase TestCase_1 ends.")
     }
 
@@ -60,7 +60,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name1", "2")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name1")
-        @Assert(getUserProperty, "2")
+        @Expect(getUserProperty, "2")
         Hilog.info(0, "cangjietest","testcase TestCase_2 ends.")
     }
 
@@ -80,7 +80,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name1", "VALUE")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name1")
-        @Assert(getUserProperty, "VALUE")
+        @Expect(getUserProperty, "VALUE")
         Hilog.info(0, "cangjietest","testcase TestCase_3 ends.")
     }
 
@@ -100,7 +100,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name1", "value")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name1")
-        @Assert(getUserProperty, "value")
+        @Expect(getUserProperty, "value")
         Hilog.info(0, "cangjietest","testcase TestCase_4 ends.")
     }
 
@@ -120,7 +120,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name_2", "value1")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name_2")
-        @Assert(getUserProperty, "value1")
+        @Expect(getUserProperty, "value1")
         Hilog.info(0, "cangjietest","testcase TestCase_5 ends.")
     }
 
@@ -140,7 +140,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name_2", "2")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name_2")
-        @Assert(getUserProperty, "2")
+        @Expect(getUserProperty, "2")
         Hilog.info(0, "cangjietest","testcase TestCase_6 ends.")
     }
 
@@ -160,7 +160,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name_2", "VALUE")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name_2")
-        @Assert(getUserProperty, "VALUE")
+        @Expect(getUserProperty, "VALUE")
         Hilog.info(0, "cangjietest","testcase TestCase_7 ends.")
     }
 
@@ -180,7 +180,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name_2", "value")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name_2")
-        @Assert(getUserProperty, "value")
+        @Expect(getUserProperty, "value")
         Hilog.info(0, "cangjietest","testcase TestCase_8 ends.")
     }
 
@@ -200,7 +200,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name", "value1")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name")
-        @Assert(getUserProperty, "value1")
+        @Expect(getUserProperty, "value1")
         Hilog.info(0, "cangjietest","testcase TestCase_9 ends.")
     }
 
@@ -220,7 +220,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name", "2")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name")
-        @Assert(getUserProperty, "2")
+        @Expect(getUserProperty, "2")
         Hilog.info(0, "cangjietest","testcase TestCase_10 ends.")
     }
 
@@ -240,7 +240,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name", "VALUE")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name")
-        @Assert(getUserProperty, "VALUE")
+        @Expect(getUserProperty, "VALUE")
         Hilog.info(0, "cangjietest","testcase TestCase_11 ends.")
     }
 
@@ -260,7 +260,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name", "value")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name")
-        @Assert(getUserProperty, "value")
+        @Expect(getUserProperty, "value")
         Hilog.info(0, "cangjietest","testcase TestCase_12 ends.")
     }
 
@@ -280,7 +280,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("_name4", "value1")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("_name4")
-        @Assert(getUserProperty, "value1")
+        @Expect(getUserProperty, "value1")
         Hilog.info(0, "cangjietest","testcase TestCase_13 ends.")
     }
 
@@ -300,7 +300,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("_name4", "2")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("_name4")
-        @Assert(getUserProperty, "2")
+        @Expect(getUserProperty, "2")
         Hilog.info(0, "cangjietest","testcase TestCase_14 ends.")
     }
 
@@ -320,7 +320,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("_name4", "VALUE")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("_name4")
-        @Assert(getUserProperty, "VALUE")
+        @Expect(getUserProperty, "VALUE")
         Hilog.info(0, "cangjietest","testcase TestCase_15 ends.")
     }
 
@@ -340,7 +340,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("_name4", "value")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("_name4")
-        @Assert(getUserProperty, "value")
+        @Expect(getUserProperty, "value")
         Hilog.info(0, "cangjietest","testcase TestCase_16 ends.")
     }
 
@@ -360,7 +360,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("_name", "value1")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("_name")
-        @Assert(getUserProperty, "value1")
+        @Expect(getUserProperty, "value1")
         Hilog.info(0, "cangjietest","testcase TestCase_17 ends.")
     }
 
@@ -380,7 +380,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("_name", "2")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("_name")
-        @Assert(getUserProperty, "2")
+        @Expect(getUserProperty, "2")
         Hilog.info(0, "cangjietest","testcase TestCase_18 ends.")
     }
 
@@ -400,7 +400,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("_name", "VALUE")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("_name")
-        @Assert(getUserProperty, "VALUE")
+        @Expect(getUserProperty, "VALUE")
         Hilog.info(0, "cangjietest","testcase TestCase_19 ends.")
     }
 
@@ -420,7 +420,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("_name", "value")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("_name")
-        @Assert(getUserProperty, "value")
+        @Expect(getUserProperty, "value")
         Hilog.info(0, "cangjietest","testcase TestCase_20 ends.")
     }
 
@@ -440,7 +440,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name6$", "value1")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name6$")
-        @Assert(getUserProperty, "value1")
+        @Expect(getUserProperty, "value1")
         Hilog.info(0, "cangjietest","testcase TestCase_21 ends.")
     }
 
@@ -460,7 +460,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name6$", "2")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name6$")
-        @Assert(getUserProperty, "2")
+        @Expect(getUserProperty, "2")
         Hilog.info(0, "cangjietest","testcase TestCase_22 ends.")
     }
 
@@ -480,7 +480,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name6$", "VALUE")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name6$")
-        @Assert(getUserProperty, "VALUE")
+        @Expect(getUserProperty, "VALUE")
         Hilog.info(0, "cangjietest","testcase TestCase_23 ends.")
     }
 
@@ -500,7 +500,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("name6$", "value")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("name6$")
-        @Assert(getUserProperty, "value")
+        @Expect(getUserProperty, "value")
         Hilog.info(0, "cangjietest","testcase TestCase_24 ends.")
     }
 
@@ -520,7 +520,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("Name7", "value1")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("Name7")
-        @Assert(getUserProperty, "value1")
+        @Expect(getUserProperty, "value1")
         Hilog.info(0, "cangjietest","testcase TestCase_25 ends.")
     }
 
@@ -540,7 +540,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("Name7", "2")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("Name7")
-        @Assert(getUserProperty, "2")
+        @Expect(getUserProperty, "2")
         Hilog.info(0, "cangjietest","testcase TestCase_26 ends.")
     }
 
@@ -560,7 +560,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("Name7", "VALUE")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("Name7")
-        @Assert(getUserProperty, "VALUE")
+        @Expect(getUserProperty, "VALUE")
         Hilog.info(0, "cangjietest","testcase TestCase_27 ends.")
     }
 
@@ -580,7 +580,7 @@ class testGetUserProperty_1 {
         let setUserProperty = HiAppEvent.setUserProperty("Name7", "value")
         Hilog.info(0, "cangjietest","define local variable getUserProperty")
         let getUserProperty = HiAppEvent.getUserProperty("Name7")
-        @Assert(getUserProperty, "value")
+        @Expect(getUserProperty, "value")
         Hilog.info(0, "cangjietest","testcase TestCase_28 ends.")
     }
 }

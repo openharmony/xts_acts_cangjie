@@ -58,7 +58,7 @@ class testCreateSymKeyGenerator_1 {
         Hilog.info(0u32, "CangjieTest", "createSymKeyGenerator fail")
         try {
             createSymKeyGenerator("errorString")
-            @Expect("assertion#10: not throw", "createSymKeyGenerator fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Capability not supported.")
             @Expect(e.code, 801i32)
@@ -81,7 +81,7 @@ class testCreateSymKeyGenerator_1 {
         Hilog.info(0u32, "CangjieTest", "createSymKeyGenerator fail")
         try {
             createSymKeyGenerator("")
-            @Expect("assertion#11: not throw", "createSymKeyGenerator fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Capability not supported.")
             @Expect(e.code, 801i32)

@@ -59,7 +59,6 @@ class Test_ble_basicClass {
             @Expect(scanFilter.serviceSolicitationUUIDMask, "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF")
             Hilog.info(0, "cangjietest", "scanFilter.serviceData.toString() is ${scanFilter.serviceData.toString()}")
             @Expect(scanFilter.manufactureId, 4567)
-
             let scanOptions = ScanOptions(interval: 0, dutyMode: ScanModeLowPower, matchMode: MatchModeAggressive,
                 phyType: PhyLe1M, reportMode: ScanReportMode.Normal)
             startBleScanning([scanFilter], options: scanOptions)
@@ -322,7 +321,6 @@ class Test_ble_basicClass {
             )
             var advHandle: UInt32 = 0xFF
             advHandle = startAdvertising(advertisingParams)
-            //            let advertisingDisableParams = AdvertisingDisableParams(advHandle)
             @Expect(advHandle, 0xFF)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")

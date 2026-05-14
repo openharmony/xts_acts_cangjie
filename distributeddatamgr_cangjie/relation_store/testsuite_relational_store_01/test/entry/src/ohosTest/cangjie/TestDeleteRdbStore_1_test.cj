@@ -46,7 +46,7 @@ class TestDeleteRdbStore_1 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#0: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -72,7 +72,7 @@ class TestDeleteRdbStore_1 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: false, allowRebuild: false,
                     isReadOnly: false, pluginLibs: ["", "pluginLibs"], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#1: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -98,7 +98,7 @@ class TestDeleteRdbStore_1 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: true,
                     isReadOnly: true, pluginLibs: [], cryptoParam: CryptoParam(), vector: true,
                     tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: true))
-            @Expect("assertion#2: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -134,7 +134,6 @@ class TestDeleteRdbStore_1 {
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
-
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_4 ends.")
     }
 
@@ -157,7 +156,7 @@ class TestDeleteRdbStore_1 {
                     customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: false, allowRebuild: false,
                     isReadOnly: false, pluginLibs: [], cryptoParam: CryptoParam(), vector: false,
                     tokenizer: Tokenizer.NoneTokenizer, persist: false, enableSemanticIndex: false))
-            @Expect("assertion#3: not throw", "testisColumnNull the result set failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }

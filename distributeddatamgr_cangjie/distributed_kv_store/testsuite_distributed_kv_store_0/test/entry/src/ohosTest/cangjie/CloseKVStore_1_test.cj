@@ -60,7 +60,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("", "")
-            @Expect("assertion#2880: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -86,7 +86,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("\0", "")
-            @Expect("assertion#2881: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -112,7 +112,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("#$%^&", "")
-            @Expect("assertion#2882: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -138,7 +138,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("zpsABC", "")
-            @Expect("assertion#2883: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -164,7 +164,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("a" * 100000, "")
-            @Expect("assertion#2884: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -190,7 +190,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("", "\0")
-            @Expect("assertion#2885: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -216,7 +216,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("\0", "\0")
-            @Expect("assertion#2886: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -242,7 +242,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("#$%^&", "\0")
-            @Expect("assertion#2887: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -268,7 +268,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("zpsABC", "\0")
-            @Expect("assertion#2888: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -294,7 +294,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("a" * 100000, "\0")
-            @Expect("assertion#2889: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -320,7 +320,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("", "#$%^&")
-            @Expect("assertion#2890: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -346,7 +346,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("\0", "#$%^&")
-            @Expect("assertion#2891: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -372,7 +372,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("#$%^&", "#$%^&")
-            @Expect("assertion#2892: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -398,7 +398,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("zpsABC", "#$%^&")
-            @Expect("assertion#2893: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -424,7 +424,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("a" * 100000, "#$%^&")
-            @Expect("assertion#2894: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -450,7 +450,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("", "zpsABC")
-            @Expect("assertion#2895: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -476,7 +476,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("\0", "zpsABC")
-            @Expect("assertion#2896: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -502,6 +502,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("#$%^&", "zpsABC")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -544,7 +545,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("a" * 100000, "zpsABC")
-            @Expect("assertion#2898: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -570,7 +571,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("", "a" * 100000)
-            @Expect("assertion#2899: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -596,7 +597,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("\0", "a" * 100000)
-            @Expect("assertion#2900: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -622,7 +623,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("#$%^&", "a" * 100000)
-            @Expect("assertion#2901: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -648,7 +649,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("zpsABC", "a" * 100000)
-            @Expect("assertion#2902: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -674,7 +675,7 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("a" * 100000, "a" * 100000)
-            @Expect("assertion#2903: not throw", "fail to close kv store.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager closeKVStore failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)

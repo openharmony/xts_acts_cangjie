@@ -50,7 +50,6 @@ class testFileIo_rmdir_1 {
         FileIo.close(rmdir_sync_000)
         FileIo.close(rmdir_sync_000_1)
         FileIo.close(rmdir_sync_000_fff)
-
         try {
             let res1 = FileIo.access(ddpath)
             @Expect(res1, true)
@@ -81,7 +80,6 @@ class testFileIo_rmdir_1 {
     @Tag[APILevel22, TestLevel0]
     func test_rmdir_02() {
         let dpath = "/data/storage/el2/base/files/test_rmdir_02";
-
         try {
             FileIo.rmdir(dpath)
             @Expect(false)
@@ -104,7 +102,6 @@ class testFileIo_rmdir_1 {
     @Tag[APILevel22, TestLevel0]
     func test_rmdir_03() {
         let dpath = "/data/storage/el2/base/haps/entry/../entry/files/test_rmdir_03";
-
         try {
             FileIo.mkdir(dpath)
             let res1 = FileIo.access(dpath)
@@ -134,7 +131,6 @@ class testFileIo_rmdir_1 {
         FileIo.close(file)
         let res = FileIo.access(fpath)
         @Expect(res, true)
-
         try {
             FileIo.rmdir(fpath)
             @Expect(false)

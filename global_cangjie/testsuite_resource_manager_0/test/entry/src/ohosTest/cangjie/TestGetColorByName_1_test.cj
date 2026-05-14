@@ -47,7 +47,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color by name.")
         try {
             getResourceManager().getColorByName("")
-            @Expect("assertion#843: not throw", "fail to get Color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -70,7 +70,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color by name.")
         try {
             getResourceManager().getColorByName("\0")
-            @Expect("assertion#844: not throw", "fail to get Color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -93,7 +93,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color by name.")
         try {
             getResourceManager().getColorByName("nonExistingResourceName")
-            @Expect("assertion#845: not throw", "fail to get Color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -116,7 +116,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("module_desc")
-            @Expect("assertion#846: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -139,7 +139,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("sizelist")
-            @Expect("assertion#847: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -162,7 +162,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("plural_name")
-            @Expect("assertion#848: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -185,7 +185,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("Test_Format1")
-            @Expect("assertion#849: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -208,7 +208,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("Test_Format2")
-            @Expect("assertion#850: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -231,7 +231,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("Test_Format3")
-            @Expect("assertion#851: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -254,7 +254,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("EntryAbility_desc")
-            @Expect("assertion#852: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -277,7 +277,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("layered_image")
-            @Expect("assertion#853: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -300,7 +300,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("EntryAbility_label")
-            @Expect("assertion#854: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -323,7 +323,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("startIcon")
-            @Expect("assertion#855: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -346,7 +346,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("main_pages")
-            @Expect("assertion#856: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -366,7 +366,7 @@ class TestGetColorByName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_15(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_15 begins.")
-        @Assert(4294967295u32, getResourceManager().getColorByName("start_window_background"))
+        @Expect(4294967295u32, getResourceManager().getColorByName("start_window_background"))
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_15 ends.")
     }
 
@@ -385,7 +385,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("float_1")
-            @Expect("assertion#857: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -408,7 +408,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("float_2")
-            @Expect("assertion#858: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -431,7 +431,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("int_1")
-            @Expect("assertion#859: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -454,7 +454,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("int_2")
-            @Expect("assertion#860: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -477,7 +477,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("test_boolean1")
-            @Expect("assertion#861: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -500,7 +500,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("test_boolean0")
-            @Expect("assertion#862: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -523,7 +523,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("boolean_3")
-            @Expect("assertion#863: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -546,7 +546,7 @@ class TestGetColorByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get color by name.")
         try {
             getResourceManager().getColorByName("boolean_4")
-            @Expect("assertion#864: not throw", "fail to get color by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)

@@ -135,14 +135,12 @@ class Stepper_componentEvents_2_test {
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("onPrevious_param2")["content"], "\"prevIndex:0\"")
         TestDriver.driver.waitForComponent(On().id("Waiting"), 3000i32).getOrThrow().click()
         TestDriver.driver.waitForComponent(On().text("Waiting"), 2000i32)
-        //验证是否显示下一步[否]
         try{
             TestDriver.driver.waitForComponent(On().text("下一步"), 500i32).getOrThrow()
             @Expect(false)
         }catch(e:Exception){
             @Expect(true)
         }
-        //验证是否有进度条[是]
         try{
             TestDriver.driver.waitForComponent(On().onType("LoadingProgress"), 2000i32).getOrThrow()
             @Expect(true)
@@ -200,14 +198,12 @@ class Stepper_componentEvents_2_test {
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("onPrevious_param2")["content"], "\"prevIndex:0\"")
         TestDriver.driver.waitForComponent(On().id("Skip"), 3000i32).getOrThrow().click()
         TestDriver.driver.waitForComponent(On().text("Skip"), 2000i32)
-        //验证是否显示下一步[否]
         try{
             TestDriver.driver.waitForComponent(On().text("下一步"), 500i32).getOrThrow()
             @Expect(false)
         }catch(e:Exception){
             @Expect(true)
         }
-        //验证是否显示跳过[是]
         try{
             TestDriver.driver.waitForComponent(On().text("跳过"), 500i32).getOrThrow()
             @Expect(true)
@@ -283,14 +279,12 @@ class Stepper_componentEvents_2_test {
     @Tag[APILevel22, TestLevel0]
     func TestCase_9(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_9 begins.")
-        //验证是否显示下一步[否]
         try{
             TestDriver.driver.waitForComponent(On().text("下一步"), 500i32).getOrThrow()
             @Expect(false)
         }catch(e:Exception){
             @Expect(true)
         }
-        //验证是否显示开始[是]
         try{
             TestDriver.driver.waitForComponent(On().text("开始"), 500i32).getOrThrow()
             @Expect(true)

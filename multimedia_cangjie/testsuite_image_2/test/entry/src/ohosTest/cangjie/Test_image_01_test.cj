@@ -140,6 +140,7 @@ class Test_image {
     func test_ImageReceive_exception(): Unit {
         try {
             let imageReceiver = createImageReceiver(Size(-1, -1), ImageFormat.Jpeg, 8)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(true)
         }
@@ -167,7 +168,6 @@ class Test_image {
         var buffer = Array<UInt8>(96, repeat: 0)
         pixelMap.readPixelsToBuffer(buffer)
         @Expect(buffer, colors)
-
         let buf1 = Array<UInt8>(8, {i => UInt8(i + 1)})
         var area = PositionArea(buf1, 0, 8, Region(Size(1, 2), 0, 0))
         pixelMap.writePixels(area)
@@ -176,7 +176,6 @@ class Test_image {
         area = PositionArea(buf2, 0, 8, Region(Size(1, 2), 0, 0))
         pixelMap.readPixels(area)
         @Expect(expect, buf2)
-
         buffer = Array<UInt8>(96, {i => UInt8(i)})
         pixelMap.writeBufferToPixels(buffer)
         pixelMap.release()
@@ -199,7 +198,6 @@ class Test_image {
         @Expect(imageInfo.size.width, 200)
         @Expect(imageInfo.size.height, 200)
         @Expect(imageInfo.density, 0)
-
         pMap.opacity(0.5f32)
         pMap.scale(2.0f32, 1.0f32)
         pMap.scale(2.0f32, 1.0f32)
@@ -238,16 +236,19 @@ class Test_image {
         @Expect(maps.size, 1)
         try {
             bufSource.getImageProperty(ImageLength, options: ImagePropertyOptions())
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Image decoding exif support.")
         }
         try {
             bufSource.modifyImageProperty(ImageLength, "200")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message,"The EXIF data failed to be written to the file.")
         }
         try {
             bufSource.getDelayTimeList()
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.error(0, "cangjietest", "${e.message}")
             @Expect(e.message, "Invalid MIME type for the image source.")
@@ -268,6 +269,7 @@ class Test_image {
     func test_Exception_01(): Unit {
         try {
             createImageSource("")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
         }
@@ -286,6 +288,7 @@ class Test_image {
     func test_Exception_02(): Unit {
         try {
             createImageSource("", sourceOption)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
         }
@@ -304,6 +307,7 @@ class Test_image {
     func test_Exception_03(): Unit {
         try {
             createImageSource([])
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
         }
@@ -322,6 +326,7 @@ class Test_image {
     func test_Exception_04(): Unit {
         try {
             createImageSource([], sourceOption)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
         }
@@ -340,6 +345,7 @@ class Test_image {
     func test_Exception_05(): Unit {
         try {
             createImageSource(0)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
         }
@@ -358,6 +364,7 @@ class Test_image {
     func test_Exception_06(): Unit {
         try {
             createImageSource(0, sourceOption)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
         }
@@ -490,6 +497,7 @@ class Test_image {
             let imagesource = createImageSource("/data/storage/el1/base/test1.gif")
             let arr: Array<Int32> = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
                 2, 2, 2]
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 62980110)
             @Expect(e.message, "The image source data is abnormal.")

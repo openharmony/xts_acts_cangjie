@@ -291,10 +291,12 @@ class Test_camera {
         let ability = getCameraManager().getSupportedOutputCapability(device, mode)
         try {
             getCameraManager().createPreviewOutput(ability.photoProfiles[0], "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400201)
             try {
                 getCameraManager().createPreviewOutput("123")
+                @Expect(false)
             } catch (e: BusinessException) {
                 @Expect(e.code, 7400201)
                 return
@@ -319,9 +321,11 @@ class Test_camera {
         let ability = getCameraManager().getSupportedOutputCapability(device, mode)
         try {
             getCameraManager().createVideoOutput(ability.videoProfiles[0], "")
+            @Expect(false)
         } catch (e: BusinessException) {
             try {
                 getCameraManager().createVideoOutput("123")
+                @Expect(false)
             } catch (e: BusinessException) {
                 @Expect(e.code, 7400201)
                 return
@@ -348,14 +352,17 @@ class Test_camera {
         input.close()
         try {
             input.open()
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400201)
             try {
                 input.open(true)
+                @Expect(false)
             } catch (e: BusinessException) {
                 @Expect(e.code, 7400201)
                 try {
                     input.open(false)
+                    @Expect(false)
                 } catch (e: BusinessException) {
                     @Expect(e.code, 7400201)
                     return
@@ -382,6 +389,7 @@ class Test_camera {
         input.close()
         try {
             input.close()
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400201)
             return
@@ -446,6 +454,7 @@ class Test_camera {
         let previewOutput = getCameraManager().createPreviewOutput(ability.previewProfiles[0], surfaceId)
         try {
             previewOutput.setFrameRate(15, 20)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400103)
             previewOutput.release()
@@ -474,6 +483,7 @@ class Test_camera {
         let previewOutput = getCameraManager().createPreviewOutput(ability.previewProfiles[0], surfaceId)
         try {
             previewOutput.getPreviewRotation(0)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400201)
             previewOutput.release()
@@ -502,6 +512,7 @@ class Test_camera {
         let previewOutput = getCameraManager().createPreviewOutput(ability.previewProfiles[0], surfaceId)
         try {
             previewOutput.setPreviewRotation(ImageRotation.Rotation0)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400201)
             previewOutput.release()
@@ -573,12 +584,10 @@ class Test_camera {
             photoSession.addInput(input)
             photoSession.addOutput(previewOutput)
             photoSession.commitConfig()
-
             previewOutput.setFrameRate(15, 20)
             let activeFrameRate = previewOutput.getActiveFrameRate()
             @Expect(activeFrameRate.min, 15)
             @Expect(activeFrameRate.max, 20)
-
             previewOutput.release()
             photoSession.release()
             input.close()
@@ -637,7 +646,6 @@ class Test_camera {
         let mode = getCameraManager().getSupportedSceneModes(device)[0]
         let ability = getCameraManager().getSupportedOutputCapability(device, mode)
         let photoOutput = getCameraManager().createPhotoOutput(profile: ability.photoProfiles[0])
-
         let input = getCameraManager().createCameraInput(device)
         input.open()
         let photoSession = (getCameraManager().createSession(SceneMode.NormalPhoto) as PhotoSession).getOrThrow()
@@ -669,7 +677,6 @@ class Test_camera {
         let mode = getCameraManager().getSupportedSceneModes(device)[0]
         let ability = getCameraManager().getSupportedOutputCapability(device, mode)
         let photoOutput = getCameraManager().createPhotoOutput(profile: ability.photoProfiles[0])
-
         let input = getCameraManager().createCameraInput(device)
         input.open()
         let photoSession = (getCameraManager().createSession(SceneMode.NormalPhoto) as PhotoSession).getOrThrow()
@@ -703,10 +710,12 @@ class Test_camera {
         let photoOutput = getCameraManager().createPhotoOutput(profile: ability.photoProfiles[0])
         try {
             photoOutput.capture()
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400104)
             try {
                 photoOutput.capture(PhotoCaptureSetting())
+                @Expect(false)
             } catch (e: BusinessException) {
                 @Expect(e.code, 7400104)
                 photoOutput.release()
@@ -735,6 +744,7 @@ class Test_camera {
         let photoSession = (getCameraManager().createSession(SceneMode.NormalPhoto) as PhotoSession).getOrThrow()
         try {
             photoOutput.enableMirror(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400201)
             photoOutput.release()
@@ -762,6 +772,7 @@ class Test_camera {
         let photoSession = (getCameraManager().createSession(SceneMode.NormalPhoto) as PhotoSession).getOrThrow()
         try {
             photoOutput.getPhotoRotation(0)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400201)
             photoOutput.release()
@@ -798,7 +809,6 @@ class Test_camera {
         } else {
             @Expect(photoOutput.isMovingPhotoSupported(), false)
         }
-
         photoSession.release()
         photoOutput.release()
         input.close()
@@ -821,6 +831,7 @@ class Test_camera {
         let photoOutput = getCameraManager().createPhotoOutput(profile: ability.photoProfiles[0])
         try {
             photoOutput.isMovingPhotoSupported()
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400201)
             photoOutput.release()
@@ -847,6 +858,7 @@ class Test_camera {
         let photoOutput = getCameraManager().createPhotoOutput(profile: ability.photoProfiles[0])
         try {
             photoOutput.enableMovingPhoto(false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 7400201)
             photoOutput.release()
@@ -881,7 +893,6 @@ class Test_camera {
             photoSession.start()
             @Expect(photoOutput.isMirrorSupported(), false)
             photoOutput.enableMirror(true)
-
             photoSession.release()
             photoOutput.release()
             input.close()
@@ -916,7 +927,6 @@ class Test_camera {
         let arr = photoOutput.getSupportedMovingPhotoVideoCodecTypes()
         @Expect(arr.size, 2)
         photoOutput.setMovingPhotoVideoCodecType(VideoCodecType.Avc)
-
         photoSession.release()
         photoOutput.release()
         input.close()
@@ -954,7 +964,6 @@ class Test_camera {
             @Expect(profile.size.height, 960)
             @Expect(profile.size.width, 1280)
         }
-
         photoSession.release()
         photoOutput.release()
         input.close()
@@ -1019,14 +1028,13 @@ class Test_camera {
             videoSession.addInput(input)
             videoSession.addOutput(videoOutput)
             videoSession.commitConfig()
-
             videoOutput.start()
             sleep(Duration.second * 2)
             videoOutput.stop()
-
             videoSession.release()
             videoOutput.release()
             input.close()
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Camera service fatal error.")
         }
@@ -1153,12 +1161,10 @@ class Test_camera {
             videoSession.addInput(input)
             videoSession.addOutput(videoOutput)
             videoSession.commitConfig()
-
             let supportedFrameRates = videoOutput.getSupportedFrameRates()
             @Expect(supportedFrameRates.size, 2)
             @Expect(supportedFrameRates[0].min, 1)
             @Expect(supportedFrameRates[0].max, 30)
-
             videoSession.release()
             videoOutput.release()
             input.close()
@@ -1192,12 +1198,10 @@ class Test_camera {
             videoSession.addInput(input)
             videoSession.addOutput(videoOutput)
             videoSession.commitConfig()
-
             videoOutput.setFrameRate(10, 20)
             let activeFrameRate = videoOutput.getActiveFrameRate()
             @Expect(activeFrameRate.min, 10)
             @Expect(activeFrameRate.max, 20)
-
             videoSession.release()
             videoOutput.release()
             input.close()
@@ -1263,14 +1267,12 @@ class Test_camera {
             videoSession.addInput(input)
             videoSession.addOutput(videoOutput)
             videoSession.commitConfig()
-
             let profile = videoOutput.getActiveProfile()
             @Expect(profile.format, CameraFormat.CameraFormatYuv420Sp)
             @Expect(profile.size.width>0)
             @Expect(profile.size.height>0)
             @Expect(profile.frameRateRange.min, 1)
             @Expect(profile.frameRateRange.max, 30)
-
             videoSession.release()
             videoOutput.release()
             input.close()
@@ -1304,9 +1306,7 @@ class Test_camera {
             videoSession.addInput(input)
             videoSession.addOutput(videoOutput)
             videoSession.commitConfig()
-
             @Expect(videoOutput.getVideoRotation(0), ImageRotation.Rotation90)
-
             videoSession.release()
             videoOutput.release()
             input.close()
@@ -1330,12 +1330,12 @@ class Test_camera {
             let device = getCameraManager().getSupportedCameras()[0]
             let mode = getCameraManager().getSupportedSceneModes(device)[0]
             let ability = getCameraManager().getSupportedOutputCapability(device, mode)
-            // let metadataOutput = getCameraManager().createMetadataOutput(ability.supportedMetadataObjectTypes[0])
             let input = getCameraManager().createCameraInput(device)
             input.open()
             let photoSession = (getCameraManager().createSession(SceneMode.NormalVideo) as VideoSession).getOrThrow()
             photoSession.beginConfig()
             photoSession.addInput(input)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Camera service fatal error.")
         }
@@ -1677,34 +1677,23 @@ class Test_camera {
     @Tag[APILevel22, TestLevel0]
     func Test_Flash(): Unit {
         try {
-            // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Flash]: test_flash start!")
             let session: PhotoSession = getPhotoSession(0)
-
             let res = session.hasFlash()
-            // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Flash]: hasFlash = ${res}")
             if (!res) {
                 @Expect(false)
             }
-
             let modes = [FlashModeClose, FlashModeOpen, FlashModeAuto, FlashModeAlwaysOpen]
             for (mode in modes) {
                 if (session.isFlashModeSupported(mode)) {
-                    //                    // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Flash]: support ${mode}")
                     session.setFlashMode(mode)
                     let curMode = session.getFlashMode()
-                    // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Flash]: current mode after setting: ${curMode}")
-
                     @Expect(curMode, mode)
                 } else {
-                    //                    // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Flash]: DO NOT support ${mode}")
-
                     @Expect(false)
                 }
             }
-
             session.release()
         } catch (e: BusinessException) {
-            // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Flash]: Exception ${e.code}: ${e.message}")
             @Expect(true)
         }
     }
@@ -1722,7 +1711,6 @@ class Test_camera {
     func Test_AutoExposure() {
         try {
             let session: PhotoSession = getPhotoSession(0)
-
             let biasRangeArray = session.getExposureBiasRange()
             if (biasRangeArray.size <= 0) {
                 @Expect(true)
@@ -1732,7 +1720,6 @@ class Test_camera {
                 let curBias = session.getExposureValue()
                 @Expect(bias, curBias)
             }
-
             let exposureModes = [ExposureMode.ExposureModeLocked, ExposureModeAuto, ExposureModeContinuousAuto]
             for (mode in exposureModes) {
                 if (session.isExposureModeSupported(mode)) {
@@ -1764,18 +1751,15 @@ class Test_camera {
     func Test_Focus() {
         try {
             let session: PhotoSession = getPhotoSession(0)
-
             let focusModes = [FocusMode.FocusModeManual, FocusMode.FocusModeContinuousAuto, FocusMode.FocusModeAuto,
                 FocusMode.FocusModeLocked]
             for (mode in focusModes) {
                 if (session.isFocusModeSupported(mode)) {
                     session.setFocusMode(mode)
                     let curMode = session.getFocusMode()
-
                     @Expect(mode, curMode)
                 }
             }
-
             session.setFocusPoint(cameraPoint(0.123, 0.456))
             let curPoint = session.getFocusPoint()
             @Expect(curPoint.x>0.0)
@@ -1801,15 +1785,11 @@ class Test_camera {
         try {
             let session: PhotoSession = getPhotoSession(0)
             session.start()
-
             let zoomRatioArray = session.getZoomRatioRange()
             if (zoomRatioArray.size <= 0) {
-                // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Zoom]: no supported zoom ratio range ")
-
                 @Expect(true)
             }
         } catch (e: BusinessException) {
-            // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Zoom]: Exception ${e.code}: ${e.message}")
             @Expect(true)
         }
     }
@@ -1827,27 +1807,17 @@ class Test_camera {
     func Test_ColorManagement() {
         try {
             let session: PhotoSession = getPhotoSession(0)
-
             let spaces = session.getSupportedColorSpaces()
             if (spaces.size <= 0) {
-                // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_ColorManagement]: no support spaces")
-
                 @Expect(true)
             }
-
             for (s in spaces) {
-                // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_ColorManagement]: support space ${s}")
-
                 session.setColorSpace(s)
                 let cur = session.getActiveColorSpace()
-                // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_ColorManagement]: current color space after setting: ${cur}")
-
                 @Expect(s.toString(), cur.toString())
             }
-
             session.release()
         } catch (e: BusinessException) {
-            // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_ColorManagement]: Exception ${e.code}: ${e.message}")
             @Expect(true)
         }
     }
@@ -1865,27 +1835,18 @@ class Test_camera {
     func Test_Stabilization() {
         try {
             let session: VideoSession = getVideoSession()
-
-            // no VideoStabilizationMode.HIGH because it requires 1920x1080 in Profile
             let modes = [VideoStabilizationMode.Off, VideoStabilizationMode.Low, VideoStabilizationMode.Middle,
                 VideoStabilizationMode.Auto]
             for (mode in modes) {
                 if (session.isVideoStabilizationModeSupported(mode)) {
-                    // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Stabilization]: support mode ${mode}")
-
                     session.setVideoStabilizationMode(mode)
                     let cur = session.getActiveVideoStabilizationMode()
-                    // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Stabilization]: current mode after setting: ${cur}")
-
                     @Expect(mode, cur)
                 } else {
-                    // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Stabilization]: DO NOT support mode ${mode}")
                 }
             }
-
             session.release()
         } catch (e: BusinessException) {
-            // Hilog.info(0, "cangjietest", // "[multimedia_camera | Test_Stabilization]: Exception ${e.code}: ${e.message}")
             @Expect(true)
         }
     }
@@ -1907,26 +1868,16 @@ class Test_camera {
             try {
                 let preconfigTypes = [Preconfig720p, Preconfig1080p, Preconfig4k, PreconfigHighQuality]
                 let preconfigRatios = [PreconfigRatio_1_1, PreconfigRatio_4_3, PreconfigRatio_16_9]
-
                 for (preconfigType in preconfigTypes) {
                     for (ratio in preconfigRatios) {
                         if (session.canPreconfig(preconfigType, preconfigRatio: ratio)) {
-                            // Hilog.info(0, "cangjietest",
-                            // "[multimedia_camera | ${TAG}]: support preconfig type ${preconfigType} and ratio ${ratio}")
-
                             session.preconfig(preconfigType, preconfigRatio: ratio)
-                        // Hilog.info(0, "cangjietest",
-                        // "[multimedia_camera | ${TAG}]: set preconfig type ${preconfigType} and ratio ${ratio}")
                         } else {
-                            // Hilog.info(0, "cangjietest",
-                            // "[multimedia_camera | ${TAG}]: DO NOT support preconfig type ${preconfigType} and ratio ${ratio}")
-
                             @Expect(false)
                         }
                     }
                 }
             } catch (e: Exception) {
-                // Hilog.info(0, "cangjietest", // "[multimedia_camera | ${TAG}]: ${e.printStackTrace()}")
                 @Expect(false)
             } finally {
                 session.release()
@@ -1951,12 +1902,10 @@ class Test_camera {
             let TAG = "Test_PhotoSessionFocusCallback"
             let session = getPhotoSession(0)
             try {
-                session.setFocusMode(FocusMode.FocusModeAuto) // prepartion
+                session.setFocusMode(FocusMode.FocusModeAuto)
                 let focusCallback = FocusStateChangeCallback()
-
                 FocusStateChangeCallback.invoked = false
                 session.setFocusPoint(cameraPoint(0.123, 0.456))
-
                 FocusStateChangeCallback.invoked = false
                 session.setFocusPoint(cameraPoint(0.123, 0.456))
                 sleep(Duration.second * 3)
@@ -1985,7 +1934,7 @@ class Test_camera {
             let TAG = "Test_PhotoSessionFocusCallback1"
             let session = getPhotoSession(0)
             try {
-                session.setFocusMode(FocusMode.FocusModeAuto) // prepartion
+                session.setFocusMode(FocusMode.FocusModeAuto)
                 let focusCallback = FocusStateChangeCallback()
                 FocusStateChangeCallback.invoked = false
                 session.setFocusPoint(cameraPoint(0.123, 0.456))
@@ -2018,7 +1967,6 @@ class Test_camera {
             let session = getPhotoSession(0)
             try {
                 let callback = SmoothZoomInfoAvailableCallback()
-
                 SmoothZoomInfoAvailableCallback.invoked = false
                 session.setSmoothZoom(0.3, SmoothZoomMode.Normal)
                 sleep(Duration.second * 1)
@@ -2106,7 +2054,6 @@ class Test_camera {
             try {
                 let preconfigTypes = [Preconfig720p, Preconfig1080p, Preconfig4k, PreconfigHighQuality]
                 let preconfigRatios = [PreconfigRatio_1_1, PreconfigRatio_4_3, PreconfigRatio_16_9]
-
                 for (preconfigType in preconfigTypes) {
                     for (ratio in preconfigRatios) {
                         if (session.canPreconfig(preconfigType, preconfigRatio: ratio)) {
@@ -2139,12 +2086,10 @@ class Test_camera {
             let TAG = "Test_VideoSessionFocusCallback"
             let session = getVideoSession()
             try {
-                session.setFocusMode(FocusMode.FocusModeAuto) // prepartion
+                session.setFocusMode(FocusMode.FocusModeAuto)
                 let focusCallback = FocusStateChangeCallback()
-
                 FocusStateChangeCallback.invoked = false
                 session.setFocusPoint(cameraPoint(0.123, 0.456))
-
                 FocusStateChangeCallback.invoked = false
                 session.setFocusPoint(cameraPoint(0.123, 0.456))
                 sleep(Duration.second * 3)
@@ -2173,12 +2118,10 @@ class Test_camera {
             let TAG = "Test_VideoSessionFocusCallback1"
             let session = getVideoSession()
             try {
-                session.setFocusMode(FocusMode.FocusModeAuto) // prepartion
+                session.setFocusMode(FocusMode.FocusModeAuto)
                 let focusCallback = FocusStateChangeCallback()
-
                 FocusStateChangeCallback.invoked = false
                 session.setFocusPoint(cameraPoint(0.123, 0.456))
-
                 FocusStateChangeCallback.invoked = false
                 session.setFocusPoint(cameraPoint(0.123, 0.456))
                 sleep(Duration.second * 3)
@@ -2267,6 +2210,7 @@ class Test_camera {
         try {
             let session = getVideoSession()
             session.release()
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }
@@ -2290,7 +2234,6 @@ class Test_camera {
             Test_ErrorCaseFocus(session)
             Test_ErrorCaseZoom(session)
             Test_ErrorCaseColor(session)
-
             let vsession: VideoSession = (getCameraManager().createSession(NormalVideo) as VideoSession).getOrThrow()
             Test_ErrorCaseFlash(vsession)
             Test_ErrorCaseAutoExposure(vsession)
@@ -2298,6 +2241,7 @@ class Test_camera {
             Test_ErrorCaseZoom(vsession)
             Test_ErrorCaseColor(vsession)
             Test_ErrorCaseStabilization(vsession)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Camera service fatal error.")
         }

@@ -649,7 +649,6 @@ class Test_insert_batchInsert_10 {
         values.add("SALARY", RelationalStoreValueType.Double(-Float64(10000)))
         values.add("CODES", RelationalStoreValueType.Boolean(false))
         @Expect(rdbStore.insert("EMPLOYEE", values, conflict:ConflictResolution.OnConflictRollback), 101)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(101))
         values1.add("NAME", RelationalStoreValueType.StringValue("zps"))
@@ -695,7 +694,6 @@ class Test_insert_batchInsert_10 {
         values.add("SALARY", RelationalStoreValueType.Double(-Float64(10000)))
         values.add("CODES", RelationalStoreValueType.Boolean(false))
         @Expect(rdbStore.insert("EMPLOYEE", values, conflict:ConflictResolution.OnConflictIgnore), 101)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(101))
         values1.add("NAME", RelationalStoreValueType.StringValue("zps"))
@@ -735,7 +733,6 @@ class Test_insert_batchInsert_10 {
         values.add("SALARY", RelationalStoreValueType.Double(-Float64(10000)))
         values.add("CODES", RelationalStoreValueType.Boolean(false))
         @Expect(rdbStore.insert("EMPLOYEE", values, conflict:ConflictResolution.OnConflictReplace), 101)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(101))
         values1.add("NAME", RelationalStoreValueType.StringValue("cangjie"))
@@ -781,7 +778,6 @@ class Test_insert_batchInsert_10 {
         values.add("SALARY", RelationalStoreValueType.Double(-Float64(10000)))
         values.add("CODES", RelationalStoreValueType.Boolean(false))
         @Expect(rdbStore.insert("EMPLOYEE", values, conflict:ConflictResolution.OnConflictAbort), 101)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(101))
         values1.add("NAME", RelationalStoreValueType.StringValue("cangjie"))
@@ -833,7 +829,6 @@ class Test_insert_batchInsert_10 {
         values.add("SALARY", RelationalStoreValueType.Double(-Float64(10000)))
         values.add("CODES", RelationalStoreValueType.Boolean(false))
         @Expect(rdbStore.insert("EMPLOYEE", values, conflict:ConflictResolution.OnConflictFail), 101)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(101))
         values1.add("NAME", RelationalStoreValueType.StringValue("cangjie"))
@@ -885,7 +880,6 @@ class Test_insert_batchInsert_10 {
         values.add("SALARY", RelationalStoreValueType.Double(-Float64(10000)))
         values.add("CODES", RelationalStoreValueType.Boolean(false))
         @Expect(rdbStore.insert("EMPLOYEE", values, conflict:ConflictResolution.OnConflictFail), 101)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(101))
         values1.add("NAME", RelationalStoreValueType.StringValue("cangjie"))
@@ -937,7 +931,6 @@ class Test_insert_batchInsert_10 {
         values.add("SALARY", RelationalStoreValueType.Double(-Float64(10000)))
         values.add("CODES", RelationalStoreValueType.Boolean(false))
         @Expect(rdbStore.insert("EMPLOYEE", values, conflict:ConflictResolution.OnConflictFail), 101)
-
         var values1 = HashMap<String, RelationalStoreValueType>()
         values1.add("ID", RelationalStoreValueType.Integer(101))
         values1.add("NAME", RelationalStoreValueType.StringValue("cangjie"))
@@ -974,7 +967,6 @@ class Test_insert_batchInsert_10 {
     @Tag[APILevel22, TestLevel0]
     func test_insert_25(): Unit {
         var values = HashMap<String, RelationalStoreValueType>()
-
         try {
             rdbStore.insert("EMPLOYEE", values, conflict: ConflictResolution.OnConflictNone)
             @Expect(false)

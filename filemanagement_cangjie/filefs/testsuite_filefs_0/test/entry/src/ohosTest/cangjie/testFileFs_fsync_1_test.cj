@@ -42,7 +42,6 @@ class testFileIo_fsync_1 {
         let res = FileIo.access(fpath)
         @Expect(res, true)
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
             FileIo.write(file.fd, "hello, world")

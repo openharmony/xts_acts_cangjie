@@ -66,7 +66,7 @@ class Test_hiAppEvent_getUserId {
             @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401)
-            @Expect(e.message, "Parameter error. Parameter verification failed.") // Parameter error. Parameter verification failed.
+            @Expect(e.message, "Parameter error. Parameter verification failed.")
         }
     }
 

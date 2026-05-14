@@ -42,6 +42,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "profile nonExistentProfileName not found in entry-EntryAbility")
         try {
             BundleManager.getProfileByAbility("entry", "EntryAbility", metadataName: "nonExistentProfileName")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified profile is not found in the HAP.")
             @Expect(e.code, 17700024i32)
@@ -64,6 +65,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "ability ApplicationAbility not found in entry")
         try {
             BundleManager.getProfileByAbility("entry", "ApplicationAbility", metadataName: "profile0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability is not found.")
             @Expect(e.code, 17700003i32)
@@ -86,6 +88,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "ability ApplicationAbility not found in entry")
         try {
             BundleManager.getProfileByAbility("entry", "ApplicationAbility", metadataName: "nonExistentProfileName")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability is not found.")
             @Expect(e.code, 17700003i32)
@@ -108,6 +111,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "ability nonExistentAbilityName not found in entry")
         try {
             BundleManager.getProfileByAbility("entry", "nonExistentAbilityName", metadataName: "profile0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability is not found.")
             @Expect(e.code, 17700003i32)
@@ -130,6 +134,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "ability nonExistentAbilityName not found in entry")
         try {
             BundleManager.getProfileByAbility("entry", "nonExistentAbilityName", metadataName: "nonExistentProfileName")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability is not found.")
             @Expect(e.code, 17700003i32)
@@ -152,6 +157,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "ability EntryAbility not found in application")
         try {
             BundleManager.getProfileByAbility("application", "EntryAbility", metadataName: "profile0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -174,6 +180,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "ability EntryAbility not found in application")
         try {
             BundleManager.getProfileByAbility("application", "EntryAbility", metadataName: "nonExistentProfileName")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -197,6 +204,7 @@ class testGetProfileByAbility_1 {
         try {
             BundleManager.getProfileByAbility("application", "ApplicationAbility",
                 metadataName: "nonExistentProfileName")
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -219,6 +227,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "ability nonExistentAbilityName not found in application")
         try {
             BundleManager.getProfileByAbility("application", "nonExistentAbilityName", metadataName: "profile0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -242,6 +251,7 @@ class testGetProfileByAbility_1 {
         try {
             BundleManager.getProfileByAbility("application", "nonExistentAbilityName",
                 metadataName: "nonExistentProfileName")
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -264,6 +274,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "module nonExistentModuleName not found")
         try {
             BundleManager.getProfileByAbility("nonExistentModuleName", "EntryAbility", metadataName: "profile0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -287,7 +298,7 @@ class testGetProfileByAbility_1 {
         try {
             BundleManager.getProfileByAbility("nonExistentModuleName", "EntryAbility",
                 metadataName: "nonExistentProfileName")
-            @Expect("assertion#11: not throw", "module nonExistentModuleName not found")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -310,6 +321,7 @@ class testGetProfileByAbility_1 {
         Hilog.info(0u32, "CangjieTest", "module nonExistentModuleName not found")
         try {
             BundleManager.getProfileByAbility("nonExistentModuleName", "ApplicationAbility", metadataName: "profile0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -333,6 +345,7 @@ class testGetProfileByAbility_1 {
         try {
             BundleManager.getProfileByAbility("nonExistentModuleName", "ApplicationAbility",
                 metadataName: "nonExistentProfileName")
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -356,6 +369,7 @@ class testGetProfileByAbility_1 {
         try {
             BundleManager.getProfileByAbility("nonExistentModuleName", "nonExistentAbilityName",
                 metadataName: "profile0")
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)
@@ -379,6 +393,7 @@ class testGetProfileByAbility_1 {
         try {
             BundleManager.getProfileByAbility("nonExistentModuleName", "nonExistentAbilityName",
                 metadataName: "nonExistentProfileName")
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified module is not found.")
             @Expect(e.code, 17700002i32)

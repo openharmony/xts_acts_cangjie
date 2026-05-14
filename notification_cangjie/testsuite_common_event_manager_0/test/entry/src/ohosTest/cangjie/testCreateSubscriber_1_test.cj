@@ -56,6 +56,7 @@ class testCreateSubscriber_1 {
             CommonEventManager.createSubscriber(
                 CommonEventSubscribeInfo([], publisherPermission: "", publisherDeviceId: "", userId: -1i32,
                     priority: -1i32, publisherBundleName: ""))
+                    @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }
@@ -80,6 +81,7 @@ class testCreateSubscriber_1 {
                 CommonEventSubscribeInfo(["common.event.ABILITY_ADDED", "usual.event.DATE_CHANGED"],
                     publisherPermission: "aaaa", publisherDeviceId: "aaaa", userId: 0i32, priority: 0i32,
                     publisherBundleName: "aaaa"))
+                    @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }
@@ -103,6 +105,7 @@ class testCreateSubscriber_1 {
             CommonEventManager.createSubscriber(
                 CommonEventSubscribeInfo([], publisherPermission: "3213", publisherDeviceId: "3213", userId: 1i32,
                     priority: 1i32, publisherBundleName: "3213"))
+                    @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }
@@ -126,6 +129,7 @@ class testCreateSubscriber_1 {
             CommonEventManager.createSubscriber(
                 CommonEventSubscribeInfo([], publisherPermission: "#@#$%*d./", publisherDeviceId: "#@#$%*d./",
                     userId: 10i32, priority: 10i32, publisherBundleName: "#@#$%*d./"))
+                    @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }
@@ -149,6 +153,7 @@ class testCreateSubscriber_1 {
             CommonEventManager.createSubscriber(
                 CommonEventSubscribeInfo([], publisherPermission: "@POD3e3", publisherDeviceId: "@POD3e3",
                     userId: 10000i32, priority: 10000i32, publisherBundleName: "@POD3e3"))
+                    @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }
@@ -172,6 +177,7 @@ class testCreateSubscriber_1 {
             CommonEventManager.createSubscriber(
                 CommonEventSubscribeInfo([], publisherPermission: "#!$@$23", publisherDeviceId: "#!$@$23",
                     userId: 1024i32, priority: 1024i32, publisherBundleName: "#!$@$23"))
+                    @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }
@@ -195,6 +201,7 @@ class testCreateSubscriber_1 {
             CommonEventManager.createSubscriber(
                 CommonEventSubscribeInfo([], publisherPermission: "reason", publisherDeviceId: "reason", userId: -1i32,
                     priority: -1i32, publisherBundleName: "reason"))
+                    @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }
@@ -218,6 +225,7 @@ class testCreateSubscriber_1 {
             CommonEventManager.createSubscriber(
                 CommonEventSubscribeInfo([], publisherPermission: "1234567890", publisherDeviceId: "1234567890",
                     userId: -1i32, priority: -1i32, publisherBundleName: "1234567890"))
+                    @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }
@@ -241,6 +249,7 @@ class testCreateSubscriber_1 {
             CommonEventManager.createSubscriber(
                 CommonEventSubscribeInfo([], publisherPermission: "!#$@%^&*", publisherDeviceId: "!#$@%^&*",
                     userId: -1i32, priority: -1i32, publisherBundleName: "!#$@%^&*"))
+                    @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         }

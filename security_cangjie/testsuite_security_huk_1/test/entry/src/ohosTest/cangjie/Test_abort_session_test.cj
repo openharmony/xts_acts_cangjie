@@ -56,13 +56,10 @@ class Test_SecurityHuks_AbortSession {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt and abort
             let handle = initSession(keyAlias, encOptions).handle
-
             abortSession(handle, encOptions)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         } finally {

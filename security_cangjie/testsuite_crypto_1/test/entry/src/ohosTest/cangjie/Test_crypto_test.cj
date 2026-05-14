@@ -362,6 +362,7 @@ class Test_crypto {
     func test_Exception_01(): Unit {
         try {
             createSymKeyGenerator("AES128")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported")

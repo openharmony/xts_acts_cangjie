@@ -71,7 +71,6 @@ class TestRuqestDOWNLOAD {
         )
         let task = create(getAbilityContext(), config)
         task.start()
-
         try {
             getTask(getAbilityContext(), "", token: token)
             @Expect(false)
@@ -101,7 +100,6 @@ class TestRuqestDOWNLOAD {
         )
         let task = create(getAbilityContext(), config)
         task.start()
-
         try {
             getTask(getAbilityContext(), "$%^!@&*", token: token)
             @Expect(false)
@@ -135,7 +133,6 @@ class TestRuqestDOWNLOAD {
         )
         let task = create(getAbilityContext(), config)
         task.start()
-
         try {
             getTask(getAbilityContext(), id, token: token)
             @Expect(false)
@@ -170,7 +167,6 @@ class TestRuqestDOWNLOAD {
         Hilog.info(0, "cangjietest", "test_getTask07: ${token2.size}")
         let task = create(getAbilityContext(), config)
         task.start()
-
         try {
             getTask(getAbilityContext(), task.tid, token: "")
             @Expect(false)
@@ -200,7 +196,6 @@ class TestRuqestDOWNLOAD {
         )
         let task = create(getAbilityContext(), config)
         task.start()
-
         try {
             getTask(getAbilityContext(), task.tid, token: "12345678910")
             @Expect(false)
@@ -284,7 +279,6 @@ class TestRuqestDOWNLOAD {
         )
         let task = create(getAbilityContext(), config)
         task.start()
-
         try {
             let taskInfo = touch(task.tid, token2)
             @Expect(false)
@@ -314,7 +308,6 @@ class TestRuqestDOWNLOAD {
         )
         let task = create(getAbilityContext(), config)
         task.start()
-
         try {
             let taskInfo = touch("", token)
             @Expect(false)
@@ -344,7 +337,6 @@ class TestRuqestDOWNLOAD {
         )
         let task = create(getAbilityContext(), config)
         task.start()
-
         try {
             let taskInfo = touch("$%^!@&*", token)
             @Expect(false)
@@ -378,7 +370,6 @@ class TestRuqestDOWNLOAD {
         )
         let task = create(getAbilityContext(), config)
         task.start()
-
         try {
             let taskInfo = touch("$%^!@&*", token)
             @Expect(false)

@@ -63,7 +63,6 @@ class PatternLock_uniqueattr03_1_test {
         enterPage(scrollerId: "scroller", buttonId: "View_PatternLock_uniqueattr3_1")
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("PatternLock_id"), 3000i32)
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF000000\"")
         try{
             @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF000000\"")
             @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00%\"")
@@ -89,13 +88,6 @@ class PatternLock_uniqueattr03_1_test {
         enterPage(scrollerId: "scroller", buttonId: "View_PatternLock_uniqueattr3_2")
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("PatternLock_id"), 3000i32)
-        // try{
-        //     @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF000000\"")
-        //     @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"7.00%\"")
-        //     @Expect(false)
-        //     }catch(e:Exception){
-        //     @Expect(e.message.contains("ui component not found by id"))
-        // }
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF000000\"")
         @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"7.00%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_2 ends.")
@@ -123,8 +115,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_3 ends.")
     }
     /*
@@ -170,8 +160,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF808080\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_5 ends.")
     }
     /*
@@ -217,8 +205,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF008000\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 ends.")
     }
     /*
@@ -264,8 +250,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFF0000\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_9 ends.")
     }
     /*
@@ -311,8 +295,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_11 ends.")
     }
     /*
@@ -358,8 +340,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#00000000\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_13 ends.")
     }
     /*
@@ -405,8 +385,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_15 ends.")
     }
     /*
@@ -452,8 +430,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 ends.")
     }
     /*
@@ -499,8 +475,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 ends.")
     }
     /*
@@ -546,8 +520,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 ends.")
     }
     /*
@@ -593,8 +565,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 ends.")
     }
     /*
@@ -640,8 +610,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_25 ends.")
     }
     /*
@@ -687,8 +655,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_27 ends.")
     }
     /*
@@ -734,8 +700,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_29 ends.")
     }
     /*
@@ -781,8 +745,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_31 ends.")
     }
     /*
@@ -828,8 +790,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_33 ends.")
     }
     /*
@@ -875,8 +835,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_35 ends.")
     }
     /*
@@ -922,8 +880,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_37 ends.")
     }
     /*
@@ -969,8 +925,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFFF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_39 ends.")
     }
     /*
@@ -1036,8 +990,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_42 ends.")
     }
     /*
@@ -1083,8 +1035,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_44 ends.")
     }
     /*
@@ -1130,8 +1080,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_46 ends.")
     }
     /*
@@ -1177,8 +1125,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_48 ends.")
     }
     /*
@@ -1224,8 +1170,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_50 ends.")
     }
     /*
@@ -1271,8 +1215,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_52 ends.")
     }
     /*
@@ -1318,8 +1260,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_54 ends.")
     }
     /*
@@ -1365,8 +1305,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_56 ends.")
     }
     /*
@@ -1412,8 +1350,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF00000A\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_58 ends.")
     }
     /*
@@ -1459,8 +1395,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF000000\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_60 ends.")
     }
     /*
@@ -1486,8 +1420,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_61 ends.")
     }
     /*
@@ -1533,8 +1465,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_63 ends.")
     }
     /*
@@ -1580,8 +1510,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_65 ends.")
     }
     /*
@@ -1627,8 +1555,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_67 ends.")
     }
     /*
@@ -1674,8 +1600,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_69 ends.")
     }
     /*
@@ -1721,8 +1645,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_71 ends.")
     }
     /*
@@ -1768,8 +1690,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_73 ends.")
     }
     /*
@@ -1815,8 +1735,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_75 ends.")
     }
     /*
@@ -1862,8 +1780,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF000000\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_77 ends.")
     }
     /*
@@ -1909,8 +1825,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF0000FF\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_79 ends.")
     }
     /*
@@ -1976,8 +1890,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_82 ends.")
     }
     /*
@@ -2023,8 +1935,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_84 ends.")
     }
     /*
@@ -2070,8 +1980,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_86 ends.")
     }
     /*
@@ -2117,8 +2025,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_88 ends.")
     }
     /*
@@ -2164,8 +2070,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.00lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_90 ends.")
     }
     /*
@@ -2211,8 +2115,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11%\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_92 ends.")
     }
     /*
@@ -2258,8 +2160,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11px\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_94 ends.")
     }
     /*
@@ -2305,8 +2205,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11vp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_96 ends.")
     }
     /*
@@ -2352,8 +2250,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FF000000\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11fp\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_98 ends.")
     }
     /*
@@ -2399,8 +2295,6 @@ class PatternLock_uniqueattr03_1_test {
             }catch(e:Exception){
             @Expect(e.message.contains("ui component not found by id"))
         }
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["selectedColor"], "\"#FFFFFFF6\"")
-        // @Expect(Screen.getTheOnlyUiComponentWhoseIdEqualsTo("PatternLock_id")["sideLength"], "\"-10.11lpx\"")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_100 ends.")
     }
 }

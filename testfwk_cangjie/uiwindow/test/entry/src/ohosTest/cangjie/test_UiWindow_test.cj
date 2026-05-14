@@ -87,6 +87,7 @@ class test_UiWindow {
             let driver: Driver = Driver.create()
             let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
             window?.maximize()
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.code, 17000005)
@@ -110,6 +111,7 @@ class test_UiWindow {
             let driver: Driver = Driver.create()
             let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
             window?.minimize()
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.code, 17000005)
@@ -133,6 +135,7 @@ class test_UiWindow {
             let driver: Driver = Driver.create()
             let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
             window?.moveTo(100, 100)
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.code, 17000005)
@@ -156,6 +159,7 @@ class test_UiWindow {
             let driver: Driver = Driver.create()
             let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
             window?.resume()
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.code, 17000005)
@@ -179,6 +183,7 @@ class test_UiWindow {
             let driver: Driver = Driver.create()
             let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
             window?.split()
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.code, 17000005)
@@ -203,6 +208,7 @@ class test_UiWindow {
             let driver: Driver = Driver.create()
             let window: Option<UiWindow> = driver.findWindow(WindowFilter(active: true))
             window?.moveTo(100, 100)
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.code, 17000005)

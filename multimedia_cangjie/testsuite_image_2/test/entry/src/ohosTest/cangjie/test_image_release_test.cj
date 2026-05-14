@@ -124,7 +124,6 @@ class Test_Image_release {
     func test_packer_release_05(): Unit {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
-
         try {
             var globalPixelMap = createPixelMap(color, opts)
             var globalPacker = createImagePacker()
