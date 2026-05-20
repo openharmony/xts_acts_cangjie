@@ -40,7 +40,6 @@ class testFileFs_fsync_1 {
     func test_fsync_01() {
         let fpath = "/data/storage/el2/base/files/test_fdatasync_01"
         let f = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
         let fsync_fd = FileIo.fsync(f.fd)
         FileIo.close(f)
         let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)

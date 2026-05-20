@@ -72,19 +72,14 @@ class test_GetEntries_2 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_1(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_1 begins.")
-        // setUp()
         var context = Global.getAbilityContext()
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
-        // 准备测试数据
         prepareTestData(store)
-        // 创建空的Query对象
         let query = Query()
-        // 执行查询
         let entries = store.getEntries(query)
-        // 验证结果
-        let expectedCount = 16 // 我们插入了16条数据
+        let expectedCount = 16
         @Expect(entries.size, expectedCount)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
@@ -132,22 +127,17 @@ class test_GetEntries_2 {
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
-        // 准备测试数据
         prepareTestData(store)
-        
-        // 先正常查询一次
         let query = Query()
         let entriesBefore = store.getEntries(query)
         Hilog.info(0x0000, "QueryTest", 
             "Before close: Found ${entriesBefore.size} entries")
-        // 关闭数据库
         kvManager.closeKVStore("com.example.myapplication", "test_query_store")
-        // 尝试在数据库关闭后查询（应该抛出异常）
         try {
             let entriesAfter = store.getEntries(query)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 15100005)  
-        // 这里不需要调用tearDown，因为数据库已经关闭
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
@@ -164,17 +154,14 @@ class test_GetEntries_2 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_4(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_4 begins.")
-        // setUp()
         var context = Global.getAbilityContext()
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
-        // 确保数据库是空的
         let existingEntries = store.getEntries("")
         for (entry in existingEntries) {
             store.delete(entry.key)
         }
-        // 使用空Query对象查询
         let query = Query()
         let entries = store.getEntries(query)
         @Expect(entries.size, 0)

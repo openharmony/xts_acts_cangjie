@@ -47,11 +47,8 @@ class Test_battery_info {
         let isBatteryPresentInfo = BatteryInfo.isBatteryPresent
         let batteryCapacityLevelInfo = BatteryInfo.batteryCapacityLevel
         let nowCurrentInfo = BatteryInfo.nowCurrent
-
         @Expect(batterySOCInfo > 0 || batterySOCInfo < 100)
         @Expect(isBatteryPresentInfo)
-
-        // The following attribute information needs to be determined according to the environment and cannot be asserted.
         Hilog.info(0, "cangjietest", chargingStatusInfo.toString())
         Hilog.info(0, "cangjietest", healthStatusInfo.toString())
         Hilog.info(0, "cangjietest", pluggedTypeInfo.toString())

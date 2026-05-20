@@ -44,6 +44,7 @@ class testPixelMap_getPixelBytesNumber_1 {
                 pixelFormat: PixelMapFormat.Alpha8, scaleMode: ScaleMode.FitTargetSize)
             let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
             let pixelBytesNumber = pixelMap.getPixelBytesNumber()
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

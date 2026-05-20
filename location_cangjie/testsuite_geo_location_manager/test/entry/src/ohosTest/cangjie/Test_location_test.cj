@@ -91,7 +91,6 @@ class Test_location {
         if (let Some(v) <- location.directionAccuracy) {
             @Expect(v >= 0.0 && v <= 360.0 , true)
         }
-
         let curLocRequest_0 = CurrentLocationRequest(priority: LocationRequestPriority.FirstFix,
             scenario: LocationRequestScenario.Unset, maxAccuracy: 200.0)
         let curLocRet_0 = GeoLocationManager.getCurrentLocation(curLocRequest_0)

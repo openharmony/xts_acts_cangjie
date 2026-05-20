@@ -53,6 +53,7 @@ class Test_SecurityHuks_Special {
         clean(keyAlias)
         try {
             let res = hasKeyItem(keyAlias, genKeyOptionsTest1)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         } finally {

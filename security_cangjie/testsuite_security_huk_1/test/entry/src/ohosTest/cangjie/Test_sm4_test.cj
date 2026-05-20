@@ -63,7 +63,6 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))
                 ]
             )
-
             let finiOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -75,13 +74,9 @@ class Test_SecurityHuks_SM4 {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, initOptions).handle
             let cipherData = finishSession(handle1, finiOptions)
-
             let decInitOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -102,12 +97,9 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decInitOptions).handle
             let decData = finishSession(handle2, decFiniOptions).getOrThrow()
             let dec = String.fromUtf8(decData)
-
             @Expect(plainText == dec)
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
@@ -149,10 +141,8 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(1u32)),
                     HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
-                    // don't need iv
                 ]
             )
-
             let finiOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -160,17 +150,12 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(1u32)),
                     HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
-                // don't need iv
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, initOptions).handle
             let cipherData = finishSession(handle1, finiOptions)
-
             let decInitOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -180,7 +165,6 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
                 ]
             )
-
             let decFiniOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -190,14 +174,9 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decInitOptions).handle
             let decData = finishSession(handle2, decFiniOptions).getOrThrow()
             let dec = String.fromUtf8(decData)
-
-            // @Expect(plainText == dec)
-            // 不支持 ecb + pkcs7
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
         } catch (e: BusinessException) {
@@ -231,7 +210,6 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
                 ]
             )
-
             let initOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -239,10 +217,8 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(1u32)),
                     HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
-                    // don't need iv
                 ]
             )
-
             let finiOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -250,17 +226,12 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(1u32)),
                     HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
-                // don't need iv
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, initOptions).handle
             let cipherData = finishSession(handle1, finiOptions)
-
             let decInitOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -279,14 +250,9 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decInitOptions).handle
             let decData = finishSession(handle2, decFiniOptions).getOrThrow()
             let dec = String.fromUtf8(decData)
-
-            // @Expect(plainText == dec)
-            // 不支持 ecb + nopadding
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
         } catch (e: BusinessException) {
@@ -331,7 +297,6 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))
                 ]
             )
-
             let finiOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -343,13 +308,9 @@ class Test_SecurityHuks_SM4 {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, initOptions).handle
             let cipherData = finishSession(handle1, finiOptions)
-
             let decInitOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -370,12 +331,9 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decInitOptions).handle
             let decData = finishSession(handle2, decFiniOptions).getOrThrow()
             let dec = String.fromUtf8(decData)
-
             @Expect(plainText == dec)
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
@@ -421,7 +379,6 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))
                 ]
             )
-
             let finiOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -433,13 +390,9 @@ class Test_SecurityHuks_SM4 {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, initOptions).handle
             let cipherData = finishSession(handle1, finiOptions)
-
             let decInitOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
@@ -460,12 +413,9 @@ class Test_SecurityHuks_SM4 {
                     HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decInitOptions).handle
             let decData = finishSession(handle2, decFiniOptions).getOrThrow()
             let dec = String.fromUtf8(decData)
-
             @Expect(plainText == dec)
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))

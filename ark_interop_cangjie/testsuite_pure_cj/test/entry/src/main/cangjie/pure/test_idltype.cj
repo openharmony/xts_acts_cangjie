@@ -195,7 +195,6 @@ class TestIDLType {
             doJSInteropTypeTest<Int32>(jsContext, 0);
             doJSInteropTypeTest<Int32>(jsContext, Int32.Max);
             doJSInteropTypeTest<Int32>(jsContext, Int32.Min);
-
             @Expect(Int64.toArktsType(), "number")
             doJSInteropTypeTest<Int64>(jsContext, 0);
             doJSInteropTypeTest<Int64>(jsContext, Int64(Int32.Max));

@@ -49,13 +49,10 @@ class Test_SecurityHuks_ImportWrappedKeyItem {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_import_wrapped_wrong() {
-        //这个用例是错的，只有覆盖率的作用，最后会抛出异常
         let keyAlias = "test_import_wrapped_wrong"
         let wrappingKeyAlias = "test_import_wrapped_wrong_wrapping_key"
-
         clean(keyAlias)
         clean(wrappingKeyAlias)
-
         try {
             let options = HuksOptions(
                 properties: [
@@ -81,7 +78,6 @@ class Test_SecurityHuks_ImportWrappedKeyItem {
                 )
                 @Expect(hasKeyItem(keyAlias, genKeyOptionsTest1))
             } catch (e: BusinessException) {
-                // ignore
             }
         } finally {
             clean(keyAlias)
@@ -117,6 +113,7 @@ class Test_SecurityHuks_ImportWrappedKeyItem {
                     ]
                 )
             )
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -137,13 +134,13 @@ class Test_SecurityHuks_ImportWrappedKeyItem {
         let keyAlias = "test_import_wrapped"
         let wrappingKeyAlias = "test_import_wrapped_wrong_wrapping_key"
         var flag = false
-
         try {
             importWrappedKeyItem(
                 keyAlias,
                 wrappingKeyAlias,
                 genKeyOptionsTest1
             )
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -164,9 +161,7 @@ class Test_SecurityHuks_ImportWrappedKeyItem {
     func test_import_wrapped_none_indata() {
         let keyAlias = "test_import_wrapped"
         let wrappingKeyAlias = "test_import_wrapped_wrong_wrapping_key"
-
         var flag = false
-
         try {
             importWrappedKeyItem(
                 keyAlias,
@@ -181,6 +176,7 @@ class Test_SecurityHuks_ImportWrappedKeyItem {
                     ]
                 )
             )
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {

@@ -44,8 +44,8 @@ class testSetAppNet_1 {
             let netHandle = getAppNet()
             setAppNet(netHandle)
             let netHandles = getAllNets()
-            @Assert(netHandles.size, 1i64)
-            @Assert(netHandles.size, 1i64)
+            @Expect(netHandles.size, 1i64)
+            @Expect(netHandles.size, 1i64)
         } catch (e: BusinessException) {
             @Expect(e.message, "NetHandle getAddressesByName failed: NetHandle getAddressesByName failed: Invalid parameter value.")
             @Expect(e.code, 2100002i32)

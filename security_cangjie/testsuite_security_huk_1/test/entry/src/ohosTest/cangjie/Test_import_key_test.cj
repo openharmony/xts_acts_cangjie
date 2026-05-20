@@ -49,7 +49,6 @@ class Test_SecurityHuks_ImportKey {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_import_aes() {
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-import-key-in-plaintext-arkts.md
         let keyAlias = "test_import_aes"
         clean(keyAlias)
         try {
@@ -84,13 +83,10 @@ class Test_SecurityHuks_ImportKey {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_import_ecc() {
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-import-key-in-plaintext-ndk.md
         let keyAlias = "test_import_ecc"
         let keyAliasBak = keyAlias + ".bak"
-
         clean(keyAlias)
         clean(keyAliasBak)
-
         try {
             let options = HuksOptions(
                 properties: [
@@ -100,9 +96,7 @@ class Test_SecurityHuks_ImportKey {
                     HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint64Value(1u64))
                 ]
             )
-
             generateKeyItem(keyAlias, options)
-
             importKeyItem(
                 keyAliasBak,
                 HuksOptions(
@@ -150,6 +144,7 @@ class Test_SecurityHuks_ImportKey {
                     ]
                 )
             )
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -175,6 +170,7 @@ class Test_SecurityHuks_ImportKey {
                 keyAlias,
                 genKeyOptionsTest1
             )
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -209,6 +205,7 @@ class Test_SecurityHuks_ImportKey {
                     ]
                 )
             )
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {

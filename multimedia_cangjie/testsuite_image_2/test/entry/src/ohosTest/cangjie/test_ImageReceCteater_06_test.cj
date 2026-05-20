@@ -40,7 +40,6 @@ class Test_createImageReceCreator_06 {
         var Height: Int32 = 8
         var Format = ImageFormat.Jpeg
         var Capacity: Int32 = 8
-
         try {
             globalImageReceiver = createImageReceiver(Size(Width, Height), ImageFormat.Jpeg, Capacity)
             @Expect(globalImageReceiver.size.height.toString(), "8192")
@@ -68,7 +67,6 @@ class Test_createImageReceCreator_06 {
         var Height: Int32 = 8
         var Format = ImageFormat.Jpeg
         var Capacity: Int32 = 8
-
         try {
             globalImageReceiver = createImageReceiver(Size(Width, Height), ImageFormat.Jpeg, Capacity)
             var id: String = globalImageReceiver.getReceivingSurfaceId()

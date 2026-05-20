@@ -47,7 +47,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("test_boolean0", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#979: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -70,7 +70,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("test_boolean0", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#980: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -93,7 +93,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("test_boolean0", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#981: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -116,7 +116,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("test_boolean0", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#982: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -139,7 +139,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("test_boolean0", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#983: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -162,7 +162,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_3", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#984: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -185,7 +185,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_3", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#985: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -208,7 +208,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_3", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#986: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -231,7 +231,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_3", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#987: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -254,7 +254,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_3", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#988: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -277,7 +277,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_4", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#989: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -300,7 +300,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_4", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#990: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -323,7 +323,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_4", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#991: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -346,7 +346,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_4", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#992: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -369,7 +369,7 @@ class TestGetMediaBase64ByName_2 {
         Hilog.info(0u32, "CangjieTest", "fail to get mediaBase64 by name.")
         try {
             getResourceManager().getMediaBase64ByName("boolean_4", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#993: not throw", "fail to get mediaBase64 by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)

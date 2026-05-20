@@ -44,6 +44,7 @@ class testGetNetCapabilities_1 {
         try {
             let netHandle = getDefaultNet()
             getNetCapabilities(netHandle)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "NetHandle getAddressesByName failed: NetHandle getAddressesByName failed: Invalid parameter value.")
             @Expect(e.code, 2100002i32)

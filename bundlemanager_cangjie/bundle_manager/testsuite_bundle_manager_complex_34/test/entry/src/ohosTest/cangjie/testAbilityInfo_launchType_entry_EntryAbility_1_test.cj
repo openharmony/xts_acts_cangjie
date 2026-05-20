@@ -82,9 +82,7 @@ class testAbilityInfo_launchType_entry_EntryAbility_1 {
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_3 ends.")
     }
@@ -117,9 +115,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_4 ends.")
     }
@@ -153,9 +149,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_5 ends.")
     }
@@ -189,9 +183,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_6 ends.")
     }
@@ -226,9 +218,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 ends.")
     }
@@ -263,9 +253,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_8 ends.")
     }
@@ -301,9 +289,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_9 ends.")
     }
@@ -338,9 +324,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_10 ends.")
     }
@@ -375,9 +359,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_11 ends.")
     }
@@ -412,9 +394,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_12 ends.")
     }
@@ -449,9 +429,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_13 ends.")
     }
@@ -485,9 +463,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_14 ends.")
     }
@@ -522,9 +498,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_15 ends.")
     }
@@ -559,9 +533,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_16 ends.")
     }
@@ -596,9 +568,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 ends.")
     }
@@ -632,9 +602,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_18 ends.")
     }
@@ -669,9 +637,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 ends.")
     }
@@ -705,9 +671,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_20 ends.")
     }
@@ -741,9 +705,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 ends.")
     }
@@ -777,9 +739,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_22 ends.")
     }
@@ -814,9 +774,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 ends.")
     }
@@ -851,9 +809,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 ends.")
     }
@@ -888,9 +844,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_25 ends.")
     }
@@ -924,9 +878,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_26 ends.")
     }
@@ -961,9 +913,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_27 ends.")
     }
@@ -997,9 +947,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_28 ends.")
     }
@@ -1033,9 +981,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_29 ends.")
     }
@@ -1069,9 +1015,7 @@ case _ => false
             })
         @Expect(match (abilityInfo.launchType) {
 case LaunchType.Singleton => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_30 ends.")
     }

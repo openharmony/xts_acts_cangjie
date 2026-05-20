@@ -43,7 +43,7 @@ class testPixelMap_opacity_1 {
                 pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "opacity")
         pixelMap.opacity(0.100000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -66,8 +66,8 @@ class testPixelMap_opacity_1 {
                     srcPixelFormat: PixelMapFormat.Rgb565, pixelFormat: PixelMapFormat.Rgb565,
                     scaleMode: ScaleMode.CenterCrop))
             pixelMap.opacity(0.500000f32)
-            @Assert(true)
-            @Expect("assertion#0: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Image types are not supported.")
             @Expect(e.code, 62980103i32)
@@ -94,7 +94,7 @@ class testPixelMap_opacity_1 {
                 scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "opacity")
         pixelMap.opacity(1.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -116,7 +116,7 @@ class testPixelMap_opacity_1 {
                 pixelFormat: PixelMapFormat.Bgra8888, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "opacity")
         pixelMap.opacity(0.100000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -138,8 +138,8 @@ class testPixelMap_opacity_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Rgb888, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.opacity(0.100000f32)
-            @Assert(true)
-            @Expect("assertion#1: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Image types are not supported.")
             @Expect(e.code, 62980103i32)
@@ -165,7 +165,7 @@ class testPixelMap_opacity_1 {
                 pixelFormat: PixelMapFormat.Alpha8, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "opacity")
         pixelMap.opacity(0.100000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_6 ends.")
     }
 
@@ -187,7 +187,7 @@ class testPixelMap_opacity_1 {
                 pixelFormat: PixelMapFormat.RgbaF16, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "opacity")
         pixelMap.opacity(0.100000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
     }
 
@@ -209,8 +209,8 @@ class testPixelMap_opacity_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Nv21, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.opacity(0.100000f32)
-            @Assert(true)
-            @Expect("assertion#2: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Image types are not supported.")
             @Expect(e.code, 62980103i32)
@@ -236,8 +236,8 @@ class testPixelMap_opacity_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Nv12, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.opacity(0.100000f32)
-            @Assert(true)
-            @Expect("assertion#3: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Image types are not supported.")
             @Expect(e.code, 62980103i32)

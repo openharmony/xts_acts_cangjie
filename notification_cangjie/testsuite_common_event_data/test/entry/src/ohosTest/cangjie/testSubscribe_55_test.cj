@@ -61,7 +61,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1468: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -90,7 +90,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1469: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -119,7 +119,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1470: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -148,7 +148,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1471: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -177,7 +177,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1472: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -206,7 +206,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1473: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -235,7 +235,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1474: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -264,7 +264,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1475: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -293,7 +293,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1476: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -322,7 +322,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1477: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -351,7 +351,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1478: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -380,7 +380,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1479: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -409,7 +409,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1480: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -438,7 +438,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1481: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -467,7 +467,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1482: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -496,7 +496,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1483: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -525,7 +525,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1484: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -554,7 +554,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1485: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -583,7 +583,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1486: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -612,7 +612,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1487: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -641,7 +641,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1488: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -670,7 +670,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1489: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -699,7 +699,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1490: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -728,7 +728,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1491: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -757,7 +757,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1492: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -786,7 +786,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1493: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -815,7 +815,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1494: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -844,7 +844,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1495: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -873,7 +873,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1496: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }
@@ -902,7 +902,7 @@ class testSubscribe_55 {
                     e: Option<BusinessException>, a: Option<CommonEventData> => Hilog.info(0u32, "cangjietest", "",
                         "onframe")
                 })
-            @Expect("assertion#1497: not throw", "requestSuspendDelay failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }

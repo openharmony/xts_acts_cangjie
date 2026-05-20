@@ -45,7 +45,7 @@ class testPixelMap_readPixelsToBuffer_1 {
         let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
         Hilog.info(0, "cangjietest", "readPixelsToBuffer")
         pixelMap.readPixelsToBuffer(dstBuf)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -70,7 +70,7 @@ class testPixelMap_readPixelsToBuffer_1 {
         let dstBuf = Array<UInt8>(32i64, repeat: 0u8)
         Hilog.info(0, "cangjietest", "readPixelsToBuffer")
         pixelMap.readPixelsToBuffer(dstBuf)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
 
@@ -95,7 +95,7 @@ class testPixelMap_readPixelsToBuffer_1 {
         let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
         Hilog.info(0, "cangjietest", "readPixelsToBuffer")
         pixelMap.readPixelsToBuffer(dstBuf)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -119,7 +119,7 @@ class testPixelMap_readPixelsToBuffer_1 {
         let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
         Hilog.info(0, "cangjietest", "readPixelsToBuffer")
         pixelMap.readPixelsToBuffer(dstBuf)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -143,7 +143,7 @@ class testPixelMap_readPixelsToBuffer_1 {
         let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
         Hilog.info(0, "cangjietest", "readPixelsToBuffer")
         pixelMap.readPixelsToBuffer(dstBuf)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
     }
 
@@ -167,7 +167,7 @@ class testPixelMap_readPixelsToBuffer_1 {
         let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
         Hilog.info(0, "cangjietest", "readPixelsToBuffer")
         pixelMap.readPixelsToBuffer(dstBuf)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_6 ends.")
     }
 
@@ -192,6 +192,7 @@ class testPixelMap_readPixelsToBuffer_1 {
             let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
             Hilog.info(0, "cangjietest", "readPixelsToBuffer")
             pixelMap.readPixelsToBuffer(dstBuf)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -218,7 +219,7 @@ class testPixelMap_readPixelsToBuffer_1 {
         let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
         Hilog.info(0, "cangjietest", "readPixelsToBuffer")
         pixelMap.readPixelsToBuffer(dstBuf)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_8 ends.")
     }
 
@@ -243,6 +244,7 @@ class testPixelMap_readPixelsToBuffer_1 {
             let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
             Hilog.info(0, "cangjietest", "readPixelsToBuffer")
             pixelMap.readPixelsToBuffer(dstBuf)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

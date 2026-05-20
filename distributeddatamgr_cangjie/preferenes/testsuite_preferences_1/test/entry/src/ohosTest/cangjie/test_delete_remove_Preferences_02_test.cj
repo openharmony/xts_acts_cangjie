@@ -82,6 +82,7 @@ class Test_delete_remove_Preferences_02 {
     func test_preference_fuzz(): Unit {
         try {
             Preferences.deletePreferences(getAbilityContext(), String.fromUtf8([46]))
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 15500010)
             @Expect(e.message, "Preferences deletePreferences failed: Failed to delete preferences file.")

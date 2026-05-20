@@ -39,11 +39,11 @@ class Test_SecurityHuks_Struct {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_illegal_argument() {
-        // 对应exception未覆盖
         try {
             let boolean = HuksParamValue.BooleanValue(true)
             let uint32 = HuksParamValue.Uint32Value(1)
             let orNone = boolean
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(true)
         } finally {

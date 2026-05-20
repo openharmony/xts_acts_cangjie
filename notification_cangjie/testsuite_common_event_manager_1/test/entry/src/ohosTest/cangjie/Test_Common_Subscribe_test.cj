@@ -46,7 +46,6 @@ class Test_CommonEvent_Subscribe {
             let sub00 = CommonEventManager.createSubscriber(
                 CommonEventSubscribeInfo([], publisherPermission: "3213", publisherDeviceId: "3213", userId: 1i32,
                     priority: 1i32, publisherBundleName: "3213"))
-
             let callBack = {
                 e: Option<BusinessException>, c: Option<CommonEventData> =>
                 Hilog.info(0, "CangjieTest", "", "subscribe success")

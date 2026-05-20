@@ -43,7 +43,7 @@ class testPixelMap_rotate_1 {
                 pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "rotate")
         pixelMap.rotate(0.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -65,7 +65,7 @@ class testPixelMap_rotate_1 {
                 pixelFormat: PixelMapFormat.Rgb565, scaleMode: ScaleMode.CenterCrop))
         Hilog.info(0, "cangjietest", "rotate")
         pixelMap.rotate(45.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
 
@@ -87,7 +87,7 @@ class testPixelMap_rotate_1 {
                 pixelFormat: PixelMapFormat.Rgba8888, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "rotate")
         pixelMap.rotate(90.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -109,7 +109,7 @@ class testPixelMap_rotate_1 {
                 pixelFormat: PixelMapFormat.Bgra8888, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "rotate")
         pixelMap.rotate(0.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -131,7 +131,7 @@ class testPixelMap_rotate_1 {
                 pixelFormat: PixelMapFormat.Rgb888, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "rotate")
         pixelMap.rotate(0.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
     }
 
@@ -153,7 +153,7 @@ class testPixelMap_rotate_1 {
                 pixelFormat: PixelMapFormat.Alpha8, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "rotate")
         pixelMap.rotate(0.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_6 ends.")
     }
 
@@ -175,7 +175,7 @@ class testPixelMap_rotate_1 {
                 pixelFormat: PixelMapFormat.RgbaF16, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "rotate")
         pixelMap.rotate(0.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
     }
 
@@ -197,7 +197,7 @@ class testPixelMap_rotate_1 {
                 pixelFormat: PixelMapFormat.Nv21, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "rotate")
         pixelMap.rotate(0.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_8 ends.")
     }
 
@@ -219,7 +219,7 @@ class testPixelMap_rotate_1 {
                 pixelFormat: PixelMapFormat.Nv12, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "rotate")
         pixelMap.rotate(0.000000f32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_9 ends.")
     }
 }

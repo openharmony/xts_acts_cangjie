@@ -45,7 +45,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_704(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_704 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -61,7 +60,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#703: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -81,7 +80,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_708(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_708 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -97,7 +95,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#707: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -118,7 +116,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_712(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_712 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -134,7 +131,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#711: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -155,7 +152,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_716(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_716 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -171,7 +167,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#715: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -192,7 +188,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_720(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_720 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -208,7 +203,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#719: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -230,7 +225,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_724(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_724 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -246,7 +240,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#723: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -267,7 +261,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_728(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_728 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -283,7 +276,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#727: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -303,7 +296,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_732(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_732 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -319,7 +311,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#731: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -340,7 +332,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_736(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_736 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -356,7 +347,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#735: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -377,7 +368,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_740(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_740 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -393,7 +383,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#739: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -413,7 +403,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_744(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_744 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -429,7 +418,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#743: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -451,7 +440,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_748(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_748 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -467,7 +455,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#747: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -488,7 +476,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_752(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_752 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -504,7 +491,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#751: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -525,7 +512,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_756(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_756 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -541,7 +527,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#755: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -562,7 +548,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_760(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_760 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -578,7 +563,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#759: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -599,7 +584,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_764(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_764 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -615,7 +599,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#763: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -636,7 +620,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_768(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_768 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -652,7 +635,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#767: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -674,7 +657,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_772(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_772 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -690,7 +672,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#771: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -711,7 +693,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_776(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_776 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -727,7 +708,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#775: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -748,7 +729,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_780(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_780 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -764,7 +744,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#779: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -785,7 +765,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_784(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_784 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -801,7 +780,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#783: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -822,7 +801,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_788(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_788 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -838,7 +816,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#787: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -860,7 +838,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_792(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_792 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -876,7 +853,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#791: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -897,7 +874,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_796(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_796 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -913,7 +889,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#795: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
@@ -935,7 +911,6 @@ class TestRdbStore_beginTransaction_8 {
     func TestCase_800(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_800 begins.")
         Hilog.info(0u32, "cangjietest", "", "define local variable rdbStore")
-
         try {
             let rdbStore = getRdbStore(Global.getAbilityContext(),
                 StoreConfig(RelationalStoreSecurityLevel.S4, name: "valid name", encrypt: false, dataGroupId: "valid createTime",
@@ -951,7 +926,7 @@ class TestRdbStore_beginTransaction_8 {
             rdbStore.insert("THING", values)
             rdbStore.insert("THING", values)
             rdbStore.commit()
-            @Expect("assertion#799: not throw", "commit failed")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }

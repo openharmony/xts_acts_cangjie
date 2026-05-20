@@ -45,7 +45,7 @@ class testCreateImageSource_RawFileDescriptor_1 {
             let fd = resMgr.getRawFd("test.jpg")
             let imageSource = createImageSource(fd)
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -71,7 +71,7 @@ class testCreateImageSource_RawFileDescriptor_1 {
             let fd = resMgr.getRawFd("test.png")
             let imageSource = createImageSource(fd)
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -97,7 +97,7 @@ class testCreateImageSource_RawFileDescriptor_1 {
             let fd = resMgr.getRawFd("test.jpeg")
             let imageSource = createImageSource(fd)
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)

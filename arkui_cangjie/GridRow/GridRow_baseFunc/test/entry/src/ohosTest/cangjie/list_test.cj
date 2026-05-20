@@ -25,7 +25,7 @@ func testsuite() {
     registerTestSuite {GridRow_comattr_alignself_basis_1_test()}
     registerTestSuite {GridRow_comattr_alignself_basis_2_test()}
     registerTestSuite {GridRow_comattr_aspectratio_1_test()}
-    registerTestSuite {GridRow_comattr_background_1_1_test()}
+    registerTestSuite {GridRow_comattr_background2_1_test()}
     registerTestSuite {GridRow_comattr_background_1_test()}
     registerTestSuite {GridRow_comattr_background_2_test()}
     registerTestSuite {GridRow_comattr_background_3_test()}
@@ -51,7 +51,7 @@ func testsuite() {
     registerTestSuite {GridRow_comattr_constraintsize_5_test()}
     registerTestSuite {GridRow_comattr_displaypriority_1_test()}
     registerTestSuite {GridRow_comattr_enable_zindex_1_test()}
-    registerTestSuite {GridRow_comattr_flexgrow_flexshrink_1_1_test()}
+    registerTestSuite {GridRow_comattr_flexgrow_flexshrink2_1_test()}
     registerTestSuite {GridRow_comattr_flexgrow_flexshrink_1_test()}
     registerTestSuite {GridRow_comattr_focuscontrol_1_test()}
     registerTestSuite {GridRow_comattr_foregroundblur2_1_test()}

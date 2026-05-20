@@ -46,9 +46,7 @@ class test_shellcommand {
         let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let cmd = "echo 'hello world'"        
         let result = delegator.executeShellCommand(cmd)        
-        // 验证命令执行成功（退出码为0）
         @Expect(result.exitCode, 0)
-        // 验证输出内容包含预期字符串
         @Expect(result.stdResult.contains("hello world"), true)
     }
 
@@ -63,13 +61,10 @@ class test_shellcommand {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func TestCase_2() {
-    //  * 测试用例：正常场景 - 执行带超时参数的shell命令
-    //  * 预期结果：命令在超时时间内完成，返回成功        
         let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let cmd = "echo 'timeout test'"        
         let result = delegator.executeShellCommand(cmd, timeoutSecs: 5)
         @Expect(result.exitCode, 0)
-        // 验证输出内容
         @Expect(result.stdResult.contains("timeout test"), true)
     }
 
@@ -87,7 +82,6 @@ class test_shellcommand {
         let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let cmd = "sleep 10"
             let result = delegator.executeShellCommand(cmd, timeoutSecs: 1)
-            // 如果命令超时但未抛出异常，验证result中包含超时信息
             @Expect(result.exitCode != 0, true)
     }
 

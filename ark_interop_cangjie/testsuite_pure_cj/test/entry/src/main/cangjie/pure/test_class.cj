@@ -46,7 +46,7 @@ class TestJSClass {
         }
         try {
             let _ = await(jsContext) {jsClass.new()}
-            @Assert(false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 34300002)
         }
@@ -120,7 +120,6 @@ class TestJSClass {
             await(jsContext) {
                 classA.addProperty("clsName", jsContext.string("none").toJSValue())
             }
-
             await(jsContext) {
                 classA.addMethod(
                     "setName",
@@ -131,7 +130,6 @@ class TestJSClass {
                     }
                 )
             }
-
             let jsFunc = await(jsContext) {
                 jsContext.function {
                     _, callInfo => jsContext.undefined().toJSValue()
@@ -143,7 +141,6 @@ class TestJSClass {
                     jsFunc
                 )
             }
-
             let classB = await(jsContext) {
                 jsContext.clazz(
                     {
@@ -191,39 +188,33 @@ class TestJSClass {
             let valueC = await(jsContext) {
                 classA.new([])
             }
-
             @Expect(await(jsContext){valueA.isObject()})
             @Expect(await(jsContext){valueB.isObject()})
             @Expect(await(jsContext){valueC.isObject()})
-
             let objA = await(jsContext) {valueA.asObject()}
             let objB = await(jsContext) {valueB.asObject()}
-
             @Expect(await(jsContext){objA.instanceOf(classA)})
             @Expect(await(jsContext){objB.instanceOf(classB)})
             @Expect(await(jsContext){objB.instanceOf(classA)})
-
             let nameA = await(jsContext) {objA.callMethod("getName")}
             @Expect(await(jsContext){nameA.isString()})
             @Expect(await(jsContext){nameA.toString()}, 'a')
-
             var isMismatch: Bool = false
             try {
                 let nameA = await(jsContext) {
                     objA.callMethod("name")
                 }
+                @Expect(false)
             } catch (e: BusinessException) {
                 isMismatch = true
             }
             @Expect(isMismatch)
-
             await(jsContext) {
                 objA.callMethod("setName", jsContext.string("A").toJSValue())
             }
             let nameA1 = await(jsContext) {objA["name"]}
             @Expect(await(jsContext){nameA1.isString()})
             @Expect(await(jsContext){nameA1.toString()}, "A")
-
             let id1 = await(jsContext) {objB["id"]}
             let id2 = await(jsContext) {objB["myid"]}
             @Expect(await(jsContext){id1.isNumber()})

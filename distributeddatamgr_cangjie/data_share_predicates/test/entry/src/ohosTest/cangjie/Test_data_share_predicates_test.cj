@@ -53,7 +53,6 @@ class Test_dataSharePredicates {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_create_dataSharePredicates(): Unit {
-        // 一般来说，创建一个 DataSharePredicates 对象不会出现意外
         try {
             var predicates = DataSharePredicates()
             @Expect(true)
@@ -75,9 +74,7 @@ class Test_dataSharePredicates {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_equalTo(): Unit {
-        // equalTo方法测试
         var predicates = DataSharePredicates()
-        // 测试列名为空的情况
         try {
             predicates.equalTo("", VBValueType.StringValue("Peter"))
             @Expect(false)
@@ -87,8 +84,6 @@ class Test_dataSharePredicates {
             @Expect(e.code, E_PARAM_ERROR)
             println(DEBUG_HEAD + "test_equalTo with empty field success. code is ${e.code}, message is ${e.message}.")
         }
-
-        // 测试不存在列名的情况，DataSharePredicates和数据库是没有直接的操作关系，只是存储一些值，因此理论应该不会抛出错误
         try {
             predicates.equalTo("FIELD_NOT_EXIST", VBValueType.StringValue("Peter"))
             @Expect(true)
@@ -97,25 +92,16 @@ class Test_dataSharePredicates {
             println(DEBUG_HEAD + "test_equalTo with field not exist error. code is ${e.code}, message is ${e.message}.")
             @Expect(false)
         }
-
-        // 测试正常的情况
         try {
-            // Int64
             predicates.equalTo("AGE", VBValueType.Integer(25))
-            // Float64
             predicates.equalTo("SALARY", VBValueType.Double(1000.5))
-            // String
             predicates.equalTo("NAME", VBValueType.StringValue("Peter"))
-            // Bool
             predicates.equalTo("CODES", VBValueType.Boolean(true))
-
             @Expect(true)
             println(DEBUG_HEAD + "test_equalTo with normal situation success.")
         } catch (e: BusinessException) {
             println(DEBUG_HEAD + "test_equalTo with field not exist error. code is ${e.code}, message is ${e.message}.")
         }
-
-        // 测试错误查询
         try {
             predicates = DataSharePredicates()
             predicates.equalTo("AGE", VBValueType.Integer(17))
@@ -139,8 +125,6 @@ class Test_dataSharePredicates {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_create_and(): Unit {
-        // equalTo方法测试
-        // 测试链式编程
         try {
             var predicates = DataSharePredicates()
             predicates
@@ -170,8 +154,6 @@ class Test_dataSharePredicates {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_orderByAsc() {
-
-        // 测试列名为空的情况
         try {
             var predicates = DataSharePredicates()
             predicates.orderByAsc("")
@@ -182,8 +164,6 @@ class Test_dataSharePredicates {
             @Expect(e.code, E_PARAM_ERROR)
             println(DEBUG_HEAD + "test_orderByAsc success. code is ${e.code}, message is ${e.message}.")
         }
-
-        // 测试正常的情况
         try {
             var predicates = DataSharePredicates()
             predicates.orderByAsc("AGE")
@@ -206,7 +186,6 @@ class Test_dataSharePredicates {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_orderByDesc(): Unit {
-        // 测试列名为空的情况
         try {
             var predicates = DataSharePredicates()
             predicates.orderByDesc("")
@@ -217,7 +196,6 @@ class Test_dataSharePredicates {
             @Expect(e.code, E_PARAM_ERROR)
             println(DEBUG_HEAD + "test_orderByDesc success. code is ${e.code}, message is ${e.message}.")
         }
-        // 测试正常的情况
         try {
             var predicates = DataSharePredicates()
             predicates.orderByDesc("AGE")
@@ -240,7 +218,6 @@ class Test_dataSharePredicates {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_limit(): Unit {
-        // 测试输入负数的情况
         try {
             var predicates = DataSharePredicates()
             predicates.limit(-1, 1)
@@ -251,7 +228,6 @@ class Test_dataSharePredicates {
             @Expect(e.code, E_PARAM_ERROR)
             println(DEBUG_HEAD + "test_limit success. code is ${e.code}, message is ${e.message}.")
         }
-
         try {
             var predicates = DataSharePredicates()
             predicates.limit(1, -1)
@@ -262,7 +238,6 @@ class Test_dataSharePredicates {
             @Expect(e.code, E_PARAM_ERROR)
             println(DEBUG_HEAD + "test_limit success. code is ${e.code}, message is ${e.message}.")
         }
-
         try {
             var predicates = DataSharePredicates()
             predicates.limit(-1, -1)
@@ -273,8 +248,6 @@ class Test_dataSharePredicates {
             @Expect(e.code, E_PARAM_ERROR)
             println(DEBUG_HEAD + "test_limit success. code is ${e.code}, message is ${e.message}.")
         }
-
-        // 测试正常情况
         try {
             var predicates = DataSharePredicates()
             predicates.limit(10, 10)
@@ -305,8 +278,6 @@ class Test_dataSharePredicates {
             VBValueType.Double(0.01),
             VBValueType.Boolean(false)
         ]
-
-        // 测试列名为空，array正常
         try {
             var predicates = DataSharePredicates()
             predicates.`inValues`("", array.toArray())
@@ -317,8 +288,6 @@ class Test_dataSharePredicates {
             println(DEBUG_HEAD + "test_in success. code is ${e.code}, message is ${e.message}.")
             @Expect(true)
         }
-
-        // 测试列名为空，array为空
         try {
             var predicates = DataSharePredicates()
             predicates.`inValues`("", emptyArray.toArray())
@@ -329,8 +298,6 @@ class Test_dataSharePredicates {
             println(DEBUG_HEAD + "test_in success. code is ${e.code}, message is ${e.message}.")
             @Expect(true)
         }
-
-        // 测试列名为空，arrary中类型不一致
         try {
             var predicates = DataSharePredicates()
             predicates.`inValues`("", multiTypeArray)
@@ -341,8 +308,6 @@ class Test_dataSharePredicates {
             println(DEBUG_HEAD + "test_in success. code is ${e.code}, message is ${e.message}.")
             @Expect(true)
         }
-
-        // 测试列名不为空， array中类型一致
         try {
             var predicates = DataSharePredicates()
             predicates.`inValues`("AGE", array.toArray())
@@ -353,8 +318,6 @@ class Test_dataSharePredicates {
             println(DEBUG_HEAD + "test_in success. code is ${e.code}, message is ${e.message}.")
             @Expect(false)
         }
-
-        // 测试列名不为空， array为空
         try {
             var predicates = DataSharePredicates()
             predicates.`inValues`("AGE", emptyArray.toArray())
@@ -364,8 +327,6 @@ class Test_dataSharePredicates {
             @Expect(e.code, E_PARAM_ERROR)
             println(DEBUG_HEAD + "test_in success. code is ${e.code}, message is ${e.message}.")
         }
-
-        // 测试列名不为空， array中类型不一致
         try {
             var predicates = DataSharePredicates()
             predicates.`inValues`("AGE", multiTypeArray)

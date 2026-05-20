@@ -43,12 +43,10 @@ class testFileIo_open_1 {
         let res = FileIo.access(fpath)
         @Expect(res, true)
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.READ_ONLY)
             let res1 = file.fd is Int32
             @Expect(res1, true)
-
             let length = 4096
             let arryBuffer = Array<Byte>(length, repeat: 0)
             let readlen = FileIo.read(file.fd, arryBuffer)
@@ -78,7 +76,6 @@ class testFileIo_open_1 {
         let res = FileIo.access(fpath)
         @Expect(res, true)
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             let res1 = file.fd is Int32
@@ -87,7 +84,6 @@ class testFileIo_open_1 {
             @Expect(path, fpath)
             let name = file.name
             @Expect(name, "test_open_02")
-
             let byteWritten = FileIo.write(file.fd, "hello, world")
             @Expect(byteWritten, 12)
             FileIo.close(file)
@@ -114,21 +110,17 @@ class testFileIo_open_1 {
         let res = FileIo.access(fpath)
         @Expect(res, true)
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
             let res1 = file.fd is Int32
             @Expect(res1, true)
-
             let length = 4096
             let arryBuffer = Array<Byte>(length, repeat: 0)
             let readlen = FileIo.read(file.fd, arryBuffer)
             let size = FileIo.stat(fpath).size
             @Expect(readlen, size)
-
             let byteWritten = FileIo.write(file.fd, "hello, world")
             @Expect(byteWritten, 12)
-
             FileIo.close(file)
             FileIo.unlink(fpath)
         } catch (e: Exception) {
@@ -149,7 +141,6 @@ class testFileIo_open_1 {
     @Tag[APILevel22, TestLevel0]
     func test_open_04() {
         let fpath = "/data/storage/el2/base/files/test_open_04"
-
         try {
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
             let res1 = file.fd is Int32
@@ -179,7 +170,6 @@ class testFileIo_open_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: (OpenMode.TRUNC | OpenMode.READ_WRITE))
             let res1 = file.fd is Int32
@@ -187,7 +177,7 @@ class testFileIo_open_1 {
             let length = 4096
             let arryBuffer = Array<Byte>(length, repeat: 0)
             let readlen = FileIo.read(file.fd, arryBuffer)
-            @Expect(readlen, 0) // 0
+            @Expect(readlen, 0)
             FileIo.close(file)
             FileIo.unlink(fpath)
         } catch (e: Exception) {
@@ -213,14 +203,11 @@ class testFileIo_open_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: (OpenMode.APPEND | OpenMode.READ_WRITE))
             let res1 = file.fd is Int32
             @Expect(res1, true)
             let length = 100
-            //            let bytesWritten1 = FileIo.write(file.fd, Array<Byte>(length, repeat: 0))
-            //            @Expect(bytesWritten1, 0)
             let bytesWritten2 = FileIo.write(file.fd, Array<Byte>(length, repeat: 65))
             @Expect(bytesWritten2, 100)
             let readlen = FileIo.read(file.fd, Array<Byte>(4096, repeat: 0), options: ReadOptions(offset: 0))
@@ -248,7 +235,6 @@ class testFileIo_open_1 {
         let res = FileIo.access(fpath)
         @Expect(res, true)
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: (OpenMode.NONBLOCK | OpenMode.READ_WRITE))
             let res1 = file.fd is Int32
@@ -274,7 +260,6 @@ class testFileIo_open_1 {
     func test_open_08() {
         let dpath = "/data/storage/el2/base/files/test_open_08"
         FileIo.mkdir(dpath)
-
         try {
             let file = FileIo.open(dpath, mode: OpenMode.DIR)
             let res = file.fd is Int32
@@ -302,7 +287,6 @@ class testFileIo_open_1 {
         let res = FileIo.access(fpath)
         @Expect(res, true)
         FileIo.close(f)
-
         try {
             FileIo.open(fpath, mode: OpenMode.DIR)
             @Expect(false)
@@ -330,12 +314,10 @@ class testFileIo_open_1 {
         let res = FileIo.access(fpath)
         @Expect(res, true)
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: (OpenMode.NOFOLLOW | OpenMode.READ_WRITE))
             let res1 = file.fd is Int32
             @Expect(res1, true)
-
             FileIo.close(file)
             FileIo.unlink(fpath)
         } catch (e: Exception) {
@@ -360,12 +342,10 @@ class testFileIo_open_1 {
         let res = FileIo.access(fpath)
         @Expect(res, true)
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: (OpenMode.SYNC | OpenMode.READ_WRITE))
             let res1 = file.fd is Int32
             @Expect(res1, true)
-
             FileIo.close(file)
             FileIo.unlink(fpath)
         } catch (e: Exception) {
@@ -387,7 +367,6 @@ class testFileIo_open_1 {
     func test_open_12() {
         let dpath = "/data/storage/el2/base/files/test_open_12"
         FileIo.mkdir(dpath)
-
         try {
             let file = FileIo.open(dpath, mode: OpenMode.READ_WRITE)
             @Expect(false)
@@ -416,7 +395,6 @@ class testFileIo_open_1 {
         @Expect(res, true)
         FileIo.close(f)
         var openFile: ?File = None
-
         try {
             openFile = FileIo.open(fpath)
             if (let Some(file) <- openFile) {
@@ -455,7 +433,6 @@ class testFileIo_open_1 {
         let res = FileIo.access(fpath)
         @Expect(res, true)
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.READ_ONLY)
             let r = file.fd is Int32
@@ -487,7 +464,6 @@ class testFileIo_open_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
             @Expect(file.getParent(), "/data/storage/el2/base/files")
@@ -511,7 +487,6 @@ class testFileIo_open_1 {
     @Tag[APILevel22, TestLevel0]
     func test_open_16() {
         let fpath = "/data/storage/el2/base/files/test_open_16"
-
         try {
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
             @Expect(file.getParent(), "/data/storage/el2/base/files")

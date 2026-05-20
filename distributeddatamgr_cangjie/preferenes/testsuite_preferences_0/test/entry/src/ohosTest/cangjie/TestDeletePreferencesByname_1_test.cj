@@ -49,7 +49,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_1 ends.")
     }
 
@@ -75,7 +75,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_2 ends.")
     }
 
@@ -101,7 +101,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_3 ends.")
     }
 
@@ -127,7 +127,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_4 ends.")
     }
 
@@ -153,7 +153,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_5 ends.")
     }
 
@@ -179,7 +179,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_6 ends.")
     }
 
@@ -205,7 +205,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_7 ends.")
     }
 
@@ -231,7 +231,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_8 ends.")
     }
 
@@ -257,7 +257,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_9 ends.")
     }
 
@@ -283,7 +283,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_10 ends.")
     }
 
@@ -309,7 +309,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_11 ends.")
     }
 
@@ -335,7 +335,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_12 ends.")
     }
 
@@ -361,7 +361,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_13 ends.")
     }
 
@@ -387,7 +387,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_14 ends.")
     }
 
@@ -413,7 +413,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_15 ends.")
     }
 
@@ -439,7 +439,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_16 ends.")
     }
 
@@ -465,7 +465,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_17 ends.")
     }
 
@@ -491,7 +491,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences1")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences1")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_18 ends.")
     }
 
@@ -517,7 +517,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_19 ends.")
     }
 
@@ -543,7 +543,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_20 ends.")
     }
 
@@ -569,7 +569,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_21 ends.")
     }
 
@@ -595,7 +595,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_22 ends.")
     }
 
@@ -621,7 +621,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_23 ends.")
     }
 
@@ -647,7 +647,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_24 ends.")
     }
 
@@ -673,7 +673,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_25 ends.")
     }
 
@@ -699,7 +699,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_26 ends.")
     }
 
@@ -725,7 +725,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_27 ends.")
     }
 
@@ -751,7 +751,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_28 ends.")
     }
 
@@ -777,7 +777,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_29 ends.")
     }
 
@@ -803,7 +803,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_30 ends.")
     }
 
@@ -829,7 +829,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_31 ends.")
     }
 
@@ -855,7 +855,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_32 ends.")
     }
 
@@ -881,7 +881,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_33 ends.")
     }
 
@@ -907,7 +907,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_34 ends.")
     }
 
@@ -933,7 +933,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_35 ends.")
     }
 
@@ -959,7 +959,7 @@ class TestDeletePreferencesByname_1 {
         Preferences.deletePreferences(Global.getAbilityContext(), "preferences2")
         Hilog.info(0, "cangjietest","define local variable preferences_1")
         let preferences_1 = Preferences.getPreferences(Global.getAbilityContext(), "preferences2")
-        @Assert(false, preferences_1.has("key"))
+        @Expect(false, preferences_1.has("key"))
         Hilog.info(0, "cangjietest","testcase TestCase_36 ends.")
     }
 }

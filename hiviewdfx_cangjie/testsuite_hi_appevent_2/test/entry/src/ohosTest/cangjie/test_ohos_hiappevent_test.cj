@@ -52,11 +52,10 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_clearData_01", "Test_hiappevent_write_pass")
             HiAppEvent.clearData()
-
             Hilog.info(0, "test_hiAppEvent_clearData_01", "Test_hiappevent_clearData_pass")
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -110,7 +109,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_01", "Test_hiappevent_write_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -166,7 +164,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_02", "Test_hiappevent_write_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -222,7 +219,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_03", "Test_hiappevent_write_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -278,7 +274,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_04", "Test_hiappevent_write_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -334,7 +329,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_05", "Test_hiappevent_write_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -390,7 +384,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_05", "Test_hiappevent_write_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -446,7 +439,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_07", "Test_hiappevent_write_01_pass")
             var params_01 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -460,7 +452,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_01: AppEventInfo = AppEventInfo("cangjie_2", "test_event", EventType.Fault, params_01)
             HiAppEvent.write(appInfo_01)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_07", "Test_hiappevent_write_02_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -518,7 +509,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_08", "Test_hiappevent_write_01_pass")
             var params_01 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -532,7 +522,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_01: AppEventInfo = AppEventInfo("cangjie_2", "test_event", EventType.Fault, params_01)
             HiAppEvent.write(appInfo_01)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_08", "Test_hiappevent_write_02_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -591,7 +580,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_09", "Test_hiappevent_write_01_pass")
             var params_01 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -605,7 +593,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_01: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Statistic, params_01)
             HiAppEvent.write(appInfo_01)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_09", "Test_hiappevent_write_02_pass")
             var params_02 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -619,7 +606,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_02: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Security, params_02)
             HiAppEvent.write(appInfo_02)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_09", "Test_hiappevent_write_03_pass")
             var params_03 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -633,7 +619,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_03: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Behavior, params_03)
             HiAppEvent.write(appInfo_03)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_09", "Test_hiappevent_write_04_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -692,7 +677,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event_01", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_10", "Test_hiappevent_write_01_pass")
             var params_01 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -706,7 +690,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_01: AppEventInfo = AppEventInfo("cangjie_1", "test_event_02", EventType.Statistic, params_01)
             HiAppEvent.write(appInfo_01)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_10", "Test_hiappevent_write_02_pass")
             var params_02 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -720,7 +703,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_02: AppEventInfo = AppEventInfo("cangjie_1", "test_event_03", EventType.Security, params_02)
             HiAppEvent.write(appInfo_02)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_10", "Test_hiappevent_write_03_pass")
             var params_03 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -734,7 +716,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_03: AppEventInfo = AppEventInfo("cangjie_1", "test_event_04", EventType.Behavior, params_03)
             HiAppEvent.write(appInfo_03)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_10", "Test_hiappevent_write_04_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -794,7 +775,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event_01", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_11", "Test_hiappevent_write_01_pass")
             var params_01 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -808,7 +788,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_01: AppEventInfo = AppEventInfo("cangjie_1", "test_event_02", EventType.Statistic, params_01)
             HiAppEvent.write(appInfo_01)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_11", "Test_hiappevent_write_02_pass")
             var params_02 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -822,7 +801,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_02: AppEventInfo = AppEventInfo("cangjie_1", "test_event_03", EventType.Security, params_02)
             HiAppEvent.write(appInfo_02)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_11", "Test_hiappevent_write_03_pass")
             var params_03 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -836,7 +814,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_03: AppEventInfo = AppEventInfo("cangjie_1", "test_event_04", EventType.Behavior, params_03)
             HiAppEvent.write(appInfo_03)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_11", "Test_hiappevent_write_04_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -893,7 +870,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_12", "Test_hiappevent_write_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -950,7 +926,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_13", "Test_hiappevent_write_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -1007,7 +982,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event_01", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_14", "Test_hiappevent_write_01_pass")
             var params_01 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -1021,7 +995,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_01: AppEventInfo = AppEventInfo("cangjie_2", "test_event_02", EventType.Statistic, params_01)
             HiAppEvent.write(appInfo_01)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_14", "Test_hiappevent_write_02_pass")
             var params_02 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -1035,7 +1008,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_02: AppEventInfo = AppEventInfo("cangjie_3", "test_event_03", EventType.Security, params_02)
             HiAppEvent.write(appInfo_02)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_14", "Test_hiappevent_write_03_pass")
             var params_03 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -1049,7 +1021,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_03: AppEventInfo = AppEventInfo("cangjie_4", "test_event_04", EventType.Behavior, params_03)
             HiAppEvent.write(appInfo_03)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_14", "Test_hiappevent_write_04_pass")
             HiAppEvent.removeWatcher(watcher)
         } catch (e: Exception) {
@@ -1084,7 +1055,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event_01", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_15", "Test_hiappevent_write_01_pass")
             if (let Some(v) <- holder) {
                 while (let Some(v2) <- v.takeNext()) {
@@ -1098,6 +1068,7 @@ class Test_ohos_hiAppEvent {
                 }
             }
             HiAppEvent.removeWatcher(watcher)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -1137,7 +1108,6 @@ class Test_ohos_hiAppEvent {
                                 "appEventInfo domain=${AppEventGroups[i].appEventInfos[j].domain}", [])
                             let paSize = AppEventGroups[i].appEventInfos[j].params.size
                             for (k in 0..paSize) {
-                               
                             }
                         }
                     }
@@ -1156,7 +1126,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event_01", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_16", "Test_hiappevent_write_01_pass")
             var params_01 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -1170,9 +1139,9 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_01: AppEventInfo = AppEventInfo("cangjie_2", "test_event_02", EventType.Fault, params_01)
             HiAppEvent.write(appInfo_01)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_16", "Test_hiappevent_write_02_pass")
             HiAppEvent.removeWatcher(watcher)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -1202,10 +1171,8 @@ class Test_ohos_hiAppEvent {
                         Hilog.info(0, "test_hiAppEvent_addWatcher_17", "name =${AppEventGroups[i].name}")
                         let appInfosize = AppEventGroups[i].appEventInfos.size
                         for (j in 0..appInfosize) {
-                            
                             let paSize = AppEventGroups[i].appEventInfos[j].params.size
                             for (k in 0..paSize) {
-                               
                             }
                         }
                     }
@@ -1224,7 +1191,6 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "test_event_01", EventType.Fault, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_17", "Test_hiappevent_write_01_pass")
             var params_01 = HashMap<String, EventValueType>([
                 ("int_data", IntValue(100)),
@@ -1238,9 +1204,9 @@ class Test_ohos_hiAppEvent {
             ])
             var appInfo_01: AppEventInfo = AppEventInfo("cangjie_2", "test_event_02", EventType.Fault, params_01)
             HiAppEvent.write(appInfo_01)
-
             Hilog.info(0, "test_hiAppEvent_addWatcher_17", "Test_hiappevent_write_02_pass")
             HiAppEvent.removeWatcher(watcher)
+            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
@@ -1592,6 +1558,7 @@ class Test_ohos_hiAppEvent {
                 appEventFilters: appEventFilter
             )
             HiAppEvent.addWatcher(watcher)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code,11102002)
             @Expect(e.message,"Invalid filtering event domain.")

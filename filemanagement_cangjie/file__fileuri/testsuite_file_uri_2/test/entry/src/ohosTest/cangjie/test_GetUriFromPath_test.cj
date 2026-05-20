@@ -196,7 +196,7 @@ class test_GetUriFromPath {
             @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
-            @Expect(e.code, 13900020) // 验证异常抛出
+            @Expect(e.code, 13900020)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
     }

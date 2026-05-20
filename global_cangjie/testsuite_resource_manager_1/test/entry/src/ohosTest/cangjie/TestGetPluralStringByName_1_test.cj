@@ -46,7 +46,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("", 1i64)
-            @Expect("assertion#1705: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -69,7 +69,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("", -1i64)
-            @Expect("assertion#1706: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -92,7 +92,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("", 12345678i64)
-            @Expect("assertion#1707: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -115,7 +115,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("\0", 1i64)
-            @Expect("assertion#1708: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -138,7 +138,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("\0", -1i64)
-            @Expect("assertion#1709: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -161,7 +161,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("\0", 12345678i64)
-            @Expect("assertion#1710: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -184,7 +184,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("nonExistingResourceName", 1i64)
-            @Expect("assertion#1711: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -207,7 +207,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("nonExistingResourceName", -1i64)
-            @Expect("assertion#1712: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -230,7 +230,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("nonExistingResourceName", 12345678i64)
-            @Expect("assertion#1713: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -253,7 +253,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("module_desc", 1i64)
-            @Expect("assertion#1714: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -276,7 +276,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("module_desc", -1i64)
-            @Expect("assertion#1715: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -299,7 +299,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("module_desc", 12345678i64)
-            @Expect("assertion#1716: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -322,7 +322,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("sizelist", 1i64)
-            @Expect("assertion#1717: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -345,7 +345,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("sizelist", -1i64)
-            @Expect("assertion#1718: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -368,7 +368,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("sizelist", 12345678i64)
-            @Expect("assertion#1719: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -388,7 +388,7 @@ class TestGetPluralStringByName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_16(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_16 begins.")
-        @Assert("1 test other", getResourceManager().getPluralStringByName("plural_name", 1i64))
+        @Expect("1 test other", getResourceManager().getPluralStringByName("plural_name", 1i64))
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_16 ends.")
     }
 
@@ -404,7 +404,7 @@ class TestGetPluralStringByName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_17(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 begins.")
-        @Assert("-1 test other", getResourceManager().getPluralStringByName("plural_name", -1i64))
+        @Expect("-1 test other", getResourceManager().getPluralStringByName("plural_name", -1i64))
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 ends.")
     }
 
@@ -420,7 +420,7 @@ class TestGetPluralStringByName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_18(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_18 begins.")
-        @Assert("12345678 test other", getResourceManager().getPluralStringByName("plural_name", 12345678i64))
+        @Expect("12345678 test other", getResourceManager().getPluralStringByName("plural_name", 12345678i64))
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_18 ends.")
     }
 
@@ -439,7 +439,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("Test_Format1", 1i64)
-            @Expect("assertion#1720: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -462,7 +462,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("Test_Format1", -1i64)
-            @Expect("assertion#1721: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -485,7 +485,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("Test_Format1", 12345678i64)
-            @Expect("assertion#1722: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -508,7 +508,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("Test_Format2", 1i64)
-            @Expect("assertion#1723: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -531,7 +531,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("Test_Format2", -1i64)
-            @Expect("assertion#1724: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -554,7 +554,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("Test_Format2", 12345678i64)
-            @Expect("assertion#1725: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -577,7 +577,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("Test_Format3", 1i64)
-            @Expect("assertion#1726: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -600,7 +600,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("Test_Format3", -1i64)
-            @Expect("assertion#1727: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -623,7 +623,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("Test_Format3", 12345678i64)
-            @Expect("assertion#1728: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -646,7 +646,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("EntryAbility_desc", 1i64)
-            @Expect("assertion#1729: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -669,7 +669,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("EntryAbility_desc", -1i64)
-            @Expect("assertion#1730: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -692,7 +692,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("EntryAbility_desc", 12345678i64)
-            @Expect("assertion#1731: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -715,7 +715,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("layered_image", 1i64)
-            @Expect("assertion#1732: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -738,7 +738,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("layered_image", -1i64)
-            @Expect("assertion#1733: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -761,7 +761,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("layered_image", 12345678i64)
-            @Expect("assertion#1734: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -784,7 +784,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("EntryAbility_label", 1i64)
-            @Expect("assertion#1735: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -807,7 +807,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("EntryAbility_label", -1i64)
-            @Expect("assertion#1736: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -830,7 +830,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("EntryAbility_label", 12345678i64)
-            @Expect("assertion#1737: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -853,7 +853,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("startIcon", 1i64)
-            @Expect("assertion#1738: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -876,7 +876,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("startIcon", -1i64)
-            @Expect("assertion#1739: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -899,7 +899,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("startIcon", 12345678i64)
-            @Expect("assertion#1740: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -922,7 +922,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("main_pages", 1i64)
-            @Expect("assertion#1741: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -945,7 +945,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("main_pages", -1i64)
-            @Expect("assertion#1742: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -968,7 +968,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("main_pages", 12345678i64)
-            @Expect("assertion#1743: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -991,7 +991,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("start_window_background", 1i64)
-            @Expect("assertion#1744: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1014,7 +1014,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("start_window_background", -1i64)
-            @Expect("assertion#1745: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1037,7 +1037,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("start_window_background", 12345678i64)
-            @Expect("assertion#1746: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1060,7 +1060,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("float_1", 1i64)
-            @Expect("assertion#1747: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1083,7 +1083,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("float_1", -1i64)
-            @Expect("assertion#1748: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1106,7 +1106,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("float_1", 12345678i64)
-            @Expect("assertion#1749: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1129,7 +1129,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("float_2", 1i64)
-            @Expect("assertion#1750: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1152,7 +1152,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("float_2", -1i64)
-            @Expect("assertion#1751: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1175,7 +1175,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("float_2", 12345678i64)
-            @Expect("assertion#1752: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1198,7 +1198,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("int_1", 1i64)
-            @Expect("assertion#1753: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1221,7 +1221,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("int_1", -1i64)
-            @Expect("assertion#1754: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1244,7 +1244,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("int_1", 12345678i64)
-            @Expect("assertion#1755: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1267,7 +1267,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("int_2", 1i64)
-            @Expect("assertion#1756: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1290,7 +1290,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("int_2", -1i64)
-            @Expect("assertion#1757: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1313,7 +1313,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("int_2", 12345678i64)
-            @Expect("assertion#1758: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1336,7 +1336,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("test_boolean1", 1i64)
-            @Expect("assertion#1759: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1359,7 +1359,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("test_boolean1", -1i64)
-            @Expect("assertion#1760: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1382,7 +1382,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("test_boolean1", 12345678i64)
-            @Expect("assertion#1761: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1405,7 +1405,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("test_boolean0", 1i64)
-            @Expect("assertion#1762: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1428,7 +1428,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("test_boolean0", -1i64)
-            @Expect("assertion#1763: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1451,7 +1451,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("test_boolean0", 12345678i64)
-            @Expect("assertion#1764: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1474,7 +1474,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("boolean_3", 1i64)
-            @Expect("assertion#1765: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1497,7 +1497,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("boolean_3", -1i64)
-            @Expect("assertion#1766: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1520,7 +1520,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("boolean_3", 12345678i64)
-            @Expect("assertion#1767: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1543,7 +1543,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("boolean_4", 1i64)
-            @Expect("assertion#1768: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1566,7 +1566,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("boolean_4", -1i64)
-            @Expect("assertion#1769: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1589,7 +1589,7 @@ class TestGetPluralStringByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get PluralString by name.")
         try {
             getResourceManager().getPluralStringByName("boolean_4", 12345678i64)
-            @Expect("assertion#1770: not throw", "fail to get PluralString by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)

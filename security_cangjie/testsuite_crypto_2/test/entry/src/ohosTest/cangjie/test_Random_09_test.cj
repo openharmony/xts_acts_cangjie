@@ -39,7 +39,6 @@ class Test_Random_09 {
     @Tag[APILevel22, TestLevel0]
     func test_createRandom_01(): Unit {
         var globalRandom: Random
-
         try {
             globalRandom = createRandom()
             @Expect(true)
@@ -62,7 +61,6 @@ class Test_Random_09 {
         var globalRandom: Random
         var len: Int32 = 1
         var blob: DataBlob
-
         try {
             globalRandom = createRandom()
             blob = globalRandom.generateRandom(len)
@@ -86,7 +84,6 @@ class Test_Random_09 {
         var globalRandom: Random
         var len: Int32 = 0
         var blob: DataBlob
-
         try {
             globalRandom = createRandom()
             blob = globalRandom.generateRandom(len)
@@ -110,7 +107,6 @@ class Test_Random_09 {
         var globalRandom: Random
         var len: Int32 = -1
         var blob: DataBlob
-
         try {
             globalRandom = createRandom()
             blob = globalRandom.generateRandom(len)
@@ -134,7 +130,6 @@ class Test_Random_09 {
         var globalRandom: Random
         var len: Int32 = 1
         var blob: DataBlob
-
         try {
             globalRandom = createRandom()
             blob = globalRandom.generateRandom(len)
@@ -158,7 +153,6 @@ class Test_Random_09 {
     func test_setSeed_07(): Unit {
         var globalRandom: Random
         var blob: DataBlob = DataBlob("test".toArray())
-
         try {
             globalRandom = createRandom()
             globalRandom.setSeed(blob)

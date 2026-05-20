@@ -40,7 +40,7 @@ class createHttpResponseCache_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_1 begins.")
         Hilog.info(0, "cangjietest", "createHttpResponseCache")
         createHttpResponseCache(cacheSize: 0u32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -58,7 +58,7 @@ class createHttpResponseCache_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_2 begins.")
         Hilog.info(0, "cangjietest", "createHttpResponseCache")
         createHttpResponseCache(cacheSize: 1u32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
 
@@ -76,7 +76,7 @@ class createHttpResponseCache_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_3 begins.")
         Hilog.info(0, "cangjietest", "createHttpResponseCache")
         createHttpResponseCache(cacheSize: 2147483647u32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -94,7 +94,7 @@ class createHttpResponseCache_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_4 begins.")
         Hilog.info(0, "cangjietest", "createHttpResponseCache")
         createHttpResponseCache(cacheSize: 4294967295u32)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 }

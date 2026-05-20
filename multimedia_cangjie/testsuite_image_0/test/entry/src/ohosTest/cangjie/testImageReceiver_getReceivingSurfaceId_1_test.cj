@@ -443,7 +443,7 @@ class testImageReceiver_getReceivingSurfaceId_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 1i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "define local variable id")
         let id = imageReceiver.getReceivingSurfaceId()
-        @Assert(true, Int64.tryParse(id).isSome())
+        @Expect(true, Int64.tryParse(id).isSome())
         Hilog.info(0, "cangjietest", "testcase TestCase_42 ends.")
     }
 
@@ -463,7 +463,7 @@ class testImageReceiver_getReceivingSurfaceId_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 2i32), ImageFormat.Jpeg, 1i32)
         Hilog.info(0, "cangjietest", "define local variable id")
         let id = imageReceiver.getReceivingSurfaceId()
-        @Assert(true, Int64.tryParse(id).isSome())
+        @Expect(true, Int64.tryParse(id).isSome())
         Hilog.info(0, "cangjietest", "testcase TestCase_46 ends.")
     }
 
@@ -483,7 +483,7 @@ class testImageReceiver_getReceivingSurfaceId_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 2i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "define local variable id")
         let id = imageReceiver.getReceivingSurfaceId()
-        @Assert(true, Int64.tryParse(id).isSome())
+        @Expect(true, Int64.tryParse(id).isSome())
         Hilog.info(0, "cangjietest", "testcase TestCase_47 ends.")
     }
 
@@ -503,7 +503,7 @@ class testImageReceiver_getReceivingSurfaceId_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 2i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "define local variable id")
         let id = imageReceiver.getReceivingSurfaceId()
-        @Assert(true, Int64.tryParse(id).isSome())
+        @Expect(true, Int64.tryParse(id).isSome())
         Hilog.info(0, "cangjietest", "testcase TestCase_48 ends.")
     }
 
@@ -523,7 +523,7 @@ class testImageReceiver_getReceivingSurfaceId_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 3i32), ImageFormat.Jpeg, 1i32)
         Hilog.info(0, "cangjietest", "define local variable id")
         let id = imageReceiver.getReceivingSurfaceId()
-        @Assert(true, Int64.tryParse(id).isSome())
+        @Expect(true, Int64.tryParse(id).isSome())
         Hilog.info(0, "cangjietest", "testcase TestCase_52 ends.")
     }
 
@@ -543,7 +543,7 @@ class testImageReceiver_getReceivingSurfaceId_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 3i32), ImageFormat.Jpeg, 2i32)
         Hilog.info(0, "cangjietest", "define local variable id")
         let id = imageReceiver.getReceivingSurfaceId()
-        @Assert(true, Int64.tryParse(id).isSome())
+        @Expect(true, Int64.tryParse(id).isSome())
         Hilog.info(0, "cangjietest", "testcase TestCase_53 ends.")
     }
 
@@ -563,7 +563,7 @@ class testImageReceiver_getReceivingSurfaceId_1 {
         let imageReceiver = createImageReceiver(Size(3i32, 3i32), ImageFormat.Jpeg, 3i32)
         Hilog.info(0, "cangjietest", "define local variable id")
         let id = imageReceiver.getReceivingSurfaceId()
-        @Assert(true, Int64.tryParse(id).isSome())
+        @Expect(true, Int64.tryParse(id).isSome())
         Hilog.info(0, "cangjietest", "testcase TestCase_54 ends.")
     }
 }

@@ -109,7 +109,6 @@ class Test_createImageSource_03 {
     func test_creatImageSource_04(): Unit {
         var globalImageSource: ImageSource
         var image_info: ImageInfo
-
         try {
             globalImageSource = createImageSource("/data/storage/el1/base/test.png")
             image_info = globalImageSource.getImageInfo()
@@ -132,7 +131,6 @@ class Test_createImageSource_03 {
     @Tag[APILevel22, TestLevel0]
     func test_creatImageSource_05(): Unit {
         var globalImageSource: ImageSource
-
         try {
             globalImageSource = createImageSource("/data/storage/el1/base/test.123")
             @Expect(false)
@@ -154,7 +152,6 @@ class Test_createImageSource_03 {
     func test_creatImageSource_06(): Unit {
         var globalImageSource: ImageSource
         var path: String = ""
-
         try {
             globalImageSource = createImageSource(path)
             @Expect(false)
@@ -176,7 +173,6 @@ class Test_createImageSource_03 {
     func test_creatImageSource_07(): Unit {
         var globalImageSource: ImageSource
         var path: String = "file:///multimedia/test.jpg"
-
         try {
             globalImageSource = createImageSource(path)
             @Expect(false)
@@ -197,7 +193,6 @@ class Test_createImageSource_03 {
     @Tag[APILevel22, TestLevel0]
     func test_creatImageSource_08(): Unit {
         var globalImageSource: ImageSource
-
         try {
             globalImageSource = createImageSource(-2)
             @Expect(false)
@@ -218,7 +213,6 @@ class Test_createImageSource_03 {
     @Tag[APILevel22, TestLevel0]
     func test_creatImageSource_09(): Unit {
         var globalImageSource: ImageSource
-
         try {
             globalImageSource = createImageSource(0)
             @Expect(true)
@@ -261,7 +255,6 @@ class Test_createImageSource_03 {
     func test_creatImageSource_11(): Unit {
         var globalImageSource: ImageSource
         var buf: Array<UInt8> = Array<UInt8>(96) {index: Int64 => UInt8(index + 1)}
-
         try {
             globalImageSource = createImageSource(buf)
             @Expect(true)
@@ -283,7 +276,6 @@ class Test_createImageSource_03 {
     func test_creatImageSource_12(): Unit {
         var globalImageSource: ImageSource
         var buf: Array<UInt8> = Array<UInt8>(0, repeat: 0)
-
         try {
             globalImageSource = createImageSource(buf)
             @Expect(false)
@@ -305,7 +297,6 @@ class Test_createImageSource_03 {
     func test_creatImageSource_13(): Unit {
         var globalImageSource: ImageSource
         var opts = SourceOptions(120, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(4, 6))
-
         try {
             globalImageSource = createImageSource("/data/storage/el1/base/test.jpg", opts)
             @Expect(true)
@@ -327,7 +318,6 @@ class Test_createImageSource_03 {
     func test_creatImageSource_14(): Unit {
         var globalImageSource: ImageSource
         var opts = SourceOptions(120)
-
         try {
             globalImageSource = createImageSource("/data/storage/el1/base/test.webp", opts)
             @Expect(true)
@@ -350,7 +340,6 @@ class Test_createImageSource_03 {
         var globalImageSource: ImageSource
         var buf: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = SourceOptions(120)
-
         try {
             globalImageSource = createImageSource(buf, opts)
             @Expect(true)
@@ -373,7 +362,6 @@ class Test_createImageSource_03 {
         var globalImageSource: ImageSource
         var buf: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = SourceOptions(120, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(6, 8))
-
         try {
             globalImageSource = createImageSource(buf, opts)
             @Expect(true)
@@ -396,7 +384,6 @@ class Test_createImageSource_03 {
         var globalImageSource: ImageSource
         var buf: Array<UInt8> = Array<UInt8>(0, repeat: 0)
         var opts = SourceOptions(120, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(6, 8))
-
         try {
             globalImageSource = createImageSource(buf, opts)
             @Expect(false)
@@ -418,7 +405,6 @@ class Test_createImageSource_03 {
     func test_ImageSource_getImageInfo_18(): Unit {
         var globalImageSource: ImageSource
         var image_info: ImageInfo
-
         try {
             globalImageSource = createImageSource("/data/storage/el1/base/test.jpg")
             image_info = globalImageSource.getImageInfo()
@@ -441,7 +427,6 @@ class Test_createImageSource_03 {
     func test_ImageSource_getImageInfo_19(): Unit {
         var globalImageSource: ImageSource
         var image_info: ImageInfo
-
         try {
             globalImageSource = createImageSource(JPG_Buf)
             image_info = globalImageSource.getImageInfo()
@@ -466,7 +451,6 @@ class Test_createImageSource_03 {
         var globalImageSource: ImageSource
         var buf: Array<UInt8> = Array<UInt8>(96, repeat: 5)
         var opts = SourceOptions(120, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(6, 8))
-
         try {
             globalImageSource = createImageSource(buf, opts)
             var image_info = globalImageSource.getImageInfo(index: 0)
@@ -493,12 +477,10 @@ class Test_createImageSource_03 {
     func test_ImageSource_GetInfo_21(): Unit {
         var globalImageSource: ImageSource
         var image_info: ImageInfo
-
         try {
             globalImageSource = createImageSource("/data/storage/el1/base/EXIF.jpg")
             var Width = globalImageSource.getImageProperty(ImageWidth)
             var Length = globalImageSource.getImageProperty(ImageLength)
-
             @Expect(Width != "error")
             @Expect(Length != "error")
         } catch (e: BusinessException) {
@@ -523,7 +505,6 @@ class Test_createImageSource_03 {
             globalImageSource.modifyImageProperty(ImageLength, "800")
             var Width = globalImageSource.getImageProperty(ImageWidth)
             var Length = globalImageSource.getImageProperty(ImageLength)
-
             @Expect(Width, "4096")
             @Expect(Length, "800")
         } catch (e: BusinessException) {

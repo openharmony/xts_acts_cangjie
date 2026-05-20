@@ -41,8 +41,8 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
             let numberFormat = NumberFormatOptions(countryCode: "")
-            @Assert(Call.formatPhoneNumber("", options: numberFormat), "")
-            @Expect("assertion#26: not throw", "would throw exception")
+            @Expect(Call.formatPhoneNumber("", options: numberFormat), "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -65,8 +65,8 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
             let numberFormat = NumberFormatOptions(countryCode: "CN")
-            @Assert(Call.formatPhoneNumber("", options: numberFormat), "")
-            @Expect("assertion#27: not throw", "would throw exception")
+            @Expect(Call.formatPhoneNumber("", options: numberFormat), "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -89,8 +89,8 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
             let numberFormat = NumberFormatOptions(countryCode: "cn")
-            @Assert(Call.formatPhoneNumber("", options: numberFormat), "")
-            @Expect("assertion#28: not throw", "would throw exception")
+            @Expect(Call.formatPhoneNumber("", options: numberFormat), "")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -113,8 +113,8 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
             let numberFormat = NumberFormatOptions(countryCode: "")
-            @Assert(Call.formatPhoneNumber("12345678910", options: numberFormat), "12345678910")
-            @Expect("assertion#29: not throw", "would throw exception")
+            @Expect(Call.formatPhoneNumber("12345678910", options: numberFormat), "12345678910")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -136,7 +136,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_30 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "CN")
-        @Assert(Call.formatPhoneNumber("12345678910", options: numberFormat), "12345678910")
+        @Expect(Call.formatPhoneNumber("12345678910", options: numberFormat), "12345678910")
         Hilog.info(0, "cangjietest", "testcase TestCase_30 ends.")
     }
 
@@ -154,7 +154,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_31 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "cn")
-        @Assert(Call.formatPhoneNumber("12345678910", options: numberFormat), "12345678910")
+        @Expect(Call.formatPhoneNumber("12345678910", options: numberFormat), "12345678910")
         Hilog.info(0, "cangjietest", "testcase TestCase_31 ends.")
     }
 
@@ -173,8 +173,8 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
             let numberFormat = NumberFormatOptions(countryCode: "")
-            @Assert(Call.formatPhoneNumber("010-222222", options: numberFormat), "010-222222")
-            @Expect("assertion#32: not throw", "would throw exception")
+            @Expect(Call.formatPhoneNumber("010-222222", options: numberFormat), "010-222222")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -196,7 +196,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_33 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "CN")
-        @Assert(Call.formatPhoneNumber("010-222222", options: numberFormat), "010-222222")
+        @Expect(Call.formatPhoneNumber("010-222222", options: numberFormat), "010-222222")
         Hilog.info(0, "cangjietest", "testcase TestCase_33 ends.")
     }
 
@@ -214,7 +214,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_34 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "cn")
-        @Assert(Call.formatPhoneNumber("010-222222", options: numberFormat), "010-222222")
+        @Expect(Call.formatPhoneNumber("010-222222", options: numberFormat), "010-222222")
         Hilog.info(0, "cangjietest", "testcase TestCase_34 ends.")
     }
 
@@ -233,8 +233,8 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
             let numberFormat = NumberFormatOptions(countryCode: "")
-            @Assert(Call.formatPhoneNumber("11122223333", options: numberFormat), "11122223333")
-            @Expect("assertion#35: not throw", "would throw exception")
+            @Expect(Call.formatPhoneNumber("11122223333", options: numberFormat), "11122223333")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -256,7 +256,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_36 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "CN")
-        @Assert(Call.formatPhoneNumber("11122223333", options: numberFormat), "11122223333")
+        @Expect(Call.formatPhoneNumber("11122223333", options: numberFormat), "11122223333")
         Hilog.info(0, "cangjietest", "testcase TestCase_36 ends.")
     }
 
@@ -274,7 +274,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_37 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "cn")
-        @Assert(Call.formatPhoneNumber("11122223333", options: numberFormat), "11122223333")
+        @Expect(Call.formatPhoneNumber("11122223333", options: numberFormat), "11122223333")
         Hilog.info(0, "cangjietest", "testcase TestCase_37 ends.")
     }
 
@@ -293,8 +293,8 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
             let numberFormat = NumberFormatOptions(countryCode: "")
-            @Assert(Call.formatPhoneNumber("#1$2%3@4", options: numberFormat), "#1$2%3@4")
-            @Expect("assertion#38: not throw", "would throw exception")
+            @Expect(Call.formatPhoneNumber("#1$2%3@4", options: numberFormat), "#1$2%3@4")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -316,7 +316,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_39 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "CN")
-        @Assert(Call.formatPhoneNumber("#1$2%3@4", options: numberFormat), "#1$2%3@4")
+        @Expect(Call.formatPhoneNumber("#1$2%3@4", options: numberFormat), "#1$2%3@4")
         Hilog.info(0, "cangjietest", "testcase TestCase_39 ends.")
     }
 
@@ -334,7 +334,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_40 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "cn")
-        @Assert(Call.formatPhoneNumber("#1$2%3@4", options: numberFormat), "#1$2%3@4")
+        @Expect(Call.formatPhoneNumber("#1$2%3@4", options: numberFormat), "#1$2%3@4")
         Hilog.info(0, "cangjietest", "testcase TestCase_40 ends.")
     }
 
@@ -353,8 +353,8 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "would throw exception")
         try {
             let numberFormat = NumberFormatOptions(countryCode: "")
-            @Assert(Call.formatPhoneNumber("aaaa", options: numberFormat), "aaaa")
-            @Expect("assertion#41: not throw", "would throw exception")
+            @Expect(Call.formatPhoneNumber("aaaa", options: numberFormat), "aaaa")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid parameter value.")
             @Expect(e.code, 8300001i32)
@@ -376,7 +376,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_42 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "CN")
-        @Assert(Call.formatPhoneNumber("aaaa", options: numberFormat), "")
+        @Expect(Call.formatPhoneNumber("aaaa", options: numberFormat), "")
         Hilog.info(0, "cangjietest", "testcase TestCase_42 ends.")
     }
 
@@ -394,7 +394,7 @@ class testFormatPhoneNumber_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_43 begins.")
         Hilog.info(0, "cangjietest", "define local variable numberFormat")
         let numberFormat = NumberFormatOptions(countryCode: "cn")
-        @Assert(Call.formatPhoneNumber("aaaa", options: numberFormat), "")
+        @Expect(Call.formatPhoneNumber("aaaa", options: numberFormat), "")
         Hilog.info(0, "cangjietest", "testcase TestCase_43 ends.")
     }
 }

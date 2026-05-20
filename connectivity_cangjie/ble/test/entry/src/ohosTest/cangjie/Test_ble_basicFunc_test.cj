@@ -42,6 +42,7 @@ class Test_ble_bacicFunc {
     func test_ble_createGattClientDevice() {
         try {
             let device: GattClientDevice = createGattClientDevice("00:11:00:11")
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "Cangjietest", "errCodeggg: ${e.toString()}, errMessage: ${e.message}")
             @Expect(e.message,"Operation failed.")
@@ -61,6 +62,7 @@ class Test_ble_bacicFunc {
     func test_ble_createGattServer() {
         try {
             let gattServer: GattServer = createGattServer()
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
             @Expect(e.code,401)
@@ -107,8 +109,8 @@ class Test_ble_bacicFunc {
         var advHandle: UInt32 = 0xFF
         try {
             startAdvertising(advertisingSettings, advertisingData, advResponse: advertisingResponse)
-            //            let advertisingDisableParams = AdvertisingDisableParams(advHandle)
             stopAdvertising(advHandle)
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
             @Expect(e.code,201)
@@ -153,14 +155,10 @@ class Test_ble_bacicFunc {
             advertisingResponse: advertisingResponse,
             duration: 300
         )
-
         var advHandle: UInt32 = 0xFF
-
         try {
-            //2902054
             advHandle = startAdvertising(advertisingParams)
-        //            let advertisingEnableParams = AdvertisingEnableParams(advHandle, duration: 1000)
-        //            enableAdvertising(advertisingEnableParams)
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
             @Expect(e.code,201)
@@ -201,6 +199,7 @@ class Test_ble_bacicFunc {
         )
         try {
             startAdvertising(advertisingSettings, advertisingData, advResponse: advertisingResponse)
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
             @Expect(e.code,201)
@@ -248,6 +247,7 @@ class Test_ble_bacicFunc {
         try {
             advHandle = startAdvertising(advertisingParams)
             stopAdvertising(advHandle)
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
             @Expect(e.code,201)
@@ -267,6 +267,7 @@ class Test_ble_bacicFunc {
     func test_ble_stopBLEScan() {
         try {
             stopBleScanning()
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "Bluetooth", "errCode: ${e.code}, errMessage: ${e.message}")
             @Expect(e.code,201)

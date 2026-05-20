@@ -55,7 +55,6 @@ class TestSensorOnOff {
             sleepFor(300.milliSecond)
             @Expect(callback.invokedCount, 1)
         } catch (e: BusinessException) {
-            // failExpect("once failed, ${e}")
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401)
         }
@@ -74,13 +73,12 @@ class TestSensorOnOff {
     func On_DefaultInternal_CallMultipleTimes(): Unit {
         let callback = OrientationSensorCallback()
         try {
-            on(SensorId.Orientation, callback) // default report interval 200ms
+            on(SensorId.Orientation, callback)
             sleepFor(450.milliSecond)
             Hilog.info(0, "cangjietest", "## On_DefaultInternal_CallMultipleTimes, ${callback.invokedCount}")
             @Expect(callback.invokedCount >= 2)
             off(SensorId.Orientation, callback: callback)
         } catch (e: BusinessException) {
-            // failExpect("on failed, ${e}")
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401)
         }
@@ -125,7 +123,6 @@ class TestSensorOnOff {
             @Expect(callback.invokedCount >= 4)
             off(SensorId.Orientation)
         } catch (e: BusinessException) {
-            // failExpect("once failed, ${e}")
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401)
         }
@@ -153,7 +150,6 @@ class TestSensorOnOff {
             @Expect(offcallback1InvokeCnt, callback2.invokedCount)
             off(SensorId.Orientation)
         } catch (e: BusinessException) {
-            // failExpect("on failed, ${e}")
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401)
         }
@@ -174,7 +170,6 @@ class TestSensorOnOff {
         let callback2 = OrientationSensorCallback()
         try {
             on(SensorId.Orientation, callback1)
-
             on(SensorId.Orientation, callback2)
             off(SensorId.Orientation)
             sleepFor(201.milliSecond)
@@ -184,7 +179,6 @@ class TestSensorOnOff {
             @Expect(offcallback1InvokeCnt, callback1.invokedCount)
             @Expect(offcallback2InvokeCnt, callback2.invokedCount)
         } catch (e: BusinessException) {
-            // failExpect("on failed, ${e}")
             @Expect(e.message, "Parameter error. Parameter verification failed.")
             @Expect(e.code, 401)
         }
@@ -201,7 +195,6 @@ class TestSensorOnOff {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func On_NoPermissionSensorId_ThrowException() {
-        // user granted permission: ACTIVITY_MOTION
         expectBusinessException(201) {
             on(Pedometer, PedometerResponseCallback())
         }

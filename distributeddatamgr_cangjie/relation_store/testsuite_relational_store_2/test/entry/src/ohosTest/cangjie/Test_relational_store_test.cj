@@ -215,9 +215,7 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_contains() {
         rdbPridecates.contains("test", "test")
-
         rdbPridecates.contains("test", "")
-
         try {
             rdbPridecates.contains("", "test")
             @Expect(false)
@@ -238,9 +236,7 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_beginsWith() {
         rdbPridecates.beginsWith("test", "test")
-
         rdbPridecates.beginsWith("test", "")
-
         try {
             rdbPridecates.beginsWith("", "test")
             @Expect(false)
@@ -261,9 +257,7 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_endsWith() {
         rdbPridecates.endsWith("test", "test")
-
         rdbPridecates.endsWith("test", "")
-
         try {
             rdbPridecates.endsWith("", "test")
             @Expect(false)
@@ -284,7 +278,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_isNull() {
         rdbPridecates.isNull("test")
-
         try {
             rdbPridecates.isNull("")
             @Expect(false)
@@ -305,7 +298,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_isNotNull() {
         rdbPridecates.isNotNull("test")
-
         try {
             rdbPridecates.isNotNull("")
             @Expect(false)
@@ -326,9 +318,7 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_like() {
         rdbPridecates.like("test", "test")
-
         rdbPridecates.like("test", "")
-
         try {
             rdbPridecates.like("", "test")
             @Expect(false)
@@ -349,9 +339,7 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_glob() {
         rdbPridecates.glob("test", "test")
-
         rdbPridecates.glob("test", "")
-
         try {
             rdbPridecates.glob("", "test")
             @Expect(false)
@@ -372,7 +360,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_orderByDesc() {
         rdbPridecates.orderByDesc("test")
-
         try {
             rdbPridecates.orderByDesc("")
             @Expect(false)
@@ -438,7 +425,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_lessThanOrEqualTo() {
         rdbPridecates.lessThanOrEqualTo("test", RelationalStoreValueType.StringValue("test"))
-
         try {
             rdbPridecates.lessThanOrEqualTo("", RelationalStoreValueType.StringValue("test"))
             @Expect(false)
@@ -459,7 +445,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_equalTo() {
         rdbPridecates.equalTo("test", RelationalStoreValueType.StringValue("test"))
-
         try {
             rdbPridecates.equalTo("", RelationalStoreValueType.StringValue("test"))
             @Expect(false)
@@ -480,7 +465,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_greaterThanOrEqualTo() {
         rdbPridecates.greaterThanOrEqualTo("test", RelationalStoreValueType.StringValue("test"))
-
         try {
             rdbPridecates.greaterThanOrEqualTo("", RelationalStoreValueType.StringValue("test"))
             @Expect(false)
@@ -501,7 +485,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_greaterThan() {
         rdbPridecates.greaterThan("test", RelationalStoreValueType.StringValue("test"))
-
         try {
             rdbPridecates.greaterThan("", RelationalStoreValueType.StringValue("test"))
             @Expect(false)
@@ -522,7 +505,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_lessThan() {
         rdbPridecates.lessThan("test", RelationalStoreValueType.StringValue("test"))
-
         try {
             rdbPridecates.lessThan("", RelationalStoreValueType.StringValue("test"))
             @Expect(false)
@@ -543,7 +525,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_notEqualTo() {
         rdbPridecates.notEqualTo("test", RelationalStoreValueType.StringValue("test"))
-
         try {
             rdbPridecates.notEqualTo("", RelationalStoreValueType.StringValue("test"))
             @Expect(false)
@@ -565,7 +546,6 @@ class Test_relational_store {
     func test_notBetween() {
         rdbPridecates.notBetween("test", RelationalStoreValueType.StringValue(""),
             RelationalStoreValueType.StringValue("test"))
-
         try {
             rdbPridecates.notBetween("", RelationalStoreValueType.StringValue(""),
                 RelationalStoreValueType.StringValue("test"))
@@ -681,17 +661,14 @@ class Test_relational_store {
         values.add("NAME", RelationalStoreValueType.StringValue("Rain"))
         values.add("AGE", RelationalStoreValueType.Integer(18))
         rdbStore.insert("PEOPLE", values)
-
         values.add("ID", RelationalStoreValueType.Integer(2))
         values.add("NAME", RelationalStoreValueType.StringValue("Sun"))
         values.add("AGE", RelationalStoreValueType.Integer(18))
         rdbStore.insert("PEOPLE", values)
-
         values.add("ID", RelationalStoreValueType.Integer(3))
         values.add("NAME", RelationalStoreValueType.StringValue("Rain"))
         values.add("AGE", RelationalStoreValueType.Integer(20))
         rdbStore.insert("PEOPLE", values)
-
         let predicates = RdbPredicates("PEOPLE")
         predicates.equalTo("NAME", RelationalStoreValueType.StringValue("Rain"))
         try {
@@ -741,7 +718,6 @@ class Test_relational_store {
         } catch (e: BusinessException) {
             @Expect(e.code, 401)
         }
-
         try {
             exceptionRdbStore.restore("123123")
             @Expect(false)
@@ -767,17 +743,14 @@ class Test_relational_store {
         values.add("ID", RelationalStoreValueType.Integer(1))
         values.add("NAME", RelationalStoreValueType.StringValue("Rain"))
         rdbStore.insert("THING", values)
-
         rdbStore.beginTransaction()
         values.add("ID", RelationalStoreValueType.Integer(2))
         values.add("NAME", RelationalStoreValueType.StringValue("Sun"))
         rdbStore.insert("THING", values)
         rdbStore.commit()
-
         let predicates = RdbPredicates("THING")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME"])
         @Expect(resultSet.rowCount, 2)
-
         try {
             rdbStore.beginTransaction()
             values.add("ID", RelationalStoreValueType.Integer(3))
@@ -788,6 +761,7 @@ class Test_relational_store {
             rdbStore.insert("THING", values)
             throw Exception("there is error!")
             rdbStore.commit()
+            @Expect(false)
         } catch (e: Exception) {
             rdbStore.rollBack()
         }
@@ -869,6 +843,7 @@ class Test_relational_store {
         let resultSet1 = rdbStore.query(predicates1, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         try {
             let map1 = resultSet1.getRow()
+            @Expect(false)
         } catch (_: BusinessException) {
         }
         match (map["ID"]) {
@@ -933,7 +908,6 @@ class Test_relational_store {
         rdbStore.off("PRINT", false)
         rdbStore.off("PRINT", false)
         rdbStore.emit("PRINT")
-
     }
 
     /*
@@ -974,9 +948,11 @@ class Test_relational_store {
             rdbStore.on("PRINT", false, testCallback1)
             rdbStore.on("PRINT", false, testCallback1)
             rdbStore.on("PRINT", false, testCallback2)
+            @Expect(false)
         } catch (_: BusinessException) {}
         try {
             rdbStore.emit("1")
+            @Expect(false)
         } catch (_: BusinessException) {}
     }
 
@@ -996,6 +972,7 @@ class Test_relational_store {
         let exceptionPredicates = RdbPredicates("EMPLOYEE")
         try {
             exceptionPredicates.distinct()
+            @Expect(false)
         } catch (_: BusinessException) {}
         predicates.equalTo("AGE", RelationalStoreValueType.Integer(18))
         let resultSet = rdbStore.query(predicates, columns: ["AGE"])
@@ -1026,7 +1003,6 @@ class Test_relational_store {
         values.add("NAME", RelationalStoreValueType.StringValue("P"))
         values.add("AGE", RelationalStoreValueType.Integer(88))
         values.add("SALARY", RelationalStoreValueType.Double(9999.513))
-
         rdbStore.update(values, predicates)
         let resultSet = rdbStore.query(
             RdbPredicates("EMPLOYEE").`inValues`("NAME", [RelationalStoreValueType.StringValue("P")]),
@@ -1059,13 +1035,11 @@ class Test_relational_store {
         @Expect(resultSet.rowIndex, 0)
         @Expect(resultSet.isAtFirstRow, true)
         @Expect(resultSet.isStarted, true)
-
         @Expect(resultSet.isAtLastRow, false)
         @Expect(resultSet.isEnded, false)
         @Expect(resultSet.goTo(2), true)
         @Expect(resultSet.isAtLastRow, true)
         @Expect(resultSet.isEnded, false)
-
         @Expect(resultSet.isClosed, false)
         resultSet.close()
         @Expect(resultSet.isClosed, true)
@@ -1092,25 +1066,21 @@ class Test_relational_store {
         v1.add("AGE", RelationalStoreValueType.Integer(18))
         v1.add("SALARY", RelationalStoreValueType.Double(100.5))
         v1.add("CODES", RelationalStoreValueType.Boolean(true))
-
         let v2 = HashMap<String, RelationalStoreValueType>()
         v2.add("ID", RelationalStoreValueType.Integer(5))
         v2.add("NAME", RelationalStoreValueType.StringValue("Jack"))
         v2.add("AGE", RelationalStoreValueType.Integer(18))
         v2.add("SALARY", RelationalStoreValueType.Double(1000.5))
         v2.add("CODES", RelationalStoreValueType.Boolean(false))
-
         try {
             rdbStore.batchInsert("", [v1, v2])
             @Expect(false)
         } catch (_: BusinessException) {}
-
         try {
             rdbStore.batchInsert("112233", [v1, v2])
+            @Expect(false)
         } catch (_: BusinessException) {}
-
         rdbStore.batchInsert("EMPLOYEE", [])
-
         rdbStore.batchInsert("EMPLOYEE", [v1, v2])
         let resultSet2 = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         @Expect(resultSet2.rowCount, 5)
@@ -1135,20 +1105,18 @@ class Test_relational_store {
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.orderByAsc("SALARY")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
-
-        // exception branch
         try {
             resultSet.isColumnNull(-1)
+            @Expect(false)
         } catch (_: BusinessException) {}
-
         try {
             resultSet.getColumnName(-1)
+            @Expect(false)
         } catch (_: BusinessException) {}
-
         try {
             resultSet.getDouble(-1)
+            @Expect(false)
         } catch (_: BusinessException) {}
-
         @Expect(resultSet.goToRow(0), true)
         @Expect(resultSet.getDouble(3), 100.5)
         @Expect(resultSet.goToLastRow(), true)
@@ -1185,7 +1153,6 @@ class Test_relational_store {
         @Expect(resultSet.getLong(2), 18)
         @Expect(resultSet.getDouble(3), 100.5)
         @Expect(resultSet.getLong(4), 1)
-
         rdbStore.executeSql(
             "CREATE TABLE DATA(ID int NOT NULL, NAME Uint8Array NOT NULL, INFO Asset, INFOS Assets, PRIMARY KEY (Id))")
         let arr: Array<UInt8> = [1, 2, 3]
@@ -1199,9 +1166,7 @@ class Test_relational_store {
                 [Asset("info2", "uri2", "path2", "1:00", "9:00", "200MB"),
                     Asset("info3", "uri3", "path3", "2:00", "10:00", "300MB")])
         )
-
         rdbStore.insert("DATA", values)
-
         let predicates2 = RdbPredicates("DATA")
         let resultSet2 = rdbStore.query(predicates2, columns: ["ID", "NAME", "INFO", "INFOS"])
         @Expect(resultSet2.goToFirstRow(), true)
@@ -1209,36 +1174,30 @@ class Test_relational_store {
         @Expect(resultSet2.getBlob(resultSet2.getColumnIndex("NAME")), arr)
         @Expect(resultSet2.getAsset(resultSet2.getColumnIndex("INFO")).name, "info1")
         @Expect(resultSet2.getAssets(resultSet2.getColumnIndex("INFOS"))[0].name, "info2")
-
-        // Exceptions
         try {
             resultSet2.getBlob(-1)
             @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14800013)
         }
-
         try {
             resultSet2.getLong(-1)
             @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14800013)
         }
-
         try {
             resultSet2.getAsset(-1)
             @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14800013)
         }
-
         try {
             resultSet2.getAssets(-1)
             @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 14800013)
         }
-
         try {
             resultSet2.getString(-1)
             @Expect(false)
@@ -1266,11 +1225,13 @@ class Test_relational_store {
         }
         try {
             rdbStore.executeSql("123abc")
+            @Expect(false)
         } catch (_: BusinessException) {
         }
         try {
             let sql = "CREATE TABLE DATA1(ID int NOT NULL, NAME Uint8Array NOT NULL, INFO Asset, INFOS Assets, PRIMARY KEY (?))"
             rdbStore.executeSql(sql, bindArgs: [RelationalStoreValueType.StringValue("Id")])
+            @Expect(false)
         } catch (_: BusinessException) {
         }
         try {
@@ -1281,6 +1242,7 @@ class Test_relational_store {
         }
         try {
             rdbStore.executeSql("123123", bindArgs: [RelationalStoreValueType.StringValue("123")])
+            @Expect(false)
         } catch (_: BusinessException) {
         }
     }
@@ -1330,7 +1292,6 @@ class Test_relational_store {
     @Tag[APILevel22, TestLevel0]
     func test_indexedBy() {
         let rdbStore = store.getOrThrow()
-        // 创建索引
         rdbStore.executeSql("CREATE INDEX SALARY_INDEX ON EMPLOYEE(SALARY)")
         let predicates = RdbPredicates("EMPLOYEE")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])

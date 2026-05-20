@@ -42,12 +42,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.BoolData(true))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_1 ends.")
     }
 
@@ -66,12 +65,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.BoolArray([false, true]))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_2 ends.")
     }
 
@@ -90,12 +88,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.Double(Float64.Min))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_3 ends.")
     }
 
@@ -114,12 +111,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.Double(Float64.Max))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_4 ends.")
     }
 
@@ -138,12 +134,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.Double(Float64.Inf))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_5 ends.")
     }
 
@@ -162,12 +157,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.Double(0.000000f64))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_6 ends.")
     }
 
@@ -186,12 +180,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.DoubleArray([Float64.Min, Float64.Max, Float64.Inf, 0.000000f64]))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_7 ends.")
     }
 
@@ -210,12 +203,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.Integer(Int64.Min))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_8 ends.")
     }
 
@@ -234,12 +226,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.Integer(-1i64))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_9 ends.")
     }
 
@@ -258,12 +249,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.Integer(0i64))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_10 ends.")
     }
 
@@ -282,12 +272,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.Integer(1i64))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_11 ends.")
     }
 
@@ -306,12 +295,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.Integer(Int64.Max))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_12 ends.")
     }
 
@@ -330,12 +318,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.StringData(""))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_13 ends.")
     }
 
@@ -354,12 +341,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.StringData("\0"))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_14 ends.")
     }
 
@@ -378,12 +364,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.StringData("hello world"))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_15 ends.")
     }
 
@@ -402,12 +387,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.StringArray(["a", "b", "c"]))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_16 ends.")
     }
 
@@ -426,12 +410,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.StringArray(["", "", ""]))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_17 ends.")
     }
 
@@ -450,12 +433,11 @@ class TestOn_1 {
         Hilog.info(0, "cangjietest","define local variable preferences")
         let preferences = Preferences.getPreferences(Global.getAbilityContext(), "myPreferences")
         Hilog.info(0, "cangjietest","on")
-        //preferences.on(PreferencesEvent.PreferencesChange, CallBack())
         Hilog.info(0, "cangjietest","put")
         preferences.put("key", PreferencesValueType.StringArray(["", "\0", "hello world"]))
         Hilog.info(0, "cangjietest","flush")
         preferences.flush()
-        @Assert(hasCallBackRun, false)
+        @Expect(hasCallBackRun, false)
         Hilog.info(0, "cangjietest","testcase TestCase_18 ends.")
     }
 }

@@ -38,7 +38,7 @@ class testCofigure_1 {
         Hilog.info(0, "cangjietest","testcase TestCase_1 begins.")
         Hilog.info(0, "cangjietest","define local variable config")
         let config = HiAppEvent.configure(ConfigOption(maxStorage:"100M", disable: true))
-        @Assert(true, true)
+        @Expect(true, true)
         Hilog.info(0, "cangjietest","testcase TestCase_1 ends.")
     }
 
@@ -56,7 +56,7 @@ class testCofigure_1 {
         Hilog.info(0, "cangjietest","testcase TestCase_2 begins.")
         Hilog.info(0, "cangjietest","define local variable config")
         let config = HiAppEvent.configure(ConfigOption(maxStorage:"200M", disable: true))
-        @Assert(true, true)
+        @Expect(true, true)
         Hilog.info(0, "cangjietest","testcase TestCase_2 ends.")
     }
 
@@ -76,7 +76,7 @@ class testCofigure_1 {
         Hilog.info(0, "cangjietest","testcase TestCase_7 begins.")
         Hilog.info(0, "cangjietest","define local variable config")
         let config = HiAppEvent.configure(ConfigOption(maxStorage:"100M", disable: false))
-        @Assert(true, true)
+        @Expect(true, true)
         Hilog.info(0, "cangjietest","testcase TestCase_7 ends.")
     }
 
@@ -94,7 +94,7 @@ class testCofigure_1 {
         Hilog.info(0, "cangjietest","testcase TestCase_8 begins.")
         Hilog.info(0, "cangjietest","define local variable config")
         let config = HiAppEvent.configure(ConfigOption(maxStorage:"200M", disable: false))
-        @Assert(true, true)
+        @Expect(true, true)
         Hilog.info(0, "cangjietest","testcase TestCase_8 ends.")
     }
 
@@ -112,7 +112,7 @@ class testCofigure_1 {
         Hilog.info(0, "cangjietest","testcase TestCase_9 begins.")
         Hilog.info(0, "cangjietest","define local variable config")
         let config = HiAppEvent.configure(ConfigOption(maxStorage:"300M", disable: false))
-        @Assert(true, true)
+        @Expect(true, true)
         Hilog.info(0, "cangjietest","testcase TestCase_9 ends.")
     }
 
@@ -133,7 +133,7 @@ class testCofigure_1 {
         Hilog.info(0, "cangjietest","testcase TestCase_13 begins.")
         Hilog.info(0, "cangjietest","define local variable config")
         let config = HiAppEvent.configure(ConfigOption(maxStorage:"100M"))
-        @Assert(true, true)
+        @Expect(true, true)
         Hilog.info(0, "cangjietest","testcase TestCase_13 ends.")
     }
 
@@ -151,7 +151,7 @@ class testCofigure_1 {
         Hilog.info(0, "cangjietest","testcase TestCase_14 begins.")
         Hilog.info(0, "cangjietest","define local variable config")
         let config = HiAppEvent.configure(ConfigOption(maxStorage:"200M"))
-        @Assert(true, true)
+        @Expect(true, true)
         Hilog.info(0, "cangjietest","testcase TestCase_14 ends.")
     }
 

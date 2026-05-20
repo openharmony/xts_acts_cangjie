@@ -41,14 +41,13 @@ class Test_request_01 {
             "https://gitee.com/organizations/openharmony/projects",
             {
                 e, resp =>
-                //the net is not connect
                 if (let Some(err) <- e) {
                     Hilog.info(0, "CangjieTest", "${err.code}")
                     Hilog.info(0, "CangjieTest", "${err.message}")
                 }
                 if (let Some(r) <- resp) {
-                    Hilog.info(0, "CangjieTest", "resp:") //  ${r.result}
-                    Hilog.info(0, "test", "resp: ") // ${r}
+                    Hilog.info(0, "CangjieTest", "resp:")
+                    Hilog.info(0, "test", "resp: ")
                 } else {
                     Hilog.error(0, "CangjieTest", "response is none")
                 }
@@ -78,7 +77,7 @@ class Test_request_01 {
                     Hilog.info(0, "CangjieTest", "${err.message}")
                 }
                 if (let Some(r) <- resp) {
-                    Hilog.info(0, "CangjieTest", "resp:") //  ${r.result}"
+                    Hilog.info(0, "CangjieTest", "resp:")
                     match (r.resultType) {
                         case STRING => Hilog.info(0, "CangjieTest", "STRING")
                         case ARRAY_BUFFER => Hilog.info(0, "CangjieTest", "ARRAY_BUFFER")
@@ -129,7 +128,7 @@ class Test_request_01 {
                     Hilog.info(0, "CangjieTest", "${err.message}")
                 }
                 if (let Some(r) <- resp) {
-                    Hilog.info(0, "CangjieTest", "resp:") //  ${r.result}"
+                    Hilog.info(0, "CangjieTest", "resp:")
                     match (r.resultType) {
                         case STRING => Hilog.info(0, "CangjieTest", "STRING")
                         case ARRAY_BUFFER => Hilog.info(0, "CangjieTest", "ARRAY_BUFFER")

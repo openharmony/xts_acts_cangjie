@@ -56,9 +56,7 @@ class testModuleInfo_moduleType_entry_3 {
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_61 ends.")
     }
@@ -90,9 +88,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_62 ends.")
     }
@@ -124,9 +120,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_63 ends.")
     }
@@ -157,9 +151,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_64 ends.")
     }
@@ -191,9 +183,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_65 ends.")
     }
@@ -224,9 +214,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_66 ends.")
     }
@@ -257,9 +245,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_67 ends.")
     }
@@ -290,9 +276,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_68 ends.")
     }
@@ -324,9 +308,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_69 ends.")
     }
@@ -358,9 +340,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_70 ends.")
     }
@@ -393,9 +373,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_71 ends.")
     }
@@ -428,9 +406,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_72 ends.")
     }
@@ -463,9 +439,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_73 ends.")
     }
@@ -497,9 +471,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_74 ends.")
     }
@@ -532,9 +504,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_75 ends.")
     }
@@ -566,9 +536,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_76 ends.")
     }
@@ -600,9 +568,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_77 ends.")
     }
@@ -634,9 +600,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_78 ends.")
     }
@@ -669,9 +633,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_79 ends.")
     }
@@ -703,9 +665,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_80 ends.")
     }
@@ -737,9 +697,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_81 ends.")
     }
@@ -771,9 +729,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_82 ends.")
     }
@@ -805,9 +761,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_83 ends.")
     }
@@ -838,9 +792,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_84 ends.")
     }
@@ -872,9 +824,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_85 ends.")
     }
@@ -906,9 +856,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_86 ends.")
     }
@@ -941,9 +889,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_87 ends.")
     }
@@ -975,9 +921,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_88 ends.")
     }
@@ -1009,9 +953,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_89 ends.")
     }
@@ -1043,9 +985,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_90 ends.")
     }

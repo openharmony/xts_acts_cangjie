@@ -46,7 +46,7 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                     desiredRegion: Region(Size(1i32, 1i32), 0i32, 0i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
             @Expect(true)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -74,7 +74,7 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                     desiredRegion: Region(Size(2i32, 1i32), 5i32, 0i32), desiredPixelFormat: PixelMapFormat.Rgb565,
                     index: 1u32, fitDensity: 1i32,))
             @Expect(true)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -101,8 +101,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(3i32, 1i32),
                     desiredRegion: Region(Size(3i32, 1i32), 10i32, 0i32), desiredPixelFormat: PixelMapFormat.Rgba8888,
                     index: 2u32, fitDensity: 2i32,))
-            @Assert(true)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -129,8 +129,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 2i32),
                     desiredRegion: Region(Size(2i32, 1i32), 0i32, 2i32), desiredPixelFormat: PixelMapFormat.Bgra8888,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#3: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -157,8 +157,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(2i32, 2i32),
                     desiredRegion: Region(Size(1i32, 1i32), 5i32, 2i32), desiredPixelFormat: PixelMapFormat.Rgb888,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#4: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -185,8 +185,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(3i32, 2i32),
                     desiredRegion: Region(Size(1i32, 2i32), 10i32, 2i32), desiredPixelFormat: PixelMapFormat.Alpha8,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#5: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -213,8 +213,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 3i32),
                     desiredRegion: Region(Size(3i32, 1i32), 0i32, 4i32), desiredPixelFormat: PixelMapFormat.RgbaF16,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#6: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -241,8 +241,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(2i32, 3i32),
                     desiredRegion: Region(Size(1i32, 2i32), 5i32, 4i32), desiredPixelFormat: PixelMapFormat.Nv21,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#7: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -269,8 +269,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(3i32, 3i32),
                     desiredRegion: Region(Size(1i32, 1i32), 10i32, 4i32), desiredPixelFormat: PixelMapFormat.Nv12,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#8: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -297,8 +297,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(1i32, 2i32), 0i32, 0i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#9: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -325,8 +325,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(2i32, 2i32), 0i32, 0i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#10: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -353,8 +353,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(3i32, 2i32), 0i32, 0i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#11: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -381,8 +381,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(1i32, 3i32), 0i32, 0i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#12: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -409,8 +409,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(2i32, 3i32), 0i32, 0i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#13: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -437,8 +437,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(3i32, 3i32), 0i32, 0i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#14: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -465,8 +465,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(3i32, 1i32), 5i32, 2i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#15: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -493,8 +493,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(2i32, 2i32), 5i32, 2i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#16: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -521,8 +521,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(3i32, 2i32), 5i32, 2i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#17: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -549,8 +549,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(1i32, 3i32), 5i32, 2i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#18: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -577,8 +577,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(2i32, 3i32), 5i32, 2i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#19: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -605,8 +605,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(3i32, 3i32), 5i32, 2i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#20: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -633,8 +633,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(2i32, 1i32), 10i32, 4i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#21: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -661,8 +661,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(2i32, 2i32), 10i32, 4i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#22: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -689,8 +689,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(3i32, 2i32), 10i32, 4i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#23: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -717,8 +717,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(1i32, 3i32), 10i32, 4i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#24: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -745,8 +745,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(2i32, 3i32), 10i32, 4i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#25: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -773,8 +773,8 @@ class testImageSource_createPixelMap_DecodingOptions_1 {
                 options: DecodingOptions(sampleSize: 1u32, rotate: 0u32, editable: true, desiredSize: Size(1i32, 1i32),
                     desiredRegion: Region(Size(3i32, 3i32), 10i32, 4i32), desiredPixelFormat: PixelMapFormat.Unknown,
                     index: 0u32, fitDensity: 0i32,))
-            @Assert(true)
-            @Expect("assertion#26: not throw", "createImageSource fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)

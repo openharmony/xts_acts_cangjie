@@ -42,7 +42,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(1i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -67,7 +67,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("../test.jpg",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.Rgb565, sourceSize: Size(1i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -92,7 +92,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("../test.png",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(1i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110)
@@ -117,7 +117,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(2i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#3: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -142,7 +142,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb565, sourceSize: Size(2i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#4: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -167,7 +167,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.Bgra8888, sourceSize: Size(2i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#5: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -192,7 +192,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(3i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#6: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -217,7 +217,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(3i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#7: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -242,7 +242,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.Bgra8888, sourceSize: Size(3i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#8: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -267,7 +267,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.Rgb565, sourceSize: Size(1i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#9: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -292,7 +292,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(1i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#10: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -317,7 +317,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Bgra8888, sourceSize: Size(1i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#11: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -342,7 +342,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb888, sourceSize: Size(2i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#12: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -367,7 +367,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.Alpha8, sourceSize: Size(2i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#13: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -392,7 +392,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.RgbaF16, sourceSize: Size(2i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#14: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -417,7 +417,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.Rgb888, sourceSize: Size(3i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#15: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -442,7 +442,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Alpha8, sourceSize: Size(3i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#16: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -467,7 +467,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.Nv21, sourceSize: Size(3i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#17: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -492,7 +492,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.Rgb888, sourceSize: Size(1i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#18: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -517,7 +517,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.RgbaF16, sourceSize: Size(1i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#19: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -542,7 +542,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.Nv21, sourceSize: Size(1i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#20: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -567,7 +567,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.Alpha8, sourceSize: Size(2i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#21: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -592,7 +592,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.RgbaF16, sourceSize: Size(2i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#22: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -617,7 +617,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv21, sourceSize: Size(2i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#23: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -642,7 +642,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv12, sourceSize: Size(3i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#24: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -667,7 +667,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.Nv12, sourceSize: Size(1i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#25: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -692,7 +692,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.Nv12, sourceSize: Size(2i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#26: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -717,7 +717,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(1i32, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(3i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#27: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -742,7 +742,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(2i32, sourcePixelFormat: PixelMapFormat.Rgb565, sourceSize: Size(3i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#28: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -767,7 +767,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Bgra8888, sourceSize: Size(1i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#29: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -792,7 +792,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb888, sourceSize: Size(1i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#30: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -817,7 +817,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Alpha8, sourceSize: Size(1i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#31: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -842,7 +842,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.RgbaF16, sourceSize: Size(1i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#32: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -867,7 +867,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv21, sourceSize: Size(1i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#33: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -892,7 +892,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(2i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#34: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -917,7 +917,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb888, sourceSize: Size(2i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#35: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -942,7 +942,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Alpha8, sourceSize: Size(2i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#36: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -967,7 +967,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.RgbaF16, sourceSize: Size(2i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#37: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -992,7 +992,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv21, sourceSize: Size(2i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#38: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1017,7 +1017,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb565, sourceSize: Size(3i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#39: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1042,7 +1042,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb888, sourceSize: Size(3i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#40: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1067,7 +1067,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Alpha8, sourceSize: Size(3i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#41: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1092,7 +1092,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.RgbaF16, sourceSize: Size(3i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#42: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1117,7 +1117,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv21, sourceSize: Size(3i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#43: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1142,7 +1142,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv12, sourceSize: Size(3i32, 1i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#44: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1167,7 +1167,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(1i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#45: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1192,7 +1192,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb888, sourceSize: Size(1i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#46: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1217,7 +1217,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Alpha8, sourceSize: Size(1i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#47: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1242,7 +1242,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.RgbaF16, sourceSize: Size(1i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#48: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1267,7 +1267,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv21, sourceSize: Size(1i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#49: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1292,7 +1292,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv12, sourceSize: Size(1i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#50: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1317,7 +1317,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(2i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#51: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1342,7 +1342,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb565, sourceSize: Size(2i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#52: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1367,7 +1367,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(2i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#53: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1392,7 +1392,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Bgra8888, sourceSize: Size(2i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#54: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1417,7 +1417,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv21, sourceSize: Size(2i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#55: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1442,7 +1442,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv12, sourceSize: Size(2i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#56: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1467,7 +1467,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(3i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#57: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1492,7 +1492,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb565, sourceSize: Size(3i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#58: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1517,7 +1517,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(3i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#59: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1542,7 +1542,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Bgra8888, sourceSize: Size(3i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#60: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1567,7 +1567,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.RgbaF16, sourceSize: Size(3i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#61: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1592,7 +1592,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv12, sourceSize: Size(3i32, 2i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#62: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1617,7 +1617,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(1i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#63: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1642,7 +1642,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb565, sourceSize: Size(1i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#64: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1667,7 +1667,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(1i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#65: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1692,7 +1692,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Bgra8888, sourceSize: Size(1i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#66: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1717,7 +1717,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Alpha8, sourceSize: Size(1i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#67: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1742,7 +1742,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv12, sourceSize: Size(1i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#68: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1767,7 +1767,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Unknown, sourceSize: Size(2i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#69: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1792,7 +1792,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb565, sourceSize: Size(2i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#70: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1817,7 +1817,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(2i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#71: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1842,7 +1842,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Bgra8888, sourceSize: Size(2i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#72: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1867,7 +1867,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb888, sourceSize: Size(2i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#73: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1892,7 +1892,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv12, sourceSize: Size(2i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#74: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1917,7 +1917,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgba8888, sourceSize: Size(3i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#75: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1942,7 +1942,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Bgra8888, sourceSize: Size(3i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#76: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1967,7 +1967,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Rgb888, sourceSize: Size(3i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#77: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -1992,7 +1992,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Alpha8, sourceSize: Size(3i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#78: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -2017,7 +2017,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.RgbaF16, sourceSize: Size(3i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#79: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -2042,7 +2042,7 @@ class testCreateImageSource_String_SourceOptions_1 {
             let imageSource = createImageSource("",
                 SourceOptions(0i32, sourcePixelFormat: PixelMapFormat.Nv21, sourceSize: Size(3i32, 3i32)))
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#80: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)

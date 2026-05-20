@@ -39,7 +39,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_1 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -57,7 +57,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_2 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
 
@@ -75,7 +75,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_3 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -93,7 +93,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_4 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -111,7 +111,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_5 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
     }
 
@@ -129,7 +129,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_6 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_6 ends.")
     }
 
@@ -147,7 +147,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_7 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
     }
 
@@ -165,7 +165,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_8 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_8 ends.")
     }
 
@@ -183,7 +183,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_9 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_9 ends.")
     }
 
@@ -201,7 +201,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_10 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_10 ends.")
     }
 
@@ -219,7 +219,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_11 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_11 ends.")
     }
 
@@ -237,7 +237,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_12 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_12 ends.")
     }
 
@@ -255,7 +255,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_13 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_13 ends.")
     }
 
@@ -273,7 +273,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_14 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_14 ends.")
     }
 
@@ -291,7 +291,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_15 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_15 ends.")
     }
 
@@ -309,7 +309,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_16 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_16 ends.")
     }
 
@@ -327,7 +327,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_17 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_17 ends.")
     }
 
@@ -345,7 +345,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_18 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_18 ends.")
     }
 
@@ -363,7 +363,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_19 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_19 ends.")
     }
 
@@ -381,7 +381,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_20 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_20 ends.")
     }
 
@@ -399,7 +399,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_21 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_21 ends.")
     }
 
@@ -417,7 +417,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_22 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_22 ends.")
     }
 
@@ -435,7 +435,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_23 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_23 ends.")
     }
 
@@ -453,7 +453,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_24 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_24 ends.")
     }
 
@@ -471,7 +471,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_25 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "xxx", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_25 ends.")
     }
 
@@ -489,7 +489,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_26 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_26 ends.")
     }
 
@@ -507,7 +507,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_27 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_27 ends.")
     }
 
@@ -525,7 +525,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_28 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_28 ends.")
     }
 
@@ -543,7 +543,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_29 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_29 ends.")
     }
 
@@ -561,7 +561,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_30 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(0u32, "0", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_30 ends.")
     }
 
@@ -579,7 +579,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_31 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_31 ends.")
     }
 
@@ -597,7 +597,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_32 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_32 ends.")
     }
 
@@ -615,7 +615,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_33 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_33 ends.")
     }
 
@@ -633,7 +633,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_34 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_34 ends.")
     }
 
@@ -651,7 +651,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_35 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_35 ends.")
     }
 
@@ -669,7 +669,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_36 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "xxx", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_36 ends.")
     }
 
@@ -687,7 +687,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_37 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "xxx", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_37 ends.")
     }
 
@@ -705,7 +705,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_38 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "xxx", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_38 ends.")
     }
 
@@ -723,7 +723,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_39 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "xxx", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_39 ends.")
     }
 
@@ -741,7 +741,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_40 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "xxx", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_40 ends.")
     }
 
@@ -759,7 +759,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_41 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "0", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_41 ends.")
     }
 
@@ -777,7 +777,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_42 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "0", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_42 ends.")
     }
 
@@ -795,7 +795,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_43 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "0", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_43 ends.")
     }
 
@@ -813,7 +813,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_44 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "0", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_44 ends.")
     }
 
@@ -831,7 +831,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_45 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(1u32, "0", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_45 ends.")
     }
 
@@ -849,7 +849,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_46 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_46 ends.")
     }
 
@@ -867,7 +867,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_47 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_47 ends.")
     }
 
@@ -885,7 +885,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_48 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_48 ends.")
     }
 
@@ -903,7 +903,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_49 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_49 ends.")
     }
 
@@ -921,7 +921,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_50 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_50 ends.")
     }
 
@@ -939,7 +939,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_51 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "xxx", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_51 ends.")
     }
 
@@ -957,7 +957,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_52 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "xxx", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_52 ends.")
     }
 
@@ -975,7 +975,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_53 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "xxx", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_53 ends.")
     }
 
@@ -993,7 +993,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_54 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "xxx", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_54 ends.")
     }
 
@@ -1011,7 +1011,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_55 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "xxx", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_55 ends.")
     }
 
@@ -1029,7 +1029,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_56 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "0", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_56 ends.")
     }
 
@@ -1047,7 +1047,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_57 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "0", LogLevel.Info)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_57 ends.")
     }
 
@@ -1065,7 +1065,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_58 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "0", LogLevel.Warning)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_58 ends.")
     }
 
@@ -1083,7 +1083,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_59 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "0", LogLevel.Error)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_59 ends.")
     }
 
@@ -1101,7 +1101,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_60 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(114514u32, "0", LogLevel.Fatal)
-        @Assert(true, isLog)
+        @Expect(true, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_60 ends.")
     }
 
@@ -1119,7 +1119,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_61 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_61 ends.")
     }
 
@@ -1137,7 +1137,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_62 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "", LogLevel.Info)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_62 ends.")
     }
 
@@ -1155,7 +1155,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_63 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "", LogLevel.Warning)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_63 ends.")
     }
 
@@ -1173,7 +1173,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_64 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "", LogLevel.Error)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_64 ends.")
     }
 
@@ -1191,7 +1191,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_65 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "", LogLevel.Fatal)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_65 ends.")
     }
 
@@ -1209,7 +1209,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_66 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "xxx", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_66 ends.")
     }
 
@@ -1227,7 +1227,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_67 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "xxx", LogLevel.Info)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_67 ends.")
     }
 
@@ -1245,7 +1245,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_68 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "xxx", LogLevel.Warning)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_68 ends.")
     }
 
@@ -1263,7 +1263,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_69 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "xxx", LogLevel.Error)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_69 ends.")
     }
 
@@ -1281,7 +1281,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_70 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "xxx", LogLevel.Fatal)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_70 ends.")
     }
 
@@ -1299,7 +1299,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_71 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "0", LogLevel.Debug)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_71 ends.")
     }
 
@@ -1317,7 +1317,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_72 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "0", LogLevel.Info)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_72 ends.")
     }
 
@@ -1335,7 +1335,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_73 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "0", LogLevel.Warning)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_73 ends.")
     }
 
@@ -1353,7 +1353,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_74 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "0", LogLevel.Error)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_74 ends.")
     }
 
@@ -1371,7 +1371,7 @@ class testIsLoggable_1 {
         Hilog.info(0, "cangjietest", "testcase TestCase_75 begins.")
         Hilog.info(0, "cangjietest", "define local variable isLog")
         let isLog = Hilog.isLoggable(4294967295u32, "0", LogLevel.Fatal)
-        @Assert(false, isLog)
+        @Expect(false, isLog)
         Hilog.info(0, "cangjietest", "testcase TestCase_75 ends.")
     }
 }

@@ -215,8 +215,8 @@ class test_GetStringByName {
     func TestCase_10(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_10 begins.")
         let resourceManager = Global.abilityContext.resourceManager
-        let result = resourceManager.getStringByName("test_one_d") // 无参数匹配%d
-        @Expect(result,"Count: %d") // 预期返回原字符串
+        let result = resourceManager.getStringByName("test_one_d")
+        @Expect(result,"Count: %d")
         Hilog.info(0, "cangjietest", "testcase TestCase_10 ends.")
     }
 
@@ -234,8 +234,8 @@ class test_GetStringByName {
         Hilog.info(0, "cangjietest", "testcase TestCase_11 begins.")
         try {
             let resourceManager = Global.abilityContext.resourceManager
-            let result = resourceManager.getStringByName("test_one_d", StringValue("not a number")) // 字符串匹配%d
-            @Expect(false) // 预期返回原字符串
+            let result = resourceManager.getStringByName("test_one_d", StringValue("not a number"))
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.code, 9001007)
@@ -257,11 +257,11 @@ class test_GetStringByName {
         Hilog.info(0, "cangjietest", "testcase TestCase_12 begins.")
         try {
             let resourceManager = Global.abilityContext.resourceManager
-            let result = resourceManager.getStringByName("test_no") //无效资源
+            let result = resourceManager.getStringByName("test_no")
             @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
-            @Expect(e.code, 9001003) // 验证抛出异常
+            @Expect(e.code, 9001003)
         }
         Hilog.info(0, "cangjietest", "testcase TestCase_12 ends.")
     }
@@ -279,7 +279,7 @@ class test_GetStringByName {
     func TestCase_13(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_13 begins.")
         let resourceManager = Global.abilityContext.resourceManager
-        let result = resourceManager.getStringByName("test_one_d", Int32Value(Int32.Max)) // Int32最大值
+        let result = resourceManager.getStringByName("test_one_d", Int32Value(Int32.Max))
         @Expect(result,"Count: 2147483647")
         Hilog.info(0, "cangjietest", "testcase TestCase_13 ends.")
     }
@@ -298,7 +298,7 @@ class test_GetStringByName {
         Hilog.info(0, "cangjietest", "testcase TestCase_14 begins.")
         try {
             let resourceManager = Global.abilityContext.resourceManager
-            let result = resourceManager.getStringByName("test_two_args", StringValue("Bob")) // 缺int参数
+            let result = resourceManager.getStringByName("test_two_args", StringValue("Bob"))
             @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
@@ -321,8 +321,8 @@ class test_GetStringByName {
         Hilog.info(0, "cangjietest", "testcase TestCase_15 begins.")
         try {
             let resourceManager = Global.abilityContext.resourceManager
-            let result = resourceManager.getStringByName("test_one_s", StringValue("Alice"), Int32Value(10)) // 多int参数
-            @Expect(false) // 预期忽略多余参数，正常格式化
+            let result = resourceManager.getStringByName("test_one_s", StringValue("Alice"), Int32Value(10))
+            @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.code,9001007)

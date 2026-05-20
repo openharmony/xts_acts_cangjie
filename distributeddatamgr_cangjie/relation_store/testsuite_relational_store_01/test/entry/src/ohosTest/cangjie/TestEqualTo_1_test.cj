@@ -70,7 +70,7 @@ class TestEqualTo_1 {
                 .equalTo("", RelationalStoreValueType.StringValue(""))
                 .and()
                 .equalTo("DEWR%$%$*67", RelationalStoreValueType.Boolean(false))
-            @Expect("assertion#4: not throw", "Match data table")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
         }

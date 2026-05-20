@@ -61,26 +61,21 @@ class testFileIo_copyDir_1 {
         @Expect(res3, true)
         let res4 = FileIo.access(ffpath3)
         @Expect(res4, true)
-
         try {
             FileIo.copyDir(ddpath, ddpath2, mode: 1)
             let size1 = FileIo.stat(ddpath2 + "/srcDir_first/srcFile_first_02").size
             let size2 = FileIo.stat(ffpath2).size
             @Expect(size1, size2)
-
             let size3 = FileIo.stat(ddpath2 + "/srcDir_first/srcFile_first_01").size
             let size4 = FileIo.stat(ffpath).size
             @Expect(size3, size4)
-
             let r1 = FileIo.access(ddpath)
             @Expect(r1, true)
             let r2 = FileIo.access(ddpath2 + "/srcDir_first/srcDir_second")
             @Expect(r2, true)
-
             let size5 = FileIo.stat(ddpath2 + "/srcDir_first/srcDir_second/srcFile_second_01").size
             let size6 = FileIo.stat(fffpath).size
             @Expect(size5, size6)
-
             FileIo.close(srcFile_first_01)
             FileIo.close(srcFile_first_02)
             FileIo.close(srcFile_second_01)

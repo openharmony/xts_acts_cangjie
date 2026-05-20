@@ -142,7 +142,6 @@ class NewTestRuqestUPLOAD {
         let task = create(getAbilityContext(), config)
         task.start()
         sleepFor(0.5.second)
-
         try {
             getTask(getAbilityContext(), "$%^!@&*", token: token)
             @Expect(false)
@@ -255,7 +254,6 @@ class NewTestRuqestUPLOAD {
         let task = create(getAbilityContext(), config)
         task.start()
         sleepFor(0.5.second)
-
         try {
             let taskInfo = touch(task.tid, token1)
             @Expect(false)
@@ -288,7 +286,6 @@ class NewTestRuqestUPLOAD {
         let task = create(getAbilityContext(), config)
         task.start()
         sleepFor(0.5.second)
-
         try {
             let taskInfo = touch("", token)
             @Expect(false)
@@ -321,7 +318,6 @@ class NewTestRuqestUPLOAD {
         let task = create(getAbilityContext(), config)
         task.start()
         sleepFor(0.5.second)
-
         try {
             let taskInfo = touch("$%^!@&*", token)
             @Expect(false)
@@ -358,7 +354,6 @@ class NewTestRuqestUPLOAD {
         let task = create(getAbilityContext(), config)
         task.start()
         sleepFor(0.5.second)
-
         try {
             let taskInfo = touch(id, token)
             @Expect(false)
