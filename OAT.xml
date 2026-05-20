@@ -11,6 +11,7 @@
 				<filteritem type="filename" name="*.mp4 | *.mp3" desc="代码架构图片文件"/>
                 <filteritem type="filename" name=".*/test/.*" desc="测试用例目录"/>
 				<filteritem type="filename" name="*.json" desc="测试用例权限文件"/>
+                <filteritem type="filename" name="xdevice*.tar.gz" desc="测试框架依赖"/>
 			</filefilter>	
         </filefilterlist>
 		<licensematcherlist>
