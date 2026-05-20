@@ -47,7 +47,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(1u32)
-            @Expect("assertion#421: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -70,7 +70,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(0u32)
-            @Expect("assertion#422: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -95,7 +95,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(UInt32.Min)
-            @Expect("assertion#424: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -118,7 +118,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(UInt32.Max)
-            @Expect("assertion#425: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -141,7 +141,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.string.module_desc).id)
-            @Expect("assertion#426: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -164,7 +164,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.strarray.sizelist).id)
-            @Expect("assertion#427: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -187,7 +187,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.plural.plural_name).id)
-            @Expect("assertion#428: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -210,7 +210,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.string.Test_Format1).id)
-            @Expect("assertion#429: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -233,7 +233,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.string.Test_Format2).id)
-            @Expect("assertion#430: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -256,7 +256,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.string.Test_Format3).id)
-            @Expect("assertion#431: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -279,7 +279,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.string.EntryAbility_desc).id)
-            @Expect("assertion#432: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -302,7 +302,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.media.layered_image).id)
-            @Expect("assertion#433: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -325,7 +325,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.string.EntryAbility_label).id)
-            @Expect("assertion#434: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -348,7 +348,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.media.startIcon).id)
-            @Expect("assertion#435: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -371,7 +371,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.profile.main_pages).id)
-            @Expect("assertion#436: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -394,7 +394,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.color.start_window_background).id)
-            @Expect("assertion#437: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -417,7 +417,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.float.float_1).id)
-            @Expect("assertion#438: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -440,7 +440,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.float.float_2).id)
-            @Expect("assertion#439: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -463,7 +463,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.integer.int_1).id)
-            @Expect("assertion#440: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -486,7 +486,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Boolean.")
         try {
             getResourceManager().getBoolean(@r(app.integer.int_2).id)
-            @Expect("assertion#441: not throw", "fail to get Boolean.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -506,7 +506,7 @@ class TestGetBooleanByResId_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_22(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_22 begins.")
-        @Assert(true, getResourceManager().getBoolean(@r(app.boolean.test_boolean1).id))
+        @Expect(true, getResourceManager().getBoolean(@r(app.boolean.test_boolean1).id))
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_22 ends.")
     }
 
@@ -522,7 +522,7 @@ class TestGetBooleanByResId_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_23(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 begins.")
-        @Assert(false, getResourceManager().getBoolean(@r(app.boolean.test_boolean0).id))
+        @Expect(false, getResourceManager().getBoolean(@r(app.boolean.test_boolean0).id))
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 ends.")
     }
 
@@ -541,7 +541,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "cycle")
         try {
             getResourceManager().getBoolean(@r(app.boolean.boolean_3).id)
-            @Expect("assertion#442: not throw", "cycle")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The resource is referenced cyclically.")
             @Expect(e.code, 9001006i32)
@@ -564,7 +564,7 @@ class TestGetBooleanByResId_1 {
         Hilog.info(0u32, "CangjieTest", "cycle")
         try {
             getResourceManager().getBoolean(@r(app.boolean.boolean_4).id)
-            @Expect("assertion#443: not throw", "cycle")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The resource is referenced cyclically.")
             @Expect(e.code, 9001006i32)

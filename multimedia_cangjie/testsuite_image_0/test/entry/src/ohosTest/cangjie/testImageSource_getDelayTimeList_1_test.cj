@@ -40,7 +40,7 @@ class testImageSource_getDelayTimeList_1 {
         Hilog.info(0, "cangjietest", "createImageSource fail")
         try {
             let imageSource = createImageSource("")
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115)
@@ -65,13 +65,13 @@ class testImageSource_getDelayTimeList_1 {
             let imageSource = createImageSource("/data/storage/el1/base/test.jpg")
             try {
                 let delayTimeList = imageSource.getDelayTimeList()
-                @Assert(true)
-                @Expect("assertion#2: not throw", "getDelayTimeList fail")
+                @Expect(true)
+                @Expect(false)
             } catch (e: BusinessException) {
                 @Expect(e.message, "Invalid media parameter.")
                 @Expect(e.code, 62980149i32)
             }
-            @Expect("assertion#3: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -96,13 +96,13 @@ class testImageSource_getDelayTimeList_1 {
             let imageSource = createImageSource("/data/storage/el1/base/test.bmp")
             try {
                 let delayTimeList = imageSource.getDelayTimeList()
-                @Assert(true)
-                @Expect("assertion#4: not throw", "getDelayTimeList fail")
+                @Expect(true)
+                @Expect(false)
             } catch (e: BusinessException) {
                 @Expect(e.message, "Invalid media parameter.")
                 @Expect(e.code, 62980149i32)
             }
-            @Expect("assertion#5: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -127,13 +127,13 @@ class testImageSource_getDelayTimeList_1 {
             let imageSource = createImageSource("/data/storage/el1/base/test.gif")
             try {
                 let delayTimeList = imageSource.getDelayTimeList()
-                @Assert(true)
-                @Expect("assertion#6: not throw", "getDelayTimeList fail")
+                @Expect(true)
+                @Expect(false)
             } catch (e: BusinessException) {
                 @Expect(e.message, "Invalid media parameter.")
                 @Expect(e.code, 62980149i32)
             }
-            @Expect("assertion#7: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -158,13 +158,13 @@ class testImageSource_getDelayTimeList_1 {
             let imageSource = createImageSource("/data/storage/el1/base/test.123")
             try {
                 let delayTimeList = imageSource.getDelayTimeList()
-                @Assert(true)
-                @Expect("assertion#8: not throw", "getDelayTimeList fail")
+                @Expect(true)
+                @Expect(false)
             } catch (e: BusinessException) {
                 @Expect(e.message, "Invalid media parameter.")
                 @Expect(e.code, 62980149i32)
             }
-            @Expect("assertion#9: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)

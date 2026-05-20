@@ -43,6 +43,7 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 1i32), 0i32, 0i32))
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -68,8 +69,8 @@ class testPixelMap_crop_1 {
                     srcPixelFormat: PixelMapFormat.Rgb565, pixelFormat: PixelMapFormat.Rgb565,
                     scaleMode: ScaleMode.CenterCrop))
             pixelMap.crop(Region(Size(2i32, 1i32), 5i32, 0i32))
-            @Assert(true)
-            @Expect("assertion#1: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -96,8 +97,8 @@ class testPixelMap_crop_1 {
                     srcPixelFormat: PixelMapFormat.Rgb565, pixelFormat: PixelMapFormat.Rgba8888,
                     scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(3i32, 1i32), 10i32, 0i32))
-            @Assert(true)
-            @Expect("assertion#2: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -123,8 +124,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.UnPremul, editable: true,
                     pixelFormat: PixelMapFormat.Bgra8888, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(2i32, 1i32), 0i32, 2i32))
-            @Assert(true)
-            @Expect("assertion#3: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -150,8 +151,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Rgb888, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 1i32), 5i32, 2i32))
-            @Assert(true)
-            @Expect("assertion#4: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -177,8 +178,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Alpha8, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 2i32), 10i32, 2i32))
-            @Assert(true)
-            @Expect("assertion#5: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -204,8 +205,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.RgbaF16, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(3i32, 1i32), 0i32, 4i32))
-            @Assert(true)
-            @Expect("assertion#6: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -231,8 +232,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Nv21, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 2i32), 5i32, 4i32))
-            @Assert(true)
-            @Expect("assertion#7: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115)
@@ -258,6 +259,7 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 2i32), 0i32, 0i32))
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -282,8 +284,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(2i32, 2i32), 0i32, 0i32))
-            @Assert(true)
-            @Expect("assertion#10: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -309,8 +311,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(3i32, 2i32), 0i32, 0i32))
-            @Assert(true)
-            @Expect("assertion#11: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -336,8 +338,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 3i32), 0i32, 0i32))
-            @Assert(true)
-            @Expect("assertion#12: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -363,8 +365,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(2i32, 3i32), 0i32, 0i32))
-            @Assert(true)
-            @Expect("assertion#13: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -390,8 +392,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(3i32, 3i32), 0i32, 0i32))
-            @Assert(true)
-            @Expect("assertion#14: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -417,8 +419,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(3i32, 1i32), 5i32, 2i32))
-            @Assert(true)
-            @Expect("assertion#15: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -444,8 +446,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(2i32, 2i32), 5i32, 2i32))
-            @Assert(true)
-            @Expect("assertion#16: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -471,8 +473,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(3i32, 2i32), 5i32, 2i32))
-            @Assert(true)
-            @Expect("assertion#17: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -498,8 +500,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 3i32), 5i32, 2i32))
-            @Assert(true)
-            @Expect("assertion#18: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -525,8 +527,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(2i32, 3i32), 5i32, 2i32))
-            @Assert(true)
-            @Expect("assertion#19: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -552,8 +554,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(3i32, 3i32), 5i32, 2i32))
-            @Assert(true)
-            @Expect("assertion#20: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -579,8 +581,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(2i32, 1i32), 10i32, 4i32))
-            @Assert(true)
-            @Expect("assertion#21: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -606,8 +608,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(2i32, 2i32), 10i32, 4i32))
-            @Assert(true)
-            @Expect("assertion#22: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -633,8 +635,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(3i32, 2i32), 10i32, 4i32))
-            @Assert(true)
-            @Expect("assertion#23: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -660,8 +662,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 3i32), 10i32, 4i32))
-            @Assert(true)
-            @Expect("assertion#24: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -687,8 +689,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(2i32, 3i32), 10i32, 4i32))
-            @Assert(true)
-            @Expect("assertion#25: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)
@@ -714,8 +716,8 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(3i32, 3i32), 10i32, 4i32))
-            @Assert(true)
-            @Expect("assertion#26: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Cropping exceptions.")
             @Expect(e.code, 62980109i32)

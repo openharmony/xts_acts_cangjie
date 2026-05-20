@@ -44,7 +44,7 @@ class testIsDefaultNetMetered_1 {
         Hilog.info(0, "cangjietest","Operation failed. Cannot connect to service")
         try {
             let isDefault = isDefaultNetMetered()
-            @Assert(Regex("true|false").matches(isDefault.toString()), true)
+            @Expect(Regex("true|false").matches(isDefault.toString()), true)
         } catch (e: BusinessException) {
             @Expect(e.message, "NetHandle getAddressesByName failed: NetHandle getAddressesByName failed: Invalid parameter value.")
             @Expect(e.code, 2100002i32)

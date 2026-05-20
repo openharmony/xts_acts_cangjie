@@ -38,7 +38,6 @@ class Test_Md_07 {
     func test_createMd_01(): Unit {
         var globalMd: Md
         var mdString: String = "SHA1"
-
         try {
             globalMd = createMd(mdString)
             @Expect(true)
@@ -60,7 +59,6 @@ class Test_Md_07 {
     func test_createMd_02(): Unit {
         var globalMd: Md
         var mdString: String = "SHA224"
-
         try {
             globalMd = createMd(mdString)
             @Expect(true)
@@ -82,7 +80,6 @@ class Test_Md_07 {
     func test_createMd_03(): Unit {
         var globalMd: Md
         var mdString: String = "SHA256"
-
         try {
             globalMd = createMd(mdString)
             @Expect(true)
@@ -104,7 +101,6 @@ class Test_Md_07 {
     func test_createMd_04(): Unit {
         var globalMd: Md
         var mdString: String = "SHA384"
-
         try {
             globalMd = createMd(mdString)
             @Expect(true)
@@ -126,7 +122,6 @@ class Test_Md_07 {
     func test_createMd_05(): Unit {
         var globalMd: Md
         var mdString: String = "SHA512"
-
         try {
             globalMd = createMd(mdString)
             @Expect(true)
@@ -148,7 +143,6 @@ class Test_Md_07 {
     func test_createMd_06(): Unit {
         var globalMd: Md
         var mdString: String = "MD5"
-
         try {
             globalMd = createMd(mdString)
             @Expect(true)
@@ -170,7 +164,6 @@ class Test_Md_07 {
     func test_createMd_07(): Unit {
         var globalMd: Md
         var mdString: String = "SM3"
-
         try {
             globalMd = createMd(mdString)
             @Expect(globalMd.algName, "SM3")
@@ -192,7 +185,6 @@ class Test_Md_07 {
     func test_createMd_08(): Unit {
         var globalMd: Md
         var mdString: String = "SHA1X"
-
         try {
             globalMd = createMd(mdString)
             @Expect(false)
@@ -215,7 +207,6 @@ class Test_Md_07 {
         var globalMd: Md
         var mdString: String = "SHA1"
         var blob: DataBlob = DataBlob("test".toArray())
-
         try {
             globalMd = createMd(mdString)
             globalMd.update(blob)
@@ -239,7 +230,6 @@ class Test_Md_07 {
         var globalMd: Md
         var mdString: String = "SHA512"
         var blob: DataBlob = DataBlob("".toArray())
-
         try {
             globalMd = createMd(mdString)
             globalMd.update(blob)
@@ -264,7 +254,6 @@ class Test_Md_07 {
         var mdString: String = "SHA512"
         var blob: DataBlob = DataBlob("test".toArray())
         var digest_blob: DataBlob
-
         try {
             globalMd = createMd(mdString)
             globalMd.update(blob)
@@ -290,7 +279,6 @@ class Test_Md_07 {
         var mdString: String = "SHA512"
         var blob: DataBlob = DataBlob("test".toArray())
         var Length: UInt32
-
         try {
             globalMd = createMd(mdString)
             globalMd.update(blob)

@@ -87,14 +87,12 @@ class TestObject {
                     isConfigurable: one.configurable)
             }
         }
-        // enumerable
         let keys = await(jsContext) {object.keys()}
         let expectedKeys = ["c", "e", "g", "h"]
         @Expect(keys.size, 4)
         for (k in keys) {
             @Expect(expectedKeys.contains(k))
         }
-        // writable
         for (one in cases) {
             if (one.writable) {
                 await(jsContext) {object[one.key] = valueT}
@@ -102,7 +100,6 @@ class TestObject {
                 @Expect(one.writable, received)
             }
         }
-        // configurable
         let valueNull = await(jsContext) {
             jsContext.null().toJSValue()
         }
@@ -110,6 +107,7 @@ class TestObject {
             let expThrow = try {
                 await(jsContext) {object.defineOwnProperty(one.key, valueNull)}
                 false
+                @Expect(false)
             } catch (_) {
                 true
             }
@@ -137,7 +135,6 @@ class TestObject {
         await(jsContext) {
             object["a"] = jsContext.number(1.1).toJSValue()
         }
-
         let rawGetter: JSLambda = {
             _, callInfo => callInfo.thisArg.getProperty("a")
         }
@@ -264,7 +261,6 @@ class TestObject {
             let j = context.symbol()
             let l = context.string("")
         }
-
         gc()
         sleep(Duration.second * 1)
         await(context) {

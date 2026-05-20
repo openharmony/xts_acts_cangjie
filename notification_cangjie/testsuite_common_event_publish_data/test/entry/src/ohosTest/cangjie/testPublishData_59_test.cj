@@ -58,7 +58,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "DATA", code: 1i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: false, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#12: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -84,7 +84,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "DATA", code: 1i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: false, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#13: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -110,7 +110,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "DATA", code: 1i32,
                     subscriberPermissions: ["Data"], isOrdered: false, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#14: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -136,7 +136,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "DATA", code: 1i32,
                     subscriberPermissions: ["Data"], isOrdered: false, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#15: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -162,7 +162,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 0i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: true, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#16: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -188,7 +188,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 0i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: true, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#17: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -214,7 +214,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 0i32,
                     subscriberPermissions: ["Data"], isOrdered: true, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#18: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -240,7 +240,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 0i32,
                     subscriberPermissions: ["Data"], isOrdered: true, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#19: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -266,7 +266,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 0i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: false, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#20: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -292,7 +292,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 0i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: false, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#21: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -318,7 +318,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 0i32,
                     subscriberPermissions: ["Data"], isOrdered: false, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#22: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -344,7 +344,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 0i32,
                     subscriberPermissions: ["Data"], isOrdered: false, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#23: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -370,7 +370,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 1i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: true, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#24: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -396,7 +396,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 1i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: true, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#25: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -422,7 +422,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 1i32,
                     subscriberPermissions: ["Data"], isOrdered: true, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#26: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -448,7 +448,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 1i32,
                     subscriberPermissions: ["Data"], isOrdered: true, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#27: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -474,7 +474,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 1i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: false, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#28: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -500,7 +500,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 1i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: false, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#29: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -526,7 +526,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 1i32,
                     subscriberPermissions: ["Data"], isOrdered: false, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#30: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -552,7 +552,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "com.example.myapplication", data: "sw65^6&^$%$", code: 1i32,
                     subscriberPermissions: ["Data"], isOrdered: false, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#31: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -578,7 +578,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 0i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: true, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#32: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -604,7 +604,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 0i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: true, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#33: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -630,7 +630,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 0i32,
                     subscriberPermissions: ["Data"], isOrdered: true, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#34: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -656,7 +656,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 0i32,
                     subscriberPermissions: ["Data"], isOrdered: true, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#35: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -682,7 +682,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 0i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: false, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#36: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -708,7 +708,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 0i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: false, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#37: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -734,7 +734,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 0i32,
                     subscriberPermissions: ["Data"], isOrdered: false, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#38: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -760,7 +760,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 0i32,
                     subscriberPermissions: ["Data"], isOrdered: false, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#39: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -786,7 +786,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 1i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: true, isSticky: true,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#40: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -812,7 +812,7 @@ class testPublishData_59 {
                 options: CommonEventPublishData(bundleName: "!#$@%^&*", data: "DATA", code: 1i32,
                     subscriberPermissions: ["subscriberPermissions"], isOrdered: true, isSticky: false,
                     parameters: HashMap<String, CommonEventValueType>()))
-            @Expect("assertion#41: not throw", "publish fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "publish failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)

@@ -47,7 +47,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#994: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -70,7 +70,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#995: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -93,7 +93,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#996: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -116,7 +116,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#997: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -139,7 +139,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#998: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -162,7 +162,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("\0", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#999: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -185,7 +185,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("\0", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1000: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -208,7 +208,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("\0", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1001: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -231,7 +231,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("\0", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1002: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -254,7 +254,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("\0", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1003: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -277,7 +277,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("nonExistingResourceName", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1004: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -300,7 +300,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("nonExistingResourceName", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1005: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -323,7 +323,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("nonExistingResourceName", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1006: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -346,7 +346,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("nonExistingResourceName", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1007: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -369,7 +369,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("nonExistingResourceName", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1008: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -392,7 +392,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("module_desc", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1009: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -415,7 +415,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("module_desc", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1010: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -438,7 +438,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("module_desc", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1011: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -461,7 +461,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("module_desc", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1012: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -484,7 +484,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("module_desc", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1013: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -507,7 +507,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("sizelist", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1014: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -530,7 +530,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("sizelist", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1015: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -553,7 +553,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("sizelist", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1016: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -576,7 +576,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("sizelist", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1017: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -599,7 +599,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("sizelist", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1018: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -622,7 +622,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("plural_name", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1019: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -645,7 +645,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("plural_name", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1020: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -668,7 +668,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("plural_name", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1021: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -691,7 +691,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("plural_name", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1022: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -714,7 +714,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("plural_name", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1023: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -737,7 +737,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format1", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1024: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -760,7 +760,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format1", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1025: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -783,7 +783,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format1", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1026: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -806,7 +806,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format1", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1027: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -829,7 +829,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format1", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1028: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -852,7 +852,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format2", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1029: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -875,7 +875,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format2", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1030: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -898,7 +898,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format2", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1031: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -921,7 +921,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format2", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1032: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -944,7 +944,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format2", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1033: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -967,7 +967,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format3", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1034: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -990,7 +990,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format3", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1035: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1013,7 +1013,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format3", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1036: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1036,7 +1036,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format3", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1037: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1059,7 +1059,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("Test_Format3", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1038: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1082,7 +1082,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_desc", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1039: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1105,7 +1105,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_desc", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1040: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1128,7 +1128,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_desc", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1041: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1151,7 +1151,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_desc", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1042: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1174,7 +1174,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_desc", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1043: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1196,7 +1196,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_51 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("layered_image", density: ScreenDensity.ScreenSdpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_51 ends.")
     }
 
@@ -1214,7 +1214,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_52 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("layered_image", density: ScreenDensity.ScreenMdpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_52 ends.")
     }
 
@@ -1232,7 +1232,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_53 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("layered_image", density: ScreenDensity.ScreenLdpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_53 ends.")
     }
 
@@ -1250,7 +1250,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_54 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("layered_image", density: ScreenDensity.ScreenXldpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_54 ends.")
     }
 
@@ -1268,7 +1268,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_55 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("layered_image", density: ScreenDensity.ScreenXxldpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_55 ends.")
     }
 
@@ -1287,7 +1287,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_label", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1044: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1310,7 +1310,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_label", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1045: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1333,7 +1333,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_label", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1046: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1356,7 +1356,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_label", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1047: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1379,7 +1379,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("EntryAbility_label", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1048: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1401,7 +1401,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_61 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("startIcon", density: ScreenDensity.ScreenSdpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_61 ends.")
     }
 
@@ -1419,7 +1419,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_62 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("startIcon", density: ScreenDensity.ScreenMdpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_62 ends.")
     }
 
@@ -1437,7 +1437,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_63 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("startIcon", density: ScreenDensity.ScreenLdpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_63 ends.")
     }
 
@@ -1455,7 +1455,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_64 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("startIcon", density: ScreenDensity.ScreenXldpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_64 ends.")
     }
 
@@ -1473,7 +1473,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_65 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable media")
         let media = getResourceManager().getMediaByName("startIcon", density: ScreenDensity.ScreenXxldpi)
-        @Assert(media.size > 0i64, true)
+        @Expect(media.size > 0i64, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_65 ends.")
     }
 
@@ -1492,7 +1492,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("main_pages", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1049: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1515,7 +1515,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("main_pages", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1050: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1538,7 +1538,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("main_pages", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1051: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1561,7 +1561,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("main_pages", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1052: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1584,7 +1584,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("main_pages", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1053: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1607,7 +1607,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("start_window_background", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1054: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1630,7 +1630,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("start_window_background", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1055: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1653,7 +1653,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("start_window_background", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1056: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1676,7 +1676,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("start_window_background", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1057: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1699,7 +1699,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("start_window_background", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1058: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1722,7 +1722,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_1", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1059: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1745,7 +1745,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_1", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1060: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1768,7 +1768,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_1", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1061: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1791,7 +1791,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_1", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1062: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1814,7 +1814,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_1", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1063: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1837,7 +1837,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_2", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1064: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1860,7 +1860,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_2", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1065: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1883,7 +1883,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_2", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1066: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1906,7 +1906,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_2", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1067: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1929,7 +1929,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("float_2", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1068: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1952,7 +1952,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_1", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1069: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1975,7 +1975,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_1", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1070: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1998,7 +1998,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_1", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1071: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2021,7 +2021,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_1", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1072: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2044,7 +2044,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_1", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1073: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2067,7 +2067,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_2", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1074: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2090,7 +2090,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_2", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1075: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2113,7 +2113,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_2", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1076: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2136,7 +2136,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_2", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1077: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2159,7 +2159,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("int_2", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1078: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2182,7 +2182,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("test_boolean1", density: ScreenDensity.ScreenSdpi)
-            @Expect("assertion#1079: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2205,7 +2205,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("test_boolean1", density: ScreenDensity.ScreenMdpi)
-            @Expect("assertion#1080: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2228,7 +2228,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("test_boolean1", density: ScreenDensity.ScreenLdpi)
-            @Expect("assertion#1081: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2251,7 +2251,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("test_boolean1", density: ScreenDensity.ScreenXldpi)
-            @Expect("assertion#1082: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -2274,7 +2274,7 @@ class TestGetMediaByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get media by name.")
         try {
             getResourceManager().getMediaByName("test_boolean1", density: ScreenDensity.ScreenXxldpi)
-            @Expect("assertion#1083: not throw", "fail to get media by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)

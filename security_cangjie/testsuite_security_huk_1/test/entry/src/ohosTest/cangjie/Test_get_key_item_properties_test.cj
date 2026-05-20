@@ -53,10 +53,7 @@ class Test_SecurityHuks_GetKeyItemProperties {
         clean(keyAlias)
         try {
             generateSimpleKey(keyAlias)
-            //get properties
             let properties = getKeyItemProperties(keyAlias, genKeyOptionsTest1)
-
-            // 校验properties是否为空
             @Expect(!properties.isEmpty())
         } catch (e: BusinessException) {
             @Expect(e.code, 401i32)
@@ -79,6 +76,7 @@ class Test_SecurityHuks_GetKeyItemProperties {
         var flag = false
         try {
             let properties = getKeyItemProperties(keyAlias, genKeyOptionsTest1)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {

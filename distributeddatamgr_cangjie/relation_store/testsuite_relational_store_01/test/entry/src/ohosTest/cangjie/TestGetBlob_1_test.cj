@@ -114,7 +114,6 @@ class TestGetBlob_1 {
         } catch (e: BusinessException) {
             @Expect(e.code, 14801002i32)
         }
-        
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_3 ends.")
     }
 

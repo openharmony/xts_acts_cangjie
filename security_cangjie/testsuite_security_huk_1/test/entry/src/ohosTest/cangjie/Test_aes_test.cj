@@ -39,11 +39,8 @@ class Test_SecurityHuks_Aes {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_encrypt_decrypt_cbc_pkcs7() {
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-ndk.md
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-arkts.md
         let keyAlias = "test_encrypt_decrypt_cbc_pkcs7"
         clean(keyAlias)
-
         try {
             let plainText = "123456"
             let iv = "1122334455667788"
@@ -66,13 +63,9 @@ class Test_SecurityHuks_Aes {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, encOptions).handle
             let cipherData = finishSession(handle1, encOptions, token: [])
-
             let decOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Int32Value(-1i32)),
@@ -82,14 +75,10 @@ class Test_SecurityHuks_Aes {
                     HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decOptions).handle
             let decData = finishSession(handle2, decOptions, token: [])
             let dec = String.fromUtf8(decData.getOrThrow())
-
             @Expect(plainText == dec)
-
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
         } catch (e: BusinessException) {
@@ -111,11 +100,8 @@ class Test_SecurityHuks_Aes {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_encrypt_decrypt_cbc_nopadding() {
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-ndk.md
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-arkts.md
         let keyAlias = "test_encrypt_decrypt_cbc_nopadding"
         clean(keyAlias)
-
         try {
             let plainText = "1234567812345678"
             let iv = "1122334455667788"
@@ -138,13 +124,9 @@ class Test_SecurityHuks_Aes {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, encOptions).handle
             let cipherData = finishSession(handle1, encOptions, token: [])
-
             let decOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Int32Value(-1i32)),
@@ -154,14 +136,10 @@ class Test_SecurityHuks_Aes {
                     HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decOptions).handle
             let decData = finishSession(handle2, decOptions, token: [])
             let dec = String.fromUtf8(decData.getOrThrow())
-
             @Expect(plainText == dec)
-
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
         } catch (e: BusinessException) {
@@ -183,11 +161,8 @@ class Test_SecurityHuks_Aes {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_encrypt_decrypt_ctr_nopadding() {
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-ndk.md
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-arkts.md
         let keyAlias = "test_encrypt_decrypt_ctr_nopadding"
         clean(keyAlias)
-
         try {
             let plainText = "1234567812345678"
             let iv = "1122334455667788"
@@ -210,13 +185,9 @@ class Test_SecurityHuks_Aes {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, encOptions).handle
             let cipherData = finishSession(handle1, encOptions, token: [])
-
             let decOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Int32Value(-1i32)),
@@ -226,14 +197,10 @@ class Test_SecurityHuks_Aes {
                     HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue([1u8]))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decOptions).handle
             let decData = finishSession(handle2, decOptions, token: [])
             let dec = String.fromUtf8(decData.getOrThrow())
-
             @Expect(plainText == dec)
-
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
         } catch (e: BusinessException) {
@@ -255,11 +222,8 @@ class Test_SecurityHuks_Aes {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_encrypt_decrypt_ecb_pkcs7() {
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-ndk.md
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-arkts.md
         let keyAlias = "test_encrypt_decrypt_ecb_pkcs7"
         clean(keyAlias)
-
         try {
             let plainText = "123456"
             let options = HuksOptions(
@@ -279,13 +243,9 @@ class Test_SecurityHuks_Aes {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, encOptions).handle
             let cipherData = finishSession(handle1, encOptions, token: [])
-
             let decOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Int32Value(-1i32)),
@@ -294,14 +254,9 @@ class Test_SecurityHuks_Aes {
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decOptions).handle
             let decData = finishSession(handle2, decOptions, token: [])
             let dec = String.fromUtf8(decData.getOrThrow())
-
-            // @Expect(plainText == dec)
-            // 不支持 ecb + pkcs7
             @Expect(false)
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
@@ -324,11 +279,8 @@ class Test_SecurityHuks_Aes {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_encrypt_decrypt_ecb_nopadding() {
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-ndk.md
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-arkts.md
         let keyAlias = "test_encrypt_decrypt_ecb_nopadding"
         clean(keyAlias)
-
         try {
             let plainText = "1234567812345678"
             let options = HuksOptions(
@@ -348,13 +300,9 @@ class Test_SecurityHuks_Aes {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, encOptions).handle
             let cipherData = finishSession(handle1, encOptions, token: [])
-
             let decOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Int32Value(-1i32)),
@@ -363,14 +311,9 @@ class Test_SecurityHuks_Aes {
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
                 ]
             )
-
-            // decrypt
             let handle2 = initSession(keyAlias, decOptions).handle
             let decData = finishSession(handle2, decOptions, token: [])
             let dec = String.fromUtf8(decData.getOrThrow())
-
-            // @Expect(plainText == dec)
-            // 不支持 ecb + nopadding
             @Expect(false)
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
@@ -393,11 +336,8 @@ class Test_SecurityHuks_Aes {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_encrypt_decrypt_gcm_nopadding() {
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-ndk.md
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-encryption-decryption-arkts.md
         let keyAlias = "test_encrypt_decrypt_gcm_nopadding"
         clean(keyAlias)
-
         try {
             let plainText = "1234567812345678"
             let AEAD = "1234567890123456"
@@ -423,13 +363,9 @@ class Test_SecurityHuks_Aes {
                 ],
                 inData: plainText.toArray()
             )
-
             generateKeyItem(keyAlias, options)
-
-            // encrypt
             let handle1 = initSession(keyAlias, encOptions).handle
             let cipherData = finishSession(handle1, encOptions, token: []).getOrThrow()
-
             let decOptions = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Int32Value(-1i32)),
@@ -438,20 +374,15 @@ class Test_SecurityHuks_Aes {
                     HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64)),
                     HuksParam(HuksTag.HUKS_TAG_NONCE, HuksParamValue.BytesValue([1u8])),
                     HuksParam(HuksTag.HUKS_TAG_ASSOCIATED_DATA, HuksParamValue.BytesValue([2u8])),
-                    // aead
                     HuksParam(
                         HuksTag.HUKS_TAG_AE_TAG,
                         HuksParamValue.BytesValue(cipherData.slice(cipherData.size - 16, 16))
                     )
                 ].slice(0, cipherData.size - 16))
-
-            // decrypt
             let handle2 = initSession(keyAlias, decOptions).handle
             let decData = finishSession(handle2, decOptions, token: [])
             let dec = String.fromUtf8(decData.getOrThrow())
-
             @Expect(plainText == dec)
-
             abortSession(handle1, HuksOptions(properties: []))
             abortSession(handle2, HuksOptions(properties: []))
         } catch (e: BusinessException) {

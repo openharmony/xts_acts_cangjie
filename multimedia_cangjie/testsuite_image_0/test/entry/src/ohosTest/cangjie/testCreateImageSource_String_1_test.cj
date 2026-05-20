@@ -41,7 +41,7 @@ class testCreateImageSource_String_1 {
         try {
             let imageSource = createImageSource("")
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115i32)
@@ -65,7 +65,7 @@ class testCreateImageSource_String_1 {
         try {
             let imageSource = createImageSource("../test.jpg")
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -89,7 +89,7 @@ class testCreateImageSource_String_1 {
         try {
             let imageSource = createImageSource("../test.png")
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)

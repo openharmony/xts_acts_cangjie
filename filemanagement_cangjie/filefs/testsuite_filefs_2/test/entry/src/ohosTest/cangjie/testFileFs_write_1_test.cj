@@ -43,7 +43,6 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
@@ -73,13 +72,11 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
         let res1 = file.fd is Int32
         @Expect(res1, true)
-
         let bytesWritten = FileIo.write(file.fd, "hello, world", options: WriteOptions(encoding: "utf-8"))
         @Expect(bytesWritten, 12)
         FileIo.close(f)        
@@ -102,7 +99,6 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
@@ -130,7 +126,6 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
@@ -158,7 +153,6 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
@@ -186,7 +180,6 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
@@ -215,11 +208,9 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         var writeFile: ?File = None
-
         try {
             writeFile = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             if (let Some(file) <- writeFile) {
@@ -251,6 +242,7 @@ class testFileFs_write_1 {
     func test_write_08() {
         try {
            let a =  FileIo.write(-1, "hello, world")
+           @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 13900020)
         }
@@ -272,7 +264,6 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
@@ -280,7 +271,6 @@ class testFileFs_write_1 {
         @Expect(res1, true)
         let bytesWritten = FileIo.write(file.fd, Array<Byte>(4096, repeat: 65))
         @Expect(bytesWritten, 4096)
-        
         FileIo.unlink(fpath)
     }
 
@@ -300,7 +290,6 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         var writeFile: ?File = None
@@ -338,7 +327,6 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         var writeFile: ?File = None
@@ -379,10 +367,8 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
         let res1 = file.fd is Int32
         @Expect(res1, true)
@@ -390,7 +376,6 @@ class testFileFs_write_1 {
         @Expect(bytesWritten1, 12)
         let bytesWritten2 = FileIo.write(file.fd, Array<Byte>(12, repeat: 6))
         @Expect(bytesWritten2, 12)
-        
         FileIo.unlink(fpath)
     }
 
@@ -410,7 +395,6 @@ class testFileFs_write_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
@@ -422,7 +406,6 @@ class testFileFs_write_1 {
         @Expect(bytesWritten2, 12)
         let readlen = FileIo.read(file.fd, Array<Byte>(4096, repeat: 0), options: ReadOptions(offset: 0))
         @Expect(readlen, 24)
-        
         FileIo.unlink(fpath)
     }
 
@@ -448,7 +431,6 @@ class testFileFs_write_1 {
     }catch(e: BusinessException) {
         @Expect(e.code, 13900020)
     }       
-        
         FileIo.unlink(fpath)
     }
 
@@ -490,10 +472,10 @@ class testFileFs_write_1 {
              | OpenMode.READ_WRITE))
     try {
         let bytesWritten2 = FileIo.write(f.fd, Array<Byte>(4096, repeat: 0), options: WriteOptions(offset: Int64.Min))
+        @Expect(false)
     }catch(e: BusinessException) {
         @Expect(e.code, 13900020)
     }       
-        
         FileIo.unlink(fpath)
     }
 

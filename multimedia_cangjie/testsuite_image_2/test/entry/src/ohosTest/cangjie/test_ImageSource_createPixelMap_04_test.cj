@@ -37,7 +37,6 @@ class Test_ImageSource_creatPixelMap_04 {
     func test_ImageSource_creatPixelMap_01(): Unit {
         var globalImageSource: ImageSource
         var globalPixelMap: PixelMap
-
         try {
             globalImageSource = createImageSource("/data/storage/el1/base/test.jpg")
             globalPixelMap = globalImageSource.createPixelMap()
@@ -174,7 +173,6 @@ class Test_ImageSource_creatPixelMap_04 {
             index: 0,
             fitDensity: 20
         )
-
         try {
             globalImageSource = createImageSource(JPG_Buf)
             globalPixelMapList = globalImageSource.createPixelMapList(options: opts)
@@ -198,7 +196,6 @@ class Test_ImageSource_creatPixelMap_04 {
     func test_ImageSource_getFrameCount_06(): Unit {
         var globalImageSource: ImageSource
         var FrameCount: UInt32
-
         try {
             globalImageSource = createImageSource(JPG_Buf)
             FrameCount = globalImageSource.getFrameCount()
@@ -221,7 +218,6 @@ class Test_ImageSource_creatPixelMap_04 {
     func test_ImageSource_getFrameCount_07(): Unit {
         var globalImageSource: ImageSource
         var FrameCount: UInt32
-
         try {
             globalImageSource = createImageSource("/data/storage/el1/base/test.gif")
             FrameCount = globalImageSource.getFrameCount()
@@ -244,7 +240,6 @@ class Test_ImageSource_creatPixelMap_04 {
     func test_ImageSource_getDelayTimeList_08(): Unit {
         var globalImageSource: ImageSource
         var delayList: Array<Int32>
-
         try {
             globalImageSource = createImageSource("/data/storage/el1/base/test.gif")
             delayList = globalImageSource.getDelayTimeList()

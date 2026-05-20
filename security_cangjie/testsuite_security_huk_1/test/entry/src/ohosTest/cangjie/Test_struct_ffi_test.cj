@@ -94,6 +94,7 @@ class Test_SecurityHuks_Struct_ffi {
         var flag = false
         try {
             let res = hasKeyItem(keyAlias, optionsBoolNone)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -118,6 +119,7 @@ class Test_SecurityHuks_Struct_ffi {
         var flag = false
         try {
             let res = hasKeyItem(keyAlias, optionsBytesNone)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         } finally {
@@ -142,6 +144,7 @@ class Test_SecurityHuks_Struct_ffi {
         var flag = false
         try {
             generateKeyItem(keyAlias, optionsTooBig)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         }
@@ -163,6 +166,7 @@ class Test_SecurityHuks_Struct_ffi {
         var flag = false
         try {
             generateKeyItem(keyAlias, optionsCountTooBig)
+            @Expect(false)
         } catch (e: BusinessException) {
             flag = true
         }

@@ -44,6 +44,7 @@ class testAppEventPackageHolderTakeNext_1 {
             while (let Option.Some(v) <- eventPackageHolder.takeNext()) {
                 Hilog.info(0, "cangjietest", "takeNext")
             }
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

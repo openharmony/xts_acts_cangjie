@@ -96,14 +96,11 @@ class Test_deleteRdbStore_16 {
         let resultSet1 = rdbStore.query(predicates1, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         Hilog.info(0u32, "cangjietest", "resultSet1.rowcount is ${resultSet1.rowCount}")
         @Expect(resultSet1.rowCount, 1)
-
         var delrdbStore = deleteRdbStore(getAbilityContext(), "zps1.db")
-
         let predicates = RdbPredicates("EMPLOYEE")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         Hilog.info(0u32, "cangjietest", "resultSet.rowcount is ${resultSet.rowCount}")
         @Expect(resultSet.rowCount, 1)
-
         var delrdbStore1 = deleteRdbStore(getAbilityContext(), "zps1.db")
     }
 

@@ -132,7 +132,6 @@ class display_runtime_test {
             let waterfallDisplayAreaRects = WaterfallDisplayAreaRects(left:rectLeft, top:rectTop, right:rectRight, bottom:rectBottom)
             let cutoutInfo = CutoutInfo(boundingRects:rectList, waterfallDisplayAreaRects:waterfallDisplayAreaRects)
             let foldCreaseRegion = FoldCreaseRegion(displayId:0, creaseRects:rectList)
-
             @Expect(false)
         } catch (e: Exception) {
             Hilog.error(0,"","","Display struct failed.")

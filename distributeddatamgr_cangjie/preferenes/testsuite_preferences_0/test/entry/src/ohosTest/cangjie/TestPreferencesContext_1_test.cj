@@ -38,8 +38,8 @@ class TestPreferencesContext_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_1(): Unit {
         Hilog.info(0, "cangjietest","testcase TestCase_1 begins.")
-        @Assert(MAX_KEY_LENGTH, 1024u32)
-        @Assert(MAX_VALUE_LENGTH, 16777216u32)
+        @Expect(MAX_KEY_LENGTH, 1024u32)
+        @Expect(MAX_VALUE_LENGTH, 16777216u32)
         Hilog.info(0, "cangjietest","testcase TestCase_1 ends.")
     }
 }

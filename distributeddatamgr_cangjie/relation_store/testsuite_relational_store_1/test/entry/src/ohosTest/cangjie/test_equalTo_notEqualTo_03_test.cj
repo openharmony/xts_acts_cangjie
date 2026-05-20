@@ -169,7 +169,6 @@ class Test_equalTo_notEqualTo_03 {
         values.add("AGE", RelationalStoreValueType.Integer(19))
         values.add("SALARY", RelationalStoreValueType.Double(100000.5))
         values.add("CODES", RelationalStoreValueType.Boolean(true))
-
         rdbStore.insert("EMPLOYEE", values)
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.equalTo("AGE", RelationalStoreValueType.Integer(19))
@@ -239,7 +238,6 @@ class Test_equalTo_notEqualTo_03 {
         values.add("AGE", RelationalStoreValueType.Integer(Int64.Min))
         values.add("SALARY", RelationalStoreValueType.Double(100000.5))
         values.add("CODES", RelationalStoreValueType.Boolean(true))
-
         rdbStore.insert("EMPLOYEE", values)
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.equalTo("ID", RelationalStoreValueType.Integer(Int64.Max))
@@ -275,7 +273,6 @@ class Test_equalTo_notEqualTo_03 {
         values.add("AGE", RelationalStoreValueType.Integer(Int64.Max))
         values.add("SALARY", RelationalStoreValueType.Double(100000.5))
         values.add("CODES", RelationalStoreValueType.Boolean(true))
-
         rdbStore.insert("EMPLOYEE", values)
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.equalTo("ID", RelationalStoreValueType.Integer(Int64.Min))
@@ -379,7 +376,6 @@ class Test_equalTo_notEqualTo_03 {
         values.add("AGE", RelationalStoreValueType.Integer(19))
         values.add("SALARY", RelationalStoreValueType.Double(100000.5))
         values.add("CODES", RelationalStoreValueType.Boolean(true))
-
         rdbStore.insert("EMPLOYEE", values)
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.notEqualTo("AGE", RelationalStoreValueType.Integer(19))
@@ -450,7 +446,6 @@ class Test_equalTo_notEqualTo_03 {
         values.add("AGE", RelationalStoreValueType.Integer(Int64.Min))
         values.add("SALARY", RelationalStoreValueType.Double(100000.5))
         values.add("CODES", RelationalStoreValueType.Boolean(true))
-
         rdbStore.insert("EMPLOYEE", values)
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.notEqualTo("ID", RelationalStoreValueType.Integer(Int64.Max))
@@ -498,7 +493,6 @@ class Test_equalTo_notEqualTo_03 {
         values.add("AGE", RelationalStoreValueType.Integer(Int64.Max))
         values.add("SALARY", RelationalStoreValueType.Double(100000.5))
         values.add("CODES", RelationalStoreValueType.Boolean(true))
-
         rdbStore.insert("EMPLOYEE", values)
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.equalTo("ID", RelationalStoreValueType.Integer(Int64.Min))

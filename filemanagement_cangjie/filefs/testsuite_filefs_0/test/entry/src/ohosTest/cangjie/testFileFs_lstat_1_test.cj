@@ -45,7 +45,6 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let stat = FileIo.lstat(fpath)
             FileIo.close(file)
             FileIo.unlink(srcpath)
@@ -68,7 +67,6 @@ class testFileIo_lstat_1 {
     @Tag[APILevel22, TestLevel0]
     func test_lstat_02() {
         let fpath = "/data/storage/el2/base/files/file_lstat_02"
-
         try {
             let stat = FileIo.lstat(fpath)
             @Expect(false)
@@ -101,7 +99,6 @@ class testFileIo_lstat_1 {
             let stat = FileIo.lstat(fpath)
             let res1 = stat.ino is Int64
             @Expect(res1)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -130,11 +127,9 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let stat = FileIo.lstat(fpath)
             let res1 = stat.mode is Int64
             @Expect(res1)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -163,11 +158,9 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let stat = FileIo.lstat(fpath)
             let res1 = stat.uid is Int64
             @Expect(res1)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -196,11 +189,9 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let stat = FileIo.lstat(fpath)
             let res1 = stat.gid is Int64
             @Expect(res1)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -229,11 +220,9 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let stat = FileIo.lstat(fpath)
             let res1 = stat.size is Int64
             @Expect(res1)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -265,7 +254,6 @@ class testFileIo_lstat_1 {
             let stat = FileIo.lstat(fpath)
             let res1 = stat.atime is Int64
             @Expect(res1)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -294,11 +282,9 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let stat = FileIo.lstat(fpath)
             let res1 = stat.mtime is Int64
             @Expect(res1)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -327,11 +313,9 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let stat = FileIo.lstat(fpath)
             let res1 = stat.ctime is Int64
             @Expect(res1)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -360,10 +344,8 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let res1 = FileIo.lstat(fpath).isBlockDevice()
             @Expect(res1, false)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -392,10 +374,8 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let res1 = FileIo.lstat(fpath).isCharacterDevice()
             @Expect(res1, false)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -424,10 +404,8 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let res1 = FileIo.lstat(fpath).isDirectory()
             @Expect(res1, false)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -449,12 +427,10 @@ class testFileIo_lstat_1 {
     @Tag[APILevel22, TestLevel0]
     func test_lstat_isDirectory_02() {
         let dpath = "/data/storage/el2/base/files/file_lstat_isDirectory_02"
-
         try {
             FileIo.mkdir(dpath)
             let res1 = FileIo.lstat(dpath).isDirectory()
             @Expect(res1, true)
-
             FileIo.rmdir(dpath)
         } catch (e: Exception) {
             @Expect(false)
@@ -481,10 +457,8 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let res1 = FileIo.lstat(fpath).isFifo()
             @Expect(res1, false)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -514,7 +488,6 @@ class testFileIo_lstat_1 {
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
             let res1 = FileIo.lstat(fpath).isFile()
-            //   @Expect(res1, false)
             @Expect(res1)
             FileIo.close(file)
             FileIo.unlink(srcpath)
@@ -537,12 +510,10 @@ class testFileIo_lstat_1 {
     @Tag[APILevel22, TestLevel0]
     func test_lstat_isFile_02() {
         let dpath = "/data/storage/el2/base/files/file_lstat_isFile_02"
-
         try {
             FileIo.mkdir(dpath)
             let res1 = FileIo.lstat(dpath).isFile()
             @Expect(res1, false)
-
             FileIo.rmdir(dpath)
         } catch (e: Exception) {
             @Expect(false)
@@ -569,10 +540,8 @@ class testFileIo_lstat_1 {
             @Expect(res, true)
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
             let res1 = FileIo.lstat(fpath).isSocket()
             @Expect(res1, false)
-
             FileIo.close(file)
             FileIo.unlink(srcpath)
             FileIo.unlink(fpath)
@@ -602,7 +571,6 @@ class testFileIo_lstat_1 {
             FileIo.close(srcFile)
             let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
             let res1 = FileIo.lstat(fpath).isSymbolicLink()
-            //    @Expect(res1, true)
             @Expect(res1, false)
             FileIo.close(file)
             FileIo.unlink(srcpath)

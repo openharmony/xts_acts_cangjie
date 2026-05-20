@@ -179,12 +179,10 @@ class test_GetResult_2 {
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_store5", opt)
-        // 确保数据库是空的
         let existingEntries = store.getEntries("")
         for (entry in existingEntries) {
             store.delete(entry.key)
         }        
-        // 获取结果集     
         let resultSet = store.getResultSet("any_prefix_")
         let count = resultSet.getCount()
         @Expect(count, 0)   

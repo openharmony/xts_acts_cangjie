@@ -43,6 +43,7 @@ class testGetDefaultNet_1 {
         Hilog.info(0, "cangjietest","Permission denied")
         try {
             let netHandle = getDefaultNet()
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Permission denied")
             @Expect(e.code, 201i32)

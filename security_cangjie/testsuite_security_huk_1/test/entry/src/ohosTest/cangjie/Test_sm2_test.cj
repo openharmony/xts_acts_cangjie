@@ -49,31 +49,23 @@ class Test_SecurityHuks_SM2 {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_sm2_import_export() {
-        // ref: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/security/UniversalKeystoreKit/huks-import-key-in-plaintext-ndk.md
         let keyAlias = "test_sm2_import_export"
-
         let keyAliasBak = keyAlias + ".bak"
-
         clean(keyAlias)
         clean(keyAliasBak)
-
         try {
             let options = HuksOptions(
                 properties: [
                     HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                    // 不支持agree
                     HuksParam(
                         HuksTag.HUKS_TAG_PURPOSE,
                         HuksParamValue.Int32Value(1i32)
                     ),
                     HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                    // 摘要算法sm3
                     HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
                 ]
             )
-
             generateKeyItem(keyAlias, options)
-
             importKeyItem(
                 keyAliasBak,
                 HuksOptions(
@@ -123,7 +115,6 @@ class Test_SecurityHuks_SM2 {
                     ]
                 )
             )
-
             let signHandle = initSession(
                 keyAlias,
                 HuksOptions(
@@ -135,7 +126,6 @@ class Test_SecurityHuks_SM2 {
                     ]
                 )
             ).handle
-
             updateSession(
                 signHandle,
                 HuksOptions(
@@ -149,7 +139,6 @@ class Test_SecurityHuks_SM2 {
                 ),
                 token: []
             )
-
             let sign = finishSession(
                 signHandle,
                 HuksOptions(
@@ -162,9 +151,7 @@ class Test_SecurityHuks_SM2 {
                 ),
                 token: []
             ).getOrThrow()
-
             abortSession(signHandle, HuksOptions(properties: []))
-
             let verifyHandle = initSession(
                 keyAlias,
                 HuksOptions(
@@ -176,7 +163,6 @@ class Test_SecurityHuks_SM2 {
                     ]
                 )
             ).handle
-
             updateSession(
                 verifyHandle,
                 HuksOptions(
@@ -190,7 +176,6 @@ class Test_SecurityHuks_SM2 {
                 ),
                 token: []
             )
-
             let verify = finishSession(
                 verifyHandle,
                 HuksOptions(
@@ -204,7 +189,6 @@ class Test_SecurityHuks_SM2 {
                 ),
                 token: []
             ).getOrThrow()
-
             @Expect(!verify.isEmpty())
             abortSession(verifyHandle, HuksOptions(properties: []))
         } catch (e: BusinessException) {
@@ -242,7 +226,6 @@ class Test_SecurityHuks_SM2 {
                     ]
                 )
             )
-
             let encHandle = initSession(
                 keyAlias,
                 HuksOptions(
@@ -254,7 +237,6 @@ class Test_SecurityHuks_SM2 {
                     ]
                 )
             ).handle
-
             updateSession(
                 encHandle,
                 HuksOptions(
@@ -268,7 +250,6 @@ class Test_SecurityHuks_SM2 {
                 ),
                 token: []
             )
-
             let enc = finishSession(
                 encHandle,
                 HuksOptions(
@@ -281,9 +262,7 @@ class Test_SecurityHuks_SM2 {
                 ),
                 token: []
             ).getOrThrow()
-
             abortSession(encHandle, HuksOptions(properties: []))
-
             let decHandle = initSession(
                 keyAlias,
                 HuksOptions(
@@ -296,7 +275,6 @@ class Test_SecurityHuks_SM2 {
                     inData: enc
                 )
             ).handle
-
             updateSession(
                 decHandle,
                 HuksOptions(
@@ -309,7 +287,6 @@ class Test_SecurityHuks_SM2 {
                 ),
                 token: []
             )
-
             let dec = finishSession(
                 decHandle,
                 HuksOptions(
@@ -323,7 +300,6 @@ class Test_SecurityHuks_SM2 {
                 ),
                 token: []
             ).getOrThrow()
-
             let decData = String.fromUtf8(dec)
             @Expect(decData == inData)
             abortSession(decHandle, HuksOptions(properties: []))

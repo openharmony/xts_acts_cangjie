@@ -47,7 +47,7 @@ class TestGetRawFileContent_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileContent")
         try {
             getResourceManager().getRawFileContent("")
-            @Expect("assertion#1783: not throw", "fail to get RawFileContent")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -70,7 +70,7 @@ class TestGetRawFileContent_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileContent")
         try {
             getResourceManager().getRawFileContent("\0")
-            @Expect("assertion#1784: not throw", "fail to get RawFileContent")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -93,7 +93,7 @@ class TestGetRawFileContent_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileContent")
         try {
             getResourceManager().getRawFileContent("non_existing_rawfile_path_0")
-            @Expect("assertion#1785: not throw", "fail to get RawFileContent")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -116,7 +116,7 @@ class TestGetRawFileContent_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileContent")
         try {
             getResourceManager().getRawFileContent("aaaaa/bbbbb")
-            @Expect("assertion#1786: not throw", "fail to get RawFileContent")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -139,7 +139,7 @@ class TestGetRawFileContent_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileContent")
         try {
             getResourceManager().getRawFileContent("//////")
-            @Expect("assertion#1787: not throw", "fail to get RawFileContent")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -162,7 +162,7 @@ class TestGetRawFileContent_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get RawFileContent")
         try {
             getResourceManager().getRawFileContent("\\\\")
-            @Expect("assertion#1788: not throw", "fail to get RawFileContent")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -184,7 +184,7 @@ class TestGetRawFileContent_1 {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFileContent")
         let rawFileContent = getResourceManager().getRawFileContent("test.txt")
-        @Assert(rawFileContent.toString(), "[116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 114, 97, 119, 32, 102, 105, 108, 101, 46]")
+        @Expect(rawFileContent.toString(), "[116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 114, 97, 119, 32, 102, 105, 108, 101, 46]")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 ends.")
     }
 
@@ -201,11 +201,9 @@ class TestGetRawFileContent_1 {
     func TestCase_8(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_8 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFileContent")
-        // let rawFileContent = getResourceManager().getRawFileContent("test1.txt")
-        // @Assert(rawFileContent.toString(), "[104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100, 32, 116, 111, 111, 33]")
         try {
             getResourceManager().getRawFileContent("test1.txt")
-            @Expect("assertion#1787: not throw", "fail to get RawFileContent")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -226,11 +224,9 @@ class TestGetRawFileContent_1 {
     func TestCase_9(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_9 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFileContent")
-        // let rawFileContent = getResourceManager().getRawFileContent("dir0/test1.txt")
-        // @Assert(rawFileContent.toString(), "[104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100, 32, 116, 111, 111, 33]")
         try {
             getResourceManager().getRawFileContent("dir0/test1.txt")
-            @Expect("assertion#1787: not throw", "fail to get RawFileContent")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)
@@ -251,11 +247,9 @@ class TestGetRawFileContent_1 {
     func TestCase_10(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_10 begins.")
         Hilog.info(0u32, "CangjieTest", "define local variable rawFileContent")
-        // let rawFileContent = getResourceManager().getRawFileContent("dir0/dir0/test1.txt")
-        // @Assert(rawFileContent.toString(), "[104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100, 32, 116, 111, 111, 33]")
         try {
             getResourceManager().getRawFileContent("dir0/dir0/test1.txt")
-            @Expect("assertion#1787: not throw", "fail to get RawFileContent")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid relative path.")
             @Expect(e.code, 9001005i32)

@@ -41,7 +41,7 @@ class testCreateImageSource_Int32_1 {
         try {
             let imageSource = createImageSource(-2147483648i32)
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -65,7 +65,7 @@ class testCreateImageSource_Int32_1 {
         try {
             let imageSource = createImageSource(-114514i32)
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -89,7 +89,7 @@ class testCreateImageSource_Int32_1 {
         try {
             let imageSource = createImageSource(-1i32)
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -110,10 +110,8 @@ class testCreateImageSource_Int32_1 {
     func TestCase_4(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_4 begins.")
         Hilog.info(0, "cangjietest", "createImageSource fail")
-
         let imageSource = createImageSource(0i32)
         @Expect(true, imageSource.supportedFormats.size > 0i64)
-
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -130,10 +128,8 @@ class testCreateImageSource_Int32_1 {
     func TestCase_5(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_5 begins.")
         Hilog.info(0, "cangjietest", "createImageSource fail")
-
         let imageSource = createImageSource(1i32)
         @Expect(true, imageSource.supportedFormats.size > 0i64)
-
         Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
     }
 
@@ -153,7 +149,7 @@ class testCreateImageSource_Int32_1 {
         try {
             let imageSource = createImageSource(114514i32)
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#5: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -177,7 +173,7 @@ class testCreateImageSource_Int32_1 {
         try {
             let imageSource = createImageSource(2147483647i32)
             @Expect(true, imageSource.supportedFormats.size > 0i64)
-            @Expect("assertion#6: not throw", "createImageSource fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)

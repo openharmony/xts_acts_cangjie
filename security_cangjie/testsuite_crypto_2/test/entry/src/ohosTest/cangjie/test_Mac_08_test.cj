@@ -59,7 +59,6 @@ class Test_Mac_08 {
     func test_createMac_02(): Unit {
         var globalMac: Mac
         var macString: String = "SHA1X"
-
         try {
             globalMac = createMac(macString)
             @Expect(false)
@@ -81,7 +80,6 @@ class Test_Mac_08 {
     func test_createMac_03(): Unit {
         var globalMac: Mac
         var macString: String = ""
-
         try {
             globalMac = createMac(macString)
             @Expect(false)
@@ -106,7 +104,6 @@ class Test_Mac_08 {
         var blob = DataBlob("this is test!".toArray())
         var skg = createSymKeyGenerator("AES128")
         var sk = skg.generateSymKey()
-
         try {
             globalMac = createMac(macString)
             globalMac.`initialize`(sk)
@@ -133,7 +130,6 @@ class Test_Mac_08 {
         var blob = DataBlob("".toArray())
         var skg = createSymKeyGenerator("AES128")
         var sk = skg.generateSymKey()
-
         try {
             globalMac = createMac(macString)
             globalMac.`initialize`(sk)
@@ -161,7 +157,6 @@ class Test_Mac_08 {
         var skg = createSymKeyGenerator("AES128")
         var sk = skg.generateSymKey()
         var final_blob: DataBlob
-
         try {
             globalMac = createMac(macString)
             globalMac.`initialize`(sk)

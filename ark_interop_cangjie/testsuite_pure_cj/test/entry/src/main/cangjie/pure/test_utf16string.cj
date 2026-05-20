@@ -50,7 +50,6 @@ class TestUtf16String {
                 let receive = await(jsContext) {jstr.toUtf16String()}
                 @Expect(u16, receive)
                 @Expect(one, receive.toString())
-
                 let value = await(jsContext) {u16.toJSValue(jsContext)}
                 let received1 = await(jsContext) {Utf16String.fromJSValue(jsContext, value)}
                 @Expect(received1, u16)

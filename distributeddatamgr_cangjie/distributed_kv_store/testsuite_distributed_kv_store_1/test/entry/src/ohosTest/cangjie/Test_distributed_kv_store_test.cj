@@ -186,6 +186,7 @@ class Test_distributed_kv_store {
         try {
             var valuestr = kvStore.get(strkey)
             throw Exception()
+            @Expect(false)
         } catch (_) {
             @Expect(true)
         }
@@ -215,6 +216,7 @@ class Test_distributed_kv_store {
         try {
             var valuestr = kvStore.get(strkey)
             throw Exception()
+            @Expect(false)
         } catch (_) {
             @Expect(true)
         }
@@ -251,6 +253,7 @@ class Test_distributed_kv_store {
         try {
             var valuestr = kvStore.get(strkey)
             throw Exception()
+            @Expect(false)
         } catch (_) {
             @Expect(true)
         }

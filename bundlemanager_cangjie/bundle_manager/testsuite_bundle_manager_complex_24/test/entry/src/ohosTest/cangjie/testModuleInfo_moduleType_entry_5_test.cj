@@ -56,9 +56,7 @@ class testModuleInfo_moduleType_entry_5 {
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_121 ends.")
     }
@@ -89,9 +87,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_122 ends.")
     }
@@ -122,9 +118,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_123 ends.")
     }
@@ -155,9 +149,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_124 ends.")
     }
@@ -189,9 +181,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_125 ends.")
     }
@@ -222,9 +212,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_126 ends.")
     }
@@ -255,9 +243,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_127 ends.")
     }
@@ -288,9 +274,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_128 ends.")
     }
@@ -321,9 +305,7 @@ case _ => false
             })
         @Expect(match (moduleInfo.moduleType) {
 case ModuleType.Entry => true
-
 case _ => false
-
 }, true)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_129 ends.")
     }

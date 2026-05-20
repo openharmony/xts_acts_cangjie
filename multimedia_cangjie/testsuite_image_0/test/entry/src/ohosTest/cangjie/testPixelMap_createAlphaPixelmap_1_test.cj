@@ -43,7 +43,7 @@ class testPixelMap_createAlphaPixelmap_1 {
                 pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "define local variable alphaPixelmap")
         let alphaPixelmap = pixelMap.createAlphaPixelMap()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -66,7 +66,7 @@ class testPixelMap_createAlphaPixelmap_1 {
                 scaleMode: ScaleMode.CenterCrop))
         Hilog.info(0, "cangjietest", "define local variable alphaPixelmap")
         let alphaPixelmap = pixelMap.createAlphaPixelMap()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
 
@@ -89,7 +89,7 @@ class testPixelMap_createAlphaPixelmap_1 {
                 scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "define local variable alphaPixelmap")
         let alphaPixelmap = pixelMap.createAlphaPixelMap()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -111,7 +111,7 @@ class testPixelMap_createAlphaPixelmap_1 {
                 pixelFormat: PixelMapFormat.Bgra8888, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "define local variable alphaPixelmap")
         let alphaPixelmap = pixelMap.createAlphaPixelMap()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -133,7 +133,7 @@ class testPixelMap_createAlphaPixelmap_1 {
                 pixelFormat: PixelMapFormat.Alpha8, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "define local variable alphaPixelmap")
         let alphaPixelmap = pixelMap.createAlphaPixelMap()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_6 ends.")
     }
 
@@ -155,7 +155,7 @@ class testPixelMap_createAlphaPixelmap_1 {
                 pixelFormat: PixelMapFormat.RgbaF16, scaleMode: ScaleMode.FitTargetSize))
         Hilog.info(0, "cangjietest", "define local variable alphaPixelmap")
         let alphaPixelmap = pixelMap.createAlphaPixelMap()
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
     }
 }

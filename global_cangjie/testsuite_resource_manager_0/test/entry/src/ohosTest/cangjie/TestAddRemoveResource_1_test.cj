@@ -47,7 +47,7 @@ class TestAddRemoveResource_1 {
         Hilog.info(0u32, "CangjieTest", "fail to add Resource.")
         try {
             getResourceManager().addResource("/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp")
-            @Expect("assertion#0: not throw", "fail to add Resource.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid overlay path.")
             @Expect(e.code, 9001010i32)
@@ -55,7 +55,7 @@ class TestAddRemoveResource_1 {
         Hilog.info(0u32, "CangjieTest", "fail to add Resource.")
         try {
             getResourceManager().removeResource("/data/storage/el2/base/haps/entry/files/library-default-unsigned.hsp")
-            @Expect("assertion#1: not throw", "fail to add Resource.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid overlay path.")
             @Expect(e.code, 9001010i32)

@@ -210,11 +210,9 @@ class TestUtf16String {
                 let prev = 0xD800 + ((code & 0xFFC00) >> 10)
                 @Expect(result, UInt16(prev))
             }
-
             @Expect(withException<Exception> {
                 u16[10]
             })
-
             @Expect(withException<Exception> {
                 u16[-2]
             })
@@ -241,16 +239,13 @@ class TestUtf16String {
             let result = uSrc[range].toString()
             @Expect(result, dst)
         }
-
         let utf16Src = Utf16String("abcde")
         @Expect(withException<Exception> {
             utf16Src[-1..1]
         })
-
         @Expect(withException<Exception> {
             utf16Src[1..0]
         })
-
         @Expect(withException<Exception> {
             utf16Src[2..1]
         })

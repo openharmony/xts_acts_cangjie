@@ -53,7 +53,6 @@ class test_GetConfiguration {
             @Expect(configuration.deviceType.getValue(),"DeviceTypePhone")
             @Expect(configuration.screenDensity.getValue(),"ScreenXxxldpi")
             @Expect(configuration.colorMode.getValue(),"Light")
-            // 无sim
             @Expect(configuration.mcc,0u32)
             @Expect(configuration.mnc,0u32)
         } catch (e: BusinessException) {

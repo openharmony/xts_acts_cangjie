@@ -42,14 +42,12 @@ class testFileFs_movedir_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         let fpathTartget = "/data/storage/el2/base/files/test_movefile_01"
         try {
             FileIo.moveDir(fpath, fpathTartget)
             let size1 = FileIo.stat(fpath).size 
             let size2 = FileIo.stat(fpathTartget).size
              @Expect(size1, size2)
-
              FileIo.unlink(fpathTartget)   
              FileIo.unlink(fpath)
         }catch (e: BusinessException){

@@ -102,7 +102,6 @@ class Test_rpc_02 {
         let result2 = data.containFileDescriptors()
         @Expect(result2, true)
         let fd = data.readFileDescriptor()
-        // from arkts
         @Expect(fd, file.fd + 2)
         MessageSequence.dupFileDescriptor(fd)
         MessageSequence.closeFileDescriptor(fd)

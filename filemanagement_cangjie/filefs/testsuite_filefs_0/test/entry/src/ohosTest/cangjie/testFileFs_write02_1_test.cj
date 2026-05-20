@@ -42,7 +42,7 @@ class testFileIo_write02_1 {
         }
         let file = FileIo.open(filePath,mode:(OpenMode.READ_WRITE | OpenMode.CREATE))
         FileIo.write(file.fd, Array<UInt8>(100i64, repeat: 0u8))
-        @Assert(file.getParent().isEmpty(), false)
+        @Expect(file.getParent().isEmpty(), false)
         FileIo.close(file)
         FileIo.unlink(filePath)
     }

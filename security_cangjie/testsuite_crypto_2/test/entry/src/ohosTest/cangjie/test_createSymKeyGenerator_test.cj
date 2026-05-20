@@ -41,6 +41,7 @@ class Test_createSymKeyGenerator_01 {
     func test_creatsymkeygenerator_01(): Unit {
         try {
             createSymKeyGenerator("3DES193")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported.")
@@ -60,6 +61,7 @@ class Test_createSymKeyGenerator_01 {
     func test_creatsymkeygenerator_02(): Unit {
         try {
             createSymKeyGenerator("")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported.")
@@ -79,6 +81,7 @@ class Test_createSymKeyGenerator_01 {
     func test_creatsymkeygenerator_03(): Unit {
         try {
             createSymKeyGenerator("\0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported.")
@@ -98,6 +101,7 @@ class Test_createSymKeyGenerator_01 {
     func test_creatsymkeygenerator_04(): Unit {
         try {
             createSymKeyGenerator("%^&123abc")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported.")

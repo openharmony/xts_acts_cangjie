@@ -47,7 +47,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(1u32, 1i64)
-            @Expect("assertion#1633: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -70,7 +70,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(1u32, -1i64)
-            @Expect("assertion#1634: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -93,7 +93,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(1u32, 12345678i64)
-            @Expect("assertion#1635: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -116,7 +116,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(0u32, 1i64)
-            @Expect("assertion#1636: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -139,7 +139,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(0u32, -1i64)
-            @Expect("assertion#1637: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -162,7 +162,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(0u32, 12345678i64)
-            @Expect("assertion#1638: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -185,7 +185,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(2u32, 1i64)
-            @Expect("assertion#1639: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -208,7 +208,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(2u32, -1i64)
-            @Expect("assertion#1640: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -231,7 +231,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(2u32, 12345678i64)
-            @Expect("assertion#1641: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -254,7 +254,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(UInt32.Min, 1i64)
-            @Expect("assertion#1642: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -277,7 +277,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(UInt32.Min, -1i64)
-            @Expect("assertion#1643: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -300,7 +300,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(UInt32.Min, 12345678i64)
-            @Expect("assertion#1644: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -323,7 +323,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(UInt32.Max, 1i64)
-            @Expect("assertion#1645: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -346,7 +346,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(UInt32.Max, -1i64)
-            @Expect("assertion#1646: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -369,7 +369,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(UInt32.Max, 12345678i64)
-            @Expect("assertion#1647: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -392,7 +392,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.module_desc).id, 1i64)
-            @Expect("assertion#1648: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -415,7 +415,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.module_desc).id, -1i64)
-            @Expect("assertion#1649: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -438,7 +438,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.module_desc).id, 12345678i64)
-            @Expect("assertion#1650: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -461,7 +461,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.strarray.sizelist).id, 1i64)
-            @Expect("assertion#1651: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -484,7 +484,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.strarray.sizelist).id, -1i64)
-            @Expect("assertion#1652: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -507,7 +507,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.strarray.sizelist).id, 12345678i64)
-            @Expect("assertion#1653: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -527,7 +527,7 @@ class TestGetPluralStringValueByResId_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_22(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_22 begins.")
-        @Assert(getResourceManager().getPluralStringValue(@r(app.plural.plural_name).id, 1i64), "1 test other")
+        @Expect(getResourceManager().getPluralStringValue(@r(app.plural.plural_name).id, 1i64), "1 test other")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_22 ends.")
     }
 
@@ -543,7 +543,7 @@ class TestGetPluralStringValueByResId_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_23(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 begins.")
-        @Assert(getResourceManager().getPluralStringValue(@r(app.plural.plural_name).id, -1i64), "-1 test other")
+        @Expect(getResourceManager().getPluralStringValue(@r(app.plural.plural_name).id, -1i64), "-1 test other")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 ends.")
     }
 
@@ -559,7 +559,7 @@ class TestGetPluralStringValueByResId_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_24(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 begins.")
-        @Assert(getResourceManager().getPluralStringValue(@r(app.plural.plural_name).id, 12345678i64), "12345678 test other")
+        @Expect(getResourceManager().getPluralStringValue(@r(app.plural.plural_name).id, 12345678i64), "12345678 test other")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 ends.")
     }
 
@@ -578,7 +578,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.Test_Format1).id, 1i64)
-            @Expect("assertion#1654: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -601,7 +601,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.Test_Format1).id, -1i64)
-            @Expect("assertion#1655: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -624,7 +624,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.Test_Format1).id, 12345678i64)
-            @Expect("assertion#1656: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -647,7 +647,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.Test_Format2).id, 1i64)
-            @Expect("assertion#1657: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -670,7 +670,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.Test_Format2).id, -1i64)
-            @Expect("assertion#1658: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -693,7 +693,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.Test_Format2).id, 12345678i64)
-            @Expect("assertion#1659: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -716,7 +716,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.Test_Format3).id, 1i64)
-            @Expect("assertion#1660: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -739,7 +739,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.Test_Format3).id, -1i64)
-            @Expect("assertion#1661: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -762,7 +762,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.Test_Format3).id, 12345678i64)
-            @Expect("assertion#1662: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -785,7 +785,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.EntryAbility_desc).id, 1i64)
-            @Expect("assertion#1663: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -808,7 +808,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.EntryAbility_desc).id, -1i64)
-            @Expect("assertion#1664: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -831,7 +831,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.EntryAbility_desc).id, 12345678i64)
-            @Expect("assertion#1665: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -854,7 +854,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.media.layered_image).id, 1i64)
-            @Expect("assertion#1666: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -877,7 +877,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.media.layered_image).id, -1i64)
-            @Expect("assertion#1667: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -900,7 +900,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.media.layered_image).id, 12345678i64)
-            @Expect("assertion#1668: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -923,7 +923,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.EntryAbility_label).id, 1i64)
-            @Expect("assertion#1669: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -946,7 +946,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.EntryAbility_label).id, -1i64)
-            @Expect("assertion#1670: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -969,7 +969,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.string.EntryAbility_label).id, 12345678i64)
-            @Expect("assertion#1671: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -992,7 +992,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.media.startIcon).id, 1i64)
-            @Expect("assertion#1672: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1015,7 +1015,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.media.startIcon).id, -1i64)
-            @Expect("assertion#1673: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1038,7 +1038,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.media.startIcon).id, 12345678i64)
-            @Expect("assertion#1674: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1061,7 +1061,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.profile.main_pages).id, 1i64)
-            @Expect("assertion#1675: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1084,7 +1084,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.profile.main_pages).id, -1i64)
-            @Expect("assertion#1676: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1107,7 +1107,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.profile.main_pages).id, 12345678i64)
-            @Expect("assertion#1677: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1130,7 +1130,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.color.start_window_background).id, 1i64)
-            @Expect("assertion#1678: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1153,7 +1153,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.color.start_window_background).id, -1i64)
-            @Expect("assertion#1679: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1176,7 +1176,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.color.start_window_background).id, 12345678i64)
-            @Expect("assertion#1680: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1199,7 +1199,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.float.float_1).id, 1i64)
-            @Expect("assertion#1681: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1222,7 +1222,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.float.float_1).id, -1i64)
-            @Expect("assertion#1682: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1245,7 +1245,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.float.float_1).id, 12345678i64)
-            @Expect("assertion#1683: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1268,7 +1268,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.float.float_2).id, 1i64)
-            @Expect("assertion#1684: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1291,7 +1291,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.float.float_2).id, -1i64)
-            @Expect("assertion#1685: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1314,7 +1314,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.float.float_2).id, 12345678i64)
-            @Expect("assertion#1686: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1337,7 +1337,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.integer.int_1).id, 1i64)
-            @Expect("assertion#1687: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1360,7 +1360,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.integer.int_1).id, -1i64)
-            @Expect("assertion#1688: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1383,7 +1383,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.integer.int_1).id, 12345678i64)
-            @Expect("assertion#1689: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1406,7 +1406,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.integer.int_2).id, 1i64)
-            @Expect("assertion#1690: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1429,7 +1429,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.integer.int_2).id, -1i64)
-            @Expect("assertion#1691: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1452,7 +1452,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.integer.int_2).id, 12345678i64)
-            @Expect("assertion#1692: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1475,7 +1475,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.test_boolean1).id, 1i64)
-            @Expect("assertion#1693: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1498,7 +1498,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.test_boolean1).id, -1i64)
-            @Expect("assertion#1694: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1521,7 +1521,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.test_boolean1).id, 12345678i64)
-            @Expect("assertion#1695: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1544,7 +1544,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.test_boolean0).id, 1i64)
-            @Expect("assertion#1696: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1567,7 +1567,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.test_boolean0).id, -1i64)
-            @Expect("assertion#1697: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1590,7 +1590,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.test_boolean0).id, 12345678i64)
-            @Expect("assertion#1698: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1613,7 +1613,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.boolean_3).id, 1i64)
-            @Expect("assertion#1699: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1636,7 +1636,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.boolean_3).id, -1i64)
-            @Expect("assertion#1700: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1659,7 +1659,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.boolean_3).id, 12345678i64)
-            @Expect("assertion#1701: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1682,7 +1682,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.boolean_4).id, 1i64)
-            @Expect("assertion#1702: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1705,7 +1705,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.boolean_4).id, -1i64)
-            @Expect("assertion#1703: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -1728,7 +1728,7 @@ class TestGetPluralStringValueByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Plural.")
         try {
             getResourceManager().getPluralStringValue(@r(app.boolean.boolean_4).id, 12345678i64)
-            @Expect("assertion#1704: not throw", "fail to get Plural.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)

@@ -41,7 +41,7 @@ class testCreateCipher_1 {
         Hilog.info(0u32, "CangjieTest", "createCipher fail")
         try {
             createCipher("")
-            @Expect("assertion#0: not throw", "createCipher fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Capability not supported.")
             @Expect(e.code, 801i32)
@@ -64,7 +64,7 @@ class testCreateCipher_1 {
         Hilog.info(0u32, "CangjieTest", "createCipher fail")
         try {
             createCipher("errorString")
-            @Expect("assertion#1: not throw", "createCipher fail")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Capability not supported.")
             @Expect(e.code, 801i32)

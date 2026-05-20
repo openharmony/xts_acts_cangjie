@@ -47,7 +47,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("")
-            @Expect("assertion#396: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -70,7 +70,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("\0")
-            @Expect("assertion#397: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -93,7 +93,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("nonExistingResourceName")
-            @Expect("assertion#398: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -116,7 +116,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("module_desc")
-            @Expect("assertion#399: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -139,7 +139,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("sizelist")
-            @Expect("assertion#400: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -162,7 +162,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("plural_name")
-            @Expect("assertion#401: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -185,7 +185,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("Test_Format1")
-            @Expect("assertion#402: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -208,7 +208,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("Test_Format2")
-            @Expect("assertion#403: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -231,7 +231,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("Test_Format3")
-            @Expect("assertion#404: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -254,7 +254,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("EntryAbility_desc")
-            @Expect("assertion#405: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -277,7 +277,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("layered_image")
-            @Expect("assertion#406: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -300,7 +300,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("EntryAbility_label")
-            @Expect("assertion#407: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -323,7 +323,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("startIcon")
-            @Expect("assertion#408: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -346,7 +346,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("main_pages")
-            @Expect("assertion#409: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -369,7 +369,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("start_window_background")
-            @Expect("assertion#410: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -393,7 +393,7 @@ class TestGetNumberByName_1 {
         if (let NumberValueType.Float32Value(value) <- getResourceManager().getNumberByName("float_1")) {
             @Expect(value, 48.000000f32)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_16 ends.")
     }
@@ -414,7 +414,7 @@ class TestGetNumberByName_1 {
         if (let NumberValueType.Float32Value(value) <- getResourceManager().getNumberByName("float_2")) {
             @Expect(value, 24.000000f32)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 ends.")
     }
@@ -435,7 +435,7 @@ class TestGetNumberByName_1 {
         if (let NumberValueType.Int32Value(value) <- getResourceManager().getNumberByName("int_1")) {
             @Expect(value, 1i32)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_18 ends.")
     }
@@ -456,7 +456,7 @@ class TestGetNumberByName_1 {
         if (let NumberValueType.Int32Value(value) <- getResourceManager().getNumberByName("int_2")) {
             @Expect(value, 100i32)
         } else {
-            @Expect("assertion failed", "xxxx")
+            @Expect(false)
         }
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 ends.")
     }
@@ -476,7 +476,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("test_boolean1")
-            @Expect("assertion#411: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -499,7 +499,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("test_boolean0")
-            @Expect("assertion#412: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -522,7 +522,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("boolean_3")
-            @Expect("assertion#413: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -545,7 +545,7 @@ class TestGetNumberByName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Number by name.")
         try {
             getResourceManager().getNumberByName("boolean_4")
-            @Expect("assertion#414: not throw", "fail to get Number by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)

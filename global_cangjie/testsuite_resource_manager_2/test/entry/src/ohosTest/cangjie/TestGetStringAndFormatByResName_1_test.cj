@@ -50,7 +50,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string and format by name.")
         try {
             getResourceManager().getStringByName("", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1269: not throw", "fail to get string and format by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -73,7 +73,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string and format by name.")
         try {
             getResourceManager().getStringByName("", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1270: not throw", "fail to get string and format by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -96,7 +96,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string and format by name.")
         try {
             getResourceManager().getStringByName("", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1271: not throw", "fail to get string and format by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -119,7 +119,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string and format by name.")
         try {
             getResourceManager().getStringByName("\0", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1272: not throw", "fail to get string and format by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -142,7 +142,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string and format by name.")
         try {
             getResourceManager().getStringByName("\0", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1273: not throw", "fail to get string and format by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -165,7 +165,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string and format by name.")
         try {
             getResourceManager().getStringByName("\0", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1274: not throw", "fail to get string and format by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -188,7 +188,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string and format by name.")
         try {
             getResourceManager().getStringByName("nonExistingResourceName", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1275: not throw", "fail to get string and format by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -211,7 +211,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string and format by name.")
         try {
             getResourceManager().getStringByName("nonExistingResourceName", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1276: not throw", "fail to get string and format by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -234,7 +234,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string and format by name.")
         try {
             getResourceManager().getStringByName("nonExistingResourceName", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1277: not throw", "fail to get string and format by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -259,7 +259,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("sizelist", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1281: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -282,7 +282,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("sizelist", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1282: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -305,7 +305,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("sizelist", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1283: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -328,7 +328,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("plural_name", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1284: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -351,7 +351,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("plural_name", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1285: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -374,7 +374,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("plural_name", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1286: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -394,7 +394,7 @@ class TestGetStringAndFormatByResName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_19(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 begins.")
-        @Assert(getResourceManager().getStringByName("Test_Format1", ArgsValueType.Int32Value(100i32)), "int is 100")
+        @Expect(getResourceManager().getStringByName("Test_Format1", ArgsValueType.Int32Value(100i32)), "int is 100")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 ends.")
     }
 
@@ -411,7 +411,7 @@ class TestGetStringAndFormatByResName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_24(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 begins.")
-        @Assert(getResourceManager().getStringByName("Test_Format2", ArgsValueType.Float32Value(3.140000f32)), "float is 3.140000")
+        @Expect(getResourceManager().getStringByName("Test_Format2", ArgsValueType.Float32Value(3.140000f32)), "float is 3.140000")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 ends.")
     }
 
@@ -429,7 +429,7 @@ class TestGetStringAndFormatByResName_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_26(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_26 begins.")
-        @Assert(getResourceManager().getStringByName("Test_Format3", ArgsValueType.StringValue("hello")), "string is hello")
+        @Expect(getResourceManager().getStringByName("Test_Format3", ArgsValueType.StringValue("hello")), "string is hello")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_26 ends.")
     }
 
@@ -448,7 +448,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("layered_image", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1296: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -471,7 +471,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("layered_image", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1297: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -494,7 +494,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("layered_image", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1298: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -518,7 +518,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("startIcon", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1302: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -541,7 +541,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("startIcon", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1303: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -564,7 +564,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("startIcon", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1304: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -587,7 +587,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("main_pages", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1305: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -610,7 +610,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("main_pages", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1306: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -633,7 +633,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("main_pages", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1307: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -656,7 +656,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("start_window_background", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1308: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -679,7 +679,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("start_window_background", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1309: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -702,7 +702,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("start_window_background", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1310: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -725,7 +725,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("float_1", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1311: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -748,7 +748,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("float_1", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1312: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -771,7 +771,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("float_1", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1313: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -794,7 +794,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("float_2", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1314: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -817,7 +817,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("float_2", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1315: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -840,7 +840,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("float_2", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1316: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -863,7 +863,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("int_1", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1317: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -886,7 +886,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("int_1", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1318: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -909,7 +909,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("int_1", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1319: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -932,7 +932,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("int_2", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1320: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -955,7 +955,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("int_2", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1321: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -978,7 +978,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("int_2", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1322: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1001,7 +1001,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("test_boolean1", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1323: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1024,7 +1024,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("test_boolean1", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1324: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1047,7 +1047,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("test_boolean1", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1325: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1070,7 +1070,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("test_boolean0", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1326: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1093,7 +1093,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("test_boolean0", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1327: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1116,7 +1116,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("test_boolean0", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1328: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1139,7 +1139,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("boolean_3", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1329: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1162,7 +1162,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("boolean_3", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1330: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1185,7 +1185,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("boolean_3", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1331: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1208,7 +1208,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("boolean_4", ArgsValueType.Int32Value(100i32))
-            @Expect("assertion#1332: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1231,7 +1231,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("boolean_4", ArgsValueType.StringValue("hello"))
-            @Expect("assertion#1333: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)
@@ -1254,7 +1254,7 @@ class TestGetStringAndFormatByResName_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get string by name.")
         try {
             getResourceManager().getStringByName("boolean_4", ArgsValueType.Float32Value(3.140000f32))
-            @Expect("assertion#1334: not throw", "fail to get string by name.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource name.")
             @Expect(e.code, 9001003i32)

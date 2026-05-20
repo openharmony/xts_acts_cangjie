@@ -46,7 +46,6 @@ class testFileIo_write01_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
         let res1 = file.fd is Int32
         @Expect(res1, true)
@@ -57,7 +56,6 @@ class testFileIo_write01_1 {
         try {
             let bytesWritten3 = FileIo.write(file.fd, Array<Byte>(12, repeat: 0))
             @Expect(bytesWritten3, 12)
-
         } catch (e: Exception) {
             @Expect(e.message,"Invalid argument")
         }
@@ -86,12 +84,10 @@ class testFileIo_write01_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             let res1 = file.fd is Int32
             @Expect(res1, true)
-
             let bytesWritten = FileIo.write(file.fd, "hello, world", options: WriteOptions(encoding: "utf-8"))
             @Expect(bytesWritten, 12)
             FileIo.close(file)
@@ -121,7 +117,6 @@ class testFileIo_write01_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             let res1 = file.fd is Int32
@@ -155,7 +150,6 @@ class testFileIo_write01_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             let res1 = file.fd is Int32
@@ -189,7 +183,6 @@ class testFileIo_write01_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             let res1 = file.fd is Int32
@@ -223,7 +216,6 @@ class testFileIo_write01_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             let res1 = file.fd is Int32
@@ -259,7 +251,6 @@ class testFileIo_write01_1 {
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         var writeFile: ?File = None
-
         try {
             writeFile = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             if (let Some(file) <- writeFile) {
@@ -353,7 +344,6 @@ class testFileIo_write01_1 {
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         var writeFile: ?File = None
-
         try {
             writeFile = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             if (let Some(file) <- writeFile) {
@@ -394,7 +384,6 @@ class testFileIo_write01_1 {
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
         var writeFile: ?File = None
-
         try {
             writeFile = FileIo.open(fpath, mode: OpenMode.WRITE_ONLY)
             if (let Some(file) <- writeFile) {
@@ -437,7 +426,6 @@ class testFileIo_write01_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
             let res1 = file.fd is Int32
@@ -473,7 +461,6 @@ class testFileIo_write01_1 {
         @Expect(res, true)
         FileIo.write(f.fd, "hello, world")
         FileIo.close(f)
-
         try {
             let file = FileIo.open(fpath, mode: OpenMode.READ_WRITE)
             let res1 = file.fd is Int32

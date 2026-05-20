@@ -70,6 +70,7 @@ class Test_common_event_manager {
         try {
             let info = CommonEventSubscribeInfo(support1.toString(), priority: 100000)
             CommonEventManager.createSubscriber(info)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 1500008i32)
         }
@@ -116,7 +117,6 @@ class Test_common_event_manager {
         }
         let pData = CommonEventPublishData(bundleName: "com.example.myapplication", data: "newbee", code: 123321,
             subscriberPermissions: ["123321"], isOrdered: true, isSticky: true, parameters: parameters)
-
         CommonEventManager.subscribe(sub, callBack)
         CommonEventManager.publish(support1.toString(), options: pData)
         @Expect(true)
@@ -139,7 +139,6 @@ class Test_common_event_manager {
             e: Option<BusinessException>, c: Option<CommonEventData> => Hilog.info(0, "CangjieTest", "",
                 "Should not reach here!")
         }
-
         let pData = CommonEventPublishData(bundleName: "com.example.myapplication", data: "newbee", code: 123321,
             subscriberPermissions: ["123321"], isOrdered: true, isSticky: true, parameters: HashMap<String, CommonEventValueType>()
         )
@@ -218,7 +217,6 @@ class Test_common_event_manager {
             e: Option<BusinessException>, c: Option<CommonEventData> => Hilog.info(0, "TestCEM", "",
                 "1111111111111111111111111111111111")
         }
-
         let callBack2 = {
             e: Option<BusinessException>, c: Option<CommonEventData> => Hilog.info(0, "TestCEM", "",
                 "222222222222222222222222222222222")
@@ -226,7 +224,6 @@ class Test_common_event_manager {
         let pData = CommonEventPublishData(bundleName: "com.example.myapplication", data: "newbee", code: 123321,
             subscriberPermissions: ["123321"], isOrdered: false, isSticky: false,
             parameters: HashMap<String, CommonEventValueType>())
-
         CommonEventManager.subscribe(sub1, callBack1)
         CommonEventManager.subscribe(sub2, callBack2)
         CommonEventManager.publish(support1.toString(), options: pData)
@@ -248,11 +245,9 @@ class Test_common_event_manager {
             e: Option<BusinessException>, c: Option<CommonEventData> => Hilog.info(0, "TestCEM", "", "callback suceess!"
             )
         }
-
         let info = CommonEventSubscribeInfo(support1.toString())
         let sub = CommonEventManager.createSubscriber(info)
         let parameters = HashMap<String, CEMValueType>()
-
         parameters.add("1", CEMValueType.BoolValue(true))
         parameters.add("2", CEMValueType.Int32Value(1))
         parameters.add("3", CEMValueType.Float64Value(1.1))
@@ -264,7 +259,6 @@ class Test_common_event_manager {
         parameters.add("9", CEMValueType.ArrayFloat64([1.1, 2.1]))
         parameters.add("10", CEMValueType.ArrayString(["123"]))
         parameters.add("11", CEMValueType.ArrayFD([1, 2]))
-
         let pData = CommonEventPublishData(bundleName: "com.example.myapplication", data: "newbee", code: 123321,
             subscriberPermissions: ["123321"], isOrdered: true, isSticky: true, parameters: parameters)
         CommonEventManager.subscribe(sub, callback)

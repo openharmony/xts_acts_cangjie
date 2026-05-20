@@ -42,7 +42,6 @@ class TestPermissionInfo {
         let permissionGrantStates = bundleInfo.permissionGrantStates
         let numberOfReqPermissionDetails = reqPermissionDetails.size
         let numberOfPermissionGrantStates = permissionGrantStates.size
-        // 应用申请的权限列表与权限授予状态列表中的元素是一一对应的，因此两个列表中的元素的数量必定相等
         @Expect(numberOfReqPermissionDetails, numberOfPermissionGrantStates)
         for (index in 0..numberOfReqPermissionDetails) {
             let permission = reqPermissionDetails[index]

@@ -84,7 +84,6 @@ class Test_preferences {
         var str = "myStore"
         var a = Preferences.getPreferences(getAbilityContext(), str)
         a.put("key", PreferencesValueType.Integer(980))
-        // preferces放入key并且立马查询，查询不到直接报错
         match (a.get("key", PreferencesValueType.Integer(0))) {
             case PreferencesValueType.Integer(n) =>
                 if (n != 980) {
@@ -93,7 +92,6 @@ class Test_preferences {
             case _ => throw Exception()
         }
         Preferences.deletePreferences(getAbilityContext(), str)
-        // 删除preferences之后，使用原先的引用应该还能查出来
         match (a.get("key", PreferencesValueType.Integer(0))) {
             case PreferencesValueType.Integer(n) =>
                 if (n != 980) {
@@ -101,7 +99,6 @@ class Test_preferences {
                 }
             case _ => throw Exception()
         }
-        // 删除preferences之后，使用新的引用不应该查出来
         var b = Preferences.getPreferences(getAbilityContext(), str)
         match (b.get("key", PreferencesValueType.Integer(0))) {
             case PreferencesValueType.Integer(n) =>
@@ -127,7 +124,6 @@ class Test_preferences {
         var str = "myStore"
         var a = Preferences.getPreferences(getAbilityContext(), str)
         a.put("key", PreferencesValueType.Integer(980))
-        // preferces放入key并且立马查询，查询不到直接报错
         match (a.get("key", PreferencesValueType.Integer(0))) {
             case PreferencesValueType.Integer(n) =>
                 if (n != 980) {
@@ -136,7 +132,6 @@ class Test_preferences {
             case _ => throw Exception()
         }
         Preferences.removePreferencesFromCache(getAbilityContext(), str)
-        // 移除preferences缓存之后，使用原先的引用应该还能查出来
         match (a.get("key", PreferencesValueType.Integer(0))) {
             case PreferencesValueType.Integer(n) =>
                 if (n != 980) {
@@ -144,7 +139,6 @@ class Test_preferences {
                 }
             case _ => throw Exception()
         }
-        // 删除preferences之后，使用新的引用不应该查出来
         var b = Preferences.getPreferences(getAbilityContext(), str)
         match (b.get("key", PreferencesValueType.Integer(0))) {
             case PreferencesValueType.Integer(n) =>
@@ -433,6 +427,7 @@ class Test_preferences {
         var str2 = "GroupId"
         try {
             Preferences.getPreferences(getAbilityContext(), PreferencesOptions("otherStore", dataGroupId:""))
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 22)
         }

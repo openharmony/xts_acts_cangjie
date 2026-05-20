@@ -436,7 +436,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         var angle: Float32 = 90.0
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.rotate(angle)
@@ -463,7 +462,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         var angle: Float32 = -90.0
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.rotate(angle)
@@ -490,7 +488,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         var angle: Float32 = 0.0
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.rotate(angle)
@@ -517,7 +514,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         var angle: Float32 = 3600.0
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.rotate(angle)
@@ -545,7 +541,6 @@ class Test_createPixelMap_01 {
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var tran_x: Float32 = 2.0
         var tran_y: Float32 = 3.0
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.translate(tran_x, tran_y)
@@ -573,7 +568,6 @@ class Test_createPixelMap_01 {
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var tran_x: Float32 = 0.0
         var tran_y: Float32 = 0.0
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.translate(tran_x, tran_y)
@@ -601,7 +595,6 @@ class Test_createPixelMap_01 {
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var tran_x: Float32 = -1.0
         var tran_y: Float32 = -3.0
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.translate(tran_x, tran_y)
@@ -629,7 +622,6 @@ class Test_createPixelMap_01 {
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var tran_x: Float32 = -10.0
         var tran_y: Float32 = -8.0
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.translate(tran_x, tran_y)
@@ -657,7 +649,6 @@ class Test_createPixelMap_01 {
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var flip_x: Bool = true
         var flip_y: Bool = true
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.flip(flip_x, flip_y)
@@ -685,7 +676,6 @@ class Test_createPixelMap_01 {
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var flip_x: Bool = false
         var flip_y: Bool = true
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.flip(flip_x, flip_y)
@@ -713,7 +703,6 @@ class Test_createPixelMap_01 {
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var flip_x: Bool = false
         var flip_y: Bool = false
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.flip(flip_x, flip_y)
@@ -740,7 +729,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var region = Region(Size(3, 3), 1, 1)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.crop(region)
@@ -791,7 +779,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var region = Region(Size(3, 3), 1, -1)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.crop(region)
@@ -816,7 +803,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var region = Region(Size(-3, 3), 1, 1)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.crop(region)
@@ -841,7 +827,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var region = Region(Size(3, -3), 1, 1)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.crop(region)
@@ -866,7 +851,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var region = Region(Size(10, 11), 1, 1)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.crop(region)
@@ -891,7 +875,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
         var region = Region(Size(3, 3), 8, 1)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.crop(region)
@@ -916,7 +899,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(6, 8), editable: false, pixelFormat: PixelMapFormat.Rgb565)
         var region = Region(Size(3, 3), 1, 1)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPixelMap.crop(region)
@@ -941,7 +923,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Bgra8888)
         var alphaPixelMap: PixelMap
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             alphaPixelMap = globalPixelMap.createAlphaPixelMap()
@@ -965,7 +946,6 @@ class Test_createPixelMap_01 {
         var globalPixelMap: PixelMap
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(6, 8), editable: true, pixelFormat: PixelMapFormat.Rgb565)
-
         globalPixelMap = createPixelMap(color, opts)
         let imageInfo = globalPixelMap.getImageInfo()
         @Expect(imageInfo.size.height, 6)
@@ -987,7 +967,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         let expectNum: UInt32 = 24
-
         globalPixelMap = createPixelMap(color, opts)
         let num = globalPixelMap.getBytesNumberPerRow()
         @Expect(expectNum, num)
@@ -1008,7 +987,6 @@ class Test_createPixelMap_01 {
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         let expectNum: UInt32 = 96
-
         globalPixelMap = createPixelMap(color, opts)
         let num = globalPixelMap.getPixelBytesNumber()
         @Expect(expectNum, num)
@@ -1028,7 +1006,6 @@ class Test_createPixelMap_01 {
         var globalPixelMap: PixelMap
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
-
         globalPixelMap = createPixelMap(color, opts)
         try {
             globalPixelMap.release()
@@ -1064,6 +1041,7 @@ class Test_createPixelMap_01 {
         )
         try {
             newImageSource.createPixelMap(options: option)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 62980115)
             @Expect(e.message, "Invalid rotate ${rotate}")

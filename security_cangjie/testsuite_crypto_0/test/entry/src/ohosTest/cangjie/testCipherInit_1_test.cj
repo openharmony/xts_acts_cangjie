@@ -46,6 +46,7 @@ class testCipherInit_1 {
         try {
             cipher.`initialize`(CryptoMode.EncryptMode, createSymKeyGenerator("AES128").generateSymKey(),
                 Option<ParamsSpec>.None)
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error.")
         }
@@ -72,6 +73,7 @@ class testCipherInit_1 {
         try {
             cipher.`initialize`(CryptoMode.EncryptMode, createSymKeyGenerator("AES128").generateSymKey(),
                 Option<ParamsSpec>.None)
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error.")
         }
@@ -98,6 +100,7 @@ class testCipherInit_1 {
         try {
             cipher.`initialize`(CryptoMode.EncryptMode, createSymKeyGenerator("AES128").generateSymKey(),
                 Option<ParamsSpec>.None)
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error.")
         }
@@ -124,6 +127,7 @@ class testCipherInit_1 {
         try {
             cipher.`initialize`(CryptoMode.EncryptMode, createSymKeyGenerator("AES128").generateSymKey(),
                 Option<ParamsSpec>.None)
+                @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Parameter error.")
         }

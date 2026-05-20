@@ -60,6 +60,7 @@ class GetAllKVStoreId_1 {
         Hilog.info(0, "cangjietest", "fail to get  kv store.")
         try {
             kvManager.getAllKVStoreId("")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager getAllKVStoreId failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -85,6 +86,7 @@ class GetAllKVStoreId_1 {
         Hilog.info(0, "cangjietest", "fail to get  kv store.")
         try {
             kvManager.getAllKVStoreId("\0")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager getAllKVStoreId failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)
@@ -110,6 +112,7 @@ class GetAllKVStoreId_1 {
         Hilog.info(0, "cangjietest", "fail to get  kv store.")
         try {
             kvManager.getAllKVStoreId("#$%^&")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager getAllKVStoreId failed: Permission verification failed. A non-system application calls a system API.")
             @Expect(e.code, 202i32)
@@ -153,6 +156,7 @@ class GetAllKVStoreId_1 {
         Hilog.info(0, "cangjietest", "fail to get  kv store.")
         try {
             kvManager.getAllKVStoreId("a" * 100000)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "KVManager getAllKVStoreId failed: Parameter error. Parameter verification failed.")
             @Expect(e.code, 401i32)

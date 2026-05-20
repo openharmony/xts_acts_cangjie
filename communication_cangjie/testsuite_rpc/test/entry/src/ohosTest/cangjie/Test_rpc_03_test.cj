@@ -83,7 +83,7 @@ class Test_rpc_03 {
         let token = "a" * 40960
         try {
             data.writeInterfaceToken(token)
-            @Assert(false)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message.contains("Parameter error"))
         } finally {

@@ -40,7 +40,6 @@ class testFileFs_fdopenStream_1 {
     func test_dopenstream_01() {
         let fpath = "/data/storage/el2/base/files/test_fdatasync_01"
         let f = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
         let dopenstream_fd = FileIo.fdopenStream(f.fd, "r+")
         dopenstream_fd.flush()
         let buf =Array<Byte>(4096,repeat: 0)
@@ -62,7 +61,6 @@ class testFileFs_fdopenStream_1 {
     func test_dopenstream_02() {
         let fpath = "/data/storage/el2/base/files/test_fdatasync_01"
         let f = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
         let fd = f.fd               
         try {
         let dopenstream_fd = FileIo.fdopenStream(fd, "") 
@@ -85,7 +83,6 @@ class testFileFs_fdopenStream_1 {
     func test_dopenstream_03() {
         let fpath = "/data/storage/el2/base/files/test_fdatasync_01"
         let f = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
         let fd = f.fd         
         try {
         let dopenstream_fd = FileIo.fdopenStream(fd, "/0") 

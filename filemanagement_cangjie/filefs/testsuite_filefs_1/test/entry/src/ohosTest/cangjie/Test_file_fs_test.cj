@@ -41,21 +41,24 @@ class Test_file_fs {
     func test_copyFile() {
         try {
             FileIo.copyFile("", "")
+            @Expect(false)
         } catch (_: Exception) {
         }
         try {
             FileIo.copyFile(-1, "")
+            @Expect(false)
         } catch (_: Exception) {
         }
         try {
             FileIo.copyFile("", -1)
+            @Expect(false)
         } catch (_: Exception) {
         }
         try {
             FileIo.copyFile(-1, -1)
+            @Expect(false)
         } catch (_: Exception) {
         }
-
         let src = "/data/storage/el1/base/test_copyFile"
         let dest = src + "tgt"
         if (FileIo.access(src)) {
@@ -72,7 +75,6 @@ class Test_file_fs {
         if (FileIo.access(dest)) {
             FileIo.unlink(dest)
         }
-
         FileIo.copyFile(src, dest)
         let size1 = FileIo
             .stat(src)
@@ -81,7 +83,6 @@ class Test_file_fs {
             .stat(dest)
             .size
         @Expect(size1, size2)
-
         FileIo.close(file)
         FileIo.unlink(src)
         FileIo.unlink(dest)
@@ -100,9 +101,9 @@ class Test_file_fs {
     func test_copyDir_01() {
         try {
             FileIo.copyDir("", "", mode: 1)
+            @Expect(false)
         } catch (e: Exception) {
         }
-
         let dpath = "/data/storage/el2/base/test_copyDir_01"
         let ddpath = dpath + "/srcDir_first"
         let ffpath = ddpath + "/srcFile_first_01"
@@ -123,7 +124,6 @@ class Test_file_fs {
         if (FileIo.access(dddpath)) {
             FileIo.rmdir(dddpath)
         }
-        
         FileIo.mkdir(dpath)
         FileIo.mkdir(ddpath)
         FileIo.mkdir(ddpath2)
@@ -172,7 +172,6 @@ class Test_file_fs {
                 .READ_WRITE
                 )
         )
-
         FileIo.copyDir(ddpath + "/", ddpath2 + "/", mode: 1)
         let size1 = FileIo
             .stat(ddpath2 + "/srcDir_first/srcFile_first_02")
@@ -181,7 +180,6 @@ class Test_file_fs {
             .stat(ffpath2)
             .size
         @Expect(size1, size2)
-
         let size3 = FileIo
             .stat(ddpath2 + "/srcDir_first/srcFile_first_01")
             .size
@@ -189,12 +187,10 @@ class Test_file_fs {
             .stat(ffpath)
             .size
         @Expect(size3, size4)
-
         let r1 = FileIo.access(ddpath)
         @Expect(r1, true)
         let r2 = FileIo.access(ddpath2 + "/srcDir_first/srcDir_second")
         @Expect(r2, true)
-
         let size5 = FileIo
             .stat(ddpath2 + "/srcDir_first/srcDir_second/srcFile_second_01")
             .size
@@ -202,7 +198,6 @@ class Test_file_fs {
             .stat(fffpath)
             .size
         @Expect(size5, size6)
-
         FileIo.close(srcFile_first_01)
         FileIo.close(srcFile_first_02)
         FileIo.close(srcFile_second_01)
@@ -226,7 +221,6 @@ class Test_file_fs {
         let dest1Path = "/data/storage/el2/base/haps/cpdest1"
         let conflictDirPath = "/data/storage/el2/base/haps/cpdest1/cpsrc1"
         let conflictFilePath = "/data/storage/el2/base/haps/cpdest1/cpsrc1/testcpConflict"
-
         if (!FileIo.access(src1Path)) {
             FileIo.mkdir(src1Path)
         }
@@ -260,6 +254,7 @@ class Test_file_fs {
         }
         try {
             FileIo.copyDir(src1Path, dest1Path, mode: 1)
+            @Expect(false)
         } catch (e: Exception) {
         }
     }

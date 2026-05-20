@@ -47,7 +47,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(1u32)
-            @Expect("assertion#865: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -70,7 +70,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(0u32)
-            @Expect("assertion#866: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -93,7 +93,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(2u32)
-            @Expect("assertion#867: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -116,7 +116,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(UInt32.Min)
-            @Expect("assertion#868: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -139,7 +139,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(UInt32.Max)
-            @Expect("assertion#869: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid resource ID.")
             @Expect(e.code, 9001001i32)
@@ -162,7 +162,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.string.module_desc).id)
-            @Expect("assertion#870: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -185,7 +185,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.strarray.sizelist).id)
-            @Expect("assertion#871: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -208,7 +208,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.plural.plural_name).id)
-            @Expect("assertion#872: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -231,7 +231,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.string.Test_Format1).id)
-            @Expect("assertion#873: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -254,7 +254,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.string.Test_Format2).id)
-            @Expect("assertion#874: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -277,7 +277,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.string.Test_Format3).id)
-            @Expect("assertion#875: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -300,7 +300,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.string.EntryAbility_desc).id)
-            @Expect("assertion#876: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -323,7 +323,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.media.layered_image).id)
-            @Expect("assertion#877: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -346,7 +346,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.string.EntryAbility_label).id)
-            @Expect("assertion#878: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -369,7 +369,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.media.startIcon).id)
-            @Expect("assertion#879: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -392,7 +392,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.profile.main_pages).id)
-            @Expect("assertion#880: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -412,7 +412,7 @@ class TestGetColorByResId_1 {
     @Tag[APILevel22, TestLevel0]
     func TestCase_17(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 begins.")
-        @Assert(getResourceManager().getColor(@r(app.color.start_window_background).id), 4294967295u32)
+        @Expect(getResourceManager().getColor(@r(app.color.start_window_background).id), 4294967295u32)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 ends.")
     }
 
@@ -431,7 +431,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.float.float_1).id)
-            @Expect("assertion#881: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -454,7 +454,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.float.float_2).id)
-            @Expect("assertion#882: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -477,7 +477,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.integer.int_1).id)
-            @Expect("assertion#883: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -500,7 +500,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.integer.int_2).id)
-            @Expect("assertion#884: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -523,7 +523,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.boolean.test_boolean1).id)
-            @Expect("assertion#885: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -546,7 +546,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.boolean.test_boolean0).id)
-            @Expect("assertion#886: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -569,7 +569,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.boolean.boolean_3).id)
-            @Expect("assertion#887: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)
@@ -592,7 +592,7 @@ class TestGetColorByResId_1 {
         Hilog.info(0u32, "CangjieTest", "fail to get Color.")
         try {
             getResourceManager().getColor(@r(app.boolean.boolean_4).id)
-            @Expect("assertion#888: not throw", "fail to get Color.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching resource is found based on the resource ID.")
             @Expect(e.code, 9001002i32)

@@ -43,7 +43,7 @@ class testReportNetConnected_1 {
         try {
             let netHandle = getAppNet()
             reportNetConnected(netHandle)
-            @Assert(true)
+            @Expect(true)
         } catch (e: BusinessException) {
             @Expect(e.message, "reportNetConnected failed: the net id is not found.")
             @Expect(e.code, 2101006i32)

@@ -65,6 +65,7 @@ class TestCryptoFramework_Create {
         let algName = " "
         try {
             createSymKeyGenerator(algName)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 801)
             @Expect(e.message, "Capability not supported.")

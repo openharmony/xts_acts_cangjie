@@ -37,13 +37,12 @@ class testFileIo_truncate02_1 {
     func TestCase_42(): Unit {
         let filePath = "/data/storage/el2/base/files/test.txt"
         let res = FileIo.access(filePath)
-
         if(res){
             FileIo.unlink(filePath)
         }
         let file = FileIo.open(filePath,mode:(OpenMode.READ_WRITE | OpenMode.CREATE))
         FileIo.truncate(file.fd, len: 1i64)
-        @Assert(file.getParent().isEmpty(), false)
+        @Expect(file.getParent().isEmpty(), false)
         FileIo.close(file)
         FileIo.unlink(filePath)
     }

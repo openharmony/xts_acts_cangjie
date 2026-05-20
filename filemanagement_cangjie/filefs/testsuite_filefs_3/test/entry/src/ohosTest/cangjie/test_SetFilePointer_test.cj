@@ -69,8 +69,8 @@ class test_SetFilePointer {
             randomAccessFile.write("111")
             let str=FileIo.readText(filePath)
             @Expect(str,"hel111orld")
-            randomAccessFile.close()  //关闭
-            FileIo.unlink(filePath)  //删除
+            randomAccessFile.close()
+            FileIo.unlink(filePath)
         } catch (e: BusinessException) {
             Hilog.info(0, "test", "${e.message}")
             @Expect(e.message,"false")
@@ -220,11 +220,9 @@ class test_SetFilePointer {
             let filePath = pathDir + "/test6.txt"
             let randomAccessFile = FileIo.createRandomAccessFile(filePath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
             randomAccessFile.write("helloworld")
-            // 第一次偏移：3
             randomAccessFile.setFilePointer(3)
             @Expect(randomAccessFile.filePointer, 3)
             randomAccessFile.write("111")
-            // 第二次偏移：0
             randomAccessFile.setFilePointer(0)
             @Expect(randomAccessFile.filePointer, 0)
             randomAccessFile.write("ABC")

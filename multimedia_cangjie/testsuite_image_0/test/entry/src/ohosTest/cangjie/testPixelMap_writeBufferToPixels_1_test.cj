@@ -43,7 +43,7 @@ class testPixelMap_writeBufferToPixels_1 {
                 pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
         let srcVar = Array<UInt8>(16i64, repeat: 0u8)
         pixelMap.writeBufferToPixels(srcVar)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -67,8 +67,8 @@ class testPixelMap_writeBufferToPixels_1 {
                     scaleMode: ScaleMode.CenterCrop))
             let srcVar = Array<UInt8>(32i64, repeat: 0u8)
             pixelMap.writeBufferToPixels(srcVar)
-            @Assert(true)
-            @Expect("assertion#1137: not throw", "createPixelMap fail")
+            @Expect(true)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 62980248i32)
         }
@@ -88,15 +88,13 @@ class testPixelMap_writeBufferToPixels_1 {
     func TestCase_3(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_3 begins.")
         Hilog.info(0, "cangjietest", "createPixelMap fail")
-
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8),
             InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Premul, editable: true,
                 srcPixelFormat: PixelMapFormat.Rgb565, pixelFormat: PixelMapFormat.Rgba8888,
                 scaleMode: ScaleMode.FitTargetSize))
         let srcVar = Array<UInt8>(16i64, repeat: 0u8)
         pixelMap.writeBufferToPixels(srcVar)
-        @Assert(true)
-
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -113,13 +111,12 @@ class testPixelMap_writeBufferToPixels_1 {
     func TestCase_4(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_4 begins.")
         Hilog.info(0, "cangjietest", "createPixelMap fail")
-
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8),
             InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.UnPremul, editable: true,
                 pixelFormat: PixelMapFormat.Bgra8888, scaleMode: ScaleMode.FitTargetSize))
         let srcVar = Array<UInt8>(16i64, repeat: 0u8)
         pixelMap.writeBufferToPixels(srcVar)
-        @Assert(true)
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -136,14 +133,12 @@ class testPixelMap_writeBufferToPixels_1 {
     func TestCase_5(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_5 begins.")
         Hilog.info(0, "cangjietest", "createPixelMap fail")
-
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8),
             InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                 pixelFormat: PixelMapFormat.Rgb888, scaleMode: ScaleMode.FitTargetSize))
         let srcVar = Array<UInt8>(16i64, repeat: 0u8)
         pixelMap.writeBufferToPixels(srcVar)
-        @Assert(true)
-
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
     }
 
@@ -160,14 +155,12 @@ class testPixelMap_writeBufferToPixels_1 {
     func TestCase_6(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_6 begins.")
         Hilog.info(0, "cangjietest", "createPixelMap fail")
-
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8),
             InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                 pixelFormat: PixelMapFormat.Alpha8, scaleMode: ScaleMode.FitTargetSize))
         let srcVar = Array<UInt8>(16i64, repeat: 0u8)
         pixelMap.writeBufferToPixels(srcVar)
-        @Assert(true)
-
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_6 ends.")
     }
 
@@ -190,6 +183,7 @@ class testPixelMap_writeBufferToPixels_1 {
                     pixelFormat: PixelMapFormat.RgbaF16, scaleMode: ScaleMode.FitTargetSize))
             let srcVar = Array<UInt8>(16i64, repeat: 0u8)
             pixelMap.writeBufferToPixels(srcVar)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -209,14 +203,12 @@ class testPixelMap_writeBufferToPixels_1 {
     func TestCase_8(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_8 begins.")
         Hilog.info(0, "cangjietest", "createPixelMap fail")
-
         let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8),
             InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                 pixelFormat: PixelMapFormat.Nv21, scaleMode: ScaleMode.FitTargetSize))
         let srcVar = Array<UInt8>(16i64, repeat: 0u8)
         pixelMap.writeBufferToPixels(srcVar)
-        @Assert(true)
-
+        @Expect(true)
         Hilog.info(0, "cangjietest", "testcase TestCase_8 ends.")
     }
 
@@ -239,6 +231,7 @@ class testPixelMap_writeBufferToPixels_1 {
                     pixelFormat: PixelMapFormat.Nv12, scaleMode: ScaleMode.FitTargetSize))
             let srcVar = Array<UInt8>(16i64, repeat: 0u8)
             pixelMap.writeBufferToPixels(srcVar)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

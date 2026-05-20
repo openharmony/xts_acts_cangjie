@@ -41,9 +41,9 @@ class testImageSource_getImageInfo_1 {
         try {
             let imageSource = createImageSource("")
             let imageInfo = imageSource.getImageInfo(index: 0u32)
-            @Assert(0i32, imageInfo.size.height)
-            @Assert(0i32, imageInfo.size.width)
-            @Expect("assertion#0: not throw", "createImageSource fail")
+            @Expect(0i32, imageInfo.size.height)
+            @Expect(0i32, imageInfo.size.width)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "Invalid image parameter.")
             @Expect(e.code, 62980115)
@@ -67,9 +67,9 @@ class testImageSource_getImageInfo_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.jpg")
             let imageInfo = imageSource.getImageInfo(index: 1u32)
-            @Assert(0i32, imageInfo.size.height)
-            @Assert(0i32, imageInfo.size.width)
-            @Expect("assertion#1: not throw", "createImageSource fail")
+            @Expect(0i32, imageInfo.size.height)
+            @Expect(0i32, imageInfo.size.width)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -93,9 +93,9 @@ class testImageSource_getImageInfo_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.bmp")
             let imageInfo = imageSource.getImageInfo(index: 0u32)
-            @Assert(0i32, imageInfo.size.height)
-            @Assert(0i32, imageInfo.size.width)
-            @Expect("assertion#2: not throw", "createImageSource fail")
+            @Expect(0i32, imageInfo.size.height)
+            @Expect(0i32, imageInfo.size.width)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -119,9 +119,9 @@ class testImageSource_getImageInfo_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.gif")
             let imageInfo = imageSource.getImageInfo(index: 0u32)
-            @Assert(0i32, imageInfo.size.height)
-            @Assert(0i32, imageInfo.size.width)
-            @Expect("assertion#3: not throw", "createImageSource fail")
+            @Expect(0i32, imageInfo.size.height)
+            @Expect(0i32, imageInfo.size.width)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)
@@ -145,9 +145,9 @@ class testImageSource_getImageInfo_1 {
         try {
             let imageSource = createImageSource("/data/storage/el1/base/test.123")
             let imageInfo = imageSource.getImageInfo(index: 0u32)
-            @Assert(0i32, imageInfo.size.height)
-            @Assert(0i32, imageInfo.size.width)
-            @Expect("assertion#4: not throw", "createImageSource fail")
+            @Expect(0i32, imageInfo.size.height)
+            @Expect(0i32, imageInfo.size.width)
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The image source data is abnormal.")
             @Expect(e.code, 62980110i32)

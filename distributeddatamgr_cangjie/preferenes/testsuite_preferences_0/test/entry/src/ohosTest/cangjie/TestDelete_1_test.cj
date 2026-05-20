@@ -47,7 +47,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.BoolData(true))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_1 ends.")
     }
 
@@ -71,7 +71,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.BoolArray([false, true]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_2 ends.")
     }
 
@@ -95,7 +95,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.Double(Float64.Min))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_3 ends.")
     }
 
@@ -119,7 +119,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.Double(Float64.Max))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_4 ends.")
     }
 
@@ -143,7 +143,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.Double(Float64.Inf))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_5 ends.")
     }
 
@@ -167,7 +167,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.Double(0.000000f64))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_6 ends.")
     }
 
@@ -191,7 +191,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.DoubleArray([Float64.Min, Float64.Max, Float64.Inf, 0.000000f64]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_7 ends.")
     }
 
@@ -215,7 +215,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.Integer(Int64.Min))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_8 ends.")
     }
 
@@ -239,7 +239,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.Integer(-1i64))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_9 ends.")
     }
 
@@ -263,7 +263,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.Integer(0i64))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_10 ends.")
     }
 
@@ -287,7 +287,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.Integer(1i64))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_11 ends.")
     }
 
@@ -311,7 +311,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.Integer(Int64.Max))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_12 ends.")
     }
 
@@ -335,7 +335,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.StringData(""))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_13 ends.")
     }
 
@@ -359,7 +359,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.StringData("\0"))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_14 ends.")
     }
 
@@ -383,7 +383,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.StringData("hello world"))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_15 ends.")
     }
 
@@ -407,7 +407,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.StringArray(["a", "b", "c"]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_16 ends.")
     }
 
@@ -431,7 +431,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.StringArray(["", "", ""]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_17 ends.")
     }
 
@@ -455,7 +455,7 @@ class TestDelete_1 {
         preferences.put("key1", PreferencesValueType.StringArray(["", "\0", "hello world"]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key1")
-        @Assert(false, preferences.has("key1"))
+        @Expect(false, preferences.has("key1"))
         Hilog.info(0, "cangjietest","testcase TestCase_18 ends.")
     }
 
@@ -479,7 +479,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.BoolData(true))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_19 ends.")
     }
 
@@ -503,7 +503,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.BoolArray([false, true]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_20 ends.")
     }
 
@@ -527,7 +527,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.Double(Float64.Min))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_21 ends.")
     }
 
@@ -551,7 +551,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.Double(Float64.Max))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_22 ends.")
     }
 
@@ -575,7 +575,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.Double(Float64.Inf))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_23 ends.")
     }
 
@@ -599,7 +599,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.Double(0.000000f64))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_24 ends.")
     }
 
@@ -623,7 +623,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.DoubleArray([Float64.Min, Float64.Max, Float64.Inf, 0.000000f64]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_25 ends.")
     }
 
@@ -647,7 +647,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.Integer(Int64.Min))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_26 ends.")
     }
 
@@ -671,7 +671,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.Integer(-1i64))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_27 ends.")
     }
 
@@ -695,7 +695,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.Integer(0i64))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_28 ends.")
     }
 
@@ -719,7 +719,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.Integer(1i64))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_29 ends.")
     }
 
@@ -743,7 +743,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.Integer(Int64.Max))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_30 ends.")
     }
 
@@ -767,7 +767,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.StringData(""))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_31 ends.")
     }
 
@@ -791,7 +791,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.StringData("\0"))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_32 ends.")
     }
 
@@ -815,7 +815,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.StringData("hello world"))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_33 ends.")
     }
 
@@ -839,7 +839,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.StringArray(["a", "b", "c"]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_34 ends.")
     }
 
@@ -863,7 +863,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.StringArray(["", "", ""]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_35 ends.")
     }
 
@@ -887,7 +887,7 @@ class TestDelete_1 {
         preferences.put("key2", PreferencesValueType.StringArray(["", "\0", "hello world"]))
         Hilog.info(0, "cangjietest","deleteKey")
         preferences.delete("key2")
-        @Assert(false, preferences.has("key2"))
+        @Expect(false, preferences.has("key2"))
         Hilog.info(0, "cangjietest","testcase TestCase_36 ends.")
     }
 
@@ -909,7 +909,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.BoolData(true))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_37 ends.")
     }
 
@@ -931,7 +931,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.BoolArray([false, true]))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_38 ends.")
     }
 
@@ -953,7 +953,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.Double(Float64.Min))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_39 ends.")
     }
 
@@ -975,7 +975,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.Double(Float64.Max))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_40 ends.")
     }
 
@@ -997,7 +997,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.Double(Float64.Inf))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_41 ends.")
     }
 
@@ -1019,7 +1019,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.Double(0.000000f64))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_42 ends.")
     }
 
@@ -1041,7 +1041,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.DoubleArray([Float64.Min, Float64.Max, Float64.Inf, 0.000000f64]))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_43 ends.")
     }
 
@@ -1063,7 +1063,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.Integer(Int64.Min))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_44 ends.")
     }
 
@@ -1085,7 +1085,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.Integer(-1i64))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_45 ends.")
     }
 
@@ -1107,7 +1107,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.Integer(0i64))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_46 ends.")
     }
 
@@ -1129,7 +1129,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.Integer(1i64))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_47 ends.")
     }
 
@@ -1151,7 +1151,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.Integer(Int64.Max))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_48 ends.")
     }
 
@@ -1173,7 +1173,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.StringData(""))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_49 ends.")
     }
 
@@ -1195,7 +1195,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.StringData("\0"))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_50 ends.")
     }
 
@@ -1217,7 +1217,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.StringData("hello world"))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_51 ends.")
     }
 
@@ -1239,7 +1239,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.StringArray(["a", "b", "c"]))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_52 ends.")
     }
 
@@ -1261,7 +1261,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.StringArray(["", "", ""]))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_53 ends.")
     }
 
@@ -1283,7 +1283,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key3", PreferencesValueType.StringArray(["", "\0", "hello world"]))
-        @Assert(true, preferences.has("key3"))
+        @Expect(true, preferences.has("key3"))
         Hilog.info(0, "cangjietest","testcase TestCase_54 ends.")
     }
 
@@ -1305,7 +1305,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.BoolData(true))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_55 ends.")
     }
 
@@ -1327,7 +1327,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.BoolArray([false, true]))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_56 ends.")
     }
 
@@ -1349,7 +1349,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.Double(Float64.Min))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_57 ends.")
     }
 
@@ -1371,7 +1371,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.Double(Float64.Max))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_58 ends.")
     }
 
@@ -1393,7 +1393,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.Double(Float64.Inf))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_59 ends.")
     }
 
@@ -1415,7 +1415,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.Double(0.000000f64))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_60 ends.")
     }
 
@@ -1437,7 +1437,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.DoubleArray([Float64.Min, Float64.Max, Float64.Inf, 0.000000f64]))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_61 ends.")
     }
 
@@ -1459,7 +1459,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.Integer(Int64.Min))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_62 ends.")
     }
 
@@ -1481,7 +1481,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.Integer(-1i64))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_63 ends.")
     }
 
@@ -1503,7 +1503,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.Integer(0i64))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_64 ends.")
     }
 
@@ -1525,7 +1525,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.Integer(1i64))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_65 ends.")
     }
 
@@ -1547,7 +1547,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.Integer(Int64.Max))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_66 ends.")
     }
 
@@ -1569,7 +1569,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.StringData(""))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_67 ends.")
     }
 
@@ -1591,7 +1591,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.StringData("\0"))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_68 ends.")
     }
 
@@ -1613,7 +1613,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.StringData("hello world"))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_69 ends.")
     }
 
@@ -1635,7 +1635,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.StringArray(["a", "b", "c"]))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_70 ends.")
     }
 
@@ -1657,7 +1657,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.StringArray(["", "", ""]))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_71 ends.")
     }
 
@@ -1679,7 +1679,7 @@ class TestDelete_1 {
         preferences.clear()
         Hilog.info(0, "cangjietest","putKeyValue")
         preferences.put("key4", PreferencesValueType.StringArray(["", "\0", "hello world"]))
-        @Assert(true, preferences.has("key4"))
+        @Expect(true, preferences.has("key4"))
         Hilog.info(0, "cangjietest","testcase TestCase_72 ends.")
     }
 }

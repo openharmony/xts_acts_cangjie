@@ -42,7 +42,6 @@ class testFileFs_trylock_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         f.tryLock(exclusive: true)  
         f.unlock()
         FileIo.close(f)     
@@ -64,7 +63,6 @@ class testFileFs_trylock_1 {
         let f = FileIo.open(fpath, mode: (OpenMode
             .CREATE
              | OpenMode.READ_WRITE))
-
         f.tryLock(exclusive: false)  
         f.unlock()
         FileIo.close(f)     

@@ -43,8 +43,7 @@ class TestBaseContext_1 {
         Hilog.info(0u32, "CangjieTest", "fail to start ability.")
         try {
             Global.getAbilityContext().startAbility(Want(bundleName: "", abilityName: "", moduleName: ""), options: StartOptions())
-                
-            @Expect("assertion#0: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching ability is found.")
             @Expect(e.code, 16000019i32)
@@ -68,8 +67,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "", abilityName: "xxx", moduleName: ""), options: StartOptions())
-                
-            @Expect("assertion#1: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -93,8 +91,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "", abilityName: "EntryAbility", moduleName: ""), options: StartOptions())
-                
-            @Expect("assertion#2: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -118,8 +115,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "", abilityName: "", moduleName: "xxx"), options: StartOptions())
-                
-            @Expect("assertion#3: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching ability is found.")
             @Expect(e.code, 16000019i32)
@@ -143,8 +139,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "", abilityName: "xxx", moduleName: "xxx"), options: StartOptions())
-                
-            @Expect("assertion#4: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -168,8 +163,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "", abilityName: "EntryAbility", moduleName: "xxx"), options: StartOptions())
-                
-            @Expect("assertion#5: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -193,8 +187,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "", abilityName: "", moduleName: "entry"), options: StartOptions())
-                
-            @Expect("assertion#6: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching ability is found.")
             @Expect(e.code, 16000019i32)
@@ -218,8 +211,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "", abilityName: "xxx", moduleName: "entry"), options: StartOptions())
-                
-            @Expect("assertion#7: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -243,8 +235,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "", abilityName: "EntryAbility", moduleName: "entry"), options: StartOptions())
-                
-            @Expect("assertion#8: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -268,8 +259,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "xxx", abilityName: "", moduleName: ""), options: StartOptions())
-                
-            @Expect("assertion#9: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching ability is found.")
             @Expect(e.code, 16000019i32)
@@ -293,8 +283,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "xxx", abilityName: "xxx", moduleName: ""), options: StartOptions())
-                
-            @Expect("assertion#10: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -318,8 +307,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "xxx", abilityName: "EntryAbility", moduleName: ""), options: StartOptions())
-                
-            @Expect("assertion#11: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -343,8 +331,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "xxx", abilityName: "", moduleName: "xxx"), options: StartOptions())
-                
-            @Expect("assertion#12: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching ability is found.")
             @Expect(e.code, 16000019i32)
@@ -368,7 +355,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "xxx", abilityName: "xxx", moduleName: "xxx"), options: StartOptions())
-            @Expect("assertion#13: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -392,7 +379,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "xxx", abilityName: "EntryAbility", moduleName: "xxx"), options: StartOptions())
-            @Expect("assertion#14: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -416,8 +403,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "xxx", abilityName: "", moduleName: "entry"), options: StartOptions())
-                
-            @Expect("assertion#15: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching ability is found.")
             @Expect(e.code, 16000019i32)
@@ -441,8 +427,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "xxx", abilityName: "xxx", moduleName: "entry"), options: StartOptions())
-                
-            @Expect("assertion#16: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -466,8 +451,7 @@ class TestBaseContext_1 {
         try {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "xxx", abilityName: "EntryAbility", moduleName: "entry"), options: StartOptions())
-                
-            @Expect("assertion#17: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -492,8 +476,7 @@ class TestBaseContext_1 {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "com.example.myapplication", abilityName: "", moduleName: ""),
                     options: StartOptions())
-                
-            @Expect("assertion#18: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching ability is found.")
             @Expect(e.code, 16000019i32)
@@ -518,8 +501,7 @@ class TestBaseContext_1 {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "com.example.myapplication", abilityName: "xxx", moduleName: ""),
                     options: StartOptions())
-                
-            @Expect("assertion#19: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -543,7 +525,6 @@ class TestBaseContext_1 {
         Global.getAbilityContext()
             .startAbility(Want(bundleName: "com.example.myapplication", abilityName: "EntryAbility", moduleName: ""),
                 options: StartOptions())
-            
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 ends.")
     }
 
@@ -564,8 +545,7 @@ class TestBaseContext_1 {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "com.example.myapplication", abilityName: "", moduleName: "xxx"),
                     options: StartOptions())
-                
-            @Expect("assertion#20: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching ability is found.")
             @Expect(e.code, 16000019i32)
@@ -590,8 +570,7 @@ class TestBaseContext_1 {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "com.example.myapplication", abilityName: "xxx", moduleName: "xxx"),
                     options: StartOptions())
-                
-            @Expect("assertion#21: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -615,7 +594,6 @@ class TestBaseContext_1 {
         Global.getAbilityContext()
             .startAbility(Want(bundleName: "com.example.myapplication", abilityName: "EntryAbility", moduleName: "xxx"),
                 options: StartOptions())
-            
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 ends.")
     }
 
@@ -636,8 +614,7 @@ class TestBaseContext_1 {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "com.example.myapplication", abilityName: "", moduleName: "entry"),
                     options: StartOptions())
-                
-            @Expect("assertion#22: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "No matching ability is found.")
             @Expect(e.code, 16000019i32)
@@ -663,8 +640,7 @@ class TestBaseContext_1 {
             Global.getAbilityContext()
                 .startAbility(Want(bundleName: "com.example.myapplication", abilityName: "xxx", moduleName: "entry"),
                     options: StartOptions())
-                
-            @Expect("assertion#24: not throw", "fail to start ability.")
+            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.message, "The specified ability does not exist.")
             @Expect(e.code, 16000001i32)
@@ -689,7 +665,6 @@ class TestBaseContext_1 {
         Global.getAbilityContext()
             .startAbility(Want(bundleName: "com.example.myapplication", abilityName: "EntryAbility", moduleName: "entry"),
                 options: StartOptions())
-            
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_27 ends.")
     }
 }

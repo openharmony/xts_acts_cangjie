@@ -44,7 +44,7 @@ class testPixelMap_getBytesNumberPerRow_1 {
                 pixelFormat: PixelMapFormat.Alpha8, scaleMode: ScaleMode.FitTargetSize)
             let pixelMap = createPixelMap(Array<UInt8>(16i64, repeat: 0u8), initOption)
             let bytesNumberPerRow = pixelMap.getBytesNumberPerRow()
-            @Assert(UInt32(initOption.size.height * initOption.size.width), bytesNumberPerRow)
+            @Expect(UInt32(initOption.size.height * initOption.size.width), bytesNumberPerRow)
         } catch (e: BusinessException) {
             @Expect(false)
         }

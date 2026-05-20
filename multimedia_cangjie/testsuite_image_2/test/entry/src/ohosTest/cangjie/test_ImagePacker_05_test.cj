@@ -37,7 +37,6 @@ class Test_ImagePacker_05 {
     @Tag[APILevel22, TestLevel0]
     func test_createImagePacker_01(): Unit {
         var globalPacker: ImagePacker
-
         try {
             globalPacker = createImagePacker()
             @Expect(true)
@@ -61,11 +60,9 @@ class Test_ImagePacker_05 {
         var globalPixelMap: PixelMap
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPacker = createImagePacker()
-
             var pack_opts = PackingOption("image/Jpeg", 99, bufferSize: 10485760)
             var ret = globalPacker.packToData(globalPixelMap, pack_opts)
             @Expect(ret.size>0)
@@ -89,11 +86,9 @@ class Test_ImagePacker_05 {
         var globalPixelMap: PixelMap
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPacker = createImagePacker()
-
             var pack_opts = PackingOption("image/Jpeg", 100)
             var ret = globalPacker.packToData(globalPixelMap, pack_opts)
             @Expect(ret.size>0)
@@ -120,7 +115,6 @@ class Test_ImagePacker_05 {
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPacker = createImagePacker()
-
             var pack_opts = PackingOption("image/Jpeg", 101)
             var ret = globalPacker.packToData(globalPixelMap, pack_opts)
             @Expect(false)
@@ -147,7 +141,6 @@ class Test_ImagePacker_05 {
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPacker = createImagePacker()
-
             var pack_opts = PackingOption("image/png", 1)
             var ret = globalPacker.packToData(globalPixelMap, pack_opts)
             @Expect(true)
@@ -171,11 +164,9 @@ class Test_ImagePacker_05 {
         var globalPixelMap: PixelMap
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPacker = createImagePacker()
-
             var pack_opts = PackingOption("image/webp", 2)
             var ret = globalPacker.packToData(globalPixelMap, pack_opts)
             @Expect(true)
@@ -199,11 +190,9 @@ class Test_ImagePacker_05 {
         var globalPixelMap: PixelMap
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPacker = createImagePacker()
-
             var pack_opts = PackingOption("image/gif", 2)
             var ret = globalPacker.packToData(globalPixelMap, pack_opts)
             @Expect(true)
@@ -227,7 +216,6 @@ class Test_ImagePacker_05 {
         var globalPixelMap: PixelMap
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPacker = createImagePacker()
@@ -254,11 +242,9 @@ class Test_ImagePacker_05 {
         var globalPixelMap: PixelMap
         var color: Array<UInt8> = Array<UInt8>(96, repeat: 0)
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPacker = createImagePacker()
-
             var pack_opts = PackingOption("image/txt", 1)
             var ret = globalPacker.packToData(globalPixelMap, pack_opts)
             @Expect(false)
@@ -280,7 +266,6 @@ class Test_ImagePacker_05 {
     func test_packing_10(): Unit {
         var globalPacker: ImagePacker
         var globalImageSource: ImageSource
-
         try {
             globalImageSource = createImageSource("//data/storage/el1/base/test.jpg")
             globalPacker = createImagePacker()
@@ -309,7 +294,6 @@ class Test_ImagePacker_05 {
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         var fd: Int32 = 0
         fd = `open`("//data/storage/el1/base/mapDst.jpg", O_RDWR)
-
         try {
             globalPixelMap = createPixelMap(color, opts)
             globalPacker = createImagePacker()
@@ -337,7 +321,6 @@ class Test_ImagePacker_05 {
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         var fd: Int32 = 0
         fd = `open`("//data/storage/el1/base/mapDst.jpg", O_RDWR)
-
         try {
             globalImageSource = createImageSource("//data/storage/el1/base/test.jpg")
             globalPacker = createImagePacker()
@@ -365,7 +348,6 @@ class Test_ImagePacker_05 {
         var opts = InitializationOptions(Size(4, 6), editable: true, pixelFormat: PixelMapFormat.Rgba8888)
         var fd: Int32 = 0
         fd = `open`("//data/storage/el1/base/mapDst.jpg", O_RDWR)
-
         try {
             globalImageSource = createImageSource(JPG_Buf)
             globalPacker = createImagePacker()
@@ -389,7 +371,6 @@ class Test_ImagePacker_05 {
     @Tag[APILevel22, TestLevel0]
     func test_ImagePacker_release_14(): Unit {
         var globalPacker: ImagePacker
-
         try {
             globalPacker = createImagePacker()
             globalPacker.release()
