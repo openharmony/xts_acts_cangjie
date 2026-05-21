@@ -22,6 +22,7 @@ import std.fs.FileInfo
 import std.collection.first
 import std.fs.File
 import std.collection.forEach
+import std.collection.ArrayList
 import std.convert.Parsable
 import std.collection.any
 import std.collection.HashMap
@@ -35,6 +36,7 @@ import kit.AbilityKit.BundleFlag
 import kit.AbilityKit.Want
 import kit.PerformanceAnalysisKit.Hilog
 import kit.TestKit.AbilityDelegatorRegistry
+import kit.TestKit.AbilityDelegator
 import kit.TestKit.TestRunner
 import std.env.setVariable
 
@@ -72,6 +74,55 @@ public class OpenHarmonyTestRunner <: TestRunner {
         sb.toString()
     }
 
+private static func joinStrings(list: ArrayList<String>, separator: String): String {
+    if (list.isEmpty()) {
+        return ""
+    }
+    let sb = StringBuilder()
+    for (i in 0..list.size) {
+        if (i > 0) {
+            sb.append(separator)
+        }
+            sb.append(list[i])
+    }
+    sb.toString()
+}
+
+private func readXmlFileLineByLine(testClassName: String, abilityDelegator: AbilityDelegator): Unit {
+    let testReportXmlFileName = "test-default.${testClassName}.xml"
+    match (Directory.readFrom("/data/storage/el1/base/tests") |>
+        filter {fileInfo => fileInfo.name == testReportXmlFileName} |> first) {
+        case None =>
+         Hilog.error(1, "Cangjie-Test", "${testReportXmlFileName} not found.")
+         return
+        case Some(testReportXmlFileInfo) =>
+            let testReportXmlFilePath = testReportXmlFileInfo.path
+            let testReportXmlFileContent = File.readFrom(testReportXmlFilePath)
+            let xmlString = String.fromUtf8(testReportXmlFileContent)
+            let lines = xmlString.split("\n", removeEmpty: true)
+            var lineIndex = 0
+            let tempArray = ArrayList<String>()
+            for (line in lines) { 
+                let trimmedLine = line.trimAscii()    
+                if (trimmedLine.isEmpty()) {
+                    continue
+                } 
+                tempArray.add(line)
+                lineIndex ++
+                if (tempArray.size == 10) {
+                    let output = OpenHarmonyTestRunner.joinStrings(tempArray, "\n")
+                    abilityDelegator.print(output)
+                    tempArray.clear()
+                }          
+            }
+            if (tempArray.size > 0) {
+                let output = OpenHarmonyTestRunner.joinStrings(tempArray, "\n")
+                abilityDelegator.print(output)
+            }
+            Hilog.info(0, "Cangjie-Test", "Total lines read: ${lineIndex}")
+        }
+}
+
     private func executeTestClass(testClassName: String): Unit {
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         Hilog.info(0, "Cangjie-Test", "EXECUTE_CLASS_START: \"${testClassName}\"")
@@ -86,25 +137,10 @@ public class OpenHarmonyTestRunner <: TestRunner {
         testSuite
             .runTests()
             .reportTo(XmlReporter(Path("/data/storage/el1/base")))
+        readXmlFileLineByLine(testClassName, abilityDelegator)
 
-        let testReportXmlFileName = "test-default.${testClassName}.xml"
-        match (Directory.readFrom("/data/storage/el1/base/tests") |>
-            filter {fileInfo => fileInfo.name == testReportXmlFileName} |> first) {
-            case None => Hilog.error(1, "Cangjie-Test", "${testReportXmlFileName} not found.")
-            case Some(testReportXmlFileInfo) =>
-                let testReportXmlFilePath = testReportXmlFileInfo.path
-                let testReportXmlFileContent = File.readFrom(testReportXmlFilePath)
-                let xmlReport = String.fromUtf8(testReportXmlFileContent)
-                Hilog.info(0, "Cangjie-Test", "XML_REPORT_CONTENT_LENGTH: ${xmlReport.size}")
-                Hilog.info(0, "Cangjie-Test", xmlReport)
-                abilityDelegator.print("XML_REPORT_CONTENT_LENGTH: ${xmlReport.size}")
-                xmlReport.split("\n", removeEmpty: true) |> forEach {
-                    line: String => abilityDelegator.print(line)
-                }
-                Hilog.info(0, "Cangjie-Test", "EXECUTE_CLASS_END: \"${testClassName}\"")
-                abilityDelegator.print("EXECUTE_CLASS_END: \"${testClassName}\"")
-                reportTestReport("test-default.${testClassName}.xml")
-        }
+        Hilog.info(0, "Cangjie-Test", "EXECUTE_CLASS_END: \"${testClassName}\"")
+        abilityDelegator.print("EXECUTE_CLASS_END: \"${testClassName}\"")
     }
     private func executeAllTestClasses(): Unit {
         for (testClassName in OpenHarmonyTestRunner
@@ -128,26 +164,12 @@ public class OpenHarmonyTestRunner <: TestRunner {
         testSuite
             .runTests(configuration)
             .reportTo(XmlReporter(Path("/data/storage/el1/base")))
+        readXmlFileLineByLine(testClassName, abilityDelegator)
 
-        let testReportXmlFileName = "test-default.${testClassName}.xml"
-        match (Directory.readFrom("/data/storage/el1/base/tests") |>
-            filter {fileInfo => fileInfo.name == testReportXmlFileName} |> first) {
-            case None => Hilog.error(1, "Cangjie-Test", "${testReportXmlFileName} not found.")
-            case Some(testReportXmlFileInfo) =>
-                let testReportXmlFilePath = testReportXmlFileInfo.path
-                let testReportXmlFileContent = File.readFrom(testReportXmlFilePath)
-                let xmlReport = String.fromUtf8(testReportXmlFileContent)
-                Hilog.info(0, "Cangjie-Test", "XML_REPORT_CONTENT_LENGTH: ${xmlReport.size}")
-                Hilog.info(0, "Cangjie-Test", xmlReport)
-                abilityDelegator.print("XML_REPORT_CONTENT_LENGTH: ${xmlReport.size}")
-                xmlReport.split("\n", removeEmpty: true) |> forEach {
-                    line: String => abilityDelegator.print(line)
-                }
-                Hilog.info(0, "Cangjie-Test", "EXECUTE_METHOD_END: \"${testClassName}#${testCaseName}\"")
-                abilityDelegator.print("EXECUTE_CLASS_END: \"${testClassName}\"")
-                reportTestReport("test-default.${testClassName}.xml")
-        }
+        Hilog.info(0, "Cangjie-Test", "EXECUTE_METHOD_END: \"${testClassName}#${testCaseName}\"")
+        abilityDelegator.print("EXECUTE_CLASS_END: \"${testClassName}\"")
     }
+
     private func reportTestReport(testReportName: String): Unit {
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
