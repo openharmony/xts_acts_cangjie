@@ -456,11 +456,8 @@ class Test_createImageSource_03 {
             var image_info = globalImageSource.getImageInfo(index: 0)
             @Expect(false)
         } catch (e: Exception) {
-            if (DeviceInfo.deviceType == "phone") {
-                @Expect(e.message, "Decoding failed.")
-            } else {
                 @Expect(e.message, "Failed to create plugin.")
-            }
+                @Expect(e.code, 62980116)
         }
     }
 
