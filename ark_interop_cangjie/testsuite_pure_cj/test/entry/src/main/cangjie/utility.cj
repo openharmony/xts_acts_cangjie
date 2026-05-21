@@ -132,10 +132,7 @@ public class Assert {
                 ""
             }
             throw AssertException(argStr)
-        //            logger.error("equals${argStr} ${reason}")
-        //            fail("equals ${argStr} ${reason}", reason)
         } else {
-            //            logger.info("equals success ${reason}")
         }
     }
     public static func approxEquals(expected: Float64, actual: Float64, reason!: String = "") {

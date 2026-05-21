@@ -56,9 +56,6 @@ foreign func CJ_JSON_StringEscapeCharNumGet(input: CPointer<UInt8>, inputlen: In
 @FastNative
 foreign func memcpy_s(dest: CPointer<UInt8>, destMax: UIntNative, src: CPointer<UInt8>, count: UIntNative): Int32
 
-// ============================================================================
-// 单位扩展 - 支持时间单位的便捷写法
-// ============================================================================
 
 public interface UnitExtension {
     prop second: Duration
@@ -95,9 +92,6 @@ public func sleepFor(someDuration: Duration): Unit {
     sleep(someDuration)
 }
 
-// ============================================================================
-// UI 测试驱动管理
-// ============================================================================
 
 public class TestDriver{
     private static var _driver: ?Driver = None
@@ -119,9 +113,6 @@ public class TestDriver{
     }
 }
 
-// ============================================================================
-// UI 操作函数
-// ============================================================================
 
 public func pressHome(): Unit {
     TestDriver.driver.pressHome()
@@ -167,9 +158,6 @@ public func slide(through!: Array<Point>): Unit {
     driver.injectMultiPointerAction(pointerMatrix)
 }
 
-// ============================================================================
-// 环境设置
-// ============================================================================
 
 public func setUp(): Unit {
     wakeUpDisplay()
@@ -206,9 +194,6 @@ public func clickAllThoseButtons(): Unit {
     }
 }
 
-// ============================================================================
-// UI 组件异常类
-// ============================================================================
 
 public abstract class UiComponentNotFound <: Exception {
     public UiComponentNotFound(message: String) {
@@ -234,9 +219,6 @@ public class AmbiguousUiComponentsFound <: Exception {
     }
 }
 
-// ============================================================================
-// Point 类 - 坐标点
-// ============================================================================
 
 public class Point <: ToString {
     public Point(public let x: Int32, public let y: Int32) {}
@@ -245,9 +227,6 @@ public class Point <: ToString {
     }
 }
 
-// ============================================================================
-// UI 组件接口和实现
-// ============================================================================
 
 public interface UiComponent <: Hashable & Equatable<UiComponent> {
     prop centerPoint: Point
@@ -312,9 +291,6 @@ public interface UiComponent <: Hashable & Equatable<UiComponent> {
     }
 }
 
-// ============================================================================
-// UI 动作系统
-// ============================================================================
 
 public class MyAction {
     public MyAction(public let bePerformedOn: (UiComponent) -> Unit) {}
@@ -330,9 +306,6 @@ public func clearText(): MyAction {
     }
 }
 
-// ============================================================================
-// UI 组件实现类
-// ============================================================================
 
 public class UiComponentById <: UiComponent {
     public UiComponentById(public let _id: String) {}
@@ -373,9 +346,6 @@ public open class HybridUiComponent <: UiComponent {
     }
 }
 
-// ============================================================================
-// UI 组件查找工具
-// ============================================================================
 
 public class Screen {
     public static func findAllUiComponentsWhoseIdEqualsTo(id: String): Array<UiComponent> {
@@ -449,9 +419,6 @@ public class UiComponentTree {
     }
 }
 
-// ============================================================================
-// 页面导航
-// ============================================================================
 
 public func enterPage(pageName: String): Unit {
     click(at: Screen.getTheOnlyUiComponentWhoseIdEqualsTo(pageName).centerPoint)
@@ -474,9 +441,6 @@ public func enterPage(scrollerId!: String, buttonId!: String): Unit {
     }
 }
 
-// ============================================================================
-// UI 检查器
-// ============================================================================
 
 public class getInspector {
     public operator func [](componentId: String, attributeName: String): String {
@@ -494,9 +458,6 @@ public class getInspector {
     }
 }
 
-// ============================================================================
-// 事件管理
-// ============================================================================
 
 public class Event {
     public Event(public let timeStamp: DateTime, public let name: String, public let content: String) {}
@@ -548,9 +509,6 @@ public func waitForEventWithName(eventName: String, timeOut!: Duration = Duratio
     }
 }
 
-// ============================================================================
-// EventBuilder - 事件构建器
-// ============================================================================
 
 public class EventBuilder {
     public EventBuilder(private let eventName: String) {}
@@ -586,9 +544,6 @@ public class EventBuilder {
     }
 }
 
-// ============================================================================
-// 权限管理
-// ============================================================================
 
 public func getAbilityContext(): UIAbilityContext {
     let result = Box(None<UIAbilityContext>)
@@ -662,9 +617,6 @@ public func getResourceManager(): ResourceManager {
     getAbilityContext().resourceManager
 }
 
-// ============================================================================
-// 异步等待工具
-// ============================================================================
 
 public func await<T>(jsContext: JSContext, f: () -> T): T {
     let result = Box(None<Result<T, Exception>>)
@@ -714,9 +666,6 @@ public func waitFor(timeOut: Duration, f: () -> Bool): Unit {
     }
 }
 
-// ============================================================================
-// 辅助工具
-// ============================================================================
 
 private enum Result<T, E> {
     | Ok(T)
@@ -735,9 +684,6 @@ public func pick<T>(p: (T) -> Bool): (Iterable<T>) -> T {
     }
 }
 
-// ============================================================================
-// Exception 扩展
-// ============================================================================
 
 extend Exception {
     public prop stackTrace: String {
@@ -752,9 +698,6 @@ extend Exception {
     }
 }
 
-// ============================================================================
-// JSON 解析工具类
-// ============================================================================
 public enum JsonKind {
     JsNull | JsBool | JsInt | JsFloat | JsString | JsArray | JsObject
 }
@@ -1084,8 +1027,6 @@ class WriteBuffer {
             _size += cpSize
         }
 
-        // the result of CJ_CORE_Float64ToCPointer have at least 6 decimal points
-        // there is no out-of-bounds risk
         while (_buffer[_size - 1] == b'0') {
             _size--
         }
@@ -1613,7 +1554,7 @@ func asumecapacity(json: JsonValue): Int64 {
         case jo: JsonObject =>
             var sum = 2
             for ((k, v) in jo.getFields()) {
-                sum = sum + k.size + 4 // + "key": value,
+                sum = sum + k.size + 4
                 sum += asumecapacity(v)
             }
             return sum
@@ -1623,11 +1564,11 @@ func asumecapacity(json: JsonValue): Int64 {
                 sum = sum + asumecapacity(v) + 1
             }
             return sum
-        case js: JsonString => return js.value.size + 2 // "value"
-        case _: JsonBool => return 5 // max of "false" and "true"
-        case _: JsonInt => return 22 // max len is 22
-        case _: JsonFloat => return 200 // not precision
-        case _ => return 4 // len of "null" is 4
+        case js: JsonString => return js.value.size + 2
+        case _: JsonBool => return 5
+        case _: JsonInt => return 22
+        case _: JsonFloat => return 200
+        case _ => return 4
     }
 }
 
