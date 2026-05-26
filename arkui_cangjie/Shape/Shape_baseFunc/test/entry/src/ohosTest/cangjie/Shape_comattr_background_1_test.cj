@@ -31,7 +31,7 @@ class Shape_comattr_background_1_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.Shape_baseFunc", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.Shape_baseFunc", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_Shape_ca_background_01")

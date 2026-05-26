@@ -31,7 +31,7 @@ class DataPanel_unique1_2_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.DPanel_baseFunc", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.DPanel_baseFunc", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_DPan_unique1_01")

@@ -32,7 +32,7 @@ class Counter_comattr_size2_1_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.counter_baseFunc", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.counter_baseFunc", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_Cou_ca_size_02")

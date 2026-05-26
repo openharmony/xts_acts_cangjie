@@ -31,7 +31,7 @@ class MenuIG_comattr_alignself_basis_2_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.MenuIG_baseFunc", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.MenuIG_baseFunc", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_MenuIG_ca_alignself_flexbasis_01")

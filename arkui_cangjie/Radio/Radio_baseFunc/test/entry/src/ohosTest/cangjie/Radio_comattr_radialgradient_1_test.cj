@@ -31,7 +31,7 @@ class Radio_comattr_radialgradient_1_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.Radio_baseFunc", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.Radio_baseFunc", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_Radio_ca_radialgradient_01")

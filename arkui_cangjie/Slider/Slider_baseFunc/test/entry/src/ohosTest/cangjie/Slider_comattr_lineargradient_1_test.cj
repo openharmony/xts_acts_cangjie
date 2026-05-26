@@ -31,7 +31,7 @@ class Slider_comattr_lineargradient_1_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.Slider_baseFunc", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.Slider_baseFunc", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_Slider_ca_lineargradient_01")
