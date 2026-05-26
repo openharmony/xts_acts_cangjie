@@ -31,7 +31,7 @@ class Button_comattr_position_2_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.Button_baseFunc1", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.Button_baseFunc1", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_Button_ca_position_01")

@@ -31,7 +31,7 @@ class TextInput_comattr_layoutweight_1_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.TextInput_baseFunc", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.TextInput_baseFunc", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_TInp_ca_layoutweight_01")

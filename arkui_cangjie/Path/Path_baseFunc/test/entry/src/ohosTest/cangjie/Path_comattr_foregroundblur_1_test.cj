@@ -31,7 +31,7 @@ class Path_comattr_foregroundblur_1_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.Path_baseFunc", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.Path_baseFunc", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_Path_ca_foregroundblur_01")
