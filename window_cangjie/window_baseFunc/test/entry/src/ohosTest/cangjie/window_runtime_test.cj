@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package ohos_app_cangjie_entry
+package ohos_app_cangjie_entry_test
 
 import ohos.window.{Configuration as Conf, getLastWindow, Orientation, createWindow, WindowType, SystemBarProperties,
     ColorSpace, AvoidAreaType, findWindow, Size as windowSize, TitleButtonRect, AvoidArea, Rect, Window}
