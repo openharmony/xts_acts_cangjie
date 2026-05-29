@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ohos_app_cangjie_entry
+package ohos_app_cangjie_entry_test
+
+import ohos_app_cangjie_entry_test.unittest_support.registerTestSuite
 
 let _ = testsuite()
 
 func testsuite(): Unit {
-    registerTestSuite("Test_window_runtime", {=> Test_window_runtime()})
+    registerTestSuite {Test_window_runtime()}
 }
