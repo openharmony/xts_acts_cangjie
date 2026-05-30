@@ -36,6 +36,7 @@ class test_GetEntries_1 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func TestCase_1(): Unit {
@@ -63,6 +64,8 @@ class test_GetEntries_1 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+
+    @TestCase
     @Tag[APILevel22, TestLevel0]
     func TestCase_2(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_2 begins.")
@@ -90,6 +93,7 @@ class test_GetEntries_1 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func TestCase_3(): Unit {
@@ -116,6 +120,8 @@ class test_GetEntries_1 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+
+    @TestCase
     @Tag[APILevel22, TestLevel0]
     func TestCase_4(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_4 begins.")
@@ -144,6 +150,7 @@ class test_GetEntries_1 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+     
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func TestCase_5(): Unit {

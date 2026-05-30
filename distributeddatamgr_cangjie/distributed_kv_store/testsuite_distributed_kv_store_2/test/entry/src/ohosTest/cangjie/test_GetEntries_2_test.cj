@@ -92,6 +92,7 @@ class test_GetEntries_2 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+    @TestCase
     @Tag[APILevel22, TestLevel0]
     func TestCase_2(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_2 begins.")
