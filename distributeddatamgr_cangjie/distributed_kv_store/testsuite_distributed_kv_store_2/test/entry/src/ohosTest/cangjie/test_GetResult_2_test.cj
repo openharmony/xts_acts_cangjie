@@ -67,6 +67,7 @@ class test_GetResult_2 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+    @TestCase
     @Tag[APILevel22, TestLevel0]
     func TestCase_1(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_1 begins.")
@@ -94,6 +95,7 @@ class test_GetResult_2 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+    @TestCase 
     @Tag[APILevel22, TestLevel0]
     func TestCase_2(): Unit {
         var context = Global.getAbilityContext()
@@ -119,6 +121,7 @@ class test_GetResult_2 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+    @TestCase 
     @Tag[APILevel22, TestLevel0]
     func TestCase_3(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_3 begins.")
@@ -145,6 +148,7 @@ class test_GetResult_2 {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+    @TestCase 
     @Tag[APILevel22, TestLevel0]
     func TestCase_4(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_4 begins.")

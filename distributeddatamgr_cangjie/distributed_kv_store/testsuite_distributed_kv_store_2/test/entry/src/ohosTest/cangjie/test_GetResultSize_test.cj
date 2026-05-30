@@ -49,6 +49,7 @@ class test_GetResultSize {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
+    @TestCase
     @Tag[APILevel22, TestLevel0]
     func TestCase_1(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_1 begins.")
