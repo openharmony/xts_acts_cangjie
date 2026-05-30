@@ -31,7 +31,7 @@ class Column_comattr_responseregion2_2_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.Column_baseFunc1", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.Column_baseFunc1", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_Col_ca_responseRegion_02")

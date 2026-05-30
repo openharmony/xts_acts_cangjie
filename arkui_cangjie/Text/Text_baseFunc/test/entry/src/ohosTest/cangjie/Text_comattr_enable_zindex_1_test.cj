@@ -31,7 +31,7 @@ class Text_comattr_enable_zindex_1_test {
         Hilog.info(0u32, "CangjieTest", "start entry ability")
         AbilityDelegatorRegistry
             .getAbilityDelegator()
-            .startAbility(Want(bundleName: "com.huawei.Text_baseFunc", abilityName: "EntryAbility"))
+            .startAbility(Want(bundleName: "com.example.Text_baseFunc", abilityName: "EntryAbility"))
         Hilog.info(0u32, "CangjieTest", "wait for component under test to appear")
         TestDriver.driver.waitForComponent(On().id("scoller"), 3000i32)
             enterPage(scrollerId:"scroller",buttonId:"index_Text_ca_enable_zindex_01")
