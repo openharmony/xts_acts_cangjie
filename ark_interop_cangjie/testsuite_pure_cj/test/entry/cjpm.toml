@@ -46,4 +46,6 @@
   [profile.customized-option]
     debug = "-g -Woff all"
     release = "--fast-math -O2 -s -Woff all"
+    withoutCoverage = "--cfg=\"coverage=false\""
+    withCoverage = "--cfg=\"coverage=true\""
   [profile.test]
