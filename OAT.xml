@@ -12,6 +12,7 @@
                 <filteritem type="filename" name=".*/test/.*" desc="测试用例目录"/>
 				<filteritem type="filename" name="*.json" desc="测试用例权限文件"/>
                 <filteritem type="filename" name="xdevice*.tar.gz" desc="测试框架依赖"/>
+                <filteritem type="filename" name="*.p7b" desc="工程签名文件"/>
 			</filefilter>	
         </filefilterlist>
 		<licensematcherlist>
