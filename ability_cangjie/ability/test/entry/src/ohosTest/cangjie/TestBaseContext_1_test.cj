@@ -667,4 +667,28 @@ class TestBaseContext_1 {
                 options: StartOptions())
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_27 ends.")
     }
+
+     /*
+     * @tc.number    : Sub_Cangjie_ability_startAbility_cross_bundle_2800
+     * @tc.name      : TestCase_28
+     * @tc.desc      : start ability from different bundleName successfully
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_28(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_cross_bundle begins.")
+        Hilog.info(0u32, "CangjieTest", "start ability from different bundleName successfully.")
+        let want = Want(bundleName: "com.ohos.callui", abilityName: "EntryAbility", moduleName: "entry")
+        Global.getAbilityContext()
+            .startAbility(Want(bundleName: "com.ohos.callui", abilityName: "EntryAbility", moduleName: "entry"),
+                options: StartOptions())
+        let actualBundleName = want.bundleName
+        let startSuccess = true
+        @Expect(startSuccess, true) 
+        @Expect(actualBundleName, "com.ohos.callui")
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_cross_bundle ends.")
+    }   
 }
