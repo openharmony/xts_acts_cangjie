@@ -20,12 +20,10 @@ import kit.BasicServicesKit.*
 import kit.PerformanceAnalysisKit.*
 import std.unittest.testmacro.*
 import std.unittest.*
-import std.unittest.common.*
 import kit.TestKit.*
 import std.math.*
-import kit.ArkUI.*
 import kit.PerformanceAnalysisKit.Hilog
-import kit.CangjieKit.*
+
 
 @Test
 public class Test_SystemDateTime {
