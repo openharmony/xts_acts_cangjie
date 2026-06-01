@@ -127,6 +127,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_01
      * @tc.desc: input normal Parameter， and test_01.txt is empty
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_01() {
         let pathDir = "/data/storage/el2/base/haps/testDir"
         try {
             let filenames = FileIo.listFile(pathDir)
@@ -153,6 +156,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_02
      * @tc.desc: The path does not exist
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_02() {
         let pathDir = "/data/storage/el2/base/haps/testDir02"
         try {
             let filenames = FileIo.listFile(pathDir)
@@ -171,6 +177,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_03
      * @tc.desc: recursion is false
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_03() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         try {
             let listFileOptions = ListFileOptions(recursion: false)
@@ -200,6 +209,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_04
      * @tc.desc: recursion is true
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_04() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         let listFileOptions = ListFileOptions(recursion: true)
         let filenames = FileIo.listFile(pathDir, options: listFileOptions)
@@ -223,6 +235,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_05
      * @tc.desc: listNum is 0
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_05() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         let listFileOptions = ListFileOptions(listNum: 0)
         let filenames = FileIo.listFile(pathDir, options: listFileOptions)
@@ -239,7 +254,6 @@ class testFileIo_listFile_1 {
         let name_6 = filenames[5]
         @Expect(name_6,"testDir_06")
     }
-
     /**
      * @tc.number: test_fs.listFilelistFile_06
      * @tc.level    : Level 0
@@ -248,6 +262,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_06
      * @tc.desc: listNum is 2
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_06() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         let listFileOptions = ListFileOptions(listNum: 2)
         let filenames = FileIo.listFile(pathDir, options: listFileOptions)
@@ -265,6 +282,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_07
      * @tc.desc: listNum is 7,more than the number of files
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_07() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         try {
             let listFileOptions = ListFileOptions(listNum: 7)
@@ -280,9 +300,6 @@ class testFileIo_listFile_1 {
             let name_5 = filenames[4]
             @Expect(name_5,"testDir_05")
             let name_6 = filenames[5]
-//            @Expect(name_6,"testDir_06")
-//            let name_7 = filenames[6]
-//            @Expect(false)
         } catch (e: Exception) {
             let cord = e.toString()
             @Expect(cord,"IndexOutOfBoundsException")
@@ -297,6 +314,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_08
      * @tc.desc: listNum is -1
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_08() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         try {
             let listFileOptions = ListFileOptions(listNum: -1)
@@ -316,6 +336,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_09
      * @tc.desc: suffix is ".png" ,".jpg" and ".jpeg"
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_09() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         let filter = Filter(suffix: [".png", ".jpg", ".jpeg"])
         let listFileOptions = ListFileOptions(filter: filter)
@@ -340,6 +363,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_10
      * @tc.desc: displayName is "*txt" and "efg*"
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_10() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         let filter = Filter(displayName: ["*txt", "efg*"])
         let listFileOptions = ListFileOptions(filter: filter)
@@ -362,6 +388,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_11
      * @tc.desc: fileSizeOver is stat.size
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_11() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_02"
         let filepath = pathDir + "/test_02.txt"
         let stat = FileIo.stat(filepath)
@@ -386,6 +415,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_12
      * @tc.desc: lastModifiedAfter is stat.mtime
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_12() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_02"
         let filepath = pathDir + "/test_02.txt"
         let stat = FileIo.stat(filepath)
@@ -412,6 +444,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_13
      * @tc.desc: recursion is true,listNum is 0,suffix is ".png", ".jpg" and ".jpeg"
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_13() {
         let filter = Filter(suffix: [".png", ".jpg", ".jpeg"])
         let pathDir = "/data/storage/el2/base/haps/testDir"
         let listFileOptions = ListFileOptions(recursion: true, listNum: 0, filter: filter)
@@ -436,6 +471,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_14
      * @tc.desc: recursion is false,listNum is 1,and displayName is "efg*"
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_14() {
         let filter = Filter(displayName: ["efg*"])
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         let listFileOptions = ListFileOptions(recursion: false, listNum: 1, filter: filter)
@@ -456,6 +494,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_15
      * @tc.desc: recursion is false,listNum is 1,fileSizeOver is stat.size
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_15() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_02"
         let filepath = pathDir + "/test_03.txt"
         let stat = FileIo.stat(filepath)
@@ -478,6 +519,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_16
      * @tc.desc: recursion is true, listNum is 0, lastModifiedAfter is stat.mtime
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_16() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_02"
         let filepath = pathDir + "/test_02.txt"
         let stat = FileIo.stat(filepath)
@@ -503,6 +547,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_17
      * @tc.desc: recursion is false,number is 0,suffix is ".png", ".jpg",displayName is "efg*"
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_17() {
         let filter = Filter(suffix: [".png", ".jpg"], displayName: ["efg*"])
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         let listFileOptions = ListFileOptions(recursion: false, listNum: 0, filter: filter)
@@ -523,6 +570,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_18
      * @tc.desc: recursion is false,number is 0,fileSizeOver is ".png",".jpg",lastModifiedAfter is "efg*"
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_18() {
         let filter = Filter(suffix: [".png", ".jpg"], displayName: ["efg*"])
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01"
         let listFileOptions = ListFileOptions(recursion: false, listNum: 0, filter: filter)
@@ -543,6 +593,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_19
      * @tc.desc: recursion is false, listNum is 0 ,fileSizeOver is stat.size, lastModifiedAfter is stat.mtime
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_19() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_02"
         let filepath = pathDir + "/test_02.txt"
         let stat = FileIo.stat(filepath)
@@ -567,6 +620,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_20
      * @tc.desc: fileSizeOver is stat.size, lastModifiedAfter is stat.mtime
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_20() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_02"
         let filepath = pathDir + "/test_02.txt"
         let stat = FileIo.stat(filepath)
@@ -593,6 +649,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_21
      * @tc.desc: not file ,is directory
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_21() {
         let pathDir = "/data/storage/el2/base/haps/testDir/test_01.txt"
         try {
             let filenames = FileIo.listFile(pathDir)
@@ -611,6 +670,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_22
      * @tc.desc: empty directory
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_22() {
         let pathDir = "/data/storage/el2/base/haps/testDir/testDir_01/testDir_06"
         try {
             let filenames = FileIo.listFile(pathDir)
@@ -628,6 +690,9 @@ class testFileIo_listFile_1 {
      * @tc.name: test_fs.test_listFile_23
      * @tc.desc: create two filenames
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_listFile_23() {
         try {
             let pathDir_01 = "/data/storage/el2/base/haps/testDir"
             let filenames_01 = FileIo.listFile(pathDir_01)

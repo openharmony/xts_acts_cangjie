@@ -34,6 +34,9 @@ class testFileIo_mkdir_1 {
      * @tc.name: test_mkdir_01
       * @tc.desc    : input
      */
+    @TestCase
+    func test_mkdir_01() {
+        let dpath = "/data/storage/el2/base/haps/test_mkdir_01/test_mkdir_02/test_mkdir_03"
         try {
             FileIo.mkdir(dpath, true)
             let res = FileIo.access(dpath)
@@ -53,6 +56,9 @@ class testFileIo_mkdir_1 {
      * @tc.name: test_fs.mkdir_02
      * @tc.desc: Duplicate Folder
      */
+    @TestCase
+    func test_mkdir_02() {
+        let dpath = "/data/storage/el2/base/haps/test_mkdir_01/test_mkdir_02/test_mkdir_03"
         FileIo.mkdir(dpath, true)
         let res = FileIo.access(dpath)
         @Expect(res, true)
@@ -77,6 +83,9 @@ class testFileIo_mkdir_1 {
      * @tc.name: test_fs.mkdir_03
      * @tc.desc    : Empty
      */
+    @TestCase
+    func test_mkdir_03() {
+        try {
             FileIo.mkdir("")
             @Expect(false)
         } catch (e: BusinessException) {
@@ -93,6 +102,9 @@ class testFileIo_mkdir_1 {
      * @tc.name: test_fs.mkdir_04
      * @tc.desc    : Create
      */
+    @TestCase
+    func test_mkdir_04() {
+        let fpath = "/data/storage/el2/base/haps/test_mkdir_04.txt"
         let file = FileIo.open(fpath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         let res = FileIo.access(fpath)
         @Expect(res, true)
@@ -116,6 +128,9 @@ class testFileIo_mkdir_1 {
      * @tc.name: test_fs.mkdir_05
      * @tc.desc    : recursion
      */
+    @TestCase
+    func test_mkdir_05() {
+        let dpath = "/data/storage/el2/base/haps/test_mkdir_01"
         try {
             FileIo.mkdir(dpath, false)
             let res = FileIo.access(dpath)
@@ -135,6 +150,9 @@ class testFileIo_mkdir_1 {
      * @tc.name: test_fs.mkdir_06
      * @tc.desc    : recursion
      */
+    @TestCase
+    func test_mkdir_06() {
+        let dpath = "/data/storage/el2/base/haps/test_mkdir_01/test_mkdir_02/test_mkdir_03"
         try {
             FileIo.mkdir(dpath, false)
             @Expect(false)
