@@ -19,5 +19,5 @@ import ohos_app_cangjie_entry_test.unittest_support.registerTestSuite
 let _ = testsuite()
 
 func testsuite(): Unit {
-    registerTestSuite(Test_cookie())
+    registerTestSuite {Test_cookie()}
 }

@@ -150,9 +150,6 @@ public class Test_connection {
             NetCapabilities(Array<NetBearType>(), linkDownBandwidthKbps: 0, linkUpBandwidthKbps: 0,
                 networkCap: Array<NetCap>())
         }
-        Hilog.info(0, "CangjieTest",
-            "getNetCapabilities : ${capabilities.linkDownBandwidthKbps} ${capabilities.linkUpBandwidthKbps} ${capabilities.bearerTypes.size} ${capabilities.networkCap.size}"
-        )
         Hilog.info(0, "CangjieTest", "getConnectionProperties")
         try {
             let props = getConnectionProperties(handle)

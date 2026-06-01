@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package ohos_app_cangjie_entry
+package ohos_app_cangjie_entry_test
 
 import std.unittest.*
 import std.unittest.common.*
@@ -34,7 +34,7 @@ class Test_cookie {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_configCookie_fetchCookie() {
-        sleepFor(2.second)
+        sleep(2 * Duration.second)
         WebCookieManager.configCookie("https://www.example.com", "a=b,c=d,e=f")
         let value = WebCookieManager.fetchCookie("https://www.example.com")
         @Expect(value, "a=b,c=d,e=f")
