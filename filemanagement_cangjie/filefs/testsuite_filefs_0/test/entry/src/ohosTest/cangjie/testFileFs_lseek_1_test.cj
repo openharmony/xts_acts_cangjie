@@ -52,6 +52,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_01
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_01() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -73,6 +76,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_02
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_02() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = -1
@@ -95,6 +101,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_03
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_03() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -106,7 +115,6 @@ class testFileIo_lseek_1 {
             @Expect(false)
         }
     }
-
     /**
      * @tc.number: test_fs.lseek_04
      * @tc.level    : Level 0
@@ -115,6 +123,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_04
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_04() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -139,6 +150,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_05
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_05() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -162,6 +176,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_06
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_06() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -182,6 +199,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_07
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_07() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -205,6 +225,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_08
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_08() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -229,6 +252,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_09
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_09() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -249,6 +275,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_10
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_10() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -271,6 +300,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_11
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_11() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -293,6 +325,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_12
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_12() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -315,6 +350,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_13
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_13() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -337,6 +375,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_14
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_14() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -359,6 +400,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_15
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_15() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -383,6 +427,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_16
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_16() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -405,6 +452,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_17
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_17() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
@@ -430,6 +480,9 @@ class testFileIo_lseek_1 {
      * @tc.name: test_fs.lseek_18
      * @tc.desc    : Test
      */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_lseek_18() {
         let filePath = "/data/storage/el2/base/haps/test_file.txt"
         let file = FileIo.open(filePath, mode: OpenMode.READ_WRITE)
         let file_fd = file.fd
