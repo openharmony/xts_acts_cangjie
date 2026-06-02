@@ -72,7 +72,6 @@ class testWrite_1 {
                     HashMap(
                         [("key4", EventValueType.IntValue(-1i32)), ("key5", EventValueType.IntValue(-1i32)),
                             ("key6", EventValueType.IntValue(0i32))])))
-                            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -98,7 +97,6 @@ class testWrite_1 {
                     HashMap(
                         [("key7", EventValueType.IntValue(-1i32)), ("key8", EventValueType.IntValue(-1i32)),
                             ("key9", EventValueType.IntValue(1i32))])))
-                            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

@@ -46,7 +46,6 @@ class testPixelMap_readPixels_1 {
             let areaVar = PositionArea(Array<UInt8>(16i64, repeat: 0u8), 0u32, 8u32, Region(Size(1i32, 1i32), 0i32, 0i32
             ))
             pixelMap.readPixels(areaVar)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

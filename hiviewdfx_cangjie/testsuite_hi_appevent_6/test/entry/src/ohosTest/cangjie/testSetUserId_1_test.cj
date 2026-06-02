@@ -63,7 +63,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "Aa")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -85,7 +84,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "Aa1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -107,7 +105,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "A11_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -129,7 +126,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "A1_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -151,7 +147,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "A1_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -173,7 +168,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "$A_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -195,7 +189,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "$a1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -217,7 +210,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "$A1_b")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -239,7 +231,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "$_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -261,7 +252,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "__")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -283,7 +273,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "_A")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -305,7 +294,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -327,7 +315,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa", "_a_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -372,7 +359,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "Aa")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -394,7 +380,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "Aa1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -416,7 +401,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "A11_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -438,7 +422,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "A1_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -460,7 +443,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "A1_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -482,7 +464,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "$A_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -504,7 +485,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "$a1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -526,7 +506,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "$A1_b")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -548,7 +527,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "$_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -570,7 +548,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "__")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -592,7 +569,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "_A")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -614,7 +590,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -636,7 +611,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("Aa1", "_a_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -681,7 +655,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "Aa")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -703,7 +676,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "Aa1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -725,7 +697,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "A11_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -747,7 +718,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "A1_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -769,7 +739,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "A1_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -791,7 +760,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "$A_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -813,7 +781,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "$a1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -835,7 +802,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "$A1_b")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -857,7 +823,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "$_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -879,7 +844,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "__")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -901,7 +865,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "_A")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -923,7 +886,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -945,7 +907,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A11_", "_a_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -990,7 +951,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "Aa")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1012,7 +972,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "Aa1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1034,7 +993,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "A11_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1056,7 +1014,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "A1_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1078,7 +1035,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "A1_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1100,7 +1056,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "$A_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1122,7 +1077,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "$a1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1144,7 +1098,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "$A1_b")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1166,7 +1119,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "$_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1188,7 +1140,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "__")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1210,7 +1161,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "_A")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1232,7 +1182,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1254,7 +1203,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_$", "_a_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1299,7 +1247,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "Aa")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1321,7 +1268,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "Aa1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1343,7 +1289,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "A11_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1365,7 +1310,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "A1_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1387,7 +1331,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "A1_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1409,7 +1352,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "$A_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1431,7 +1373,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "$a1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1453,7 +1394,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "$A1_b")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1475,7 +1415,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "$_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1497,7 +1436,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "__")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1519,7 +1457,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "_A")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1541,7 +1478,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1563,7 +1499,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("A1_1", "_a_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1608,7 +1543,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "Aa")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1630,7 +1564,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "Aa1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1652,7 +1585,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "A11_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1674,7 +1606,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "A1_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1696,7 +1627,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "A1_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1718,7 +1648,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "$A_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1740,7 +1669,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "$a1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1762,7 +1690,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "$A1_b")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1784,7 +1711,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "$_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1806,7 +1732,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "__")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1828,7 +1753,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "_A")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1850,7 +1774,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1872,7 +1795,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A_", "_a_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1917,7 +1839,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "Aa")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1939,7 +1860,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "Aa1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1961,7 +1881,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "A11_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1983,7 +1902,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "A1_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2005,7 +1923,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "A1_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2027,7 +1944,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "$A_")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2049,7 +1965,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "$a1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2071,7 +1986,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "$A1_b")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2093,7 +2007,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "$_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2115,7 +2028,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "__")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2137,7 +2049,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "_A")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2159,7 +2070,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "_1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2181,7 +2091,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$a1", "_a_$")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2226,7 +2135,6 @@ class testSetUserId_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserId("$A1_b", "Aa")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
