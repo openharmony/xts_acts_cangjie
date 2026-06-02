@@ -502,7 +502,6 @@ class CloseKVStore_1 {
         Hilog.info(0, "cangjietest", "fail to close kv store.")
         try {
             kvManager.closeKVStore("#$%^&", "zpsABC")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

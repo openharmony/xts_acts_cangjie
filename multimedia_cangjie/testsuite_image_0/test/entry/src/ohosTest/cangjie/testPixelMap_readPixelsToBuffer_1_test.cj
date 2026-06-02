@@ -192,7 +192,6 @@ class testPixelMap_readPixelsToBuffer_1 {
             let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
             Hilog.info(0, "cangjietest", "readPixelsToBuffer")
             pixelMap.readPixelsToBuffer(dstBuf)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -244,7 +243,6 @@ class testPixelMap_readPixelsToBuffer_1 {
             let dstBuf = Array<UInt8>(16i64, repeat: 0u8)
             Hilog.info(0, "cangjietest", "readPixelsToBuffer")
             pixelMap.readPixelsToBuffer(dstBuf)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

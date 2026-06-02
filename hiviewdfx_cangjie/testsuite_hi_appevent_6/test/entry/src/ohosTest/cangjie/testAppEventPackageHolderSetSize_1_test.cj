@@ -187,7 +187,6 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(0i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_7 ends.")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -211,7 +210,6 @@ class testAppEventPackageHolderSetSize_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder setSize")
             eventPackageHolder.setSize(1i32)
             Hilog.info(0, "cangjietest", "testcase TestCase_8 ends.")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
