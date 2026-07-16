@@ -207,127 +207,209 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 
 1. 规范用例目录：测试用例存储到 src/ohosTest/cangjie目录。
 
+```
+├── signature
+│ └──openharmony_sx.p7b                # 签名工具
+├── AppScope
+│ └──app.json5                         # 应用全局配置信息
+├── entry
+│ └──src
+│ │ └──main
+│ │ │ └──cangjie         			   # 仓颉源码包应用目录
+│ │ │ │ └──ability_stage.cj            # 组件管理器模板文件
+│ │ │ │ └──index.cj                    # 默认页面模板文件
+│ │ │ │ └──main_ability.cj             # 系统界面窗口模板文件
+│ │ │ └──resources                     # 应用资源文件存放目录
+│ │ │ └──module.json5                  # Stage模型模块配置文件
+│ │ └──ohosTest                        # Instrument Test测试目录
+│ │ │ └──cangjie                       # 仓颉测试代码存放目录
+│ │ │ │ │ └──unittest_support
+│ │ │ │ │ │ └──unittest_engine.cj  	   # 测试框架
+│ │ │ │ │ └──xxx_test.cj               # 测试文件(测试套、测试用例)    
+│ │ │ │ │ └──list_test.cj              # 测试套注册
+```
+
+​      注意：
+
+​      1). 测试文件需要以xxx_test.cj命名，其中xxx命名规范是"{功能模块描述}_{编号}"
+
+​      2). 测试类需要添加至list_test.cj中
+
+2.unittest_engine.cj
+
+【注】在unittest_support目录下的 unittest_engine 文件中的 public override func onRun() 方法下存在拉起测试套入口xxxAbility的命令：
+
+
    ```
-   ├── signature
-   │ └──openharmony_sx.p7b                # 签名工具
-   ├── AppScope
-   │ └──app.json                          # 应用全局配置信息
-   ├── entry
-   │ └──src
-   │ │ └──main
-   │ │ │ └──cangjie         			   # 源码存放目录
-   │ │ │ │ └──ability_stage.cj         
-   │ │ │ │ └──index.cj   # 默认页
-   │ │ │ │ └──main_ability.cj
-   │ │ │ └──resources                     # 应用资源文件存放目录
-   │ │ │ └──module.json                   # Stage模型模块配置文件
-   │ │ └──ohosTest                        # Instrument Test测试目录
-   │ │ │ └──cangjie                       # 仓颉测试代码存放目录
-   │ │ │ │ │ └──unittest_support
-   │ │ │ │ │ │ └──unittest_engine.cj  	   # 测试框架
-   │ │ │ │ │ └──example_test.cj           # 测试文件(测试套、测试用例)    
-   │ │ │ │ │ └──list_test.cj              # 测试套注册
-     
+   public class OpenHarmonyTestRunner <: TestRunner {
+       ...
+        public override func onRun(): Unit {
+                let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+                let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()abilityDelegator.print("OpenHarmonyTestRunner onRun")
+                let parameters = abilityDelegatorArguments.parameters
+                let bundleName = abilityDelegatorArguments.bundleName
+                let bundleInfo = BundleManager.getBundleInfoForSelf(
+                    BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION)
+                let moduleName = match (parameters.get("-m")) {
+                    case None =>
+                        abilityDelegator.finishTest("Module name was not specified.", -1)
+                        return
+                    case Some(moduleName) =>
+                        if (bundleInfo.hapModulesInfo |> any {hapModuleInfo => hapModuleInfo.name == moduleName}) {
+                            moduleName
+                        } else {
+                            abilityDelegator.finishTest(
+                                "No module with name \"${moduleName}\" was found in bundle ${bundleName}.", -1)
+                            return
+                        }
+                }
+                let abilityName = match (bundleInfo.hapModulesInfo |> filter {hapModuleInfo => hapModuleInfo.name == moduleName} |>
+                    first) {
+                    case None =>
+                        abilityDelegator.finishTest("No module with name \"${moduleName}\" was found in bundle ${bundleName}.",
+                            -1)
+                        return
+                    case Some(hapModuleInfo) =>
+                        let mainElementName = hapModuleInfo.mainElementName
+                        mainElementName
+                }
+                let want = Want(bundleName: bundleName, moduleName: moduleName, abilityName: abilityName)
+                abilityDelegator.startAbility(want)
+           ...
+       }
+    };
    ```
-   
-   注意：
-   1. 测试文件需要以_test.cj命名
-   2. 测试类需要添加至list_test.cj中
-   
-2. unittest_engine.cj
 
-   【注】在unittest_support目录下的 unittest_engine 文件中的 public override func onRun() 方法下存在拉起测试套入口xxxAbility的命令：
+3.index.cj示例
 
+```
+@Entry
+@Component
+class EntryView {
+    @State
+    var message: String = "Hello World"
 
-   ```
-	public class OpenHarmonyTestRunner <: TestRunner {
-		   ...
-			public override func onRun(): Unit {
-					let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-					let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()abilityDelegator.print("OpenHarmonyTestRunner onRun")
-					let parameters = abilityDelegatorArguments.parameters
-					let bundleName = abilityDelegatorArguments.bundleName
-					let bundleInfo = BundleManager.getBundleInfoForSelf(
-						BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE | BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION)
-					let moduleName = match (parameters.get("-m")) {
-						case None =>
-							abilityDelegator.finishTest("Module name was not specified.", -1)
-							return
-						case Some(moduleName) =>
-							if (bundleInfo.hapModulesInfo |> any {hapModuleInfo => hapModuleInfo.name == moduleName}) {
-								moduleName
-							} else {
-								abilityDelegator.finishTest(
-									"No module with name \"${moduleName}\" was found in bundle ${bundleName}.", -1)
-								return
-							}
-					}
-					let abilityName = match (bundleInfo.hapModulesInfo |> filter {hapModuleInfo => hapModuleInfo.name == moduleName} |>
-						first) {
-						case None =>
-							abilityDelegator.finishTest("No module with name \"${moduleName}\" was found in bundle ${bundleName}.",
-								-1)
-							return
-						case Some(hapModuleInfo) =>
-							let mainElementName = hapModuleInfo.mainElementName
-							mainElementName
-					}
-					let want = Want(bundleName: bundleName, moduleName: moduleName, abilityName: abilityName)
-					abilityDelegator.startAbility(want)
-			   ...
-		   }
-	   };
-    ```
-
-3. index.ets示例
-
-    ```
-    @Entry
-    @Component
-    class EntryView {
-        @State
-        var message: String = "Hello World"
-
-        func build() {
-            Row {
-                Column {
-                    Text(this.message)
-                        .fontSize(50)
-                        .fontWeight(FontWeight.Bold)
-                        .onClick ({
-                            evt => this.message = "Hello Cangjie"
-                        })
-                }.width(100.percent)
-            }.height(100.percent)
-        }
+    func build() {
+        Row {
+            Column {
+                Text(this.message)
+                    .fontSize(50)
+                    .fontWeight(FontWeight.Bold)
+                    .onClick ({
+                        evt => this.message = "Hello Cangjie"
+                    })
+            }.width(100.percent)
+        }.height(100.percent)
     }
-    ```
+}
+```
 
-4. 测试文件(example_test.cj)示例
+4.编写测试用例
 
-    ```
-    @Test
-    class TestExample {
-    
-        @TestCase
-        func test00(): Unit {
-                let a = "abc"
-                let b = "b"
-                @Expect(a.contains(b))
-                @Expect(a, a)
-        }
+  4.1 编写XTS_API测试用例
+
+  测试用例需包含如下基本元素：
+
+  1). 依赖导包，以便使用依赖的测试接口。
+
+  2). 测试代码编写，主要编写测试代码的相关逻辑，如接口调用等。
+
+  3). 断言接口调用，设置测试代码中的检查点，如无检查点，则不可以认为完整的测试用例。
+
+  在src > ohosTest > cangjie 文件夹下xxx_test.cj文件中编写具体测试代码，实现的场景：启动测试页面，检查设备当前显示的页面是否为预期页面。
+
+```
+import kit.TestKit.*
+@Test
+class TestExample {
+
+    @TestCase
+    func test00(): Unit {
+            let a = "abc"
+            let b = "b"
+            @Expect(a.contains(b))
+            @Expect(a, a)
     }
-    ```
+}
+```
 
-5. 测试类注册(list_test.cj)示例
+​    4.2 编写XTS_UI测试用例
 
-    ```
-    private let register = testsuite()
-    
-    func testsuite() {
-        registerTestSuite {TestExample()}
+​       如下实例代码为UI的XTS测试用例，实现的场景是：在启动的应用页面上进行点击等操作，然后检测当前页面变化是否为预期变化。
+
+​      4.2.1 编写src > main > cangjie 目录下页面代码。
+
+```
+import ohos.arkui.state_management.*
+import ohos.arkui.state_macro_manage.*
+import kit.LocalizationKit.{AppResource}
+import kit.ArkUI.*
+
+@Entry
+@Component
+class View_xxx {
+    func build() {
+        Row(space: 5i64.vp,
+            child: {
+                => AlphabetIndexer(arrayValue: ["1", "2", "3"], selected: 0i32)
+                    .id("AlphabetIndexer_comattr_id")
+                    .align(Alignment.TopStart)
+                    .direction(Direction.Ltr)
+            }).width(100i64.percent)
     }
-    ```
+}
+```
+
+​      4.2.2 在src > ohosTest > cangjie 文件夹下xxx_test.cj文件中编写具体测试代码。
+
+```
+import kit.TestKit.*
+import kit.AbilityKit.*
+import std.unittest.*
+import std.unittest.common.*
+import std.unittest.testmacro.*
+import kit.PerformanceAnalysisKit.Hilog
+
+@Test
+class TestExample {
+    @TestCase
+    func testUiExample(): Unit {
+        let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+        let bundleName = AbilityDelegatorRegistry
+            .getArguments()
+            .bundleName
+        Hilog.info(1, "info", "uitest: TestUiExample begin")
+        //start tested ability
+        let want = Want(bundleName: bundleName, abilityName: 'EntryAbility')
+        delegator.startAbility(want)
+        sleep(Duration.second * 5)
+        //check top display ability
+        let ability = delegator.getCurrentTopAbility()
+        Hilog.info(1, "info", "get top ability")
+        // ui test code
+        // init driver
+        let driver = Driver.create()
+        driver.delayMs(1000)
+        let button = driver.findComponent(On().text('Next'))
+        //click button
+        button?.click()
+        driver.delayMs(1000)
+        //check text
+        driver.assertComponentExist(On().text('after click'))
+        driver.pressBack()
+    }
+}
+```
+
+5.测试类注册(list_test.cj)示例
+
+```
+private let register = testsuite()
+
+func testsuite() {
+    registerTestSuite {TestExample()}
+}
+```
 **表 5**  其余用法参考
 
 <a name="table13980103565212"></a>
@@ -369,6 +451,7 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 </tr>
 </tbody>
 </table>
+
 
 ### 用例编译指导<a name="section159801435165221"></a>
 
@@ -427,40 +510,41 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 1.  执行acts_cangjie\tools\run.py, 拉起xdevice界面。
 
 2.  界面启动后，输入相应命令执行用例。
-     
+    
      按不同粒度执行测试用例：
      1. 全量测试hap用例执行: 
           ``` 
           run acts
-     
+           
          acts: 执行testcases下全量测试hap的全量用例
-        ``` 
-     
-     2. 单测试hap执行: 
+        ```
+    
+     2. 单模块hap执行: 
          ```
          run –l cjTestability
           
          cjTestability: 测试hap名
          ``````
-     
+    
      3. 单测试套执行：
          ```
          run -l cjTestability -ta class:TestSuiteExample
-     
+          
          cjTestability: 测试hap名
          TestSuiteExample: 测试套名
          ```
      4. 单测试用例执行：
           ```
           run -l cjTestability -ta class:TestSuiteExample#TestCase
-
+          
           cjTestability: 测试hap名
           TestSuiteExample: 测试套名
           TestCase: 测试用例名 
-           ```
-           
+          ```
+          
+    
      其余命令行参考：[xdevice常用命令行](http://gitcode.com/openharmony/testfwk_xdevice)
-
+    
 3.  查看测试报告。
     进入acts_cangjie\reports\，获取当前的执行记录，打开“summary_report.html”可以获取到测试报告。
 
