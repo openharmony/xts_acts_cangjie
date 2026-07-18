@@ -12,6 +12,7 @@
 # limitations under the License.
 
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -130,6 +131,26 @@ def main() -> int:
     console = Console()
 
     script_dir = Path(__file__).parent.resolve()
+    cwd = Path.cwd().resolve()
+
+    testcases_dir = cwd / "testcases"
+    if not testcases_dir.is_dir():
+        console.print(console.err("testcases/ directory not found in the current working directory."))
+        console.print(console.warn("Please run build.py first to compile the test HAPs."))
+        console.print(console.info("Example: python ./tools/build.py build --all"))
+        return 1
+
+    config_src = script_dir / "config"
+    config_dst = cwd / "config"
+    if not config_dst.is_dir():
+        if config_src.is_dir():
+            try:
+                shutil.copytree(config_src, config_dst, dirs_exist_ok=True)
+                console.print(console.info(f"Copied config/ to {config_dst}"))
+            except Exception as e:
+                console.print(console.warn(f"Failed to copy config/ directory: {e}"))
+        else:
+            console.print(console.warn(f"Config source directory not found: {config_src}"))
 
     xdevice_pkg = script_dir / "xdevice-0.0.0.tar.gz"
     xdevice_ohos_pkg = script_dir / "xdevice_ohos-0.0.0.tar.gz"
