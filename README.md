@@ -202,8 +202,7 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 
 ### 用例编写指导<a name="section159801435165220"></a>
 
-1.测试用例为仓颉语言，必须满足仓颉语言编程规范。
-2.测试用例应覆盖接口的正常输入场景、边界值场景（如最大值、最小值、空值）及异常场景（如非法参数、超限输入）。
+测试用例需遵循仓颉语言编程规范，覆盖接口的正常输入与异常场景（如非法参数）。参考示例：getString() 接口测试见 https://gitcode.com/openharmony-sig/xts_acts_cangjie/blob/master/global_cangjie/testsuite_resource_manager_3/test/entry/src/ohosTest/cangjie/resourcemanager3_05_test.cj
 
 **以Stage 模式为例：**
 
