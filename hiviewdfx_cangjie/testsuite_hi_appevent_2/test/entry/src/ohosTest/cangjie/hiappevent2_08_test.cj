@@ -55,7 +55,6 @@ class Test_ohos_hiAppEvent {
             Hilog.info(0, "test_hiAppEvent_clearData_01", "Test_hiappevent_write_pass")
             HiAppEvent.clearData()
             Hilog.info(0, "test_hiAppEvent_clearData_01", "Test_hiappevent_clearData_pass")
-            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }

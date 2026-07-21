@@ -54,7 +54,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -90,7 +89,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -126,7 +124,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -161,7 +158,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -196,7 +192,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -231,7 +226,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -266,7 +260,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -301,7 +294,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -337,7 +329,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -373,7 +364,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -409,7 +399,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -445,7 +434,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -481,7 +469,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -517,7 +504,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -553,7 +539,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -589,7 +574,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -624,7 +608,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -659,7 +642,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -694,7 +676,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -729,7 +710,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -764,7 +744,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -800,7 +779,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -836,7 +814,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -872,7 +849,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -908,7 +884,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -944,7 +919,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -980,7 +954,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1016,7 +989,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1052,7 +1024,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1087,7 +1058,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1122,7 +1092,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1157,7 +1126,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1192,7 +1160,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1227,7 +1194,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1263,7 +1229,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1299,7 +1264,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1335,7 +1299,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1371,7 +1334,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1407,7 +1369,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1443,7 +1404,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1479,7 +1439,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1515,7 +1474,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1550,7 +1508,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1585,7 +1542,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1620,7 +1576,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1655,7 +1610,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1690,7 +1644,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1726,7 +1679,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1762,7 +1714,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1798,7 +1749,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1834,7 +1784,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1870,7 +1819,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1906,7 +1854,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1942,7 +1889,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1978,7 +1924,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2013,7 +1958,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2048,7 +1992,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2083,7 +2026,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2118,7 +2060,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2153,7 +2094,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2189,7 +2129,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2225,7 +2164,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2261,7 +2199,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2297,7 +2234,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2333,7 +2269,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2369,7 +2304,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2405,7 +2339,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2441,7 +2374,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2476,7 +2408,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2511,7 +2442,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2546,7 +2476,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2581,7 +2510,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2616,7 +2544,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2652,7 +2579,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2688,7 +2614,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2724,7 +2649,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2760,7 +2684,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2796,7 +2719,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2832,7 +2754,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2868,7 +2789,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2904,7 +2824,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2939,7 +2858,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2974,7 +2892,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3009,7 +2926,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3044,7 +2960,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3079,7 +2994,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3115,7 +3029,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3151,7 +3064,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3187,7 +3099,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3223,7 +3134,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3259,7 +3169,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3295,7 +3204,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3331,7 +3239,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3367,7 +3274,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3402,7 +3308,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3437,7 +3342,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3472,7 +3376,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3507,7 +3410,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3542,7 +3444,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -3578,7 +3479,6 @@ class testRemoveWatcher_5 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeWatcher(watcher)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

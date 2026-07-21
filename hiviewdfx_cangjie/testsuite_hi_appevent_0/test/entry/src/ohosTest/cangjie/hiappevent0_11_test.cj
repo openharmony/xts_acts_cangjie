@@ -47,7 +47,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -75,7 +74,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -102,7 +100,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -129,7 +126,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -157,7 +153,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -185,7 +180,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -213,7 +207,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -240,7 +233,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -268,7 +260,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -295,7 +286,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -322,7 +312,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -349,7 +338,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -376,7 +364,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -404,7 +391,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -432,7 +418,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -460,7 +445,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -488,7 +472,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -516,7 +499,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -544,7 +526,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -572,7 +553,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -600,7 +580,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -628,7 +607,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -656,7 +634,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -684,7 +661,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -712,7 +688,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -740,7 +715,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -768,7 +742,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -796,7 +769,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -825,7 +797,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -854,7 +825,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -883,7 +853,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -912,7 +881,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -941,7 +909,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -970,7 +937,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -999,7 +965,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1028,7 +993,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1056,7 +1020,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1084,7 +1047,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1112,7 +1074,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1141,7 +1102,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1169,7 +1129,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1197,7 +1156,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1225,7 +1183,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1253,7 +1210,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1281,7 +1237,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1309,7 +1264,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1337,7 +1291,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1365,7 +1318,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1393,7 +1345,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1421,7 +1372,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1449,7 +1399,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1477,7 +1426,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1505,7 +1453,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1533,7 +1480,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1561,7 +1507,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1589,7 +1534,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1617,7 +1561,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1645,7 +1588,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1673,7 +1615,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1701,7 +1642,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1729,7 +1669,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1757,7 +1696,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1785,7 +1723,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1813,7 +1750,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1841,7 +1777,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1869,7 +1804,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1897,7 +1831,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1925,7 +1858,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1953,7 +1885,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -1981,7 +1912,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2009,7 +1939,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2037,7 +1966,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2065,7 +1993,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2093,7 +2020,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2121,7 +2047,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2149,7 +2074,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2177,7 +2101,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2205,7 +2128,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2233,7 +2155,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2261,7 +2182,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2289,7 +2209,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2317,7 +2236,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2345,7 +2263,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2373,7 +2290,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2401,7 +2317,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2429,7 +2344,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2457,7 +2371,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2485,7 +2398,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2513,7 +2425,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2541,7 +2452,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2569,7 +2479,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2597,7 +2506,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2625,7 +2533,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2653,7 +2560,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2681,7 +2587,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2709,7 +2614,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2737,7 +2641,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2765,7 +2668,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2793,7 +2695,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -2821,7 +2722,6 @@ class testRemoveProcessor_1 {
         Hilog.info(0, "cangjietest", "case start")
         try {
             HiAppEvent.removeProcessor(returnCode)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

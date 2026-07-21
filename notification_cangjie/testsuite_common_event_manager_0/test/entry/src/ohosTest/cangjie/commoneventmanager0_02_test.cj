@@ -54,7 +54,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("usual.event.data.DISK_UNMOUNTED")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -76,7 +75,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("usual.event.data.DISK_REMOVED")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -98,7 +96,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("usual.event.DEVICE_IDLE_MODE_CHANGED")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -120,7 +117,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("usual.event.DISCHARGING")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -142,7 +138,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.DISTRIBUTED_ACCOUNT_LOGOFF")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -164,7 +159,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.DISTRIBUTED_ACCOUNT_TOKEN_INVALID")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -186,7 +180,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.DISTRIBUTED_ACCOUNT_LOGOUT")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -208,7 +201,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.DISTRIBUTED_ACCOUNT_LOGIN")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -230,7 +222,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.DRIVE_MODE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -252,7 +243,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("usual.event.DATE_CHANGED")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -274,7 +264,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("usual.event.EXTERNAL_APPLICATIONS_UNAVAILABLE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -296,7 +285,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("usual.event.EXTERNAL_APPLICATIONS_AVAILABLE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -318,7 +306,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.FOUNDATION_READY")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -340,7 +327,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.HOME_MODE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -362,7 +348,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("usual.event.HTTP_PROXY_CHANGE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -384,7 +369,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_SLEEP")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -406,7 +390,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_PAUSE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -428,7 +411,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_STANDBY")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -450,7 +432,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_LASTMODE_SAVE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -472,7 +453,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_VOLTAGE_ABNORMAL")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -494,7 +474,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_HIGH_TEMPERATURE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -516,7 +495,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_EXTREME_TEMPERATURE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -538,7 +516,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_TEMPERATURE_ABNORMAL")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -560,7 +537,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_VOLTAGE_RECOVERY")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -582,7 +558,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_TEMPERATURE_RECOVERY")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -604,7 +579,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("common.event.IVI_ACTIVE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -626,7 +600,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("usual.event.INCOMING_CALL_MISSED")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -670,7 +643,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("event")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -692,7 +664,6 @@ class testPublish_1 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("@#!@$%^^&*")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

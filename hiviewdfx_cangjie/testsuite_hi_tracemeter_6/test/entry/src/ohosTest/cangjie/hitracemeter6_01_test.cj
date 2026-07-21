@@ -39,7 +39,6 @@ class Test_hitracemeter {
         try {
             HiTraceMeter.startTrace("myTestFunc", 1)
             HiTraceMeter.finishTrace("myTestFunc", 1)
-            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }

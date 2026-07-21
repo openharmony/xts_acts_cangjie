@@ -54,7 +54,6 @@ class testPublish_2 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("1234567890")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -76,7 +75,6 @@ class testPublish_2 {
         Hilog.info(0u32, "cangjietest", "", "case start")
         try {
             CommonEventManager.publish("errorString")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

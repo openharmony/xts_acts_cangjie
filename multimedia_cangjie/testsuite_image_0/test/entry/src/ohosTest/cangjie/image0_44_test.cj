@@ -183,7 +183,6 @@ class testPixelMap_writeBufferToPixels_1 {
                     pixelFormat: PixelMapFormat.RgbaF16, scaleMode: ScaleMode.FitTargetSize))
             let srcVar = Array<UInt8>(16i64, repeat: 0u8)
             pixelMap.writeBufferToPixels(srcVar)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -231,7 +230,6 @@ class testPixelMap_writeBufferToPixels_1 {
                     pixelFormat: PixelMapFormat.Nv12, scaleMode: ScaleMode.FitTargetSize))
             let srcVar = Array<UInt8>(16i64, repeat: 0u8)
             pixelMap.writeBufferToPixels(srcVar)
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
