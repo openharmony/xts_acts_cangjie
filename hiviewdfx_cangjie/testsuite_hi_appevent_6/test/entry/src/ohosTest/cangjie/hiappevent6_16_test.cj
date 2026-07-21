@@ -41,7 +41,6 @@ class testAppEventPackageHolderConstructor_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder constructor")
             AppEventPackageHolder("watcher1")
             Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -63,7 +62,6 @@ class testAppEventPackageHolderConstructor_1 {
             Hilog.info(0, "cangjietest", "AppEventPackageHolder constructor")
             AppEventPackageHolder("")
             Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

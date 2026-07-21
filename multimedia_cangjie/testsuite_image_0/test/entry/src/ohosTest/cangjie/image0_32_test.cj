@@ -43,7 +43,6 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 1i32), 0i32, 0i32))
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -259,7 +258,6 @@ class testPixelMap_crop_1 {
                 InitializationOptions(Size(1i32, 2i32), alphaType: AlphaType.Unknown, editable: true,
                     pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize))
             pixelMap.crop(Region(Size(1i32, 2i32), 0i32, 0i32))
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

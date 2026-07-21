@@ -39,7 +39,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name1", "value1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -61,7 +60,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name1", "2")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -106,7 +104,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name1", "VALUE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -128,7 +125,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name1", "value")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -150,7 +146,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name_2", "value1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -172,7 +167,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name_2", "2")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -217,7 +211,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name_2", "VALUE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -239,7 +232,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name_2", "value")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -261,7 +253,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name", "value1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -283,7 +274,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name", "2")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -328,7 +318,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name", "VALUE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -350,7 +339,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name", "value")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -372,7 +360,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name4", "value1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -394,7 +381,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name4", "2")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -439,7 +425,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name4", "VALUE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -461,7 +446,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name4", "value")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -483,7 +467,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name", "value1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -505,7 +488,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name", "2")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -550,7 +532,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name", "VALUE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -572,7 +553,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("_name", "value")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -594,7 +574,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name6$", "value1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -616,7 +595,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name6$", "2")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -661,7 +639,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name6$", "VALUE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -683,7 +660,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("name6$", "value")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -705,7 +681,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("Name7", "value1")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -727,7 +702,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("Name7", "2")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -772,7 +746,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("Name7", "VALUE")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }
@@ -794,7 +767,6 @@ class testSetUserProperty_1 {
         Hilog.info(0, "cangjietest","case start")
         try {
             HiAppEvent.setUserProperty("Name7", "value")
-            @Expect(false)
         } catch (e: BusinessException) {
             @Expect(false)
         }

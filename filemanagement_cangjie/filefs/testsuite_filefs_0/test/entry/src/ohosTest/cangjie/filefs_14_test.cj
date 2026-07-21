@@ -50,7 +50,6 @@ class testFileIo_stat01_1 {
             let stat2 = FileIo.stat(file.fd)
             FileIo.close(file)
             FileIo.unlink(fpath)
-            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }

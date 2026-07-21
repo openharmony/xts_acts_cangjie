@@ -40,28 +40,28 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 </td>
 <td class="cellrowborder" valign="top" width="33.283328332833285%" headers="mcps1.2.4.1.2 "><p id="p1548945204514"><a name="p1548945204514"></a><a name="p1548945204514"></a>冒烟</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.383338333833386%" headers="mcps1.2.4.1.3 "><p id="p174824517456"><a name="p174824517456"></a><a name="p174824517456"></a>验证关键功能点基本功能/最基本DFX属性在最常见输入下的表现，通过表示功能基本可运行。</p>
+<td class="cellrowborder" valign="top" width="33.383338333833386%" headers="mcps1.2.4.1.3 "><p id="p174824517456"><a name="p174824517456"></a><a name="p174824517456"></a>验证关键功能的核心流程在正常输入下的表现，通过表示功能基本可运行。</p>
 </td>
 </tr>
 <tr id="row28563372451"><td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.1 "><p id="p448445144512"><a name="p448445144512"></a><a name="p448445144512"></a>Level1</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.283328332833285%" headers="mcps1.2.4.1.2 "><p id="p44813452452"><a name="p44813452452"></a><a name="p44813452452"></a>基本</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.383338333833386%" headers="mcps1.2.4.1.3 "><p id="p648184584514"><a name="p648184584514"></a><a name="p648184584514"></a>验证各功能点基本功能/基本DFX属性在常见输入下的表现，通过表示功能基本可测试。</p>
+<td class="cellrowborder" valign="top" width="33.383338333833386%" headers="mcps1.2.4.1.3 "><p id="p648184584514"><a name="p648184584514"></a><a name="p648184584514"></a>验证各功能点的基本流程和基本DFX属性（性能、稳定性）在正常及常见边界输入下的表现，通过表示功能基本可测试。</p>
 </td>
 </tr>
 <tr id="row12856137204514"><td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.1 "><p id="p164834520453"><a name="p164834520453"></a><a name="p164834520453"></a>Level2</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.283328332833285%" headers="mcps1.2.4.1.2 "><p id="p148245184511"><a name="p148245184511"></a><a name="p148245184511"></a>重要</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.383338333833386%" headers="mcps1.2.4.1.3 "><p id="p348945124510"><a name="p348945124510"></a><a name="p348945124510"></a>验证各功能点的基本功能/基本DFX属性在常规输入/常见异常情况下的表现，通过表示功能基本正常可用，可开展Beta。</p>
+<td class="cellrowborder" valign="top" width="33.383338333833386%" headers="mcps1.2.4.1.3 "><p id="p348945124510"><a name="p348945124510"></a><a name="p348945124510"></a>验证各功能点的全部功能和DFX属性在正常输入及常见异常场景（如参数缺失、格式错误）下的表现，通过表示功能基本正常可用，可开展Beta。</p>
 </td>
 </tr>
 <tr id="row48571137204514"><td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.1 "><p id="p7481545184513"><a name="p7481545184513"></a><a name="p7481545184513"></a>Level3</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.283328332833285%" headers="mcps1.2.4.1.2 "><p id="p1748184514455"><a name="p1748184514455"></a><a name="p1748184514455"></a>一般</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.383338333833386%" headers="mcps1.2.4.1.3 "><p id="p8481245104519"><a name="p8481245104519"></a><a name="p8481245104519"></a>验证各功能点的全部功能/全部DFX属性在各种常规/非常规输入组合下，或各种正常/异常预置条件组合下的表现。</p>
+<td class="cellrowborder" valign="top" width="33.383338333833386%" headers="mcps1.2.4.1.3 "><p id="p8481245104519"><a name="p8481245104519"></a><a name="p8481245104519"></a>验证各功能点的全部功能和DFX属性在多种输入组合及预置条件变化（如并发、资源受限）下的表现。</p>
 </td>
 </tr>
 <tr id="row14857133712451"><td class="cellrowborder" valign="top" width="33.333333333333336%" headers="mcps1.2.4.1.1 "><p id="p1248144515456"><a name="p1248144515456"></a><a name="p1248144515456"></a>Level4</p>
@@ -89,7 +89,7 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 </td>
 <td class="cellrowborder" valign="top" width="35.17351735173517%" headers="mcps1.2.4.1.2 "><p id="p20414104113101"><a name="p20414104113101"></a><a name="p20414104113101"></a>业务功能/全场景特性/整机及场景级DFX</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.23452345234523%" headers="mcps1.2.4.1.3 "><p id="p5414841121013"><a name="p5414841121013"></a><a name="p5414841121013"></a>尽量使用贴近真实的环境设备</p>
+<td class="cellrowborder" valign="top" width="45.23452345234523%" headers="mcps1.2.4.1.3 "><p id="p5414841121013"><a name="p5414841121013"></a><a name="p5414841121013"></a>使用与生产环境一致的硬件设备和软件环境；若条件受限，需确保环境差异不影响测试结论的有效性</p>
 </td>
 </tr>
 <tr id="row10907635131015"><td class="cellrowborder" valign="top" width="19.591959195919593%" headers="mcps1.2.4.1.1 "><p id="p19414134117104"><a name="p19414134117104"></a><a name="p19414134117104"></a>MediumTest</p>
@@ -178,7 +178,8 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 
 ## 仓颉语言用例开发指导 <a name="section3695134065513"></a>
 
-当前使用的测试框架是CJUnit，用于支撑OpenHarmony application测试（特指基于仓颉应用框架使用仓颉语言开发的 APP）进行自动化测试。
+当前使用的测试框架是CJUnit，用于支撑OpenHarmony application测试（特指基于CJUnit 
+ 应用框架使用仓颉语言开发的 APP）进行自动化测试。
 
 **表 4**  测试框架和开发语言
 
@@ -201,7 +202,7 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 
 ### 用例编写指导<a name="section159801435165220"></a>
 
-测试用例为仓颉语言，必须满足仓颉语言编程规范。
+测试用例需遵循仓颉语言编程规范，覆盖接口的正常输入与异常场景（如非法参数）。参考示例：getString() 接口测试见 https://gitcode.com/openharmony-sig/xts_acts_cangjie/blob/master/global_cangjie/testsuite_resource_manager_3/test/entry/src/ohosTest/cangjie/resourcemanager3_05_test.cj
 
 **以Stage 模式为例：**
 
@@ -240,7 +241,7 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 【注】在unittest_support目录下的 unittest_engine 文件中的 public override func onRun() 方法下存在拉起测试套入口xxxAbility的命令：
 
 
-   ```
+   ```cangjie
    public class OpenHarmonyTestRunner <: TestRunner {
        ...
         public override func onRun(): Unit {
@@ -282,7 +283,7 @@ xts_acts_cangjie是仓颉语言acts(application compatibility test suite)应用�
 
 3.index.cj示例
 
-```
+```cangjie
 @Entry
 @Component
 class EntryView {
@@ -318,7 +319,7 @@ class EntryView {
 
   在src > ohosTest > cangjie 文件夹下xxx_test.cj文件中编写具体测试代码，实现的场景：启动测试页面，检查设备当前显示的页面是否为预期页面。
 
-```
+```cangjie
 import kit.TestKit.*
 @Test
 class TestExample {
@@ -339,7 +340,7 @@ class TestExample {
 
 ​      4.2.1 编写src > main > cangjie 目录下页面代码。
 
-```
+```cangjie
 import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 import kit.LocalizationKit.{AppResource}
@@ -362,7 +363,7 @@ class View_xxx {
 
 ​      4.2.2 在src > ohosTest > cangjie 文件夹下xxx_test.cj文件中编写具体测试代码。
 
-```
+```cangjie
 import kit.TestKit.*
 import kit.AbilityKit.*
 import std.unittest.*
@@ -403,7 +404,7 @@ class TestExample {
 
 5.测试类注册(list_test.cj)示例
 
-```
+```cangjie
 private let register = testsuite()
 
 func testsuite() {
@@ -463,7 +464,7 @@ func testsuite() {
 
     test/xts/acts_cangjie/目录下执行编译命令：
 
-    ```
+    ```python
     python ./tools/build.py build --all
     ```
 
@@ -471,7 +472,7 @@ func testsuite() {
 
     test/xts/acts_cangjie目录下执行编译命令：
 
-    ```
+    ```python
     python ./tools/build.py build --dir ability_cangjie_api/
     
     ability_cangjie_api/: 子系统测试用例工程存放目录
@@ -481,7 +482,7 @@ func testsuite() {
 
     test/xts/acts_cangjie目录下执行编译命令：
 
-    ```
+    ```python
     python ./tools/build.py build --dir ability_cangjie_api/ability
     
     ability_cangjie_api/ability: 单模块测试用例工程存放目录

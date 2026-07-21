@@ -184,7 +184,6 @@ class testFileIo_rename_1 {
         try {
             FileIo.rename(fpath, dstpath)
             FileIo.unlink(dstpath)
-            @Expect(false)
         } catch (e: Exception) {
             @Expect(false)
         }
