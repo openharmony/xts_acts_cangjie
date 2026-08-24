@@ -1,0 +1,4 @@
+tools/deps/
+build_logs/
+testcases/
+reports/
