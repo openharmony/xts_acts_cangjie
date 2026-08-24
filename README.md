@@ -465,7 +465,7 @@ func testsuite() {
     test/xts/acts_cangjie/目录下执行编译命令：
 
     ```python
-    python ./tools/build.py build --all
+    python tools/build.py build --all
     ```
 
 2.  子系统编译
@@ -473,9 +473,9 @@ func testsuite() {
     test/xts/acts_cangjie目录下执行编译命令：
 
     ```python
-    python ./tools/build.py build --dir ability_cangjie_api/
+    python tools/build.py build --dir ability_cangjie/
     
-    ability_cangjie_api/: 子系统测试用例工程存放目录
+    ability_cangjie/: 子系统测试用例工程存放目录
     ```
 
 3.  单模块编译
@@ -483,9 +483,9 @@ func testsuite() {
     test/xts/acts_cangjie目录下执行编译命令：
 
     ```python
-    python ./tools/build.py build --dir ability_cangjie_api/ability
+    python tools/build.py build --dir ability_cangjie/ability
     
-    ability_cangjie_api/ability: 单模块测试用例工程存放目录
+    ability_cangjie/ability: 单模块测试用例工程存放目录
     ```
 
 
