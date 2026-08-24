@@ -115,66 +115,27 @@ def _hvigor_available() -> bool:
     return shutil.which("hvigorw") is not None or (os.name == "nt" and shutil.which("hvigorw.js") is not None)
 
 
-def _make_hvigor_executable(tools_dir: Path, console: Console, debug: bool = False) -> bool:
-    """Restore execute permission lost when command-line-tools is unpacked."""
-    if os.name == "nt":
-        return True
-    launchers = [tools_dir / "bin" / "hvigorw", tools_dir / "hvigor" / "bin" / "hvigorw"]
-    missing = [path for path in launchers if not path.is_file()]
-    if missing:
-        return False
-    try:
-        for hvigor in launchers:
-            mode = hvigor.stat().st_mode
-            if not mode & 0o111:
-                hvigor.chmod(mode | 0o755)
-                if debug:
-                    console.print(f"[DEBUG] Restored execute permission for {hvigor}: {oct(hvigor.stat().st_mode & 0o777)}")
-            elif debug:
-                console.print(f"[DEBUG] hvigorw mode: {hvigor} {oct(mode & 0o777)}")
-        return True
-    except OSError as exc:
-        console.print(console.err(f"Failed to make {hvigor} executable: {exc}"))
-        return False
-
-
-def _restore_toolchain_permissions(tools_dir: Path, cangjie: Path, console: Console, debug: bool = False) -> bool:
-    """Restore executable bits lost when SDK archives are unpacked."""
-    if os.name == "nt":
-        return True
-    candidates = [tools_dir / "bin" / "hvigorw", tools_dir / "hvigor" / "bin" / "hvigorw"]
-    candidates.extend(path for path in (tools_dir / "tool").rglob("*") if path.is_file() and path.parent.name == "bin")
-    candidates.extend(path for path in (tools_dir / "sdk" / "default" / "openharmony").rglob("*")
-                     if path.is_file() and ("toolchains" in path.parts) and not path.suffix)
-    candidates.extend(path for path in (cangjie / "bin").rglob("*") if path.is_file() and not path.suffix)
-    try:
-        changed = 0
-        for path in candidates:
-            mode = path.stat().st_mode
-            if not mode & 0o111:
-                path.chmod(mode | 0o755)
-                changed += 1
-                if debug:
-                    console.print(f"[DEBUG] Restored executable permission: {path}")
-        if debug:
-            console.print(f"[DEBUG] Executable permission repair complete: {changed} file(s) updated")
-        return True
-    except OSError as exc:
-        console.print(console.err(f"Failed to restore toolchain permissions: {exc}"))
-        return False
-
-
 def _dependency_paths(project_dir: Path) -> tuple[Path, Path, Path]:
     deps = project_dir / "tools" / "deps"
     return deps, deps / "command-line-tools", deps / "cangjie"
 
 
+def _hvigor_path(tools_dir: Path) -> Path:
+    name = "hvigorw.js" if os.name == "nt" else "hvigorw"
+    return tools_dir / "bin" / name
+
+
+def _restool_available(sdk_root: Path) -> bool:
+    return any(os.access(path, os.X_OK) for path in sdk_root.glob("*/toolchains/restool"))
+
+
 def _dependency_checks(project_dir: Path) -> dict[str, bool]:
     _, tools_dir, cangjie = _dependency_paths(project_dir)
-    hvigor = "hvigorw.js" if os.name == "nt" else "hvigorw"
+    hvigor = _hvigor_path(tools_dir)
+    sdk_root = tools_dir / "sdk" / "default" / "openharmony"
     return {
-        "hvigorw": (tools_dir / "bin" / hvigor).is_file(),
-        "ohos_sdk": (tools_dir / "sdk" / "default" / "openharmony").is_dir(),
+        "hvigorw": hvigor.is_file() and os.access(hvigor, os.X_OK),
+        "ohos_sdk": sdk_root.is_dir() and _restool_available(sdk_root),
         "cangjie_api_lib": (cangjie / "api" / "lib").is_dir(),
     }
 
@@ -183,105 +144,144 @@ def _dependencies_complete(project_dir: Path) -> bool:
     return all(_dependency_checks(project_dir).values())
 
 
-def _download_dependency(url: str, target: Path, archive_name: str, console: Console, debug: bool = False) -> bool:
+def _download_archive(url: str, archive: Path, console: Console, debug: bool) -> bool:
     token = os.environ.get("CANGJIE_SDK_TOKEN")
     if not token:
         console.print(console.err("CANGJIE_SDK_TOKEN is required to download build dependencies."))
         return False
+    if debug:
+        console.print(f"[DEBUG] Archive path: {archive}")
+    command = ["curl", "-L", "--fail", url.format(token), "-H", "Accept: */*", "--output", str(archive)]
+    result = subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
+    if result.returncode == 0:
+        return True
+    console.print(console.err(f"Failed to download {archive.name}: {result.stderr.strip()}"))
+    return False
+
+
+def _archive_names(archive: Path, root: Path, debug: bool) -> list[str]:
+    with zipfile.ZipFile(archive) as package:
+        names = package.namelist()
+    if debug:
+        top_level = sorted({name.split("/", 1)[0] for name in names if name})
+        print(f"[DEBUG] Archive top-level entries: {top_level}")
+    root_text = str(root.resolve()) + os.sep
+    for name in names:
+        if not str((root / name).resolve()).startswith(root_text):
+            raise ValueError("archive contains an unsafe path")
+    return names
+
+
+def _unzip_archive(archive: Path, root: Path) -> None:
+    if shutil.which("unzip") is None:
+        raise OSError("unzip command is required to preserve executable permissions")
+    result = subprocess.run(["unzip", "-q", archive.name, "-d", str(root)], cwd=archive.parent,
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    if result.returncode != 0:
+        raise OSError(result.stderr.strip() or "unzip failed")
+
+
+def _extracted_directory(root: Path, target_name: str, debug: bool) -> Path:
+    source = root / target_name
+    if source.is_dir():
+        return source
+    directories = [item for item in root.iterdir() if item.is_dir()]
+    if len(directories) != 1:
+        raise ValueError(f"missing directory {target_name}")
+    source = directories[0]
+    if debug:
+        print(f"[DEBUG] Selected extracted directory: {source}")
+    return source
+
+
+def _install_directory(source: Path, target: Path) -> None:
+    if target.exists():
+        shutil.rmtree(target)
+    shutil.move(str(source), str(target))
+
+
+def _download_dependency(url: str, target: Path, archive_name: str, console: Console, debug: bool = False) -> bool:
     target.parent.mkdir(parents=True, exist_ok=True)
     archive = target.parent / archive_name
     if debug:
         console.print(f"[DEBUG] Download target: {target}")
-        console.print(f"[DEBUG] Archive path: {archive}")
-    result = subprocess.run(["curl", "-L", "--fail", url.format(token), "-H", "Accept: */*", "--output", str(archive)],
-                            stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
-    if result.returncode != 0:
-        console.print(console.err(f"Failed to download {archive_name}: {result.stderr.strip()}"))
+    if not _download_archive(url, archive, console, debug):
         return False
     try:
-        with tempfile.TemporaryDirectory(dir=str(target.parent)) as tmp:
-            root = Path(tmp)
-            with zipfile.ZipFile(archive) as zf:
-                names = zf.namelist()
-                if debug:
-                    top_level = sorted({name.split("/", 1)[0] for name in names if name})
-                    console.print(f"[DEBUG] Archive top-level entries: {top_level}")
-                for name in names:
-                    dest = (root / name).resolve()
-                    if not str(dest).startswith(str(root.resolve()) + os.sep):
-                        raise ValueError("archive contains an unsafe path")
-            if shutil.which("unzip") is None:
-                raise OSError("unzip command is required to preserve executable permissions")
-            result = subprocess.run(["unzip", "-q", archive.name, "-d", str(root)],
-                                    cwd=archive.parent, stdout=subprocess.PIPE,
-                                    stderr=subprocess.PIPE, text=True)
-            if result.returncode != 0:
-                raise OSError(result.stderr.strip() or "unzip failed")
-            source = root / target.name
-            if not source.is_dir():
-                dirs = [item for item in root.iterdir() if item.is_dir()]
-                source = dirs[0] if len(dirs) == 1 else source
-            if debug:
-                console.print(f"[DEBUG] Selected extracted directory: {source}")
-            if not source.is_dir():
-                raise ValueError(f"missing directory {target.name}")
-            if target.exists():
-                shutil.rmtree(target)
-            shutil.move(str(source), str(target))
+        with tempfile.TemporaryDirectory(dir=str(target.parent)) as temp_dir:
+            root = Path(temp_dir)
+            _archive_names(archive, root, debug)
+            _unzip_archive(archive, root)
+            source = _extracted_directory(root, target.name, debug)
+            _install_directory(source, target)
     except (OSError, ValueError, zipfile.BadZipFile) as exc:
         console.print(console.err(f"Failed to extract {archive_name}: {exc}"))
         return False
     return True
 
 
-def prepare_build_environment(project_dir: Path, console: Console, force: bool = False, debug: bool = False) -> Optional[dict[str, str]]:
-    env = os.environ.copy()
-    missing_hvigor = not _hvigor_available()
-    missing_cangjie = not env.get("DEVECO_CANGJIE_PATH")
-    missing_ohos = not env.get("OHOS_BASE_SDK_HOME")
-    if debug:
-        console.print(f"[DEBUG] hvigorw available: {not missing_hvigor}")
-        console.print(f"[DEBUG] DEVECO_CANGJIE_PATH set: {not missing_cangjie}")
-        console.print(f"[DEBUG] OHOS_BASE_SDK_HOME set: {not missing_ohos}")
-    if not (missing_hvigor or missing_cangjie or missing_ohos):
-        return env
+def _missing_environment(env: dict[str, str]) -> dict[str, bool]:
+    return {
+        "hvigorw": not _hvigor_available(),
+        "cangjie": not env.get("DEVECO_CANGJIE_PATH"),
+        "ohos": not env.get("OHOS_BASE_SDK_HOME"),
+    }
+
+
+def _debug_environment(missing: dict[str, bool], project_dir: Path, debug: bool) -> None:
+    if not debug:
+        return
+    print(f"[DEBUG] hvigorw available: {not missing['hvigorw']}")
+    print(f"[DEBUG] DEVECO_CANGJIE_PATH set: {not missing['cangjie']}")
+    print(f"[DEBUG] OHOS_BASE_SDK_HOME set: {not missing['ohos']}")
+    if any(missing.values()):
+        deps, _, _ = _dependency_paths(project_dir)
+        print(f"[DEBUG] Dependency root: {deps}")
+        print(f"[DEBUG] Cached dependency checks: {_dependency_checks(project_dir)}")
+
+
+def _ensure_cached_dependencies(project_dir: Path, console: Console, force: bool, debug: bool) -> bool:
+    checks = _dependency_checks(project_dir)
+    if not force and all(checks.values()):
+        return True
     _, tools_dir, cangjie = _dependency_paths(project_dir)
-    if not missing_hvigor and debug:
-        console.print(f"[DEBUG] Using system hvigorw: {shutil.which('hvigorw') or shutil.which('hvigorw.js')}")
+    tools_needed = force or not (checks["hvigorw"] and checks["ohos_sdk"])
+    cangjie_needed = force or not checks["cangjie_api_lib"]
     if debug:
-        console.print(f"[DEBUG] Dependency root: {tools_dir.parent}")
-        console.print(f"[DEBUG] Cached dependency checks: {_dependency_checks(project_dir)}")
-    if force or not _dependencies_complete(project_dir):
-        hvigor_name = "hvigorw.js" if os.name == "nt" else "hvigorw"
-        tools_incomplete = not ((tools_dir / "bin" / hvigor_name).is_file()
-                                and (tools_dir / "sdk" / "default" / "openharmony").is_dir())
-        cangjie_incomplete = not _dependency_checks(project_dir)["cangjie_api_lib"]
+        console.print(f"[DEBUG] command-line-tools incomplete: {tools_needed}")
+        console.print(f"[DEBUG] cangjie SDK incomplete: {cangjie_needed}")
+    if tools_needed and not _download_dependency(COMMAND_LINE_TOOLS_URL, tools_dir, "command-line-tools.zip", console, debug):
+        return False
+    if cangjie_needed and not _download_dependency(CANGJIE_SDK_URL, cangjie, "cangjie-sdk-linux-x64.zip", console, debug):
+        return False
+    complete = _dependencies_complete(project_dir)
+    if not complete:
+        console.print(console.err("Downloaded build dependencies are incomplete."))
         if debug:
-            console.print(f"[DEBUG] command-line-tools incomplete: {tools_incomplete}")
-            console.print(f"[DEBUG] cangjie SDK incomplete: {cangjie_incomplete}")
-        if force or tools_incomplete:
-            if not _download_dependency(COMMAND_LINE_TOOLS_URL, tools_dir, "command-line-tools.zip", console, debug):
-                return None
-        if force or cangjie_incomplete:
-            if not _download_dependency(CANGJIE_SDK_URL, cangjie, "cangjie-sdk-linux-x64.zip", console, debug):
-                return None
-        if not _dependencies_complete(project_dir):
-            if debug:
-                console.print(f"[DEBUG] Final dependency checks: {_dependency_checks(project_dir)}")
-            console.print(console.err("Downloaded build dependencies are incomplete."))
-            return None
-    if not _restore_toolchain_permissions(tools_dir, cangjie, console, debug):
-        return None
-    if missing_hvigor:
-        if not _make_hvigor_executable(tools_dir, console, debug):
-            console.print(console.err("Cached hvigorw is unavailable or not executable."))
-            return None
+            console.print(f"[DEBUG] Final dependency checks: {_dependency_checks(project_dir)}")
+    return complete
+
+
+def _apply_dependency_environment(env: dict[str, str], project_dir: Path, missing: dict[str, bool]) -> dict[str, str]:
+    _, tools_dir, cangjie = _dependency_paths(project_dir)
+    if missing["hvigorw"]:
         env["PATH"] = str(tools_dir / "bin") + os.pathsep + env.get("PATH", "")
-    if missing_cangjie:
+    if missing["cangjie"]:
         env["DEVECO_CANGJIE_PATH"] = str(cangjie)
-    if missing_ohos:
+    if missing["ohos"]:
         env["OHOS_BASE_SDK_HOME"] = str(tools_dir / "sdk" / "default" / "openharmony")
     return env
+
+
+def prepare_build_environment(project_dir: Path, console: Console, force: bool = False, debug: bool = False) -> Optional[dict[str, str]]:
+    env = os.environ.copy()
+    missing = _missing_environment(env)
+    _debug_environment(missing, project_dir, debug)
+    if not any(missing.values()):
+        return env
+    if not _ensure_cached_dependencies(project_dir, console, force, debug):
+        return None
+    return _apply_dependency_environment(env, project_dir, missing)
 
 
 def run_build(project_dir: Path, log_file: Path, env: dict[str, str], debug: bool = False) -> bool:
