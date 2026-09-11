@@ -1,0 +1,49 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package ohos_app_cangjie_entry.Gcol_ca_borders_02
+
+import ohos.base.*
+import ohos.arkui.component.*
+import ohos.arkui.state_management.*
+import ohos.arkui.state_macro_manage.*
+import kit.LocalizationKit.{AppResource}
+import kit.ArkUI.*
+
+@Component
+public class View_GridCol_comattr_borders2_153 {
+    func build() {
+        Row(space: 5i64.vp,
+            child: {
+                => GridRow(
+                    child: {
+                        => GridCol(
+                            child: {
+                                =>
+                                Text("sidebar content1").fontSize(20i64.vp)
+                            }
+                        )
+                            .id("GridCol_comattr_id")
+                            .borderColor(Color.Green)
+                            .borderRadius(topLeft: 7.550000f64.percent, topRight: 7.550000f64.percent,
+                                bottomLeft: 7.550000f64.percent, bottomRight: 7.550000f64.percent)
+                            .borderWidth(
+                                EdgeWidths(top: (-10.110000f64).px, right: (-10.110000f64).px,
+                                    bottom: (-10.110000f64).px, left: (-10.110000f64).px))
+                            .borderStyle(BorderStyle.Dashed)
+                    })
+            }).width(80i64.percent)
+    }
+}

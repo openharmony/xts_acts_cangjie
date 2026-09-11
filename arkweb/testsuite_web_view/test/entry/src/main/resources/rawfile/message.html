@@ -1,0 +1,18 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebView Message Port Demo</title>
+</head>
+
+<body>
+<h1>WebView Message Port Demo</h1>
+<div>
+    <input type="button" value="SendToCangjie" onclick="PostMsgToCangjie(msgFromCangjie.value);"/><br/>
+    <input id="msgFromCangjie" type="text" value="send this message from HTML to cangjie"/><br/>
+</div>
+<p class="output">display received message send from cangjie</p>
+</body>
+<script src="testMsg.js"></script>
+</html>
