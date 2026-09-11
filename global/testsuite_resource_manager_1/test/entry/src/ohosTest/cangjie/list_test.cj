@@ -1,0 +1,41 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package ohos_app_cangjie_entry_test
+
+import ohos_app_cangjie_entry_test.unittest_support.registerTestSuite
+
+private let register = testsuite()
+
+func testsuite() {
+    registerTestSuite {TestGetNumberByName_1()}
+    registerTestSuite {TestGetNumberByResId_1()}
+    registerTestSuite {TestGetPluralStringValueByResId_1()}
+    registerTestSuite {TestGetPluralStringByName_1()}
+    registerTestSuite {TestGetRawFd_1()}
+    registerTestSuite {TestGetRawFileContent_1()}
+    registerTestSuite {TestGetRawFileList_1()}
+    registerTestSuite {test_GetConfiguration()}
+    registerTestSuite {test_GetDeviceCapability()}
+    registerTestSuite {test_GetLocales()}
+    registerTestSuite {test_GetString()}
+    registerTestSuite {test_GetStringByName()}   
+    registerTestSuite {TestGetStringAndFormatByResId_1()}
+    registerTestSuite {TestGetStringAndFormatByResName_1()}
+    registerTestSuite {TestGetStringArrayByName_1()}
+    registerTestSuite {TestGetStringArrayValueByResId_1()}
+    registerTestSuite {TestGetStringByResId_1()}
+    registerTestSuite {TestGetStringByResName_1()}     
+}

@@ -1,0 +1,68 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "Test_Format1",
+      "value": "int is %d"
+    },
+    {
+      "name": "Test_Format2",
+      "value": "float is %f"
+    },
+    {
+      "name": "Test_Format3",
+      "value": "string is %s"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "test_plain",
+      "value": "Hello World"
+    },
+    {
+      "name": "test_empty",
+      "value": ""
+    },
+    {
+      "name": "test_one_d",
+      "value": "Count: %d"
+    },
+    {
+      "name": "test_one_s",
+      "value": "Hello, %s"
+    },
+    {
+      "name": "test_one_f",
+      "value": "Price: %f"
+    },
+    {
+      "name": "test_two_args",
+      "value": "%s has %d apples"
+    },
+    {
+      "name": "test_percent",
+      "value": "Discount: %d%%"
+    },
+    {
+      "name": "test_three_args",
+      "value": "I'm a %s, format int: %d, format float: %f."
+    },
+    {
+      "name": "test_three_indexed",
+      "value": "%1$s has %2$d items and %3$f percent"
+    },
+    {
+      "name": "test_indexed",
+      "value": "%1$s is number %2$d"
+    }
+  ]
+}
