@@ -1,0 +1,2036 @@
+# Copyright (c) 2026 Huawei Device Co., Ltd.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+
+acts_cangjie_projects = [
+  {
+    target_name = "acts_cangjie_ability_ability"
+    project_dir = "ability/ability/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestability",
+      "entry",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ability_ability_access_control"
+    project_dir = "ability/ability_access_control/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_ability_access_control",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ability_ability_delegator_registry"
+    project_dir = "ability/ability_delegator_registry/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestability_delegator_registry",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ability_ability_errormanager"
+    project_dir = "ability/ability_errormanager/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestability_errormanager",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ability_ability_stage"
+    project_dir = "ability/ability_stage/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestability_stage",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ability_ability_want"
+    project_dir = "ability/ability_want/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestability_want",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ability_application_test_runner"
+    project_dir = "ability/application_test_runner/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestapplication_test_runner",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ability_ui_ability"
+    project_dir = "ability/ui_ability/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestui_ability",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_applications_testsuite_settings"
+    project_dir = "applications/testsuite_settings/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_settings",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ark_interop_testsuite_hybrid"
+    project_dir = "ark_interop/testsuite_hybrid/test"
+    test_config = "Test.json"
+    build_arkts = true
+    hap_names = [
+      "cjTesthybrid",
+      "cjTesthybrid_ohostest",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ark_interop_testsuite_pure_cj"
+    project_dir = "ark_interop/testsuite_pure_cj/test"
+    test_config = "Test.json"
+    build_arkts = true
+    hap_names = [
+      "cjTestpure_cj",
+      "cjTestpure_cj_ohostest",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ark_interop_testsuite_stringUtf16"
+    project_dir = "ark_interop/testsuite_stringUtf16/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststringUtf16",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ark_interop_testsuite_threads"
+    project_dir = "ark_interop/testsuite_threads/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestthreads",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_ark_interop_testsuite_worker_thread"
+    project_dir = "ark_interop/testsuite_worker_thread/test"
+    test_config = "Test.json"
+    build_arkts = true
+    hap_names = [
+      "cjTestworker_thread",
+      "cjTestworker_thread_ohostest",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_AlphaIndex_Alp_baseFunc"
+    project_dir = "arkui/AlphaIndex/Alp_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestAlp_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Badge_Bad_baseFunc"
+    project_dir = "arkui/Badge/Bad_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestBad_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Blank_Blank_baseFunc"
+    project_dir = "arkui/Blank/Blank_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestBlank_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Button_Button_baseFunc"
+    project_dir = "arkui/Button/Button_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestButton_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Button_Button_baseFunc1"
+    project_dir = "arkui/Button/Button_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestButton_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Canvas_Canvas_baseFunc"
+    project_dir = "arkui/Canvas/Canvas_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestCanvas_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_CbGroup_CbGroup_baseFunc"
+    project_dir = "arkui/CbGroup/CbGroup_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestCbGroup_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Checkbox_Checkbox_baseFunc"
+    project_dir = "arkui/Checkbox/Checkbox_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestCheckbox_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Circle_Circle_baseFunc"
+    project_dir = "arkui/Circle/Circle_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestCircle_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Column_Column_baseFunc"
+    project_dir = "arkui/Column/Column_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestColumn_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Column_Column_baseFunc1"
+    project_dir = "arkui/Column/Column_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestColumn_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Counter_Counter_baseFunc"
+    project_dir = "arkui/Counter/Counter_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestcounter_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_DataPanel_DPanel_baseFunc"
+    project_dir = "arkui/DataPanel/DPanel_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestDPanel_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_DatePicker_DatePicker_baseFunc"
+    project_dir = "arkui/DatePicker/DatePicker_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestDatePicker_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Divider_Divider_baseFunc"
+    project_dir = "arkui/Divider/Divider_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestDivider_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Ellipse_Ellipse_baseFunc"
+    project_dir = "arkui/Ellipse/Ellipse_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestEllipse_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Flex_Flex_baseFunc"
+    project_dir = "arkui/Flex/Flex_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestFlex_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Flex_Flex_baseFunc1"
+    project_dir = "arkui/Flex/Flex_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestFlex_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Gauge_Gauge_baseFunc"
+    project_dir = "arkui/Gauge/Gauge_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestGauge_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Grid_Grid_baseFunc"
+    project_dir = "arkui/Grid/Grid_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestGrid_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_GridCol_GridCol_baseFunc"
+    project_dir = "arkui/GridCol/GridCol_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestGridCol_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_GridCol_GridCol_baseFunc1"
+    project_dir = "arkui/GridCol/GridCol_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestGridCol_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_GridItem_GridItem_baseFunc"
+    project_dir = "arkui/GridItem/GridItem_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestGridItem_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_GridRow_GridRow_baseFunc"
+    project_dir = "arkui/GridRow/GridRow_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestGridRow_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_GridRow_GridRow_baseFunc1"
+    project_dir = "arkui/GridRow/GridRow_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestGridRow_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Image_Image_baseFunc"
+    project_dir = "arkui/Image/Image_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestImage_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_ImageSpan_ImageSpan_baseFunc"
+    project_dir = "arkui/ImageSpan/ImageSpan_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestImageSpan_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Line_Line_baseFunc"
+    project_dir = "arkui/Line/Line_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestLine_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_List_List_baseFunc"
+    project_dir = "arkui/List/List_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestList_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_ListIG_ListItemGroup_baseFunc"
+    project_dir = "arkui/ListIG/ListItemGroup_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestListItemGroup_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_ListItem_ListItem_baseFunc"
+    project_dir = "arkui/ListItem/ListItem_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestListItem_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_LoadingPro_LPro_baseFunc"
+    project_dir = "arkui/LoadingPro/LPro_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestLPro_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Menu_Menu_baseFunc"
+    project_dir = "arkui/Menu/Menu_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestMenu_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_MenuIG_MenuIG_baseFunc"
+    project_dir = "arkui/MenuIG/MenuIG_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestMenuIG_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_MenuItem_MenuItem_baseFunc"
+    project_dir = "arkui/MenuItem/MenuItem_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestMenuItem_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_NavDes_NavDes_baseFunc"
+    project_dir = "arkui/NavDes/NavDes_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestNavDes_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Navigation_Nav_baseFunc"
+    project_dir = "arkui/Navigation/Nav_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestNav_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Path_Path_baseFunc"
+    project_dir = "arkui/Path/Path_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestPath_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_PatternLock_PLoc_baseFunc"
+    project_dir = "arkui/PatternLock/PLoc_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestPLoc_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Progress_Pro_baseFunc"
+    project_dir = "arkui/Progress/Pro_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestPro_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_QRCode_QRC_baseFunc"
+    project_dir = "arkui/QRCode/QRC_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestQRC_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_RCon_RCon_baseFunc"
+    project_dir = "arkui/RCon/RCon_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRCon_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_RCon_RCon_baseFunc1"
+    project_dir = "arkui/RCon/RCon_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRCon_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Radio_Radio_baseFunc"
+    project_dir = "arkui/Radio/Radio_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRadio_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Rating_Rating_baseFunc"
+    project_dir = "arkui/Rating/Rating_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRating_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Rect_Rect_baseFunc"
+    project_dir = "arkui/Rect/Rect_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRect_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Refresh_Refresh_baseFunc"
+    project_dir = "arkui/Refresh/Refresh_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRefresh_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_RichEditor_RichEditor_baseFunc"
+    project_dir = "arkui/RichEditor/RichEditor_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRichEditor_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_RichText_RichText_baseFunc"
+    project_dir = "arkui/RichText/RichText_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRichText_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Row_Row_baseFunc"
+    project_dir = "arkui/Row/Row_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRow_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Row_Row_baseFunc1"
+    project_dir = "arkui/Row/Row_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRow_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_RowSplit_RowSplit_baseFunc"
+    project_dir = "arkui/RowSplit/RowSplit_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRowSplit_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_RowSplit_RowSplit_baseFunc1"
+    project_dir = "arkui/RowSplit/RowSplit_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestRowSplit_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_SBCon_SBCon_baseFunc"
+    project_dir = "arkui/SBCon/SBCon_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestSBCon_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_SBCon_SBCon_baseFunc1"
+    project_dir = "arkui/SBCon/SBCon_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestSBCon_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Scroll_Scroll_baseFunc"
+    project_dir = "arkui/Scroll/Scroll_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestScroll_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_ScrollBar_ScrollBar_baseFunc"
+    project_dir = "arkui/ScrollBar/ScrollBar_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestScrollBar_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Search_Search_baseFunc"
+    project_dir = "arkui/Search/Search_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestSearch_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Select_Select_baseFunc"
+    project_dir = "arkui/Select/Select_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestSelect_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Shape_Shape_baseFunc"
+    project_dir = "arkui/Shape/Shape_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestShape_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Slider_Slider_baseFunc"
+    project_dir = "arkui/Slider/Slider_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestSlider_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Span_Span_baseFunc"
+    project_dir = "arkui/Span/Span_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestSpan_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Stack_Stack_baseFunc"
+    project_dir = "arkui/Stack/Stack_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestStack_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Stack_Stack_baseFunc1"
+    project_dir = "arkui/Stack/Stack_baseFunc1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestStack_baseFunc1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_StepIt_StepperItem_baseFunc"
+    project_dir = "arkui/StepIt/StepperItem_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestStepperItem_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Stepper_Stepper_baseFunc"
+    project_dir = "arkui/Stepper/Stepper_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestStepper_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Swiper_Swiper_baseFunc"
+    project_dir = "arkui/Swiper/Swiper_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestSwiper_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_TabContent_TabContent_baseFunc"
+    project_dir = "arkui/TabContent/TabContent_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestTabContent_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Tabs_Tabs_baseFunc"
+    project_dir = "arkui/Tabs/Tabs_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestTabs_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Text_Text_baseFunc"
+    project_dir = "arkui/Text/Text_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestText_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_TextArea_TextArea_baseFunc"
+    project_dir = "arkui/TextArea/TextArea_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestTextArea_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_TextClock_TClo_baseFunc"
+    project_dir = "arkui/TextClock/TClo_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestTClo_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_TextInput_TextInput_baseFunc"
+    project_dir = "arkui/TextInput/TextInput_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestTextInput_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_TextPicker_TextPicker_baseFunc"
+    project_dir = "arkui/TextPicker/TextPicker_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestTextPicker_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_TextTimer_TTim_baseFunc"
+    project_dir = "arkui/TextTimer/TTim_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestTTim_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Toggle_Toggle_baseFunc"
+    project_dir = "arkui/Toggle/Toggle_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestToggle_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Video_Video_baseFunc"
+    project_dir = "arkui/Video/Video_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestVideo_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_Web_Web_baseFunc"
+    project_dir = "arkui/Web/Web_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestWeb_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_com_attr_Component_Auto"
+    project_dir = "arkui/com_attr/Component_Auto/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestComponent_Auto",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_pop_up_Popsupport_Levelmode"
+    project_dir = "arkui/pop_up/Popsupport_Levelmode/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestPopsupport_Levelmode",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_pub_def_Cangjieui_Api"
+    project_dir = "arkui/pub_def/Cangjieui_Api/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestCangjieui_Api",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_pub_def_Shadow_Radius"
+    project_dir = "arkui/pub_def/Shadow_Radius/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestShadow_Radius",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_state_ma_Builder_Customer"
+    project_dir = "arkui/state_ma/Builder_Customer/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestBuilder_Customer",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkui_state_ma_Com_Reusable"
+    project_dir = "arkui/state_ma/Com_Reusable/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestCom_Reusable1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_arkweb_testsuite_web_view"
+    project_dir = "arkweb/testsuite_web_view/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_web_view",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_bundlemanager_bundle_manager_testsuite_abilityinfo"
+    project_dir = "bundlemanager/bundle_manager/testsuite_abilityinfo/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_abilityinfo",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_bundlemanager_bundle_manager_testsuite_applicationinfo"
+    project_dir = "bundlemanager/bundle_manager/testsuite_applicationinfo/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_applicationinfo",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_bundlemanager_bundle_manager_testsuite_bundle_manager_0"
+    project_dir = "bundlemanager/bundle_manager/testsuite_bundle_manager_0/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_bundle_manager_0",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_bundlemanager_bundle_manager_testsuite_bundle_manager_1"
+    project_dir = "bundlemanager/bundle_manager/testsuite_bundle_manager_1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_bundle_manager_1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_bundlemanager_bundle_manager_testsuite_bundle_manager_2"
+    project_dir = "bundlemanager/bundle_manager/testsuite_bundle_manager_2/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_bundle_manager_2",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_bundlemanager_bundle_manager_testsuite_bundleinfo"
+    project_dir = "bundlemanager/bundle_manager/testsuite_bundleinfo/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_bundleinfo",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_bundlemanager_bundle_manager_testsuite_element_name_metadata"
+    project_dir = "bundlemanager/bundle_manager/testsuite_element_name_metadata/test"
+    test_config = "../Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_element_name_metadata",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_bundlemanager_bundle_manager_testsuite_hapmoduleinfo"
+    project_dir = "bundlemanager/bundle_manager/testsuite_hapmoduleinfo/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_hapmoduleinfo",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_bundlemanager_testsuite_bundle_queryschemes"
+    project_dir = "bundlemanager/testsuite_bundle_queryschemes/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_bundle_qs",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_communication_testsuite_rpc"
+    project_dir = "communication/testsuite_rpc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_rpc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_connectivity_ble"
+    project_dir = "connectivity/ble/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestble",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_data_share_predicates"
+    project_dir = "distributeddatamgr/data_share_predicates/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestdata_share_predicates",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_distributed_kv_store_testsuite_distributed_kv_store_0"
+    project_dir = "distributeddatamgr/distributed_kv_store/testsuite_distributed_kv_store_0/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_distributed_kv_store_0",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_distributed_kv_store_testsuite_distributed_kv_store_1"
+    project_dir = "distributeddatamgr/distributed_kv_store/testsuite_distributed_kv_store_1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_distributed_kv_store_1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_distributed_kv_store_testsuite_distributed_kv_store_2"
+    project_dir = "distributeddatamgr/distributed_kv_store/testsuite_distributed_kv_store_2/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_distributed_kv_store_2",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_preferenes_testsuite_preferences_0"
+    project_dir = "distributeddatamgr/preferenes/testsuite_preferences_0/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_preferences_0",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_preferenes_testsuite_preferences_1"
+    project_dir = "distributeddatamgr/preferenes/testsuite_preferences_1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_preferences_1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_preferenes_testsuite_preferences_2"
+    project_dir = "distributeddatamgr/preferenes/testsuite_preferences_2/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_preferences_2",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_relation_store_testsuite_relational_store_1"
+    project_dir = "distributeddatamgr/relation_store/testsuite_relational_store_1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_relational_store_1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_relation_store_testsuite_relational_store_2"
+    project_dir = "distributeddatamgr/relation_store/testsuite_relational_store_2/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_relational_store_2",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_distributeddatamgr_relation_store_testsuite_relational_store_3"
+    project_dir = "distributeddatamgr/relation_store/testsuite_relational_store_3/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_relational_store_3",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_filemanagement_file__fileuri_testsuite_file_uri_1"
+    project_dir = "filemanagement/file__fileuri/testsuite_file_uri_1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_file_uri_1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_filemanagement_filefs_testsuite_filefs_0"
+    project_dir = "filemanagement/filefs/testsuite_filefs_0/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_filefs_0",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_global_testsuit_i18n"
+    project_dir = "global/testsuit_i18n/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuit_i18n",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_global_testsuite_resource_manager_0"
+    project_dir = "global/testsuite_resource_manager_0/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_resource_manager_0",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_global_testsuite_resource_manager_1"
+    project_dir = "global/testsuite_resource_manager_1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_resource_manager_1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_graphic_color_manager_testsuite_color_manager"
+    project_dir = "graphic/color_manager/testsuite_color_manager/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_color_manager",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_hiviewdfx_testsuite_hi_appevent"
+    project_dir = "hiviewdfx/testsuite_hi_appevent/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_hi_appevent",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_hiviewdfx_testsuite_hi_tracemeter"
+    project_dir = "hiviewdfx/testsuite_hi_tracemeter/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_hi_tracemeter",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_hiviewdfx_testsuite_hilog"
+    project_dir = "hiviewdfx/testsuite_hilog/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_hilog",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_location_testsuite_geo_location_manager"
+    project_dir = "location/testsuite_geo_location_manager/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_geo_location_manager",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_location_testsuite_location_noperm"
+    project_dir = "location/testsuite_location_noperm/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_location_noperm",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_multimedia_testsuite_camera"
+    project_dir = "multimedia/testsuite_camera/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_camera",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_multimedia_testsuite_image_api"
+    project_dir = "multimedia/testsuite_image_api/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_image_api",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_multimedia_testsuite_image_basic"
+    project_dir = "multimedia/testsuite_image_basic/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_image_basic",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_multimedia_testsuite_image_extended"
+    project_dir = "multimedia/testsuite_image_extended/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_image_extended",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_multimedia_testsuite_media"
+    project_dir = "multimedia/testsuite_media/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_media",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_multimedia_testsuite_photo_accesshelper"
+    project_dir = "multimedia/testsuite_photo_accesshelper/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_photo_accesshelper",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_multimedia_testsuite_photo_noperm"
+    project_dir = "multimedia/testsuite_photo_noperm/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_photo_noperm",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_netmanager_net_connection_testsuite_net_connection_0"
+    project_dir = "netmanager/net_connection/testsuite_net_connection_0/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_net_connection_0",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_netmanager_net_connection_testsuite_net_connection_1"
+    project_dir = "netmanager/net_connection/testsuite_net_connection_1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_net_connection_1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_netmanager_net_connection_testsuite_net_connection_2"
+    project_dir = "netmanager/net_connection/testsuite_net_connection_2/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_net_connection_2",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_netmanager_net_connection_testsuite_netconn_noperm"
+    project_dir = "netmanager/net_connection/testsuite_netconn_noperm/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_netconn_noperm",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_netmanager_net_http_testsuite_http_noperm"
+    project_dir = "netmanager/net_http/testsuite_http_noperm/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_http_noperm",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_netmanager_net_http_testsuite_net_http_0"
+    project_dir = "netmanager/net_http/testsuite_net_http_0/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_net_http_0",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_netmanager_net_http_testsuite_net_http_1"
+    project_dir = "netmanager/net_http/testsuite_net_http_1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_net_http_1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_notification_testsuite_common_event_data"
+    project_dir = "notification/testsuite_common_event_data/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_common_event_data",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_notification_testsuite_common_event_manager_api"
+    project_dir = "notification/testsuite_common_event_manager_api/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_common_event_manager_api",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_notification_testsuite_common_event_manager_basic"
+    project_dir = "notification/testsuite_common_event_manager_basic/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_common_event_manager_basic",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_notification_testsuite_common_event_manager_scenario"
+    project_dir = "notification/testsuite_common_event_manager_scenario/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_common_event_manager_scenario",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_notification_testsuite_common_event_publish_data"
+    project_dir = "notification/testsuite_common_event_publish_data/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_common_event_publish_data",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_notification_testsuite_common_event_subscribe_info"
+    project_dir = "notification/testsuite_common_event_subscribe_info/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_common_event_subscribe_info",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_powermgr_battery_info"
+    project_dir = "powermgr/battery_info/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestbattery_info",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_request_request_agent_testsuite_request_1"
+    project_dir = "request/request_agent/testsuite_request_1/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_request_1",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_request_request_agent_testsuite_request_noperm"
+    project_dir = "request/request_agent/testsuite_request_noperm/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_request_noperm",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_security_testsuite_crypto"
+    project_dir = "security/testsuite_crypto/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_crypto",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_security_testsuite_security_huk"
+    project_dir = "security/testsuite_security_huk/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_security_huk",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_sensors_testsuite_sensors"
+    project_dir = "sensors/testsuite_sensors/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestsensors",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_sensors_testsuite_sensors_without_permissions"
+    project_dir = "sensors/testsuite_sensors_without_permissions/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestsensors_without_permissions",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_startup_testsuite_apiAvailable"
+    project_dir = "startup/testsuite_apiAvailable/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_apiAvailable",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_startup_testsuite_device_info_properties"
+    project_dir = "startup/testsuite_device_info_properties/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_device_info_properties",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_startup_testsuite_device_info_regex"
+    project_dir = "startup/testsuite_device_info_regex/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_device_info_regex",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_argopt"
+    project_dir = "std/HLT/std_argopt/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_argopt",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_ast"
+    project_dir = "std/HLT/std_ast/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_ast",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_binary"
+    project_dir = "std/HLT/std_binary/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_binary",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_collection"
+    project_dir = "std/HLT/std_collection/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_collection",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_convert"
+    project_dir = "std/HLT/std_convert/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_convert",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_core"
+    project_dir = "std/HLT/std_core/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_core",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_crypto"
+    project_dir = "std/HLT/std_crypto/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_crypto",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_database"
+    project_dir = "std/HLT/std_database/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_database",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_env"
+    project_dir = "std/HLT/std_env/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_env",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_fs"
+    project_dir = "std/HLT/std_fs/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_fs",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_math"
+    project_dir = "std/HLT/std_math/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_math",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_mathNumeric"
+    project_dir = "std/HLT/std_mathNumeric/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_mathNumeric",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_net"
+    project_dir = "std/HLT/std_net/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_net",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_overflow"
+    project_dir = "std/HLT/std_overflow/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_overflow",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_random"
+    project_dir = "std/HLT/std_random/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_random",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_reflect"
+    project_dir = "std/HLT/std_reflect/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_reflect",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_regex"
+    project_dir = "std/HLT/std_regex/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_regex",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_sort"
+    project_dir = "std/HLT/std_sort/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_sort",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_time"
+    project_dir = "std/HLT/std_time/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_time",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_std_HLT_std_unicode"
+    project_dir = "std/HLT/std_unicode/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTeststd_unicode",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_telephony_testsuite_telephony_call"
+    project_dir = "telephony/testsuite_telephony_call/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_telephony_call",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_testfwk_ui_test"
+    project_dir = "testfwk/ui_test/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestui_test",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_testfwk_uiwindow"
+    project_dir = "testfwk/uiwindow/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestuiwindow",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_time_testsuite_system_date_time_0"
+    project_dir = "time/testsuite_system_date_time_0/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_system_date_time_0",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_window_display_baseFunc"
+    project_dir = "window/display_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestdisplay_baseFunc",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_window_testsuite_window_noperm"
+    project_dir = "window/testsuite_window_noperm/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTesttestsuite_window_noperm",
+    ]
+  },
+  {
+    target_name = "acts_cangjie_window_window_baseFunc"
+    project_dir = "window/window_baseFunc/test"
+    test_config = "Test.json"
+    build_arkts = false
+    hap_names = [
+      "cjTestwindow_baseFunc",
+    ]
+  },
+]
+
+acts_cangjie_subsystems = [
+  {
+    name = "ability"
+    deps = [
+      "//test/xts/acts_cangjie/ability/ability/test:acts_cangjie_ability_ability",
+      "//test/xts/acts_cangjie/ability/ability_access_control/test:acts_cangjie_ability_ability_access_control",
+      "//test/xts/acts_cangjie/ability/ability_delegator_registry/test:acts_cangjie_ability_ability_delegator_registry",
+      "//test/xts/acts_cangjie/ability/ability_errormanager/test:acts_cangjie_ability_ability_errormanager",
+      "//test/xts/acts_cangjie/ability/ability_stage/test:acts_cangjie_ability_ability_stage",
+      "//test/xts/acts_cangjie/ability/ability_want/test:acts_cangjie_ability_ability_want",
+      "//test/xts/acts_cangjie/ability/application_test_runner/test:acts_cangjie_ability_application_test_runner",
+      "//test/xts/acts_cangjie/ability/ui_ability/test:acts_cangjie_ability_ui_ability",
+    ]
+  },
+  {
+    name = "applications"
+    deps = [
+      "//test/xts/acts_cangjie/applications/testsuite_settings/test:acts_cangjie_applications_testsuite_settings",
+    ]
+  },
+  {
+    name = "ark_interop"
+    deps = [
+      "//test/xts/acts_cangjie/ark_interop/testsuite_hybrid/test:acts_cangjie_ark_interop_testsuite_hybrid",
+      "//test/xts/acts_cangjie/ark_interop/testsuite_pure_cj/test:acts_cangjie_ark_interop_testsuite_pure_cj",
+      "//test/xts/acts_cangjie/ark_interop/testsuite_stringUtf16/test:acts_cangjie_ark_interop_testsuite_stringUtf16",
+      "//test/xts/acts_cangjie/ark_interop/testsuite_threads/test:acts_cangjie_ark_interop_testsuite_threads",
+      "//test/xts/acts_cangjie/ark_interop/testsuite_worker_thread/test:acts_cangjie_ark_interop_testsuite_worker_thread",
+    ]
+  },
+  {
+    name = "arkui"
+    deps = [
+      "//test/xts/acts_cangjie/arkui/AlphaIndex/Alp_baseFunc/test:acts_cangjie_arkui_AlphaIndex_Alp_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Badge/Bad_baseFunc/test:acts_cangjie_arkui_Badge_Bad_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Blank/Blank_baseFunc/test:acts_cangjie_arkui_Blank_Blank_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Button/Button_baseFunc/test:acts_cangjie_arkui_Button_Button_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Button/Button_baseFunc1/test:acts_cangjie_arkui_Button_Button_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/Canvas/Canvas_baseFunc/test:acts_cangjie_arkui_Canvas_Canvas_baseFunc",
+      "//test/xts/acts_cangjie/arkui/CbGroup/CbGroup_baseFunc/test:acts_cangjie_arkui_CbGroup_CbGroup_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Checkbox/Checkbox_baseFunc/test:acts_cangjie_arkui_Checkbox_Checkbox_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Circle/Circle_baseFunc/test:acts_cangjie_arkui_Circle_Circle_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Column/Column_baseFunc/test:acts_cangjie_arkui_Column_Column_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Column/Column_baseFunc1/test:acts_cangjie_arkui_Column_Column_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/Counter/Counter_baseFunc/test:acts_cangjie_arkui_Counter_Counter_baseFunc",
+      "//test/xts/acts_cangjie/arkui/DataPanel/DPanel_baseFunc/test:acts_cangjie_arkui_DataPanel_DPanel_baseFunc",
+      "//test/xts/acts_cangjie/arkui/DatePicker/DatePicker_baseFunc/test:acts_cangjie_arkui_DatePicker_DatePicker_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Divider/Divider_baseFunc/test:acts_cangjie_arkui_Divider_Divider_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Ellipse/Ellipse_baseFunc/test:acts_cangjie_arkui_Ellipse_Ellipse_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Flex/Flex_baseFunc/test:acts_cangjie_arkui_Flex_Flex_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Flex/Flex_baseFunc1/test:acts_cangjie_arkui_Flex_Flex_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/Gauge/Gauge_baseFunc/test:acts_cangjie_arkui_Gauge_Gauge_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Grid/Grid_baseFunc/test:acts_cangjie_arkui_Grid_Grid_baseFunc",
+      "//test/xts/acts_cangjie/arkui/GridCol/GridCol_baseFunc/test:acts_cangjie_arkui_GridCol_GridCol_baseFunc",
+      "//test/xts/acts_cangjie/arkui/GridCol/GridCol_baseFunc1/test:acts_cangjie_arkui_GridCol_GridCol_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/GridItem/GridItem_baseFunc/test:acts_cangjie_arkui_GridItem_GridItem_baseFunc",
+      "//test/xts/acts_cangjie/arkui/GridRow/GridRow_baseFunc/test:acts_cangjie_arkui_GridRow_GridRow_baseFunc",
+      "//test/xts/acts_cangjie/arkui/GridRow/GridRow_baseFunc1/test:acts_cangjie_arkui_GridRow_GridRow_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/Image/Image_baseFunc/test:acts_cangjie_arkui_Image_Image_baseFunc",
+      "//test/xts/acts_cangjie/arkui/ImageSpan/ImageSpan_baseFunc/test:acts_cangjie_arkui_ImageSpan_ImageSpan_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Line/Line_baseFunc/test:acts_cangjie_arkui_Line_Line_baseFunc",
+      "//test/xts/acts_cangjie/arkui/List/List_baseFunc/test:acts_cangjie_arkui_List_List_baseFunc",
+      "//test/xts/acts_cangjie/arkui/ListIG/ListItemGroup_baseFunc/test:acts_cangjie_arkui_ListIG_ListItemGroup_baseFunc",
+      "//test/xts/acts_cangjie/arkui/ListItem/ListItem_baseFunc/test:acts_cangjie_arkui_ListItem_ListItem_baseFunc",
+      "//test/xts/acts_cangjie/arkui/LoadingPro/LPro_baseFunc/test:acts_cangjie_arkui_LoadingPro_LPro_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Menu/Menu_baseFunc/test:acts_cangjie_arkui_Menu_Menu_baseFunc",
+      "//test/xts/acts_cangjie/arkui/MenuIG/MenuIG_baseFunc/test:acts_cangjie_arkui_MenuIG_MenuIG_baseFunc",
+      "//test/xts/acts_cangjie/arkui/MenuItem/MenuItem_baseFunc/test:acts_cangjie_arkui_MenuItem_MenuItem_baseFunc",
+      "//test/xts/acts_cangjie/arkui/NavDes/NavDes_baseFunc/test:acts_cangjie_arkui_NavDes_NavDes_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Navigation/Nav_baseFunc/test:acts_cangjie_arkui_Navigation_Nav_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Path/Path_baseFunc/test:acts_cangjie_arkui_Path_Path_baseFunc",
+      "//test/xts/acts_cangjie/arkui/PatternLock/PLoc_baseFunc/test:acts_cangjie_arkui_PatternLock_PLoc_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Progress/Pro_baseFunc/test:acts_cangjie_arkui_Progress_Pro_baseFunc",
+      "//test/xts/acts_cangjie/arkui/QRCode/QRC_baseFunc/test:acts_cangjie_arkui_QRCode_QRC_baseFunc",
+      "//test/xts/acts_cangjie/arkui/RCon/RCon_baseFunc/test:acts_cangjie_arkui_RCon_RCon_baseFunc",
+      "//test/xts/acts_cangjie/arkui/RCon/RCon_baseFunc1/test:acts_cangjie_arkui_RCon_RCon_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/Radio/Radio_baseFunc/test:acts_cangjie_arkui_Radio_Radio_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Rating/Rating_baseFunc/test:acts_cangjie_arkui_Rating_Rating_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Rect/Rect_baseFunc/test:acts_cangjie_arkui_Rect_Rect_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Refresh/Refresh_baseFunc/test:acts_cangjie_arkui_Refresh_Refresh_baseFunc",
+      "//test/xts/acts_cangjie/arkui/RichEditor/RichEditor_baseFunc/test:acts_cangjie_arkui_RichEditor_RichEditor_baseFunc",
+      "//test/xts/acts_cangjie/arkui/RichText/RichText_baseFunc/test:acts_cangjie_arkui_RichText_RichText_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Row/Row_baseFunc/test:acts_cangjie_arkui_Row_Row_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Row/Row_baseFunc1/test:acts_cangjie_arkui_Row_Row_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/RowSplit/RowSplit_baseFunc/test:acts_cangjie_arkui_RowSplit_RowSplit_baseFunc",
+      "//test/xts/acts_cangjie/arkui/RowSplit/RowSplit_baseFunc1/test:acts_cangjie_arkui_RowSplit_RowSplit_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/SBCon/SBCon_baseFunc/test:acts_cangjie_arkui_SBCon_SBCon_baseFunc",
+      "//test/xts/acts_cangjie/arkui/SBCon/SBCon_baseFunc1/test:acts_cangjie_arkui_SBCon_SBCon_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/Scroll/Scroll_baseFunc/test:acts_cangjie_arkui_Scroll_Scroll_baseFunc",
+      "//test/xts/acts_cangjie/arkui/ScrollBar/ScrollBar_baseFunc/test:acts_cangjie_arkui_ScrollBar_ScrollBar_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Search/Search_baseFunc/test:acts_cangjie_arkui_Search_Search_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Select/Select_baseFunc/test:acts_cangjie_arkui_Select_Select_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Shape/Shape_baseFunc/test:acts_cangjie_arkui_Shape_Shape_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Slider/Slider_baseFunc/test:acts_cangjie_arkui_Slider_Slider_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Span/Span_baseFunc/test:acts_cangjie_arkui_Span_Span_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Stack/Stack_baseFunc/test:acts_cangjie_arkui_Stack_Stack_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Stack/Stack_baseFunc1/test:acts_cangjie_arkui_Stack_Stack_baseFunc1",
+      "//test/xts/acts_cangjie/arkui/StepIt/StepperItem_baseFunc/test:acts_cangjie_arkui_StepIt_StepperItem_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Stepper/Stepper_baseFunc/test:acts_cangjie_arkui_Stepper_Stepper_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Swiper/Swiper_baseFunc/test:acts_cangjie_arkui_Swiper_Swiper_baseFunc",
+      "//test/xts/acts_cangjie/arkui/TabContent/TabContent_baseFunc/test:acts_cangjie_arkui_TabContent_TabContent_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Tabs/Tabs_baseFunc/test:acts_cangjie_arkui_Tabs_Tabs_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Text/Text_baseFunc/test:acts_cangjie_arkui_Text_Text_baseFunc",
+      "//test/xts/acts_cangjie/arkui/TextArea/TextArea_baseFunc/test:acts_cangjie_arkui_TextArea_TextArea_baseFunc",
+      "//test/xts/acts_cangjie/arkui/TextClock/TClo_baseFunc/test:acts_cangjie_arkui_TextClock_TClo_baseFunc",
+      "//test/xts/acts_cangjie/arkui/TextInput/TextInput_baseFunc/test:acts_cangjie_arkui_TextInput_TextInput_baseFunc",
+      "//test/xts/acts_cangjie/arkui/TextPicker/TextPicker_baseFunc/test:acts_cangjie_arkui_TextPicker_TextPicker_baseFunc",
+      "//test/xts/acts_cangjie/arkui/TextTimer/TTim_baseFunc/test:acts_cangjie_arkui_TextTimer_TTim_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Toggle/Toggle_baseFunc/test:acts_cangjie_arkui_Toggle_Toggle_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Video/Video_baseFunc/test:acts_cangjie_arkui_Video_Video_baseFunc",
+      "//test/xts/acts_cangjie/arkui/Web/Web_baseFunc/test:acts_cangjie_arkui_Web_Web_baseFunc",
+      "//test/xts/acts_cangjie/arkui/com_attr/Component_Auto/test:acts_cangjie_arkui_com_attr_Component_Auto",
+      "//test/xts/acts_cangjie/arkui/pop_up/Popsupport_Levelmode/test:acts_cangjie_arkui_pop_up_Popsupport_Levelmode",
+      "//test/xts/acts_cangjie/arkui/pub_def/Cangjieui_Api/test:acts_cangjie_arkui_pub_def_Cangjieui_Api",
+      "//test/xts/acts_cangjie/arkui/pub_def/Shadow_Radius/test:acts_cangjie_arkui_pub_def_Shadow_Radius",
+      "//test/xts/acts_cangjie/arkui/state_ma/Builder_Customer/test:acts_cangjie_arkui_state_ma_Builder_Customer",
+      "//test/xts/acts_cangjie/arkui/state_ma/Com_Reusable/test:acts_cangjie_arkui_state_ma_Com_Reusable",
+    ]
+  },
+  {
+    name = "arkweb"
+    deps = [
+      "//test/xts/acts_cangjie/arkweb/testsuite_web_view/test:acts_cangjie_arkweb_testsuite_web_view",
+    ]
+  },
+  {
+    name = "bundlemanager"
+    deps = [
+      "//test/xts/acts_cangjie/bundlemanager/bundle_manager/testsuite_abilityinfo/test:acts_cangjie_bundlemanager_bundle_manager_testsuite_abilityinfo",
+      "//test/xts/acts_cangjie/bundlemanager/bundle_manager/testsuite_applicationinfo/test:acts_cangjie_bundlemanager_bundle_manager_testsuite_applicationinfo",
+      "//test/xts/acts_cangjie/bundlemanager/bundle_manager/testsuite_bundle_manager_0/test:acts_cangjie_bundlemanager_bundle_manager_testsuite_bundle_manager_0",
+      "//test/xts/acts_cangjie/bundlemanager/bundle_manager/testsuite_bundle_manager_1/test:acts_cangjie_bundlemanager_bundle_manager_testsuite_bundle_manager_1",
+      "//test/xts/acts_cangjie/bundlemanager/bundle_manager/testsuite_bundle_manager_2/test:acts_cangjie_bundlemanager_bundle_manager_testsuite_bundle_manager_2",
+      "//test/xts/acts_cangjie/bundlemanager/bundle_manager/testsuite_bundleinfo/test:acts_cangjie_bundlemanager_bundle_manager_testsuite_bundleinfo",
+      "//test/xts/acts_cangjie/bundlemanager/bundle_manager/testsuite_element_name_metadata/test:acts_cangjie_bundlemanager_bundle_manager_testsuite_element_name_metadata",
+      "//test/xts/acts_cangjie/bundlemanager/bundle_manager/testsuite_hapmoduleinfo/test:acts_cangjie_bundlemanager_bundle_manager_testsuite_hapmoduleinfo",
+      "//test/xts/acts_cangjie/bundlemanager/testsuite_bundle_queryschemes/test:acts_cangjie_bundlemanager_testsuite_bundle_queryschemes",
+    ]
+  },
+  {
+    name = "communication"
+    deps = [
+      "//test/xts/acts_cangjie/communication/testsuite_rpc/test:acts_cangjie_communication_testsuite_rpc",
+    ]
+  },
+  {
+    name = "connectivity"
+    deps = [
+      "//test/xts/acts_cangjie/connectivity/ble/test:acts_cangjie_connectivity_ble",
+    ]
+  },
+  {
+    name = "distributeddatamgr"
+    deps = [
+      "//test/xts/acts_cangjie/distributeddatamgr/data_share_predicates/test:acts_cangjie_distributeddatamgr_data_share_predicates",
+      "//test/xts/acts_cangjie/distributeddatamgr/distributed_kv_store/testsuite_distributed_kv_store_0/test:acts_cangjie_distributeddatamgr_distributed_kv_store_testsuite_distributed_kv_store_0",
+      "//test/xts/acts_cangjie/distributeddatamgr/distributed_kv_store/testsuite_distributed_kv_store_1/test:acts_cangjie_distributeddatamgr_distributed_kv_store_testsuite_distributed_kv_store_1",
+      "//test/xts/acts_cangjie/distributeddatamgr/distributed_kv_store/testsuite_distributed_kv_store_2/test:acts_cangjie_distributeddatamgr_distributed_kv_store_testsuite_distributed_kv_store_2",
+      "//test/xts/acts_cangjie/distributeddatamgr/preferenes/testsuite_preferences_0/test:acts_cangjie_distributeddatamgr_preferenes_testsuite_preferences_0",
+      "//test/xts/acts_cangjie/distributeddatamgr/preferenes/testsuite_preferences_1/test:acts_cangjie_distributeddatamgr_preferenes_testsuite_preferences_1",
+      "//test/xts/acts_cangjie/distributeddatamgr/preferenes/testsuite_preferences_2/test:acts_cangjie_distributeddatamgr_preferenes_testsuite_preferences_2",
+      "//test/xts/acts_cangjie/distributeddatamgr/relation_store/testsuite_relational_store_1/test:acts_cangjie_distributeddatamgr_relation_store_testsuite_relational_store_1",
+      "//test/xts/acts_cangjie/distributeddatamgr/relation_store/testsuite_relational_store_2/test:acts_cangjie_distributeddatamgr_relation_store_testsuite_relational_store_2",
+      "//test/xts/acts_cangjie/distributeddatamgr/relation_store/testsuite_relational_store_3/test:acts_cangjie_distributeddatamgr_relation_store_testsuite_relational_store_3",
+    ]
+  },
+  {
+    name = "filemanagement"
+    deps = [
+      "//test/xts/acts_cangjie/filemanagement/file__fileuri/testsuite_file_uri_1/test:acts_cangjie_filemanagement_file__fileuri_testsuite_file_uri_1",
+      "//test/xts/acts_cangjie/filemanagement/filefs/testsuite_filefs_0/test:acts_cangjie_filemanagement_filefs_testsuite_filefs_0",
+    ]
+  },
+  {
+    name = "global"
+    deps = [
+      "//test/xts/acts_cangjie/global/testsuit_i18n/test:acts_cangjie_global_testsuit_i18n",
+      "//test/xts/acts_cangjie/global/testsuite_resource_manager_0/test:acts_cangjie_global_testsuite_resource_manager_0",
+      "//test/xts/acts_cangjie/global/testsuite_resource_manager_1/test:acts_cangjie_global_testsuite_resource_manager_1",
+    ]
+  },
+  {
+    name = "graphic"
+    deps = [
+      "//test/xts/acts_cangjie/graphic/color_manager/testsuite_color_manager/test:acts_cangjie_graphic_color_manager_testsuite_color_manager",
+    ]
+  },
+  {
+    name = "hiviewdfx"
+    deps = [
+      "//test/xts/acts_cangjie/hiviewdfx/testsuite_hi_appevent/test:acts_cangjie_hiviewdfx_testsuite_hi_appevent",
+      "//test/xts/acts_cangjie/hiviewdfx/testsuite_hi_tracemeter/test:acts_cangjie_hiviewdfx_testsuite_hi_tracemeter",
+      "//test/xts/acts_cangjie/hiviewdfx/testsuite_hilog/test:acts_cangjie_hiviewdfx_testsuite_hilog",
+    ]
+  },
+  {
+    name = "location"
+    deps = [
+      "//test/xts/acts_cangjie/location/testsuite_geo_location_manager/test:acts_cangjie_location_testsuite_geo_location_manager",
+      "//test/xts/acts_cangjie/location/testsuite_location_noperm/test:acts_cangjie_location_testsuite_location_noperm",
+    ]
+  },
+  {
+    name = "multimedia"
+    deps = [
+      "//test/xts/acts_cangjie/multimedia/testsuite_camera/test:acts_cangjie_multimedia_testsuite_camera",
+      "//test/xts/acts_cangjie/multimedia/testsuite_image_api/test:acts_cangjie_multimedia_testsuite_image_api",
+      "//test/xts/acts_cangjie/multimedia/testsuite_image_basic/test:acts_cangjie_multimedia_testsuite_image_basic",
+      "//test/xts/acts_cangjie/multimedia/testsuite_image_extended/test:acts_cangjie_multimedia_testsuite_image_extended",
+      "//test/xts/acts_cangjie/multimedia/testsuite_media/test:acts_cangjie_multimedia_testsuite_media",
+      "//test/xts/acts_cangjie/multimedia/testsuite_photo_accesshelper/test:acts_cangjie_multimedia_testsuite_photo_accesshelper",
+      "//test/xts/acts_cangjie/multimedia/testsuite_photo_noperm/test:acts_cangjie_multimedia_testsuite_photo_noperm",
+    ]
+  },
+  {
+    name = "netmanager"
+    deps = [
+      "//test/xts/acts_cangjie/netmanager/net_connection/testsuite_net_connection_0/test:acts_cangjie_netmanager_net_connection_testsuite_net_connection_0",
+      "//test/xts/acts_cangjie/netmanager/net_connection/testsuite_net_connection_1/test:acts_cangjie_netmanager_net_connection_testsuite_net_connection_1",
+      "//test/xts/acts_cangjie/netmanager/net_connection/testsuite_net_connection_2/test:acts_cangjie_netmanager_net_connection_testsuite_net_connection_2",
+      "//test/xts/acts_cangjie/netmanager/net_connection/testsuite_netconn_noperm/test:acts_cangjie_netmanager_net_connection_testsuite_netconn_noperm",
+      "//test/xts/acts_cangjie/netmanager/net_http/testsuite_http_noperm/test:acts_cangjie_netmanager_net_http_testsuite_http_noperm",
+      "//test/xts/acts_cangjie/netmanager/net_http/testsuite_net_http_0/test:acts_cangjie_netmanager_net_http_testsuite_net_http_0",
+      "//test/xts/acts_cangjie/netmanager/net_http/testsuite_net_http_1/test:acts_cangjie_netmanager_net_http_testsuite_net_http_1",
+    ]
+  },
+  {
+    name = "notification"
+    deps = [
+      "//test/xts/acts_cangjie/notification/testsuite_common_event_data/test:acts_cangjie_notification_testsuite_common_event_data",
+      "//test/xts/acts_cangjie/notification/testsuite_common_event_manager_api/test:acts_cangjie_notification_testsuite_common_event_manager_api",
+      "//test/xts/acts_cangjie/notification/testsuite_common_event_manager_basic/test:acts_cangjie_notification_testsuite_common_event_manager_basic",
+      "//test/xts/acts_cangjie/notification/testsuite_common_event_manager_scenario/test:acts_cangjie_notification_testsuite_common_event_manager_scenario",
+      "//test/xts/acts_cangjie/notification/testsuite_common_event_publish_data/test:acts_cangjie_notification_testsuite_common_event_publish_data",
+      "//test/xts/acts_cangjie/notification/testsuite_common_event_subscribe_info/test:acts_cangjie_notification_testsuite_common_event_subscribe_info",
+    ]
+  },
+  {
+    name = "powermgr"
+    deps = [
+      "//test/xts/acts_cangjie/powermgr/battery_info/test:acts_cangjie_powermgr_battery_info",
+    ]
+  },
+  {
+    name = "request"
+    deps = [
+      "//test/xts/acts_cangjie/request/request_agent/testsuite_request_1/test:acts_cangjie_request_request_agent_testsuite_request_1",
+      "//test/xts/acts_cangjie/request/request_agent/testsuite_request_noperm/test:acts_cangjie_request_request_agent_testsuite_request_noperm",
+    ]
+  },
+  {
+    name = "security"
+    deps = [
+      "//test/xts/acts_cangjie/security/testsuite_crypto/test:acts_cangjie_security_testsuite_crypto",
+      "//test/xts/acts_cangjie/security/testsuite_security_huk/test:acts_cangjie_security_testsuite_security_huk",
+    ]
+  },
+  {
+    name = "sensors"
+    deps = [
+      "//test/xts/acts_cangjie/sensors/testsuite_sensors/test:acts_cangjie_sensors_testsuite_sensors",
+      "//test/xts/acts_cangjie/sensors/testsuite_sensors_without_permissions/test:acts_cangjie_sensors_testsuite_sensors_without_permissions",
+    ]
+  },
+  {
+    name = "startup"
+    deps = [
+      "//test/xts/acts_cangjie/startup/testsuite_apiAvailable/test:acts_cangjie_startup_testsuite_apiAvailable",
+      "//test/xts/acts_cangjie/startup/testsuite_device_info_properties/test:acts_cangjie_startup_testsuite_device_info_properties",
+      "//test/xts/acts_cangjie/startup/testsuite_device_info_regex/test:acts_cangjie_startup_testsuite_device_info_regex",
+    ]
+  },
+  {
+    name = "std"
+    deps = [
+      "//test/xts/acts_cangjie/std/HLT/std_argopt/test:acts_cangjie_std_HLT_std_argopt",
+      "//test/xts/acts_cangjie/std/HLT/std_ast/test:acts_cangjie_std_HLT_std_ast",
+      "//test/xts/acts_cangjie/std/HLT/std_binary/test:acts_cangjie_std_HLT_std_binary",
+      "//test/xts/acts_cangjie/std/HLT/std_collection/test:acts_cangjie_std_HLT_std_collection",
+      "//test/xts/acts_cangjie/std/HLT/std_convert/test:acts_cangjie_std_HLT_std_convert",
+      "//test/xts/acts_cangjie/std/HLT/std_core/test:acts_cangjie_std_HLT_std_core",
+      "//test/xts/acts_cangjie/std/HLT/std_crypto/test:acts_cangjie_std_HLT_std_crypto",
+      "//test/xts/acts_cangjie/std/HLT/std_database/test:acts_cangjie_std_HLT_std_database",
+      "//test/xts/acts_cangjie/std/HLT/std_env/test:acts_cangjie_std_HLT_std_env",
+      "//test/xts/acts_cangjie/std/HLT/std_fs/test:acts_cangjie_std_HLT_std_fs",
+      "//test/xts/acts_cangjie/std/HLT/std_math/test:acts_cangjie_std_HLT_std_math",
+      "//test/xts/acts_cangjie/std/HLT/std_mathNumeric/test:acts_cangjie_std_HLT_std_mathNumeric",
+      "//test/xts/acts_cangjie/std/HLT/std_net/test:acts_cangjie_std_HLT_std_net",
+      "//test/xts/acts_cangjie/std/HLT/std_overflow/test:acts_cangjie_std_HLT_std_overflow",
+      "//test/xts/acts_cangjie/std/HLT/std_random/test:acts_cangjie_std_HLT_std_random",
+      "//test/xts/acts_cangjie/std/HLT/std_reflect/test:acts_cangjie_std_HLT_std_reflect",
+      "//test/xts/acts_cangjie/std/HLT/std_regex/test:acts_cangjie_std_HLT_std_regex",
+      "//test/xts/acts_cangjie/std/HLT/std_sort/test:acts_cangjie_std_HLT_std_sort",
+      "//test/xts/acts_cangjie/std/HLT/std_time/test:acts_cangjie_std_HLT_std_time",
+      "//test/xts/acts_cangjie/std/HLT/std_unicode/test:acts_cangjie_std_HLT_std_unicode",
+    ]
+  },
+  {
+    name = "telephony"
+    deps = [
+      "//test/xts/acts_cangjie/telephony/testsuite_telephony_call/test:acts_cangjie_telephony_testsuite_telephony_call",
+    ]
+  },
+  {
+    name = "testfwk"
+    deps = [
+      "//test/xts/acts_cangjie/testfwk/ui_test/test:acts_cangjie_testfwk_ui_test",
+      "//test/xts/acts_cangjie/testfwk/uiwindow/test:acts_cangjie_testfwk_uiwindow",
+    ]
+  },
+  {
+    name = "time"
+    deps = [
+      "//test/xts/acts_cangjie/time/testsuite_system_date_time_0/test:acts_cangjie_time_testsuite_system_date_time_0",
+    ]
+  },
+  {
+    name = "window"
+    deps = [
+      "//test/xts/acts_cangjie/window/display_baseFunc/test:acts_cangjie_window_display_baseFunc",
+      "//test/xts/acts_cangjie/window/testsuite_window_noperm/test:acts_cangjie_window_testsuite_window_noperm",
+      "//test/xts/acts_cangjie/window/window_baseFunc/test:acts_cangjie_window_window_baseFunc",
+    ]
+  },
+]

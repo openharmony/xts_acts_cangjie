@@ -1,0 +1,32 @@
+{
+  "description": "Configuration for cjTesttestsuite_bundle_qs demo Tests",
+  "driver": {
+    "bundle-name": "com.example.testsuite_bundle_qs",
+    "module-name": "entry",
+    "shell-timeout": "600000",
+    "test-timeout": "180000",
+    "testcase-timeout": "180000",
+    "type": "OHCJUnitTest"
+  },
+  "kits": [
+    {
+      "type": "AppInstallKit",
+      "clean-apps": false,
+      "test-file-name": [
+        "cjTesttestsuite_bundle_qs.hap"
+      ]
+    },
+    {
+      "type": "ShellKit",
+      "run-command": [
+        "power-shell suspend",
+        "power-shell wakeup",
+        "power-shell timeout -o 99999999",
+        "uinput -T -g 100 100 500 500"
+      ],
+      "teardown-command": [
+        "bm uninstall -n com.example.testsuite_bundle_qs"
+      ]
+    }
+  ]
+}

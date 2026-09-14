@@ -1,0 +1,76 @@
+# Copyright (c) 2026 Huawei Device Co., Ltd.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+
+import("//test/xts/tools/build/suite.gni")
+import("acts_cangjie.gni")
+import("acts_cangjie_projects.gni")
+
+if (is_standard_system && build_xts) {
+  # Hvigor uses shared caches; serialize project builds by default.
+  pool("acts_cangjie_hvigor_pool") {
+    depth = 1
+  }
+
+  _all_projects = []
+  foreach(project, acts_cangjie_projects) {
+    _all_projects += [
+      "//test/xts/acts_cangjie/${project.project_dir}:${project.target_name}",
+    ]
+  }
+
+  foreach(subsystem, acts_cangjie_subsystems) {
+    group("acts_cangjie_${subsystem.name}") {
+      testonly = true
+      deps = subsystem.deps
+    }
+  }
+
+  group("acts_cangjie") {
+    testonly = true
+    deps = _all_projects
+  }
+
+  action("acts_cangjie_manifest") {
+    testonly = true
+    script = rebase_path("//test/xts/acts_cangjie/build/gen_manifest.py")
+    args = [
+      "--source-root",
+      rebase_path("//test/xts/acts_cangjie"),
+      "--output-dir",
+      rebase_path(acts_cangjie_output_dir),
+    ]
+    deps = [ ":acts_cangjie" ]
+    outputs = [
+      "${acts_cangjie_output_dir}/build_manifest.json",
+      "${acts_cangjie_output_dir}/module_info.list",
+    ]
+  }
+
+  group("acts_cangjie_test") {
+    testonly = true
+    deps = [ ":acts_cangjie_manifest" ]
+  }
+
+  ohos_test_suite("xts_acts_cangjie") {
+    deps = [ ":acts_cangjie_test" ]
+  }
+} else {
+  group("acts_cangjie") {
+    testonly = true
+  }
+  group("acts_cangjie_test") {
+    testonly = true
+  }
+  ohos_test_suite("xts_acts_cangjie") {
+    deps = []
+  }
+}
