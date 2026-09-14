@@ -1,0 +1,41 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Ability.AbilityBase",
+                    "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+                    "SystemCapability.Ability.AbilityRuntime.Core",
+                    "SystemCapability.Ability.AbilityRuntime.FAModel",
+                    "SystemCapability.Ability.AbilityRuntime.Mission",
+                    "SystemCapability.Ability.AbilityRuntime.QuickFix",
+                    "SystemCapability.Ability.AbilityTools.AbilityAssistant",
+                    "SystemCapability.Ability.AppExtension.PhotoEditorExtension",
+                    "SystemCapability.Ability.AppStartup",
+                    "SystemCapability.Account.AppAccount",
+                    "SystemCapability.Account.OsAccount",
+                    "SystemCapability.Ai.NeuralNetworkRuntime",
+                    "SystemCapability.DistributedDataManager.CloudSync.Client",
+                    "SystemCapability.DistributedDataManager.CloudSync.Config",
+                    "SystemCapability.DistributedDataManager.CloudSync.Server",
+                    "SystemCapability.DistributedDataManager.CommonType",
+                    "SystemCapability.DistributedDataManager.DataObject.DistributedObject",
+                    "SystemCapability.DistributedDataManager.DataShare.Consumer",
+                    "SystemCapability.DistributedDataManager.DataShare.Core",
+                    "SystemCapability.DistributedDataManager.DataShare.Provider",
+                    "SystemCapability.DistributedDataManager.KVStore.Core",
+                    "SystemCapability.DistributedDataManager.KVStore.DistributedKVStore",
+                    "SystemCapability.DistributedDataManager.Preferences.Core",
+                    "SystemCapability.DistributedDataManager.RelationalStore.Core",
+                    "SystemCapability.DistributedDataManager.UDMF.Core",
+                    "SystemCapability.MiscServices.Pasteboard",
+                    "SystemCapability.MultimodalInput.Input.Core"
+                ]
+            }
+        ]
+    }
+}

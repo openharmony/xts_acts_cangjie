@@ -1,0 +1,34 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Account.AppAccount",
+                    "SystemCapability.Account.OsAccount",
+                    "SystemCapability.BundleManager.BundleFramework",
+                    "SystemCapability.BundleManager.BundleFramework.AppControl",
+                    "SystemCapability.BundleManager.BundleFramework.Core",
+                    "SystemCapability.BundleManager.BundleFramework.DefaultApp",
+                    "SystemCapability.BundleManager.BundleFramework.FreeInstall",
+                    "SystemCapability.BundleManager.BundleFramework.Launcher",
+                    "SystemCapability.BundleManager.BundleFramework.Overlay",
+                    "SystemCapability.BundleManager.BundleFramework.Resource",
+                    "SystemCapability.BundleManager.Zlib",
+                    "SystemCapability.HiviewDFX.HiAppEvent",
+                    "SystemCapability.HiviewDFX.HiChecker",
+                    "SystemCapability.HiviewDFX.HiCollie",
+                    "SystemCapability.HiviewDFX.HiLog",
+                    "SystemCapability.HiviewDFX.HiProfiler.HiDebug",
+                    "SystemCapability.HiviewDFX.HiRetrieval",
+                    "SystemCapability.HiviewDFX.HiSysEvent",
+                    "SystemCapability.HiviewDFX.HiTrace",
+                    "SystemCapability.HiviewDFX.Hiview.FaultLogger"
+                ]
+            }
+        ]
+    }
+}

@@ -19,7 +19,7 @@ import kit.ArkUI.*
 import ohos.arkui.state_management.*
 import ohos.arkui.state_macro_manage.*
 
-var customdialogId6: Int32 = 0
+var customdialogId6: String = ""
 var dialogIdRecord6: Int32 = 0
 
 @Entry
