@@ -1,0 +1,601 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+ 
+package ohos_app_cangjie_entry_test
+
+import std.unittest.*
+import std.unittest.common.*
+import std.unittest.testmacro.*
+import std.collection.*
+import ohos.base.*
+import ohos.arkui.state_macro_manage.r
+import ohos.resource_manager.AppResource
+import kit.PerformanceAnalysisKit.Hilog
+import ohos.business_exception.*
+import ohos.resource_manager.ArgsValueType
+import ohos.resource_manager.ScreenDensity
+import ohos.resource_manager.NumberValueType
+import kit.LocalizationKit.__GenerateResource__
+import ohos_app_cangjie_entry.Global
+
+@Test
+class TestGetStringArrayByName_1 {
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_0100
+     * @tc.name      : TestCase_1
+     * @tc.desc      : get stringArray by resName resName=.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_1(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_1 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_1 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_0200
+     * @tc.name      : TestCase_2
+     * @tc.desc      : get stringArray by resName resName=\0.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_2(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_2 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("\0")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_2 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_0300
+     * @tc.name      : TestCase_3
+     * @tc.desc      : get stringArray by resName resName=nonExistingResourceName.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_3(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_3 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("nonExistingResourceName")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_3 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_0400
+     * @tc.name      : TestCase_4
+     * @tc.desc      : get stringArray by resName resName=module_desc.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_4(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_4 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("module_desc")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_4 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_0500
+     * @tc.name      : TestCase_5
+     * @tc.desc      : get stringArray by resName resName=sizelist.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_5(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_5 begins.")
+        @Expect("[small, middle, large, extra large]", getResourceManager().getStringArrayByName("sizelist").toString())
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_5 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_0600
+     * @tc.name      : TestCase_6
+     * @tc.desc      : get stringArray by resName resName=plural_name.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_6(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_6 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("plural_name")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_6 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_0700
+     * @tc.name      : TestCase_7
+     * @tc.desc      : get stringArray by resName resName=Test_Format1.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_7(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("Test_Format1")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_7 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_0800
+     * @tc.name      : TestCase_8
+     * @tc.desc      : get stringArray by resName resName=Test_Format2.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_8(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_8 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("Test_Format2")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_8 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_0900
+     * @tc.name      : TestCase_9
+     * @tc.desc      : get stringArray by resName resName=Test_Format3.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_9(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_9 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("Test_Format3")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_9 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1000
+     * @tc.name      : TestCase_10
+     * @tc.desc      : get stringArray by resName resName=EntryAbility_desc.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_10(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_10 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("EntryAbility_desc")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_10 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1100
+     * @tc.name      : TestCase_11
+     * @tc.desc      : get stringArray by resName resName=layered_image.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_11(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_11 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("layered_image")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_11 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1200
+     * @tc.name      : TestCase_12
+     * @tc.desc      : get stringArray by resName resName=EntryAbility_label.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_12(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_12 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("EntryAbility_label")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_12 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1300
+     * @tc.name      : TestCase_13
+     * @tc.desc      : get stringArray by resName resName=startIcon.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_13(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_13 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("startIcon")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_13 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1400
+     * @tc.name      : TestCase_14
+     * @tc.desc      : get stringArray by resName resName=main_pages.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_14(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_14 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("main_pages")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_14 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1500
+     * @tc.name      : TestCase_15
+     * @tc.desc      : get stringArray by resName resName=start_window_background.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_15(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_15 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("start_window_background")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_15 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1600
+     * @tc.name      : TestCase_16
+     * @tc.desc      : get stringArray by resName resName=float_1.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_16(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_16 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("float_1")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_16 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1700
+     * @tc.name      : TestCase_17
+     * @tc.desc      : get stringArray by resName resName=float_2.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_17(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("float_2")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_17 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1800
+     * @tc.name      : TestCase_18
+     * @tc.desc      : get stringArray by resName resName=int_1.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_18(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_18 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("int_1")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_18 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_1900
+     * @tc.name      : TestCase_19
+     * @tc.desc      : get stringArray by resName resName=int_2.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_19(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("int_2")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_19 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_2000
+     * @tc.name      : TestCase_20
+     * @tc.desc      : get stringArray by resName resName=test_boolean1.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_20(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_20 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("test_boolean1")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_20 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_2100
+     * @tc.name      : TestCase_21
+     * @tc.desc      : get stringArray by resName resName=test_boolean0.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_21(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("test_boolean0")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_21 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_2200
+     * @tc.name      : TestCase_22
+     * @tc.desc      : get stringArray by resName resName=boolean_3.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_22(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_22 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("boolean_3")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_22 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_2300
+     * @tc.name      : TestCase_23
+     * @tc.desc      : get stringArray by resName resName=boolean_4.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_23(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name.")
+        try {
+            getResourceManager().getStringArrayByName("boolean_4")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.message, "Invalid resource name.")
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_23 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_2400
+     * @tc.name      : TestCase_24
+     * @tc.desc      : get stringArray by resName resName=color_test1 (type mismatch, 9001004).
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_24(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name - type mismatch.")
+        try {
+            getResourceManager().getStringArrayByName("color_test1")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_24 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_ResourceManager_getStringArrayByName_2500
+     * @tc.name      : TestCase_25
+     * @tc.desc      : get stringArray by resName resName=color_test2 (type mismatch, 9001004).
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func TestCase_25(): Unit {
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_25 begins.")
+        Hilog.info(0u32, "CangjieTest", "fail to get stringArray by name - type mismatch.")
+        try {
+            getResourceManager().getStringArrayByName("color_test2")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 9001003i32)
+        }
+        Hilog.info(0u32, "CangjieTest", "testcase TestCase_25 ends.")
+    }
+}

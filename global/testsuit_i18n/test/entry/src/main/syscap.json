@@ -1,0 +1,18 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Ability.AbilityRuntime.Core",
+                    "SystemCapability.Global.I18n",
+                    "SystemCapability.Global.ResourceManager",
+                    "SystemCapability.WindowManager.WindowManager.Core"
+                ]
+            }
+        ]
+    }
+}

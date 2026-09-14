@@ -1,0 +1,17 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Applications.CalendarData",
+                    "SystemCapability.Applications.IntelligentScene",
+                    "SystemCapability.Applications.Settings.Core"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+                    "SystemCapability.Ability.AbilityRuntime.Core",
+                    "SystemCapability.Ability.AbilityRuntime.FAModel",
+                    "SystemCapability.Ability.AbilityRuntime.Mission",
+                    "SystemCapability.Ability.AbilityRuntime.QuickFix",
+                    "SystemCapability.Ability.AbilityTools.AbilityAssistant",
+                    "SystemCapability.Ability.AppExtension.PhotoEditorExtension",
+                    "SystemCapability.Ability.AppStartup",
+                    "SystemCapability.BundleManager.BundleFramework",
+                    "SystemCapability.BundleManager.BundleFramework.AppControl",
+                    "SystemCapability.BundleManager.BundleFramework.Core",
+                    "SystemCapability.BundleManager.BundleFramework.DefaultApp",
+                    "SystemCapability.BundleManager.BundleFramework.FreeInstall",
+                    "SystemCapability.BundleManager.BundleFramework.Launcher",
+                    "SystemCapability.BundleManager.BundleFramework.Overlay",
+                    "SystemCapability.BundleManager.BundleFramework.Resource",
+                    "SystemCapability.BundleManager.Zlib"
+                ]
+            }
+        ]
+    }
+}
