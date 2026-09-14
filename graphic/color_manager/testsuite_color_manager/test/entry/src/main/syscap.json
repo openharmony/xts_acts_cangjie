@@ -1,0 +1,34 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.ArkUI.ArkUI.Full",
+                    "SystemCapability.ArkUi.Graphics3D",
+                    "SystemCapability.Graphic.Graphic2D.ColorManager.Core",
+                    "SystemCapability.Graphic.Graphic2D.EGL",
+                    "SystemCapability.Graphic.Graphic2D.GL4",
+                    "SystemCapability.Graphic.Graphic2D.GLES2",
+                    "SystemCapability.Graphic.Graphic2D.GLES3",
+                    "SystemCapability.Graphic.Graphic2D.HyperGraphicManager",
+                    "SystemCapability.Graphic.Graphic2D.NativeBuffer",
+                    "SystemCapability.Graphic.Graphic2D.NativeDrawing",
+                    "SystemCapability.Graphic.Graphic2D.NativeImage",
+                    "SystemCapability.Graphic.Graphic2D.NativeVsync",
+                    "SystemCapability.Graphic.Graphic2D.NativeWindow",
+                    "SystemCapability.Graphic.Graphic2D.WebGL",
+                    "SystemCapability.Graphic.Graphic2D.WebGL2",
+                    "SystemCapability.Graphics.Drawing",
+                    "SystemCapability.Multimedia.Image.Core",
+                    "SystemCapability.Startup.SystemInfo",
+                    "SystemCapability.Window.SessionManager",
+                    "SystemCapability.WindowManager.WindowManager.Core"
+                ]
+            }
+        ]
+    }
+}

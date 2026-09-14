@@ -1,0 +1,32 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Ability.AbilityRuntime.Core",
+                    "SystemCapability.ArkCompiler.ANI",
+                    "SystemCapability.ArkUI.ArkUI.Circle",
+                    "SystemCapability.ArkUI.ArkUI.Full",
+                    "SystemCapability.ArkUI.ArkUI.Lite",
+                    "SystemCapability.ArkUI.ArkUI.Napi",
+                    "SystemCapability.Driver.DDK.Extension",
+                    "SystemCapability.Driver.ExternalDevice",
+                    "SystemCapability.Driver.HID.Extension",
+                    "SystemCapability.Driver.SCSI.Extension",
+                    "SystemCapability.Driver.USB.Extension",
+                    "SystemCapability.Driver.UsbSerial.Extension",
+                    "SystemCapability.FileManagement.File.FileIO",
+                    "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+                    "SystemCapability.MiscServices.Time",
+                    "SystemCapability.MultimodalInput.Input.Core",
+                    "SystemCapability.Notification.Emitter",
+                    "SystemCapability.Test.UiTest"
+                ]
+            }
+        ]
+    }
+}

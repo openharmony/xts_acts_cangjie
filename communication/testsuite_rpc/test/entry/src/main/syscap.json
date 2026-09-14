@@ -1,0 +1,32 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Communication.Bluetooth.Core",
+                    "SystemCapability.Communication.Bluetooth.Lite",
+                    "SystemCapability.Communication.ConnectedTag",
+                    "SystemCapability.Communication.FusionConnectivity.Core",
+                    "SystemCapability.Communication.IPC.Core",
+                    "SystemCapability.Communication.NFC.CardEmulation",
+                    "SystemCapability.Communication.NFC.Core",
+                    "SystemCapability.Communication.NFC.Tag",
+                    "SystemCapability.Communication.NearLink.Base",
+                    "SystemCapability.Communication.NetManager.Eap",
+                    "SystemCapability.Communication.NetStack",
+                    "SystemCapability.Communication.SecureElement",
+                    "SystemCapability.Communication.WiFi.AP.Core",
+                    "SystemCapability.Communication.WiFi.Core",
+                    "SystemCapability.Communication.WiFi.P2P",
+                    "SystemCapability.Communication.WiFi.STA",
+                    "SystemCapability.DistributedSched.AppCollaboration",
+                    "SystemCapability.Startup.SystemInfo"
+                ]
+            }
+        ]
+    }
+}

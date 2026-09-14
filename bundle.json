@@ -1,0 +1,51 @@
+{
+  "name": "@ohos/acts_cangjie",
+  "version": "1.0.0",
+  "description": "OpenHarmony XTS Cangjie application tests",
+  "license": "Apache License 2.0",
+  "publishAs": "code-segment",
+  "segment": {
+    "destPath": "test/xts/acts_cangjie"
+  },
+  "component": {
+    "name": "acts_cangjie",
+    "subsystem": "xts",
+    "syscap": [],
+    "features": [],
+    "adapted_system_type": ["standard"],
+    "rom": "0KB",
+    "ram": "0KB",
+    "deps": {
+      "components": [
+        "ability_cangjie_wrapper",
+        "arkui_cangjie_wrapper",
+        "cangjie_ark_interop",
+        "communication_cangjie_wrapper",
+        "connectivity_cangjie_wrapper",
+        "filemanagement_cangjie_wrapper",
+        "global_cangjie_wrapper",
+        "graphic_cangjie_wrapper",
+        "hiviewdfx_cangjie_wrapper",
+        "multimedia_cangjie_wrapper",
+        "netmanager_cangjie_wrapper",
+        "notification_cangjie_wrapper",
+        "powermgr_cangjie_wrapper",
+        "request_cangjie_wrapper",
+        "security_cangjie_wrapper",
+        "sensors_cangjie_wrapper",
+        "startup_cangjie_wrapper",
+        "telephony_cangjie_wrapper",
+        "testfwk_cangjie_wrapper",
+        "time_cangjie_wrapper",
+        "arkweb_cangjie_wrapper",
+        "window_cangjie_wrapper"
+      ],
+      "third_party": []
+    },
+    "build": {
+      "sub_component": ["//test/xts/acts_cangjie:acts_cangjie"],
+      "inner_kits": [],
+      "test": ["//test/xts/acts_cangjie:xts_acts_cangjie"]
+    }
+  }
+}

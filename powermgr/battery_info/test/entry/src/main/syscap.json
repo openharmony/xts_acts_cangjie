@@ -1,0 +1,21 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.PowerManager.BatteryManager.Core",
+                    "SystemCapability.PowerManager.BatteryManager.Lite",
+                    "SystemCapability.PowerManager.BatteryStatistics",
+                    "SystemCapability.PowerManager.DisplayPowerManager",
+                    "SystemCapability.PowerManager.DisplayPowerManager.Lite",
+                    "SystemCapability.PowerManager.PowerManager.Core",
+                    "SystemCapability.PowerManager.ThermalManager"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Ability.AbilityRuntime.Core",
+                    "SystemCapability.Account.AppAccount",
+                    "SystemCapability.Account.OsAccount",
+                    "SystemCapability.ArkUI.ArkUI.Full",
+                    "SystemCapability.Base",
+                    "SystemCapability.BundleManager.BundleFramework.Core",
+                    "SystemCapability.BundleManager.BundleFramework.Resource",
+                    "SystemCapability.Communication.Bluetooth.Core",
+                    "SystemCapability.Communication.NetStack",
+                    "SystemCapability.Customization.EnterpriseDeviceManager",
+                    "SystemCapability.FileManagement.AppFileService",
+                    "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+                    "SystemCapability.Graphic.Graphic2D.NativeDrawing",
+                    "SystemCapability.HiviewDFX.HiLog",
+                    "SystemCapability.Security.AccessToken",
+                    "SystemCapability.Security.Asset",
+                    "SystemCapability.Security.Cert",
+                    "SystemCapability.Security.CertificateManager",
+                    "SystemCapability.Security.CertificateManagerDialog",
+                    "SystemCapability.Security.Cipher",
+                    "SystemCapability.Security.CryptoFramework",
+                    "SystemCapability.Security.CryptoFramework.Cipher",
+                    "SystemCapability.Security.CryptoFramework.Kdf",
+                    "SystemCapability.Security.CryptoFramework.Key",
+                    "SystemCapability.Security.CryptoFramework.Key.AsymKey",
+                    "SystemCapability.Security.CryptoFramework.Key.SymKey",
+                    "SystemCapability.Security.CryptoFramework.KeyAgreement",
+                    "SystemCapability.Security.CryptoFramework.Mac",
+                    "SystemCapability.Security.CryptoFramework.MessageDigest",
+                    "SystemCapability.Security.CryptoFramework.Rand",
+                    "SystemCapability.Security.CryptoFramework.Signature",
+                    "SystemCapability.Security.DataLossPrevention",
+                    "SystemCapability.Security.Huks.Core",
+                    "SystemCapability.Security.Huks.Extension",
+                    "SystemCapability.Security.ScreenLockFileManager",
+                    "SystemCapability.Startup.SystemInfo",
+                    "SystemCapability.Test.UiTest",
+                    "SystemCapability.Utils.Lang"
+                ]
+            }
+        ]
+    }
+}

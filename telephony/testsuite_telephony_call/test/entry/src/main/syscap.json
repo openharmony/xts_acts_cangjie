@@ -1,0 +1,28 @@
+{
+    "devices": {
+        "general": [
+            "default",
+            "tablet"
+        ],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Applications.ContactsData",
+                    "SystemCapability.Communication.NetManager.Core",
+                    "SystemCapability.Communication.NetManager.Eap",
+                    "SystemCapability.Communication.NetManager.Ethernet",
+                    "SystemCapability.Communication.NetManager.MDNS",
+                    "SystemCapability.Communication.NetManager.NetFirewall",
+                    "SystemCapability.Communication.NetManager.Vpn",
+                    "SystemCapability.Communication.NetStack",
+                    "SystemCapability.Telephony.CallManager",
+                    "SystemCapability.Telephony.CellularData",
+                    "SystemCapability.Telephony.CoreService",
+                    "SystemCapability.Telephony.CoreService.Esim",
+                    "SystemCapability.Telephony.SmsMms",
+                    "SystemCapability.Telephony.StateRegistry"
+                ]
+            }
+        ]
+    }
+}
