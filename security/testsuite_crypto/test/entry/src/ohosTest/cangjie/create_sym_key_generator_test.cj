@@ -52,7 +52,6 @@ class TestCreateSymKeyGeneratorApi {
             } catch (e: BusinessException) {
                 @Expect(e.code, 801)
             }
-
         }
     }
 

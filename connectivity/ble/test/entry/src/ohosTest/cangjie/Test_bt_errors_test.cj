@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -215,7 +215,7 @@ class Test_bt_errors {
             Hilog.error(0u32, "cangjietest", "gattc.disconnect code=${e.code}")
             @Expect(e.code, 2900099i32)
         }
-try { device.close() } catch (e: BusinessException) { Hilog.error(0u32, "cangjietest", "device.close() cleanup code=${e.code}") }
+        try { device.close() } catch (e: BusinessException) { Hilog.error(0u32, "cangjietest", "device.close() cleanup code=${e.code}") }
         Hilog.info(0u32, "cangjietest", "testcase Test_Err_GattClient_StateOff ends.")
     }
 

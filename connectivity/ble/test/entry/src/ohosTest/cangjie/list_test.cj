@@ -34,4 +34,5 @@ func testsuite() {
     registerTestSuite {Test_bt_errors()}
     registerTestSuite {Test_bt_errors_device()}
     registerTestSuite {Test_bt_noperm_device()}
+    registerTestSuite {TestBtCoverage201()}
 }

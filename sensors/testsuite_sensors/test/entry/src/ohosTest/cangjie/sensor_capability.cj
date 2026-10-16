@@ -24,7 +24,6 @@ import std.unittest.*
 import std.unittest.testmacro.*
 import kit.PerformanceAnalysisKit.Hilog
 
-
 func hasSensor(sensorType: SensorId): Bool {
     try {
         let sensors = getSensorList()
@@ -47,14 +46,13 @@ func offIfSupported(sensorType: SensorId): Unit {
 
 func expectOffStops(start: () -> Unit, count: () -> Int64, stop: () -> Unit): Unit {
     start()
-    waitFor(Duration.second * 2) { count() >= 0 }
+    waitFor(Duration.second * 2) {count() >= 0}
     let countBeforeOff = count()
     stop()
     var callbackContinued = false
     sleep(Duration.millisecond * 500)
     @Expect(count(), countBeforeOff)
 }
-
 
 func requestUserSensorPermission(permission: Permissions): Unit {
     let bundleInfo = BundleManager.getBundleInfoForSelf(BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION)
@@ -76,7 +74,10 @@ func requestUserSensorPermission(permission: Permissions): Unit {
             }
         }
     }
-    waitFor(Duration.second * 6) { clickAllThoseButtons(); finished.value }
+    waitFor(Duration.second * 6) {
+        clickAllThoseButtons();
+        finished.value
+    }
     @Expect(granted.value)
 }
 

@@ -15,6 +15,8 @@
 
 package ohos_app_cangjie_entry_test
 
+import ohos.business_exception.*
+import std.sync.AtomicInt64
 import kit.BasicServicesKit.*
 import ohos.ui_test.*
 import std.sync.{AtomicBool}
@@ -118,5 +120,51 @@ class Test_CommonEvent_Subscribe {
             }
         }
         Hilog.info(0u32, "cangjietest", "", "testcase Test_CommonEvent_Subscribe_00 ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_CommonEvent_SubscriberRuntime_0100
+     * @tc.name      : test_subscriberDelivery
+     * @tc.desc      : Uses a real subscriber to receive a published event and verifies delivery stops after unsubscribe.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_subscriberDelivery(): Unit {
+        let event = "cj.xts.subscriber.runtime.0100"
+        let subscriber: CommonEventSubscriber = CommonEventManager.createSubscriber(CommonEventSubscribeInfo([event]))
+        let received = AtomicInt64(0)
+        let valid = AtomicInt64(0)
+        let callback: AsyncCallback<CommonEventData> = { error, data =>
+            if (error.isNone() && data.isSome()) {
+                let value = data.getOrThrow()
+                if (value.event == event && value.code == 731i32 && value.data == "runtime-payload") {
+                    valid.store(1)
+                }
+            }
+            received.fetchAdd(1)
+        }
+        CommonEventManager.subscribe(subscriber, callback)
+        try {
+            CommonEventManager.publish(event, options: CommonEventPublishData(code: 731i32, data: "runtime-payload"))
+            var attempts = 0i64
+            while (received.load() == 0i64 && attempts < 50i64) {
+                sleep(Duration.millisecond * 100)
+                attempts += 1
+            }
+            @Expect(received.load() > 0i64, true)
+            @Expect(valid.load(), 1i64)
+        } catch (e: BusinessException) {
+            @Expect(false)
+        } finally {
+            CommonEventManager.unsubscribe(subscriber)
+        }
+        sleep(Duration.millisecond * 200)
+        let before = received.load()
+        CommonEventManager.publish(event, options: CommonEventPublishData(code: 732i32))
+        sleep(Duration.second)
+        @Expect(received.load(), before)
     }
 }

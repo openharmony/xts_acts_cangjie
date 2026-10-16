@@ -354,6 +354,14 @@ class Test_ble_GattClientDevice {
             Hilog.info(0u32, "cangjietest", "", "errCode: ${e.code}, errMessage: ${e.message}")
             @Expect(e.code, 2900099i32)
         }
+        try {
+            let device = createGattClientDevice("00:11:22:33:44:55")
+            device.setCharacteristicChangeNotification(char, false, { err, data => })
+            @Expect(false)
+        } catch (e: BusinessException) {
+            Hilog.info(0u32, "cangjietest", "", "setNotification(false) errCode: ${e.code}, errMessage: ${e.message}")
+            @Expect(e.code, 2900099i32)
+        }
         Hilog.info(0u32, "cangjietest", "", "testcase test_ble_GattClientDevice_setNotification ends.")
     }
 
@@ -383,6 +391,14 @@ class Test_ble_GattClientDevice {
             @Expect(false)
         } catch (e: BusinessException) {
             Hilog.info(0u32, "cangjietest", "", "errCode: ${e.code}, errMessage: ${e.message}")
+            @Expect(e.code, 2900099i32)
+        }
+        try {
+            let device = createGattClientDevice("00:11:22:33:44:55")
+            device.setCharacteristicChangeIndication(char, false, { err, data => })
+            @Expect(false)
+        } catch (e: BusinessException) {
+            Hilog.info(0u32, "cangjietest", "", "setIndication(false) errCode: ${e.code}, errMessage: ${e.message}")
             @Expect(e.code, 2900099i32)
         }
         Hilog.info(0u32, "cangjietest", "", "testcase test_ble_GattClientDevice_setIndication ends.")
@@ -475,6 +491,7 @@ class Test_ble_GattClientDevice {
         try {
             let device = createGattClientDevice("00:11:22:33:44:55")
             device.off(BluetoothBleGattClientDeviceCallbackType.BleCharacteristicChange)
+            device.off(BluetoothBleGattClientDeviceCallbackType.BleCharacteristicChange, callback: BleCharCb())
             @Expect(true)
         } catch (e: BusinessException) {
             Hilog.info(0u32, "cangjietest", "", "errCode: ${e.code}, errMessage: ${e.message}")

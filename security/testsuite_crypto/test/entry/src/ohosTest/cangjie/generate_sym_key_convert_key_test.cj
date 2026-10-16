@@ -46,7 +46,6 @@ class TestGenerateSymKeyConvertKey {
             @Expect(((sk.format) == ("PKCS#8")) &&
                 ((sk.algName) == (parameter_0)) &&
                 ((sk.getEncoded().data.size) == (parameter_1)))
-
         }
     }
 

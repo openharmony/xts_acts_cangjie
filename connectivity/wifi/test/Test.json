@@ -1,7 +1,7 @@
 {
-  "description": "Configuration for cjTesttestsuite element name metadata demo Tests",
+  "description": "Configuration for cjTestwifi demo Tests",
   "driver": {
-    "bundle-name": "com.example.testsuite_element_name_metadata",
+    "bundle-name": "com.example.testsuite_wifi",
     "module-name": "entry",
     "shell-timeout": "600000",
     "test-timeout": "180000",
@@ -13,7 +13,7 @@
       "type": "AppInstallKit",
       "clean-apps": false,
       "test-file-name": [
-        "cjTesttestsuite_element_name_metadata.hap"
+        "cjTestwifi.hap"
       ]
     },
     {
@@ -21,11 +21,11 @@
       "run-command": [
         "power-shell suspend",
         "power-shell wakeup",
-        "power-shell timeout -o 99999999",
-        "uinput -T -g 100 100 500 500"
+        "uinput -T -g 100 100 500 500",
+        "power-shell timeout -o 99999999"
       ],
       "teardown-command": [
-        "bm uninstall -n com.example.testsuite_element_name_metadata_2"
+        "bm uninstall -n com.example.testsuite_wifi"
       ]
     }
   ]

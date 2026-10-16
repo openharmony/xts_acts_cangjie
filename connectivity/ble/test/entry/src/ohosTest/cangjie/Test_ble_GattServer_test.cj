@@ -361,6 +361,7 @@ class Test_ble_GattServer {
         let server = createGattServer()
         try {
             server.off(BluetoothBleGattServerCallbackType.CharacteristicRead)
+            server.off(BluetoothBleGattServerCallbackType.CharacteristicRead, callback: CharReadCb())
             @Expect(true)
         } catch (e: BusinessException) {
             Hilog.info(0u32, "cangjietest", "", "errCode: ${e.code}, errMessage: ${e.message}")

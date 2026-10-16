@@ -24,21 +24,6 @@
         "name": "release"
       }
     ],
-    "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\lixiang\\.ohos\\config\\com_example_window_baseFunc_normal.cer",
-          "keyAlias": "openharmony application release",
-          "keyPassword": "00000016310e54443e6f9ce95a2593a00f90901b6ae7df2869e33ab0a5d5d68048efbf89935c",
-          "profile": "C:\\Users\\lixiang\\.ohos\\config\\com_example_window_baseFunc_normal_debug.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\lixiang\\.ohos\\config\\com_example_window_baseFunc_normal.p12",
-          "storePassword": "000000161bc4a3e1e79960fca9be958e419d9531b8b57b47b3b3afd81a3a5afed61870fe754e"
-        }
-      }
-    ]
   },
   "modules": [
     {

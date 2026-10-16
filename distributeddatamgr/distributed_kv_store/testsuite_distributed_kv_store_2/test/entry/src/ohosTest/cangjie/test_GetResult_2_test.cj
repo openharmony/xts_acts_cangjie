@@ -27,33 +27,24 @@ import ohos_app_cangjie_entry.Global
 
 @Test
 class test_GetResult_2 {
-    // 准备测试数据函数
     func prepareTestData(store: DeviceKVStore): Unit {
-        // 清除现有数据
         let existingEntries = store.getEntries("^")         
         for (entry in existingEntries) {
             store.delete(entry.key)
         }
-        // 插入用户数据
         store.put("user_001_name", KVValueType.StringValue("Alice"))
         store.put("user_001_age", KVValueType.Integer(25))
-        store.put("user_001_score", KVValueType.Double(85.5))
-        
+        store.put("user_001_score", KVValueType.Double(85.5))        
         store.put("user_002_name", KVValueType.StringValue("Bob"))
         store.put("user_002_age", KVValueType.Integer(30))
-        store.put("user_002_score", KVValueType.Double(92.0))
-        
+        store.put("user_002_score", KVValueType.Double(92.0))       
         store.put("user_003_name", KVValueType.StringValue("Charlie"))
         store.put("user_003_age", KVValueType.Integer(22))
         store.put("user_003_score", KVValueType.Double(78.5))
-        
-        // 插入产品数据（不同前缀）
         store.put("product_001_name", KVValueType.StringValue("Laptop"))
         store.put("product_001_price", KVValueType.Integer(999))
         store.put("product_002_name", KVValueType.StringValue("Phone"))
         store.put("product_002_price", KVValueType.Integer(699))
-        
-        // 插入其他数据
         store.put("config_enabled", KVValueType.Boolean(true))
         store.put("config_timeout", KVValueType.Integer(30))
         store.put("metric_001", KVValueType.Double(45.67))
@@ -75,11 +66,8 @@ class test_GetResult_2 {
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
-        // 准备测试数据
         prepareTestData(store)
-        // 执行查询 - 查询以"user_"为前缀的结果集
         let resultSet = store.getResultSet("user_")
-        // 获取结果集数量
         let count = resultSet.getCount()
         let expectedCount = 9i32 
         @Expect(count, expectedCount)
@@ -102,11 +90,8 @@ class test_GetResult_2 {
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
-        // 准备测试数据
         prepareTestData(store)
-        // 使用keyPrefix方法查询
         let resultSet = store.getResultSet("nonexistent_")  
-        // 使用Query方法查询（目前Query没有添加谓词，应该返回所有数据）
         let count = resultSet.getCount()
         @Expect(count, 0i32)
         kvManager.closeKVStore("com.example.myapplication", "test_query_store") 
@@ -129,11 +114,8 @@ class test_GetResult_2 {
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_store3", opt)
-        // 准备测试数据
         prepareTestData(store)
-
-        store.put("special^key", KVValueType.StringValue("special_value"))        
-        // 使用keyPrefix方法查询     
+        store.put("special^key", KVValueType.StringValue("special_value"))           
         let resultSet = store.getResultSet("special^") 
         let count = resultSet.getCount()
         @Expect(count, 18i32) 
@@ -229,7 +211,7 @@ class test_GetResult_2 {
     /*
      * @tc.number    : Sub_Cangjie_distributed_kv_store
      * @tc.size    : MediumTest
-     * @tc.name      : TestCase_6
+     * @tc.name      : TestCase_7
      * @tc.desc      : getresult  kv store fail
      * @tc.type      : Function
      * @tc.level     : Level 0

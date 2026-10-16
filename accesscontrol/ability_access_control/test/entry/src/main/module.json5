@@ -383,6 +383,16 @@
           ],
           "when": "always"
         }
+      },
+      {
+        "name": "ohos.permission.READ_CONTACTS",
+        "reason": "$string:EntryAbility_label",
+        "usedScene": {
+          "abilities": [
+            "MainAbility"
+          ],
+          "when": "always"
+        }
       }
     ]
   }

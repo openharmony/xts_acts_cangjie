@@ -67,6 +67,7 @@ class Test_wifi_permit {
             try {
                 startDiscoverDevices()
                 stopDiscoverDevices()
+                @Expect(true)
             } catch (e: BusinessException) {
                 Hilog.error(0u32, "cangjietest", "%{public}s", "discover success path code=${e.code.toString()}")
                 @Expect(false)

@@ -49,6 +49,9 @@ class TestCreateCustomColorEdge {
         @Expect(((gammaValue) == (-1.400000f32)) &&
             ((whitePoint[0i64]) == (primaries.whitePointX)) &&
             ((whitePoint[1i64]) == (primaries.whitePointY)))
+        @Expect((primaries.redX == 0.000000) && (primaries.redY == 0.000000) &&
+            (primaries.greenX == 0.000000) && (primaries.greenY == 0.000000) &&
+            (primaries.blueX == 0.000000) && (primaries.blueY == 0.000000))
         Hilog.info(0, "cangjietest", "testcase test_case_799 ends.")
     }
 

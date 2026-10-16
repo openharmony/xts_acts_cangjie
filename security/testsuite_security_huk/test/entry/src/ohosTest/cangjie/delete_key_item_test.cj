@@ -29,13 +29,10 @@ import ohos.business_exception.BusinessException
 class TestSecurityHuksDeleteKey {
     let genKeyOptionsTest2 = HuksOptions(
         properties: [
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.BooleanValue(true)),
-            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(1i32)),
-            HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Int32Value(0i32)),
-            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Int32Value(1i32)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(false)),
-            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
+            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(
+                HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
         ]
     )
     /*
@@ -76,15 +73,12 @@ class TestSecurityHuksDeleteKey {
     func test_delete_key_not_exist(): Unit {
         let keyAlias = "test_delete_key"
         clean(keyAlias)
-        var flag = false
         try {
             @Expect(!hasKeyItem(keyAlias, genKeyOptionsTest2))
             deleteKeyItem(keyAlias, genKeyOptionsTest2)
         } catch (e: BusinessException) {
-            flag = true
-            @Expect(false)
+            @Expect(e.code, 12000011i32)
         } finally {
-            @Expect(flag)
             clean(keyAlias)
         }
     }

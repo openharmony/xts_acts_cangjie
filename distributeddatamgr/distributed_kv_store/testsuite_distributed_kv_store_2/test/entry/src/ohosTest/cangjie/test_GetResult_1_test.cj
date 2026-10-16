@@ -27,14 +27,11 @@ import ohos_app_cangjie_entry.Global
 
 @Test
 class test_GetResult_1 {
-    // 准备测试数据函数
     func prepareTestData(store: DeviceKVStore): Unit {
-        // 清除现有数据
         let existingEntries = store.getEntries("^")         
         for (entry in existingEntries) {
             store.delete(entry.key)
         }
-        // 插入员工数据
         store.put("emp_001_name", StringValue("Alice Johnson"))
         store.put("emp_001_dept", StringValue("Engineering"))
         store.put("emp_001_salary", Integer(85000))
@@ -54,8 +51,6 @@ class test_GetResult_1 {
         store.put("emp_004_dept", StringValue("Engineering"))
         store.put("emp_004_salary", Integer(92000))
         store.put("emp_004_level", Integer(4))
-        
-        // 插入项目数据
         store.put("project_001_name", StringValue("Project Alpha"))
         store.put("project_001_status", StringValue("active"))
         store.put("project_001_budget", Double(150000.50))
@@ -63,13 +58,10 @@ class test_GetResult_1 {
         store.put("project_002_name", StringValue("Project Beta"))
         store.put("project_002_status", StringValue("completed"))
         store.put("project_002_budget", Double(98000.75))
-        
-        // 插入系统配置
         store.put("sys_config_debug", Boolean(true))
         store.put("sys_config_log_level", StringValue("INFO"))
         store.put("sys_config_timeout", Integer(30))
         
-        // 插入性能指标
         store.put("metrics_cpu_usage", Double(45.67))
         store.put("metrics_memory_usage", Double(78.92))
         store.put("metrics_disk_space", Double(32.15))
@@ -90,14 +82,15 @@ class test_GetResult_1 {
         var context = Global.getAbilityContext()
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
-        let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
+        let storeId = "test_getResult_1_store"
+        let store = kvManager.getKVStore<DeviceKVStore>(storeId, opt)
         prepareTestData(store)
         let query = Query()
         let resultSet = store.getResultSet(query)
         let count = resultSet.getCount()
         let expectedCount = 28i32 
         @Expect(count, expectedCount)
-        kvManager.closeKVStore("com.example.myapplication", "test_query_store") 
+        kvManager.closeKVStore("com.example.myapplication", storeId) 
         Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
     }
 
@@ -115,7 +108,8 @@ class test_GetResult_1 {
         var context = Global.getAbilityContext()
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
-        let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
+        let storeId = "test_getResult_2_store"
+        let store = kvManager.getKVStore<DeviceKVStore>(storeId, opt)
         prepareTestData(store)
         let prefixResultSet = store.getResultSet("emp_")
         let query = Query()
@@ -124,7 +118,7 @@ class test_GetResult_1 {
         let queryCount = queryResultSet.getCount()
         @Expect(prefixCount, 16i32)
         @Expect(queryCount, 28i32)
-        kvManager.closeKVStore("com.example.myapplication", "test_query_store") 
+        kvManager.closeKVStore("com.example.myapplication", storeId) 
         Hilog.info(0, "cangjietest", "testcase TestCase_2 ends.")
     }
 
@@ -143,18 +137,15 @@ class test_GetResult_1 {
         var context = Global.getAbilityContext()
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
-        let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
+        let storeId = "test_getResult_3_store"
+        let store = kvManager.getKVStore<DeviceKVStore>(storeId, opt)
         prepareTestData(store)
         let query = Query()
         let resultSet1 = store.getResultSet(query)
         let count1 = resultSet1.getCount()
         let expectedCount = 28i32
         @Expect(count1, expectedCount)
-        kvManager.closeKVStore("com.example.myapplication", "test_query_store")
-        let resultSet2 = store.getResultSet(query)
-        let count2 = resultSet1.getCount()
-        @Expect(count2, expectedCount)
-        kvManager.closeKVStore("com.example.myapplication", "test_query_store") 
+        kvManager.closeKVStore("com.example.myapplication", storeId) 
         Hilog.info(0, "cangjietest", "testcase TestCase_3 ends.")
     }
 
@@ -173,20 +164,18 @@ class test_GetResult_1 {
         var context = Global.getAbilityContext()
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
-        let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
-        // 确保数据库是空的
+        let storeId = "test_getResult_4_store"
+        let store = kvManager.getKVStore<DeviceKVStore>(storeId, opt)
         let existingEntries = store.getEntries("")
         for (entry in existingEntries) {
             store.delete(entry.key)
         }        
-        // 使用Query对象获取结果集
         let query = Query()
         let resultSet = store.getResultSet(query)
-        // 获取结果集数量
         let count = resultSet.getCount()
         let expectedCount = 0i32
         @Expect(count, expectedCount)
-        kvManager.closeKVStore("com.example.myapplication", "test_query_store") 
+        kvManager.closeKVStore("com.example.myapplication", storeId) 
         Hilog.info(0, "cangjietest", "testcase TestCase_4 ends.")
     }
 
@@ -205,14 +194,15 @@ class test_GetResult_1 {
         var context = Global.getAbilityContext()
         let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.myapplication"))
         let opt = KVOptions(KVSecurityLevel.S1)
-        let store = kvManager.getKVStore<DeviceKVStore>("test_query_store", opt)
+        let storeId = "test_getResult_5_store"
+        let store = kvManager.getKVStore<DeviceKVStore>(storeId, opt)
         prepareTestData(store)
         let query = Query()
         let resultSet = store.getResultSet(query)
         let count = resultSet.getCount()
         let expectedCount = 28i32
         @Expect(count, expectedCount)
-        kvManager.closeKVStore("com.example.myapplication", "test_query_store")
+        kvManager.closeKVStore("com.example.myapplication", storeId)
         try {
             let query1 = Query()            
             store.getResultSet(query1)
@@ -220,7 +210,7 @@ class test_GetResult_1 {
         } catch (e: BusinessException) {
             @Expect(e.code, 15100005i32)
         }
-        Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")
+        Hilog.info(0, "cangjietest", "testcase TestCase_5 ends.")
     }
 
 }

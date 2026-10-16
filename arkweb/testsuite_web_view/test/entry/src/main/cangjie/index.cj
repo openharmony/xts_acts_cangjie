@@ -24,6 +24,7 @@ internal import ohos.arkui.component.CustomView
 internal import ohos.arkui.component.CJEntry
 internal import ohos.arkui.component.loadNativeView
 internal import ohos.arkui.component.FontWeight
+internal import ohos.arkui.component.ScrollDirection
 internal import ohos.arkui.state_management.SubscriberManager
 internal import ohos.arkui.state_management.ObservedProperty
 internal import ohos.arkui.state_management.LocalStorage
@@ -79,8 +80,6 @@ class EntryView {
     var sendFromCangjie = "Send this message from cangjie to HTML"
     @State
     var receivedFromHtml = "Display received message send from HTML"
-    @State
-    var runOnce = false
     @State
     var muted: Bool = false
     @State
@@ -205,6 +204,23 @@ class EntryView {
                     .fontSize(5)
                     .height(5)
                     .id("refresh")
+                Button("test_17100001")
+                    .onClick ({
+                        evt =>
+                        Hilog.info(0u32, "cangjietest","test_17100001")
+                        try {
+                            webController.registerJavaScriptProxy(
+                                [{p: String => "x"}],
+                                "testObj",
+                                []
+                            )
+                        } catch (e: BusinessException) {
+                            this.result = "${e.code}"
+                        }
+                    })
+                    .fontSize(20)
+                    .height(20)
+                    .id("test_17100001")    
                 Button("runJavaScript")
                     .onClick ({
                         evt =>
@@ -340,7 +356,7 @@ class EntryView {
                     })
                     .fontSize(5)
                     .height(5)
-                    .id("getItemAtIndex")                    
+                    .id("canGoBack")                    
 
                 Button("removeCache")
                     .onClick ({
@@ -410,7 +426,7 @@ class EntryView {
                     })
                     .fontSize(5)
                     .height(5)
-                    .id("go_example")                    
+                    .id("go_url")                    
                 Web(src: @rawfile("page1.html"), controller: webController)
                     .onPageBegin({
                         evt => Hilog.info(0u32, "cangjietest","page begin url")
@@ -419,17 +435,6 @@ class EntryView {
                         {
                             evt =>
                             Hilog.info(0u32, "cangjietest","page end url")
-                            if (runOnce) {
-                                return
-                            }
-                            synchronized(webInitialized[1]) {
-                                    webInitialized[0]
-                                    .store(true)
-                                    webInitialized[1]
-                                    .notifyAll()
-                            }
-
-                            runOnce = true
                         }
                     )
                     .height(100)
@@ -441,17 +446,6 @@ class EntryView {
                         {
                             evt =>
                             Hilog.info(0u32, "cangjietest","page end url")
-                            if (runOnce) {
-                                return
-                            }
-                            synchronized(webInitialized[1]) {
-                                    webInitialized[0]
-                                    .store(true)
-                                    webInitialized[1]
-                                    .notifyAll()
-                            }
-
-                            runOnce = true
                         }
                     )
                     .height(100)                    
@@ -464,23 +458,19 @@ class EntryView {
                         {
                             evt =>
                             Hilog.info(0u32, "cangjietest","page end url")
-                            if (runOnce) {
-                                return
-                            }
                             synchronized(webInitialized[1]) {
                                     webInitialized[0]
                                     .store(true)
                                     webInitialized[1]
                                     .notifyAll()
                             }
-
-                            runOnce = true
                         }
                     )
                     .height(100)
                 Web(src: @rawfile("page1.html"), controller: getWebViewController("2")).height(100)
                 Web(src: @rawfile("scroll.html"), controller: getWebViewController("3"))
-            }.width(100.percent)
+                Web(src: @rawfile("page1.html"), controller: getWebViewController("4")).zoomAccess(false).height(100)
+            }
         }.height(100.percent)
     }
 }

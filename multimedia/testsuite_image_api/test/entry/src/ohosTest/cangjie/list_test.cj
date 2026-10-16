@@ -71,4 +71,5 @@ func testsuite() {
     registerTestSuite {Test_ImageInfoFields()}
     registerTestSuite {Test_ImageReceiverOps()}
     registerTestSuite {Test_image_errors()}
+    registerTestSuite {Test_image_errors2()}
 }

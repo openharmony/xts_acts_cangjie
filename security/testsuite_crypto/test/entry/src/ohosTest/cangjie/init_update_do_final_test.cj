@@ -16,7 +16,7 @@
 package ohos_app_cangjie_entry_test
 
 import std.unittest.testmacro.{Test, TestCase, Expect}
-import ohos.security.crypto_framework.{createCipher, createSymKeyGenerator, CryptoMode, GcmParamsSpec, DataBlob,
+import ohos.security.crypto_framework.{createCipher, createSymKeyGenerator, CryptoMode, GcmParamsSpec, DataBlob, 
     ParamsSpec}
 import std.unittest.testmacro.*
 import std.unittest.*
@@ -49,12 +49,11 @@ class TestInitUpdateDoFinal {
             let skg = createSymKeyGenerator("AES128")
             let sk = skg.generateSymKey()
             cipher.`initialize`(CryptoMode.EncryptMode, sk,
-                GcmParamsSpec("GcmParamsSpec", DataBlob(Array<UInt8>(12, repeat: 0)), DataBlob(Array<UInt8>(8, repeat: 0)),
-                    DataBlob(Array<UInt8>(16, repeat: 0))))
+                GcmParamsSpec("GcmParamsSpec", DataBlob(Array<UInt8>(12, repeat: 0)),
+                    DataBlob(Array<UInt8>(8, repeat: 0)), DataBlob(Array<UInt8>(16, repeat: 0))))
             cipher.update(DataBlob(parameter_0.toArray()))
             cipher.update(DataBlob(Array<UInt8>(255, repeat: 1)))
             @Expect(cipher.doFinal(Option<DataBlob>.None).data.size, 16)
-
         }
     }
 

@@ -210,6 +210,7 @@ class Test_wifi_funcs {
         Hilog.info(0, "cangjietest", "testcase test_wifi_off begins.")
         try {
             off(WifiCallbackType.WifiScanStateChange)
+            off(WifiCallbackType.WifiScanStateChange, callback: Int32Cb())
             @Expect(true)
         } catch (e: BusinessException) {
             @Expect(false)

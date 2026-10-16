@@ -21,8 +21,8 @@
       "run-command": [
         "power-shell suspend",
         "power-shell wakeup",
-        "power-shell timeout -o 99999999",
-        "uinput -T -g 100 100 500 500"
+        "uinput -T -g 100 100 500 500",
+        "power-shell timeout -o 99999999"
       ],
       "teardown-command": [
         "bm uninstall -n com.example.testsuite_geo_location_manager"

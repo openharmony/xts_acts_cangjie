@@ -14,7 +14,7 @@
  */
 
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -81,7 +81,7 @@ class test_SetFilePointer {
     /*
      * @tc.number    : Sub_Cangjie_filefs_0200
      * @tc.name    : test_testcase_2
-     * @tc.desc      : fileuri setFilePointer 偏移到文件开头
+     * @tc.desc      : fileuri setFilePointer
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -112,7 +112,7 @@ class test_SetFilePointer {
     /*
      * @tc.number    : Sub_Cangjie_filefs_0300
      * @tc.name    : test_testcase_3
-     * @tc.desc      : fileuri setFilePointer 偏移到文件末尾
+     * @tc.desc      : fileuri setFilePointer
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0

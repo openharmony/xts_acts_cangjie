@@ -13,15 +13,6 @@
  * limitations under the License.
  */
 
-/*
- * 例外说明（无法稳定触发的错误码）：
- * - 14800014: RdbStore 无 close() 方法，无法通过"close 后调用"触发，全部方法标注为例外
- * - 14800021: beginTransaction/commit/rollBack 不引用表名，无法通过"对不存在的表操作"触发
- * - 14800032: delete 不插入数据无法触发约束违反；beginTransaction/commit/rollBack/backup/restore 不执行带约束的 SQL，以上方法采用防御性用例
- * - 14800033: delete 不插入数据；beginTransaction/commit/rollBack/backup/restore 无类型参数，以上方法采用防御性用例
- * - 14800050: emit/on/off 订阅服务，模拟器可能支持导致不抛异常
- */
-
 package ohos_app_cangjie_entry_test
 
 import std.unittest.*

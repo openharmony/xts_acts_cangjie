@@ -26,7 +26,7 @@ import ohos.bundle.bundle_manager.{BundleManager, BundleFlag, ApplicationInfo, M
 class TestMetadata {
     /*
      * @tc.number    : Sub_Cangjie_BundleManager_TestMetadata_0100
-     * @tc.name      : test_metadata_fields
+     * @tc.name      : test_metadata_type
      * @tc.desc      : Get Metadata instance via ApplicationInfo.metadataArray and assert name/value/resource fields.
      * @tc.size      : MediumTest
      * @tc.type      : Function

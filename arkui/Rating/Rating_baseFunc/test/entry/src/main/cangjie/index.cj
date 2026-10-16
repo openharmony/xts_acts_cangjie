@@ -43,7 +43,10 @@ class EntryView {
     func build() {
         Column() {
             Column(){
-                TextArea(text: testSuiteText[0]).id("testSuiteText")
+                TextArea(text: testSuiteText[0]).id("testSuiteText").onChange({
+                    value:String =>
+                            TestFlag = false
+                })
                 TextArea(text: testCaseText[0]).id("testSuiteCase").onChange({
                     value:String =>
                             TestFlag = false

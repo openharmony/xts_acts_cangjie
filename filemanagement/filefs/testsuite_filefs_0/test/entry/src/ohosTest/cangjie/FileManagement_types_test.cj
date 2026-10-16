@@ -427,11 +427,9 @@ class FileManagement_types_test {
         if (FileIo.access(testPath)) {
             FileIo.unlink(testPath)
         }
-
         let file = FileIo.open(testPath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
         let parent = file.getParent()
         @Expect(parent.size > 0)
-
         FileIo.close(file)
         FileIo.unlink(testPath)
         Hilog.info(0u32, "cangjietest", "testcase test_File_getParent ends.")
@@ -453,15 +451,12 @@ class FileManagement_types_test {
         if (FileIo.access(testPath)) {
             FileIo.unlink(testPath)
         }
-
         let file = FileIo.open(testPath, mode: (OpenMode.CREATE | OpenMode.READ_WRITE))
-
         file.tryLock(exclusive: true)
         file.unlock()
-
         file.tryLock(exclusive: false)
         file.unlock()
-
+        @Expect(true)
         FileIo.close(file)
         FileIo.unlink(testPath)
         Hilog.info(0u32, "cangjietest", "testcase test_File_lock_unlock ends.")

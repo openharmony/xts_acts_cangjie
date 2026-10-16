@@ -12,7 +12,7 @@
 import("//test/xts/acts_cangjie/acts_cangjie.gni")
 
 acts_cangjie_hvigor_hap("acts_cangjie_ability_ability_access_control") {
-  project_dir = "ability/ability_access_control/test"
+  project_dir = "accesscontrol/ability_access_control/test"
   test_config = "Test.json"
   build_arkts = false
   hap_names = [

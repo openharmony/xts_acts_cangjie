@@ -120,4 +120,5 @@ class test_KVStore_ErrorCodes {
         kvManager.deleteKVStore(bundleName, storeId)
         Hilog.info(0, "cangjietest", "testcase test_get_15100005 ends.")
     }
+
 }

@@ -26,7 +26,9 @@ class MainAbility <: UIAbility {
         registerSelf()
     }
     public func onCreate(want: Want, launchParam: LaunchParam): Unit {
-        Hilog.info(0u32, "cangjietest", "", "MainAbility OnCreated.${want.abilityName}")
+        Hilog.info(0, "cangjietest", "MainAbility onCreate begins.")
+        AppStorage.setOrCreate("abilityContext", this.context)
+        Hilog.info(0, "cangjietest", "MainAbility onCreate context stored.")
     }
 
     public func onWindowStageCreate(windowStage: WindowStage): Unit {

@@ -38,13 +38,11 @@ class TestSecurityHuksStruct {
     func test_huks_constant_catalog_and_param_fields(): Unit {
         let keyAlias = "struct_constant_catalog_key"
         let properties = [
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM,
-                HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE,
-                HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
             HuksParam(HuksTag.HUKS_TAG_PURPOSE,
-                HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT |
-                    HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
+                HuksParamValue.Uint32Value(
+                    HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
         ]
         clean(keyAlias)
         try {
@@ -108,7 +106,7 @@ class TestSecurityHuksStruct {
             generateKeyItem(keyAlias, HuksOptions(properties: [], inData: Bytes()))
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 12000002i32)
+            @Expect(e.code, 401i32)
         } finally {
             clean(keyAlias)
         }
@@ -127,13 +125,11 @@ class TestSecurityHuksStruct {
     func test_return_result(): Unit {
         let keyAlias = "struct_return_result"
         let properties = [
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM,
-                HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE,
-                HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
             HuksParam(HuksTag.HUKS_TAG_PURPOSE,
-                HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT |
-                    HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
+                HuksParamValue.Uint32Value(
+                    HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
         ]
         clean(keyAlias)
         try {
@@ -148,4 +144,21 @@ class TestSecurityHuksStruct {
         }
     }
 
+    /*
+     * @tc.number    : Sub_Cangjie_UniversalKeystoreKit_Test_SecurityHuks_Struct_0400
+     * @tc.name      : test_const_values
+     * @tc.desc      : Verify const values is correct.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_const_values(): Unit {
+        @Expect(
+            (HuksTagType.HUKS_TAG_TYPE_INVALID == 0u32) && (HuksTagType.HUKS_TAG_TYPE_INT == (1u32 << 28)) &&
+            (HuksTagType.HUKS_TAG_TYPE_UINT == (2u32 << 28)) && (HuksTagType.HUKS_TAG_TYPE_ULONG == (3u32 << 28)) &&
+            (HuksTagType.HUKS_TAG_TYPE_BOOL == (4u32 << 28)) && (HuksTagType.HUKS_TAG_TYPE_BYTES == (5u32 << 28))
+        )
+    }
 }

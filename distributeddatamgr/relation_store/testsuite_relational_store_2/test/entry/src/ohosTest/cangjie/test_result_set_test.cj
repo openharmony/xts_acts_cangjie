@@ -23,6 +23,7 @@ import ohos.data.relational_store.*
 import std.collection.{HashMap}
 import ohos.data.relational_store.RelationalStoreSecurityLevel
 import ohos.data.relational_store.RelationalStoreValueType as RelationalStoreValueType
+import ohos.business_exception.BusinessException
 
 @Test
 class test_result_set_api {
@@ -39,7 +40,8 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_columnCount() {
         let context = getAbilityContext()
-        let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
+        deleteRdbStore(context, "test_db_colcount")
+        let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db_colcount")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER, name TEXT, value INTEGER)")
         
@@ -50,7 +52,7 @@ class test_result_set_api {
         @Expect(columnCount, 3)
         
         resultSet.close()
-        deleteRdbStore(context, "test_db")
+        deleteRdbStore(context, "test_db_colcount")
     }
 
     /*
@@ -65,6 +67,7 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_rowIndex() {
         let context = getAbilityContext()
+        deleteRdbStore(context, "test_db")
         let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER)")
@@ -91,9 +94,13 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_isAtFirstRow() {
         let context = getAbilityContext()
+        deleteRdbStore(context, "test_db")
         let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER)")
+        var values = HashMap<String, RelationalStoreValueType>()
+        values.add("id", RelationalStoreValueType.Integer(1))
+        rdbStore.insert("test_table", values)
         let predicates = RdbPredicates("test_table")
         let resultSet = rdbStore.query(predicates)
         
@@ -116,14 +123,17 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_isAtLastRow() {
         let context = getAbilityContext()
+        deleteRdbStore(context, "test_db")
         let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER)")
+        var values = HashMap<String, RelationalStoreValueType>()
+        values.add("id", RelationalStoreValueType.Integer(1))
+        rdbStore.insert("test_table", values)
         let predicates = RdbPredicates("test_table")
         let resultSet = rdbStore.query(predicates)
         resultSet.goToFirstRow()
-        @Expect(resultSet.isAtLastRow)
-        
+        @Expect(resultSet.isAtLastRow)        
         resultSet.close()
         deleteRdbStore(context, "test_db")
     }
@@ -140,16 +150,15 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_isEnded() {
         let context = getAbilityContext()
-        let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
+        let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db1")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER)")
         let predicates = RdbPredicates("test_table")
         let resultSet = rdbStore.query(predicates)
         
-        @Expect(resultSet.isEnded, false)
-        
-        resultSet.close()
-        deleteRdbStore(context, "test_db")
+        @Expect(resultSet.isEnded, true)        
+        resultSet.close()    
+        deleteRdbStore(context, "test_db1")
     }
 
     /*
@@ -164,6 +173,7 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_isStarted() {
         let context = getAbilityContext()
+        deleteRdbStore(context, "test_db")
         let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER)")
@@ -189,6 +199,7 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_isClosed() {
         let context = getAbilityContext()
+        deleteRdbStore(context, "test_db")
         let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER)")
@@ -216,7 +227,8 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_getColumnIndex() {
         let context = getAbilityContext()
-        let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
+        deleteRdbStore(context, "test_db_getcolidx")
+        let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db_getcolidx")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER, name TEXT, value REAL)")
         
@@ -233,7 +245,7 @@ class test_result_set_api {
         @Expect(valueIndex, 2)
         
         resultSet.close()
-        deleteRdbStore(context, "test_db")
+        deleteRdbStore(context, "test_db_getcolidx")
     }
 
     /*
@@ -248,7 +260,8 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_getColumnName() {
         let context = getAbilityContext()
-        let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
+        deleteRdbStore(context, "test_db_getcolname")
+        let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db_getcolname")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER, name TEXT, value REAL)")
         
@@ -260,7 +273,7 @@ class test_result_set_api {
         @Expect(resultSet.getColumnName(2), "value")
         
         resultSet.close()
-        deleteRdbStore(context, "test_db")
+        deleteRdbStore(context, "test_db_getcolname")
     }
 
     /*
@@ -275,6 +288,7 @@ class test_result_set_api {
     @Tag[APILevel22, TestLevel0]
     func test_ResultSet_close() {
         let context = getAbilityContext()
+        deleteRdbStore(context, "test_db")
         let config = StoreConfig( RelationalStoreSecurityLevel.S1, name: "test_db")
         let rdbStore = getRdbStore(context, config)
         rdbStore.executeSql("CREATE TABLE IF NOT EXISTS test_table (id INTEGER)")

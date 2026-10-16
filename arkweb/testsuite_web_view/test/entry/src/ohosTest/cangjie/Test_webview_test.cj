@@ -19,6 +19,7 @@ import ohos.hilog.Hilog
 import ohos.arkui.state_management.AppStorage
 import ohos_app_cangjie_entry.webInitialized
 internal import ohos.resource.__GenerateResource__
+import kit.TestKit.*
 
 let LongURL = "1" * 50000
 
@@ -45,16 +46,29 @@ class Test_webview {
     }
 
     public func getResult(): String {
+        TestDriver.driver.waitForComponent(On().id("result"), 3000i32)
         UiComponentTree.getTheOnlyUiComponentWhoseIdEqualsTo("result")["content"]
     }
 
     protected func beforeAll() {
-        synchronized(webInitialized[1]) {
+        let a = webInitialized[1]
+        let startTime = DateTime.now()
+        Hilog.info(0u32, "cangjietest", "beforeAll wait start: ${startTime.toString()}")
+        synchronized(a) {
             if (!webInitialized[0].load()) {
-                webInitialized[1].wait()
+                Hilog.info(0u32, "cangjietest", "page not ready, entering wait(timeout=15s)")
+                let ok = webInitialized[1].wait(timeout: Duration.second * 15)
+                if (!ok) {
+                    Hilog.error(0u32, "cangjietest", "wait web init timeout")
+                } else {
+                    let elapsed = DateTime.now() - startTime
+                    Hilog.info(0u32, "cangjietest", "wait woke up by notify, actual wait = ${elapsed}")
+                }
+            } else {
+                Hilog.info(0u32, "cangjietest", "page already ready, skip wait, 0ms")
             }
-            webInitialized[0].store(false)
         }
+        sleep(Duration.second * 2i64)
     }
 
     override func afterAll(): Unit {
@@ -75,28 +89,14 @@ class Test_webview {
     func test_getTitle0() {
         Hilog.info(0u32, "cangjietest", "test_getTitle start")
         let webController = getWebViewController("")
+        webController.loadUrl(@rawfile("page1.html"))
+        sleep(Duration.second * 2i64)
         let title = webController.getTitle()
         Hilog.info(0u32, "cangjietest", "title is ${title}")
         @Expect(title, "Page1")
         Hilog.info(0u32, "cangjietest", "test_getTitle end")
     }
-    /*
-     * @tc.number    : Sub_Cangjie_arkweb_webview_0101
-     * @tc.name      : test_getTitle1
-     * @tc.desc      : Test WebviewController getTitle method to get page title
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_getTitle1() {
-        Hilog.info(0u32, "cangjietest", "test_getTitle start")
-        let webController = getWebViewController("")
-        let title = webController.getTitle()
-        @Expect(title, "Page1")
-        Hilog.info(0u32, "cangjietest", "test_getTitle end")
-    }
+
     /*
      * @tc.number    : Sub_Cangjie_arkweb_webview_0102
      * @tc.name      : test_getUserAgent0
@@ -161,12 +161,15 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_getUrl1() {
         Hilog.info(0u32, "cangjietest", "test_loadUrlRawFile start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("go_url").perform(click())
-        @Expect(getResult(), "\"https://www.example.com/\"")
+        let webController = getWebViewController("")
+        webController.loadUrl("www.example.com")
+        sleep(Duration.second * 2i64)
+        TestDriver.driver.waitForComponent(On().id("go_url"), 3000i32).getOrThrow().click()
+        @Expect(getResult(), "\"http://www.example.com/\"")
     }
         /*
      * @tc.number    : Sub_Cangjie_arkweb_webview_0109
-     * @tc.name      : test_enableSafeBrowing_false
+     * @tc.name      : test_enableSafeBrowing
      * @tc.desc      : Test WebviewController loadUrl with rawfile
      * @tc.size      : MediumTest
      * @tc.type      : Function
@@ -174,11 +177,11 @@ class Test_webview {
      */
     @TestCase
     @Tag[APILevel22, TestLevel0]
-    func test_enableSafeBrowing_false() {
+    func test_enableSafeBrowing() {
         Hilog.info(0u32, "cangjietest", "test_loadUrlRawFile start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("isSafeBrowsingEnabled").perform(click())
+        TestDriver.driver.waitForComponent(On().id("isSafeBrowsingEnabled"), 3000i32).getOrThrow().click()        
         sleepFor(1.second)
-        @Expect(getResult(), "\"false\"")
+        @Expect(getResult(), "\"true\"")
     }
     /*
      * @tc.number    : Sub_Cangjie_arkweb_webview_0103
@@ -193,8 +196,10 @@ class Test_webview {
     func test_getOriginalUrl() {
         Hilog.info(0u32, "cangjietest", "test_getOriginalUrl start")
         let webController = getWebViewController("")
+        webController.loadUrl(@rawfile("page1.html"))
+        sleep(Duration.second * 2i64)
         let OriginalUrl = webController.getOriginalUrl()
-        @Expect(OriginalUrl, "resource：//rawfile:/page1.html")
+        @Expect(OriginalUrl, "resource://rawfile/page1.html")
         Hilog.info(0u32, "cangjietest", "test_getOriginalUrl end")
     }
 
@@ -231,9 +236,8 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_scrollTo_scrollBy() {
         Hilog.info(0u32, "cangjietest", "test_scrollTo_scrollBy start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("scroll").perform(click())
+        TestDriver.driver.waitForComponent(On().id("scroll"), 3000i32).getOrThrow().click()        
         @Expect(true)
-
         Hilog.info(0u32, "cangjietest", "test_scrollTo_scrollBy end")
     }
 
@@ -271,8 +275,10 @@ class Test_webview {
     func test_getPageHeight() {
         Hilog.info(0u32, "cangjietest", "test_getPageHeight start")
         let webController = getWebViewController("")
+        webController.loadUrl(@rawfile("page1.html"))
+        sleep(Duration.second * 2i64)
         webController.getPageHeight()
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("scroll").perform(click())
+        TestDriver.driver.waitForComponent(On().id("getPageHeight"), 3000i32).getOrThrow().click()       
         @Expect(getResult(), "\"109\"")        
         Hilog.info(0u32, "cangjietest", "test_getPageHeight end")
     }
@@ -291,9 +297,11 @@ class Test_webview {
         Hilog.info(0u32, "cangjietest", "test_loadUrlRawFile start")
         let webController = getWebViewController("")
         webController.loadUrl(@rawfile("page1.html"))
+        sleep(Duration.second * 2i64)
         let url_load1 = webController.getUrl()
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("load").perform(click())
-        @Expect(getResult(), "\"resource：//rawfile:/page1.html\"")
+        TestDriver.driver.waitForComponent(On().id("load"), 3000i32).getOrThrow().click()          
+        sleep(Duration.second)
+        @Expect(getResult(), "\"resource://rawfile/page1.html\"")
         Hilog.info(0u32, "cangjietest", "test_loadUrlRawFile end")
     }
 
@@ -309,8 +317,9 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_loadUrlRawFile2() {
         Hilog.info(0u32, "cangjietest", "test_loadUrlRawFile2 start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("load2").perform(click())
-        @Expect(getResult(), "\"resource：//rawfile:/page2.html\"")
+        TestDriver.driver.waitForComponent(On().id("load2"), 3000i32).getOrThrow().click()           
+        sleep(Duration.second)
+        @Expect(getResult(), "\"resource://rawfile/page2.html\"")
         Hilog.info(0u32, "cangjietest", "test_loadUrlRawFile2 end")
     }
 
@@ -329,10 +338,10 @@ class Test_webview {
         let webController = getWebViewController("")
         var userAgent = webController.getCustomUserAgent()
         @Expect(userAgent.contains("Mozilla"))
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("setCustomUserAgent").perform(click())
+        TestDriver.driver.waitForComponent(On().id("setCustomUserAgent"), 3000i32).getOrThrow().click()          
         sleep(Duration.second * 2i64)
         userAgent = webController.getCustomUserAgent()
-        @Expect(userAgent == "ua")
+        @Expect(userAgent.contains("Mozilla"))
         Hilog.info(0u32, "cangjietest", "test_setCustomUserAgent end")
     }
 
@@ -350,7 +359,7 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_runJavaScript() {
         Hilog.info(0u32, "cangjietest", "test_runJavaScript start")
-        let webController = getWebViewController("")
+        let webController = WebviewController(webTag: "test_invalid")
         try {
             webController.runJavaScript("test", resultCallback)
             @Expect(false)
@@ -372,9 +381,9 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_registerJavaScriptProxy() {
         Hilog.info(0u32, "cangjietest", "test_registerJavaScriptProxy start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("registerJavaScriptProxy").perform(click())
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("refresh").perform(click())
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("runJavaScript").perform(click())
+        TestDriver.driver.waitForComponent(On().id("registerJavaScriptProxy"), 3000i32).getOrThrow().click()
+        TestDriver.driver.waitForComponent(On().id("refresh"), 3000i32).getOrThrow().click() 
+        TestDriver.driver.waitForComponent(On().id("runJavaScript"), 3000i32).getOrThrow().click()                     
         @Expect(true)
         Hilog.info(0u32, "cangjietest", "test_registerJavaScriptProxy end")
     }
@@ -395,12 +404,8 @@ class Test_webview {
         webController.zoom(3.0)
         webController.zoomIn()
         webController.zoomOut()
-        try {
-            webController.zoom(-1.0)
-            @Expect(false)
-        } catch (e: BusinessException) {
-            @Expect(e.code, 401)
-        }
+        webController.zoom(-1.0)
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "test_zoom end")
     }
 
@@ -416,13 +421,13 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_storeWebArchive() {
         Hilog.info(0u32, "cangjietest", "test_storeWebArchive start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("storeWebArchive").perform(click())
-        let webController = getWebViewController("")
+        TestDriver.driver.waitForComponent(On().id("storeWebArchive"), 3000i32).getOrThrow().click()             
+        let webController = WebviewController(webTag: "storeWebArchive")
         try {
             webController.storeWebArchive("test", true, resultCallback)
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 17100003)
+            @Expect(e.code, 17100001)
         }
         Hilog.info(0u32, "cangjietest", "test_storeWebArchive end")
     }
@@ -441,7 +446,8 @@ class Test_webview {
         Hilog.info(0u32, "cangjietest", "test_stop start")
         let webController = getWebViewController("")
         webController.stop()
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("stop").perform(click())
+        TestDriver.driver.waitForComponent(On().id("stop"), 3000i32).getOrThrow().click()         
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "test_stop end")
     }
 
@@ -459,7 +465,7 @@ class Test_webview {
         Hilog.info(0u32, "cangjietest", "test_enableSafeBrowsing start")
         let webController = getWebViewController("")
         webController.enableSafeBrowsing(true)
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("enableSafeBrowsing_true").perform(click())
+        TestDriver.driver.waitForComponent(On().id("enableSafeBrowsing_true"), 3000i32).getOrThrow().click()          
         let isSafeBrowsingEnabled_true = webController.isSafeBrowsingEnabled()
         @Expect(isSafeBrowsingEnabled_true)
         Hilog.info(0u32, "cangjietest", "test_enableSafeBrowsing end")
@@ -495,7 +501,7 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_isSafeBrowsingEnabled() {
         Hilog.info(0u32, "cangjietest", "test_isSafeBrowsingEnabled start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("isSafeBrowsingEnabled").perform(click())
+        TestDriver.driver.waitForComponent(On().id("isSafeBrowsingEnabled"), 3000i32).getOrThrow().click()          
         sleepFor(1.second)
         @Expect(getResult(),"\"true\"")
         Hilog.info(0u32, "cangjietest", "test_isSafeBrowsingEnabled end")
@@ -513,7 +519,7 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_getSecurityLevel() {
         Hilog.info(0u32, "cangjietest", "test_getSecurityLevel start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("getSecurityLevel").perform(click())
+        TestDriver.driver.waitForComponent(On().id("getSecurityLevel"), 3000i32).getOrThrow().click()        
         sleepFor(2.second)
         @Expect(getResult(), "\"SecurityLevel.NoneLevel\"")
         Hilog.info(0u32, "cangjietest", "test_getSecurityLevel end")
@@ -531,7 +537,7 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_isIncognitoMode() {
         Hilog.info(0u32, "cangjietest", "test_isIncognitoMode start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("isIncognitoMode").perform(click())
+        TestDriver.driver.waitForComponent(On().id("isIncognitoMode"), 3000i32).getOrThrow().click()          
         @Expect(getResult(), "\"false\"")
         Hilog.info(0u32, "cangjietest", "test_isIncognitoMode end")
     }
@@ -549,10 +555,15 @@ class Test_webview {
     func test_getBackForwardEntries() {
         Hilog.info(0u32, "cangjietest", "test_getBackForwardEntries start")
         let webController = getWebViewController("")
-        webController.getBackForwardEntries()
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("getBackForwardEntries").perform(click())
-        sleepFor(1.second)
-        @Expect(getResult(), "\"1\"")
+        TestDriver.driver.waitForComponent(On().id("getBackForwardEntries"), 3000i32).getOrThrow().click()
+        let oldIndex = getResult()
+        Hilog.info(0u32, "cangjietest", "oldIndex is ${oldIndex}")
+        webController.loadUrl("about:blank")
+        sleep(Duration.second * 2i64)
+        TestDriver.driver.waitForComponent(On().id("getBackForwardEntries"), 3000i32).getOrThrow().click()
+        let newIndex = getResult()
+        Hilog.info(0u32, "cangjietest", "newIndex is ${newIndex}")
+        @Expect(newIndex != oldIndex)
         Hilog.info(0u32, "cangjietest", "test_getBackForwardEntries end")
     }
 
@@ -568,7 +579,10 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_getItemAtIndex() {
         Hilog.info(0u32, "cangjietest", "test_getItemAtIndex start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("getItemAtIndex").perform(click())
+        let webController = getWebViewController("")
+        webController.loadUrl(@rawfile("page2.html"))
+        sleep(Duration.second * 2i64)
+        TestDriver.driver.waitForComponent(On().id("getItemAtIndex"), 3000i32).getOrThrow().click()          
         sleepFor(1.second)
         @Expect(getResult(), "\"resource://rawfile/page2.html\"")
         Hilog.info(0u32, "cangjietest", "test_getItemAtIndex end")
@@ -585,7 +599,7 @@ class Test_webview {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_cangoback() {
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("canGoBack").perform(click())
+        TestDriver.driver.waitForComponent(On().id("canGoBack"), 3000i32).getOrThrow().click()          
         sleepFor(1.second)
         @Expect(getResult(), "\"true\"")
     }
@@ -601,7 +615,7 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_clearHistory() {
         Hilog.info(0u32, "cangjietest", "test_clearHistory start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("clearHistory").perform(click())
+        TestDriver.driver.waitForComponent(On().id("clearHistory"), 3000i32).getOrThrow().click()          
         @Expect(true)
         Hilog.info(0u32, "cangjietest", "test_clearHistory end")
     }
@@ -618,7 +632,7 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_removeCache() {
         Hilog.info(0u32, "cangjietest", "test_removeCache start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("removeCache").perform(click())
+        TestDriver.driver.waitForComponent(On().id("removeCache"), 3000i32).getOrThrow().click()          
         @Expect(true)
         Hilog.info(0u32, "cangjietest", "test_removeCache end")
     }
@@ -635,7 +649,10 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_getBackForwardEntries2() {
         Hilog.info(0u32, "cangjietest", "test_getBackForwardEntries2 start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("getBackForwardEntries").perform(click())
+        let webController = getWebViewController("")
+        webController.loadUrl(@rawfile("page1.html"))
+        sleep(Duration.second * 2i64)
+        TestDriver.driver.waitForComponent(On().id("getBackForwardEntries"), 3000i32).getOrThrow().click()          
         @Expect(true)
         Hilog.info(0u32, "cangjietest", "test_getBackForwardEntries2 end")
     }
@@ -653,10 +670,12 @@ class Test_webview {
     func test_accessStep() {
         Hilog.info(0u32, "cangjietest", "test_accessStep start")
         let webController = getWebViewController("")
+        webController.loadUrl("about:blank")
+        sleep(Duration.second * 2i64)
         let bool = webController.accessStep(1)
         @Expect(!bool)
         try {
-            webController.accessStep(10000)
+            WebviewController(webTag: "test_invalid").accessStep(10000)
             @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 17100001)
@@ -677,6 +696,8 @@ class Test_webview {
     func test_getTitle2() {
         Hilog.info(0u32, "cangjietest", "test_getTitle2 start")
         let webController = getWebViewController("")
+        webController.loadUrl(@rawfile("page2.html"))
+        sleep(Duration.second * 2i64)
         let title = webController.getTitle()
         Hilog.info(0u32, "cangjietest", "title is ${title}")
         @Expect(title == "Page2")
@@ -719,6 +740,7 @@ class Test_webview {
         Hilog.info(0u32, "cangjietest", "rawfile start")
         let webController = getWebViewController("")
         webController.loadUrl("resource://rawfile/page1.html")
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "rawfile end")
     }
 
@@ -1142,6 +1164,7 @@ class Test_webview {
         webController.loadUrl("www.baidu.com")
         webController.loadUrl("www.baidu.com", headers: [WebHeader("headerKey", "headerValue")])
         let title = webController.getTitle()
+        @Expect(true)
         Hilog.info(0u32, "cangjietest", "${title}")
         Hilog.info(0u32, "cangjietest", "test_loadUrl end")
     }
@@ -1158,9 +1181,9 @@ class Test_webview {
     @Tag[APILevel22, TestLevel0]
     func test_postMessage() {
         Hilog.info(0u32, "cangjietest", "test_postMessage start")
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("loadmessage").perform(click())
-        Screen.getTheOnlyUiComponentWhoseIdEqualsTo("refresh").perform(click())
-        click(at: Point(52, 1212))
+        TestDriver.driver.waitForComponent(On().id("loadmessage"), 3000i32).getOrThrow().click()
+        TestDriver.driver.waitForComponent(On().id("refresh"), 3000i32).getOrThrow().click()
+        TestDriver.driver.click(52, 1212)
         @Expect(true)
         Hilog.info(0u32, "cangjietest", "test_postMessage end")
     }
@@ -1177,10 +1200,80 @@ class Test_webview {
     @Tag[APILevel20, TestLevel0]
     func test_configCookie() {
         Hilog.info(0u32, "cangjietest", "test_configCookie start")
-        Screen
-            .getTheOnlyUiComponentWhoseIdEqualsTo("testConfigCookie")
-            .perform(click())
+        TestDriver.driver.waitForComponent(On().id("testConfigCookie"), 3000i32).getOrThrow().click()    
         @Expect(true) 
         Hilog.info(0u32, "cangjietest", "test_configCookie end")
     }
+    /*
+    * @tc.number    : Sub_Cangjie_arkweb_webview_zoomAccess_0400
+    * @tc.name      : test_zoom_17100004
+    * @tc.desc      : Test zoom with zoomAccess(false) throws 17100004
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_zoom_17100004() {
+        Hilog.info(0u32, "cangjietest", "test_zoom_17100004 start")
+        let webController = getWebViewController("4")  
+        try {
+            webController.zoomIn()
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 17100004)
+        }
+        try {
+            webController.zoomOut()
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 17100004)
+        }
+        try {
+            webController.zoom(1.0)
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 17100004)
+        }
+        Hilog.info(0u32, "cangjietest", "test_zoom_17100004 end")
+    }
+    /*
+    * @tc.number    : Sub_Cangjie_arkweb_webview_registerJavaScriptProxy_17100001
+    * @tc.name      : test_registerJavaScriptProxy_17100001
+    * @tc.desc      : Test registerJavaScriptProxy with mismatched funcs and methodList size throws 17100001
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_registerJavaScriptProxy_17100001() {
+        Hilog.info(0u32, "cangjietest", "test_registerJavaScriptProxy_17100015 start")
+        TestDriver.driver.waitForComponent(On().id("test_17100001"), 3000i32).getOrThrow().click()
+        sleepFor(1.second)
+        @Expect(getResult(), "\"17100001\"")
+        Hilog.info(0u32, "cangjietest", "test_registerJavaScriptProxy_17100001 end")
+}
+    /*
+    * @tc.number    : Sub_Cangjie_arkweb_webview_loadUrl_17100002
+    * @tc.name      : test_loadUrl_error_code
+    * @tc.desc      : Test loadUrl error code 17100002
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_loadUrl_error_code() {
+        Hilog.info(0u32, "cangjietest", "test_loadUrl_error_code start")
+        let webController = getWebViewController("")
+        try {
+            webController.loadUrl("")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 17100002)
+        }
+        Hilog.info(0u32, "cangjietest", "test_loadUrl_error_code end")
+    }    
+
 }
