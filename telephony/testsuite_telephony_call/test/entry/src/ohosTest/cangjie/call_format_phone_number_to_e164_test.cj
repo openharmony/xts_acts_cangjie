@@ -45,7 +45,6 @@ class TestCallFormatPhoneNumberToE164 {
         for ((parameter_0, parameter_1) in cases_1321) {
             let result = Call.formatPhoneNumberToE164("12345678910", parameter_0)
             @Expect(result,parameter_1)
-
         }
     }
 }

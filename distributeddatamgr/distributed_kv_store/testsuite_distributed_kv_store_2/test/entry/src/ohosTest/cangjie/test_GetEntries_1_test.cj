@@ -77,7 +77,6 @@ class test_GetEntries_1 {
         store.put("test_user_002", StringValue("Bob"))
         store.put("test_user_003", StringValue("Charlie"))
         store.put("test_product_001", StringValue("Laptop"))        
-        // 执行查询 - 查询以"test_user_"为前缀的条目
         let entries = store.getEntries("test_dog_")
         @Expect(entries.size, 0)
         kvManager.closeKVStore(bundleName, "test_devicekvstore_put_get_07_id")

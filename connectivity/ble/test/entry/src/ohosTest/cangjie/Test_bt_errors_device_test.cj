@@ -191,7 +191,7 @@ class Test_bt_errors_device {
             Hilog.error(0u32, "cangjietest", "client.setBleMtuSize code=${e.code}")
             @Expect(e.code, 2900099i32)
         }
-try { client.close() } catch (e: BusinessException) { Hilog.error(0u32, "cangjietest", "client.close() cleanup code=${e.code}") }
+        try { client.close() } catch (e: BusinessException) { Hilog.error(0u32, "cangjietest", "client.close() cleanup code=${e.code}") }
         Hilog.info(0u32, "cangjietest", "device case Test_Err_Dev_GattClient_ServiceAbnormal ends.")
     }
 

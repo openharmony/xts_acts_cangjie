@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -130,7 +130,9 @@ class Test_bt_noperm_device {
      * @tc.number    : Sub_Cangjie_ConnectivityKit_bt_noperm_dev_3103
      * @tc.name      : Test_Err_Dev_NoPerm_Profiles
      * @tc.desc      : Requires ACCESS_BLUETOOTH not granted on real device. Cover
-     *                 a2dp/hfp/base profile state query permission denied path (201)
+     *                 a2dp/hfp/base profile state query without permission. A valid
+     *                 deviceId hits the permission gate (201); an empty deviceId is
+     *                 rejected by the parameter check first (401, hfp measured 2900099)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -169,6 +171,34 @@ class Test_bt_noperm_device {
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "base.getConnectionState code=${e.code}")
             @Expect(e.code, 201i32)
+        }
+        try {
+            let _: ProfileConnectionState = a2dp.getConnectionState("")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            Hilog.error(0u32, "cangjietest", "a2dp.getConnectionState(empty) code=${e.code}")
+            @Expect(e.code, 401i32)
+        }
+        try {
+            let _: PlayingState = a2dp.getPlayingState("")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            Hilog.error(0u32, "cangjietest", "a2dp.getPlayingState(empty) code=${e.code}")
+            @Expect(e.code, 401i32)
+        }
+        try {
+            let _: ProfileConnectionState = hfp.getConnectionState("")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            Hilog.error(0u32, "cangjietest", "hfp.getConnectionState(empty) code=${e.code}")
+            @Expect(e.code, 2900099i32)
+        }
+        try {
+            let _: ProfileConnectionState = base.getConnectionState("")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            Hilog.error(0u32, "cangjietest", "base.getConnectionState(empty) code=${e.code}")
+            @Expect(e.code, 401i32)
         }
         Hilog.info(0u32, "cangjietest", "device case Test_Err_Dev_NoPerm_Profiles ends.")
     }

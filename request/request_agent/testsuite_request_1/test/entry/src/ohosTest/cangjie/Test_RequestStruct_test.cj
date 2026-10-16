@@ -15,6 +15,11 @@
 
 package ohos_app_cangjie_entry_test
 
+import std.fs.{Path, removeIfExists}
+import ohos.app.ability.ability_delegator_registry.AbilityDelegatorRegistry
+import ohos.business_exception.*
+import kit.NetworkKit.hasDefaultNet
+import std.sync.AtomicInt64
 import std.unittest.*
 import std.unittest.common.*
 import std.unittest.testmacro.*
@@ -276,23 +281,18 @@ class Test_RequestStruct {
                 break
             }
             sleepFor(1.second)
-            try {
-                let info = show(task.tid)
-                Hilog.info(0u32, "cangjietest",
-                    "TaskInfo ctime=${info.ctime} mtime=${info.mtime} tries=${info.tries} reason=${info.reason}")
-                @Expect(info.ctime > 0, true)
-                @Expect(info.mtime > 0, true)
-                Hilog.info(0u32, "cangjietest", "Progress sizes.size=${info.progress.sizes.size}")
-                match (info.progress.state) {
-                    case Waiting => sawWaiting = true
-                    case Retrying => sawRetrying = true
-                    case Failed => terminalState = Some(State.Failed)
-                    case Completed => terminalState = Some(State.Completed)
-                    case _ => ()
-                }
-            } catch (e: BusinessException) {
-                Hilog.info(0u32, "cangjietest", "show tid=${task.tid} code=${e.code}")
-                terminalState = Some(State.Failed)
+            let info = show(task.tid)
+            Hilog.info(0u32, "cangjietest",
+                "TaskInfo ctime=${info.ctime} mtime=${info.mtime} tries=${info.tries} reason=${info.reason}")
+            @Expect(info.ctime > 0, true)
+            @Expect(info.mtime > 0, true)
+            Hilog.info(0u32, "cangjietest", "Progress sizes.size=${info.progress.sizes.size}")
+            match (info.progress.state) {
+                case Waiting => sawWaiting = true
+                case Retrying => sawRetrying = true
+                case Failed => terminalState = Some(State.Failed)
+                case Completed => terminalState = Some(State.Completed)
+                case _ => ()
             }
         }
         match (terminalState) {
@@ -329,6 +329,83 @@ class Test_RequestStruct {
         @Expect(EventCallbackType.Progress.hashCode() != EventCallbackType.Completed.hashCode())
         Hilog.info(0u32, "cangjietest", "testcase Test_request_enumOperators ends.")
     }
+
+    /*
+     * @tc.number    : Sub_Cangjie_Request_CompleteBroadcast_0100
+     * @tc.name      : test_completionBroadcast
+     * @tc.desc      : Downloads a real file and verifies completed task state and completion broadcast code 64.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_completionBroadcast(): Unit {
+        var networkAvailable = false
+        try {
+            networkAvailable = hasDefaultNet()
+        } catch (e: BusinessException) {
+            AbilityDelegatorRegistry.getAbilityDelegator().print("network state unavailable code=${e.code}")
+            @Expect(false)
+        }
+        if (!networkAvailable) {
+            AbilityDelegatorRegistry.getAbilityDelegator().print("CJ_XTS_COMPLETE_SKIPPED_NETWORK_OFFLINE")
+            return
+        }
+        let context = getAbilityContext()
+        let event = BroadcastEvent.Complete.toString()
+        let subscriber: CommonEventSubscriber = CommonEventManager.createSubscriber(CommonEventSubscribeInfo([event]))
+        let received = AtomicInt64(0)
+        let code = AtomicInt64(-1)
+        let callback: AsyncCallback<CommonEventData> = { error, data =>
+            if (error.isNone() && data.isSome()) {
+                let value = data.getOrThrow()
+                if (value.event == event) {
+                    code.store(Int64(value.code))
+                    received.fetchAdd(1)
+                }
+            }
+        }
+        CommonEventManager.subscribe(subscriber, callback)
+        let filename = "cj_xts_complete_0100.png"
+        try {
+            let task = create(context, Config(Action.Download,
+                "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+                saveas: filename, overwrite: true, retry: false, mode: Mode.Background))
+            try {
+                task.start()
+                var attempts = 0i64
+                var completed = false
+                while (attempts < 60i64 && !completed) {
+                    completed = match (show(task.tid).progress.state) {
+                        case Completed => true
+                        case _ => false
+                    }
+                    sleep(Duration.second)
+                    attempts += 1
+                }
+                let finalInfo = show(task.tid)
+                AbilityDelegatorRegistry.getAbilityDelegator().print("download state=${finalInfo.progress.state} faults=${finalInfo.faults.toString()} reason=${finalInfo.reason}")
+                @Expect(completed, true)
+                attempts = 0i64
+                while (received.load() == 0i64 && attempts < 10i64) {
+                    sleep(Duration.second)
+                    attempts += 1
+                }
+                @Expect(received.load() > 0i64, true)
+                @Expect(code.load(), 64i64)
+            } catch (e: BusinessException) {
+                @Expect(false)
+            } finally {
+                remove(task.tid)
+            }
+        } catch (e: BusinessException) {
+            @Expect(false)
+        } finally {
+            CommonEventManager.unsubscribe(subscriber)
+            removeIfExists(Path(context.filesDir + "/" + filename), recursive: false)
+        }
+    }
 }
 
 class HttpResponseCb <: Callback1Argument<HttpResponse> {
@@ -339,4 +416,5 @@ class HttpResponseCb <: Callback1Argument<HttpResponse> {
     public open func invoke(err: ?BusinessException, val: HttpResponse): Unit {
         callback_(val)
     }
+
 }

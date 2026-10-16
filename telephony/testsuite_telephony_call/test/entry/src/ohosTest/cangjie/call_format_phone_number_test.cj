@@ -59,7 +59,6 @@ class TestCallFormatPhoneNumber {
         for ((parameter_0, parameter_1) in cases_1322) {
             let result = Call.formatPhoneNumber("12345678910", options: NumberFormatOptions(countryCode: parameter_0))
             @Expect(result,parameter_1)
-
         }
     }
 }

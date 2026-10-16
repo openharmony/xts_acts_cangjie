@@ -79,11 +79,12 @@ class TestSensorGetSensorList {
     @Tag[APILevel22, TestLevel0]
     func test_get_single_sensor_unsupported_sensor_throws_exception(): Unit {
         let sensors = getSensorList()
-        if (sensors.size == 0) { return }
-        let sensorTypes = [Accelerometer, Gyroscope, AmbientLight, MagneticField, Barometer, Hall,
-            Proximity, Humidity, Orientation, Gravity, LinearAccelerometer, RotationVector,
-            AmbientTemperature, MagneticFieldUncalibrated, GyroscopeUncalibrated,
-            SignificantMotion, PedometerDetection, Pedometer, HeartRate, WearDetection,
+        if (sensors.size == 0) {
+            return
+        }
+        let sensorTypes = [Accelerometer, Gyroscope, AmbientLight, MagneticField, Barometer, Hall, Proximity, Humidity,
+            Orientation, Gravity, LinearAccelerometer, RotationVector, AmbientTemperature, MagneticFieldUncalibrated,
+            GyroscopeUncalibrated, SignificantMotion, PedometerDetection, Pedometer, HeartRate, WearDetection,
             AccelerometerUncalibrated]
         for (sensorType in sensorTypes) {
             var supported = false
@@ -123,7 +124,9 @@ class TestSensorGetSensorList {
     @Tag[APILevel22, TestLevel0]
     func test_get_single_sensor_supported_sensor_fields_success(): Unit {
         let target = Accelerometer
-        if (!hasSensor(target)) { return }
+        if (!hasSensor(target)) {
+            return
+        }
         let actual = getSingleSensor(target)
         @Expect(actual.sensorId, target.getValue())
         @Expect(actual == actual)

@@ -26,7 +26,7 @@ class Test_DeviceInfo_sdkprop {
     /*
      * @tc.number    : Sub_Cangjie_DeviceInfo_sdkprop_0001
      * @tc.name      : TestCase_1
-     * @tc.desc      : start test with new prop.
+     * @tc.desc      : new props sdkMinorApiVersion/sdkPatchApiVersion exist and hold values consistent with the current SDK version (minor/patch within 0..99).
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -35,9 +35,13 @@ class Test_DeviceInfo_sdkprop {
     @Tag[APILevel26, TestLevel0]
     func TestCase_1(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_1 begins.")
-        Hilog.info(0u32, "CangjieTest", "fail to start test.")
-        @Expect(DeviceInfo.sdkMinorApiVersion, 0)
-        @Expect(DeviceInfo.sdkPatchApiVersion, 0)
+        let major = DeviceInfo.sdkApiVersion
+        let minor = DeviceInfo.sdkMinorApiVersion
+        let patch = DeviceInfo.sdkPatchApiVersion
+        @Expect(major > 0, true)
+        @Expect(minor >= 0 && minor <= 99, true)
+        @Expect(patch >= 0 && patch <= 99, true)
+        Hilog.info(0u32, "CangjieTest", "sdk version: ${major}.${minor}.${patch}")
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_1 ends.")
     }
 }

@@ -26,4 +26,5 @@ func testsuite() {
     registerTestSuite {Test_rpc_03()}
     registerTestSuite {Test_rpc_ashmem()}
     registerTestSuite {Test_rpc_errors()}
+    registerTestSuite {Test_rpc_errors2()}
 }

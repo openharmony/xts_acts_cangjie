@@ -21,6 +21,7 @@ import std.unittest.common.*
 import ohos.ui_test.*
 import kit.ArkData.*
 import ohos.business_exception.BusinessException
+import std.time.*
 
 @Test
 class Test_get_getAll_flush_clear_05 {
@@ -61,6 +62,8 @@ class Test_get_getAll_flush_clear_05 {
             let stringArray = Array<String>(100, repeat: "cangjie")
             preferences.put("${i}", PreferencesValueType.StringArray(stringArray))
         }
+        preferences.flush()
+        sleep(Duration.second)
     }
     public override func afterEach(): Unit {
         preferences.clear()
@@ -85,6 +88,8 @@ class Test_get_getAll_flush_clear_05 {
         for (i in 0..7000) {
             preferences.delete("${i}")
         }
+        preferences.flush()  
+        sleep(Duration.second)
         for (i in 0..7000) {
             @Expect(preferences.has("${i}"), false)
         }

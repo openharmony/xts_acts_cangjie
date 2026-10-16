@@ -32,10 +32,9 @@ class TestSensorParameterCoverage {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_sensor_id_enum_and_methods_success(): Unit {
-        let ids = [Accelerometer, Gyroscope, AmbientLight, MagneticField, Barometer, Hall,
-            Proximity, Humidity, Orientation, Gravity, LinearAccelerometer, RotationVector,
-            AmbientTemperature, MagneticFieldUncalibrated, GyroscopeUncalibrated,
-            SignificantMotion, PedometerDetection, Pedometer, HeartRate, WearDetection,
+        let ids = [Accelerometer, Gyroscope, AmbientLight, MagneticField, Barometer, Hall, Proximity, Humidity,
+            Orientation, Gravity, LinearAccelerometer, RotationVector, AmbientTemperature, MagneticFieldUncalibrated,
+            GyroscopeUncalibrated, SignificantMotion, PedometerDetection, Pedometer, HeartRate, WearDetection,
             AccelerometerUncalibrated]
         for (id in ids) {
             @Expect(id.getValue() >= 0)

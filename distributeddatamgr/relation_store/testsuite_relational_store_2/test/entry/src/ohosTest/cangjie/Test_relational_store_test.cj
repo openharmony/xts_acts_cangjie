@@ -52,6 +52,10 @@ class TestCallback <: Callback0Argument {
 
 @Test
 class Test_relational_store {
+    let rdbTestConfig = StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db", encrypt: false, dataGroupId: "",
+        customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
+        isReadOnly: false, pluginLibs: ["pluginLibs"], cryptoParam: CryptoParam(), vector: false,
+        tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false)
     let rdbPridecates = RdbPredicates("test")
     let asset = Asset("info1", "uri1", "path1", "0:00", "8:00", "100MB")
     let allValueTypes = [
@@ -65,11 +69,13 @@ class Test_relational_store {
         RelationalStoreValueType.AssetsEnum([asset])
     ]
     override func beforeAll(): Unit {
-        testRelStore = getRdbStore(getAbilityContext(),
-            StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db", encrypt: false, dataGroupId: "",
-                customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
-                isReadOnly: true, pluginLibs: ["pluginLibs"], cryptoParam: CryptoParam(), vector: false,
-                tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
+        try {
+            deleteRdbStore(getAbilityContext(), rdbTestConfig)
+            Hilog.info(0u32, "cangjietest", "beforeAll deleteRdbStore RdbTest.db succeeded")
+        } catch (e: BusinessException) { 
+            Hilog.info(0u32, "cangjietest", "beforeAll deleteRdbStore RdbTest.db failed, code: ${e.code}, msg: ${e.message}")
+        }
+        testRelStore = getRdbStore(getAbilityContext(), rdbTestConfig)
         let rdbStore = testRelStore.getOrThrow()
         sleepFor(1.second)
         rdbStore.executeSql(
@@ -103,18 +109,12 @@ class Test_relational_store {
     }
 
     override func afterAll(): Unit {
-        let rdbStore = testRelStore.getOrThrow()
-        deleteRdbStore(getAbilityContext(),
-            StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db", encrypt: false, dataGroupId: "",
-                customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
-                isReadOnly: true, pluginLibs: ["pluginLibs"], cryptoParam: CryptoParam(), vector: false,
-                tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-        getRdbStore(getAbilityContext(),
-            StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest.db", encrypt: false, dataGroupId: "",
-                customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true, allowRebuild: false,
-                isReadOnly: true, pluginLibs: ["pluginLibs"], cryptoParam: CryptoParam(), vector: false,
-                tokenizer: Tokenizer.NoneTokenizer, persist: true, enableSemanticIndex: false))
-        deleteRdbStore(getAbilityContext(), "RdbTest1.db")
+        try {
+            deleteRdbStore(getAbilityContext(), rdbTestConfig)
+            Hilog.info(0u32, "cangjietest", "afterAll deleteRdbStore RdbTest.db succeeded")
+        } catch (e: BusinessException) {
+            Hilog.info(0u32, "cangjietest", "afterAll deleteRdbStore RdbTest.db failed, code: ${e.code}, msg: ${e.message}")
+        }
         GC()
         sleep(Duration.second)
     }
@@ -659,7 +659,8 @@ class Test_relational_store {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_delete() {
-        let rdbStore = testRelStore.getOrThrow()
+        let rdbStore = getRdbStore(getAbilityContext(),
+            StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest_delete.db"))
         rdbStore.executeSql(
             "CREATE TABLE PEOPLE(ID int NOT NULL, NAME varchar(255) NOT NULL, AGE int, PRIMARY KEY (Id))")
         var values = HashMap<String, RelationalStoreValueType>()
@@ -680,12 +681,13 @@ class Test_relational_store {
         try {
             let exceptionPredicates = RdbPredicates("PEO")
             rdbStore.delete(exceptionPredicates)
-            @Expect(true)
-        } catch (_: BusinessException) {
             @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 14800021)
         }
         @Expect(rdbStore.delete(predicates), 2)
         @Expect(rdbStore.query(predicates,columns: ["ID", "NAME", "AGE"]).rowCount, 0)
+        deleteRdbStore(getAbilityContext(), "RdbTest_delete.db")
     }
 
     /*
@@ -745,7 +747,8 @@ class Test_relational_store {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_transaction() {
-        let rdbStore = testRelStore.getOrThrow()
+        let rdbStore = getRdbStore(getAbilityContext(),
+            StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest_transaction.db"))
         rdbStore.executeSql("CREATE TABLE THING(ID int NOT NULL, NAME varchar(255) NOT NULL, PRIMARY KEY (Id))")
         var values = HashMap<String, RelationalStoreValueType>()
         values.add("ID", RelationalStoreValueType.Integer(1))
@@ -770,13 +773,14 @@ class Test_relational_store {
             throw Exception("there is error!")
             rdbStore.commit()
             @Expect(false)
-        } catch (e: BusinessException) {
-            @Expect(e.code, 14800000)
+        } catch (e: Exception) {
+            @Expect(true)
             rdbStore.rollBack()
         }
         let predicates2 = RdbPredicates("THING")
         let resultSet2 = rdbStore.query(predicates2, columns: ["ID", "NAME"])
         @Expect(resultSet2.rowCount, 2)
+        deleteRdbStore(getAbilityContext(), "RdbTest_transaction.db")
     }
 
     /*
@@ -854,7 +858,7 @@ class Test_relational_store {
             let map1 = resultSet1.getRow()
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 14800013i32) 
+            @Expect(e.code, 14800012i32) 
             }
         match (map["ID"]) {
             case RelationalStoreValueType.Integer(v) =>
@@ -1016,7 +1020,31 @@ class Test_relational_store {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_update() {
-        let rdbStore = testRelStore.getOrThrow()
+        let rdbStore = getRdbStore(getAbilityContext(),
+            StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest_update.db"))
+        rdbStore.executeSql(
+            "CREATE TABLE EMPLOYEE(ID INT NOT NULL, NAME VARCHAR(255) NOT NULL, AGE INT, SALARY FLOAT NOT NULL, CODES TINYINT(1) NOT NULL, PRIMARY KEY (ID))")
+        var initValues = HashMap<String, RelationalStoreValueType>()
+        initValues.add("ID", RelationalStoreValueType.Integer(1))
+        initValues.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
+        initValues.add("AGE", RelationalStoreValueType.Integer(18))
+        initValues.add("SALARY", RelationalStoreValueType.Double(100.5))
+        initValues.add("CODES", RelationalStoreValueType.Boolean(true))
+        rdbStore.insert("EMPLOYEE", initValues)
+        initValues = HashMap<String, RelationalStoreValueType>()
+        initValues.add("ID", RelationalStoreValueType.Integer(2))
+        initValues.add("NAME", RelationalStoreValueType.StringValue("Peter"))
+        initValues.add("AGE", RelationalStoreValueType.Integer(18))
+        initValues.add("SALARY", RelationalStoreValueType.Double(1000.5))
+        initValues.add("CODES", RelationalStoreValueType.Boolean(false))
+        rdbStore.insert("EMPLOYEE", initValues)
+        initValues = HashMap<String, RelationalStoreValueType>()
+        initValues.add("ID", RelationalStoreValueType.Integer(3))
+        initValues.add("NAME", RelationalStoreValueType.StringValue("Lily"))
+        initValues.add("AGE", RelationalStoreValueType.Integer(19))
+        initValues.add("SALARY", RelationalStoreValueType.Double(10000.5))
+        initValues.add("CODES", RelationalStoreValueType.Boolean(false))
+        rdbStore.insert("EMPLOYEE", initValues)
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.`inValues`("NAME", [RelationalStoreValueType.StringValue("Peter")])
         var values = HashMap<String, RelationalStoreValueType>()
@@ -1029,6 +1057,7 @@ class Test_relational_store {
             columns: ["ID", "NAME", "AGE", "SALARY"])
         @Expect(resultSet.goToNextRow())
         @Expect(resultSet.getString(resultSet.getColumnIndex("NAME")), "P")
+        deleteRdbStore(getAbilityContext(), "RdbTest_update.db")
     }
 
     /*
@@ -1076,7 +1105,31 @@ class Test_relational_store {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_batchInsert() {
-        let rdbStore = testRelStore.getOrThrow()
+        let rdbStore = getRdbStore(getAbilityContext(),
+            StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest_batchInsert.db"))
+        rdbStore.executeSql(
+            "CREATE TABLE EMPLOYEE(ID INT NOT NULL, NAME VARCHAR(255) NOT NULL, AGE INT, SALARY FLOAT NOT NULL, CODES TINYINT(1) NOT NULL, PRIMARY KEY (ID))")
+        var initValues = HashMap<String, RelationalStoreValueType>()
+        initValues.add("ID", RelationalStoreValueType.Integer(1))
+        initValues.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
+        initValues.add("AGE", RelationalStoreValueType.Integer(18))
+        initValues.add("SALARY", RelationalStoreValueType.Double(100.5))
+        initValues.add("CODES", RelationalStoreValueType.Boolean(true))
+        rdbStore.insert("EMPLOYEE", initValues)
+        initValues = HashMap<String, RelationalStoreValueType>()
+        initValues.add("ID", RelationalStoreValueType.Integer(2))
+        initValues.add("NAME", RelationalStoreValueType.StringValue("Peter"))
+        initValues.add("AGE", RelationalStoreValueType.Integer(18))
+        initValues.add("SALARY", RelationalStoreValueType.Double(1000.5))
+        initValues.add("CODES", RelationalStoreValueType.Boolean(false))
+        rdbStore.insert("EMPLOYEE", initValues)
+        initValues = HashMap<String, RelationalStoreValueType>()
+        initValues.add("ID", RelationalStoreValueType.Integer(3))
+        initValues.add("NAME", RelationalStoreValueType.StringValue("Lily"))
+        initValues.add("AGE", RelationalStoreValueType.Integer(19))
+        initValues.add("SALARY", RelationalStoreValueType.Double(10000.5))
+        initValues.add("CODES", RelationalStoreValueType.Boolean(false))
+        rdbStore.insert("EMPLOYEE", initValues)
         let predicates = RdbPredicates("EMPLOYEE")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         @Expect(resultSet.rowCount, 3)
@@ -1112,6 +1165,7 @@ class Test_relational_store {
         rdbStore.delete(predicates2)
         let resultSet3 = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         @Expect(resultSet3.rowCount, 3)
+        deleteRdbStore(getAbilityContext(), "RdbTest_batchInsert.db")
     }
 
     /*
@@ -1133,7 +1187,7 @@ class Test_relational_store {
             resultSet.isColumnNull(-1)
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 14800013i32)
+            @Expect(e.code, 14800012i32)
         }
         try {
             resultSet.getColumnName(-1)
@@ -1145,7 +1199,7 @@ class Test_relational_store {
             resultSet.getDouble(-1)
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 14800013i32)
+            @Expect(e.code, 14800012i32)
         }
         @Expect(resultSet.goToRow(0), true)
         @Expect(resultSet.getDouble(3), 100.5)
@@ -1172,7 +1226,31 @@ class Test_relational_store {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_get() {
-        let rdbStore = testRelStore.getOrThrow()
+        let rdbStore = getRdbStore(getAbilityContext(),
+            StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest_get.db"))
+        rdbStore.executeSql(
+            "CREATE TABLE EMPLOYEE(ID INT NOT NULL, NAME VARCHAR(255) NOT NULL, AGE INT, SALARY FLOAT NOT NULL, CODES TINYINT(1) NOT NULL, PRIMARY KEY (ID))")
+        var initValues = HashMap<String, RelationalStoreValueType>()
+        initValues.add("ID", RelationalStoreValueType.Integer(1))
+        initValues.add("NAME", RelationalStoreValueType.StringValue("Lisa"))
+        initValues.add("AGE", RelationalStoreValueType.Integer(18))
+        initValues.add("SALARY", RelationalStoreValueType.Double(100.5))
+        initValues.add("CODES", RelationalStoreValueType.Boolean(true))
+        rdbStore.insert("EMPLOYEE", initValues)
+        initValues = HashMap<String, RelationalStoreValueType>()
+        initValues.add("ID", RelationalStoreValueType.Integer(2))
+        initValues.add("NAME", RelationalStoreValueType.StringValue("Peter"))
+        initValues.add("AGE", RelationalStoreValueType.Integer(18))
+        initValues.add("SALARY", RelationalStoreValueType.Double(1000.5))
+        initValues.add("CODES", RelationalStoreValueType.Boolean(false))
+        rdbStore.insert("EMPLOYEE", initValues)
+        initValues = HashMap<String, RelationalStoreValueType>()
+        initValues.add("ID", RelationalStoreValueType.Integer(3))
+        initValues.add("NAME", RelationalStoreValueType.StringValue("Lily"))
+        initValues.add("AGE", RelationalStoreValueType.Integer(19))
+        initValues.add("SALARY", RelationalStoreValueType.Double(10000.5))
+        initValues.add("CODES", RelationalStoreValueType.Boolean(false))
+        rdbStore.insert("EMPLOYEE", initValues)
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.orderByAsc("SALARY")
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
@@ -1234,6 +1312,7 @@ class Test_relational_store {
         } catch (e: BusinessException) {
             @Expect(e.code, 14800013)
         }
+        deleteRdbStore(getAbilityContext(), "RdbTest_get.db")
     }
 
     /*
@@ -1247,38 +1326,40 @@ class Test_relational_store {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_executeSql() {
-        let rdbStore = testRelStore.getOrThrow()
+        let rwStore = getRdbStore(getAbilityContext(),
+            StoreConfig(RelationalStoreSecurityLevel.S1, name: "RdbTest_executeSql.db", isReadOnly: false))
         try {
-            rdbStore.executeSql("")
+            rwStore.executeSql("")
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 401) 
-            }
+            @Expect(e.code, 401)
+        }
         try {
-            rdbStore.executeSql("123abc")
+            rwStore.executeSql("123abc")
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 401) 
-            }
+            @Expect(e.code, 14800021)
+        }
         try {
             let sql = "CREATE TABLE DATA1(ID int NOT NULL, NAME Uint8Array NOT NULL, INFO Asset, INFOS Assets, PRIMARY KEY (?))"
-            rdbStore.executeSql(sql, bindArgs: [RelationalStoreValueType.StringValue("Id")])
+            rwStore.executeSql(sql, bindArgs: [RelationalStoreValueType.StringValue("Id")])
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 401) 
-            }
-        try {
-            rdbStore.executeSql("", bindArgs: [RelationalStoreValueType.StringValue("Id")])
-            @Expect(false)
-        } catch (e: BusinessException) {
-            @Expect(e.code, 401) 
-            }
-        try {
-            rdbStore.executeSql("123123", bindArgs: [RelationalStoreValueType.StringValue("123")])
-            @Expect(false)
-        } catch (e: BusinessException) {
-            @Expect(e.code, 401) 
+            @Expect(e.code, 14800021)
         }
+        try {
+            rwStore.executeSql("", bindArgs: [RelationalStoreValueType.StringValue("Id")])
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 401)
+        }
+        try {
+            rwStore.executeSql("123123", bindArgs: [RelationalStoreValueType.StringValue("123")])
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 14800021)
+        }
+        deleteRdbStore(getAbilityContext(), "RdbTest_executeSql.db")
     }
 
     /*
@@ -1313,7 +1394,7 @@ class Test_relational_store {
             rdbStore.insert("112233", values, conflict: ConflictResolution.OnConflictNone)
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 401) 
+            @Expect(e.code, 14800021) 
             }
     }
 

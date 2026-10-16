@@ -73,8 +73,10 @@ class Test_image_errors {
         let pixelMap = errTestMakePixelMap()
         try {
             pixelMap.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "pixelMap.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             let editable = pixelMap.isEditable
@@ -109,8 +111,10 @@ class Test_image_errors {
         let pixelMap = errTestMakePixelMap()
         try {
             pixelMap.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "pixelMap.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             let info = pixelMap.getImageInfo()
@@ -159,8 +163,10 @@ class Test_image_errors {
         let pixelMap = errTestMakePixelMap()
         try {
             pixelMap.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "pixelMap.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             pixelMap.readPixelsToBuffer(Array<UInt8>(8i64, repeat: 0u8))
@@ -207,8 +213,10 @@ class Test_image_errors {
         let pixelMap = errTestMakePixelMap()
         try {
             pixelMap.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "pixelMap.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             pixelMap.opacity(0.5f32)
@@ -258,8 +266,10 @@ class Test_image_errors {
         let pixelMap = errTestMakePixelMap()
         try {
             pixelMap.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "pixelMap.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             let alphaMap = pixelMap.createAlphaPixelMap()
@@ -287,8 +297,10 @@ class Test_image_errors {
         let pixelMap = errTestMakePixelMap()
         try {
             pixelMap.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "pixelMap.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             let gotColorSpace = pixelMap.getColorSpace()
@@ -316,8 +328,10 @@ class Test_image_errors {
         let pixelMap = errTestMakePixelMap()
         try {
             pixelMap.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "pixelMap.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             pixelMap.setColorSpace(colorSpace)
@@ -345,8 +359,10 @@ class Test_image_errors {
         let imageSource = errTestMakeBufferSource()
         try {
             imageSource.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "imageSource.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             let formats = imageSource.supportedFormats
@@ -494,8 +510,10 @@ class Test_image_errors {
         let pixelMap = errTestMakePixelMap()
         try {
             imagePacker.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "imagePacker.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             let formats = imagePacker.supportedFormats
@@ -589,8 +607,10 @@ class Test_image_errors {
         let receiver = createImageReceiver(Size(2i32, 2i32), ImageFormat.Jpeg, 1i32)
         try {
             receiver.release()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "receiver.release error code", e.code.toString())
+            @Expect(false)
         }
         try {
             let cap = receiver.capacity

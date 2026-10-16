@@ -24,4 +24,5 @@ func testsuite() {
     registerTestSuite {Test_wifi_classes()}
     registerTestSuite {Test_wifi_funcs()}
     registerTestSuite {Test_wifi_errors()}
+    registerTestSuite {TestWifiCoverage201()}
 }

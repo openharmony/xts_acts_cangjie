@@ -43,7 +43,6 @@ class TestFormatPhoneNumberToE164Parameters {
         } catch (e: BusinessException) {
             @Expect(e.code, 8300001i32)
         }
-
     }
 
     /*
@@ -86,7 +85,6 @@ class TestFormatPhoneNumberToE164Parameters {
         ]
         for ((parameter_0, parameter_1, parameter_2) in cases_1314) {
             @Expect(Call.formatPhoneNumberToE164(parameter_0, parameter_1), parameter_2)
-
         }
     }
 }

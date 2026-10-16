@@ -784,6 +784,7 @@ class Test_camera {
         } else {
             @Expect(photoOutput.isMovingPhotoSupported(), false)
         }
+        photoOutput.enableMovingPhoto(true)
         photoSession.release()
         photoOutput.release()
         input.close()
@@ -864,6 +865,7 @@ class Test_camera {
         photoSession.start()
         @Expect(photoOutput.isMirrorSupported(), false)
         photoOutput.enableMirror(true)
+        photoOutput.enableMirror(false)
         photoSession.release()
         photoOutput.release()
         input.close()
@@ -1866,6 +1868,7 @@ class Test_camera {
         let session: VideoSession = getVideoSession()
         let preconfigTypes = [Preconfig720p, Preconfig1080p, Preconfig4k, PreconfigHighQuality]
         let preconfigRatios = [PreconfigRatio_1_1, PreconfigRatio_4_3, PreconfigRatio_16_9]
+        let _ = session.canPreconfig(preconfigTypes[0])
         for (preconfigType in preconfigTypes) {
             for (ratio in preconfigRatios) {
                 if (session.canPreconfig(preconfigType, preconfigRatio: ratio)) {

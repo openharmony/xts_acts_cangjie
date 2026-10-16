@@ -66,9 +66,12 @@ def generate(root, acts):
         rel = project.relative_to(root)
         sub = rel.parts[0]
         name = rel.parts[-1].lower()
-        caps = set(index.get((sub, name), ()))
-        if not caps:
-            caps.update(subsystem.get(sub, ()))
+        if sub in ("ark_interop", "std"):
+            caps = {"SystemCapability.Base"}
+        else:
+            caps = set(index.get((sub, name), ()))
+            if not caps:
+                caps.update(subsystem.get(sub, ()))
         targets = [module.parent / "syscap.json"]
         if (project / "entry/src/ohosTest/module.json5").is_file():
             targets.append(project / "entry/src/ohosTest/syscap.json")

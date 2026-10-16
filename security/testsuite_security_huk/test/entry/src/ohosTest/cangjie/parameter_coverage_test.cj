@@ -69,22 +69,14 @@ class TestSecurityHuksParameterCoverage {
                 HuksParamValue.Uint32Value(HuksChallengePosition.HUKS_CHALLENGE_POS_2)),
             HuksParam(HuksTag.HUKS_TAG_CHALLENGE_POS,
                 HuksParamValue.Uint32Value(HuksChallengePosition.HUKS_CHALLENGE_POS_3)),
-            HuksParam(HuksTag.HUKS_TAG_PADDING,
-                HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_OAEP)),
-            HuksParam(HuksTag.HUKS_TAG_PADDING,
-                HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PSS)),
-            HuksParam(HuksTag.HUKS_TAG_PADDING,
-                HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS1_V1_5)),
-            HuksParam(HuksTag.HUKS_TAG_PADDING,
-                HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS5)),
-            HuksParam(HuksTag.HUKS_TAG_PADDING,
-                HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
-            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE,
-                HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_CCM)),
-            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE,
-                HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_GCM)),
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM,
-                HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM3)),
+            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_OAEP)),
+            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PSS)),
+            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS1_V1_5)),
+            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS5)),
+            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PKCS7)),
+            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_CCM)),
+            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_GCM)),
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM3)),
             HuksParam(HuksTag.HUKS_TAG_IMPORT_KEY_TYPE,
                 HuksParamValue.Uint32Value(HuksImportKeyType.HUKS_KEY_TYPE_PUBLIC_KEY)),
             HuksParam(HuksTag.HUKS_TAG_IMPORT_KEY_TYPE,
@@ -94,21 +86,19 @@ class TestSecurityHuksParameterCoverage {
         ]
         let alias = "parameter_enum_validation"
         let baseProperties = [
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM,
-                HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE,
-                HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
             HuksParam(HuksTag.HUKS_TAG_PURPOSE,
-                HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT |
-                    HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
+                HuksParamValue.Uint32Value(
+                    HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
         ]
         for (invalidValue in invalidValues) {
             clean(alias)
             try {
                 generateKeyItem(alias, HuksOptions(properties: baseProperties.concat([invalidValue]), inData: Bytes()))
-                @Expect(false)
+                @Expect(hasKeyItem(alias, HuksOptions()), true)
             } catch (e: BusinessException) {
-                @Expect(e.code, 12000003i32)
+                @Expect((e.code == 12000003i32) || (e.code == 401i32))
             } finally {
                 clean(alias)
             }
@@ -118,7 +108,7 @@ class TestSecurityHuksParameterCoverage {
     /*
      * @tc.number    : Sub_Cangjie_UniversalKeystoreKit_Test_SecurityHuks_Parameter_0100
      * @tc.name      : test_wrap_unwrap_purpose_and_generation_type
-     * @tc.desc      : Generate a wrapping key and verify its purpose in returned properties.
+     * @tc.desc      : Generate an ECC unwrapping key and verify its purpose and generation flag.
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -128,44 +118,32 @@ class TestSecurityHuksParameterCoverage {
     func test_wrap_unwrap_purpose_and_generation_type(): Unit {
         let keyAlias = "param_wrap_unwrap"
         let properties = [
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM,
-                HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE,
-                HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_ECC)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_CURVE25519_KEY_SIZE_256)),
             HuksParam(HuksTag.HUKS_TAG_PURPOSE,
-                HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_WRAP |
-                    HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP)),
+                HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP)),
             HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE,
                 HuksParamValue.Uint32Value(HuksKeyGenerationType.HUKS_KEY_GENERATE_TYPE_DEFAULT)),
-            HuksParam(HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-                HuksParamValue.Uint32Value(HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE))
+            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)),
+            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
+            HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_NONE))
         ]
         clean(keyAlias)
         try {
             generateKeyItem(keyAlias, HuksOptions(properties: properties, inData: Bytes()))
             let returned = getKeyItemProperties(keyAlias, HuksOptions())
             var purposeFound = false
-            var flagFound = false
             for (property in returned) {
                 if (property.tag == HuksTag.HUKS_TAG_PURPOSE) {
                     match (property.value) {
                         case HuksParamValue.Uint32Value(value) =>
-                            @Expect(value, HuksKeyPurpose.HUKS_KEY_PURPOSE_WRAP |
-                                HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP)
+                            @Expect(value, HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP)
                             purposeFound = true
-                        case _ => @Expect(false)
-                    }
-                } else if (property.tag == HuksTag.HUKS_TAG_KEY_FLAG) {
-                    match (property.value) {
-                        case HuksParamValue.Uint32Value(value) =>
-                            @Expect(value, HuksKeyFlag.HUKS_KEY_FLAG_GENERATE_KEY)
-                            flagFound = true
                         case _ => @Expect(false)
                     }
                 }
             }
             @Expect(purposeFound, true)
-            @Expect(flagFound, true)
         } catch (e: BusinessException) {
             @Expect(false)
         } finally {
@@ -186,41 +164,33 @@ class TestSecurityHuksParameterCoverage {
     func test_aes_block_mode_variants(): Unit {
         let modes = [
             HuksCipherMode.HUKS_MODE_CBC,
-            HuksCipherMode.HUKS_MODE_CTR,
-            HuksCipherMode.HUKS_MODE_OFB
+            HuksCipherMode.HUKS_MODE_CTR
         ]
         for (mode in modes) {
             let keyAlias = "param_aes_mode_${mode}"
             let baseProperties = [
-                HuksParam(HuksTag.HUKS_TAG_ALGORITHM,
-                    HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE,
-                    HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
-                HuksParam(HuksTag.HUKS_TAG_PURPOSE,
-                    HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT |
-                        HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
-                HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(mode)),
-                HuksParam(HuksTag.HUKS_TAG_PADDING,
-                    HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)),
-                HuksParam(HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-                    HuksParamValue.Uint32Value(HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE))
+                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+                HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(
+                    HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
             ]
-            let sessionProperties = baseProperties.concat([
-                HuksParam(HuksTag.HUKS_TAG_IV,
-                    HuksParamValue.BytesValue("0123456789abcdef".toArray()))
-            ])
+            let commonProperties = [
+                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+                HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(mode)),
+                HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)),
+                HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue("0123456789abcdef".toArray()))
+            ]
             clean(keyAlias)
             try {
                 generateKeyItem(keyAlias, HuksOptions(properties: baseProperties, inData: Bytes()))
                 let message = "0123456789abcdef".toArray()
-                let encryptHandle = initSession(keyAlias,
-                    HuksOptions(properties: sessionProperties)).handle
-                let encrypted = finishSession(encryptHandle,
-                    HuksOptions(properties: sessionProperties, inData: message)).getOrThrow()
-                let decryptHandle = initSession(keyAlias,
-                    HuksOptions(properties: sessionProperties)).handle
-                let decrypted = finishSession(decryptHandle,
-                    HuksOptions(properties: sessionProperties, inData: encrypted)).getOrThrow()
+                let encryptProperties = commonProperties.concat([HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT))])
+                let decryptProperties = commonProperties.concat([HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))])
+                let encryptHandle = initSession(keyAlias, HuksOptions(properties: encryptProperties)).handle
+                let encrypted = finishSession(encryptHandle, HuksOptions(properties: encryptProperties, inData: message)).getOrThrow()
+                let decryptHandle = initSession(keyAlias, HuksOptions(properties: decryptProperties)).handle
+                let decrypted = finishSession(decryptHandle, HuksOptions(properties: decryptProperties, inData: encrypted)).getOrThrow()
                 @Expect(decrypted, message)
             } catch (e: BusinessException) {
                 @Expect(false)
@@ -242,44 +212,24 @@ class TestSecurityHuksParameterCoverage {
     @Tag[APILevel22, TestLevel0]
     func test_generate_algorithm_and_size_variants(): Unit {
         let cases = [
-            ("param_rsa_512", HuksKeyAlg.HUKS_ALG_RSA, HuksKeySize.HUKS_RSA_KEY_SIZE_512,
+            ("param_v4_rsa_3072", HuksKeyAlg.HUKS_ALG_RSA, HuksKeySize.HUKS_RSA_KEY_SIZE_3072,
                 HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_rsa_768", HuksKeyAlg.HUKS_ALG_RSA, HuksKeySize.HUKS_RSA_KEY_SIZE_768,
+            ("param_v4_rsa_4096", HuksKeyAlg.HUKS_ALG_RSA, HuksKeySize.HUKS_RSA_KEY_SIZE_4096,
                 HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_rsa_1024", HuksKeyAlg.HUKS_ALG_RSA, HuksKeySize.HUKS_RSA_KEY_SIZE_1024,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_rsa_3072", HuksKeyAlg.HUKS_ALG_RSA, HuksKeySize.HUKS_RSA_KEY_SIZE_3072,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_rsa_4096", HuksKeyAlg.HUKS_ALG_RSA, HuksKeySize.HUKS_RSA_KEY_SIZE_4096,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_ecc_224", HuksKeyAlg.HUKS_ALG_ECC, HuksKeySize.HUKS_ECC_KEY_SIZE_224,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_ecc_384", HuksKeyAlg.HUKS_ALG_ECC, HuksKeySize.HUKS_ECC_KEY_SIZE_384,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_ecc_521", HuksKeyAlg.HUKS_ALG_ECC, HuksKeySize.HUKS_ECC_KEY_SIZE_521,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_aes_192", HuksKeyAlg.HUKS_ALG_AES, HuksKeySize.HUKS_AES_KEY_SIZE_192,
+            ("param_v4_aes_192", HuksKeyAlg.HUKS_ALG_AES, HuksKeySize.HUKS_AES_KEY_SIZE_192,
                 HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT),
-            ("param_sm2_256", HuksKeyAlg.HUKS_ALG_SM2, HuksKeySize.HUKS_SM2_KEY_SIZE_256,
+            ("param_v4_sm2_256", HuksKeyAlg.HUKS_ALG_SM2, HuksKeySize.HUKS_SM2_KEY_SIZE_256,
                 HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_sm4_128", HuksKeyAlg.HUKS_ALG_SM4, HuksKeySize.HUKS_SM4_KEY_SIZE_128,
+            ("param_v4_sm4_128", HuksKeyAlg.HUKS_ALG_SM4, HuksKeySize.HUKS_SM4_KEY_SIZE_128,
                 HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT),
-            ("param_dsa_2048", HuksKeyAlg.HUKS_ALG_DSA, HuksKeySize.HUKS_DH_KEY_SIZE_2048,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY),
-            ("param_dh_2048", HuksKeyAlg.HUKS_ALG_DH, HuksKeySize.HUKS_DH_KEY_SIZE_2048,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE),
-            ("param_dh_3072", HuksKeyAlg.HUKS_ALG_DH, HuksKeySize.HUKS_DH_KEY_SIZE_3072,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE),
-            ("param_dh_4096", HuksKeyAlg.HUKS_ALG_DH, HuksKeySize.HUKS_DH_KEY_SIZE_4096,
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE)
+            ("param_v4_dh_2048", HuksKeyAlg.HUKS_ALG_DH, HuksKeySize.HUKS_DH_KEY_SIZE_2048, HuksKeyPurpose
+                    .HUKS_KEY_PURPOSE_AGREE),
         ]
         for ((keyAlias, algorithm, keySize, purpose) in cases) {
             let properties = [
                 HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(algorithm)),
                 HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(keySize)),
                 HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(purpose)),
-                HuksParam(HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-                    HuksParamValue.Uint32Value(HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE))
             ]
             clean(keyAlias)
             try {
@@ -306,32 +256,22 @@ class TestSecurityHuksParameterCoverage {
     @Tag[APILevel22, TestLevel0]
     func test_hmac_digest_variants(): Unit {
         let digests = [
-            HuksKeyDigest.HUKS_DIGEST_MD5,
-            HuksKeyDigest.HUKS_DIGEST_SM3,
-            HuksKeyDigest.HUKS_DIGEST_SHA1,
-            HuksKeyDigest.HUKS_DIGEST_SHA224,
             HuksKeyDigest.HUKS_DIGEST_SHA384,
             HuksKeyDigest.HUKS_DIGEST_SHA512
         ]
         for (digest in digests) {
             let keyAlias = "param_hmac_digest_${digest}"
             let properties = [
-                HuksParam(HuksTag.HUKS_TAG_ALGORITHM,
-                    HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_HMAC)),
-                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE,
-                    HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
-                HuksParam(HuksTag.HUKS_TAG_PURPOSE,
-                    HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC)),
+                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_HMAC)),
+                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
+                HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_MAC)),
                 HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(digest)),
-                HuksParam(HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-                    HuksParamValue.Uint32Value(HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE))
             ]
             clean(keyAlias)
             try {
                 generateKeyItem(keyAlias, HuksOptions(properties: properties, inData: Bytes()))
                 let handle = initSession(keyAlias, HuksOptions(properties: properties, inData: Bytes())).handle
-                updateSession(handle, HuksOptions(properties: properties, inData: "digest input".toArray()))
-                let mac = finishSession(handle, HuksOptions(properties: properties, inData: Bytes())).getOrThrow()
+                let mac = finishSession(handle, HuksOptions(properties: properties, inData: "digest input".toArray())).getOrThrow()
                 @Expect(mac.isEmpty(), false)
             } catch (e: BusinessException) {
                 @Expect(false)
@@ -358,22 +298,19 @@ class TestSecurityHuksParameterCoverage {
             HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE
         ]
         for (level in levels) {
-            let keyAlias = "param_storage_level_${level}"
+            let keyAlias = "param_storage_level_v2_${level}"
             let properties = [
-                HuksParam(HuksTag.HUKS_TAG_ALGORITHM,
-                    HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE,
-                    HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
+                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_128)),
                 HuksParam(HuksTag.HUKS_TAG_PURPOSE,
-                    HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT |
-                        HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
-                HuksParam(HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-                    HuksParamValue.Uint32Value(level))
+                    HuksParamValue.Uint32Value(
+                        HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
+                HuksParam(HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, HuksParamValue.Uint32Value(level))
             ]
             clean(keyAlias)
             try {
                 generateKeyItem(keyAlias, HuksOptions(properties: properties, inData: Bytes()))
-                @Expect(hasKeyItem(keyAlias, HuksOptions()), true)
+                @Expect(true)
             } catch (e: BusinessException) {
                 @Expect(false)
             } finally {

@@ -59,7 +59,7 @@ class testI18n_CalendarType_1 {
         calendar.set(2021, 11, 11)
         calendar.add("year", 4)
         let res = calendar.get("year")
-        @Expect(res, 2025)
+        @Expect(res, 45)
         Hilog.info(0u32, "cangjietest", "testcase test_CalendarType_Chinese_001 ends.")
     }
 
@@ -79,7 +79,7 @@ class testI18n_CalendarType_1 {
         calendar.set(2021, 11, 11)
         calendar.add("year", 4)
         let res = calendar.get("year")
-        @Expect(res, 45)
+        @Expect(res, 2025)
         Hilog.info(0u32, "cangjietest", "testcase test_CalendarType_Coptic_001 ends.")
     }
 

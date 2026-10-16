@@ -21,6 +21,7 @@ import kit.ArkWeb.{WebviewController}
 import ohos.arkui.state_management.*
 import kit.AbilityKit.*
 import ohos.hilog.Hilog
+import std.sync.AtomicInt64
 
 class MainAbility <: UIAbility {
     public init() {
@@ -41,5 +42,23 @@ class MainAbility <: UIAbility {
         AppStorage.setOrCreate("abilityContext", this.context)
         AppStorage.setOrCreate("windowStage", windowStage)
         windowStage.loadContent("EntryView")
+    }
+}
+
+
+public let windowLifecycleDestroyed = AtomicInt64(0)
+
+public class WindowLifecycleAbility <: UIAbility {
+    public init() {
+        super()
+        registerSelf()
+    }
+
+    public override func onWindowStageCreate(windowStage: WindowStage): Unit {
+        AppStorage.setOrCreate("windowLifecycleStage", windowStage)
+    }
+
+    public override func onDestroy(): Unit {
+        windowLifecycleDestroyed.store(1)
     }
 }

@@ -53,11 +53,9 @@ class test_GetResultSize {
     @Tag[APILevel22, TestLevel0]
     func TestCase_1(): Unit {
         Hilog.info(0, "cangjietest", "testcase TestCase_1 begins.")
-        // 2. 创建KVOptions配置
         let options = KVOptions(
             KVSecurityLevel.S1,)
         let store = kvManager.getKVStore<DeviceKVStore>("test_query_storesize1", options)                
-    // 插入学生数据
         store.put("student_001_name", StringValue("Alice"))
         store.put("student_001_grade", StringValue("A"))
         store.put("student_001_score", Integer(95))
@@ -73,28 +71,19 @@ class test_GetResultSize {
         store.put("student_004_name", StringValue("Diana"))
         store.put("student_004_grade", StringValue("C"))
         store.put("student_004_score", Integer(78))
-        
-        // 插入课程数据
         store.put("course_math_name", StringValue("Mathematics"))
         store.put("course_math_credits", Integer(4))
         
         store.put("course_science_name", StringValue("Science"))
         store.put("course_science_credits", Integer(3))
-        
-        // 插入系统数据
         store.put("config_max_students", Integer(100))
         store.put("config_pass_score", Integer(60))
         store.put("config_enabled", Boolean(true))
-        
-        // 插入统计数据
         store.put("stats_avg_score", Double(87.5))
         store.put("stats_total_students", Integer(4))
         store.put("stats_pass_rate", Double(100.0))
-        // 创建空的Query对象
         let query = Query()        
-        // 执行查询 - 获取结果数量
         let resultSize = store.getResultSize(query)
-        // 验证结果,我们插入了22条数据
         @Expect(resultSize, 22)
         kvManager.closeKVStore(bundleName, "test_query_storesize1")   
     Hilog.info(0, "cangjietest", "testcase TestCase_1 ends.")

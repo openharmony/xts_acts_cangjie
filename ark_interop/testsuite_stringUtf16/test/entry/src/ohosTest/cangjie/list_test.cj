@@ -16,4 +16,11 @@ func testsuite() {
     registerTestSuite {TestErrCodeThreadCtx()}
     registerTestSuite {TestErrCodeTypeMismatch()}
     registerTestSuite {TestErrCodeOutOfRange()}
+    registerTestSuite {TestApiCompleteValue()}
+    registerTestSuite {TestApiCompleteEx()}
+    registerTestSuite {TestApiCompleteUtf16()}
+    registerTestSuite {TestApiCompleteMisc()}
+    registerTestSuite {TestErrCodeTypeMismatchExt()}
+    registerTestSuite {TestCallbackInvokeDirect()}
+    registerTestSuite {TestBizException()}
 }

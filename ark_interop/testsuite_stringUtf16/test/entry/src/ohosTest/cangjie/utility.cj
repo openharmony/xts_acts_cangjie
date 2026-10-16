@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -550,15 +550,23 @@ public class EventBuilder {
 
 public func getAbilityContext(): UIAbilityContext {
     let result = Box(None<UIAbilityContext>)
-    while (true) {
-        match (AppStorage.get<UIAbilityContext>("abilityContext")) {
-            case None => sleepFor(1.second)
-            case Some(abilityContext) =>
-                result.value = abilityContext
-                break
+    let monitor = Monitor()
+    let checker = Timer.repeat(Duration.Zero, Duration.millisecond * 5, {
+        => match (AppStorage.get<UIAbilityContext>("abilityContext")) {
+            case Some(ctx) =>
+                result.value = ctx
+                synchronized(monitor) { monitor.notify() }
+            case None => ()
         }
+    })
+    synchronized(monitor) {
+        monitor.wait(timeout: Duration.second * 10)
     }
-    result.value.getOrThrow()
+    checker.cancel()
+    match (result.value) {
+        case Some(ctx) => ctx
+        case None => throw Exception("abilityContext not ready within 10s: EntryAbility onCreate did not run")
+    }
 }
 
 public func getAbilityStageContext(): AbilityStageContext {

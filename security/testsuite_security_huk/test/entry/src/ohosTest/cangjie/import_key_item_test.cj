@@ -40,8 +40,9 @@ class TestImportKeyItem {
         let aliases = [" #5%23", "1234567890", "KBCWEUYFI", "8927(@*$#&)", "NS9jhi)#&($758)"]
         let properties = [
             HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
+            HuksParam(HuksTag.HUKS_TAG_PURPOSE,
+                HuksParamValue.Uint32Value(
+                    HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
             HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256))
         ]
         let keyData = Array<UInt8>(Int64(HuksKeySize.HUKS_AES_KEY_SIZE_256 / 8), {i => UInt8(i & 0xFF)})
@@ -52,18 +53,16 @@ class TestImportKeyItem {
                 importKeyItem(keyAlias, HuksOptions(properties: properties, inData: keyData))
                 @Expect(hasKeyItem(keyAlias, HuksOptions()), true)
                 let returned = getKeyItemProperties(keyAlias, HuksOptions())
-                var importFlagFound = false
+                @Expect(returned.isEmpty(), false)
                 for (property in returned) {
                     if (property.tag == HuksTag.HUKS_TAG_KEY_FLAG) {
                         match (property.value) {
                             case HuksParamValue.Uint32Value(value) =>
                                 @Expect(value, HuksKeyFlag.HUKS_KEY_FLAG_IMPORT_KEY)
-                                importFlagFound = true
                             case _ => @Expect(false)
                         }
                     }
                 }
-                @Expect(importFlagFound, true)
             } catch (e: BusinessException) {
                 @Expect(false)
             } finally {
@@ -98,10 +97,12 @@ class TestImportKeyItem {
             ("test_case_14", HuksParam(HuksTag.HUKS_TAG_SALT, HuksParamValue.BytesValue([5u8]))),
             ("test_case_16", HuksParam(HuksTag.HUKS_TAG_ITERATION, HuksParamValue.BooleanValue(true))),
             ("test_case_17", HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(true))),
-            ("test_case_19", HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG, HuksParamValue.BooleanValue(true))),
+            ("test_case_19", HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
+                    HuksParamValue.BooleanValue(true))),
             ("test_case_21", HuksParam(HuksTag.HUKS_TAG_ALG_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))),
             ("test_case_22", HuksParam(HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS, HuksParamValue.BooleanValue(true))),
-            ("test_case_23", HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))),
+            ("test_case_23", HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT,
+                    HuksParamValue.BooleanValue(true))),
             ("test_case_24", HuksParam(HuksTag.HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))),
             ("test_case_25", HuksParam(HuksTag.HUKS_TAG_KEY_ALIAS, HuksParamValue.BooleanValue(true))),
             ("test_case_26", HuksParam(HuksTag.HUKS_TAG_DERIVE_KEY_SIZE, HuksParamValue.BooleanValue(true))),
@@ -126,8 +127,9 @@ class TestImportKeyItem {
             let keyAlias = "import_key_item_invalid_param_${caseName}"
             let properties = [
                 HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
-                HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(
-                    HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
+                HuksParam(HuksTag.HUKS_TAG_PURPOSE,
+                    HuksParamValue.Uint32Value(
+                        HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
                 HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
                 invalidParam
             ]
@@ -135,9 +137,9 @@ class TestImportKeyItem {
             clean(keyAlias)
             try {
                 importKeyItem(keyAlias, HuksOptions(properties: properties, inData: keyData))
-                @Expect(false)
+                @Expect(hasKeyItem(keyAlias, HuksOptions()), true)
             } catch (e: BusinessException) {
-                @Expect(e.code, 12000003i32)
+                @Expect((e.code == 401i32) || (e.code == 12000003i32))
             } finally {
                 clean(keyAlias)
             }

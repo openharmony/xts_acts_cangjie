@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,6 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+
 
 package ohos_app_cangjie_entry_test
 
@@ -27,9 +29,10 @@ import kit.PerformanceAnalysisKit.Hilog
 
 @Test
 class test_RdbStore_ErrorCodes2 {
-    func createStore(storeId: String): RdbStore {
+    func createStore(storeId: String, readOnly: Bool): RdbStore {
         let ctx = getAbilityContext()
-        return getRdbStore(ctx, StoreConfig(RelationalStoreSecurityLevel.S1, name: storeId))
+        return getRdbStore(ctx,
+            StoreConfig(RelationalStoreSecurityLevel.S1, name: storeId, isReadOnly: readOnly))
     }
 
     func deleteStore(storeId: String): Unit {
@@ -37,190 +40,268 @@ class test_RdbStore_ErrorCodes2 {
         deleteRdbStore(ctx, storeId)
     }
 
-    let CREATE_TABLE = "CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, age INTEGER, salary REAL)"
+
 
     /*
-     * @tc.number    : Sub_Cangjie_relational_store_insert_14800047
-     * @tc.name      : test_insert_14800047
-     * @tc.desc      : insert 事务内插入 16+ 条 30MB 记录导致 WAL 超限触发 14800047
-     * @tc.size      : LargeTest
+     * @tc.number    : Sub_Cangjie_relational_store_insert_14800000_emptyTable
+     * @tc.name      : test_insert_emptyTable
+     * @tc.desc      : insert传入空表名触发14800000 (E_EMPTY_TABLE_NAME)
+     * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
     @TestCase
     @Tag[APILevel22, TestLevel0]
-    func test_insert_14800047(): Unit {
-        Hilog.info(0, "cangjietest", "testcase test_insert_14800047 begins.")
-        let storeId = "test_14800047_insert.db"
-        let store = createStore(storeId)
-        store.executeSql(CREATE_TABLE)
-        let largeValue = "a" * (1024 * 1024 * 30)
-        var hitError = false
-        store.beginTransaction()
-        for (i in 0..20) {
-            var values = HashMap<String, RelationalStoreValueType>()
-            values.add("name", RelationalStoreValueType.StringValue(largeValue))
-            try {
-                store.insert("employee", values)
-            } catch (e: BusinessException) {
-                Hilog.info(0, "cangjietest", "insert fail at i=${i}, code=${e.code}")
-                @Expect(e.code, 14800047i32)
-                hitError = true
-                break
-            }
-        }
+    func test_insert_emptyTable(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_insert_14800000_emptyTable begins.")
+        let storeId = "test_14800000_emptyTable_insert.db"
+        let store = createStore(storeId, false)
+        store.executeSql("CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)")
+        var values = HashMap<String, RelationalStoreValueType>()
+        values.add("name", RelationalStoreValueType.StringValue("test"))
         try {
-            store.commit()
-        } catch (e: Exception) {
-            store.rollBack()
-        }
-        @Expect(hitError, true)
-        deleteStore(storeId)
-        Hilog.info(0, "cangjietest", "testcase test_insert_14800047 ends.")
-    }
-
-    /*
-     * @tc.number    : Sub_Cangjie_relational_store_update_14800047
-     * @tc.name      : test_update_14800047
-     * @tc.desc      : update 事务内更新大数据导致 WAL 超限触发 14800047
-     * @tc.size      : LargeTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-     */
-    @TestCase
-    @Tag[APILevel22, TestLevel0]
-    func test_update_14800047(): Unit {
-        Hilog.info(0, "cangjietest", "testcase test_update_14800047 begins.")
-        let storeId = "test_14800047_update.db"
-        let store = createStore(storeId)
-        store.executeSql(CREATE_TABLE)
-        let largeValue = "a" * (1024 * 1024 * 30)
-        store.beginTransaction()
-        for (i in 0..20) {
-            var values = HashMap<String, RelationalStoreValueType>()
-            values.add("name", RelationalStoreValueType.StringValue(largeValue))
-            try {
-                store.insert("employee", values)
-            } catch (e: Exception) {
-                break
-            }
-        }
-        var hitError = false
-        try {
-            var updateValues = HashMap<String, RelationalStoreValueType>()
-            updateValues.add("name", RelationalStoreValueType.StringValue(largeValue))
-            let predicates = RdbPredicates("employee")
-            store.update(updateValues, predicates)
+            store.insert("", values)
             @Expect(false)
         } catch (e: BusinessException) {
-            Hilog.info(0, "cangjietest", "update fail, code=${e.code}")
-            @Expect(e.code, 14800047i32)
-            hitError = true
-        } catch (e: Exception) {
-            ()
+            @Expect(e.code, 401)
         }
-        try {
-            store.rollBack()
-        } catch (e: Exception) {
-            ()
-        }
-        @Expect(hitError, true)
         deleteStore(storeId)
-        Hilog.info(0, "cangjietest", "testcase test_update_14800047 ends.")
+        Hilog.info(0, "cangjietest", "testcase test_insert_14800000_emptyTable ends.")
     }
 
     /*
-     * @tc.number    : Sub_Cangjie_relational_store_delete_14800047
-     * @tc.name      : test_delete_14800047
-     * @tc.desc      : delete 事务内删除导致 WAL 超限触发 14800047
-     * @tc.size      : LargeTest
+     * @tc.number    : Sub_Cangjie_relational_store_insert_14800000_emptyBucket
+     * @tc.name      : test_insert_14800000_emptyBucket
+     * @tc.desc      : insert传入空ValuesBucket触发14800000 (E_EMPTY_VALUES_BUCKET)
+     * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
     @TestCase
     @Tag[APILevel22, TestLevel0]
-    func test_delete_14800047(): Unit {
-        Hilog.info(0, "cangjietest", "testcase test_delete_14800047 begins.")
-        let storeId = "test_14800047_delete.db"
-        let store = createStore(storeId)
-        store.executeSql(CREATE_TABLE)
-        let largeValue = "a" * (1024 * 1024 * 30)
-        store.beginTransaction()
-        for (i in 0..20) {
-            var values = HashMap<String, RelationalStoreValueType>()
-            values.add("name", RelationalStoreValueType.StringValue(largeValue))
-            try {
-                store.insert("employee", values)
-            } catch (e: Exception) {
-                break
-            }
-        }
-        var hitError = false
+    func test_insert_14800000_emptyBucket(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_insert_14800000_emptyBucket begins.")
+        let storeId = "test_14800000_emptyBucket_insert.db"
+        let store = createStore(storeId, false)
+        store.executeSql("CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)")
+        var values = HashMap<String, RelationalStoreValueType>()
         try {
-            let predicates = RdbPredicates("employee")
+            store.insert("employee", values)
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 14800000i32)
+        }
+        deleteStore(storeId)
+        Hilog.info(0, "cangjietest", "testcase test_insert_14800000_emptyBucket ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_relational_store_update_14800000_emptyBucket
+     * @tc.name      : test_update_14800000_emptyBucket
+     * @tc.desc      : update传入空ValuesBucket触发14800000 (E_EMPTY_VALUES_BUCKET)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_update_14800000_emptyBucket(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_update_14800000_emptyBucket begins.")
+        let storeId = "test_14800000_emptyBucket_update.db"
+        let store = createStore(storeId, false)
+        store.executeSql("CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)")
+        var values = HashMap<String, RelationalStoreValueType>()
+        let predicates = RdbPredicates("employee")
+        try {
+            store.update(values, predicates)
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 14800000i32)
+        }
+        deleteStore(storeId)
+        Hilog.info(0, "cangjietest", "testcase test_update_14800000_emptyBucket ends.")
+    }
+
+
+    /*
+     * @tc.number    : Sub_Cangjie_relational_store_insert_14800021_readonly
+     * @tc.name      : test_insert_14800021_noTable
+     * @tc.desc      : 只读store insert不存在的表触发14800021 (no such table)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_insert_14800021_noTable(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_insert_14800021_noTable begins.")
+        let storeId = "test_14800021_insert.db"
+        let store = createStore(storeId, false)
+        var values = HashMap<String, RelationalStoreValueType>()
+        values.add("name", RelationalStoreValueType.StringValue("test"))
+        try {
+            store.insert("employee", values)
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 14800021i32)
+        }
+        deleteStore(storeId)
+        Hilog.info(0, "cangjietest", "testcase test_insert_14800021_noTable ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_relational_store_update_14800021_noTable
+     * @tc.name      : test_update_14800021_noTable
+     * @tc.desc      : 读写store update不存在的表触发14800021 (no such table)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_update_14800021_noTable(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_update_14800021_noTable begins.")
+        let storeId = "test_14800021_update.db"
+        let store = createStore(storeId, false)
+        var values = HashMap<String, RelationalStoreValueType>()
+        values.add("name", RelationalStoreValueType.StringValue("test"))
+        let predicates = RdbPredicates("employee")
+        try {
+            store.update(values, predicates)
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 14800021i32)
+        }
+        deleteStore(storeId)
+        Hilog.info(0, "cangjietest", "testcase test_update_14800021_noTable ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_relational_store_delete_14800021_noTable
+     * @tc.name      : test_delete_14800021_noTable
+     * @tc.desc      : 读写store delete不存在的表触发14800021 (no such table)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_delete_14800021_noTable(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_delete_14800021_noTable begins.")
+        let storeId = "test_14800021_delete.db"
+        let store = createStore(storeId, false)
+        let predicates = RdbPredicates("employee")
+        try {
             store.delete(predicates)
             @Expect(false)
         } catch (e: BusinessException) {
-            Hilog.info(0, "cangjietest", "delete fail, code=${e.code}")
-            @Expect(e.code, 14800047i32)
-            hitError = true
-        } catch (e: Exception) {
-            ()
+            @Expect(e.code, 14800021i32)
         }
-        try {
-            store.rollBack()
-        } catch (e: Exception) {
-            ()
-        }
-        @Expect(hitError, true)
         deleteStore(storeId)
-        Hilog.info(0, "cangjietest", "testcase test_delete_14800047 ends.")
+        Hilog.info(0, "cangjietest", "testcase test_delete_14800021_noTable ends.")
     }
 
     /*
-     * @tc.number    : Sub_Cangjie_relational_store_executeSql_14800047
-     * @tc.name      : test_executeSql_14800047
-     * @tc.desc      : executeSql 事务内执行大数据写入导致 WAL 超限触发 14800047
+     * @tc.number    : Sub_Cangjie_relational_store_executeSql_14800021_noTable
+     * @tc.name      : test_executeSql_14800021_noTable
+     * @tc.desc      : 读写store executeSql操作不存在的表触发14800021 (no such table)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_executeSql_14800021_noTable(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_executeSql_14800021_noTable begins.")
+        let storeId = "test_14800021_executeSql.db"
+        let store = createStore(storeId, false)
+        try {
+            store.executeSql("INSERT INTO employee(name) VALUES('test')")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 14800021i32)
+        }
+        deleteStore(storeId)
+        Hilog.info(0, "cangjietest", "testcase test_executeSql_14800021_noTable ends.")
+    }
+
+
+    /*
+     * @tc.number    : Sub_Cangjie_relational_store_restore_14800021_readonly
+     * @tc.name      : test_restore_14800010_readonly
+     * @tc.desc      : 只读store restore触发14800021 (no such table at native level)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_restore_14800010_readonly(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_restore_14800021_readonly begins.")
+        let storeId = "test_14800010_restore.db"
+        let store = createStore(storeId, true)
+        try {
+            store.restore("restore_test.db")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 14800010i32)
+        }
+        deleteStore(storeId)
+        Hilog.info(0, "cangjietest", "testcase test_restore_14800021_readonly ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_relational_store_executeSql_14800031
+     * @tc.name      : test_executeSql_14800031
+     * @tc.desc      : executeSql插入超过1GB的zeroblob触发14800031 (E_SQLITE_TOOBIG)
      * @tc.size      : LargeTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
     @TestCase
     @Tag[APILevel22, TestLevel0]
-    func test_executeSql_14800047(): Unit {
-        Hilog.info(0, "cangjietest", "testcase test_executeSql_14800047 begins.")
-        let storeId = "test_14800047_executeSql.db"
-        let store = createStore(storeId)
-        store.executeSql(CREATE_TABLE)
-        let largeValue = "a" * (1024 * 1024 * 30)
-        store.beginTransaction()
-        for (i in 0..20) {
-            var values = HashMap<String, RelationalStoreValueType>()
-            values.add("name", RelationalStoreValueType.StringValue(largeValue))
-            try {
-                store.insert("employee", values)
-            } catch (e: Exception) {
-                break
-            }
-        }
-        var hitError = false
+    func test_executeSql_14800031(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_executeSql_14800031 begins.")
+        let storeId = "test_14800031_executeSql.db"
+        let store = createStore(storeId, false)
+        store.executeSql("CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY AUTOINCREMENT, data BLOB)")
         try {
-            store.executeSql("INSERT INTO employee(name) VALUES('${largeValue}')")
+            store.executeSql("INSERT INTO employee(data) VALUES(zeroblob(1100000000))")
             @Expect(false)
         } catch (e: BusinessException) {
-            Hilog.info(0, "cangjietest", "executeSql fail, code=${e.code}")
-            @Expect(e.code, 14800047i32)
-            hitError = true
-        } catch (e: Exception) {
-            ()
+            @Expect(e.code, 14800031i32)
         }
-        try {
-            store.rollBack()
-        } catch (e: Exception) {
-            ()
-        }
-        @Expect(hitError, true)
         deleteStore(storeId)
-        Hilog.info(0, "cangjietest", "testcase test_executeSql_14800047 ends.")
+        Hilog.info(0, "cangjietest", "testcase test_executeSql_14800031 ends.")
     }
-}
+
+    /*
+     * @tc.number    : Sub_Cangjie_relational_store_insert_14800033
+     * @tc.name      : test_insert_14800033
+     * @tc.desc      : insert往INTEGER列插入字符串触发14800033 (E_SQLITE_MISMATCH)
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_insert_14800033(): Unit {
+        Hilog.info(0, "cangjietest", "testcase test_insert_14800033 begins.")
+        let storeId = "test_14800033_insert.db"
+        let store = createStore(storeId, false)
+        store.executeSql(
+            "CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, age INTEGER, salary REAL)")
+        var values = HashMap<String, RelationalStoreValueType>()
+        values.add("id", RelationalStoreValueType.StringValue("abc"))
+        values.add("name", RelationalStoreValueType.StringValue("Jim"))
+        try {
+            store.insert("employee", values)
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 14800033i32)
+        }
+        deleteStore(storeId)
+        Hilog.info(0, "cangjietest", "testcase test_insert_14800033 ends.")
+    }
+
+    }

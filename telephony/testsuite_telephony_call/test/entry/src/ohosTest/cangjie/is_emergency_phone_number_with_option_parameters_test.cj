@@ -42,7 +42,6 @@ class TestIsEmergencyPhoneNumberWithOptionParameters {
         } catch (e: BusinessException) {
             @Expect(e.code, 8300001i32)
         }
-
     }
 
     /*
@@ -70,7 +69,6 @@ class TestIsEmergencyPhoneNumberWithOptionParameters {
             } catch (e: BusinessException) {
                 @Expect(false)
             }
-
         }
     }
 }

@@ -1,6 +1,6 @@
 // NOTE: This testsuite does not have its own Ability entry. It depends on testsuite_hybrid's Ability entry to run.
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at

@@ -28,6 +28,26 @@ import std.time.*
 @Test
 class Test_AbilityStage {
     /*
+     * @tc.number    : Sub_Cangjie_AppRecovery_restartApp_0100
+     * @tc.name      : Test_appRecovery_restartApp
+     * @tc.desc      : Calls appRecovery.restartApp as in the ArkTS interface test and fails only if the call throws.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func Test_appRecovery_restartApp(): Unit {
+        try {
+            restartApp()
+            @Expect(true)
+        } catch (e: BusinessException) {
+            Hilog.error(0u32, "cangjietest", "restartApp failed: ${e.code} ${e.message}")
+            @Expect(false)
+        }
+    }
+
+    /*
      * @tc.number    : Sub_Cangjie_AbilityStage_onCreate_0100
      * @tc.name      : Test_abilityStage_onCreate
      * @tc.desc      : Instantiates the application AbilityStage and invokes its onCreate callback.

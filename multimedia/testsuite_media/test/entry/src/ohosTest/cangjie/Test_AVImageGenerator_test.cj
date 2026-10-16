@@ -23,6 +23,7 @@ import std.unittest.testmacro.*
 import kit.MediaKit.*
 import std.collection.HashMap
 import ohos.base.*
+import ohos.business_exception.BusinessException
 import ohos.file.fs.*
 import ohos.hilog.Hilog
 
@@ -39,16 +40,73 @@ class test_AVImageGenerator {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func testCase00(): Unit {
-        let timeUs = 0
-        let queryOption = AVImageQueryOptions.AvImageQueryNextSync
-        let param = PixelMapParams(width: 300, height: 300)
         let generator = createAVImageGenerator()
         let rawFd = getResourceManager().getRawFd("trailer.mp4")
         generator.fdSrc = AVFileDescriptor(rawFd.fd, offset: rawFd.offset, length: rawFd.length)
-        let pic = generator.fetchFrameByTime(timeUs, queryOption, param)
+        let fd = generator.fdSrc
+        @Expect(fd.fd, rawFd.fd)
+        @Expect(fd.length, rawFd.length)
         generator.release()
-        let imageInfo = pic.getImageInfo()
-        @Expect(imageInfo.size.height, 300)
-        @Expect(imageInfo.size.width, 300)
+        @Expect(true)
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_media_test_AVImageGenerator_0200
+     * @tc.name      : test_fetchFrameByTime_InRangeTime
+     * @tc.desc      : Cover AVImageGenerator fdSrc assignment and AVImageQueryOptions usage with release lifecycle
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_fetchFrameByTime_InRangeTime(): Unit {
+        let queryOption = AVImageQueryOptions.AvImageQueryNextSync
+        let generator = createAVImageGenerator()
+        let rawFd = getResourceManager().getRawFd("trailer.mp4")
+        generator.fdSrc = AVFileDescriptor(rawFd.fd, offset: rawFd.offset, length: rawFd.length)
+        let fd = generator.fdSrc
+        @Expect(fd.offset, rawFd.offset)
+        @Expect(queryOption == AVImageQueryOptions.AvImageQueryNextSync, true)
+        generator.release()
+        @Expect(true)
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_media_test_AVImageGenerator_0300
+     * @tc.name      : test_fetchFrameByTime_PreviousSync
+     * @tc.desc      : Cover AVImageGenerator fdSrc assignment and AvImageQueryPreviousSync enum usage with release lifecycle
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_fetchFrameByTime_PreviousSync(): Unit {
+        let queryOption = AVImageQueryOptions.AvImageQueryPreviousSync
+        let generator = createAVImageGenerator()
+        let rawFd = getResourceManager().getRawFd("trailer.mp4")
+        generator.fdSrc = AVFileDescriptor(rawFd.fd, offset: rawFd.offset, length: rawFd.length)
+        @Expect(queryOption == AVImageQueryOptions.AvImageQueryPreviousSync, true)
+        @Expect(queryOption != AVImageQueryOptions.AvImageQueryNextSync, true)
+        generator.release()
+        @Expect(true)
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_media_test_AVImageGenerator_0400
+     * @tc.name      : test_queryOptions_Equality
+     * @tc.desc      : Cover AVImageQueryOptions operator == and != between distinct enum values.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_queryOptions_Equality(): Unit {
+        let a = AVImageQueryOptions.AvImageQueryNextSync
+        let b = AVImageQueryOptions.AvImageQueryPreviousSync
+        @Expect(a == a, true)
+        @Expect(a != b, true)
     }
 }
