@@ -206,6 +206,7 @@ class TestPhotoAccessHelperFunctions {
             let uri = DefaultChangeUri.DefaultPhotoUri.toString()
             let cb = ChangeDataCb()
             helper.registerChange(uri, true, cb)
+            helper.registerChange(uri, false, cb)
             @Expect(helper is PhotoAccessHelper)
         } catch (e: BusinessException) {
             @Expect(false)
@@ -229,6 +230,7 @@ class TestPhotoAccessHelperFunctions {
             let helper = getPhotoAccessHelper(getAbilityContext())
             let uri = DefaultChangeUri.DefaultPhotoUri.toString()
             helper.unregisterChange(uri)
+            helper.unregisterChange(uri, callback: ChangeDataCb())
             @Expect(helper is PhotoAccessHelper)
         } catch (e: BusinessException) {
             @Expect(false)

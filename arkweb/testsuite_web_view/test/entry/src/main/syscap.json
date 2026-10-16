@@ -6,7 +6,9 @@
         ],
         "custom": [
             {
-                "xts": []
+                "xts": [
+                    "SystemCapability.Web.Webview.Core"
+                ]
             }
         ]
     }

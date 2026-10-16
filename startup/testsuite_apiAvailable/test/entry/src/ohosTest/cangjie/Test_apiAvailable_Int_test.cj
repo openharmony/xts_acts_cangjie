@@ -553,7 +553,7 @@ class Test_apiAvailable_Int {
     /*
      * @tc.number    : Sub_Cangjie_apiAvailable_Int_0032
      * @tc.name      : TestCase_32
-     * @tc.desc      : start test with Int Param: 27
+     * @tc.desc      : the next major version (sdkApiVersion + 1) is not available
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -562,8 +562,8 @@ class Test_apiAvailable_Int {
     @Tag[APILevel26, TestLevel0]
     func TestCase_32(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_32 begins.")
-        Hilog.info(0u32, "CangjieTest", "fail to start test.")
-        @Expect(apiAvailable(27), false)
+        let major = DeviceInfo.sdkApiVersion
+        @Expect(apiAvailable(major + 1), false)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_32 ends.")
     }
     

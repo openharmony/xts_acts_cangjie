@@ -495,4 +495,66 @@ class TestErrCodeThreadCtx {
         @Expect(result.load(), 34300004i32)
     }
 
+    /*
+     * @tc.number    : Sub_Cangjie_arkinterop_ErrCode_0650
+     * @tc.name      : testThreadMismatchRequireSystemNativeModuleEmptyName
+     * @tc.desc      : 测试非绑定线程 spawn 内调用 JSContext.requireSystemNativeModule("") 空字符串场景抛 34300004
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func testThreadMismatchRequireSystemNativeModuleEmptyName(): Unit {
+        let context = sharedThreadContext
+        let result = AtomicInt32(0)
+        let done = AtomicBool(false)
+        spawn {
+            try {
+                let _ = context.requireSystemNativeModule("")
+            } catch (e: BusinessException) {
+                result.store(e.code)
+            }
+            done.store(true)
+        }
+        var waited = 0
+        while (!done.load() && waited < 100) {
+            sleep(Duration.millisecond * 20)
+            waited++
+        }
+        @Expect(done.load())
+        @Expect(result.load(), 34300004i32)
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_arkinterop_ErrCode_0660
+     * @tc.name      : testThreadMismatchRequireSystemNativeModulePrefix
+     * @tc.desc      : 测试非绑定线程 spawn 内调用 JSContext.requireSystemNativeModule 带 prefix 显式传值场景抛 34300004
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func testThreadMismatchRequireSystemNativeModulePrefix(): Unit {
+        let context = sharedThreadContext
+        let result = AtomicInt32(0)
+        let done = AtomicBool(false)
+        spawn {
+            try {
+                let _ = context.requireSystemNativeModule("hilog", prefix: "@sys.")
+            } catch (e: BusinessException) {
+                result.store(e.code)
+            }
+            done.store(true)
+        }
+        var waited = 0
+        while (!done.load() && waited < 100) {
+            sleep(Duration.millisecond * 20)
+            waited++
+        }
+        @Expect(done.load())
+        @Expect(result.load(), 34300004i32)
+    }
+
 }

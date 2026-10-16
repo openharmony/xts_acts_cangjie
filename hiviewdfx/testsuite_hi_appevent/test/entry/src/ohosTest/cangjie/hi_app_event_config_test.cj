@@ -59,14 +59,17 @@ public class TestHiAppEventConfig {
             )
             var appInfo: AppEventInfo = AppEventInfo("cangjie_1", "$cangjie_1", EventType.Statistic, params)
             HiAppEvent.write(appInfo)
-
             Hilog.info(0, "test_hiappevent_config_01", "Test_hiappevent_config_01_pass")
-            @Expect(true)
+            match(appInfo.eventType){
+                case EventType.Statistic => @Expect(true)
+                case _ => @Expect(false)
+            }
         } catch (e: Exception) {
             @Expect(false)
             Hilog.info(0, "test_hiappevent_config_01", "Test_hiappevent_config_01_fail_${e.toString()}")
         } finally {
             Hilog.info(0, "test_hiappevent_config_01", "Test_hiappevent_config_01_end")
+            HiAppEvent.configure(ConfigOption(maxStorage: "10M", disable: false))
         }
     }
 
@@ -108,6 +111,7 @@ public class TestHiAppEventConfig {
             Hilog.info(0, "test_hiappevent_config_02", "Test_hiappevent_config_02_pass_${e.toString()}")
         } finally {
             Hilog.info(0, "test_hiappevent_config_02", "Test_hiappevent_config_02_end")
+            HiAppEvent.configure(ConfigOption(maxStorage: "10M", disable: false))
         }
     }
 
@@ -153,6 +157,7 @@ public class TestHiAppEventConfig {
                 Hilog.info(0, "test_hiappevent_config_03", "Test_hiappevent_config_03_fail_${size}_${e.toString()}")
             } finally {
                 Hilog.info(0, "test_hiappevent_config_03", "Test_hiappevent_config_03_${size}_end")
+                HiAppEvent.configure(ConfigOption(maxStorage: "10M", disable: false))
             }
         }
         Hilog.info(0, "test_hiappevent_config_03", "Test_hiappevent_config_03_end")
@@ -197,6 +202,7 @@ public class TestHiAppEventConfig {
             Hilog.info(0, "test_hiappevent_config_04", "Test_hiappevent_config_04_fail_${e.toString()}")
         } finally {
             Hilog.info(0, "test_hiappevent_config_04", "Test_hiappevent_config_04_end")
+            HiAppEvent.configure(ConfigOption(maxStorage: "10M", disable: false))
         }
     }
 }

@@ -91,6 +91,38 @@ public class OpenHarmonyTestRunner <: TestRunner {
         sb.toString()
     }
 
+    // 将 error 改为 failure，仅保留首条非空错误信息。
+    private func optimizeErrorTags(xml: String): String {
+        let out = StringBuilder()
+        var pos: Int64 = 0
+        while (true) {
+            let startOpt = xml.indexOf("<error>", pos)
+            if (let None <- startOpt) {
+                out.append(xml[pos..xml.size])
+                break
+            }
+            let start = startOpt.getOrThrow()
+            let contentStart = start + "<error>".size
+            let endOpt = xml.indexOf("</error>", contentStart)
+            if (let None <- endOpt) {
+                out.append(xml[pos..xml.size])
+                break
+            }
+            let end = endOpt.getOrThrow()
+            out.append(xml[pos..start])
+            out.append("<failure>")
+            for (line in xml[contentStart..end].lines()) {
+                let trimmed = line.trimAscii()
+                if (!trimmed.isEmpty()) {
+                    out.append(trimmed)
+                    break
+                }
+            }
+            out.append("</failure>")
+            pos = end + "</error>".size
+        }
+        out.toString()
+    }
     private func readXmlFileLineByLine(testClassName: String, abilityDelegator: AbilityDelegator): Unit {
         let testReportXmlFileName = "test-default.${testClassName}.xml"
         match (Directory.readFrom("/data/storage/el1/base/tests") |>
@@ -101,7 +133,7 @@ public class OpenHarmonyTestRunner <: TestRunner {
             case Some(testReportXmlFileInfo) =>
                 let testReportXmlFilePath = testReportXmlFileInfo.path
                 let testReportXmlFileContent = File.readFrom(testReportXmlFilePath)
-                let xmlString = removeSkippedTestcases(String.fromUtf8(testReportXmlFileContent))
+                let xmlString = optimizeErrorTags(removeSkippedTestcases(String.fromUtf8(testReportXmlFileContent)))
                 let lines = xmlString.split("\n", removeEmpty: true)
                 var lineIndex = 0
                 let tempArray = ArrayList<String>()

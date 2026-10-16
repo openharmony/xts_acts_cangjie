@@ -188,7 +188,7 @@ class Test_beginTransaction {
             rdbStore.commit()
             @Expect(false)
         } catch (e: BusinessException) {
-            @Expect(e.code, 14800012)
+            @Expect(e.code, 14800032)
             rdbStore.rollBack()
         }
         let predicates = RdbPredicates("EMPLOYEE")

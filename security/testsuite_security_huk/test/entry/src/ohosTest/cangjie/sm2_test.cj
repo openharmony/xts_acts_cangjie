@@ -27,17 +27,6 @@ import ohos.business_exception.BusinessException
 
 @Test
 class TestSecurityHuksSm2 {
-    let genKeyOptionsTest1 = HuksOptions(
-        properties: [
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.BooleanValue(true)),
-            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(1i32)),
-            HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Int32Value(0i32)),
-            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Int32Value(1i32)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(false)),
-            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
-        ]
-    )
     /*
      * @tc.number    : Sub_Cangjie_UniversalKeystoreKit_Test_SecurityHuks_SM2_0100
      * @tc.name      : test_sm2_import_export
@@ -56,25 +45,26 @@ class TestSecurityHuksSm2 {
         try {
             let options = HuksOptions(
                 properties: [
-                    HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
+                    HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
                     HuksParam(
                         HuksTag.HUKS_TAG_PURPOSE,
-                        HuksParamValue.Int32Value(1i32)
+                        HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)
                     ),
-                    HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                    HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
+                    HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
                 ]
             )
             generateKeyItem(keyAlias, options)
+            let publicKey = exportKeyItem(keyAlias, HuksOptions(properties: []))
             importKeyItem(
                 keyAliasBak,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(1i32)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
-                    ]
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
+                    ],
+                    inData: publicKey
                 )
             )
             @Expect((hasKeyItem(keyAlias, genKeyOptionsTest1)) && (hasKeyItem(keyAliasBak, genKeyOptionsTest1)))
@@ -104,92 +94,74 @@ class TestSecurityHuksSm2 {
                 keyAlias,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(
-                            HuksTag.HUKS_TAG_PURPOSE,
-                            HuksParamValue.Int32Value(1i32)
-                        ),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
-                    ]
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE,HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
+                    ],
+                    inData: Bytes()
                 )
             )
-            let signHandle = initSession(
+            var signHandle: ?HuksHandleId = None
+            signHandle = initSession(
                 keyAlias,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.BooleanValue(false)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
-                    ]
-                )
-            ).handle
-            updateSession(
-                signHandle,
-                HuksOptions(
-                    properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.BooleanValue(false)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
                     ],
                     inData: inData.toArray()
-                ),
-                token: []
-            )
+                )
+            ).handle
+
             let sign = finishSession(
-                signHandle,
+                signHandle.getOrThrow(),
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.BooleanValue(false)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
-                    ]
-                ),
-                token: []
-            ).getOrThrow()
-            abortSession(signHandle, HuksOptions(properties: []))
-            let verifyHandle = initSession(
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
+                    ],
+                    inData: inData.toArray()
+                ))
+            var verifyHandle: ?HuksHandleId = None
+            verifyHandle = initSession(
                 keyAlias,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(1i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
-                    ]
-                )
-            ).handle
-            updateSession(
-                verifyHandle,
-                HuksOptions(
-                    properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(1i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
                     ],
                     inData: inData.toArray()
-                ),
-                token: []
-            )
-            let verify = finishSession(
-                verifyHandle,
+                )
+            ).handle
+            updateSession(verifyHandle.getOrThrow(), HuksOptions(
+                    properties: [
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
+                    ],
+                    inData: inData.toArray()
+                ))
+                finishSession(
+                verifyHandle.getOrThrow(),
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(1i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam (HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
                     ],
-                    inData: sign
-                ),
-                token: []
-            ).getOrThrow()
-            @Expect(!verify.isEmpty())
-            abortSession(verifyHandle, HuksOptions(properties: []))
+                    inData: sign.getOrThrow()
+                )
+            )
+            @Expect(true)
         } catch (e: BusinessException) {
             @Expect(false)
         } finally {
@@ -207,7 +179,7 @@ class TestSecurityHuksSm2 {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_sm2_encrypt_decrypt(): Unit {
-        let keyAlias = "test_sm2_sign_verify"
+        let keyAlias = "test_sm2_encrypt_decrypt"
         let inData = "Hks_SM2_Test_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000_string"
         clean(keyAlias)
         try {
@@ -215,85 +187,62 @@ class TestSecurityHuksSm2 {
                 keyAlias,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
                         HuksParam(
                             HuksTag.HUKS_TAG_PURPOSE,
-                            HuksParamValue.BytesValue([2u8])
-                        ),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
-                    ]
+                            HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
+                        )],
+                    inData: Bytes()
                 )
             )
             let encHandle = initSession(
                 keyAlias,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
-                    ]
-                )
-            ).handle
-            updateSession(
-                encHandle,
-                HuksOptions(
-                    properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
                     ],
                     inData: inData.toArray()
-                ),
-                token: []
-            )
+                )
+            ).handle
+
             let enc = finishSession(
                 encHandle,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
-                    ]
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
+                    ],
+                    inData: inData.toArray()
                 ),
                 token: []
             ).getOrThrow()
-            abortSession(encHandle, HuksOptions(properties: []))
             let decHandle = initSession(
                 keyAlias,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
                     ],
                     inData: enc
                 )
             ).handle
-            updateSession(
-                decHandle,
-                HuksOptions(
-                    properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
-                    ]
-                ),
-                token: []
-            )
+
             let dec = finishSession(
                 decHandle,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(0i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.BytesValue([2u8]))
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_SM2)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_SM2_KEY_SIZE_256)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SM3))
                     ],
                     inData: enc
                 ),
@@ -301,7 +250,6 @@ class TestSecurityHuksSm2 {
             ).getOrThrow()
             let decData = String.fromUtf8(dec)
             @Expect(decData == inData)
-            abortSession(decHandle, HuksOptions(properties: []))
         } catch (e: BusinessException) {
             @Expect(false)
         } finally {

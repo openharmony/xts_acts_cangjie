@@ -21,9 +21,25 @@ import std.unittest.*
 import ohos.hilog.*
 import ohos.base.*
 import kit.MediaLibraryKit.*
+import std.collection.forEach
+import ohos.ui_test
 
 @Test
 class TestPhotoAccessHelperEnums {
+
+    @BeforeAll
+    protected func beforeAll(): Unit {
+        ["ohos.permission.READ_IMAGEVIDEO", "ohos.permission.WRITE_IMAGEVIDEO"] |>
+            forEach {
+            permissionName: String =>
+            getRequiredPermissions([permissionName])
+            sleepFor(5.second)
+            try {
+                click(at: Screen.getTheOnlyUiComponentWhoseTextEqualsTo("允许").centerPoint)
+                sleepFor(5.second)
+            } catch (e: Exception) {}
+        }
+    }
 
     /*
      * @tc.number    : Sub_Cangjie_photo_accesshelper_enums_albumType_0100

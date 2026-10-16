@@ -14,7 +14,7 @@
  */
 
     /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,7 +50,7 @@ class test_GetUriFromPath {
         /*
      * @tc.number    : Sub_Cangjie_fileuri_0100
      * @tc.name    : test_testcase_1
-     * @tc.desc      : fileuri test_GetStringByName 普通路径场景
+     * @tc.desc      : fileuri test_GetStringByName
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -67,7 +67,7 @@ class test_GetUriFromPath {
     /*
      * @tc.number    : Sub_Cangjie_fileuri_0200
      * @tc.name    : test_testcase_2
-     * @tc.desc      : fileuri test_GetStringByName 含中文路径场景
+     * @tc.desc      : fileuri test_GetStringByName
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -84,7 +84,7 @@ class test_GetUriFromPath {
     /*
      * @tc.number    : Sub_Cangjie_fileuri_0300
      * @tc.name    : test_testcase_3
-     * @tc.desc      : fileuri test_GetStringByName 含特殊字符路径场景
+     * @tc.desc      : fileuri test_GetStringByName
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -101,7 +101,7 @@ class test_GetUriFromPath {
     /*
      * @tc.number    : Sub_Cangjie_fileuri_0400
      * @tc.name    : test_testcase_4
-     * @tc.desc      : fileuri test_GetStringByName 含空格路径场景
+     * @tc.desc      : fileuri test_GetStringByName
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -118,7 +118,7 @@ class test_GetUriFromPath {
     /*
      * @tc.number    : Sub_Cangjie_fileuri_0500
      * @tc.name    : test_testcase_5
-     * @tc.desc      : fileuri test_GetStringByName 多层级目录场景
+     * @tc.desc      : fileuri test_GetStringByName
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -135,7 +135,7 @@ class test_GetUriFromPath {
     /*
      * @tc.number    : Sub_Cangjie_fileuri_0600
      * @tc.name    : test_testcase_6
-     * @tc.desc      : fileuri test_GetStringByName 路径末尾带斜杠场景
+     * @tc.desc      : fileuri test_GetStringByName
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -152,7 +152,7 @@ class test_GetUriFromPath {
     /*
      * @tc.number    : Sub_Cangjie_fileuri_0700
      * @tc.name    : test_testcase_7
-     * @tc.desc      : fileuri test_GetStringByName 空路径场景
+     * @tc.desc      : fileuri test_GetStringByName
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0

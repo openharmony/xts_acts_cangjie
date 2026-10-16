@@ -52,7 +52,6 @@ class TestCreateCipherApi {
             } catch (e: BusinessException) {
                 @Expect(e.code, 801)
             }
-
         }
     }
 

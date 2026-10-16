@@ -18,6 +18,7 @@
  */
 package ohos_app_cangjie_entry_test
 
+import ohos.app.ability.ability_delegator_registry.AbilityDelegatorRegistry
 import std.unittest.testmacro.*
 import std.runtime.*
 import std.sync.*
@@ -307,5 +308,46 @@ class display_runtime_test {
         @Expect(fcr1.creaseRects.size, 0)
 
         Hilog.info(0u32, "cangjietest", "testcase test_display_enumsAndStructs ends.")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_Display_FoldableRuntime_0100
+     * @tc.name      : test_foldableRuntime
+     * @tc.desc      : On foldable devices validates actual fold status and display mode; otherwise validates Unknown.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_foldableRuntime(): Unit {
+        let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+        if (isFoldable()) {
+            let status = getFoldStatus()
+            let validStatus = match (status) {
+                case FoldStatusExpanded => status != FoldStatus.FoldStatusUnknown
+                case FoldStatusFolded => status != FoldStatus.FoldStatusUnknown
+                case FoldStatusHalfFolded => status != FoldStatus.FoldStatusUnknown
+                case _ => false
+            }
+            @Expect(validStatus, true)
+            let mode = getFoldDisplayMode()
+            let validMode = match (mode) {
+                case FoldDisplayModeFull => mode != FoldDisplayMode.FoldDisplayModeUnknown
+                case FoldDisplayModeMain => mode != FoldDisplayMode.FoldDisplayModeUnknown
+                case FoldDisplayModeSub => mode != FoldDisplayMode.FoldDisplayModeUnknown
+                case FoldDisplayModeCoordination => mode != FoldDisplayMode.FoldDisplayModeUnknown
+                case _ => false
+            }
+            @Expect(validMode, true)
+            let display = getDefaultDisplaySync()
+            @Expect(display.width > 0i32, true)
+            @Expect(display.height > 0i32, true)
+            delegator.print("CJ_FOLDABLE_BRANCH_EXECUTED")
+        } else {
+            @Expect(getFoldStatus(), FoldStatus.FoldStatusUnknown)
+            @Expect(getFoldDisplayMode(), FoldDisplayMode.FoldDisplayModeUnknown)
+            delegator.print("CJ_FOLDABLE_BRANCH_NOT_EXECUTED")
+        }
     }
 }

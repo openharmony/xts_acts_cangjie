@@ -52,10 +52,12 @@ class TestInitSessionEccSign {
             ("test_case_14", HuksParam(HuksTag.HUKS_TAG_SALT, HuksParamValue.BytesValue([5u8]))),
             ("test_case_16", HuksParam(HuksTag.HUKS_TAG_ITERATION, HuksParamValue.BooleanValue(true))),
             ("test_case_17", HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(true))),
-            ("test_case_19", HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG, HuksParamValue.BooleanValue(true))),
+            ("test_case_19", HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
+                    HuksParamValue.BooleanValue(true))),
             ("test_case_21", HuksParam(HuksTag.HUKS_TAG_ALG_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))),
             ("test_case_22", HuksParam(HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS, HuksParamValue.BooleanValue(true))),
-            ("test_case_23", HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))),
+            ("test_case_23", HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT,
+                    HuksParamValue.BooleanValue(true))),
             ("test_case_24", HuksParam(HuksTag.HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))),
             ("test_case_25", HuksParam(HuksTag.HUKS_TAG_KEY_ALIAS, HuksParamValue.BooleanValue(true))),
             ("test_case_26", HuksParam(HuksTag.HUKS_TAG_DERIVE_KEY_SIZE, HuksParamValue.BooleanValue(true))),
@@ -86,8 +88,8 @@ class TestInitSessionEccSign {
         let validKeyParams = [
             HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_ECC)),
             HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_ECC_KEY_SIZE_256)),
-            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(
-                HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)),
+            HuksParam(HuksTag.HUKS_TAG_PURPOSE,
+                HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)),
             HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SHA256))
         ]
 
@@ -100,7 +102,7 @@ class TestInitSessionEccSign {
                     initSession(keyAlias, HuksOptions(properties: [invalidParam], inData: Bytes()))
                     @Expect(false)
                 } catch (e: BusinessException) {
-                    @Expect(e.code, 12000002i32)
+                    @Expect(e.code, 401i32)
                 }
             }
         } catch (e: BusinessException) {
@@ -122,20 +124,33 @@ class TestInitSessionEccSign {
     @Tag[APILevel22, TestLevel0]
     func test_ecc_sign_session_with_byte_payload(): Unit {
         let keyAlias = "KBCWEUYFI"
-        let properties = [HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Int32Value(1i32))]
+        let properties = [
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_ECC)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_ECC_KEY_SIZE_256)),
+            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(
+                HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)),
+            HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SHA256))]
+        let signProperties = [
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_ECC)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_ECC_KEY_SIZE_256)),
+            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN)),
+            HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SHA256))]
+        let verifyProperties = [
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_ECC)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_ECC_KEY_SIZE_256)),
+            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)),
+            HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SHA256))]
         try {
             generateKeyItem(keyAlias, HuksOptions(properties: properties, inData: Bytes()))
             @Expect(hasKeyItem(keyAlias, HuksOptions()), true)
-            let signHandle = initSession(keyAlias, HuksOptions(properties: properties, inData: Bytes())).handle
-            updateSession(signHandle, HuksOptions(properties: properties, inData: keyAlias.toArray()),
+            let signHandle = initSession(keyAlias, HuksOptions(properties: signProperties, inData: Bytes())).handle
+            updateSession(signHandle, HuksOptions(properties: signProperties, inData: keyAlias.toArray()),
                 token: "inDatas".toArray())
-            let sign = finishSession(signHandle, HuksOptions(properties: properties, inData: Bytes()),
+            let sign = finishSession(signHandle, HuksOptions(properties: signProperties, inData: Bytes()),
                 token: "inDatas".toArray()).getOrThrow()
-            abortSession(signHandle, HuksOptions(properties: [], inData: Bytes()))
-            let verifyHandle = initSession(keyAlias, HuksOptions(properties: properties, inData: Bytes())).handle
-            updateSession(verifyHandle, HuksOptions(properties: properties, inData: keyAlias.toArray()), token: Bytes())
-            let verify = finishSession(verifyHandle, HuksOptions(properties: properties, inData: sign)).getOrThrow()
-            abortSession(verifyHandle, HuksOptions(properties: [], inData: Bytes()))
+            let verifyHandle = initSession(keyAlias, HuksOptions(properties: verifyProperties, inData: Bytes())).handle
+            updateSession(verifyHandle, HuksOptions(properties: verifyProperties, inData: keyAlias.toArray()), token: Bytes())
+            let verify = finishSession(verifyHandle, HuksOptions(properties: verifyProperties, inData: sign)).getOrThrow()
             @Expect(verify.isEmpty(), false)
             deleteKeyItem(keyAlias, HuksOptions())
         } catch (e: BusinessException) {

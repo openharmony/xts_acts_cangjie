@@ -101,6 +101,7 @@ class Test_cookie {
         var result = WebCookieManager.isThirdPartyCookieAllowed()
         @Expect(result)
         WebCookieManager.setAcceptThirdPartyCookieEnabled(false)
+        sleep(Duration.second * 1i64)
         result = WebCookieManager.isThirdPartyCookieAllowed()
         @Expect(!result)
         Hilog.info(0u32, "cangjietest", "test_putAcceptThirdPartyCookieEnabled_isThirdPartyCookieAllowed end")
@@ -119,11 +120,61 @@ class Test_cookie {
     func test_fetchCookie_noValidCookie() {
         Hilog.info(0u32, "cangjietest", "test_fetchCookie_noValidCookie start")
         try {
-            WebCookieManager.fetchCookie("xxx")
+            var longUrl = "https://example.com"
+            for (i in 0..50000){
+                longUrl += "a"
+            }
+            let result = WebCookieManager.fetchCookie("longUrl")
             @Expect(false)
         } catch (e: BusinessException) {
             @Expect(e.code, 17100002)
         }
         Hilog.info(0u32, "cangjietest", "test_fetchCookie_noValidCookie end")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_arkweb_webview_0005
+     * @tc.name      : test_WebCookieManager_error_code
+     * @tc.desc      : Test WebCookieManager configCookie error code 17100002 and 17100005 for invalid URL and cookie value
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_WebCookieManager_error_code() {
+        Hilog.info(0u32, "cangjietest", "test_WebCookieManager_error_code start")
+        try {
+            WebCookieManager.configCookie("", "a=b")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 17100002)
+        }
+        try {
+            WebCookieManager.configCookie("123", "a=b")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 17100002)
+        }
+        try {
+            WebCookieManager.fetchCookie("")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 17100002)
+        }
+        try {
+            WebCookieManager.fetchCookie("123")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 17100002)
+        }
+
+        try {
+            WebCookieManager.configCookie("https://www.example.com", "")
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 17100005)
+        }
+        Hilog.info(0u32, "cangjietest", "test_WebCookieManager_error_code end")
     }
 }

@@ -96,7 +96,7 @@ public func sleepFor(someDuration: Duration): Unit {
 }
 
 
-public class TestDriver {
+public class TestDriver{
     private static var _driver: ?Driver = None
 
     public static prop driver: Driver {
@@ -1602,13 +1602,30 @@ func jsonWriteWithoutFormat(json: JsonValue, buff: WriteBuffer, htmlSafe!: Bool 
             }
             buff.removetail()
             buff.append(b']')
-        case js: JsonString => buff.append(b'\"').appendEscape(js.getValue(), htmlSafe:htmlSafe).append(b'\"')
+        case js: JsonString => buff.append(b'\"').append(js.getValue()).append(b'\"')
         case jb: JsonBool => buff.append(jb.getValue())
         case ji: JsonInt => buff.append(ji.getValue())
         case jf: JsonFloat => buff.append(jf.getValue())
         case _ => buff.append(NULL_STRING)
     }
 }
+
+public class getInspect {
+    public static func getAttributeValue(componentId: String, attributeName: String, attributeParam!:?String = None): String {
+        try {
+            let inspectorInfoJsonString = getInspectorByKey(componentId)
+            let inspectorInfo = JsonValue.fromStr(inspectorInfoJsonString).asObject()
+            if(attributeParam != Option<String>.None){
+                inspectorInfo.get("$attrs").getOrThrow().asObject().get(attributeName).getOrThrow().asObject().get(attributeParam.getOrThrow()).getOrThrow().toString()
+            }else{
+                inspectorInfo.get("$attrs").getOrThrow().asObject().get(attributeName).getOrThrow().toString()
+            }            
+        } catch (e: Exception) {
+            return "Not find UIComponent or Json parser failed!"
+        }
+    }
+}
+
 
 
 

@@ -145,7 +145,11 @@ class TestTelephonyCall {
     @Tag[APILevel22, TestLevel0]
     func test_make_call_func(): Unit {
         Call.makeCall(getAbilityContext(), "")
-        @Expect(true)
+        let driver:Driver=Driver.create()
+        //校验是否拉取拨号页
+        @Expect(driver.waitForComponent(On().text("联系人"),3000).getOrThrow().getText(),"联系人")
+        let window=driver.findWindow(WindowFilter(active:true)).getOrThrow()
+        window.minimize()
     }
 
     /*
@@ -186,7 +190,7 @@ class TestTelephonyCall {
             ((CallState.CallStateAnswered.toString()) == ("CallState.CallStateAnswered")))
     }
 
-        /*
+    /*
      * @tc.number    : Sub_Cangjie_TelephonyKit_Test_telephony_call_1000
      * @tc.name      : test_call_state_equal_operator
      * @tc.desc      : test CallState enum equality and inequality operators for all values
@@ -198,9 +202,12 @@ class TestTelephonyCall {
     @Tag[APILevel22, TestLevel0]
     func test_call_state_equal_operator(): Unit {
         let callStates = [
-            CallState.CallStateUnknown, CallState.CallStateIdle,CallState.CallStateRinging, 
-            CallState.CallStateOffhook, CallState.CallStateAnswered
-            ]
+            CallState.CallStateUnknown,
+            CallState.CallStateIdle,
+            CallState.CallStateRinging,
+            CallState.CallStateOffhook,
+            CallState.CallStateAnswered
+        ]
         for (left in callStates) {
             @Expect((left == left) && !(left != left))
             for (right in callStates) {

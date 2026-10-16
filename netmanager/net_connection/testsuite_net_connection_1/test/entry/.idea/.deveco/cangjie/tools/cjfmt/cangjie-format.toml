@@ -1,6 +1,0 @@
-indentWidth = 4
-linelimitLength = 120
-lineBreakType = "LF"
-allowMultiLineMethodChain = true
-multipleLineMethodChainLevel = 2
-multipleLineMethodChainOverLineLength = true

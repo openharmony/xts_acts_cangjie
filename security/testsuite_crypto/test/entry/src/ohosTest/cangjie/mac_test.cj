@@ -71,7 +71,6 @@ class TestMac {
             } catch (e: BusinessException) {
                 @Expect(e.code, 401i32)
             }
-
         }
     }
 

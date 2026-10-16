@@ -55,13 +55,11 @@ class Test_AVImageQueryOps {
     func TestCase_AVImageGeneratorTypeRef(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_AVImageGeneratorTypeRef begins.")
         let gen: AVImageGenerator = createAVImageGenerator()
-        try {
-            let fd = gen.fdSrc
-            Hilog.info(0u32, "cangjietest", "", "fdSrc.fd=${fd.fd}, offset=${fd.offset}, length=${fd.length}")
-            @Expect(fd.length >= -1)
-        } catch (e: BusinessException) {
-            @Expect(e.code, 5400102i32)
-        }
+        let rawFd = getResourceManager().getRawFd("trailer.mp4")
+        gen.fdSrc = AVFileDescriptor(rawFd.fd, offset: rawFd.offset, length: rawFd.length)
+        let fd = gen.fdSrc
+        Hilog.info(0u32, "cangjietest", "", "fdSrc.fd=${fd.fd}, offset=${fd.offset}, length=${fd.length}")
+        @Expect(fd.length >= -1)
         gen.release()
         Hilog.info(0u32, "cangjietest", "", "testcase TestCase_AVImageGeneratorTypeRef ends.")
     }

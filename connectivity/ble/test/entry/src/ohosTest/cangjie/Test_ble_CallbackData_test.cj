@@ -162,6 +162,7 @@ class Test_ble_CallbackData {
         Hilog.info(0u32, "cangjietest", "", "testcase test_ble_off begins.")
         try {
             off(BluetoothBleCallbackType.AdvertisingStateChange)
+            off(BluetoothBleCallbackType.AdvertisingStateChange, callback: AdvStateCb())
             @Expect(true)
         } catch (e: BusinessException) {
             Hilog.info(0u32, "cangjietest", "", "errCode: ${e.code}, errMessage: ${e.message}")

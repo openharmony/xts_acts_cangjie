@@ -34,6 +34,9 @@ import ohos.arkui.state_management.AppStorage
 import ohos.callback_invoke.Callback1Argument
 import ohos.hilog.Hilog
 import ohos.window.WindowCallbackType
+import kit.AbilityKit.Want
+import kit.TestKit.{AbilityDelegatorRegistry, AbilityMonitor}
+import ohos_app_cangjie_entry.windowLifecycleDestroyed
 import ohos.window.SystemBarType
 import ohos.business_exception.*
 
@@ -708,6 +711,75 @@ class Test_window_runtime {
         }
     }
 
+
+    /*
+     * @tc.number    : Sub_Cangjie_WindowStage_Destroyed_0100
+     * @tc.name      : test_WindowStageAfterAbilityDestroy
+     * @tc.desc      : Creates windows on a second Ability, terminates it, and checks both WindowStage methods return 1300002.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_WindowStageAfterAbilityDestroy(): Unit {
+        let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+        let monitor = AbilityMonitor("WindowLifecycleAbility", moduleName: "entry")
+        windowLifecycleDestroyed.store(0)
+        AppStorage.delete("windowLifecycleStage")
+        delegator.addAbilityMonitor(monitor)
+        try {
+            delegator.startAbility(Want(bundleName: "com.example.window_baseFunc",
+                moduleName: "entry", abilityName: "WindowLifecycleAbility"))
+            let ability = delegator.waitAbilityMonitor(monitor, timeout: 10000)
+            try {
+                var stage = AppStorage.get<WindowStage>("windowLifecycleStage")
+                var attempts = 0i64
+                while (stage.isNone() && attempts < 100i64) {
+                    sleep(Duration.millisecond * 100)
+                    stage = AppStorage.get<WindowStage>("windowLifecycleStage")
+                    attempts += 1
+                }
+                let savedStage = stage.getOrThrow()
+                let mainWindow = savedStage.getMainWindow()
+                @Expect(mainWindow.getWindowProperties().windowType, WindowType.TypeMain)
+                let child = savedStage.createSubWindow("cjStageChild")
+                @Expect(findWindow("cjStageChild").getWindowProperties().id, child.getWindowProperties().id)
+                child.destroyWindow()
+                ability.context.terminateSelf()
+                attempts = 0
+                while (windowLifecycleDestroyed.load() == 0i64 && attempts < 100i64) {
+                    sleep(Duration.millisecond * 100)
+                    attempts += 1
+                }
+                @Expect(windowLifecycleDestroyed.load(), 1i64)
+                try {
+                    savedStage.getMainWindow()
+                    @Expect(false)
+                } catch (e: BusinessException) {
+                    @Expect(e.code, 1300002i32)
+                }
+                var unexpected: ?Window = None
+                try {
+                    unexpected = savedStage.createSubWindow("cjStageAfterDestroy")
+                    @Expect(false)
+                } catch (e: BusinessException) {
+                    @Expect(e.code, 1300002i32)
+                }
+                if (unexpected.isSome()) {
+                    unexpected.getOrThrow().destroyWindow()
+                }
+            } finally {
+                if (windowLifecycleDestroyed.load() == 0i64) {
+                    ability.context.terminateSelf()
+                }
+            }
+        } finally {
+            delegator.removeAbilityMonitor(monitor)
+            AppStorage.delete("windowLifecycleStage")
+        }
+    }
+
     /*
      * @tc.number    : Sub_Cangjie_test_on_off
      * @tc.name      : test_on_off
@@ -750,6 +822,60 @@ class Test_window_runtime {
             }
         }
         window.off(WindowCallbackType.KeyboardHeightChange)
+    }
+
+
+    /*
+     * @tc.number    : Sub_Cangjie_Window_off_InvalidType_0100
+     * @tc.name      : test_off_invalidType
+     * @tc.desc      : Calls off(type, callback) with unsupported types and checks parameter error 1300016.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_off_invalidType(): Unit {
+        let window = getMainWindow()
+        let callback = MyCallbackObject({ val: UInt32 => () })
+        window.on(WindowCallbackType.KeyboardHeightChange, callback)
+        window.off(WindowCallbackType.KeyboardHeightChange, callback)
+        let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+        func checkOff(kind: WindowCallbackType, label: String): Unit {
+            try {
+                window.off(kind, callback)
+                delegator.print("off callback ${label}: returned without error")
+                @Expect(false)
+            } catch (e: BusinessException) {
+                delegator.print("off callback ${label}: code=${e.code}")
+                @Expect(e.code, 1300016i32)
+            }
+
+        }
+        checkOff(WindowCallbackType.SubWindowClose, "SubWindowClose")
+        checkOff(WindowCallbackType.WindowSizeChange, "WindowSizeChange")
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_Window_off_TypeInvalid_0200
+     * @tc.name      : test_off_type_invalidParameter
+     * @tc.desc      : Probes the no-callback off overload with unsupported callback types and expects parameter error 1300016.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_off_type_invalidParameter(): Unit {
+        let window = getMainWindow()
+        for (kind in [WindowCallbackType.SubWindowClose, WindowCallbackType.WindowSizeChange]) {
+            try {
+                window.off(kind)
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 1300002i32)
+            }
+        }
     }
 
     /*

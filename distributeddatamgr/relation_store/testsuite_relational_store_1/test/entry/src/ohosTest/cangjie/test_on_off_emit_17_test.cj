@@ -146,7 +146,7 @@ class Test_on_off_emit_17 {
         rdbStore.off("zps", true)
         rdbStore.off("cangjie", true)
         rdbStore.off("cangjie", false)
-        rdbStore.executeSql("DROP TABLE EMPLOYEE")  
+        rdbStore.executeSql("DROP TABLE EMPLOYEE")
     }
     /*
      * @tc.number    : Sub_Cangjie_RelationStore_Test_on_off_emit_17_0100
@@ -179,8 +179,8 @@ class Test_on_off_emit_17 {
         let callBack = CallBack()
         rdbStore.on("zps", true, callBack)
         rdbStore.emit("zps")
+        sleep(Duration.second)
         @Expect(sum, 1)
-
     }
 
     /*
@@ -197,6 +197,7 @@ class Test_on_off_emit_17 {
         let callBack = CallBack1()
         rdbStore.on("cangjie", false, callBack)
         rdbStore.emit("cangjie")
+        sleep(Duration.second)
         @Expect(sum1, 1)
     }
 

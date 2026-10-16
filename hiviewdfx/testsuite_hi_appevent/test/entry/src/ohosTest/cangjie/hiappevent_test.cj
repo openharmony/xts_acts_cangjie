@@ -294,6 +294,8 @@ class TestHiappevent {
             @Expect(true)
         } catch (e: Exception) {
             @Expect(false)
+        } finally {
+            HiAppEvent.configure(ConfigOption(maxStorage: "10M", disable: false))
         }
     }
 
@@ -314,6 +316,8 @@ class TestHiappevent {
             @Expect(true)
         } catch (e: Exception) {
             @Expect(false)
+        } finally {
+            HiAppEvent.configure(ConfigOption(maxStorage: "10M", disable: false))
         }
     }
 
@@ -335,6 +339,8 @@ class TestHiappevent {
         } catch (e: BusinessException) {
             Hilog.info(0, "test_hi_app_event_configure_error", "${e.message.toString()}")
             @Expect(e.code, 11103001i32)
+        } finally {
+            HiAppEvent.configure(ConfigOption(maxStorage: "10M", disable: false))
         }
     }
 

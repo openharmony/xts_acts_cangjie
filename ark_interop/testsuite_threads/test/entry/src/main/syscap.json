@@ -5,7 +5,9 @@
         ],
         "custom": [
             {
-                "xts": []
+                "xts": [
+                    "SystemCapability.Base"
+                ]
             }
         ]
     }
