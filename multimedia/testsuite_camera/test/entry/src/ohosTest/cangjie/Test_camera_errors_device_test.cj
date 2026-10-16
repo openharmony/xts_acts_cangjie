@@ -25,9 +25,29 @@ import ohos.multimedia.image.createImageReceiver
 import ohos.multimedia.image.ImageFormat
 import ohos.multimedia.image.Size as ImageSize
 import ohos.business_exception.BusinessException
+import ohos.ability_access_ctrl.Permissions
+import ohos.ui_test.Driver
+import ohos.ui_test.On
+import std.collection.forEach
 
 @Test
 class Test_camera_errors_device {
+
+    override func beforeAll(): Unit {
+        ["ohos.permission.CAMERA", "ohos.permission.MICROPHONE", "ohos.permission.WRITE_MEDIA", "ohos.permission.READ_MEDIA", "ohos.permission.MEDIA_LOCATION"] |>
+            forEach<Permissions> {
+            permissionName: Permissions =>
+            sleepFor(3.second)
+            getRequiredPermissions([permissionName])
+            try {
+                if(TestDriver.driver.waitForComponent(On().text("允许"), 3000i32).isNone()){
+                    TestDriver.driver.waitForComponent(On().text("始终允许"), 3000i32).getOrThrow().click()
+                }else{
+                    TestDriver.driver.waitForComponent(On().text("允许"), 3000i32).getOrThrow().click()
+                }
+            } catch (e: Exception) {}
+        }
+    }
     func setupRunningSession(mgr: CameraManager): (PhotoSession, CameraInput, PhotoOutput) {
         let cameras: Array<CameraDevice> = mgr.getSupportedCameras()
         @Expect(cameras.size > 0, true)

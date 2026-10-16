@@ -50,11 +50,11 @@ class TestFormatPhoneNumberParameters {
         for (parameter_0 in cases_1315) {
             try {
                 let numberFormat = NumberFormatOptions(countryCode: parameter_0)
+                Call.formatPhoneNumber("", options: numberFormat)
                 @Expect(false)
             } catch (e: BusinessException) {
                 @Expect(e.code, 8300001i32)
             }
-
         }
     }
 
@@ -84,7 +84,6 @@ class TestFormatPhoneNumberParameters {
         for ((parameter_0, parameter_1, parameter_2) in cases_1316) {
             let numberFormat = NumberFormatOptions(countryCode: parameter_0)
             @Expect(Call.formatPhoneNumber(parameter_1, options: numberFormat), parameter_2)
-
         }
     }
 }

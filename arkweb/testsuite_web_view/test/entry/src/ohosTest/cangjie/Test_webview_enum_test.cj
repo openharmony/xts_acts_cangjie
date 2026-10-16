@@ -84,7 +84,7 @@ class Test_webview_enum {
      */
     @TestCase
     @Tag[APILevel22, TestLevel0]
-    public func testWebHeaderFields(): Unit {
+    func testWebHeaderFields(): Unit {
         let header = WebHeader("key1", "value1")
         @Expect(header.headerKey == "key1")
         @Expect(header.headerValue == "value1")

@@ -25,32 +25,37 @@ import ohos.data.relational_store.RelationalStoreValueType as RelationalStoreVal
 import std.math.*
 import std.collection.{HashMap}
 import ohos.business_exception.BusinessException
+import std.time.*
+import kit.PerformanceAnalysisKit.Hilog
 
 @Test
 class Test_groupBy_02 {
     var _rdbStore: Option<RdbStore> = None
     prop rdbStore: RdbStore {
-        get() {
-            match (_rdbStore) {
-                case Some(rdbStore) => rdbStore
-                case None =>
-                    let stageContext = getAbilityContext()
-                    _rdbStore = getRdbStore(stageContext,
-                        StoreConfig(RelationalStoreSecurityLevel.S2, name: "RdbTest.db", encrypt: true, dataGroupId: "",
-                            customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true,
-                            allowRebuild: false, isReadOnly: false, pluginLibs: ["pluginLibs"],
-                            cryptoParam: CryptoParam(), vector: false, tokenizer: Tokenizer.NoneTokenizer, persist: true,
-                            enableSemanticIndex: false))
-                    _rdbStore.getOrThrow()
-            }
+        get() { _rdbStore.getOrThrow() }
+    }
+    let config = StoreConfig(RelationalStoreSecurityLevel.S2, name: "RdbTest_groupby.db", encrypt: true, dataGroupId: "",
+        customDir: "valid modifyTime", rootDir: "rootDir", autoCleanDirtyData: true,
+        allowRebuild: false, isReadOnly: false, pluginLibs: ["pluginLibs"],
+        cryptoParam: CryptoParam(), vector: false, tokenizer: Tokenizer.NoneTokenizer, persist: true,
+        enableSemanticIndex: false)
+    public override func beforeAll(): Unit {
+        let stageContext = getAbilityContext()
+        try {
+            deleteRdbStore(stageContext, config)
+            Hilog.info(0u32, "cangjietest", "beforeAll deleteRdbStore RdbTest.db succeeded")
+        } catch (e: BusinessException) {
+            Hilog.info(0u32, "cangjietest", "beforeAll deleteRdbStore RdbTest.db failed, code: ${e.code}, msg: ${e.message}")   
         }
+        _rdbStore = getRdbStore(stageContext, config)
     }
     public override func afterAll(): Unit {
-        match (_rdbStore) {
-            case None => ()
-            case Some(_) =>
-                let stageContext = getAbilityContext()
-                deleteRdbStore(stageContext, "RdbTest.db")
+        let stageContext = getAbilityContext()
+        try {
+            deleteRdbStore(stageContext, config)
+            Hilog.info(0u32, "cangjietest", "beforeAll deleteRdbStore RdbTest.db succeeded")
+        } catch (e: BusinessException) {
+            Hilog.info(0u32, "cangjietest", "beforeAll deleteRdbStore RdbTest.db failed, code: ${e.code}, msg: ${e.message}")  
         }
     }
     public override func beforeEach(): Unit {
@@ -123,9 +128,10 @@ class Test_groupBy_02 {
             values.add("CODES", RelationalStoreValueType.Boolean(true))
             rdbStore.insert("EMPLOYEE", values)
         }
+        sleep(Duration.second)
     }
     public override func afterEach(): Unit {
-        rdbStore.executeSql("DROP TABLE EMPLOYEE")
+        rdbStore.executeSql("DROP TABLE IF EXISTS EMPLOYEE")
     }
 
     /*
@@ -141,8 +147,11 @@ class Test_groupBy_02 {
     func test_groupby_01(): Unit {
         let predicates = RdbPredicates("EMPLOYEE")
         predicates.groupBy(["AGE", "NAME"])
+        sleep(Duration.second)
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
+        sleep(Duration.second)
         @Expect(resultSet.rowCount, 601)
+        resultSet.close()
     }
 
     /*
@@ -160,6 +169,7 @@ class Test_groupBy_02 {
         predicates.groupBy(["AGE", ""])
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         @Expect(resultSet.rowCount, -1)
+        resultSet.close()
     }
 
     /*
@@ -177,6 +187,7 @@ class Test_groupBy_02 {
         predicates.groupBy(["AGE", "/0"])
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         @Expect(resultSet.rowCount, -1)
+        resultSet.close()
     }
 
     /*
@@ -194,6 +205,7 @@ class Test_groupBy_02 {
         predicates.groupBy(["AGE", "\\"])
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         @Expect(resultSet.rowCount, -1)
+        resultSet.close()
     }
 
     /*
@@ -211,6 +223,7 @@ class Test_groupBy_02 {
         predicates.groupBy(["AGE", "#"])
         let resultSet = rdbStore.query(predicates, columns: ["ID", "NAME", "AGE", "SALARY", "CODES"])
         @Expect(resultSet.rowCount, -1)
+        resultSet.close()
     }
 
 }

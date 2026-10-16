@@ -23,6 +23,8 @@ func testsuite() {
     registerTestSuite {testGetProfileByAbility_1()}
     registerTestSuite {testIsDefaultApplication_1()}
     registerTestSuite {testCanOpenLink_1()}
-registerTestSuite {Test_bundle_errors()}
+    registerTestSuite {Test_bundle_errors()}
     registerTestSuite {testGetBundleInfoForSelf_1()}
+    registerTestSuite {Test_bundle_types()}
+    registerTestSuite {Test_default_app()}
 }

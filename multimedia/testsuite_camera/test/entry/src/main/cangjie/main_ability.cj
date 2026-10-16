@@ -27,6 +27,7 @@ class MainAbility <: UIAbility {
     }
     public func onCreate(want: Want, launchParam: LaunchParam): Unit {
         Hilog.info(0u32, "cangjietest", "", "MainAbility OnCreated.${want.abilityName}")
+        AppStorage.setOrCreate("abilityContext", this.context)
     }
 
     public func onWindowStageCreate(windowStage: WindowStage): Unit {

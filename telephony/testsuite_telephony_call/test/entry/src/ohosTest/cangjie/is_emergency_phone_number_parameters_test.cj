@@ -65,7 +65,6 @@ class TestIsEmergencyPhoneNumberParameters {
         ]
         for (parameter_0 in cases_1319) {
             @Expect(Call.isEmergencyPhoneNumber(parameter_0), false)
-
         }
     }
 
@@ -82,9 +81,10 @@ class TestIsEmergencyPhoneNumberParameters {
     func test_case_7(): Unit {
         Hilog.info(0, "cangjietest", "testcase test_case_7 begins.")
         try {
-            @Expect(Call.isEmergencyPhoneNumber("abcdrf"), false)
-        } catch (e: BusinessException) {
+            Call.isEmergencyPhoneNumber("abcdrf")
             @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 8300001i32)
         }
         Hilog.info(0, "cangjietest", "testcase test_case_7 ends.")
     }

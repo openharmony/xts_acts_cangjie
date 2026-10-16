@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -441,27 +441,40 @@ class Test_image {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_Enum_03(): Unit {
-        @Expect(PixelMapFormat.Unknown, PixelMapFormat.Unknown)
-        @Expect(Rgb565, Rgb565)
-        @Expect(Rgba8888, Rgba8888)
-        @Expect(Bgra8888, Bgra8888)
-        @Expect(Rgb888, Rgb888)
-        @Expect(Alpha8, Alpha8)
-        @Expect(RgbaF16, RgbaF16)
-        @Expect(Nv21, Nv21)
-        @Expect(Nv12, Nv12)
-        @Expect(AlphaType.Unknown, AlphaType.Unknown)
-        @Expect(Opaque, Opaque)
-        @Expect(Premul, Premul)
-        @Expect(UnPremul, UnPremul)
-        @Expect(FitTargetSize, FitTargetSize)
-        @Expect(CenterCrop, CenterCrop)
-        @Expect(Ycbcr422Sp, Ycbcr422Sp)
-        @Expect(ImageFormat.Jpeg, ImageFormat.Jpeg)
-        @Expect(YuvY, YuvY)
-        @Expect(YuvU, YuvU)
-        @Expect(YuvV, YuvV)
-        @Expect(ComponentType.Jpeg, ComponentType.Jpeg)
+        @Expect(PixelMapFormat.Unknown.toString(), "PixelMapFormat.Unknown")
+        @Expect(Rgb565.toString(), "PixelMapFormat.Rgb565")
+        @Expect(Rgba8888.toString(), "PixelMapFormat.Rgba8888")
+        @Expect(Bgra8888.toString(), "PixelMapFormat.Bgra8888")
+        @Expect(Rgb888.toString(), "PixelMapFormat.Rgb888")
+        @Expect(Alpha8.toString(), "PixelMapFormat.Alpha8")
+        @Expect(RgbaF16.toString(), "PixelMapFormat.RgbaF16")
+        @Expect(Nv21.toString(), "PixelMapFormat.Nv21")
+        @Expect(Nv12.toString(), "PixelMapFormat.Nv12")
+        @Expect(AlphaType.Unknown.toString(), "AlphaType.Unknown")
+        @Expect(Opaque.toString(), "AlphaType.Opaque")
+        @Expect(Premul.toString(), "AlphaType.Premul")
+        @Expect(UnPremul.toString(), "AlphaType.UnPremul")
+        @Expect(FitTargetSize.toString(), "ScaleMode.FitTargetSize")
+        @Expect(CenterCrop.toString(), "ScaleMode.CenterCrop")
+        @Expect(Ycbcr422Sp.toString(), "ImageFormat.Ycbcr422Sp")
+        @Expect(ImageFormat.Jpeg.toString(), "ImageFormat.Jpeg")
+        @Expect(YuvY.toString(), "ComponentType.YuvY")
+        @Expect(YuvU.toString(), "ComponentType.YuvU")
+        @Expect(YuvV.toString(), "ComponentType.YuvV")
+        @Expect(ComponentType.Jpeg.toString(), "ComponentType.Jpeg")
+        let color = Array<UInt8>(16, repeat: 0)
+        let opts = InitializationOptions(Size(2i32, 2i32), editable: true, alphaType: AlphaType.UnPremul,
+            pixelFormat: Rgba8888, scaleMode: ScaleMode.FitTargetSize)
+        let pm = createPixelMap(color, opts)
+        @Expect(pm.getImageInfo().pixelFormat, Rgba8888)
+        let badOpts = InitializationOptions(Size(1i32, 1i32), editable: true, alphaType: AlphaType.Unknown,
+            pixelFormat: PixelMapFormat.Unknown, scaleMode: ScaleMode.FitTargetSize)
+        try {
+            let _ = createPixelMap(Array<UInt8>(0, repeat: 0), badOpts)
+            @Expect(false)
+        } catch (e: BusinessException) {
+            @Expect(e.code, 62980115i32)
+        }
     }
 
     /*
@@ -475,8 +488,8 @@ class Test_image {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_PackingDynamicRange(): Unit {
-        @Expect(PackingDynamicRange.Auto, PackingDynamicRange.Auto)
-        @Expect(PackingDynamicRange.Sdr, PackingDynamicRange.Sdr)
+        @Expect(PackingDynamicRange.Auto.toString(), "PackingDynamicRange.Auto")
+        @Expect(PackingDynamicRange.Sdr.toString(), "PackingDynamicRange.Sdr")
     }
 
     /*

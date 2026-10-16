@@ -38,7 +38,7 @@ class TestCrypto {
         sleep(Duration.second)
     }
 
-     /*
+    /*
      * @tc.number    : Sub_Cangjie_CryptoArchitectureKit_Test_crypto_1300
      * @tc.name      : test_crypto_mode_and_key_api
      * @tc.desc      : API coverage counterpart of ArkTS CryptoArchitecture enum/interface
@@ -62,7 +62,7 @@ class TestCrypto {
         @Expect(key.format, "PKCS#8")
     }
 
-     /*
+    /*
      * @tc.number    : Sub_Cangjie_CryptoArchitectureKit_Test_crypto_1400
      * @tc.name      : test_cipher_spec_item_enum_api
      * @tc.desc      : Verify every public CipherSpecItem enum value can be represented and round-tripped through its string conversion.
@@ -396,5 +396,4 @@ class TestCrypto {
         decoder.doFinal(Option<DataBlob>.None)
         @Expect(message, String.fromUtf8(decryptData.data))
     }
-
 }

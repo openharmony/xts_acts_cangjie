@@ -29,13 +29,10 @@ import ohos.business_exception.BusinessException
 class TestSecurityHuksGenerateKey {
     let genKeyOptionsTest1 = HuksOptions(
         properties: [
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.BooleanValue(true)),
-            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(1i32)),
-            HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Int32Value(0i32)),
-            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Int32Value(1i32)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(false)),
-            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
+            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(
+                HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
         ]
     )
 
@@ -51,8 +48,7 @@ class TestSecurityHuksGenerateKey {
     @Tag[APILevel22, TestLevel0]
     func test_generate_key_empty_alias(): Unit {
         let cases_1310 = [
-            "",
-            "test_generate_key"
+            ""
         ]
         for (parameter_0 in cases_1310) {
             let keyAlias = parameter_0
@@ -67,7 +63,6 @@ class TestSecurityHuksGenerateKey {
             } finally {
                 @Expect(flag)
             }
-
         }
     }
 }

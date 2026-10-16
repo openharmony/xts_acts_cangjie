@@ -41,6 +41,7 @@ let NULL_STRING = "null".toArray()
 const MIN_CAPACITY = 16
 const BLANK: Byte = ' '
 
+
 @FastNative
 foreign func CJ_JSON_ReplaceEscapeChar(input: CPointer<UInt8>, inputlen: Int64, buffer: CPointer<UInt8>, htmlSafe: Bool): Int64
 

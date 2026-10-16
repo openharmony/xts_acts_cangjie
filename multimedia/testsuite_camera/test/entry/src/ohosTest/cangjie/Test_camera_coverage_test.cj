@@ -27,6 +27,9 @@ import ohos.callback_invoke.*
 import std.collection.forEach
 import std.time.*
 import ohos.device_info.*
+import ohos.ability_access_ctrl.Permissions
+import ohos.ui_test.Driver
+import ohos.ui_test.On
 
 class CameraStatusCallback <: Callback1Argument<CameraStatusInfo> {
     public static var invoked: Bool = false
@@ -118,6 +121,22 @@ func getCoverageCameraManager(): CameraManager {
 
 @Test
 class Test_camera_coverage {
+
+    override func beforeAll(): Unit {
+        ["ohos.permission.CAMERA", "ohos.permission.MICROPHONE", "ohos.permission.WRITE_MEDIA", "ohos.permission.READ_MEDIA", "ohos.permission.MEDIA_LOCATION"] |>
+            forEach<Permissions> {
+            permissionName: Permissions =>
+            sleepFor(3.second)
+            getRequiredPermissions([permissionName])
+            try {
+                if(TestDriver.driver.waitForComponent(On().text("允许"), 3000i32).isNone()){
+                    TestDriver.driver.waitForComponent(On().text("始终允许"), 3000i32).getOrThrow().click()
+                }else{
+                    TestDriver.driver.waitForComponent(On().text("允许"), 3000i32).getOrThrow().click()
+                }
+            } catch (e: Exception) {}
+        }
+    }
     /*
      * @tc.number    : Sub_Cangjie_Camera_coverage_0100
      * @tc.name      : Test_EnumValues_ExposureMode
@@ -304,7 +323,21 @@ class Test_camera_coverage {
     @Tag[APILevel22, TestLevel0]
     func Test_EnumValues_CameraEvents(): Unit {
         Hilog.info(0u32, "cangjietest", "", "testcase Test_EnumValues_CameraEvents begins.")
+        @Expect(CameraEvents.CameraError == CameraEvents.CameraError, true)
         @Expect(CameraEvents.CameraError != CameraEvents.CameraStatus, true)
+        @Expect(CameraEvents.FoldStatusChange == CameraEvents.FoldStatusChange, true)
+        @Expect(CameraEvents.TorchStatusChange == CameraEvents.TorchStatusChange, true)
+        @Expect(CameraEvents.FrameStart == CameraEvents.FrameStart, true)
+        @Expect(CameraEvents.FrameEnd == CameraEvents.FrameEnd, true)
+        @Expect(CameraEvents.CaptureStartWithInfo == CameraEvents.CaptureStartWithInfo, true)
+        @Expect(CameraEvents.FrameShutter == CameraEvents.FrameShutter, true)
+        @Expect(CameraEvents.CaptureEnd == CameraEvents.CaptureEnd, true)
+        @Expect(CameraEvents.FrameShutterEnd == CameraEvents.FrameShutterEnd, true)
+        @Expect(CameraEvents.CaptureReady == CameraEvents.CaptureReady, true)
+        @Expect(CameraEvents.EstimatedCaptureDuration == CameraEvents.EstimatedCaptureDuration, true)
+        @Expect(CameraEvents.MetadataObjectsAvailable == CameraEvents.MetadataObjectsAvailable, true)
+        @Expect(CameraEvents.FocusStateChange == CameraEvents.FocusStateChange, true)
+        @Expect(CameraEvents.SmoothZoomInfoAvailable == CameraEvents.SmoothZoomInfoAvailable, true)
         Hilog.info(0u32, "cangjietest", "", "testcase Test_EnumValues_CameraEvents ends.")
     }
 

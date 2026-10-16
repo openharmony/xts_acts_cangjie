@@ -300,7 +300,7 @@ class test_delegator {
     func test_waitAbilityMonitors(): Unit {
         Hilog.info(0u32, "cangjietest", "testcase test_waitAbilityMonitors begins.")
         let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
-        let monitor = AbilityMonitor("EntryAbility", onAbilityForeground: {
+        let monitor = AbilityMonitor("NonexistentAbility", onAbilityForeground: {
             ability => delegator.print("coverage monitor foreground")
         })
         let stageMonitor = AbilityStageMonitor("entry", "com.ohos.example")
@@ -325,4 +325,69 @@ class test_delegator {
         Hilog.info(0u32, "cangjietest", "testcase test_waitAbilityMonitors ends.")
     }
 
+    /*
+     * @tc.number    : Sub_Cangjie_ability_delegator_registry_AbilityLifecycleState_NotEqual_0100
+     * @tc.name      : test_abilityLifecycleState_notEqual
+     * @tc.desc      : Compares different AbilityLifecycleState values through the overloaded != operator.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_abilityLifecycleState_notEqual(): Unit {
+        let uninitialized = AbilityLifecycleState.Uninitialized
+        let created = AbilityLifecycleState.Create
+        let foreground = AbilityLifecycleState.Foreground
+        let background = AbilityLifecycleState.Background
+        let destroyed = AbilityLifecycleState.Destroy
+        @Expect(uninitialized != created, true)
+        @Expect(created != foreground, true)
+        @Expect(background != destroyed, true)
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_Delegator_RuntimeArgs_0200
+     * @tc.name      : test_runnerArguments
+     * @tc.desc      : Checks runner and case selection injected by an aa test class argument.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_runnerArguments(): Unit {
+        let args = AbilityDelegatorRegistry.getArguments()
+        @Expect(args.testRunnerClassName, "OpenHarmonyTestRunner")
+        let names = args.testCaseNames
+        if (names.isEmpty()) {
+            @Expect(true)
+        } else {
+            match (names.indexOf("#")) {
+                case Some(idx) => @Expect(names[..idx], "test_delegator")
+                case None => @Expect(names, "test_delegator")
+            }
+        }
+    }
+
+    /*
+     * @tc.number    : Sub_Cangjie_Delegator_RuntimePrint_0300
+     * @tc.name      : test_printOutput
+     * @tc.desc      : Prints a unique marker for verification in the captured aa test output.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    @TestCase
+    @Tag[APILevel22, TestLevel0]
+    func test_printOutput(): Unit {
+        let delegator = AbilityDelegatorRegistry.getAbilityDelegator()
+        @Expect(AbilityDelegatorRegistry.getArguments().bundleName, "com.example.ability_delegator_registry")
+        try{
+            delegator.print("CJ_XTS_DELEGATOR_PRINT_0300")
+            @Expect(true)
+        }catch(e:BusinessException){
+            @Expect(false)
+        }
+    }
 }

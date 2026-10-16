@@ -29,13 +29,10 @@ import ohos.business_exception.BusinessException
 class TestSecurityHuksImportWrappedKeyItem {
     let genKeyOptionsTest1 = HuksOptions(
         properties: [
-            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.BooleanValue(true)),
-            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(1i32)),
-            HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Int32Value(0i32)),
-            HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Int32Value(1i32)),
-            HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(false)),
-            HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
+            HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
+            HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(
+                HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT))
         ]
     )
     /*
@@ -54,31 +51,21 @@ class TestSecurityHuksImportWrappedKeyItem {
         clean(keyAlias)
         clean(wrappingKeyAlias)
         try {
-            let options = HuksOptions(
-                properties: [
-                    HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.BytesValue([1u8])),
-                    HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.BooleanValue(true)),
-                    HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.BooleanValue(true)),
-                    HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint64Value(1u64))
-                ]
-            )
+            generateKeyItem(wrappingKeyAlias, genKeyOptionsTest1)
+            let options = HuksOptions(properties: [
+                HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_AES)),
+                HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_AES_KEY_SIZE_256)),
+                HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)),
+                HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_NONE)),
+                HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint32Value(HuksCipherMode.HUKS_MODE_CBC)),
+                HuksParam(HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, HuksParamValue.Uint32Value(HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NO_PADDING)),
+                HuksParam(HuksTag.HUKS_TAG_IV, HuksParamValue.BytesValue(Array<UInt8>(16, {i => 0u8})))
+            ], inData: Array<UInt8>(16, {i => 0u8}))
             try {
-                importWrappedKeyItem(
-                    keyAlias,
-                    wrappingKeyAlias,
-                    HuksOptions(
-                        properties: [
-                            HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Int32Value(-1i32)),
-                            HuksParam(
-                                HuksTag.HUKS_TAG_PURPOSE,
-                                HuksParamValue.BytesValue([2u8])
-                            )
-                        ]
-                    )
-                )
-                @Expect(hasKeyItem(keyAlias, genKeyOptionsTest1))
-            } catch (e: BusinessException) {
+                importWrappedKeyItem(keyAlias, wrappingKeyAlias, options)
                 @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 401i32)
             }
         } finally {
             clean(keyAlias)
@@ -126,7 +113,6 @@ class TestSecurityHuksImportWrappedKeyItem {
             } finally {
                 @Expect(flag)
             }
-
         }
     }
 

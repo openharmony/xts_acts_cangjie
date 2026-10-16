@@ -46,7 +46,6 @@ class TestSymKeyGenerator {
         for (parameter_0 in cases_1295) {
             let skg = createSymKeyGenerator(parameter_0)
             @Expect(skg.algName, parameter_0)
-
         }
     }
 }

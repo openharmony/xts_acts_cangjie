@@ -38,7 +38,7 @@ class TestSecurityHuksAnonAttest {
         ],
         inData: []
     )
-    // 本用例需要全程联网！否则会抛出异常！
+
     /*
      * @tc.number    : Sub_Cangjie_UniversalKeystoreKit_Test_SecurityHuks_AnonAttest_0100
      * @tc.name      : test_rsa_anno
@@ -57,12 +57,11 @@ class TestSecurityHuksAnonAttest {
                 keyAlias,
                 HuksOptions(
                     properties: [
-                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint64Value(1u64)),
-                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.BooleanValue(true)),
-                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Int32Value(1i32)),
-                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Int32Value(0i32)),
-                        HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Int32Value(1i32)),
-                        HuksParam(HuksTag.HUKS_TAG_BLOCK_MODE, HuksParamValue.Uint64Value(1u64))
+                        HuksParam(HuksTag.HUKS_TAG_ALGORITHM, HuksParamValue.Uint32Value(HuksKeyAlg.HUKS_ALG_RSA)),
+                        HuksParam(HuksTag.HUKS_TAG_KEY_SIZE, HuksParamValue.Uint32Value(HuksKeySize.HUKS_RSA_KEY_SIZE_2048)),
+                        HuksParam(HuksTag.HUKS_TAG_PURPOSE, HuksParamValue.Uint32Value(HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN)),
+                        HuksParam(HuksTag.HUKS_TAG_DIGEST, HuksParamValue.Uint32Value(HuksKeyDigest.HUKS_DIGEST_SHA256)),
+                        HuksParam(HuksTag.HUKS_TAG_PADDING, HuksParamValue.Uint32Value(HuksKeyPadding.HUKS_PADDING_PSS)),
                     ]
                 )
             )
@@ -71,8 +70,7 @@ class TestSecurityHuksAnonAttest {
                 keyAlias,
                 HuksOptions(
                     properties: [HuksParam(HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE,
-                        HuksParamValue.BytesValue(challenge.toArray())),
-                        HuksParam(HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, HuksParamValue.BytesValue(keyAlias.toArray()))])
+                        HuksParamValue.BytesValue(challenge.toArray()))])
             )
             @Expect(!chains.isEmpty())
             for (i in 0..chains.size) {

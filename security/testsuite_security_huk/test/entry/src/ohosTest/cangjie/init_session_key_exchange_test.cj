@@ -53,10 +53,12 @@ class TestInitSessionKeyExchange {
             ("test_case_14", HuksParam(HuksTag.HUKS_TAG_SALT, HuksParamValue.BytesValue([5u8]))),
             ("test_case_16", HuksParam(HuksTag.HUKS_TAG_ITERATION, HuksParamValue.BooleanValue(true))),
             ("test_case_17", HuksParam(HuksTag.HUKS_TAG_KEY_GENERATION_TYPE, HuksParamValue.BooleanValue(true))),
-            ("test_case_19", HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG, HuksParamValue.BooleanValue(true))),
+            ("test_case_19", HuksParam(HuksTag.HUKS_TAG_DERIVED_AGREED_KEY_STORAGE_FLAG,
+                    HuksParamValue.BooleanValue(true))),
             ("test_case_21", HuksParam(HuksTag.HUKS_TAG_ALG_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))),
             ("test_case_22", HuksParam(HuksTag.HUKS_TAG_AGREE_PUBLIC_KEY_IS_KEY_ALIAS, HuksParamValue.BooleanValue(true))),
-            ("test_case_23", HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))),
+            ("test_case_23", HuksParam(HuksTag.HUKS_TAG_PRIVATE_KEY_ALIAS_FOR_AGREEMENT,
+                    HuksParamValue.BooleanValue(true))),
             ("test_case_24", HuksParam(HuksTag.HUKS_TAG_PUBLIC_KEY_FOR_AGREEMENT, HuksParamValue.BooleanValue(true))),
             ("test_case_25", HuksParam(HuksTag.HUKS_TAG_KEY_ALIAS, HuksParamValue.BooleanValue(true))),
             ("test_case_26", HuksParam(HuksTag.HUKS_TAG_DERIVE_KEY_SIZE, HuksParamValue.BooleanValue(true))),
@@ -97,10 +99,9 @@ class TestInitSessionKeyExchange {
                 initSession(keyAlias, HuksOptions(properties: [invalidParam], inData: Bytes()))
                 @Expect(false)
             } catch (e: BusinessException) {
-                @Expect(e.code, 12000003i32)
+                @Expect(e.code, 401i32)
             }
         }
         clean(keyAlias)
-        
     }
 }

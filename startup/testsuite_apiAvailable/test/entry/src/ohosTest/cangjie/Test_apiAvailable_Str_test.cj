@@ -485,7 +485,7 @@ class Test_apiAvailable_Str {
     /*
      * @tc.number    : Sub_Cangjie_apiAvailable_Str_0028
      * @tc.name      : TestCase_28
-     * @tc.desc      : start test with Str Param: "26.99.99"
+     * @tc.desc      : future version of the current major ("<major>.99.99") is not available
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -494,15 +494,15 @@ class Test_apiAvailable_Str {
     @Tag[APILevel26, TestLevel0]
     func TestCase_28(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_28 begins.")
-        Hilog.info(0u32, "CangjieTest", "fail to start test.")
-        @Expect(apiAvailable("26.99.99"), false)
+        let major = DeviceInfo.sdkApiVersion
+        @Expect(apiAvailable("${major}.99.99"), false)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_28 ends.")
     }
     
     /*
      * @tc.number    : Sub_Cangjie_apiAvailable_Str_0029
      * @tc.name      : TestCase_29
-     * @tc.desc      : start test with Str Param: "26.0.1"
+     * @tc.desc      : branch floor "26.0.0" (independent anchor, always <= any device running XTS_26) is available; the DeviceInfo-anchored current version is available (equality side of >=) while the next patch is not (strict side)
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -511,8 +511,12 @@ class Test_apiAvailable_Str {
     @Tag[APILevel26, TestLevel0]
     func TestCase_29(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_29 begins.")
-        Hilog.info(0u32, "CangjieTest", "fail to start test.")
-        @Expect(apiAvailable("26.0.1"), false)
+        @Expect(apiAvailable("26.0.0"), true)
+        let major = DeviceInfo.sdkApiVersion
+        let minor = DeviceInfo.sdkMinorApiVersion
+        let patch = DeviceInfo.sdkPatchApiVersion
+        @Expect(apiAvailable("${major}.${minor}.${patch}"), true)
+        @Expect(apiAvailable("${major}.${minor}.${patch + 1}"), false)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_29 ends.")
     }
     
@@ -706,7 +710,7 @@ class Test_apiAvailable_Str {
     /*
      * @tc.number    : Sub_Cangjie_apiAvailable_Str_0041
      * @tc.name      : TestCase_41
-     * @tc.desc      : start test with Str Param: "27.0.0"
+     * @tc.desc      : the next major version ("<major+1>.0.0") is not available
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -715,8 +719,8 @@ class Test_apiAvailable_Str {
     @Tag[APILevel26, TestLevel0]
     func TestCase_41(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_41 begins.")
-        Hilog.info(0u32, "CangjieTest", "fail to start test.")
-        @Expect(apiAvailable("27.0.0"), false)
+        let major = DeviceInfo.sdkApiVersion
+        @Expect(apiAvailable("${major + 1}.0.0"), false)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_41 ends.")
     }
     
@@ -1216,7 +1220,7 @@ class Test_apiAvailable_Str {
     /*
      * @tc.number    : Sub_Cangjie_apiAvailable_Str_0071
      * @tc.name      : TestCase_71
-     * @tc.desc      : start test with Str Param: "26.99.99(0)"
+     * @tc.desc      : future version of the current major with beta 0 ("<major>.99.99(0)") is not available
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -1225,8 +1229,8 @@ class Test_apiAvailable_Str {
     @Tag[APILevel26, TestLevel0]
     func TestCase_71(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_71 begins.")
-        Hilog.info(0u32, "CangjieTest", "fail to start test.")
-        @Expect(apiAvailable("26.99.99(0)"), false)
+        let major = DeviceInfo.sdkApiVersion
+        @Expect(apiAvailable("${major}.99.99(0)"), false)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_71 ends.")
     }
     
@@ -1488,7 +1492,7 @@ class Test_apiAvailable_Str {
     /*
      * @tc.number    : Sub_Cangjie_apiAvailable_Str_0087
      * @tc.name      : TestCase_87
-     * @tc.desc      : start test with Str Param: "27.0.0(0)"
+     * @tc.desc      : the next major version with beta 0 ("<major+1>.0.0(0)") is not available
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 0
@@ -1497,8 +1501,8 @@ class Test_apiAvailable_Str {
     @Tag[APILevel26, TestLevel0]
     func TestCase_87(): Unit {
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_87 begins.")
-        Hilog.info(0u32, "CangjieTest", "fail to start test.")
-        @Expect(apiAvailable("27.0.0(0)"), false)
+        let major = DeviceInfo.sdkApiVersion
+        @Expect(apiAvailable("${major + 1}.0.0(0)"), false)
         Hilog.info(0u32, "CangjieTest", "testcase TestCase_87 ends.")
     }
     

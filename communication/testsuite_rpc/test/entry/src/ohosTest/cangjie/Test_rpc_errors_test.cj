@@ -578,8 +578,10 @@ class Test_rpc_errors {
         let ash = Ashmem.create("err_write_data", 1024i32)
         try {
             ash.mapReadWriteAshmem()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "mapReadWriteAshmem error code", e.code.toString())
+            @Expect(false)
         }
         let buf = Array<Byte>(2048, repeat: 1u8)
         try {
@@ -608,8 +610,10 @@ class Test_rpc_errors {
         let ash = Ashmem.create("err_read_data", 1024i32)
         try {
             ash.mapReadWriteAshmem()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "mapReadWriteAshmem error code", e.code.toString())
+            @Expect(false)
         }
         try {
             let _ = ash.readDataFromAshmem(2048i64, 0i64)
@@ -638,8 +642,10 @@ class Test_rpc_errors {
         let ash = Ashmem.create("err_write_data_size0", 65536i32)
         try {
             ash.mapReadWriteAshmem()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "mapReadWriteAshmem error code", e.code.toString())
+            @Expect(false)
         }
         let buf = Array<Byte>(16, repeat: 1u8)
         try {
@@ -669,14 +675,18 @@ class Test_rpc_errors {
         let ash = Ashmem.create("err_read_data_invalid_size", 65536i32)
         try {
             ash.mapReadWriteAshmem()
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "mapReadWriteAshmem error code", e.code.toString())
+            @Expect(false)
         }
         let buf = Array<Byte>(16, repeat: 1u8)
         try {
             ash.writeDataToAshmem(buf, 16i64, 0i64)
+            @Expect(true)
         } catch (e: BusinessException) {
             Hilog.error(0u32, "cangjietest", "writeDataToAshmem error code", e.code.toString())
+            @Expect(false)
         }
         try {
             let _ = ash.readDataFromAshmem(0i64, 0i64)

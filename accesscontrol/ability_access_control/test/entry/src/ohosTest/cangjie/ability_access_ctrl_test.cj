@@ -29,7 +29,6 @@ import ohos.ability_access_ctrl.GrantStatus
 import kit.PerformanceAnalysisKit.Hilog
 import ohos.business_exception.*
 
-let permissionList = ["ohos.permission.READ_CONTACTS"]
 
 @Test
 class TestAbilityAccessCtrl {

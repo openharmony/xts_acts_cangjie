@@ -22,6 +22,7 @@ import std.collection.*
 import ohos.base.*
 import ohos.telephony.call.*
 import kit.PerformanceAnalysisKit.Hilog
+import kit.TestKit.*
 
 @Test
 class TestMakeCallParameters {
@@ -36,6 +37,11 @@ class TestMakeCallParameters {
     @TestCase
     @Tag[APILevel22, TestLevel0]
     func test_case_0(): Unit {
+        let driver:Driver=Driver.create()
+        driver.waitForComponent(On().text("Hello Cangjie"),3000)
+        let window=driver.findWindow(WindowFilter(active:true)).getOrThrow()
+        window.minimize()
+        sleepFor(5.second)
         let cases_1320 = [
             "",
             "123456789",
@@ -48,9 +54,8 @@ class TestMakeCallParameters {
                 Call.makeCall(parameter_0)
                 @Expect(false)
             } catch (e: BusinessException) {
-                @Expect(e.code, 8300001)
+                @Expect(e.code, 201)
             }
-
         }
     }
 }

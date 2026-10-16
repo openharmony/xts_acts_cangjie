@@ -87,9 +87,9 @@ class Test_KVManager_getAllKVStoreId_08 {
         func test_getallkvstoreid_05(): Unit {
         let context = Global.getAbilityContext()
         let opt = KVOptions(KVSecurityLevel.S4)
-        let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "cangjietest_appid"))
+        let kvManager = DistributedKVStore.createKVManager(KVManagerConfig(context, "com.example.testsuite_distributed_kv_store_1"))
         try {
-            kvManager.getAllKVStoreId("cangjietest_appid")
+            kvManager.getAllKVStoreId("com.example.testsuite_distributed_kv_store_1")
             @Expect(true)
         } catch (e: BusinessException) {
             @Expect(false)

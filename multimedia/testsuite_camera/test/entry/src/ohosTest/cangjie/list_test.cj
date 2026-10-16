@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,5 +23,6 @@ func testsuite() {
     registerTestSuite {Test_camera()}
     registerTestSuite {Test_camera_coverage()}
     registerTestSuite {Test_camera_errors()}
-registerTestSuite {Test_camera_errors_device()}
+    registerTestSuite {Test_camera_errors_device()}
+    registerTestSuite {Test_camera_errors3()}
 }

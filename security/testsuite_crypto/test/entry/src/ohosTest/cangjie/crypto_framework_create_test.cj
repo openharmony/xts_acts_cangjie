@@ -102,7 +102,6 @@ class TestCryptoFrameworkCreate {
             let symKey = symKeyGenerator.generateSymKey()
             let datablob = symKey.getEncoded()
             @Expect(datablob.data.size, parameter_1)
-
         }
     }
 

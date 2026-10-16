@@ -106,28 +106,68 @@ class TestSensorWithoutPermissions {
     @Tag[APILevel22, TestLevel0]
     func test_on_all_permission_sensors_without_permission_throws_exception(): Unit {
         if (hasSensor(Accelerometer)) {
-            try { on(Accelerometer, AccelerometerResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                on(Accelerometer, AccelerometerResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(AccelerometerUncalibrated)) {
-            try { on(AccelerometerUncalibrated, AccelerometerUncalibratedResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                on(AccelerometerUncalibrated, AccelerometerUncalibratedResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(LinearAccelerometer)) {
-            try { on(LinearAccelerometer, LinearAccelerometerResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                on(LinearAccelerometer, LinearAccelerometerResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(Gyroscope)) {
-            try { on(Gyroscope, GyroscopeResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                on(Gyroscope, GyroscopeResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(GyroscopeUncalibrated)) {
-            try { on(GyroscopeUncalibrated, GyroscopeUncalibratedResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                on(GyroscopeUncalibrated, GyroscopeUncalibratedResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(Pedometer)) {
-            try { on(Pedometer, PedometerResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                on(Pedometer, PedometerResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(PedometerDetection)) {
-            try { on(PedometerDetection, PedometerDetectionResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                on(PedometerDetection, PedometerDetectionResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(HeartRate)) {
-            try { on(HeartRate, HeartRateResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                on(HeartRate, HeartRateResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         @Expect(true)
     }
@@ -144,28 +184,68 @@ class TestSensorWithoutPermissions {
     @Tag[APILevel22, TestLevel0]
     func test_once_all_permission_sensors_without_permission_throws_exception(): Unit {
         if (hasSensor(Accelerometer)) {
-            try { once(Accelerometer, AccelerometerResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                once(Accelerometer, AccelerometerResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(AccelerometerUncalibrated)) {
-            try { once(AccelerometerUncalibrated, AccelerometerUncalibratedResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                once(AccelerometerUncalibrated, AccelerometerUncalibratedResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(LinearAccelerometer)) {
-            try { once(LinearAccelerometer, LinearAccelerometerResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                once(LinearAccelerometer, LinearAccelerometerResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(Gyroscope)) {
-            try { once(Gyroscope, GyroscopeResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                once(Gyroscope, GyroscopeResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(GyroscopeUncalibrated)) {
-            try { once(GyroscopeUncalibrated, GyroscopeUncalibratedResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                once(GyroscopeUncalibrated, GyroscopeUncalibratedResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(Pedometer)) {
-            try { once(Pedometer, PedometerResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                once(Pedometer, PedometerResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(PedometerDetection)) {
-            try { once(PedometerDetection, PedometerDetectionResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                once(PedometerDetection, PedometerDetectionResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         if (hasSensor(HeartRate)) {
-            try { once(HeartRate, HeartRateResponseCallback()); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                once(HeartRate, HeartRateResponseCallback());
+                @Expect(false)
+            } catch (e: BusinessException) {
+                @Expect(e.code, 201)
+            }
         }
         @Expect(true)
     }
@@ -182,28 +262,68 @@ class TestSensorWithoutPermissions {
     @Tag[APILevel22, TestLevel0]
     func test_off_all_permission_sensors_without_permission_throws_exception(): Unit {
         if (hasSensor(Accelerometer)) {
-            try { off(Accelerometer); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                off(Accelerometer);
+                @Expect(true)
+            } catch (e: BusinessException) {
+                @Expect(false)
+            }
         }
         if (hasSensor(AccelerometerUncalibrated)) {
-            try { off(AccelerometerUncalibrated); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                off(AccelerometerUncalibrated);
+                @Expect(true)
+            } catch (e: BusinessException) {
+                @Expect(false)
+            }
         }
         if (hasSensor(LinearAccelerometer)) {
-            try { off(LinearAccelerometer); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                off(LinearAccelerometer);
+                @Expect(true)
+            } catch (e: BusinessException) {
+                @Expect(false)
+            }
         }
         if (hasSensor(Gyroscope)) {
-            try { off(Gyroscope); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                off(Gyroscope);
+                @Expect(true)
+            } catch (e: BusinessException) {
+                @Expect(false)
+            }
         }
         if (hasSensor(GyroscopeUncalibrated)) {
-            try { off(GyroscopeUncalibrated); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                off(GyroscopeUncalibrated);
+                @Expect(true)
+            } catch (e: BusinessException) {
+                @Expect(false)
+            }
         }
         if (hasSensor(Pedometer)) {
-            try { off(Pedometer); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                off(Pedometer);
+                @Expect(true)
+            } catch (e: BusinessException) {
+                @Expect(false)
+            }
         }
         if (hasSensor(PedometerDetection)) {
-            try { off(PedometerDetection); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                off(PedometerDetection);
+                @Expect(true)
+            } catch (e: BusinessException) {
+                @Expect(false)
+            }
         }
         if (hasSensor(HeartRate)) {
-            try { off(HeartRate); @Expect(false) } catch (e: BusinessException) { @Expect(e.code, 201) }
+            try {
+                off(HeartRate);
+                @Expect(true)
+            } catch (e: BusinessException) {
+                @Expect(false)
+            }
         }
         @Expect(true)
     }

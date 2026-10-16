@@ -17,6 +17,7 @@ package ohos_app_cangjie_entry
 
 import ohos.window.WindowStage
 import kit.AbilityKit.*
+import kit.ArkUI.AppStorage
 
 class MainAbility <: UIAbility {
     public func onCreate(want: Want, launchParam: LaunchParam): Unit {
@@ -24,6 +25,7 @@ class MainAbility <: UIAbility {
 
     public func onWindowStageCreate(windowStage: WindowStage): Unit {
         Global._abilityContext = this.context
+        AppStorage.setOrCreate<UIAbilityContext>("abilityContext", this.context)
         windowStage.loadContent("EntryView")
     }
 }
